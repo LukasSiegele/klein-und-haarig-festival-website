@@ -1,5 +1,17 @@
 import React from "react"
+import './index.css'
+import styled from 'styled-components'
+import Hero from "../components/Hero"
+import Header from "../components/Header"
+import Message from "../components/Message"
 
-export default function Home() {
-  return <div>Hannah ist beeindruckt von Lowki!</div>
-}
+
+const IndexPage = () => (
+  <div>
+    <Header/>
+    <Hero/>
+    <Message/>
+  </div>
+)
+
+export default IndexPage

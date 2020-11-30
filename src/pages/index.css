@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'GT-Walsheim-Pro-Black';
+    src: local('GT-Walsheim-Pro-Black'), url(../fonts/GT-Walsheim/GT-Walsheim-Black-Trial.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'GT-Alpina-Fine-Thin';
+    src: local('GT-Alpina-Fine-Thin'), url(../fonts/GT-Alpina/GT-Alpina-Fine-Thin-Trial.woff2) format('woff2');
+}
+
+
+
+body {
+    font-family: GT-Walsheim-Pro-Black;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.3;
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    font-family: GT-Alpina-Fine-Thin;
+    font-weight: 50;
+    font-size: 120px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+h2 {
+    font-family: GT-Walsheim-Pro-Black;
+}
+
+h3 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.Header {
+    font-size: 100px;
+    color: royalblue;
+    height: auto;
+    background-color: pink;
+}
