@@ -5,7 +5,10 @@ const MessageContainer = styled.div`
     height: 500px;
     display: grid;
     grid-template-columns: 1fr;
+    /*background-color: black;
+    background: radial-gradient(circle at 70% 150px, rgba(3,250,129,1) 0%, rgba(107,35,178,1) 5%, rgba(0,0,0,1) 10%);*/
     background-color: black;
+    background: radial-gradient(circle at 70% 150px, rgba(251,119,22,1) 0%, rgba(211,11,11,1) 5%, rgba(0,0,0,1) 10%);
 `
 
 const MessageText = styled.h3`
@@ -13,6 +16,7 @@ const MessageText = styled.h3`
     max-width: 1100px;
     align-self: center;
     margin: 0 auto;
+    color: green;
 `
 
 const Message = () => (
