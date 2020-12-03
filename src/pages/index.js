@@ -7,8 +7,8 @@ import Message from "../components/Message"
 
 
 const IndexPage = () => (
-  <div>
-    <Header/>
+  <div className="Page">
+    {/* <Header/> */}
     <Hero/>
     <Message/>
   </div>

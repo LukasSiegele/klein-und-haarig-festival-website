@@ -27,11 +27,21 @@ const HeroContainer = styled.div`
     height: 800px;
     width: 100%;
     position: relative;
+    overflow: hidden;
+
+    @media(max-width: 640px){
+        height: 750px;
+    }
 `
 
 const HeroTextGroup = styled.div`
     max-width: 1260px;
     padding: 120px 80px;
+
+    @media(max-width: 640px){
+        max-width: 100%;
+        padding: 90px 20px;
+    }
 `
 
 const TitleLine1 = styled.h1`
@@ -39,6 +49,9 @@ const TitleLine1 = styled.h1`
 
 const TitleLine2 = styled.h1` 
     margin-left: 116px;
+    @media(max-width: 640px){
+        margin: 0px;
+    }
 `
 
 const Year = styled.h1`
@@ -47,11 +60,19 @@ const Year = styled.h1`
     color: rgba(255, 255, 255, 0);
     float: right;
     margin-right: 250px;
+    
+    @media(max-width: 640px){
+        margin: 0 0 60px 0;
+    }
 `
 
 const HeroTitleDetails = styled.h3`
     clear: both;
     margin: 10px 0 0 400px;
+   
+    @media(max-width: 640px){
+        margin: 0px 0;
+    }
 `
 
 const Hero = () => (

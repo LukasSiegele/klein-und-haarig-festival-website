@@ -22,13 +22,15 @@ body {
 a {
     color: black;
     text-decoration: none;
-    text-transform: uppercase;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin: 0;
 }
 
 h1 {
     font-family: GT-Alpina-Fine-Thin;
     font-weight: 50;
-    font-size: 120px;
+    font-size: 6em;
     text-transform: uppercase;
     margin: 0;
 }
@@ -38,6 +40,16 @@ h2 {
 }
 
 h3 {
-    font-size: 40px;
+    font-size: 2em;
     margin: 0;
+}
+
+@media(max-width: 640px){
+    body{
+        font-size: 15px;
+    }
+
+    h1{
+        font-size: 4.5em;
+    }
 }
