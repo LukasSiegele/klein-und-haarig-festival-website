@@ -8,7 +8,7 @@ import Message from "../components/Message"
 
 const IndexPage = () => (
   <div className="Page">
-    {/* <Header/> */}
+    <Header/>
     <Hero/>
     <Message/>
   </div>
