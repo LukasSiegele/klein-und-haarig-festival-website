@@ -32,17 +32,15 @@ const MessageWrapper = styled.div`
 
 const MessageText = styled.h3`
     margin-bottom: 60px;
-`
-
-const MessageLink = styled.a`
+    text-align: center;
     color: white;
-`
+`   
 
 const Message = () => (
     <MessageContainer>
         <MessageWrapper>
             <MessageText>Ein kleines Festival im Schwarzwald organisiert von ein paar Freunden aus Liebe zur elektronischen Musik und zur Natur.</MessageText>
-            <MessageLink href="https://soundcloud.com/kleinundhaarig" target="_blank">Das war 2020</MessageLink>
+            <a href="https://soundcloud.com/kleinundhaarig" target="_blank"><MessageText>Das war 2020</MessageText></a>
         </MessageWrapper>
     </MessageContainer>
 )
