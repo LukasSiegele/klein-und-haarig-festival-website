@@ -4,13 +4,14 @@ import Hero from "../components/Hero"
 import Header from "../components/Header"
 import Message from "../components/Message"
 import TicketFormular from "../components/Form"
+import TicketFormularAPI from "../components/FormAPI"
 
 const IndexPage = () => (
   <div className="Page">
     {/* <Header/> */}
     <Hero />
     <Message />
-    <TicketFormular />
+    <TicketFormularAPI />
   </div>
 )
 

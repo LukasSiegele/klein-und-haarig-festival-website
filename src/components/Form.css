@@ -1,0 +1,35 @@
+form {
+    width: 30%;
+}
+
+label {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+input {
+    padding: 12px;
+    margin: 8px 0;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.checkBox {
+    width: auto;
+}
+
+.checkBox:hover {
+    cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

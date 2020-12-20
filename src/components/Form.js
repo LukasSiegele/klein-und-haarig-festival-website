@@ -25,7 +25,7 @@ const TicketFormular = () => {
   const thankYouMessage = <p>Thank you for your input!</p>
 
   const form = (
-    <form onSubmit={submit} className={isSent ? "setForm hideForm" : "setForm"}>
+    <form onSubmit={submit}>
       <label htmlFor="firstName">Vorname</label> <br />
       <input
         type="text"
