@@ -4,11 +4,19 @@ import Airtable from "airtable"
 import "./Form.css"
 
 const Container = styled.div`
-  padding: 50px;
+  margin: 0 auto;
   background-color: white;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr;
   justify-items: center;
+`
+
+const Wrapper = styled.div`
+  max-width: 500px;
+  margin: 100px 0;
+  @media (max-width: 768px) {
+    margin: 100px 20px;
+  }
 `
 
 const base = new Airtable({
@@ -77,6 +85,7 @@ const TicketFormularAPI = () => {
     <form onSubmit={submit}>
       <h2>Ticket kaufen</h2>
       <label htmlFor="firstName">Vorname</label>
+      <br />
       <input
         type="text"
         name="firstName"
@@ -84,6 +93,7 @@ const TicketFormularAPI = () => {
         required
         onChange={e => setFirstName(e.target.value)}
       />{" "}
+      <br />
       <label htmlFor="lastName">Nachname</label>
       <input
         type="text"
@@ -184,7 +194,11 @@ const TicketFormularAPI = () => {
     </form>
   )
 
-  return <Container>{isSent ? thankYou : form}</Container>
+  return (
+    <Container>
+      <Wrapper>{isSent ? thankYou : form}</Wrapper>
+    </Container>
+  )
 }
 
 export default TicketFormularAPI
