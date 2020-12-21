@@ -6,6 +6,7 @@ import FlussImage from "../images/Fluss.png"
 import Blob from "./Blob"
 
 const textOffsetY = "-0.52em"
+const textOffsetMobile = "-0.4em"
 
 const HeroContainer = styled.div`
   background: url(${HeroImage}), #000;
@@ -86,6 +87,9 @@ const TextMask = styled.div`
   padding: 2px 0;
   margin-top: ${textOffsetY};
   display: inline-block;
+  @media (max-width: 700px) {
+    margin-top: ${textOffsetMobile};
+  }
 `
 
 const TitleLine1 = styled.h1`
@@ -119,6 +123,9 @@ const TextMask2 = styled.div`
   padding: 2px 0;
   margin-top: ${textOffsetY};
   display: inline-block;
+  @media (max-width: 700px) {
+    margin-top: ${textOffsetMobile};
+  }
 `
 
 const TextMask22 = styled.div`
@@ -126,6 +133,9 @@ const TextMask22 = styled.div`
   padding: 2px 0;
   margin-top: ${textOffsetY};
   display: inline-block;
+  @media (max-width: 700px) {
+    margin-top: ${textOffsetMobile};
+  }
 `
 
 const TitleLine2 = styled.h1`
@@ -154,6 +164,10 @@ const TextMaskYear = styled.div`
   margin-left: auto;
   margin-right: 25%;
   margin-bottom: 100px;
+
+  @media (max-width: 700px) {
+    margin-top: ${textOffsetMobile};
+  }
 `
 
 const Year = styled.h1`
@@ -176,6 +190,9 @@ const TextMaskDetail = styled.div`
   overflow: hidden;
   padding: 2px 0;
   margin-top: ${textOffsetY};
+  @media (max-width: 700px) {
+    margin-top: ${textOffsetMobile};
+  }
 `
 
 const HeroTitleDetail1 = styled.h3`
