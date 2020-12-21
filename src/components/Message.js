@@ -10,7 +10,7 @@ const MessageContainer = styled.div`
     background: radial-gradient(circle at 70% 150px, rgba(3,250,129,1) 0%, rgba(107,35,178,1) 5%, rgba(0,0,0,1) 10%);*/
   background-color: black;
   background: radial-gradient(
-    circle at 70% 270px,
+    circle at 30% 270px,
     rgba(251, 119, 22, 1) 0%,
     rgba(211, 11, 11, 1) 5%,
     rgba(0, 0, 0, 1) 10%
@@ -35,10 +35,11 @@ const MessageWrapper = styled.div`
   margin: 0 auto;
   display: grid;
   justify-items: center;
+  padding: 0 40px;
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     max-width: 100%;
-    margin: 0 20px;
+    padding: 0 20px;
   }
 `
 

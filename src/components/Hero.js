@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import HeroImage from "../images/KUH-HeroBackground-4.png"
 import FlussImage from "../images/Fluss.png"
+import Blob from "./Blob"
 
 const HeroContainer = styled.div`
   background: url(${HeroImage}), #000;
@@ -46,68 +47,179 @@ const HeroContainer = styled.div`
     rgba(255, 255, 255, 1);
   /*background: url(${HeroImage}), radial-gradient(circle at bottom, rgba(255,157,226,1) 0%, rgba(255,96,61,1) 35%, rgba(149,62,247,1) 100%);*/
 
+  background: #73aa85;
+  background: radial-gradient(
+    circle at 70% 100px,
+    rgba(170, 250, 59, 1) 0%,
+    rgba(241, 250, 59, 1) 15%,
+    /* rgba(115, 170, 133, 1) 15% rgba(170, 156, 115, 1) 15% */
+      rgba(242, 204, 140, 1) 20%
+  );
+  background: rgba(242, 204, 140, 1);
+
   background-size: cover;
   background-position: center;
-  height: 800px;
+  /* height: 800px; */
   width: 100%;
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 640px) {
+  /* @media (max-width: 640px) {
     height: 750px;
-  }
+  } */
 `
 
 const HeroTextGroup = styled.div`
   /* max-width: 1260px; */
   padding: 120px 40px;
 
-  @media (max-width: 640px) {
+  @media (max-width: 700px) {
     max-width: 100%;
     padding: 90px 20px;
   }
 `
 
-const TitleLine1 = styled.h1``
+const TextMask = styled.div`
+  overflow: hidden;
+  padding: 2px 0;
+  margin-top: -0.55555em;
+  display: inline-block;
+`
+
+const TitleLine1 = styled.h1`
+  animation: HeroAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+
+  @keyframes HeroAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(2px);
+    }
+  }
+`
+
+const TitleLine12 = styled.h1`
+  margin-top: 0px;
+  top: 5%;
+  animation: HeroAnimation 1.3s 0.7s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+`
+
+const TextMask2 = styled.div`
+  overflow: hidden;
+  padding: 2px 0;
+  margin-top: -0.55555em;
+  display: inline-block;
+`
+
+const TextMask22 = styled.div`
+  overflow: hidden;
+  padding: 2px 0;
+  margin-top: -0.55555em;
+  display: inline-block;
+`
 
 const TitleLine2 = styled.h1`
   margin-left: 60px;
-  @media (max-width: 640px) {
-    margin: 0px;
+  animation: HeroAnimation 1.3s 0.9s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  @media (max-width: 700px) {
+    margin-left: 0px;
   }
+`
+
+const TitleLine22 = styled.h1`
+  animation: HeroAnimation 1.3s 1.1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  @media (max-width: 700px) {
+    margin-left: 0px;
+  }
+`
+
+const TextMaskYear = styled.div`
+  overflow: hidden;
+  padding: 2px 0;
+  margin-top: -0.55555em;
+
+  float: right;
+  margin-left: auto;
+  margin-right: 25%;
+  margin-bottom: 100px;
 `
 
 const Year = styled.h1`
-  /* font-family: GT-Walsheim-Pro-Black; */
-  /* -webkit-text-stroke: 2px black; */
-  /* color: rgba(255, 255, 255, 0); */
-  float: right;
-  margin-top: 0px;
-  margin-right: 250px;
-  margin-bottom: 100px;
+  animation: HeroAnimation 1.3s 1.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
 
-  @media (max-width: 640px) {
-    margin: 0 0 60px 0;
+  @media (max-width: 700px) {
+    float: left;
   }
 `
 
-const HeroTitleDetails = styled.h3`
+const DetailWrapper = styled.div`
   clear: both;
-  margin: 10px 0 0 400px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-left: 20vw;
+`
 
-  @media (max-width: 640px) {
+const TextMaskDetail = styled.div`
+  overflow: hidden;
+  padding: 2px 0;
+  margin-top: -0.55555em;
+`
+
+const HeroTitleDetail1 = styled.h3`
+  animation: HeroAnimation 1.2s 2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  @media (max-width: 700px) {
+    margin: 0px 0;
+  }
+`
+const HeroTitleDetail2 = styled.h3`
+  margin-top: 10px;
+  animation: HeroAnimation 1.2s 2.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  @media (max-width: 700px) {
     margin: 0px 0;
   }
 `
 
 const Hero = () => (
   <HeroContainer>
+    <Blob></Blob>
     <HeroTextGroup>
-      <TitleLine1>Klein und</TitleLine1>
-      <TitleLine2>Haarig Festival</TitleLine2>
-      <Year>2021</Year>
-      <HeroTitleDetails>9—11 Juli</HeroTitleDetails>
-      <HeroTitleDetails>Bad Wildbad</HeroTitleDetails>
+      <TextMask>
+        <TitleLine1>Klein&nbsp;</TitleLine1>
+      </TextMask>
+      <TextMask>
+        <TitleLine12>und</TitleLine12>
+      </TextMask>
+      <br />
+      <TextMask2>
+        <TitleLine2>Haarig&nbsp;</TitleLine2>
+      </TextMask2>
+      <TextMask22>
+        <TitleLine22>Festival</TitleLine22>
+      </TextMask22>
+      <TextMaskYear>
+        <Year>2021</Year>
+      </TextMaskYear>
+      <DetailWrapper>
+        <TextMaskDetail>
+          <HeroTitleDetail1>9—11 Juli</HeroTitleDetail1>
+        </TextMaskDetail>
+        <TextMaskDetail>
+          <HeroTitleDetail2>Bad Wildbad</HeroTitleDetail2>
+        </TextMaskDetail>
+      </DetailWrapper>
     </HeroTextGroup>
   </HeroContainer>
 )

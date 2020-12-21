@@ -30,30 +30,6 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-button {
-    background: linear-gradient(90deg, rgba(255, 115, 33, 1) 0%, rgba(255, 33, 33, 1) 100%);
-    /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.13em;
-    font-family: GT-Walsheim-Pro-Black;
-    box-shadow: 0 10px 20px rgba(255, 115, 33, .3);
-    transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-button:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.thankYouMessage {
+/* .thankYouMessage {
     width: 50%;
-}
+} */

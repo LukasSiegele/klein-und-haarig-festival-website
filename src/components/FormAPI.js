@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import Airtable from "airtable"
 import "./Form.css"
+import Button from "./Button"
 
 const Container = styled.div`
   margin: 0 auto;
@@ -14,9 +15,22 @@ const Container = styled.div`
 const Wrapper = styled.div`
   max-width: 500px;
   margin: 100px 0;
+  padding: 0 40px;
   @media (max-width: 768px) {
-    margin: 100px 20px;
+    padding: 0 20px;
   }
+`
+
+const SectionHeadline = styled.h3`
+  margin: 10px 0 40px 0;
+`
+
+const Seperator = styled.div`
+  height: 1px;
+  background-color: #a2a3a6;
+  opacity: 0.4;
+  margin: 40px 0 20px 0;
+  width: 100%;
 `
 
 const base = new Airtable({
@@ -68,13 +82,13 @@ const TicketFormularAPI = () => {
 
   const thankYou = (
     <div className="thankYouMessage">
-      <h2>Wouhuu!🥳</h2>
+      <h3>Wouhuu!🥳</h3>
       <p>Deine Daten wurden erfolgreich gespeichert.</p>
       <p>
         Wir haben dir die Überweisungsdaten an deine Mail Adresse geschickt. Das
         kann einige Minuten dauern. Falls keine Mail im Posteingang liegt,
-        checke erst deinen Spam Ordner und melde dich falls sie nicht auffindbar
-        ist einfach bei uns via ticket@kleinundhaarig.com.
+        checke erst deinen Spam Ordner und melde dich dann falls sie nicht
+        auffindbar ist einfach bei uns via ticket@kleinundhaarig.com.
       </p>
       <p> Wir freuen uns schon auf dich,</p>
       <p>dein Klein und Haarig Team</p>
@@ -83,7 +97,8 @@ const TicketFormularAPI = () => {
 
   const form = (
     <form onSubmit={submit}>
-      <h2>Ticket kaufen</h2>
+      <h4>2021</h4>
+      <SectionHeadline>Ticket kaufen</SectionHeadline>
       <label htmlFor="firstName">Vorname</label>
       <br />
       <input
@@ -118,6 +133,7 @@ const TicketFormularAPI = () => {
         optional
         onChange={e => setPhone(e.target.value)}
       />{" "}
+      <Seperator />
       <label htmlFor="street">Strasse</label>
       <input
         type="text"
@@ -150,6 +166,7 @@ const TicketFormularAPI = () => {
         required
         onChange={e => setCity(e.target.value)}
       />{" "}
+      <Seperator />
       <label htmlFor="vereinsbeitritt">Vereinsbeitritt</label> <br />
       <input
         className="checkBox"
@@ -190,7 +207,7 @@ const TicketFormularAPI = () => {
       <span className="customCheckbox"></span>
       <br />
       <br />
-      <button type="submit">Ticket kaufen</button>
+      <Button typ="submit" label="Ticket kaufen" />
     </form>
   )
 

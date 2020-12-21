@@ -3,8 +3,8 @@ import "./index.css"
 import Hero from "../components/Hero"
 import Header from "../components/Header"
 import Message from "../components/Message"
-import TicketFormular from "../components/Form"
 import TicketFormularAPI from "../components/FormAPI"
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 
 const IndexPage = () => (
   <div className="Page">
