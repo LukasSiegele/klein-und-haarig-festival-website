@@ -34,7 +34,7 @@ const Seperator = styled.div`
 `
 
 const base = new Airtable({
-  apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+  apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
 }).base("appTiA4sk98aXslsO")
 
 const table = base("Teilnehmer 2021")

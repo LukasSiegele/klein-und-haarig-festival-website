@@ -67,4 +67,5 @@ yarn-error.log
 
 # API Keys
 .env
+.env.development
 .env*
