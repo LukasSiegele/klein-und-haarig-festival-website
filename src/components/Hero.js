@@ -6,7 +6,7 @@ import FlussImage from "../images/Fluss.png"
 import Blob from "./Blob"
 
 const textOffsetY = "-0.52em"
-const textOffsetMobile = "-0.4em"
+const textOffsetMobile = "-0.37em"
 
 const HeroContainer = styled.div`
   background: url(${HeroImage}), #000;
