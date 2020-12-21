@@ -5,6 +5,8 @@ import HeroImage from "../images/KUH-HeroBackground-4.png"
 import FlussImage from "../images/Fluss.png"
 import Blob from "./Blob"
 
+const textOffsetY = "-0.52em"
+
 const HeroContainer = styled.div`
   background: url(${HeroImage}), #000;
 
@@ -82,7 +84,7 @@ const HeroTextGroup = styled.div`
 const TextMask = styled.div`
   overflow: hidden;
   padding: 2px 0;
-  margin-top: -0.55555em;
+  margin-top: ${textOffsetY};
   display: inline-block;
 `
 
@@ -115,14 +117,14 @@ const TitleLine12 = styled.h1`
 const TextMask2 = styled.div`
   overflow: hidden;
   padding: 2px 0;
-  margin-top: -0.55555em;
+  margin-top: ${textOffsetY};
   display: inline-block;
 `
 
 const TextMask22 = styled.div`
   overflow: hidden;
   padding: 2px 0;
-  margin-top: -0.55555em;
+  margin-top: ${textOffsetY};
   display: inline-block;
 `
 
@@ -146,7 +148,7 @@ const TitleLine22 = styled.h1`
 const TextMaskYear = styled.div`
   overflow: hidden;
   padding: 2px 0;
-  margin-top: -0.55555em;
+  margin-top: ${textOffsetY};
 
   float: right;
   margin-left: auto;
@@ -173,7 +175,7 @@ const DetailWrapper = styled.div`
 const TextMaskDetail = styled.div`
   overflow: hidden;
   padding: 2px 0;
-  margin-top: -0.55555em;
+  margin-top: ${textOffsetY};
 `
 
 const HeroTitleDetail1 = styled.h3`
