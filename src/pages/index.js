@@ -1,18 +1,20 @@
 import React from "react"
-import "./index.css"
-import Hero from "../components/Hero"
-import Header from "../components/Header"
-import Message from "../components/Message"
-import TicketFormularAPI from "../components/FormAPI"
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
+import "../components/layout/layout.css"
+import HeroSection from "../components/sections/HeroSection"
+import Message from "../components/sections/Message"
+import Layout from "../components/layout/layout"
+import SEO from "../components/layout/seo"
+import Header from "../components/layout/Header"
+import ImageSection from "../components/sections/ImageSection"
 
-const IndexPage = () => (
-  <div className="Page">
-    {/* <Header/> */}
-    <Hero />
-    <Message />
-    <TicketFormularAPI />
-  </div>
-)
-
-export default IndexPage
+export default function IndexPage() {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Header />
+      <HeroSection />
+      <Message />
+      <ImageSection />
+    </Layout>
+  )
+}

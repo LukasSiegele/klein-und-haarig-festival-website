@@ -1,0 +1,136 @@
+label {
+  color: white;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px black inset;
+  -webkit-box-shadow: 0 0 0 30px black inset;
+  -webkit-text-fill-color: white;
+}
+
+input {
+  padding: 12px;
+  margin: 15px 0;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: black;
+  color: white;
+}
+
+.checkboxText {
+  color: white;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* TESTTTTTTTTTTT */
+.b-contain *,
+.b-contain *::before,
+.b-contain *::after {
+  box-sizing: content-box !important;
+}
+
+.b-contain input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.b-contain {
+  margin-top: 0;
+}
+
+.b-contain span {
+  line-height: 1.54;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.b-contain {
+  display: table;
+  position: relative;
+  padding-left: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.b-contain input[type="checkbox"] ~ .b-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0);
+  transition: background 250ms;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.b-contain input[type="checkbox"] ~ .b-input::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 14px;
+  top: 8px;
+  width: 8px;
+  height: 18px;
+  border: solid rgba(0, 0, 0, 1);
+  border-width: 0 4px 4px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+/* .b-contain input:disabled ~ .b-input::after {
+  border-color: rgba(135, 149, 161, 1);
+} */
+
+.b-contain input:checked ~ .b-input::after {
+  display: block;
+}
+
+/* .b-contain input:focus ~ .b-input {
+  box-shadow: 0 0 0 2px rgba(52, 144, 220, 0.5);
+} */
+
+.b-contain input:checked ~ .b-input {
+  /* background: rgb(255, 215, 68);
+  background: linear-gradient(
+    315deg,
+    rgba(162, 250, 76, 1) 0%,
+    rgba(255, 215, 68, 1) 100%
+  ); */
+  background: white;
+}
+
+/* .b-contain input[type="checkbox"]:disabled ~ .b-input {
+  background: rgba(241, 245, 248, 1);
+  border-color: rgba(184, 194, 204, 1);
+  opacity: 0.6;
+  cursor: not-allowed;
+} */
+
+/* .b-contain .b-input::before {
+  visibility: hidden;
+} */
+
+/* .b-contain input:focus + .b-input::before {
+  visibility: visible;
+} */
+
+/* .b-contain:first-child .b-input::before {
+  visibility: hidden;
+} */

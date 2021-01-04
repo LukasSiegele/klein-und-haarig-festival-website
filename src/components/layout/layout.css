@@ -1,0 +1,262 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  --color-primary: rgba(255, 115, 33, 1);
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+@font-face {
+  font-family: "GT-Walsheim-Pro-Black";
+  src: local("GT-Walsheim-Pro-Black"),
+    url(../../../static/fonts/GT-Walsheim/GT-Walsheim-Black-Trial.woff2)
+      format("woff2");
+}
+
+@font-face {
+  font-family: "GT-Alpina-Fine-Thin";
+  src: local("GT-Alpina-Fine-Thin"),
+    url(../../../static/fonts/GT-Alpina/GT-Alpina-Fine-Thin-Trial.woff2)
+      format("woff2");
+}
+
+@font-face {
+  font-family: "GT-Walsheim-Medium";
+  src: local("GT-Walsheim-Medium"),
+    url(../../../static/fonts/GT-Walsheim/GT-Walsheim-Medium-Trial.woff2)
+      format("woff2");
+}
+
+body {
+  line-height: 1;
+  font-family: GT-Walsheim-Pro-Black;
+  font-size: 20px;
+  line-height: 1.3;
+  color: black;
+  background-color: black;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: GT-Alpina-Fine-Thin;
+  font-weight: 50;
+  /* font-size: 7em; */
+  font-size: 9vw;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 0.68em;
+}
+
+h2 {
+  font-family: GT-Walsheim-Medium;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-family: GT-Walsheim-Medium;
+  font-size: 1em;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+  h1 {
+    font-size: 16vw;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 18vw;
+  }
+}
+
+button {
+  /* background: linear-gradient(
+    90deg,
+    rgba(255, 115, 33, 1) 0%,
+    rgba(255, 33, 33, 1) 100%
+  ); */
+  /* background: #99e035; */
+  background: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  font-family: GT-Walsheim-Pro-Black;
+  /* box-shadow: 0 10px 20px rgba(255, 115, 33, 0.3); */
+  /* box-shadow: 0 10px 20px rgba(170, 250, 59, 0.4); */
+  transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+button:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
