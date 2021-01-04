@@ -12,7 +12,7 @@ export default function TicketSection() {
   const [isAuto, setIsAuto] = useState(false)
   const [isCamper, setIsCamper] = useState(false)
 
-  const [summary, setSummary] = useState(70)
+  const [summary, setSummary] = useState("70")
 
   // const loaded1 = useRef(false)
   const loaded2 = useRef(false)
