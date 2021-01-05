@@ -8,31 +8,43 @@ import { navigate } from "gatsby"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 
 export default function Summary({ location }) {
+  const { state = {} } = location
+  const {
+    sumTickets,
+    firstName,
+    lastName,
+    email,
+    phone,
+    streetHouseNumber,
+    postcode,
+    city,
+    datenspeicherung,
+    vereinsbeitritt,
+    newsletter,
+  } = state
+
   const [ticketType, setTicketType] = useState("")
   const [ticketPrice, setTicketPrice] = useState(0)
   const [festivalTicket, setFestivalTicket] = useState("ja")
   const [autoTicket, setAutoTicket] = useState("nein")
   const [camperTicket, setCamperTicket] = useState("nein")
-  const [email, setEmail] = useState(location.state.email)
-  const [newsletterText, setNewsletterText] = useState(
-    location.state.newsletter
-  )
+  // const [sumEmail, setSumEmail] = useState(email)
+  const [newsletterText, setNewsletterText] = useState(newsletter)
 
   // POST TO — AIRTABLE
   const submit = e => {
     e.preventDefault()
-    const postcodeInt = parseInt(location.state.postcode, 10)
 
     addToMailchimp(email, {
-      FNAME: location.state.firstName,
-      LNAME: location.state.lastName,
-      PHONE: location.state.phone,
-      STREETNUMB: location.state.streetHouseNumber,
-      POSTCODE: location.state.postcode,
-      CITY: location.state.city,
-      DATASAVE: location.state.datenspeicherung,
-      VEREIN: location.state.vereinsbeitritt,
-      NEWSLETTER: location.state.newsletter,
+      FNAME: firstName,
+      LNAME: lastName,
+      PHONE: phone,
+      STREETNUMB: streetHouseNumber,
+      POSTCODE: postcode,
+      CITY: city,
+      DATASAVE: datenspeicherung,
+      VEREIN: vereinsbeitritt,
+      NEWSLETTER: newsletter,
       TFESTIVAL: festivalTicket,
       TAUTO: autoTicket,
       TCAMPER: camperTicket,
@@ -56,8 +68,8 @@ export default function Summary({ location }) {
       addToMailchimp(
         email,
         {
-          FNAME: location.state.firstName,
-          LNAME: location.state.lastName,
+          FNAME: firstName,
+          LNAME: lastName,
         },
         process.env.GATSBY_MAILCHIMP_API_NEWSLETTER
       )
@@ -65,7 +77,7 @@ export default function Summary({ location }) {
   }
 
   useEffect(() => {
-    setTicketPrice(location.state.sumTickets)
+    setTicketPrice(sumTickets)
     if (ticketPrice === 70) {
       setTicketType(
         "1x Festivalticket fuer 70€. Das Ticket ist personalisiert auf dich"
@@ -98,14 +110,12 @@ export default function Summary({ location }) {
           <form onSubmit={submit}>
             <Section>
               <Info>
-                Du reservierst {ticketType}, {location.state.firstName}{" "}
-                {location.state.lastName}, und werden per Post in die{" "}
-                {location.state.street} {location.state.houseNumber} nach
-                {location.state.postCode} {location.state.city} verschickt,
-                sobald du ueberwiesen hast. Dafuer hast du 7 Tage Zeit,
-                ansonsten verfaellt die Reservierung. Die Ueberweisungdaten und
-                zukuenftig alle weiteren Infos zum Festival 2021 schicken wir an{" "}
-                {location.state.email}.
+                Du reservierst {ticketType}, {firstName} {lastName}, und werden
+                per Post in die {streetHouseNumber} nach
+                {postcode} {city} verschickt, sobald du ueberwiesen hast. Dafuer
+                hast du 7 Tage Zeit, ansonsten verfaellt die Reservierung. Die
+                Ueberweisungdaten und zukuenftig alle weiteren Infos zum
+                Festival 2021 schicken wir an {email}.
               </Info>
               <Info>
                 Du bist mit der Datenspeicherung einverstanden und weisst dass
@@ -142,7 +152,6 @@ const Wrapper = styled.div`
 const Section = styled.div`
   margin-bottom: 60px;
 `
-const SectionTitle = styled.h3``
 
 const Info = styled.p`
   margin-top: 10px;

@@ -6,12 +6,15 @@ import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
 
 export default function Data({ location }) {
+  const { state = {} } = location
+  const { sumTickets } = state
+
   return (
     <Layout>
       <SEO title="Data" />
       <ShopTitle info="Schritt 2/3" title="Daten eingeben" />
       <Wrapper>
-        <Form sumTickets={location.state.sumTickets} />
+        <Form sumTickets={sumTickets} />
       </Wrapper>
     </Layout>
   )

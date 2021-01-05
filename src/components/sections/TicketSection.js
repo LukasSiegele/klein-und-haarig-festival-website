@@ -1,8 +1,7 @@
-import { Link } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import TicketCard from "../cards/TicketCard"
-// import ShoppingCart from "../shopping/ShoppingCart"
+import { Link } from "gatsby"
 import { themes } from "../styles/ColorStyles"
 import { HeaderText } from "../styles/TextStyles"
 import FormButton from "../buttons/FormButton"
@@ -92,7 +91,7 @@ export default function TicketSection() {
             <Summary>Insgesamt {summary || "0"} €</Summary>
           </SumWrapper>
           <WeiterWrapper>
-            <Link to={`/data`} state={{ sumTickets: summary }}>
+            <Link to="/data" state={{ sumTickets: summary }}>
               <FormButton label="Weiter" />
             </Link>
           </WeiterWrapper>
