@@ -68,7 +68,7 @@ export default function Summary({ location }) {
           FNAME: firstName,
           LNAME: lastName,
         },
-        process.env.GATSBY_MAILCHIMP_API_NEWSLETTER
+        process.env.REACT_APP_MAILCHIMP_API_NEWSLETTER
       )
     }
   }
