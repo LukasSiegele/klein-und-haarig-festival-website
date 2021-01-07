@@ -2,32 +2,17 @@ import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import TicketCard from "../cards/TicketCard"
 import { Link } from "gatsby"
-import { themes } from "../styles/ColorStyles"
-import { HeaderText } from "../styles/TextStyles"
 import FormButton from "../buttons/FormButton"
 
 export default function TicketSection() {
-  const [isFestival, setIsFestival] = useState(true)
+  const isFestival = true
   const [isAuto, setIsAuto] = useState(false)
   const [isCamper, setIsCamper] = useState(false)
 
-  const [summary, setSummary] = useState("70")
+  const [summary, setSummary] = useState(70)
 
-  // const loaded1 = useRef(false)
   const loaded2 = useRef(false)
   const loaded3 = useRef(false)
-
-  // useEffect(() => {
-  //   if (loaded1.current) {
-  //     if (isFestival) {
-  //       setSummary(summary + 50)
-  //     } else if (!isFestival) {
-  //       setSummary(summary - 50)
-  //     }
-  //   } else {
-  //     loaded1.current = true
-  //   }
-  // }, [isFestival])
 
   useEffect(() => {
     if (loaded2.current) {
@@ -62,9 +47,6 @@ export default function TicketSection() {
             price="70 €"
             details="3 Tage Festival mit Zeltplatz"
             isSelected={isFestival}
-            // handleSelection={() => {
-            //   setIsFestival(!isFestival)
-            // }}
           />
           <TicketCard
             title="Auto Ticket"
@@ -85,10 +67,9 @@ export default function TicketSection() {
             }}
           />
         </CardWrapper>
-        {/* <ShoppingCart sumTickets={summary} /> */}
         <ShoppingCartWrapper>
           <SumWrapper>
-            <Summary>Insgesamt {summary || "0"} €</Summary>
+            <Summary>Insgesamt {summary || 0} €</Summary>
           </SumWrapper>
           <WeiterWrapper>
             <Link to="/data" state={{ sumTickets: summary }}>
@@ -119,10 +100,6 @@ const CardWrapper = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
   }
-`
-
-const DetailText = styled(HeaderText)`
-  color: ${themes.acid.secondaryColor};
 `
 
 const ShoppingCartWrapper = styled.div`

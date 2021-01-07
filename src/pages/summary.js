@@ -24,12 +24,9 @@ export default function Summary({ location }) {
   } = state
 
   const [ticketType, setTicketType] = useState("")
-  const [ticketPrice, setTicketPrice] = useState(0)
-  const [festivalTicket, setFestivalTicket] = useState("ja")
+  const festivalTicket = "ja"
   const [autoTicket, setAutoTicket] = useState("nein")
   const [camperTicket, setCamperTicket] = useState("nein")
-  // const [sumEmail, setSumEmail] = useState(email)
-  const [newsletterText, setNewsletterText] = useState(newsletter)
 
   // POST TO — AIRTABLE
   const submit = e => {
@@ -64,7 +61,7 @@ export default function Summary({ location }) {
         )
       })
 
-    if (newsletterText) {
+    if (newsletter) {
       addToMailchimp(
         email,
         {
@@ -77,29 +74,28 @@ export default function Summary({ location }) {
   }
 
   useEffect(() => {
-    setTicketPrice(sumTickets)
-    if (ticketPrice === 70) {
+    if (sumTickets === 70) {
       setTicketType(
         "1x Festivalticket fuer 70€. Das Ticket ist personalisiert auf dich"
       )
-    } else if (ticketPrice === 75) {
+    } else if (sumTickets === 75) {
       setTicketType(
         "1x Festivalticket (70€) und 1x Autoparkplatz (5€) fuer insgesamt 75€. Die Tickets sind personalisiert auf dich"
       )
       setAutoTicket("ja")
-    } else if (ticketPrice === 80) {
+    } else if (sumTickets === 80) {
       setTicketType(
         "1x Festivalticket (70€) und 1x Camperstellplatz (10€) fuer insgesamt 80€. Die Tickets sind personalisiert auf dich"
       )
       setCamperTicket("ja")
-    } else if (ticketPrice === 85) {
+    } else if (sumTickets === 85) {
       setTicketType(
         "1x Festivalticket (70€), 1x Autoparkplatz (5€) und 1x Camperstellplatz (10€) fuer insagesamt 85€. Die Tickets sind personalisiert auf dich"
       )
       setAutoTicket("ja")
       setCamperTicket("nein")
     }
-  }, [ticketPrice])
+  }, [sumTickets])
 
   return (
     <Layout>
@@ -124,7 +120,7 @@ export default function Summary({ location }) {
               </Info>
               <Info>
                 Wir senden dir{" "}
-                {newsletterText
+                {newsletter
                   ? "zusätzlich zu den alle paar Monate mal einen Newsletter, der dich an das Festival erinnert."
                   : "keinen Newsletter."}{" "}
               </Info>
