@@ -1,5 +1,4 @@
 import React from "react"
-import "../components/layout/layout.css"
 import HeroSection from "../components/sections/HeroSection"
 import Message from "../components/sections/Message"
 import Layout from "../components/layout/layout"
