@@ -13,7 +13,11 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {},
+      options: {
+        displayName: false,
+      },
+    },
+    {
       resolve: "gatsby-plugin-mailchimp",
       options: {
         endpoint: REACT_APP_MAILCHIMP_API_TICKET, // string; add your MC list endpoint here; see instructions below
