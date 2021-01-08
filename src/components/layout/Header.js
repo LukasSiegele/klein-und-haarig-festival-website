@@ -38,7 +38,7 @@ const TicketWrapper = styled(Link)`
   align-items: center;
   justify-self: end;
 
-  * & :hover {
+  & > :hover {
     cursor: pointer;
   }
 `

@@ -7,6 +7,17 @@ import ShopTitle from "../components/shopping/ShopTitle"
 import { navigate } from "gatsby"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 
+// const products = [
+//   {
+//     name: "Festival Ticket",
+//     price: 70,
+//   },
+//   {
+//     name: "Auto Parkplatz",
+//     price: 5,
+//   },
+// ]
+
 export default function Summary({ location }) {
   const { state = {} } = location
   const {
@@ -24,6 +35,7 @@ export default function Summary({ location }) {
   } = state
 
   const [ticketType, setTicketType] = useState("")
+  const [products, setProducts] = useState([])
   const festivalTicket = "ja"
   const [autoTicket, setAutoTicket] = useState("nein")
   const [camperTicket, setCamperTicket] = useState("nein")
@@ -74,24 +86,49 @@ export default function Summary({ location }) {
   }
 
   useEffect(() => {
+    setProducts([])
     if (sumTickets === 70) {
-      setTicketType(
-        "1x Festivalticket fuer 70€. Das Ticket ist personalisiert auf dich"
-      )
+      setProducts(products => [
+        ...products,
+        {
+          ticket: "1x Festival Ticket 70 €",
+        },
+      ])
     } else if (sumTickets === 75) {
-      setTicketType(
-        "1x Festivalticket (70€) und 1x Autoparkplatz (5€) fuer insgesamt 75€. Die Tickets sind personalisiert auf dich"
-      )
+      setProducts(products => [
+        ...products,
+        {
+          ticket: "1x Festival Ticket 70 €",
+        },
+        {
+          ticket: "1x Auto Parkplatz 5 €",
+        },
+      ])
       setAutoTicket("ja")
     } else if (sumTickets === 80) {
-      setTicketType(
-        "1x Festivalticket (70€) und 1x Camperstellplatz (10€) fuer insgesamt 80€. Die Tickets sind personalisiert auf dich"
-      )
+      setProducts(products => [
+        ...products,
+        {
+          ticket: "1x Festival Ticket 70 €",
+        },
+        {
+          ticket: "1x Camper Stellplatz 10 €",
+        },
+      ])
       setCamperTicket("ja")
     } else if (sumTickets === 85) {
-      setTicketType(
-        "1x Festivalticket (70€), 1x Autoparkplatz (5€) und 1x Camperstellplatz (10€) fuer insagesamt 85€. Die Tickets sind personalisiert auf dich"
-      )
+      setProducts(products => [
+        ...products,
+        {
+          ticket: "1x Festival Ticket 70 €",
+        },
+        {
+          ticket: "1x Auto Parkplatz 5 €",
+        },
+        {
+          ticket: "1x Camper Stellplatz 10 €",
+        },
+      ])
       setAutoTicket("ja")
       setCamperTicket("nein")
     }
@@ -105,27 +142,90 @@ export default function Summary({ location }) {
         <Wrapper>
           <form onSubmit={submit}>
             <Section>
-              <Info>
-                Du reservierst {ticketType}, {firstName} {lastName}, und werden
-                per Post in die {streetHouseNumber} nach
-                {postcode} {city} verschickt, sobald du ueberwiesen hast. Dafuer
-                hast du 7 Tage Zeit, ansonsten verfaellt die Reservierung. Die
-                Ueberweisungdaten und zukuenftig alle weiteren Infos zum
-                Festival 2021 schicken wir an {email}.
-              </Info>
-              <Info>
-                Du bist mit der Datenspeicherung einverstanden und weisst dass
-                du fuer den Zeitraum des Festivals unserem Verein Bunte Platte
-                e.V beitretest, aus dem du danach automatisch austretest.
-              </Info>
-              <Info>
-                Wir senden dir{" "}
-                {newsletter
-                  ? "zusätzlich zu den alle paar Monate mal einen Newsletter, der dich an das Festival erinnert."
-                  : "keinen Newsletter."}{" "}
-              </Info>
+              <Group>
+                <Value>Tickets</Value>
+                <InfoGroup>
+                  {products.map(product => (
+                    <Info>{product.ticket}</Info>
+                  ))}
+                </InfoGroup>
+              </Group>
             </Section>
-            <FormButton typ="submit" label="Ticket(s) reservieren"></FormButton>
+            <Section>
+              <Group>
+                <Value>Du</Value>
+                <Info>
+                  {firstName} {lastName}
+                </Info>
+              </Group>
+              <Group>
+                <Value>Mail</Value>
+                <Info>{email}</Info>
+              </Group>
+              <Group>
+                <Value>Phone</Value>
+                <Info>{phone || "-"}</Info>
+              </Group>
+              <Group>
+                <Value>Adresse</Value>
+                <Info>
+                  {streetHouseNumber}, {postcode}, {city}
+                </Info>
+              </Group>
+              <Group>
+                <Value>Datenspeicherung</Value>
+                <Info>{datenspeicherung ? "Ja" : "Nein"}</Info>
+              </Group>
+              <Group>
+                <Value>Vereinsbeitritt</Value>
+                <Info>{vereinsbeitritt ? "Ja" : "Nein"}</Info>
+              </Group>
+              <Group>
+                <Value>Newsletter</Value>
+                <Info>{newsletter ? "Ja" : "Nein"}</Info>
+              </Group>
+            </Section>
+            <Section>
+              <Group>
+                <Value>Überweisung an</Value>
+                <Info>Bunte Platte e.V</Info>
+              </Group>
+              <Group>
+                <Value>Betrag</Value>
+                <Info>{sumTickets} €</Info>
+              </Group>
+              <Group>
+                <Value>IBAN</Value>
+                <Info>DE 1001 10001 2787 2983 77</Info>
+              </Group>
+              <Group>
+                <Value>BIC</Value>
+                <Info>SOLADES1</Info>
+              </Group>
+              <Group>
+                <Value>Verwendungszweck</Value>
+                <Info>
+                  {firstName} {lastName} KUH2021
+                </Info>
+              </Group>
+            </Section>
+            <Section>
+              <Group>
+                <Value>Info</Value>
+                <Info>
+                  Der Betrag muss innerhalb 7 Tage bei uns einegegangen sein,
+                  ansonsten verfällt die Reservierung. Die Überweisungsdaten
+                  erhälst du zusätzlich in einer Mail, nachdem du auf den
+                  folgenden Button geklickt hast.
+                </Info>
+              </Group>
+            </Section>
+            <ButtonGroup>
+              <FormButton
+                typ="submit"
+                label="Daten abschicken und Tickets reservieren"
+              ></FormButton>
+            </ButtonGroup>
           </form>
         </Wrapper>
       </Container>
@@ -137,18 +237,37 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  background: white;
 `
 
 const Wrapper = styled.div`
-  height: 800px;
   max-width: 800px;
+  padding: 10px 0 200px 0;
 `
 
 const Section = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 `
 
-const Info = styled.p`
+const Group = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+`
+
+const Value = styled.h4`
+  color: rgba(255, 255, 255, 0.5);
   margin-top: 10px;
+  justify-self: right;
+`
+
+const InfoGroup = styled.h4``
+
+const Info = styled.h4`
+  color: white;
+  margin-top: 10px;
+`
+
+const ButtonGroup = styled.div`
+  /* margin-top: 80px; */
+  padding: 40px 120px 0;
 `
