@@ -6,17 +6,14 @@ import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
 import { navigate } from "gatsby"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import Airtable from "airtable"
+import useAudienceCount from "../helper/useAudienceCount"
 
-// const products = [
-//   {
-//     name: "Festival Ticket",
-//     price: 70,
-//   },
-//   {
-//     name: "Auto Parkplatz",
-//     price: 5,
-//   },
-// ]
+const base = new Airtable({
+  apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+}).base("appM9sxaMNG520zPv")
+
+const table = base("Teilnehmer 2021")
 
 export default function Summary({ location }) {
   const { state = {} } = location
@@ -34,54 +31,76 @@ export default function Summary({ location }) {
     newsletter,
   } = state
 
-  const [ticketType, setTicketType] = useState("")
+  // const [ticketType, setTicketType] = useState("")
   const [products, setProducts] = useState([])
   const festivalTicket = "ja"
   const [autoTicket, setAutoTicket] = useState("nein")
   const [camperTicket, setCamperTicket] = useState("nein")
+  const audienceCount = useAudienceCount()
+  console.log("hook count: " + audienceCount)
+  const audienceLimit = 102
 
   // POST TO — AIRTABLE
   const submit = e => {
     e.preventDefault()
 
-    addToMailchimp(email, {
-      FNAME: firstName,
-      LNAME: lastName,
-      PHONE: phone,
-      STREETNUMB: streetHouseNumber,
-      POSTCODE: postcode,
-      CITY: city,
-      DATASAVE: datenspeicherung,
-      VEREIN: vereinsbeitritt,
-      NEWSLETTER: newsletter,
-      TFESTIVAL: festivalTicket,
-      TAUTO: autoTicket,
-      TCAMPER: camperTicket,
-    })
-      .then(({ msg, result }) => {
-        console.log("msg", `${result}: ${msg}`)
-
-        if (result !== "success") {
-          throw msg
-        }
-        // alert(msg)
-        navigate("/submitted")
+    if (audienceCount < audienceLimit) {
+      addToMailchimp(email, {
+        FNAME: firstName,
+        LNAME: lastName,
+        PHONE: phone,
+        STREETNUMB: streetHouseNumber,
+        POSTCODE: postcode,
+        CITY: city,
+        DATASAVE: datenspeicherung,
+        VEREIN: vereinsbeitritt,
+        NEWSLETTER: newsletter,
+        TFESTIVAL: festivalTicket,
+        TAUTO: autoTicket,
+        TCAMPER: camperTicket,
       })
-      .catch(err => {
-        alert(
-          "Auf diese Email läuft schon ein Festivalticket! Falls das nicht stimmt oder du nachträglich ein Auto/Camper Ticket kaufen möchtest wende dich bitte an ticket@bunteplatte.de"
+        .then(({ msg, result }) => {
+          console.log("msg", `${result}: ${msg}`)
+
+          if (result !== "success") {
+            throw msg
+          }
+          // alert(msg)
+          table
+            .create([
+              {
+                fields: {
+                  Vorname: firstName,
+                  Nachname: lastName,
+                  Email: email,
+                  Festival: festivalTicket,
+                  Auto: autoTicket,
+                  Camper: camperTicket,
+                },
+              },
+            ])
+            .then(() => {
+              navigate("/submitted")
+            })
+        })
+        .catch(err => {
+          alert(
+            "Auf diese Email läuft schon ein Festivalticket! Falls das nicht stimmt oder du nachträglich ein Auto/Camper Ticket kaufen möchtest wende dich bitte an ticket@bunteplatte.de"
+          )
+        })
+
+      if (newsletter) {
+        addToMailchimp(
+          email,
+          {
+            FNAME: firstName,
+            LNAME: lastName,
+          },
+          process.env.GATSBY_MAILCHIMP_API_NEWSLETTER
         )
-      })
-
-    if (newsletter) {
-      addToMailchimp(
-        email,
-        {
-          FNAME: firstName,
-          LNAME: lastName,
-        },
-        process.env.GATSBY_MAILCHIMP_API_NEWSLETTER
-      )
+      }
+    } else {
+      navigate("/voll")
     }
   }
 
@@ -200,7 +219,7 @@ export default function Summary({ location }) {
               </Group>
               <Group>
                 <Value>BIC</Value>
-                <Info>SOLADES1</Info>
+                <Info>{audienceCount}</Info>
               </Group>
               <Group>
                 <Value>Verwendungszweck</Value>
