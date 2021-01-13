@@ -5,38 +5,14 @@ import { Link } from "gatsby"
 import FormButton from "../buttons/FormButton"
 
 export default function TicketSection() {
-  const isFestival = true
+  const [isFestival, setIsFestival] = useState(false)
+  const festivalPrice = 70
   const [isAuto, setIsAuto] = useState(false)
+  const autoPrice = 5
   const [isCamper, setIsCamper] = useState(false)
+  const camperPrice = 10
 
-  const [summary, setSummary] = useState(70)
-
-  const loaded2 = useRef(false)
-  const loaded3 = useRef(false)
-
-  useEffect(() => {
-    if (loaded2.current) {
-      if (isAuto) {
-        setSummary(summary + 5)
-      } else if (!isAuto) {
-        setSummary(summary - 5)
-      }
-    } else {
-      loaded2.current = true
-    }
-  }, [isAuto])
-
-  useEffect(() => {
-    if (loaded3.current) {
-      if (isCamper) {
-        setSummary(summary + 10)
-      } else if (!isCamper) {
-        setSummary(summary - 10)
-      }
-    } else {
-      loaded3.current = true
-    }
-  }, [isCamper])
+  const [summary, setSummary] = useState(0)
 
   return (
     <Wrapper>
@@ -47,6 +23,14 @@ export default function TicketSection() {
             price="70 €"
             details="3 Tage Festival mit Zeltplatz"
             isSelected={isFestival}
+            handleSelection={() => {
+              setIsFestival(!isFestival)
+              if (!isFestival) {
+                setSummary(summary + festivalPrice)
+              } else {
+                setSummary(summary - festivalPrice)
+              }
+            }}
           />
           <TicketCard
             title="Auto Ticket"
@@ -55,6 +39,11 @@ export default function TicketSection() {
             isSelected={isAuto}
             handleSelection={() => {
               setIsAuto(!isAuto)
+              if (!isAuto) {
+                setSummary(summary + autoPrice)
+              } else {
+                setSummary(summary - autoPrice)
+              }
             }}
           />
           <TicketCard
@@ -64,6 +53,11 @@ export default function TicketSection() {
             isSelected={isCamper}
             handleSelection={() => {
               setIsCamper(!isCamper)
+              if (!isCamper) {
+                setSummary(summary + camperPrice)
+              } else {
+                setSummary(summary - camperPrice)
+              }
             }}
           />
         </CardWrapper>

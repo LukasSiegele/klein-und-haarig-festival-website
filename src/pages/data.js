@@ -12,7 +12,7 @@ export default function Data({ location }) {
   return (
     <Layout>
       <SEO title="Data" />
-      <ShopTitle info="Schritt 2/3" title="Daten eingeben" />
+      <ShopTitle info="Schritt 2/3" title="Ticket personalisieren" />
       <Wrapper>
         <Form sumTickets={sumTickets} />
       </Wrapper>
