@@ -8,7 +8,7 @@ export default function Tickets() {
   return (
     <Layout>
       <SEO title="Tickets" />
-      <ShopTitle info="Schritt 1/3" title="Tickets auswaehlen" />
+      <ShopTitle info="Schritt 1/4" title="Tickets auswaehlen" />
       <TicketSection />
     </Layout>
   )

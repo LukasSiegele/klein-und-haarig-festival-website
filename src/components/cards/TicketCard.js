@@ -7,7 +7,7 @@ import { animations } from "../styles/AnimationStyles"
 export default function TicketCard(props) {
   return (
     <Wrapper isSelected={props.isSelected} onClick={props.handleSelection}>
-      <Title> {props.title}</Title>
+      <Title titleSize={props.titleSize}> {props.title}</Title>
       <Price>{props.price}</Price>
       <DetailWrapper>
         <Details>{props.details}</Details>
@@ -36,6 +36,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 64px;
+  font-size: ${props => props.titleSize};
   text-transform: none;
   margin: 30px 0px;
   :hover {

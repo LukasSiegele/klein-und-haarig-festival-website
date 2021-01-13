@@ -19,6 +19,7 @@ export default function Summary({ location }) {
   const { state = {} } = location
   const {
     sumTickets,
+    spende,
     firstName,
     lastName,
     email,
@@ -58,6 +59,7 @@ export default function Summary({ location }) {
         TFESTIVAL: festivalTicket,
         TAUTO: autoTicket,
         TCAMPER: camperTicket,
+        SPENDE: spende,
       })
         .then(({ msg, result }) => {
           console.log("msg", `${result}: ${msg}`)
@@ -76,6 +78,7 @@ export default function Summary({ location }) {
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
+                  Spende: spende,
                 },
               },
             ])
@@ -156,7 +159,7 @@ export default function Summary({ location }) {
   return (
     <Layout>
       <SEO title="Summary" />
-      <ShopTitle info="Schritt 3/3" title="Schick ab datt Ding" />
+      <ShopTitle info="Schritt 4/4" title="Schick ab datt Ding" />
       <Container>
         <Wrapper>
           <form onSubmit={submit}>

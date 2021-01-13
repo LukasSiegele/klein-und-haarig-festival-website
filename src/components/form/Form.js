@@ -21,6 +21,7 @@ export default function Form(props) {
     navigate("/summary", {
       state: {
         sumTickets: props.sumTickets,
+        spende: props.spende,
         firstName: firstName,
         lastName: lastName,
         email: email,

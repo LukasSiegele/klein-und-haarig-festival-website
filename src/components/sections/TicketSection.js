@@ -5,14 +5,14 @@ import { Link } from "gatsby"
 import FormButton from "../buttons/FormButton"
 
 export default function TicketSection() {
-  const [isFestival, setIsFestival] = useState(false)
-  const festivalPrice = 70
+  const [isFestival, setIsFestival] = useState(true)
+  const festivalPrice = 75
   const [isAuto, setIsAuto] = useState(false)
   const autoPrice = 5
   const [isCamper, setIsCamper] = useState(false)
   const camperPrice = 10
 
-  const [summary, setSummary] = useState(0)
+  const [summary, setSummary] = useState(festivalPrice)
 
   return (
     <Wrapper>
@@ -20,21 +20,21 @@ export default function TicketSection() {
         <CardWrapper>
           <TicketCard
             title="Festival Ticket"
-            price="70 €"
+            price={festivalPrice + " €"}
             details="3 Tage Festival mit Zeltplatz"
             isSelected={isFestival}
-            handleSelection={() => {
-              setIsFestival(!isFestival)
-              if (!isFestival) {
-                setSummary(summary + festivalPrice)
-              } else {
-                setSummary(summary - festivalPrice)
-              }
-            }}
+            // handleSelection={() => {
+            //   setIsFestival(!isFestival)
+            //   if (!isFestival) {
+            //     setSummary(summary + festivalPrice)
+            //   } else {
+            //     setSummary(summary - festivalPrice)
+            //   }
+            // }}
           />
           <TicketCard
             title="Auto Ticket"
-            price="5 €"
+            price={autoPrice + " €"}
             details="Parkplatz am Festivalgelände"
             isSelected={isAuto}
             handleSelection={() => {
@@ -48,7 +48,7 @@ export default function TicketSection() {
           />
           <TicketCard
             title="Camper Ticket"
-            price="10 €"
+            price={camperPrice + " €"}
             details="Camperstellplatz auf dem Gelände"
             isSelected={isCamper}
             handleSelection={() => {
@@ -66,7 +66,7 @@ export default function TicketSection() {
             <Summary>Insgesamt {summary || 0} €</Summary>
           </SumWrapper>
           <WeiterWrapper>
-            <Link to="/data" state={{ sumTickets: summary }}>
+            <Link to="/spenden" state={{ sumTickets: summary }}>
               <FormButton label="Weiter" />
             </Link>
           </WeiterWrapper>
