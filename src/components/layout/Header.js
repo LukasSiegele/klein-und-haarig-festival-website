@@ -2,13 +2,20 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { HeaderText } from "../styles/TextStyles"
+import useAudienceCount from "../../helper/useAudienceCount"
 
 export default function Header() {
+  const audienceCount = useAudienceCount()
+  const maxAudience = 102
+  console.log(audienceCount)
+
   return (
     <Wrapper>
       <Home></Home>
-      <TicketWrapper to="/ticket">
-        <TicketText>Tickets</TicketText>
+      <TicketWrapper to={audienceCount < maxAudience ? "/ticket" : "/voll"}>
+        <TicketText>
+          {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
+        </TicketText>
       </TicketWrapper>
     </Wrapper>
   )
@@ -30,6 +37,10 @@ const Home = styled(HeaderText)`
 `
 
 const TicketWrapper = styled(Link)`
+  animation: TicketButtonAnimation 1.3s 3s forwards
+    cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
   background: black;
   height: 48px;
   padding: 6px 25px;
@@ -40,6 +51,20 @@ const TicketWrapper = styled(Link)`
 
   & > :hover {
     cursor: pointer;
+  }
+
+  @keyframes TicketButtonAnimation {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
   }
 `
 

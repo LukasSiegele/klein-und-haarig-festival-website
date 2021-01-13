@@ -240,10 +240,12 @@ export default function Summary({ location }) {
               </Group>
             </Section>
             <ButtonGroup>
-              <FormButton
-                typ="submit"
-                label="Daten abschicken und Tickets reservieren"
-              ></FormButton>
+              <ButtonWrapper>
+                <FormButton
+                  typ="submit"
+                  label="Daten abschicken und Tickets reservieren"
+                ></FormButton>
+              </ButtonWrapper>
             </ButtonGroup>
           </form>
         </Wrapper>
@@ -287,6 +289,13 @@ const Info = styled.h4`
 `
 
 const ButtonGroup = styled.div`
+  display: grid;
+  justify-content: center;
   /* margin-top: 80px; */
-  padding: 40px 120px 0;
+
+  padding: 40px 40px;
+`
+
+const ButtonWrapper = styled.div`
+  max-width: 500px;
 `

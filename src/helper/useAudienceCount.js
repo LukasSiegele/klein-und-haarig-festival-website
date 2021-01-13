@@ -14,7 +14,6 @@ export default function useAudienceCount() {
       .select({ view: "Grid" })
       .eachPage((records, fetchNextPage) => {
         setAudienceCount(audienceCount => audienceCount + records.length)
-
         fetchNextPage()
       })
   }, [])
