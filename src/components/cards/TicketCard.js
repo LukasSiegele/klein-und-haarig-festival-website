@@ -10,7 +10,9 @@ export default function TicketCard(props) {
       <Title titleSize={props.titleSize}> {props.title}</Title>
       <Price>{props.price}</Price>
       <DetailWrapper>
-        <Details>{props.details}</Details>
+        <DetailsGrid>
+          <Details>{props.details}</Details>
+        </DetailsGrid>
       </DetailWrapper>
     </Wrapper>
   )
@@ -55,10 +57,19 @@ const Price = styled.h4`
 const DetailWrapper = styled.div`
   position: absolute;
   width: 160px;
-  bottom: 75px;
-  right: -40px;
+  bottom: -30px;
+  right: -90px;
+  height: 52px;
+
+  display: grid;
+  align-items: bottom;
+`
+
+const DetailsGrid = styled.div`
+  transform-origin: top left;
+  transform: rotate(-90deg);
 `
 
 const Details = styled.h4`
-  transform: rotate(-90deg);
+  height: auto;
 `

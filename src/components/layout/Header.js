@@ -3,11 +3,17 @@ import React from "react"
 import styled from "styled-components"
 import { HeaderText } from "../styles/TextStyles"
 import useAudienceCount from "../../helper/useAudienceCount"
+import useAutoCount from "../../helper/useAutoCount"
 
 export default function Header() {
+  // Audience Cuunt
   const audienceCount = useAudienceCount()
   const maxAudience = 102
   console.log(audienceCount)
+
+  // Auto Count
+  const autoCount = useAutoCount()
+  console.log(autoCount)
 
   return (
     <Wrapper>
