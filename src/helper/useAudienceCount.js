@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Airtable from "airtable"
 
 const base = new Airtable({
-  apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+  apiKey: process.env.GATSBY_APP_AIRTABLE_API_KEY,
 }).base("appM9sxaMNG520zPv")
 
 export default function useAudienceCount() {

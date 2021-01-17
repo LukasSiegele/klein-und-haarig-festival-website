@@ -10,7 +10,7 @@ import Airtable from "airtable"
 import useAudienceCount from "../helper/useAudienceCount"
 
 const base = new Airtable({
-  apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+  apiKey: process.env.GATSBY_APP_AIRTABLE_API_KEY,
 }).base("appM9sxaMNG520zPv")
 
 const table = base("Teilnehmer 2021")
