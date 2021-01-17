@@ -61,6 +61,14 @@ export default function TicketSection() {
             }}
           />
         </CardWrapper>
+        <InfoWrapper>
+          <div />
+          <ParkInfo>
+            Parken — Auch wenn es keine Parktickets mehr gibt kann zum Be- und
+            Entladen vorgefahren und anschließend in der Nähe geparkt werden.
+            Außerdem ist unser Gelände problemlos mit den Öffis erreichbar.
+          </ParkInfo>
+        </InfoWrapper>
         <ShoppingCartWrapper>
           <SumWrapper>
             <Summary>Insgesamt {summary || 0} €</Summary>
@@ -82,10 +90,11 @@ const Wrapper = styled.div`
   justify-content: center;
 `
 
-const Content = styled.div``
+const Content = styled.div`
+  max-width: 800px;
+`
 
 const CardWrapper = styled.div`
-  max-width: 800px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -99,7 +108,6 @@ const CardWrapper = styled.div`
 const ShoppingCartWrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 0 120px;
-  max-width: 800px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -108,6 +116,17 @@ const ShoppingCartWrapper = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
   }
+`
+
+const InfoWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 0 0 40px;
+`
+const ParkInfo = styled.h4`
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
 `
 
 const SumWrapper = styled.div``

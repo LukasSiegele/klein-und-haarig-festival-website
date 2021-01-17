@@ -5,21 +5,21 @@ const base = new Airtable({
   apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
 }).base("appM9sxaMNG520zPv")
 
-export default function useAutoCount() {
-  const [autoCount, setAutoCount] = useState(0)
+export default function useCamperCount() {
+  const [camperCount, setCamperCount] = useState(0)
 
   useEffect(() => {
     base("Teilnehmer 2021")
       .select({ view: "Grid" })
       .eachPage((records, fetchNextPage) => {
         records.map(items => {
-          if (items.fields.Auto === "ja") {
-            setAutoCount(autoCount => autoCount + 1)
+          if (items.fields.Camper === "ja") {
+            setCamperCount(camperCount => camperCount + 1)
           }
         })
         fetchNextPage()
       })
   }, [])
 
-  return autoCount
+  return camperCount
 }

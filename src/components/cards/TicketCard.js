@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { animations } from "../styles/AnimationStyles"
-// import { themes } from "../styles/ColorStyles"
-// import { H1, H3 } from "../styles/TextStyles"
 
 export default function TicketCard(props) {
   return (
@@ -10,9 +8,7 @@ export default function TicketCard(props) {
       <Title titleSize={props.titleSize}> {props.title}</Title>
       <Price>{props.price}</Price>
       <DetailWrapper>
-        <DetailsGrid>
-          <Details>{props.details}</Details>
-        </DetailsGrid>
+        <Details>{props.details}</Details>
       </DetailWrapper>
     </Wrapper>
   )
@@ -57,19 +53,10 @@ const Price = styled.h4`
 const DetailWrapper = styled.div`
   position: absolute;
   width: 160px;
-  bottom: -30px;
-  right: -90px;
-  height: 52px;
-
-  display: grid;
-  align-items: bottom;
-`
-
-const DetailsGrid = styled.div`
-  transform-origin: top left;
-  transform: rotate(-90deg);
+  bottom: 75px;
+  right: -40px;
 `
 
 const Details = styled.h4`
-  height: auto;
+  transform: rotate(-90deg);
 `
