@@ -37,6 +37,8 @@ export default function Summary({ location }) {
   const festivalTicket = "ja"
   const [autoTicket, setAutoTicket] = useState("nein")
   const [camperTicket, setCamperTicket] = useState("nein")
+
+  // Audience Count
   const audienceCount = useAudienceCount()
   console.log("hook count: " + audienceCount)
   const audienceLimit = 102

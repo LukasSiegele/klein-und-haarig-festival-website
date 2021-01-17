@@ -19,6 +19,9 @@ export default function Footer() {
           <Imprint>
             <Link to="/imprint">Impressum</Link>
           </Imprint>
+          <Datenschutz>
+            <Link to="/privacy">Datenschutz</Link>
+          </Datenschutz>
           <Kontakt>
             <a href="mailto:info@kleinundhaarig.de">Kontakt</a>
           </Kontakt>
@@ -31,9 +34,14 @@ export default function Footer() {
 const Wrapper = styled.div`
   background-color: black;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 40px 40px 120px;
+  padding: 40px 40px 80px;
   @media (max-width: 768px) {
     padding-bottom: 80px;
+  }
+
+  a {
+    padding-bottom: 0px;
+    border-bottom: 0px;
   }
 `
 
@@ -68,8 +76,8 @@ const WrapperLeft = styled.div`
 
 const WrapperRight = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
   justify-items: right;
 
   /* > * {
@@ -85,5 +93,7 @@ const WrapperRight = styled.div`
 `
 
 const Imprint = styled.div``
+
+const Datenschutz = styled.div``
 
 const Kontakt = styled.div``

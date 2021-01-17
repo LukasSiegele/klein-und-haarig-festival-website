@@ -31,6 +31,9 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-content: space-evenly;
   align-items: center;
+  a {
+    border-bottom: 0px;
+  }
 `
 
 const Home = styled(HeaderText)`

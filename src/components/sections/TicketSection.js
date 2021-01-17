@@ -62,7 +62,7 @@ export default function TicketSection() {
           />
         </CardWrapper>
         <InfoWrapper>
-          <div />
+          <InfoBlock />
           <ParkInfo>
             Parken — Auch wenn es keine Parktickets mehr gibt kann zum Be- und
             Entladen vorgefahren und anschließend in der Nähe geparkt werden.
@@ -102,6 +102,7 @@ const CardWrapper = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
   }
 `
 
@@ -115,6 +116,7 @@ const ShoppingCartWrapper = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    justify-conten: center;
   }
 `
 
@@ -123,7 +125,17 @@ const InfoWrapper = styled.div`
   grid-template-columns: 1fr 2fr;
   gap: 30px;
   padding: 0 0 40px;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `
+
+const InfoBlock = styled.div`
+  @media (max-width: 800px) {
+    display: none;
+  }
+`
+
 const ParkInfo = styled.h4`
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);

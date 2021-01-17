@@ -148,7 +148,7 @@ section {
 
 body {
   line-height: 1;
-  font-family: GT-Walsheim-Pro-Black;
+  font-family: GT-Walsheim-Medium;
   font-size: 20px;
   line-height: 1.3;
   color: black;
@@ -183,6 +183,8 @@ table {
 a {
   color: white;
   text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid white;
 }
 
 a:hover {
@@ -205,6 +207,7 @@ h2 {
 }
 
 h3 {
+  font-family: GT-Walsheim-Pro-Black;
   font-size: 2em;
 }
 
