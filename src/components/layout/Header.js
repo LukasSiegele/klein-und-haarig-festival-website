@@ -72,6 +72,9 @@ const TicketWrapper = styled(Link)`
   }
 `
 
-const TicketText = styled(HeaderText)`
+const TicketText = styled.h3`
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
   color: white;
 `

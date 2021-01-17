@@ -46,7 +46,6 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  font-family: GT-Walsheim-Medium;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;

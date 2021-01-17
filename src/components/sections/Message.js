@@ -55,7 +55,6 @@ const MessageWrapper = styled.div`
   display: grid;
   justify-items: center;
   padding: 0 40px;
-  font-family: GT-Walsheim-Medium;
 
   @media (max-width: 768px) {
     max-width: 100%;
