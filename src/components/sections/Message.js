@@ -70,6 +70,6 @@ const MessageText = styled.h2`
 
 const MessageLink = styled.a`
   text-align: center;
-  padding-bottom: 5px;
+  padding-bottom: 5 px;
   border-bottom: 1px solid white;
 `

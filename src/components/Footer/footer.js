@@ -83,7 +83,7 @@ const WrapperRight = styled.div`
       opacity: 0.5;
     } */
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     grid-template-rows: repeat(3, 0.1fr);
     grid-template-columns: auto;
     justify-items: right;

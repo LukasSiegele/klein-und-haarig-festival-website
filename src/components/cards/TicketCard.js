@@ -7,7 +7,7 @@ export default function TicketCard(props) {
     <Wrapper isSelected={props.isSelected} onClick={props.handleSelection}>
       <Title titleSize={props.titleSize}> {props.title}</Title>
       <Price>{props.price}</Price>
-      <DetailWrapper>
+      <DetailWrapper isSelected={props.isSelected}>
         <Details>{props.details}</Details>
       </DetailWrapper>
     </Wrapper>
@@ -55,6 +55,11 @@ const DetailWrapper = styled.div`
   width: 160px;
   bottom: 75px;
   right: -40px;
+
+  a  {
+    color: ${props => (props.isSelected ? "black" : "white")};
+    border-color: ${props => (props.isSelected ? "black" : "white")};
+  }
 `
 
 const Details = styled.h4`

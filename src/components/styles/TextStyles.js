@@ -29,6 +29,7 @@ export const H3 = styled.h3`
 export const PageHeader = styled.h3`
   font-family: GT-Alpina-Fine-Thin;
   font-size: 35px;
+  font-weight: 100;
   color: white;
 `
 
