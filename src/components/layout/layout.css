@@ -152,8 +152,8 @@ section {
 body {
   line-height: 1;
   font-family: GT-Walsheim-Medium;
-  /* font-family: "Roboto", sans-serif;
-  font-family: "Helvetica", sans-serif; */
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Helvetica", sans-serif; */
   /* font-family: "Open Sans";
   font-family: "HelveticaNeue", sans-serif; */
   font-weight: 500;
@@ -215,8 +215,8 @@ h2 {
 
 h3 {
   font-family: GT-Walsheim-Pro-Black;
-  /* font-family: "Roboto", sans-serif;
-  font-family: "Helvetica", sans-serif; */
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Helvetica", sans-serif; */
   /* font-family: "Open Sans";
   font-family: "HelveticaNeue", sans-serif; */
   font-weight: 900;
@@ -268,8 +268,8 @@ button {
 
   letter-spacing: 0.06em;
   font-family: GT-Walsheim-Pro-Black;
-  /* font-family: "Roboto", sans-serif;
-  font-family: "Helvetica", sans-serif; */
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Helvetica", sans-serif; */
   font-weight: 900;
   /* font-family: "Open Sans";
   font-family: "HelveticaNeue", sans-serif; */
