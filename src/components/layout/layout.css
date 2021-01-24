@@ -126,13 +126,7 @@ section {
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Roboto:wght@500;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap");
-/* @font-face {
-  font-family: "GT-Walsheim-Pro-Black";
-  src: local("GT-Walsheim-Pro-Black"),
-    url(../../../static/fonts/GT-Walsheim/GT-Walsheim-Black-Trial.woff2)
-      format("woff2");
-} */
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap"); */
 
 @font-face {
   font-family: "GT-Alpina-Fine-Thin";
@@ -148,10 +142,18 @@ section {
       format("woff2");
 }
 
+@font-face {
+  font-family: "GT-Walsheim-Pro-Black";
+  src: local("GT-Walsheim-Pro-Black"),
+    url(../../../static/fonts/GT-Walsheim/GT-Walsheim-Black-Trial.woff2)
+      format("woff2");
+}
+
 body {
   line-height: 1;
   font-family: GT-Walsheim-Medium;
-  font-family: "Roboto";
+  /* font-family: "Roboto", sans-serif;
+  font-family: "Helvetica", sans-serif; */
   /* font-family: "Open Sans";
   font-family: "HelveticaNeue", sans-serif; */
   font-weight: 500;
@@ -213,7 +215,8 @@ h2 {
 
 h3 {
   font-family: GT-Walsheim-Pro-Black;
-  font-family: "Roboto";
+  /* font-family: "Roboto", sans-serif;
+  font-family: "Helvetica", sans-serif; */
   /* font-family: "Open Sans";
   font-family: "HelveticaNeue", sans-serif; */
   font-weight: 900;
@@ -259,10 +262,12 @@ button {
   display: inline-block;
   font-size: 16px;
   text-transform: uppercase;
-  font-weight: 900;
+
   letter-spacing: 0.06em;
   font-family: GT-Walsheim-Pro-Black;
-  font-family: "Roboto";
+  /* font-family: "Roboto", sans-serif;
+  font-family: "Helvetica", sans-serif; */
+  font-weight: 900;
   /* font-family: "Open Sans";
   font-family: "HelveticaNeue", sans-serif; */
 

@@ -66,7 +66,9 @@ export default function TicketSection() {
           <ParkInfo>
             Parken — Auch wenn es keine Parktickets mehr gibt kann zum Be- und
             Entladen vorgefahren und anschließend in der Nähe geparkt werden.
-            Außerdem ist unser Gelände problemlos mit den Öffis erreichbar.
+            Außerdem ist unser Gelände problemlos mit den Öffis erreichbar. Wenn
+            du nachträglich ein Parkticket kaufen möchtest wende dich bitte an
+            uns.
           </ParkInfo>
         </InfoWrapper>
         <ShoppingCartWrapper>

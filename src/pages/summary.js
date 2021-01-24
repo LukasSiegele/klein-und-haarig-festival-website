@@ -11,7 +11,7 @@ import useAudienceCount from "../helper/useAudienceCount"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
-}).base("appM9sxaMNG520zPv")
+}).base(process.env.GATSBY_AIRTABLE_BASE)
 
 const table = base("Teilnehmer 2021")
 
@@ -34,9 +34,9 @@ export default function Summary({ location }) {
 
   // const [ticketType, setTicketType] = useState("")
   const [products, setProducts] = useState([])
-  const festivalTicket = "ja"
-  const [autoTicket, setAutoTicket] = useState("nein")
-  const [camperTicket, setCamperTicket] = useState("nein")
+  const festivalTicket = "Ja"
+  const [autoTicket, setAutoTicket] = useState("Nein")
+  const [camperTicket, setCamperTicket] = useState("Nein")
 
   // Audience Count
   const audienceCount = useAudienceCount()
@@ -153,8 +153,8 @@ export default function Summary({ location }) {
           ticket: "1x Camper Stellplatz 10 €",
         },
       ])
-      setAutoTicket("ja")
-      setCamperTicket("nein")
+      setAutoTicket("Ja")
+      setCamperTicket("Nein")
     }
   }, [sumTickets])
 
@@ -239,7 +239,7 @@ export default function Summary({ location }) {
                 <Info>
                   Der Betrag muss innerhalb 7 Tage bei uns einegegangen sein,
                   ansonsten verfällt die Reservierung. Die Überweisungsdaten
-                  erhälst du zusätzlich in einer Mail, nachdem du auf den
+                  erhältst du zusätzlich in einer Mail, nachdem du auf den
                   folgenden Button geklickt hast.
                 </Info>
               </Group>
