@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   padding: 40px 40px 200px 40px;
   display: grid;
   justify-items: center;
+  overflow: hidden;
 `
 
 const Content = styled.div`
@@ -32,6 +33,16 @@ const Night = styled.div`
   background-size: cover;
   grid-column: 3 / span 3;
   grid-row: 1 / span 3;
+
+  @media (max-width: 900px) {
+    width: 400px;
+    height: 800px;
+  }
+
+  @media (max-width: 600px) {
+    width: 250px;
+    height: 500px;
+  }
 `
 
 const Day = styled.div`
@@ -41,4 +52,14 @@ const Day = styled.div`
   grid-row: 3 / span 3;
   background-image: url(${DayImage});
   background-size: cover;
+
+  @media (max-width: 900px) {
+    width: 300px;
+    height: 420px;
+  }
+
+  @media (max-width: 600px) {
+    width: 200px;
+    height: 320px;
+  }
 `

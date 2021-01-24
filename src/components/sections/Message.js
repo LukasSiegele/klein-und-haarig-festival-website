@@ -21,31 +21,13 @@ export default function Message() {
 }
 
 const MessageContainer = styled.div`
-  /* height: 1000px; */
   padding: 200px 0;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  /*background-color: black;
-    background: radial-gradient(circle at 70% 150px, rgba(3,250,129,1) 0%, rgba(107,35,178,1) 5%, rgba(0,0,0,1) 10%);*/
   background-color: black;
-  /* background: radial-gradient(
-    circle at 65% 200px,
-    rgba(251, 119, 22, 1) 0%,
-    rgba(211, 11, 11, 1) 5%,
-    rgba(0, 0, 0, 1) 10%
-  ); */
   overflow: hidden;
   color: white;
-
-  /* @media (max-width: 640px) {
-    background: radial-gradient(
-      circle at 50% 30%,
-      rgba(251, 119, 22, 1) 0%,
-      rgba(211, 11, 11, 1) 15%,
-      rgba(0, 0, 0, 1) 25%
-    );
-  } */
 `
 
 const MessageWrapper = styled.div`
