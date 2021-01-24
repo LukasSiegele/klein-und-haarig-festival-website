@@ -115,17 +115,17 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "1x Festival Ticket 70 €",
+          ticket: "Festival Ticket 70 €",
         },
       ])
     } else if (sumTickets === 75) {
       setProducts(products => [
         ...products,
         {
-          ticket: "1x Festival Ticket 70 €",
+          ticket: "Festival Ticket 70 €",
         },
         {
-          ticket: "1x Auto Parkplatz 5 €",
+          ticket: "Auto Parkplatz 5 €",
         },
       ])
       setAutoTicket("ja")
@@ -133,10 +133,10 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "1x Festival Ticket 70 €",
+          ticket: "Festival Ticket 70 €",
         },
         {
-          ticket: "1x Camper Stellplatz 10 €",
+          ticket: "Camper Stellplatz 10 €",
         },
       ])
       setCamperTicket("ja")
@@ -144,13 +144,13 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "1x Festival Ticket 70 €",
+          ticket: "Festival Ticket 70 €",
         },
         {
-          ticket: "1x Auto Parkplatz 5 €",
+          ticket: "Auto Parkplatz 5 €",
         },
         {
-          ticket: "1x Camper Stellplatz 10 €",
+          ticket: "Camper Stellplatz 10 €",
         },
       ])
       setAutoTicket("Ja")
@@ -237,10 +237,10 @@ export default function Summary({ location }) {
               <Group>
                 <Value>Info</Value>
                 <Info>
-                  Der Betrag muss innerhalb 7 Tage bei uns einegegangen sein,
-                  ansonsten verfällt die Reservierung. Die Überweisungsdaten
-                  erhältst du zusätzlich in einer Mail, nachdem du auf den
-                  folgenden Button geklickt hast.
+                  Der Betrag muss innerhalb von 7 Tagen bei uns einegegangen
+                  sein, ansonsten verfällt die Reservierung. Die
+                  Überweisungsdaten erhältst du zusätzlich in einer Mail,
+                  nachdem du auf den folgenden Button geklickt hast.
                 </Info>
               </Group>
             </Section>
@@ -267,7 +267,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   max-width: 800px;
-  padding: 10px 0 200px 0;
+  padding: 10px 20px 200px 20px;
 `
 
 const Section = styled.div`

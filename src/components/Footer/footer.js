@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 40px 80px;
   @media (max-width: 768px) {
-    padding-bottom: 80px;
+    padding: 20px 20px 80px;
   }
 
   a {

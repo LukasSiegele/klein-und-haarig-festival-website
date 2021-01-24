@@ -19,6 +19,10 @@ const Wrapper = styled.div`
   display: grid;
   justify-items: center;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 20px 20px 150px 20px;
+  }
 `
 
 const Content = styled.div`

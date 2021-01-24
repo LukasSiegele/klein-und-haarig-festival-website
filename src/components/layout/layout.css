@@ -281,3 +281,110 @@ button:hover {
   transform: scale(1.02);
   cursor: pointer;
 }
+/*FORMULAR*/
+label {
+  color: white;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px black inset;
+  -webkit-box-shadow: 0 0 0 30px black inset;
+  -webkit-text-fill-color: white;
+}
+
+input {
+  padding: 12px;
+  margin: 15px 0;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: black;
+  color: white;
+}
+
+.checkboxText {
+  color: white;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.b-contain *,
+.b-contain *::before,
+.b-contain *::after {
+  box-sizing: content-box !important;
+}
+
+.b-contain input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.b-contain {
+  margin-top: 0;
+}
+
+.b-contain span {
+  line-height: 1.54;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.b-contain {
+  display: table;
+  position: relative;
+  padding-left: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.b-contain input[type="checkbox"] ~ .b-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0);
+  transition: background 250ms;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.b-contain input[type="checkbox"] ~ .b-input::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 14px;
+  top: 8px;
+  width: 8px;
+  height: 18px;
+  border: solid rgba(0, 0, 0, 1);
+  border-width: 0 4px 4px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+.b-contain input:checked ~ .b-input::after {
+  display: block;
+}
+
+.b-contain input:checked ~ .b-input {
+  background: white;
+}

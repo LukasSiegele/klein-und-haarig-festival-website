@@ -14,11 +14,12 @@ export default function ShopTitle(props) {
 }
 
 const Wrapper = styled.div`
-  height: 150px;
+  padding: 40px 20px;
   display: grid;
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `
 
 const Content = styled.div`

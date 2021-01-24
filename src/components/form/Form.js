@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import "./Form.css"
 import FormButton from "../buttons/FormButton"
 import { navigate } from "gatsby"
 

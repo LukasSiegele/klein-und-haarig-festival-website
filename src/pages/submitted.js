@@ -50,11 +50,10 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   justify-items: center;
   /* background: white; */
-  padding: 20px 40px;
+  padding: 10px 20px 200px 20px;
 `
 
 const Wrapper = styled.div`
-  height: 800px;
   max-width: 500px;
 `
 

@@ -55,7 +55,7 @@ const HeroTextGroup = styled.div`
 
   @media (max-width: 700px) {
     max-width: 100%;
-    padding: 90px 20px;
+    padding: 90px 5px;
   }
 `
 

@@ -28,6 +28,10 @@ const MessageContainer = styled.div`
   background-color: black;
   overflow: hidden;
   color: white;
+
+  @media (max-width: 768px) {
+    padding: 150px 0;
+  }
 `
 
 const MessageWrapper = styled.div`

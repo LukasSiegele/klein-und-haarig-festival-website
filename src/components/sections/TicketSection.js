@@ -101,10 +101,10 @@ const CardWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 40px;
+  justify-items: center;
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
   }
 `
 
