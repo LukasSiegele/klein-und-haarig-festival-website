@@ -14,6 +14,18 @@ export default function TicketSection() {
 
   const [summary, setSummary] = useState(festivalPrice)
 
+  const [member, setMember] = useState()
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const testMember = ["1012", "420247", "39"]
+    if (testMember.includes(member)) {
+    } else {
+    }
+    console.log(testMember.includes(member))
+    console.log(member)
+  }
+
   return (
     <Wrapper>
       <Content>
@@ -62,7 +74,19 @@ export default function TicketSection() {
           />
         </CardWrapper>
         <InfoWrapper>
-          <InfoBlock />
+          <InfoBlock>
+            <form onSubmit={handleSubmit}>
+              <Label htmlFor="member">Mitglied?</Label>
+              <input
+                type="number"
+                name="member"
+                value={member}
+                required
+                onChange={e => setMember(e.target.value)}
+              />{" "}
+              <FormButton typ="submit" label="Check" />
+            </form>
+          </InfoBlock>
           <ParkInfo>
             Parken — Auch wenn es keine Parktickets mehr gibt kann zum Be- und
             Entladen vorgefahren und anschließend in der Nähe geparkt werden.
@@ -151,4 +175,9 @@ const Summary = styled.h4`
 
 const WeiterWrapper = styled.div`
   width: 242px;
+`
+
+const Label = styled.h4`
+  color: white;
+  display: inline-block;
 `
