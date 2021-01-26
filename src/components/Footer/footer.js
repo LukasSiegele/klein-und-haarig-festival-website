@@ -68,9 +68,9 @@ const Description = styled.h4`
 const Text = styled.h4``
 
 const WrapperLeft = styled.div`
-  /* * {
+  * {
     opacity: 0.5;
-  } */
+  }
 `
 
 const WrapperRight = styled.div`
@@ -79,9 +79,9 @@ const WrapperRight = styled.div`
   gap: 10px;
   justify-items: right;
 
-  /* > * {
-      opacity: 0.5;
-    } */
+  > * {
+    opacity: 0.5;
+  }
 
   @media (max-width: 1000px) {
     grid-template-rows: repeat(3, 0.1fr);
