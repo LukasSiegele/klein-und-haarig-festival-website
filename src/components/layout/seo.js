@@ -12,6 +12,8 @@ export default function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            url
+            image
           }
         }
       }
@@ -40,6 +42,14 @@ export default function SEO({ description, lang, meta, title }) {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:url`,
+          content: url,
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
         {
           property: `og:type`,
