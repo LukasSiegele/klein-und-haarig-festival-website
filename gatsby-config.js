@@ -8,7 +8,7 @@ module.exports = {
     description: `Ein kleines Festival in Bad Wildbad vom 9. bis 1. Juli 2021`,
     author: `Bunte Platte e.V.`,
     url: `https://www.kleinundhaarig.de`,
-    image: `/images/kuh-thumbnail.jpg`,
+    image: `/images/kuhthumbnail.jpg`,
   },
   plugins: [
     {
