@@ -44,6 +44,9 @@ export default function Helfer({ location }) {
         vereinsbeitritt: vereinsbeitritt,
         datenspeicherung: datenspeicherung,
         newsletter: newsletter,
+        helferBefore: helferBefore,
+        helferWhile: helferWhile,
+        helferAfter: helferAfter,
       },
     })
   }

@@ -30,6 +30,9 @@ export default function Summary({ location }) {
     datenspeicherung,
     vereinsbeitritt,
     newsletter,
+    helferBefore,
+    helferWhile,
+    helferAfter,
   } = state
 
   // const [ticketType, setTicketType] = useState("")
@@ -62,6 +65,9 @@ export default function Summary({ location }) {
         TAUTO: autoTicket,
         TCAMPER: camperTicket,
         SPENDE: spende,
+        HELFBEFORE: helferBefore,
+        HELFWHILE: helferWhile,
+        HELFAFTER: helferAfter,
       })
         .then(({ msg, result }) => {
           console.log("msg", `${result}: ${msg}`)
@@ -80,6 +86,9 @@ export default function Summary({ location }) {
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
+                  Aufbau: helferBefore,
+                  Waehrend: helferWhile,
+                  Abbau: helferAfter,
                   Spende: spende,
                 },
               },
