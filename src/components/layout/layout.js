@@ -46,6 +46,7 @@ const CookieGroup = styled.div`
 
 const CookieText = styled.h4`
   opacity: 0.5;
+  /* font-size: 14px; */
 `
 
 const InlineLink = styled.a`

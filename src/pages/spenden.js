@@ -12,7 +12,7 @@ export default function Spenden({ location }) {
     <Layout>
       <SEO title="Spenden" />
       <ShopTitle
-        info="Schritt 2/4"
+        info="Schritt 2/5"
         title="Wir spenden 5€ deines Festivaltickets an..."
       />
       <SpendenSection summary={sumTickets} />

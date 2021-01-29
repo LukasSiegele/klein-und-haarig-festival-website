@@ -17,7 +17,7 @@ export default function Form(props) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    navigate("/summary", {
+    navigate("/helfer", {
       state: {
         sumTickets: props.sumTickets,
         spende: props.spende,
@@ -114,10 +114,12 @@ export default function Form(props) {
               <div className="b-input"></div>
             </label>
             <CheckboxDecription>
-              Mit dem Ticketkauf trittst du unserem Verein Bunte Platte e.V. für
-              die Dauer des Festivals bei. Dadurch können wir eine
-              vereinsinterne Veranstaltung machen mit weniger Auflagen. Nach dem
-              Festival trittst du automatisch aus.
+              Mit dem Ticketkauf trittst du unserem Verein Bunte Platte e.V.
+              bei. Keine Angst, das Ganze ist eine 3 monatige
+              Probemitgliedschaft die am 1. Juli 2021 startet. Nach den 3
+              Monaten trittst du automatisch aus, ohne etwas machen zu müssen.
+              Chillig oder? Dadurch ist das KuH eine vereinsinterne
+              Veranstaltung.
             </CheckboxDecription>
           </CheckboxGroup>
           <br />
@@ -137,7 +139,7 @@ export default function Form(props) {
               <div className="b-input"></div>
             </label>
             <CheckboxDecription>
-              Wir speichern deine Daten bis 3 Monate nach dem Festival, danach
+              Wir speichern deine Daten bis zu 1 Jahr nach dem Festival, danach
               werden sie gelöscht.
             </CheckboxDecription>
           </CheckboxGroup>
@@ -159,7 +161,7 @@ export default function Form(props) {
             </label>
             <CheckboxDecription>
               Alle Infos zum Festival 2021 bekommst du auch ohne Newsletter. Als
-              Erinnerung für nächstes Jahr aber sehr zu empfehlen.
+              Erinnerung für die nächsten Jahre aber sehr zu empfehlen.
             </CheckboxDecription>
           </CheckboxGroup>
           <WeiterWrapper>
@@ -196,7 +198,6 @@ const Label = styled.h4`
 const Seperator = styled.div`
   height: 1px;
   background-color: rgba(255, 255, 255, 0.15);
-  opacity: 0.4;
   margin: 40px 0 20px 0;
   width: 100%;
 `

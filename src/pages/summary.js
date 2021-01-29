@@ -111,40 +111,40 @@ export default function Summary({ location }) {
 
   useEffect(() => {
     setProducts([])
-    if (sumTickets === 70) {
+    if (sumTickets === 75) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 70 €",
+          ticket: "Festival Ticket 75 €",
         },
       ])
-    } else if (sumTickets === 75) {
+    } else if (sumTickets === 80) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 70 €",
+          ticket: "Festival Ticket 75 €",
         },
         {
           ticket: "Auto Parkplatz 5 €",
         },
       ])
       setAutoTicket("ja")
-    } else if (sumTickets === 80) {
+    } else if (sumTickets === 85) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 70 €",
+          ticket: "Festival Ticket 75 €",
         },
         {
           ticket: "Camper Stellplatz 10 €",
         },
       ])
       setCamperTicket("ja")
-    } else if (sumTickets === 85) {
+    } else if (sumTickets === 90) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 70 €",
+          ticket: "Festival Ticket 75 €",
         },
         {
           ticket: "Auto Parkplatz 5 €",
@@ -161,7 +161,7 @@ export default function Summary({ location }) {
   return (
     <Layout>
       <SEO title="Summary" />
-      <ShopTitle info="Schritt 4/4" title="Schick ab datt Ding" />
+      <ShopTitle info="Schritt 5/5" title="Schick ab datt Ding" />
       <Container>
         <Wrapper>
           <form onSubmit={submit}>
@@ -198,11 +198,15 @@ export default function Summary({ location }) {
               </Group>
               <Group>
                 <Value>Datenspeicherung</Value>
-                <Info>{datenspeicherung ? "Ja" : "Nein"}</Info>
+                <Info>{datenspeicherung ? "Passt" : "Nein"}</Info>
               </Group>
               <Group>
                 <Value>Vereinsbeitritt</Value>
-                <Info>{vereinsbeitritt ? "Ja" : "Nein"}</Info>
+                <Info>
+                  {vereinsbeitritt
+                    ? "3 monatige Probemitgliedschaft ab dem 1. Juli 2021 im Bunte Platte e.V. mit automatischem Austritt am 1. Oktober 2021."
+                    : "Nein"}
+                </Info>
               </Group>
               <Group>
                 <Value>Newsletter</Value>
@@ -212,7 +216,7 @@ export default function Summary({ location }) {
             <Section>
               <Group>
                 <Value>Überweisung an</Value>
-                <Info>Bunte Platte e.V</Info>
+                <Info>Bunte Platte e.V.</Info>
               </Group>
               <Group>
                 <Value>Betrag</Value>
