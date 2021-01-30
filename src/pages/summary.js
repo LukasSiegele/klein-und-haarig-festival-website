@@ -40,6 +40,11 @@ export default function Summary({ location }) {
   const festivalTicket = "Ja"
   const [autoTicket, setAutoTicket] = useState("Nein")
   const [camperTicket, setCamperTicket] = useState("Nein")
+  const [helfer, setHelfer] = useState("")
+
+  console.log(helferBefore)
+  console.log(helferWhile)
+  console.log(helferAfter)
 
   // Audience Count
   const audienceCount = useAudienceCount()
@@ -65,9 +70,9 @@ export default function Summary({ location }) {
         TAUTO: autoTicket,
         TCAMPER: camperTicket,
         SPENDE: spende,
-        HELFBEFORE: helferBefore,
-        HELFWHILE: helferWhile,
-        HELFAFTER: helferAfter,
+        BEFORE: helferBefore,
+        WHILE: helferWhile,
+        AFTER: helferAfter,
       })
         .then(({ msg, result }) => {
           console.log("msg", `${result}: ${msg}`)
@@ -86,10 +91,10 @@ export default function Summary({ location }) {
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
+                  Spende: spende,
                   Aufbau: helferBefore,
                   Waehrend: helferWhile,
                   Abbau: helferAfter,
-                  Spende: spende,
                 },
               },
             ])
@@ -120,6 +125,22 @@ export default function Summary({ location }) {
 
   useEffect(() => {
     setProducts([])
+    // Helfer
+    if (helferBefore && !helferWhile && !helferAfter) {
+      setHelfer("Aufbau")
+    } else if (helferBefore && helferWhile && !helferAfter) {
+      setHelfer("Aufbau & Während des Festivals")
+    } else if (helferBefore && helferWhile && helferAfter) {
+      setHelfer("Aufbau, Während des Festivals & Abbau")
+    } else if (!helferBefore && helferWhile && !helferAfter) {
+      setHelfer("Während des Festivals")
+    } else if (!helferBefore && helferWhile && helferAfter) {
+      setHelfer("Während des Festivals & Abbau")
+    } else {
+      setHelfer("Nein")
+    }
+
+    // Ticketsumme
     if (sumTickets === 75) {
       setProducts(products => [
         ...products,
@@ -137,7 +158,7 @@ export default function Summary({ location }) {
           ticket: "Auto Parkplatz 5 €",
         },
       ])
-      setAutoTicket("ja")
+      setAutoTicket("Ja")
     } else if (sumTickets === 85) {
       setProducts(products => [
         ...products,
@@ -244,6 +265,12 @@ export default function Summary({ location }) {
                 <Info>
                   {firstName} {lastName} KUH2021
                 </Info>
+              </Group>
+            </Section>
+            <Section>
+              <Group>
+                <Value>Helfer</Value>
+                <Info>{helfer}</Info>
               </Group>
             </Section>
             <Section>

@@ -26,7 +26,6 @@ export default function Helfer({ location }) {
   const [hBefore, setHBefore] = useState(false)
   const [hWhile, setHWhile] = useState(false)
   const [hAfter, setHAfter] = useState(false)
-  const [hNone, setNone] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -44,9 +43,9 @@ export default function Helfer({ location }) {
         vereinsbeitritt: vereinsbeitritt,
         datenspeicherung: datenspeicherung,
         newsletter: newsletter,
-        helferBefore: helferBefore,
-        helferWhile: helferWhile,
-        helferAfter: helferAfter,
+        helferBefore: hBefore,
+        helferWhile: hWhile,
+        helferAfter: hAfter,
       },
     })
   }
