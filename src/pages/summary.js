@@ -42,10 +42,6 @@ export default function Summary({ location }) {
   const [camperTicket, setCamperTicket] = useState("Nein")
   const [helfer, setHelfer] = useState("")
 
-  console.log(helferBefore)
-  console.log(helferWhile)
-  console.log(helferAfter)
-
   // Audience Count
   const audienceCount = useAudienceCount()
   console.log("hook count: " + audienceCount)
