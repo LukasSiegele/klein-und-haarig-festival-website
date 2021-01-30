@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
@@ -26,6 +26,7 @@ export default function Helfer({ location }) {
   const [hBefore, setHBefore] = useState(false)
   const [hWhile, setHWhile] = useState(false)
   const [hAfter, setHAfter] = useState(false)
+  const [buttonLabel, setButtonLabel] = useState("Überspringen")
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -49,6 +50,14 @@ export default function Helfer({ location }) {
       },
     })
   }
+
+  useEffect(() => {
+    if (hBefore === true || hWhile === true || hAfter === true) {
+      return setButtonLabel("Zur Übersicht")
+    } else {
+      return setButtonLabel("Überspringen")
+    }
+  }, [hBefore, hWhile, hAfter])
 
   return (
     <Layout>
@@ -119,7 +128,7 @@ export default function Helfer({ location }) {
               </CheckboxDecription>
             </CheckboxGroup>
             <WeiterWrapper>
-              <FormButton typ="submit" label="Zur Übersicht" />
+              <FormButton typ="submit" label={buttonLabel} />
             </WeiterWrapper>
           </form>
         </Wrapper>
