@@ -241,6 +241,12 @@ export default function Summary({ location }) {
             </Section>
             <Section>
               <Group>
+                <Value>Helfer</Value>
+                <Info>{helfer}</Info>
+              </Group>
+            </Section>
+            <Section>
+              <Group>
                 <Value>Überweisung an</Value>
                 <Info>Bunte Platte e.V.</Info>
               </Group>
@@ -261,12 +267,6 @@ export default function Summary({ location }) {
                 <Info>
                   {firstName} {lastName} KUH2021
                 </Info>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Helfer</Value>
-                <Info>{helfer}</Info>
               </Group>
             </Section>
             <Section>
