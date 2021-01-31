@@ -6,10 +6,11 @@ import SEO from "../components/layout/seo"
 export default function Privacy() {
   return (
     <Layout>
-      <SEO title="Impressum" />
+      <SEO title="Datenschutz" />
       <Wrapper>
         <Content>
           <Section>
+            <SectionHeader>{process.env.GATSBY_AIRTABLE_API_KEY}</SectionHeader>
             <SectionHeader>Datenschutz</SectionHeader>
             <Group>
               <Header>Allgemeine Hinweise</Header>{" "}
