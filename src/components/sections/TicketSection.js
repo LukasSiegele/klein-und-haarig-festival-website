@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import TicketCard from "../cards/TicketCard"
 import { Link } from "gatsby"
@@ -14,17 +14,17 @@ export default function TicketSection() {
 
   const [summary, setSummary] = useState(festivalPrice)
 
-  const [member, setMember] = useState()
+  // const [member, setMember] = useState()
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const testMember = ["1012", "420247", "39"]
-    if (testMember.includes(member)) {
-    } else {
-    }
-    console.log(testMember.includes(member))
-    console.log(member)
-  }
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   const testMember = ["1012", "420247", "39"]
+  //   if (testMember.includes(member)) {
+  //   } else {
+  //   }
+  //   console.log(testMember.includes(member))
+  //   console.log(member)
+  // }
 
   return (
     <Wrapper>
@@ -75,7 +75,7 @@ export default function TicketSection() {
         </CardWrapper>
         <InfoWrapper>
           <InfoBlock>
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}>
               <Label htmlFor="member">Mitglied?</Label>
               <input
                 type="number"
@@ -85,7 +85,7 @@ export default function TicketSection() {
                 onChange={e => setMember(e.target.value)}
               />{" "}
               <FormButton typ="submit" label="Check" />
-            </form>
+            </form> */}
           </InfoBlock>
           <ParkInfo>
             Parken — Auch wenn es keine Parktickets mehr gibt kann zum Be- und

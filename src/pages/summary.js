@@ -141,14 +141,14 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €",
+          ticket: "Festival Ticket 75 €*",
         },
       ])
     } else if (sumTickets === 80) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €",
+          ticket: "Festival Ticket 75 €*",
         },
         {
           ticket: "Auto Parkplatz 5 €",
@@ -159,7 +159,7 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €",
+          ticket: "Festival Ticket 75 €*",
         },
         {
           ticket: "Camper Stellplatz 10 €",
@@ -170,7 +170,7 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €",
+          ticket: "Festival Ticket 75 €*",
         },
         {
           ticket: "Auto Parkplatz 5 €",
@@ -198,6 +198,9 @@ export default function Summary({ location }) {
                   {products.map(product => (
                     <Info>{product.ticket}</Info>
                   ))}
+                  <InfoSmall>
+                    *10 € Probemitgliedschaft, 5 € Spende, 60 € Unkosten
+                  </InfoSmall>
                 </InfoGroup>
               </Group>
             </Section>
@@ -327,6 +330,13 @@ const InfoGroup = styled.h4``
 const Info = styled.h4`
   color: white;
   margin-top: 10px;
+`
+
+const InfoSmall = styled.h4`
+  margin-top: 10px;
+  color: white;
+  opacity: 0.5;
+  font-size: 0.8rem;
 `
 
 const ButtonGroup = styled.div`
