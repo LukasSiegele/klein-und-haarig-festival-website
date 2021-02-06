@@ -10,6 +10,7 @@ module.exports = {
     author: `Bunte Platte e.V.`,
     url: `https://www.kleinundhaarig.de`,
     image: `/images/kuhthumbnail.jpg`,
+    twitterUsername: "@kleinundhaarig",
   },
   plugins: [
     {
