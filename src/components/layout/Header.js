@@ -13,11 +13,11 @@ export default function Header() {
   return (
     <Wrapper>
       <Home></Home>
-      <TicketWrapper to={audienceCount < maxAudience ? "/ticket" : "/voll"}>
+      {/* <TicketWrapper to={audienceCount < maxAudience ? "/ticket" : "/voll"}>
         <TicketText>
           {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
         </TicketText>
-      </TicketWrapper>
+      </TicketWrapper> */}
     </Wrapper>
   )
 }
