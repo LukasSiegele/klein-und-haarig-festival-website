@@ -8,6 +8,7 @@ import { navigate } from "gatsby"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import Airtable from "airtable"
 import useAudienceCount from "../helper/useAudienceCount"
+import uniqid from "uniqid"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -47,12 +48,17 @@ export default function Summary({ location }) {
   console.log("hook count: " + audienceCount)
   const audienceLimit = 230
 
+  // Unique ID
+  const userID = uniqid()
+  console.log("User ID" + userID)
+
   // POST TO — AIRTABLE
   const submit = e => {
     e.preventDefault()
 
     if (audienceCount < audienceLimit) {
       addToMailchimp(email, {
+        ID: userID,
         FNAME: firstName,
         LNAME: lastName,
         PHONE: phone,
@@ -81,6 +87,7 @@ export default function Summary({ location }) {
             .create([
               {
                 fields: {
+                  ID: userID,
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
@@ -129,6 +136,10 @@ export default function Summary({ location }) {
       setHelfer("Während des Festivals")
     } else if (!helferBefore && helferWhile && helferAfter) {
       setHelfer("Während des Festivals & Abbau")
+    } else if (!helferBefore && !helferWhile && helferAfter) {
+      setHelfer("Abbau")
+    } else if (helferBefore && !helferWhile && helferAfter) {
+      setHelfer("Aufbau & Abbau")
     } else {
       setHelfer("Nein")
     }
