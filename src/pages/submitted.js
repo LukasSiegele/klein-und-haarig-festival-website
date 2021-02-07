@@ -49,8 +49,8 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  background: blue;
   background-image: url(${SubmittedImage});
+  background-position: 50%;
   background-size: cover;
   border: solid black;
   border-width: 40px 40px 0px 40px;
