@@ -53,6 +53,7 @@ export default function Summary({ location }) {
 
     if (audienceCount < audienceLimit) {
       addToMailchimp(email, {
+        COUNT: audienceCount,
         FNAME: firstName,
         LNAME: lastName,
         PHONE: phone,
@@ -81,6 +82,7 @@ export default function Summary({ location }) {
             .create([
               {
                 fields: {
+                  Number: audienceCount,
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
@@ -260,11 +262,12 @@ export default function Summary({ location }) {
               </Group>
               <Group>
                 <Value>BIC</Value>
-                <Info>{audienceCount}</Info>
+                <Info>TRODDEF1</Info>
               </Group>
               <Group>
                 <Value>Verwendungszweck</Value>
                 <Info>
+                  {audienceCount}
                   {firstName} {lastName} KUH2021
                 </Info>
               </Group>
