@@ -5,16 +5,17 @@ import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
+import SubmittedImage from "../../static/images/Submitted.jpg"
 
 export default function Submitted() {
   return (
     <Layout>
       <SEO title="Submitted" />
-      <ShopTitle
-        info="Wouhuuuu! 🚀"
-        title="Wir haben deine Reservierung erhalten."
-      />
       <Container>
+        <ShopTitle
+          info="Wouhuuuu! 🚀"
+          title="Wir haben deine Reservierung erhalten"
+        />
         <Wrapper>
           <Section>
             <Info>
@@ -25,18 +26,17 @@ export default function Submitted() {
             </Info>
             <Info>
               Sobald du überwiesen hast schicken wir dir eine
-              Zahlungsbestätigungsmail. Auch hier gilt: Falls keine Mail kommt
-              einfach melden.
+              Zahlungsbestätigungsmail.
             </Info>
             <br />
             <Info>
               Wir freuen uns schon auf dich, <br />
-              dein Klein und Haarig Team.
+              dein Klein und Haarig Team ✨
             </Info>
           </Section>
           <ButtonSection>
             <Link to="/">
-              <FormButton label="Zurueck zur Homepage"></FormButton>
+              <FormButton label="Zurück zur Homepage"></FormButton>
             </Link>
           </ButtonSection>
         </Wrapper>
@@ -49,7 +49,12 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  /* background: white; */
+  background: blue;
+  background-image: url(${SubmittedImage});
+  background-size: cover;
+  border: solid black;
+  border-width: 40px 40px 0px 40px;
+  /* text-align: center; */
   padding: 10px 20px 200px 20px;
 `
 
