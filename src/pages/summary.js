@@ -81,9 +81,6 @@ export default function Summary({ location }) {
             .create([
               {
                 fields: {
-                  Vorname: firstName,
-                  Nachname: lastName,
-                  Email: email,
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
