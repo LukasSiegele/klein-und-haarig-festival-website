@@ -7,7 +7,7 @@ import useAudienceCount from "../../helper/useAudienceCount"
 export default function Header() {
   // Audience Cuunt
   const audienceCount = useAudienceCount()
-  const maxAudience = 102
+  const maxAudience = 230
   console.log(audienceCount)
 
   return (

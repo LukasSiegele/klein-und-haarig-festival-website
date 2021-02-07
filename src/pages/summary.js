@@ -45,7 +45,7 @@ export default function Summary({ location }) {
   // Audience Count
   const audienceCount = useAudienceCount()
   console.log("hook count: " + audienceCount)
-  const audienceLimit = 102
+  const audienceLimit = 230
 
   // POST TO — AIRTABLE
   const submit = e => {
@@ -53,7 +53,6 @@ export default function Summary({ location }) {
 
     if (audienceCount < audienceLimit) {
       addToMailchimp(email, {
-        COUNT: audienceCount,
         FNAME: firstName,
         LNAME: lastName,
         PHONE: phone,
@@ -82,7 +81,6 @@ export default function Summary({ location }) {
             .create([
               {
                 fields: {
-                  Number: audienceCount,
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
@@ -267,7 +265,6 @@ export default function Summary({ location }) {
               <Group>
                 <Value>Verwendungszweck</Value>
                 <Info>
-                  {audienceCount}
                   {firstName} {lastName} KUH2021
                 </Info>
               </Group>
