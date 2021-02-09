@@ -21,7 +21,7 @@ export default function Header() {
     <Wrapper>
       <Home></Home>
       <TicketWrapper
-        to={audienceCount < maxAudience ? "/ticket" : "/voll"}
+        to={audienceCount < maxAudience ? "/tickets" : "/voll"}
         state={{
           autoParkplatz: autoCount,
           camperParkplatz: camperCount,
