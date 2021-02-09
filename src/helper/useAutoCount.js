@@ -3,7 +3,7 @@ import Airtable from "airtable"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
-}).base("appM9sxaMNG520zPv")
+}).base(process.env.GATSBY_AIRTABLE_BASE)
 
 export default function useAutoCount() {
   const [autoCount, setAutoCount] = useState(0)
