@@ -116,11 +116,15 @@ export default function TicketSection(props) {
           </InfoText>
           <InfoText>
             Parken — Wenn du nachträglich ein Parkticket kaufen möchtest oder
-            die Parktickets ausverkauft sind wende dich bitte an uns
-            info@kleinundhaarig.de. <br />
+            die Parktickets ausverkauft sind wende dich bitte an uns{" "}
+            <LinkInline href="mailto:info@kleinundhaarig.de" subject="Parken">
+              info@kleinundhaarig.de
+            </LinkInline>
+            . Zum Be- und Entladen kann in jedem Fall vorgefahren werden.
+            <br />
             <br />
             Öffis — Unser Gelände ist problemlos mit den Öffis von Bad Wildbad
-            erreichbar. Ein Bus fährt im 30 min Takt.
+            erreichbar. Ein Bus fährt von dort im 30 min Takt.
           </InfoText>
         </InfoWrapper>
         <ShoppingCartWrapper>
@@ -241,4 +245,10 @@ const WeiterWrapper = styled.div`
 const Label = styled.h4`
   color: white;
   display: inline-block;
+`
+
+const LinkInline = styled.a`
+  color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 `
