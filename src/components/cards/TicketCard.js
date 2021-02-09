@@ -4,7 +4,11 @@ import { animations } from "../styles/AnimationStyles"
 
 export default function TicketCard(props) {
   return (
-    <Wrapper isSelected={props.isSelected} onClick={props.handleSelection}>
+    <Wrapper
+      isSelected={props.isSelected}
+      onClick={props.handleSelection}
+      limit={props.limit}
+    >
       <Title titleSize={props.titleSize}> {props.title}</Title>
       <Price>{props.price}</Price>
       <DetailWrapper isSelected={props.isSelected}>
@@ -19,6 +23,7 @@ const Wrapper = styled.div`
   width: 242px;
   position: relative;
   transition: ${animations.slow};
+  opacity: ${props => (props.limit ? ".3" : "1")};
   color: ${props => (props.isSelected ? "black" : "white")};
   border: ${props => (props.isSelected ? "0px" : "1px solid white")};
   background: ${props =>
@@ -36,7 +41,7 @@ const Title = styled.h1`
   font-size: 64px;
   font-size: ${props => props.titleSize};
   text-transform: none;
-  margin: 30px 0px;
+  padding: 30px 0px;
   :hover {
     cursor: pointer;
   }

@@ -13,7 +13,7 @@ export default function useCamperCount() {
       .select({ view: "Grid" })
       .eachPage((records, fetchNextPage) => {
         records.map(items => {
-          if (items.fields.Camper === "ja") {
+          if (items.fields.Camper === "Ja") {
             setCamperCount(camperCount => camperCount + 1)
           }
         })
@@ -21,5 +21,18 @@ export default function useCamperCount() {
       })
   }, [])
 
-  return camperCount
+  // Camper Count
+  const maxCampers = 5
+  const [camperParkplatz, setCamperParkplatz] = useState(false)
+
+  useEffect(() => {
+    // Check for Max. Campers
+    if (camperCount >= maxCampers) {
+      setCamperParkplatz(true)
+    } else {
+      setCamperParkplatz(false)
+    }
+  }, [camperCount])
+
+  return camperParkplatz
 }

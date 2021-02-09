@@ -13,7 +13,7 @@ export default function useAutoCount() {
       .select({ view: "Grid" })
       .eachPage((records, fetchNextPage) => {
         records.map(items => {
-          if (items.fields.Auto === "ja") {
+          if (items.fields.Auto === "Ja") {
             setAutoCount(autoCount => autoCount + 1)
           }
         })
@@ -21,5 +21,18 @@ export default function useAutoCount() {
       })
   }, [])
 
-  return autoCount
+  // Auto Limit
+  const maxAutos = 1
+  const [autoParkplatz, setAutoParkplatz] = useState(false)
+
+  useEffect(() => {
+    // Check for Max. Autos
+    if (autoCount >= maxAutos) {
+      setAutoParkplatz(true)
+    } else {
+      setAutoParkplatz(false)
+    }
+  }, [autoCount])
+
+  return autoParkplatz
 }

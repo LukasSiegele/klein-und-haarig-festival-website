@@ -4,8 +4,9 @@ import TicketCard from "../cards/TicketCard"
 import { Link } from "gatsby"
 import FormButton from "../buttons/FormButton"
 
-export default function TicketSection() {
-  const [isFestival, setIsFestival] = useState(true)
+export default function TicketSection(props) {
+  const isFestival = true
+  // const [isFestival, setIsFestival] = useState(true)
   const festivalPrice = 75
   const [isAuto, setIsAuto] = useState(false)
   const autoPrice = 5
@@ -13,6 +14,15 @@ export default function TicketSection() {
   const camperPrice = 10
 
   const [summary, setSummary] = useState(festivalPrice)
+
+  console.log("AUTOS " + props.autoParkplatz)
+  console.log("CAMPER " + props.camperParkplatz)
+
+  // // Auto Count
+  // const autoCount = useAutoCount()
+
+  // // Camper Count
+  // const camperCount = useCamperCount()
 
   // const [member, setMember] = useState()
 
@@ -30,48 +40,60 @@ export default function TicketSection() {
     <Wrapper>
       <Content>
         <CardWrapper>
-          <TicketCard
-            title="Festival Ticket"
-            price={festivalPrice + " €"}
-            details="3 Tage Festival mit Zeltplatz"
-            isSelected={isFestival}
-            // handleSelection={() => {
-            //   setIsFestival(!isFestival)
-            //   if (!isFestival) {
-            //     setSummary(summary + festivalPrice)
-            //   } else {
-            //     setSummary(summary - festivalPrice)
-            //   }
-            // }}
-          />
-          <TicketCard
-            title="Auto Ticket"
-            price={autoPrice + " €"}
-            details="Parkplatz am Festivalgelände"
-            isSelected={isAuto}
-            handleSelection={() => {
-              setIsAuto(!isAuto)
-              if (!isAuto) {
-                setSummary(summary + autoPrice)
-              } else {
-                setSummary(summary - autoPrice)
-              }
-            }}
-          />
-          <TicketCard
-            title="Camper Ticket"
-            price={camperPrice + " €"}
-            details="Camperstellplatz auf dem Gelände"
-            isSelected={isCamper}
-            handleSelection={() => {
-              setIsCamper(!isCamper)
-              if (!isCamper) {
-                setSummary(summary + camperPrice)
-              } else {
-                setSummary(summary - camperPrice)
-              }
-            }}
-          />
+          <Card1>
+            <TicketCard
+              title="Festival Ticket"
+              price={festivalPrice + " €"}
+              details="3 Tage Festival mit Zeltplatz"
+              isSelected={isFestival}
+              // handleSelection={() => {
+              //   setIsFestival(!isFestival)
+              //   if (!isFestival) {
+              //     setSummary(summary + festivalPrice)
+              //   } else {
+              //     setSummary(summary - festivalPrice)
+              //   }
+              // }}
+            />
+          </Card1>
+          <Card2>
+            <TicketCard
+              title="Auto Ticket"
+              price={props.autoParkplatz ? "Ausverkauft" : autoPrice + " €"}
+              details="Parkplatz am Festivalgelände"
+              isSelected={isAuto}
+              limit={props.autoParkplatz}
+              handleSelection={() => {
+                if (props.autoParkplatz === false) {
+                  setIsAuto(!isAuto)
+                  if (!isAuto) {
+                    setSummary(summary + autoPrice)
+                  } else {
+                    setSummary(summary - autoPrice)
+                  }
+                }
+              }}
+            />
+          </Card2>
+          <Card3>
+            <TicketCard
+              title="Camper Ticket"
+              price={props.camperParkplatz ? "Ausverkauft" : camperPrice + " €"}
+              details="Camperstellplatz auf dem Gelände"
+              isSelected={isCamper}
+              limit={props.camperParkplatz}
+              handleSelection={() => {
+                if (props.camperParkplatz === false) {
+                  setIsCamper(!isCamper)
+                  if (!isCamper) {
+                    setSummary(summary + camperPrice)
+                  } else {
+                    setSummary(summary - camperPrice)
+                  }
+                }
+              }}
+            />
+          </Card3>
         </CardWrapper>
         <InfoWrapper>
           <InfoBlock>
@@ -130,6 +152,39 @@ const CardWrapper = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
   }
+`
+
+const Card1 = styled.div`
+  animation: TicketCardAnimation 1.3s 0.4s forwards
+    cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+
+  @keyframes TicketCardAnimation {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
+  }
+`
+const Card2 = styled.div`
+  animation: TicketCardAnimation 1.3s 0.6s forwards
+    cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+`
+const Card3 = styled.div`
+  animation: TicketCardAnimation 1.3s 0.8s forwards
+    cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
 `
 
 const ShoppingCartWrapper = styled.div`

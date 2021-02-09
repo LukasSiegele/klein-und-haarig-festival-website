@@ -173,7 +173,7 @@ export default function Summary({ location }) {
           ticket: "Camper Stellplatz 10 €",
         },
       ])
-      setCamperTicket("ja")
+      setCamperTicket("Ja")
     } else if (sumTickets === 90) {
       setProducts(products => [
         ...products,

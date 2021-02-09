@@ -1,23 +1,39 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { HeaderText } from "../styles/TextStyles"
 import useAudienceCount from "../../helper/useAudienceCount"
+import useAutoCount from "../../helper/useAutoCount"
+import useCamperCount from "../../helper/useCamperCount"
 
 export default function Header() {
   // Audience Cuunt
   const audienceCount = useAudienceCount()
   const maxAudience = 230
-  console.log(audienceCount)
+  console.log("leute" + audienceCount)
+
+  // Auto Count
+  const autoCount = useAutoCount()
+  console.log("autos " + autoCount)
+
+  // Camper Count
+  const camperCount = useCamperCount()
+  console.log("camper " + camperCount)
 
   return (
     <Wrapper>
       <Home></Home>
-      {/* <TicketWrapper to={audienceCount < maxAudience ? "/ticket" : "/voll"}>
+      <TicketWrapper
+        to={audienceCount < maxAudience ? "/ticket" : "/voll"}
+        state={{
+          autoParkplatz: autoCount,
+          camperParkplatz: camperCount,
+        }}
+      >
         <TicketText>
           {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
         </TicketText>
-      </TicketWrapper> */}
+      </TicketWrapper>
     </Wrapper>
   )
 }
