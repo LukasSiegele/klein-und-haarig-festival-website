@@ -22,7 +22,7 @@ export default function useAutoCount() {
   }, [])
 
   // Auto Limit
-  const maxAutos = 40
+  const maxAutos = 56
   const [autoParkplatz, setAutoParkplatz] = useState(false)
 
   useEffect(() => {
