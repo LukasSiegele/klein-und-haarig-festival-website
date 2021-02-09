@@ -109,26 +109,19 @@ export default function TicketSection(props) {
           </Card3>
         </CardWrapper>
         <InfoWrapper>
-          <InfoBlock>
-            {/* <form onSubmit={handleSubmit}>
-              <Label htmlFor="member">Mitglied?</Label>
-              <input
-                type="number"
-                name="member"
-                value={member}
-                required
-                onChange={e => setMember(e.target.value)}
-              />{" "}
-              <FormButton typ="submit" label="Check" />
-            </form> */}
-          </InfoBlock>
-          <ParkInfo>
-            Parken — Auch wenn es keine Parktickets mehr gibt kann zum Be- und
-            Entladen vorgefahren und anschließend in der Nähe geparkt werden.
-            Außerdem ist unser Gelände problemlos mit den Öffis erreichbar. Wenn
-            du nachträglich ein Parkticket kaufen möchtest wende dich bitte an
-            uns.
-          </ParkInfo>
+          <InfoText>
+            Tickets — Die Tickets sind personalisiert und es kann nur eines pro
+            Person gekauft werden. Parktickets können nur in Kombination mit
+            einem Festivalticket gekauft werden.
+          </InfoText>
+          <InfoText>
+            Parken — Wenn du nachträglich ein Parkticket kaufen möchtest oder
+            die Parktickets ausverkauft sind wende dich bitte an uns
+            info@kleinundhaarig.de. <br />
+            <br />
+            Öffis — Unser Gelände ist problemlos mit den Öffis von Bad Wildbad
+            erreichbar. Ein Bus fährt im 30 min Takt.
+          </InfoText>
         </InfoWrapper>
         <ShoppingCartWrapper>
           <SumWrapper>
@@ -230,7 +223,7 @@ const InfoBlock = styled.div`
   }
 `
 
-const ParkInfo = styled.h4`
+const InfoText = styled.h4`
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
 `
