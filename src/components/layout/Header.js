@@ -10,15 +10,12 @@ export default function Header() {
   // Audience Cuunt
   const audienceCount = useAudienceCount()
   const maxAudience = 230
-  console.log("leute" + audienceCount)
 
   // Auto Count
   const autoCount = useAutoCount()
-  console.log("autos " + autoCount)
 
   // Camper Count
   const camperCount = useCamperCount()
-  console.log("camper " + camperCount)
 
   return (
     <Wrapper>

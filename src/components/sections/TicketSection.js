@@ -3,6 +3,8 @@ import styled from "styled-components"
 import TicketCard from "../cards/TicketCard"
 import { Link } from "gatsby"
 import FormButton from "../buttons/FormButton"
+import useAutoCount from "../../helper/useAutoCount"
+import useCamperCount from "../../helper/useCamperCount"
 
 export default function TicketSection(props) {
   const isFestival = true
@@ -15,14 +17,11 @@ export default function TicketSection(props) {
 
   const [summary, setSummary] = useState(festivalPrice)
 
-  console.log("AUTOS " + props.autoParkplatz)
-  console.log("CAMPER " + props.camperParkplatz)
+  // Auto Count
+  const autoPTicketsPage = useAutoCount()
 
-  // // Auto Count
-  // const autoCount = useAutoCount()
-
-  // // Camper Count
-  // const camperCount = useCamperCount()
+  // Camper Count
+  const camperPTicketsPage = useCamperCount()
 
   // const [member, setMember] = useState()
 
@@ -59,12 +58,19 @@ export default function TicketSection(props) {
           <Card2>
             <TicketCard
               title="Auto Ticket"
-              price={props.autoParkplatz ? "Ausverkauft" : autoPrice + " €"}
+              price={
+                props.autoParkplatz || autoPTicketsPage
+                  ? "Ausverkauft"
+                  : autoPrice + " €"
+              }
               details="Parkplatz am Festivalgelände"
               isSelected={isAuto}
-              limit={props.autoParkplatz}
+              limit={props.autoParkplatz || autoPTicketsPage}
               handleSelection={() => {
-                if (props.autoParkplatz === false) {
+                if (
+                  props.autoParkplatz === false ||
+                  autoPTicketsPage === false
+                ) {
                   setIsAuto(!isAuto)
                   if (!isAuto) {
                     setSummary(summary + autoPrice)
@@ -78,12 +84,19 @@ export default function TicketSection(props) {
           <Card3>
             <TicketCard
               title="Camper Ticket"
-              price={props.camperParkplatz ? "Ausverkauft" : camperPrice + " €"}
+              price={
+                props.camperParkplatz || camperPTicketsPage
+                  ? "Ausverkauft"
+                  : camperPrice + " €"
+              }
               details="Camperstellplatz auf dem Gelände"
               isSelected={isCamper}
-              limit={props.camperParkplatz}
+              limit={props.camperParkplatz || camperPTicketsPage}
               handleSelection={() => {
-                if (props.camperParkplatz === false) {
+                if (
+                  props.camperParkplatz === false ||
+                  camperPTicketsPage === false
+                ) {
                   setIsCamper(!isCamper)
                   if (!isCamper) {
                     setSummary(summary + camperPrice)

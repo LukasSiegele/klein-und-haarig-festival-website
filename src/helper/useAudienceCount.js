@@ -7,7 +7,6 @@ const base = new Airtable({
 
 export default function useAudienceCount() {
   const [audienceCount, setAudienceCount] = useState(0)
-  console.log("audience count: " + audienceCount)
 
   useEffect(() => {
     base("Teilnehmer 2021")
