@@ -17,20 +17,25 @@
     rgb(69, 83, 209) 20%,
     rgb(176, 250, 255) 40%
   ); */
-  /* background: radial-gradient(
+  background: radial-gradient(
     circle at center,
     rgb(28, 16, 133) 20%,
     rgb(231, 171, 255) 40%
-  ); */
-  /* background: radial-gradient(
+  );
+  background: radial-gradient(
     circle at center,
     rgb(253, 242, 238) 20%,
     rgb(255, 242, 130) 40%
-  ); */
+  );
   background: radial-gradient(
     circle at center,
     rgb(253, 242, 238) 20%,
     rgb(162, 255, 235) 40%
+  );
+  background: radial-gradient(
+    circle at center,
+    rgb(253, 242, 238) 20%,
+    rgb(162, 218, 255) 40%
   );
   filter: blur(40px);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
