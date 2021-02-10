@@ -136,6 +136,13 @@ section {
 }
 
 @font-face {
+  font-family: "GT-Alpina-Fine-Light-Italic";
+  src: local("GT-Alpina-Fine-Light-Italic"),
+    url(../../../static/fonts/GT-Alpina/GT-Alpina-Fine-Condensed-Light-Italic-Trial.woff2)
+      format("woff2");
+}
+
+@font-face {
   font-family: "GT-Walsheim-Medium";
   src: local("GT-Walsheim-Medium"),
     url(../../../static/fonts/GT-Walsheim/GT-Walsheim-Medium-Trial.woff2)
@@ -202,6 +209,7 @@ a:hover {
 h1 {
   font-family: GT-Alpina-Fine-Thin;
   font-weight: 50;
+  color: rgba(255, 255, 255);
   /* font-size: 7em; */
   font-size: 9vw;
   text-transform: uppercase;

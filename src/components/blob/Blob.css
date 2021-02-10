@@ -12,24 +12,44 @@
     rgba(170, 250, 59, 1) 20%,
     rgba(241, 250, 59, 1) 40%
   );
+  /* background: radial-gradient(
+    circle at center,
+    rgb(69, 83, 209) 20%,
+    rgb(176, 250, 255) 40%
+  ); */
+  background: radial-gradient(
+    circle at center,
+    rgb(28, 16, 133) 20%,
+    rgb(231, 171, 255) 40%
+  );
+  background: radial-gradient(
+    circle at center,
+    rgb(253, 242, 238) 20%,
+    rgb(255, 242, 130) 40%
+  );
+  background: radial-gradient(
+    circle at center,
+    rgb(253, 242, 238) 20%,
+    rgb(45, 63, 226) 40%
+  );
   filter: blur(40px);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .hooks-main > div:nth-child(1) {
+  width: 150px;
+  height: 150px;
+}
+
+.hooks-main > div:nth-child(2) {
   width: 200px;
   height: 200px;
 }
 
-.hooks-main > div:nth-child(2) {
-  width: 300px;
-  height: 300px;
-}
-
 .hooks-main > div:nth-child(3) {
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
 }
 
 .hooks-main > div::after {

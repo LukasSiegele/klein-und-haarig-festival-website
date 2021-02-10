@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Blob from "../blob/Blob"
 import { themes } from "../styles/ColorStyles"
+import LeitgrafikImage from "../../../static/images/Leitgrafik.jpg"
 
 export default function HeroSection() {
   return (
@@ -42,16 +43,17 @@ const textOffsetMobile = "-0.3em"
 
 const HeroContainer = styled.div`
   background: ${themes.acid.backgroundColor};
-
-  background-size: cover;
+  background-image: url(${LeitgrafikImage});
+  /* background-position: 50%; */
   background-position: center;
+  background-size: cover;
   width: 100%;
   position: relative;
   overflow: hidden;
 `
 
 const HeroTextGroup = styled.div`
-  padding: 120px 40px;
+  padding: 110px 40px 120px;
 
   @media (max-width: 700px) {
     max-width: 100%;
@@ -158,6 +160,7 @@ const Year = styled.h1`
 
 const DetailWrapper = styled.div`
   clear: both;
+  color: white;
   margin-bottom: 100px;
   margin-top: 100px;
   margin-left: 20vw;

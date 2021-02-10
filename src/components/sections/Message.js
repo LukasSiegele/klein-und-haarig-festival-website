@@ -6,8 +6,9 @@ export default function Message() {
     <MessageContainer>
       <MessageWrapper>
         <MessageText>
-          Ein kleines Festival im Schwarzwald organisiert von ein paar Freunden
-          aus Liebe zur elektronischen Musik und zur Natur.
+          Ein kleines <Liebe>Festival</Liebe> im Schwarzwald organisiert von ein
+          paar Freunden aus Liebe zur <Liebe>elektronischen Musik</Liebe> und
+          zur <Liebe>Natur</Liebe>.
         </MessageText>
         <MessageLink
           href="https://soundcloud.com/kleinundhaarig"
@@ -58,4 +59,8 @@ const MessageLink = styled.a`
   text-align: center;
   padding-bottom: 5 px;
   border-bottom: 1px solid white;
+`
+
+const Liebe = styled.span`
+  font-family: "GT-Alpina-Fine-Light-Italic";
 `
