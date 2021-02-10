@@ -53,7 +53,7 @@ const HeroContainer = styled.div`
 `
 
 const HeroTextGroup = styled.div`
-  padding: 110px 40px 120px;
+  padding: 90px 40px 120px;
 
   @media (max-width: 700px) {
     max-width: 100%;
