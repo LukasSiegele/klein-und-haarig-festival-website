@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { animations } from "../styles/AnimationStyles"
+import TicketCardImage from "../../../static/images/TicketCardImage.jpg"
 
 export default function TicketCard(props) {
   return (
@@ -14,6 +15,7 @@ export default function TicketCard(props) {
       <DetailWrapper isSelected={props.isSelected}>
         <Details>{props.details}</Details>
       </DetailWrapper>
+      <BgImage isSelected={props.isSelected} />
     </Wrapper>
   )
 }
@@ -24,17 +26,26 @@ const Wrapper = styled.div`
   position: relative;
   transition: ${animations.slow};
   opacity: ${props => (props.limit ? ".3" : "1")};
-  color: ${props => (props.isSelected ? "black" : "white")};
-  border: ${props => (props.isSelected ? "0px" : "1px solid white")};
-  background: ${props =>
-    props.isSelected
-      ? "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
-      : "radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 17%, rgba(0,0,0,1) 89%, rgba(0,0,0,1) 100%)"};
-
+  color: white;
+  /* color: ${props => (props.isSelected ? "black" : "white")}; */
+  /* border: ${props => (props.isSelected ? "0px" : "1px solid white")}; */
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
   :hover {
     transform: translateY(-10px);
     cursor: pointer;
   }
+`
+
+const BgImage = styled.div`
+  position: absolute;
+  transition: ${animations.slow};
+  background: url(${TicketCardImage});
+  opacity: ${props => (props.isSelected ? "1" : "0")};
+  background-size: cover;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 `
 
 const Title = styled.h1`
@@ -62,8 +73,8 @@ const DetailWrapper = styled.div`
   right: -40px;
 
   a  {
-    color: ${props => (props.isSelected ? "black" : "white")};
-    border-color: ${props => (props.isSelected ? "black" : "white")};
+    /* color: ${props => (props.isSelected ? "black" : "white")}; */
+    /* border-color: ${props => (props.isSelected ? "black" : "white")}; */
   }
 `
 

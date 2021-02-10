@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <Wrapper>
       <Home></Home>
-      {/* <TicketWrapper
+      <TicketWrapper
         to={audienceCount < maxAudience ? "/tickets" : "/voll"}
         state={{
           autoParkplatz: autoCount,
@@ -30,7 +30,7 @@ export default function Header() {
         <TicketText>
           {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
         </TicketText>
-      </TicketWrapper> */}
+      </TicketWrapper>
     </Wrapper>
   )
 }
@@ -58,9 +58,9 @@ const TicketWrapper = styled(Link)`
     cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   visibility: hidden;
-  background: black;
+  background: white;
   height: 48px;
-  padding: 6px 25px;
+  padding: 4px 24px;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -89,5 +89,5 @@ const TicketText = styled.h3`
   font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
-  color: white;
+  color: black;
 `
