@@ -7,7 +7,7 @@ export default function Footer() {
     <Wrapper>
       <Content>
         <WrapperLeft>
-          <Text>Organisiert vom Bunte Platte e.V</Text>
+          <Text>Organisiert vom Bunte Platte e.V.</Text>
           <Description>
             —Miteinander Vielfalt, Offenheit, Toleranz und Freiheit feiern.
             Diese Philosophie von Techno zu seiner Gründungszeit vereint uns und

@@ -42,7 +42,7 @@ const textOffsetY = "-0.52em"
 const textOffsetMobile = "-0.3em"
 
 const HeroContainer = styled.div`
-  background: ${themes.acid.backgroundColor};
+  background: black;
   background-image: url(${LeitgrafikImage});
   /* background-position: 50%; */
   background-position: center;
