@@ -43,7 +43,7 @@ const textOffsetMobile = "-0.3em"
 
 const HeroContainer = styled.div`
   background: black;
-  background-image: url(${LeitgrafikImage});
+  /* background-image: url(${LeitgrafikImage}); */
   /* background-position: 50%; */
   background-position: center;
   background-size: cover;
