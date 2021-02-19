@@ -29,6 +29,10 @@ export default function SpendenSection(props) {
               setIsCard2(false)
               setIsCard3(false)
             }}
+            singleLineDetail={true}
+            cardBackground={
+              "radial-gradient(circle at 50% 50%, rgba(251,63,239,1) 0%, rgba(252,70,96,1) 100%)"
+            }
           />
           <TicketCard
             title="Initiative Musik"
@@ -46,6 +50,9 @@ export default function SpendenSection(props) {
               setIsCard2(true)
               setIsCard3(false)
             }}
+            cardBackground={
+              "radial-gradient(circle at 50% 50%, rgba(251,63,239,1) 0%, rgba(252,70,96,1) 100%)"
+            }
           />
           <TicketCard
             title="Corona Künstler Hilfe"
@@ -63,6 +70,10 @@ export default function SpendenSection(props) {
               setIsCard2(false)
               setIsCard3(true)
             }}
+            singleLineDetail={true}
+            cardBackground={
+              "radial-gradient(circle at 50% 50%, rgba(251,63,239,1) 0%, rgba(252,70,96,1) 100%)"
+            }
           />
         </CardWrapper>
         <ShoppingCartWrapper>
@@ -83,14 +94,14 @@ export default function SpendenSection(props) {
 
 const Wrapper = styled.div`
   padding: 0px 40px;
-  display: grid;
-  justify-content: center;
 `
 
-const Content = styled.div``
+const Content = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+`
 
 const CardWrapper = styled.div`
-  max-width: 800px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -98,20 +109,20 @@ const CardWrapper = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
   }
 `
 
 const ShoppingCartWrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 0 120px;
-  max-width: 800px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
   gap: 30px;
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
   }
 `
 

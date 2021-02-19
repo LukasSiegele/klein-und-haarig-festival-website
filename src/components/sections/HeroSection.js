@@ -50,13 +50,16 @@ const HeroContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
+  display: grid;
 `
 
 const HeroTextGroup = styled.div`
   padding: 90px 40px 120px;
+  max-width: 1920px;
+  justify-self: center;
 
   @media (max-width: 700px) {
-    max-width: 100%;
+    /* max-width: 100%; */
     padding: 90px 5px;
   }
 `

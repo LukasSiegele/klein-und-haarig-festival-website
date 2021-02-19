@@ -235,6 +235,11 @@ h4 {
   font-size: 1em;
 }
 
+h5 {
+  font-size: 0.8em;
+  line-height: 1.35em;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 17px;

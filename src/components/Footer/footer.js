@@ -17,13 +17,19 @@ export default function Footer() {
         <WrapperRight>
           <Text>© Copyright 2020</Text>
           <Imprint>
-            <Link to="/imprint">Impressum</Link>
+            <Text>
+              <Link to="/imprint">Impressum</Link>
+            </Text>
           </Imprint>
           <Datenschutz>
-            <Link to="/privacy">Datenschutz</Link>
+            <Text>
+              <Link to="/privacy">Datenschutz</Link>
+            </Text>
           </Datenschutz>
           <Kontakt>
-            <a href="mailto:info@kleinundhaarig.de">Kontakt</a>
+            <Text>
+              <a href="mailto:info@kleinundhaarig.de">Kontakt</a>
+            </Text>
           </Kontakt>
         </WrapperRight>
       </Content>
@@ -35,6 +41,7 @@ const Wrapper = styled.div`
   background-color: black;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 40px 80px;
+  display: grid;
   @media (max-width: 768px) {
     padding: 20px 20px 80px;
   }
@@ -51,21 +58,22 @@ const Content = styled.div`
   gap: 40px;
   align-content: space-between;
   color: white;
-
+  max-width: 900px;
+  justify-self: center;
   @media (max-width: 768px) {
     justify-content: space-evenly;
     gap: 0px;
   }
 `
 
-const Description = styled.h4`
+const Description = styled.h5`
   color: white;
   margin-top: 30px;
   @media (max-width: 768px) {
     margin-top: 10px;
   }
 `
-const Text = styled.h4``
+const Text = styled.h5``
 
 const WrapperLeft = styled.div`
   * {

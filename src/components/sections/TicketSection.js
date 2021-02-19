@@ -45,6 +45,9 @@ export default function TicketSection(props) {
               price={festivalPrice + " €"}
               details="3 Tage Festival mit Zeltplatz"
               isSelected={isFestival}
+              cardBackground={
+                "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
+              }
               // handleSelection={() => {
               //   setIsFestival(!isFestival)
               //   if (!isFestival) {
@@ -79,6 +82,9 @@ export default function TicketSection(props) {
                   }
                 }
               }}
+              cardBackground={
+                "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
+              }
             />
           </Card2>
           <Card3>
@@ -105,16 +111,19 @@ export default function TicketSection(props) {
                   }
                 }
               }}
+              cardBackground={
+                "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
+              }
             />
           </Card3>
         </CardWrapper>
         <InfoWrapper>
-          <InfoText>
+          <InfoText1>
             Tickets — Die Tickets sind personalisiert und es kann nur eines pro
             Person gekauft werden. Parktickets können nur in Kombination mit
             einem Festivalticket gekauft werden.
-          </InfoText>
-          <InfoText>
+          </InfoText1>
+          <InfoText2>
             Parken — Wenn du nachträglich ein Parkticket kaufen möchtest oder
             die Parktickets ausverkauft sind wende dich bitte an uns{" "}
             <LinkInline href="mailto:info@kleinundhaarig.de" subject="Parken">
@@ -125,7 +134,7 @@ export default function TicketSection(props) {
             <br />
             Öffis — Unser Gelände ist problemlos mit den Öffis von Bad Wildbad
             erreichbar. Ein Bus fährt von dort im 30 min Takt.
-          </InfoText>
+          </InfoText2>
         </InfoWrapper>
         <ShoppingCartWrapper>
           <SumWrapper>
@@ -149,7 +158,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  max-width: 800px;
+  max-width: 900px;
 `
 
 const CardWrapper = styled.div`
@@ -157,10 +166,10 @@ const CardWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 40px;
-  justify-items: center;
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
   }
 `
 
@@ -202,37 +211,39 @@ const ShoppingCartWrapper = styled.div`
   padding: 40px 0 120px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
   gap: 30px;
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
-    justify-conten: center;
+    justify-content: center;
   }
 `
 
 const InfoWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 0 0 40px;
   @media (max-width: 800px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 
-const InfoBlock = styled.div`
-  @media (max-width: 800px) {
-    display: none;
-  }
-`
-
-const InfoText = styled.h4`
-  font-size: 14px;
+const InfoText1 = styled.h5`
   color: rgba(255, 255, 255, 0.5);
 `
+const InfoText2 = styled.h5`
+  grid-area: 1 / 2 / 2 / 4;
+  color: rgba(255, 255, 255, 0.5);
+  @media (max-width: 800px) {
+    grid-area: 1;
+  }
+`
 
-const SumWrapper = styled.div``
+const SumWrapper = styled.div`
+  display: grid;
+  align-items: center;
+`
 
 const Summary = styled.h4`
   color: white;

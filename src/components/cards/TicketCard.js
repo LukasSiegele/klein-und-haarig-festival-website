@@ -7,12 +7,17 @@ export default function TicketCard(props) {
   return (
     <Wrapper
       isSelected={props.isSelected}
+      spendeSelected={props.spendeSelected}
       onClick={props.handleSelection}
       limit={props.limit}
+      cardBackground={props.cardBackground}
     >
       <Title titleSize={props.titleSize}> {props.title}</Title>
       <Price>{props.price}</Price>
-      <DetailWrapper isSelected={props.isSelected}>
+      <DetailWrapper
+        isSelected={props.isSelected}
+        singleLineDetail={props.singleLineDetail}
+      >
         <Details>{props.details}</Details>
       </DetailWrapper>
       <BgImage isSelected={props.isSelected} />
@@ -22,15 +27,16 @@ export default function TicketCard(props) {
 
 const Wrapper = styled.div`
   height: 464px;
-  width: 242px;
+  max-width: 242px;
   position: relative;
   transition: ${animations.slow};
   opacity: ${props => (props.limit ? ".3" : "1")};
   color: white;
   background: ${props =>
     props.isSelected
-      ? "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
+      ? props.cardBackground
       : "radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 17%, rgba(0,0,0,1) 89%, rgba(0,0,0,1) 100%)"};
+
   /* color: ${props => (props.isSelected ? "black" : "white")}; */
   /* border: ${props => (props.isSelected ? "0px" : "1px solid white")}; */
   border: 0.5px solid rgba(255, 255, 255, 0.3);
@@ -73,8 +79,9 @@ const Price = styled.h4`
 const DetailWrapper = styled.div`
   position: absolute;
   width: 160px;
-  bottom: 75px;
-  right: -40px;
+  bottom: ${props => (props.singleLineDetail ? "89px" : "75px")};
+  right: ${props => (props.singleLineDetail ? "-53px" : "-40px")};
+  /* right: -40px; */
 
   a  {
     /* color: ${props => (props.isSelected ? "black" : "white")}; */
