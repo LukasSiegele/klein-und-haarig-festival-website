@@ -54,15 +54,15 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr auto;
+  gap: 100px;
   align-content: space-between;
   color: white;
   max-width: 900px;
   justify-self: center;
   @media (max-width: 768px) {
     justify-content: space-evenly;
-    gap: 0px;
+    gap: 30px;
   }
 `
 
