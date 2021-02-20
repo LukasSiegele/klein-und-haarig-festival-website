@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <Wrapper>
       <Home></Home>
-      {/* <TicketWrapper
+      <TicketWrapper
         to={audienceCount < maxAudience ? "/tickets" : "/voll"}
         state={{
           autoParkplatz: autoCount,
@@ -30,7 +30,7 @@ export default function Header() {
         <TicketText>
           {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
         </TicketText>
-      </TicketWrapper> */}
+      </TicketWrapper>
     </Wrapper>
   )
 }

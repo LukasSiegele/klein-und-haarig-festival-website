@@ -122,7 +122,7 @@ const ShoppingCartWrapper = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
+    justify-items: center;
   }
 `
 
