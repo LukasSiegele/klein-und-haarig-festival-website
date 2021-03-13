@@ -69,6 +69,10 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     grid-template-rows: auto 700px;
   }
+
+  @media (max-width: 700px) {
+    grid-template-rows: auto 700px;
+  }
 `
 
 const TitleLine = styled.div`
@@ -78,6 +82,10 @@ const TitleLine = styled.div`
 
   @media (max-width: 768px) {
     padding: 10px 50px;
+  }
+
+  @media (max-width: 700px) {
+    padding: 10px 30px;
   }
 `
 
@@ -108,6 +116,10 @@ const ImageLine = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 50px auto 50px;
   }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 30px auto 30px;
+  }
 `
 
 const Left = styled.div`
@@ -130,6 +142,11 @@ const InfoGroup = styled.div`
     left: -225px;
   }
 
+  @media (max-width: 700px) {
+    left: -235px;
+    gap: 5px;
+  }
+
   animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   visibility: hidden;
@@ -139,6 +156,7 @@ const InfoGroup = styled.div`
 
 const Date = styled.h3`
   justify-self: end;
+  align-self: center;
 `
 
 const Icon = styled.img`
@@ -146,7 +164,9 @@ const Icon = styled.img`
   height: 24px; */
   align-self: center;
 `
-const Place = styled.h3``
+const Place = styled.h3`
+  align-self: center;
+`
 
 const ImageWrapper = styled.div`
   /* background-color: yellow; */
