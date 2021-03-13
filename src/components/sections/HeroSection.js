@@ -1,195 +1,238 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import Blob from "../blob/Blob"
-import { themes } from "../styles/ColorStyles"
-import LeitgrafikImage from "../../../static/images/Leitgrafik.jpg"
+import { Link } from "gatsby"
+import LeitgrafikImage from "/static/images/Leitgrafik.jpg"
+import TicketBackground from "/static/icons/ticket.svg"
+
+import useAudienceCount from "../../helper/useAudienceCount"
+import useAutoCount from "../../helper/useAutoCount"
+import useCamperCount from "../../helper/useCamperCount"
 
 export default function HeroSection() {
+  // Audience Cuunt
+  const audienceCount = useAudienceCount()
+  const maxAudience = 230
+
+  // Auto Count
+  const autoCount = useAutoCount()
+
+  // Camper Count
+  const camperCount = useCamperCount()
+
   return (
-    <HeroContainer>
-      <Blob />
-      <HeroTextGroup>
-        <TextMask>
-          <TitleLine1>Klein&nbsp;</TitleLine1>
-        </TextMask>
-        <TextMask>
-          <TitleLine12>und</TitleLine12>
-        </TextMask>
-        <br />
-        <TextMask2>
-          <TitleLine2>Haarig&nbsp;</TitleLine2>
-        </TextMask2>
-        <TextMask22>
-          <TitleLine22>Festival</TitleLine22>
-        </TextMask22>
-        <TextMaskYear>
-          <Year>2021</Year>
-        </TextMaskYear>
-        <DetailWrapper>
-          <TextMaskDetail>
-            <HeroTitleDetail1>9—11 Juli</HeroTitleDetail1>
-          </TextMaskDetail>
-          <TextMaskDetail>
-            <HeroTitleDetail2>Bad Wildbad</HeroTitleDetail2>
-          </TextMaskDetail>
-        </DetailWrapper>
-      </HeroTextGroup>
-    </HeroContainer>
+    <Container>
+      <Wrapper>
+        <TitleLine>
+          <Title>Klein und Haarig</Title>
+        </TitleLine>
+        <ImageLine>
+          <Left>
+            <InfoGroup>
+              <Date>9—11 Juli 2021</Date>
+              <Icon src="/icons/dot.svg" className="dot" />
+              <Place>Bad Wildbad</Place>
+            </InfoGroup>
+          </Left>
+          <ImageWrapper>
+            <LogoGroup>
+              <Logo src="/images/Logo.png" className="logo" />
+              {/* <TicketGroup
+                to={audienceCount < maxAudience ? "/tickets" : "/voll"}
+                state={{
+                  autoParkplatz: autoCount,
+                  camperParkplatz: camperCount,
+                }}
+              >
+                <TicketLabel>
+                  {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
+                </TicketLabel>
+              </TicketGroup> */}
+            </LogoGroup>
+          </ImageWrapper>
+          <Right></Right>
+        </ImageLine>
+      </Wrapper>
+    </Container>
   )
 }
 
-const textOffsetY = "-0.52em"
-const textOffsetMobile = "-0.3em"
-
-const HeroContainer = styled.div`
-  background: black;
-  /* background-image: url(${LeitgrafikImage}); */
-  /* background-position: 50%; */
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  position: relative;
+const Container = styled.div`
+  /* background-color: blue; */
+  /* height: 910px; */
   overflow: hidden;
+`
+
+const Wrapper = styled.div`
   display: grid;
-`
+  grid-template-rows: auto 800px;
 
-const HeroTextGroup = styled.div`
-  padding: 90px 40px 120px;
-  max-width: 1920px;
-  justify-self: center;
-
-  @media (max-width: 700px) {
-    /* max-width: 100%; */
-    padding: 90px 5px;
+  @media (max-width: 768px) {
+    grid-template-rows: auto 700px;
   }
 `
 
-const TextMask = styled.div`
-  overflow: hidden;
-  padding: 2px 0;
-  margin-top: ${textOffsetY};
-  display: inline-block;
-  @media (max-width: 700px) {
-    margin-top: ${textOffsetMobile};
+const TitleLine = styled.div`
+  padding: 10px 90px;
+  display: grid;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 10px 50px;
   }
 `
 
-const TitleLine1 = styled.h1`
-  animation: HeroAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+const Title = styled.h1`
+  text-align: center;
+
+  animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
+  visibility: hidden;
 
-  @keyframes HeroAnimation {
+  @keyframes TextAnimation {
     0% {
+      visibility: visible;
       opacity: 0;
-      transform: translateY(40px);
     }
 
     100% {
       opacity: 1;
-      transform: translateY(2px);
+      visibility: visible;
     }
   }
 `
 
-const TitleLine12 = styled.h1`
-  margin-top: 0px;
-  top: 5%;
-  animation: HeroAnimation 1.3s 0.7s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-`
+const ImageLine = styled.div`
+  display: grid;
+  grid-template-columns: 90px auto 90px;
 
-const TextMask2 = styled.div`
-  overflow: hidden;
-  padding: 2px 0;
-  margin-top: ${textOffsetY};
-  display: inline-block;
-  @media (max-width: 700px) {
-    margin-top: ${textOffsetMobile};
+  @media (max-width: 768px) {
+    grid-template-columns: 50px auto 50px;
   }
 `
 
-const TextMask22 = styled.div`
-  overflow: hidden;
-  padding: 2px 0;
-  margin-top: ${textOffsetY};
-  display: inline-block;
-  @media (max-width: 700px) {
-    margin-top: ${textOffsetMobile};
-  }
+const Left = styled.div`
+  position: relative;
+  display: grid;
+  align-items: center;
 `
 
-const TitleLine2 = styled.h1`
-  margin-left: 60px;
-  animation: HeroAnimation 1.3s 0.9s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  @media (max-width: 700px) {
-    margin-left: 0px;
-  }
-`
-
-const TitleLine22 = styled.h1`
-  animation: HeroAnimation 1.3s 1.1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  @media (max-width: 700px) {
-    margin-left: 0px;
-  }
-`
-
-const TextMaskYear = styled.div`
-  overflow: hidden;
-  padding: 2px 0;
-  margin-top: ${textOffsetY};
-
-  float: right;
-  margin-left: auto;
-  margin-right: 25%;
-  margin-bottom: 100px;
-
-  @media (max-width: 700px) {
-    margin-top: ${textOffsetMobile};
-  }
-`
-
-const Year = styled.h1`
-  animation: HeroAnimation 1.3s 1.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-
-  @media (max-width: 700px) {
-    float: left;
-  }
-`
-
-const DetailWrapper = styled.div`
-  clear: both;
+const InfoGroup = styled.div`
+  position: absolute;
+  width: 500px;
+  display: grid;
+  grid-template-columns: auto 24px auto;
+  gap: 10px;
+  transform: rotate(-90deg);
   color: white;
-  margin-bottom: 100px;
-  margin-top: 100px;
-  margin-left: 20vw;
+  left: -206px;
+
+  @media (max-width: 768px) {
+    left: -225px;
+  }
+
+  animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  /* transform-origin: top left;
+  align-self: center; */
 `
 
-const TextMaskDetail = styled.div`
-  overflow: hidden;
-  padding: 2px 0;
-  margin-top: ${textOffsetY};
-  @media (max-width: 700px) {
-    margin-top: ${textOffsetMobile};
+const Date = styled.h3`
+  justify-self: end;
+`
+
+const Icon = styled.img`
+  /* width: 24px;
+  height: 24px; */
+  align-self: center;
+`
+const Place = styled.h3``
+
+const ImageWrapper = styled.div`
+  /* background-color: yellow; */
+  border-radius: 20px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-image: url(${LeitgrafikImage});
+  background-size: cover;
+
+  animation: ImageAnimation 1.8s 1.8s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: scale(1.58);
+
+  @keyframes ImageAnimation {
+    0% {
+      transform: scale(1.58);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
 `
 
-const HeroTitleDetail1 = styled.h3`
-  animation: HeroAnimation 1.2s 2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+const LogoGroup = styled.div`
+  display: grid;
+  justify-items: center;
+`
+
+const Logo = styled.img`
+  width: 300px;
+  animation: TicketButtonAnimation 1.8s 0.6s forwards
+    cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-  @media (max-width: 700px) {
-    margin: 0px 0;
+  visibility: hidden;
+
+  @keyframes TicketButtonAnimation {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
   }
 `
-const HeroTitleDetail2 = styled.h3`
-  margin-top: 10px;
-  animation: HeroAnimation 1.2s 2.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+
+const TicketGroup = styled(Link)`
+  animation: TicketButtonAnimation 2s 3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-  @media (max-width: 700px) {
-    margin: 0px 0;
+  visibility: hidden;
+  background-image: url(${TicketBackground});
+  width: 152px;
+  height: 56px;
+  color: white;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: 0px;
+
+  & > :hover {
+    cursor: pointer;
+  }
+
+  @keyframes TicketButtonAnimation {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
   }
 `
+const TicketLabel = styled.h3`
+  text-align: center;
+`
+
+const Right = styled.div``

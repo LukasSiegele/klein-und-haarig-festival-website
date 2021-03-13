@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="152px" height="56px" viewBox="0 0 152 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ticket</title>
+    <g id="ticket" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,0 L152,0 L152,14 C147.264798,18.6666667 144.897196,23.3333333 144.897196,28 C144.897196,32.6666667 147.264798,37.3333333 152,42 L152,56 L0,56 L0,42 C4.73520249,37.3333333 7.10280374,32.6666667 7.10280374,28 C7.10280374,23.3333333 4.73520249,18.6666667 0,14 L0,0 Z" id="Rectangle" fill="#000000"></path>
+    </g>
+</svg>

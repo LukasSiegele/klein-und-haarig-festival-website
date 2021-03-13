@@ -125,6 +125,12 @@ section {
   display: block;
 }
 
+@font-face {
+  font-family: "Pilowlava";
+  src: local("Pilowlava"),
+    url(../../../static/fonts/Pilowlava/Pilowlava.woff2) format("woff2");
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Roboto:wght@500;900&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap"); */
 
@@ -207,14 +213,14 @@ a:hover {
 }
 
 h1 {
-  font-family: GT-Alpina-Fine-Thin;
+  font-family: Pilowlava;
   font-weight: 50;
   color: rgba(255, 255, 255);
   /* font-size: 7em; */
-  font-size: 9vw;
+  font-size: 7vw;
   text-transform: uppercase;
   margin: 0;
-  line-height: 0.68em;
+  line-height: 1em;
 }
 
 h2 {
@@ -228,7 +234,7 @@ h3 {
   /* font-family: "Open Sans";
   font-family: "HelveticaNeue", sans-serif; */
   font-weight: 900;
-  font-size: 2em;
+  font-size: 1.3em;
 }
 
 h4 {
@@ -240,22 +246,29 @@ h5 {
   line-height: 1.35em;
 }
 
+@media (max-width: 950px) {
+  h1 {
+    font-size: 11vw;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 17px;
   }
-  h1 {
-    font-size: 16vw;
-  }
+
+  /* h1 {
+    font-size: 7.5vw;
+  } */
 }
 
 @media (max-width: 700px) {
   /* body {
     font-size: 16px;
   } */
-  h1 {
+  /* h1 {
     font-size: 18vw;
-  }
+  } */
   h2 {
     font-size: 1.8em;
   }
