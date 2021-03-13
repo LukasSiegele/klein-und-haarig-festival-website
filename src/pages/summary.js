@@ -267,7 +267,7 @@ export default function Summary({ location }) {
               </Group>
               <Group>
                 <Value>IBAN</Value>
-                <Info>DE 1001 10001 2787 2983 77</Info>
+                <Info>DE47 5003 1000 1082 4300 04</Info>
               </Group>
               <Group>
                 <Value>BIC</Value>
