@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <Home></Home>
+      <Home> </Home>
       {/* <TicketWrapper
         to={audienceCount < maxAudience ? "/tickets" : "/voll"}
         state={{
