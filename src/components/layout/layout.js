@@ -2,7 +2,7 @@ import React from "react"
 // import { GlobalStyle } from "../styles/GlobalStyle"
 import "./layout.css"
 import CookieConsent from "react-cookie-consent"
-import Footer from "../footer/footer"
+import Footer from "../footer/Footer"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
