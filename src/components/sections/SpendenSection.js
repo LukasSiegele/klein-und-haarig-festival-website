@@ -4,6 +4,10 @@ import TicketCard from "../cards/TicketCard"
 import { Link } from "gatsby"
 import FormButton from "../buttons/FormButton"
 
+import Background1 from "/static/images/Card-Bg1.jpg"
+import Background2 from "/static/images/Card-Bg2.jpg"
+import Background3 from "/static/images/Card-Bg3.jpg"
+
 export default function SpendenSection(props) {
   const [isCard1, setIsCard1] = useState(true)
   const [isCard2, setIsCard2] = useState(false)
@@ -30,13 +34,11 @@ export default function SpendenSection(props) {
               setIsCard3(false)
             }}
             singleLineDetail={true}
-            cardBackground={
-              "radial-gradient(circle at 50% 50%, rgba(251,63,239,1) 0%, rgba(252,70,96,1) 100%)"
-            }
+            cardBackground={Background1}
           />
           <TicketCard
             title="Initiative Musik"
-            titleSize="56px"
+            titleSize="35px"
             price="Supporte Musiker:innnen"
             details={
               <Link target="_blank" to="https://www.initiative-musik.de/">
@@ -50,13 +52,11 @@ export default function SpendenSection(props) {
               setIsCard2(true)
               setIsCard3(false)
             }}
-            cardBackground={
-              "radial-gradient(circle at 50% 50%, rgba(251,63,239,1) 0%, rgba(252,70,96,1) 100%)"
-            }
+            cardBackground={Background2}
           />
           <TicketCard
             title="Corona Künstler Hilfe"
-            titleSize="56px"
+            titleSize="35px"
             price="Unterstütze Künstler:innen"
             details={
               <Link target="_blank" to="https://www.coronakuenstlerhilfe.de/">
@@ -71,9 +71,7 @@ export default function SpendenSection(props) {
               setIsCard3(true)
             }}
             singleLineDetail={true}
-            cardBackground={
-              "radial-gradient(circle at 50% 50%, rgba(251,63,239,1) 0%, rgba(252,70,96,1) 100%)"
-            }
+            cardBackground={Background3}
           />
         </CardWrapper>
         <ShoppingCartWrapper>
@@ -115,7 +113,7 @@ const CardWrapper = styled.div`
 
 const ShoppingCartWrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 40px 0 120px;
+  padding: 40px 0 200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;

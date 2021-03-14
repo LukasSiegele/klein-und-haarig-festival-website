@@ -36,17 +36,19 @@ export default function HeroSection() {
           <ImageWrapper>
             <LogoGroup>
               <Logo src="/images/Logo.png" className="logo" />
-              {/* <TicketGroup
-                to={audienceCount < maxAudience ? "/tickets" : "/voll"}
-                state={{
-                  autoParkplatz: autoCount,
-                  camperParkplatz: camperCount,
-                }}
-              >
-                <TicketLabel>
-                  {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
-                </TicketLabel>
-              </TicketGroup> */}
+              {/* <TicketWrapper>
+                <TicketGroup
+                  to={audienceCount < maxAudience ? "/tickets" : "/voll"}
+                  state={{
+                    autoParkplatz: autoCount,
+                    camperParkplatz: camperCount,
+                  }}
+                >
+                  <TicketLabel>
+                    {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
+                  </TicketLabel>
+                </TicketGroup>
+              </TicketWrapper> */}
             </LogoGroup>
           </ImageWrapper>
           <Right></Right>
@@ -76,7 +78,7 @@ const Wrapper = styled.div`
 `
 
 const TitleLine = styled.div`
-  padding: 10px 90px;
+  padding: 20px 90px;
   display: grid;
   justify-content: center;
 
@@ -170,7 +172,7 @@ const Place = styled.h3`
 
 const ImageWrapper = styled.div`
   /* background-color: yellow; */
-  border-radius: 20px;
+  /* border-radius: 20px; */
   display: grid;
   align-items: center;
   justify-items: center;
@@ -215,6 +217,14 @@ const Logo = styled.img`
       visibility: visible;
       transform: translateY(0px);
     }
+  }
+`
+
+const TicketWrapper = styled.div`
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  :hover {
+    /* transform: translateY(-10px); */
+    transform: scale(1.03);
   }
 `
 

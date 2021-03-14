@@ -6,6 +6,10 @@ import FormButton from "../buttons/FormButton"
 import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
 
+import Background1 from "/static/images/Card-Bg1.jpg"
+import Background2 from "/static/images/Card-Bg2.jpg"
+import Background3 from "/static/images/Card-Bg3.jpg"
+
 export default function TicketSection(props) {
   const isFestival = true
   // const [isFestival, setIsFestival] = useState(true)
@@ -45,9 +49,7 @@ export default function TicketSection(props) {
               price={festivalPrice + " €"}
               details="3 Tage Festival mit Zeltplatz"
               isSelected={isFestival}
-              cardBackground={
-                "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
-              }
+              cardBackground={Background1}
               // handleSelection={() => {
               //   setIsFestival(!isFestival)
               //   if (!isFestival) {
@@ -60,13 +62,13 @@ export default function TicketSection(props) {
           </Card1>
           <Card2>
             <TicketCard
-              title="Auto Ticket"
+              title="Auto Park Platz"
               price={
                 props.autoParkplatz || autoPTicketsPage
                   ? "Ausverkauft"
                   : autoPrice + " €"
               }
-              details="Parkplatz am Festivalgelände"
+              details="Parkplatz auf dem Gelände"
               isSelected={isAuto}
               limit={props.autoParkplatz || autoPTicketsPage}
               handleSelection={() => {
@@ -82,14 +84,12 @@ export default function TicketSection(props) {
                   }
                 }
               }}
-              cardBackground={
-                "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
-              }
+              cardBackground={Background2}
             />
           </Card2>
           <Card3>
             <TicketCard
-              title="Camper Ticket"
+              title="Camper Stell Platz"
               price={
                 props.camperParkplatz || camperPTicketsPage
                   ? "Ausverkauft"
@@ -111,29 +111,29 @@ export default function TicketSection(props) {
                   }
                 }
               }}
-              cardBackground={
-                "radial-gradient(circle at 50% 50%, rgba(255,215,68,1) 0%, rgba(255,215,68,1) 17%, rgba(208,255,53,1) 89%, rgba(162,250,76,1) 100%)"
-              }
+              cardBackground={Background3}
             />
           </Card3>
         </CardWrapper>
         <InfoWrapper>
           <InfoText1>
-            Tickets — Die Tickets sind personalisiert und es kann nur eines pro
-            Person gekauft werden. Parktickets können nur in Kombination mit
-            einem Festivalticket gekauft werden.
+            Tickets — die Tickets sind personalisiert. Pro Person und E-Mail
+            kann nur ein Ticket erworben werden. Auto- und Campertickets sind
+            nur in Kombination mir einem Festivalticket erhältlich.
           </InfoText1>
           <InfoText2>
-            Parken — Wenn du nachträglich ein Parkticket kaufen möchtest oder
-            die Parktickets ausverkauft sind wende dich bitte an uns{" "}
+            Parken — Wenn du schon ein Ticket hast und noch ein Auto- oder
+            Camperticket dazubuchen möchtest oder diese bereits ausverkauft
+            sind, wende dich bitte an{" "}
             <LinkInline href="mailto:info@kleinundhaarig.de" subject="Parken">
               info@kleinundhaarig.de
             </LinkInline>
             . Zum Be- und Entladen kann in jedem Fall vorgefahren werden.
             <br />
             <br />
-            Öffis — Unser Gelände ist problemlos mit den Öffis von Bad Wildbad
-            erreichbar. Ein Bus fährt von dort im 30 min Takt.
+            Öffis — Unser Gelände ist problemlos mit öffentlichen
+            Verkehrsmitteln erreichbar. Vom nächstgelegenen Bahnhof fährt alle
+            30 min ein Bus direkt vor das Festival.
           </InfoText2>
         </InfoWrapper>
         <ShoppingCartWrapper>
@@ -208,7 +208,7 @@ const Card3 = styled.div`
 
 const ShoppingCartWrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 40px 0 120px;
+  padding: 40px 0 200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -230,11 +230,11 @@ const InfoWrapper = styled.div`
 `
 
 const InfoText1 = styled.h5`
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
 `
 const InfoText2 = styled.h5`
   grid-area: 1 / 2 / 2 / 4;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
   @media (max-width: 800px) {
     grid-area: 1;
   }
@@ -259,7 +259,7 @@ const Label = styled.h4`
 `
 
 const LinkInline = styled.a`
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
   padding-bottom: 1px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
 `

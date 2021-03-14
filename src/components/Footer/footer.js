@@ -9,7 +9,7 @@ export default function Footer() {
         <WrapperLeft>
           <BuntePlatte>Organisiert vom Bunte Platte e.V.</BuntePlatte>
           <Description>
-            —Miteinander Vielfalt, Offenheit, Toleranz und Freiheit feiern.
+            — Miteinander Vielfalt, Offenheit, Toleranz und Freiheit feiern.
             Diese Philosophie von Techno zu seiner Gründungszeit vereint uns und
             treibt uns an.
           </Description>
@@ -72,16 +72,16 @@ const Content = styled.div`
   }
 `
 
-const BuntePlatte = styled.h4``
+const BuntePlatte = styled.h5``
 
-const Description = styled.h4`
+const Description = styled.h5`
   color: white;
   margin-top: 30px;
   @media (max-width: 768px) {
     margin-top: 10px;
   }
 `
-const Text = styled.h4``
+const Text = styled.h5``
 
 const WrapperLeft = styled.div`
   * {

@@ -56,7 +56,7 @@ export default function Form(props) {
             required
             onChange={e => setLastName(e.target.value)}
           />{" "}
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">E-Mail</Label>
           <input
             type="email"
             name="email"
@@ -64,7 +64,7 @@ export default function Form(props) {
             required
             onChange={e => setEmail(e.target.value)}
           />{" "}
-          <Label htmlFor="phone">Mobilfunknummer (optional)</Label>
+          <Label htmlFor="phone">Telefonnummer (optional)</Label>
           <input
             type="tel"
             name="phone"
@@ -73,7 +73,7 @@ export default function Form(props) {
             onChange={e => setPhone(e.target.value)}
           />{" "}
           <Seperator />
-          <Label htmlFor="streetHouseNumber">Strasse, Hausnummer</Label>
+          <Label htmlFor="streetHouseNumber">Straße, Hausnummer</Label>
           <input
             type="text"
             name="streetHouseNumber"
@@ -114,12 +114,10 @@ export default function Form(props) {
               <div className="b-input"></div>
             </label>
             <CheckboxDecription>
-              Mit dem Ticketkauf trittst du unserem Verein Bunte Platte e.V.
-              bei. Keine Angst, das Ganze ist eine 3 monatige
-              Probemitgliedschaft die am 1. Juli 2021 startet. Nach den 3
-              Monaten trittst du automatisch aus, ohne etwas machen zu müssen.
-              Chillig oder? Dadurch ist das KuH eine vereinsinterne
-              Veranstaltung.
+              Mit dem Kauf eines Tickets trittst du dem eingetragenen Verein
+              Bunte Platte zur Probe bei. Diese Probemitgliedschaft beginnt am
+              1. Juli 2021 und endet nach 90 Tagen automatisch. Du musst nichts
+              weiter tun.
             </CheckboxDecription>
           </CheckboxGroup>
           <br />
@@ -160,8 +158,7 @@ export default function Form(props) {
               <div className="b-input"></div>
             </label>
             <CheckboxDecription>
-              Alle Infos zum Festival 2021 bekommst du auch ohne Newsletter. Als
-              Erinnerung für die nächsten Jahre aber sehr zu empfehlen.
+              Zur Erinnerung für die kommenden Jahre sehr zu empfehlen.
             </CheckboxDecription>
           </CheckboxGroup>
           <WeiterWrapper>
@@ -182,7 +179,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   max-width: 500px;
-  margin: 0 0 160px;
+  margin: 0 0 200px;
   padding: 0 40px;
   @media (max-width: 768px) {
     padding: 0 20px;

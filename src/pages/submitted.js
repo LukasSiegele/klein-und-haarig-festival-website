@@ -13,25 +13,21 @@ export default function Submitted() {
       <SEO title="Submitted" />
       <Container>
         <ShopTitle
-          info="Wouhuuuu! 🚀"
+          info="Wouhuuuu!"
           title="Wir haben deine Reservierung erhalten"
         />
         <Wrapper>
           <Section>
             <Info>
-              Die Überweisungsdaten sind raus an deine Mail. Das kann einige
-              Minuten dauern. Falls keine Mail im Posteingang liegt, checke erst
-              deinen Spam Ordner und melde dich dann falls sie nicht auffindbar
-              ist einfach bei uns via ticket@kleinundhaarig.com.
-            </Info>
-            <Info>
-              Sobald du überwiesen hast schicken wir dir eine
-              Zahlungsbestätigungsmail.
+              Spätestens in ein paar Minuten solltest du eine Bestätigungsmail
+              von uns erhalten. Bitte checke auch deinen Spam-Ordner! Wenn du
+              keine E-Mail bekommen hast melde dich bitte bei via
+              ticket@kleinundhaarig.de bei uns.
             </Info>
             <br />
             <Info>
-              Wir freuen uns schon auf dich, <br />
-              dein Klein und Haarig Team ✨
+              Wir freuen uns auf dich! <br />
+              Dein KuH Team
             </Info>
           </Section>
           <ButtonSection>
@@ -55,7 +51,7 @@ const Container = styled.div`
   border: solid black;
   border-width: 40px 40px 0px 40px;
   /* text-align: center; */
-  padding: 10px 20px 200px 20px;
+  padding: 10px 20px 500px 20px;
 `
 
 const Wrapper = styled.div`

@@ -83,8 +83,7 @@ export default function Helfer({ location }) {
               </label>
               <CheckboxDecription>
                 Wenn du einen Akkuschrauber halten kannst bist du schonmal
-                qualifiziert. Aber auch kreative Köpfe die Schilder malen,
-                Kerzen gießen und vieles mehr sind gesucht.
+                qualifiziert. Aber auch kreative Köpfe werden gebraucht.
               </CheckboxDecription>
             </CheckboxGroup>
             <br />
@@ -103,8 +102,8 @@ export default function Helfer({ location }) {
                 <div className="b-input"></div>
               </label>
               <CheckboxDecription>
-                Schmeiß die Bar mit deinem Bestie für 2h oder stopf die
-                hungrigen Mäuler am Essensstand.
+                Übernimm zusammen mit deinem Bestie eine Schicht an der Bar oder
+                kümmer dich um die vielen hungrigen Mäuler.
               </CheckboxDecription>
             </CheckboxGroup>
             <br />
@@ -123,8 +122,8 @@ export default function Helfer({ location }) {
                 <div className="b-input"></div>
               </label>
               <CheckboxDecription>
-                Nur etwas für die hartgesottenen Raver:innen, die nach 3 Tagen
-                Festival noch mit anpacken können. Euch gebührt der größte Ruhm.
+                Nur etwas für Hartgesottene, die nach drei Tagen Festival noch
+                ordentlich mit anpacken können.
               </CheckboxDecription>
             </CheckboxGroup>
             <WeiterWrapper>

@@ -6,15 +6,18 @@ export default function Message() {
     <MessageContainer>
       <MessageWrapper>
         <MessageText>
-          Ein kleines <Liebe>Festival</Liebe> im Schwarzwald organisiert von ein
-          paar Freunden aus Liebe zur <Liebe>elektronischen Musik</Liebe> und
-          zur <Liebe>Natur</Liebe>.
+          Ein kleines <Liebe>Festival</Liebe> im Schwarzwald organisiert von
+          Freunden aus Liebe zur <Liebe>elektronischen Musik</Liebe> und zur{" "}
+          <Liebe>Natur</Liebe>.
         </MessageText>
         <MessageLink
           href="https://soundcloud.com/kleinundhaarig"
           target="_blank"
         >
-          Das war 2020
+          <Icon>
+            <img src={require("/static/icons/soundcloud.svg")} width="24" />
+          </Icon>
+          <LinkText>Das war 2020</LinkText>
         </MessageLink>
       </MessageWrapper>
     </MessageContainer>
@@ -59,7 +62,16 @@ const MessageLink = styled.a`
   text-align: center;
   padding-bottom: 5 px;
   border-bottom: 1px solid white;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
 `
+
+const Icon = styled.div`
+  margin-top: 1px;
+`
+
+const LinkText = styled.h4``
 
 const Liebe = styled.span`
   font-family: "GT-Alpina-Fine-Light-Italic";

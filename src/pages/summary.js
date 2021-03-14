@@ -195,13 +195,13 @@ export default function Summary({ location }) {
   return (
     <Layout>
       <SEO title="Summary" />
-      <ShopTitle info="Schritt 5/5" title="Schick ab datt Ding" />
+      <ShopTitle info="Schritt 5/5" title="Schick ab das Ding" />
       <Container>
         <Wrapper>
           <form onSubmit={submit}>
             <Section>
               <Group>
-                <Value>Tickets</Value>
+                <Value>Dein(e) Ticket(s)</Value>
                 <InfoGroup>
                   {products.map(product => (
                     <Info>{product.ticket}</Info>
@@ -220,11 +220,11 @@ export default function Summary({ location }) {
                 </Info>
               </Group>
               <Group>
-                <Value>Mail</Value>
+                <Value>E-Mail</Value>
                 <Info>{email}</Info>
               </Group>
               <Group>
-                <Value>Phone</Value>
+                <Value>Telefonnummer</Value>
                 <Info>{phone || "-"}</Info>
               </Group>
               <Group>
@@ -241,7 +241,7 @@ export default function Summary({ location }) {
                 <Value>Vereinsbeitritt</Value>
                 <Info>
                   {vereinsbeitritt
-                    ? "3 monatige Probemitgliedschaft ab dem 1. Juli 2021 im Bunte Platte e.V. mit automatischem Austritt am 1. Oktober 2021."
+                    ? "Probemitgliedschaft ab 1. Juli 2021 für 90 Tage, endet automatisch"
                     : "Nein"}
                 </Info>
               </Group>
@@ -258,26 +258,8 @@ export default function Summary({ location }) {
             </Section>
             <Section>
               <Group>
-                <Value>Überweisung an</Value>
-                <Info>Bunte Platte e.V.</Info>
-              </Group>
-              <Group>
-                <Value>Betrag</Value>
-                <Info>{sumTickets} €</Info>
-              </Group>
-              <Group>
-                <Value>IBAN</Value>
-                <Info>DE47 5003 1000 1082 4300 04</Info>
-              </Group>
-              <Group>
-                <Value>BIC</Value>
-                <Info>TRODDEF1</Info>
-              </Group>
-              <Group>
-                <Value>Verwendungszweck</Value>
-                <Info>
-                  {firstName} {lastName} KUH2021
-                </Info>
+                <Value>Überweisungsdaten</Value>
+                <Info>Erhältst du in der Bestätigungsmail</Info>
               </Group>
             </Section>
             <Section>
@@ -291,11 +273,21 @@ export default function Summary({ location }) {
                 </Info>
               </Group>
             </Section>
+            <Section>
+              <Group>
+                <Value>Rückzahlungs Disclaimer</Value>
+                <Info>
+                  Sollte unser Festival nicht stattfinden können, wirst du
+                  zwischen einer Teilrückzahlung und einem Übertrag deines
+                  Tickets auf das Jahr 2022 wählen können.
+                </Info>
+              </Group>
+            </Section>
             <ButtonGroup>
               <ButtonWrapper>
                 <FormButton
                   typ="submit"
-                  label="Daten abschicken und Tickets reservieren"
+                  label="Daten abschicken und Ticket(s) reservieren"
                 ></FormButton>
               </ButtonWrapper>
             </ButtonGroup>

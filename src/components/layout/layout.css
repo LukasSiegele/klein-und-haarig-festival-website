@@ -131,7 +131,7 @@ section {
     url(../../../static/fonts/Pilowlava/Pilowlava.woff2) format("woff2");
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Roboto:wght@500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Roboto:wght@400;500;900&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap"); */
 
 @font-face {
@@ -224,7 +224,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.8em;
 }
 
 h3 {
@@ -242,7 +242,7 @@ h4 {
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 0.85em;
   line-height: 1.35em;
 }
 
@@ -271,7 +271,7 @@ h5 {
     line-height: 1em;
   }
   h2 {
-    font-size: 1.8em;
+    font-size: 2em;
   }
   h1 {
     font-size: 16vw;
