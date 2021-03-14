@@ -2,9 +2,9 @@ import React from "react"
 // import { GlobalStyle } from "../styles/GlobalStyle"
 import "./layout.css"
 import CookieConsent from "react-cookie-consent"
+import Footer from "../Footer/footer"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import Footer from "../footer/footer"
 
 export default function Layout({ children }) {
   return (
