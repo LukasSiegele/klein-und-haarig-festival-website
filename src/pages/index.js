@@ -5,6 +5,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Header from "../components/layout/Header"
 import ImageSection from "../components/sections/ImageSection"
+import Kuenstler from "../components/sections/Kuenstler"
 
 export default function IndexPage() {
   return (
@@ -14,6 +15,7 @@ export default function IndexPage() {
       <HeroSection />
       <Message />
       <ImageSection />
+      <Kuenstler />
     </Layout>
   )
 }

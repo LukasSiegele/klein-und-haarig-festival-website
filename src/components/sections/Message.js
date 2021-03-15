@@ -3,8 +3,8 @@ import styled from "styled-components"
 
 export default function Message() {
   return (
-    <MessageContainer>
-      <MessageWrapper>
+    <Container>
+      <Wrapper>
         <MessageText>
           Ein kleines <Liebe>Festival</Liebe> im Schwarzwald organisiert von
           Freunden aus Liebe zur <Liebe>elektronischen Musik</Liebe> und zur{" "}
@@ -19,12 +19,12 @@ export default function Message() {
           </Icon>
           <LinkText>Das war 2020</LinkText>
         </MessageLink>
-      </MessageWrapper>
-    </MessageContainer>
+      </Wrapper>
+    </Container>
   )
 }
 
-const MessageContainer = styled.div`
+const Container = styled.div`
   padding: 200px 0;
   width: 100%;
   display: grid;
@@ -38,7 +38,7 @@ const MessageContainer = styled.div`
   }
 `
 
-const MessageWrapper = styled.div`
+const Wrapper = styled.div`
   max-width: 1100px;
   align-self: center;
   margin: 0 auto;

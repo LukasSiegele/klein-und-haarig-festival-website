@@ -15,13 +15,13 @@ export default function ImageSection() {
 }
 
 const Wrapper = styled.div`
-  padding: 40px 40px 200px 40px;
+  padding: 40px 40px 0px 40px;
   display: grid;
   justify-items: center;
   overflow: hidden;
 
   @media (max-width: 768px) {
-    padding: 20px 20px 150px 20px;
+    padding: 20px 20px 0px 20px;
   }
 `
 
