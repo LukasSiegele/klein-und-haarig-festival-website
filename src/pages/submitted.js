@@ -21,7 +21,7 @@ export default function Submitted() {
             <Info>
               Spätestens in ein paar Minuten solltest du eine Bestätigungsmail
               von uns erhalten. Bitte checke auch deinen Spam-Ordner! Wenn du
-              keine E-Mail bekommen hast melde dich bitte bei via
+              keine E-Mail bekommen hast, melde dich bitte via
               ticket@kleinundhaarig.de bei uns.
             </Info>
             <br />

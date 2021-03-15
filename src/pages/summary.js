@@ -261,27 +261,26 @@ export default function Summary({ location }) {
             <Section>
               <Group>
                 <Value>Überweisungsdaten</Value>
-                <Info>Erhältst du in der Bestätigungsmail</Info>
+                <Info>Erhältst du in der Bestätigungsmail.</Info>
               </Group>
-            </Section>
-            <Section>
               <Group>
-                <Value>Info</Value>
-                <Info>
-                  Der Betrag muss innerhalb von 7 Tagen bei uns einegegangen
-                  sein, ansonsten verfällt die Reservierung. Die
-                  Überweisungsdaten erhältst du zusätzlich in einer Mail,
-                  nachdem du auf den folgenden Button geklickt hast.
-                </Info>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Rückzahlungs Disclaimer</Value>
+                <Value>Erstattung</Value>
                 <Info>
                   Sollte unser Festival nicht stattfinden können, wirst du
                   zwischen einer Teilrückzahlung und einem Übertrag deines
                   Tickets auf das Jahr 2022 wählen können.
+                </Info>
+              </Group>
+            </Section>
+
+            <Section>
+              <Group>
+                <Value>Info</Value>
+                <Info>
+                  Um deine Reservierung abzuschließen, prüfe deine Daten und
+                  schicke Sie über den Button unten ab. Überweise bitte
+                  innerhalb der nächsten 6 Tage. Zahlst du in diesem Zeitraum
+                  nicht, verfällt deine Reservierung.
                 </Info>
               </Group>
             </Section>

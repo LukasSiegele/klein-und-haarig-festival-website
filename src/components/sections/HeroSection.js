@@ -62,6 +62,8 @@ const Container = styled.div`
   /* background-color: blue; */
   /* height: 910px; */
   overflow: hidden;
+  max-width: 2300px;
+  margin: 0 auto;
 `
 
 const Wrapper = styled.div`
@@ -73,7 +75,7 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 700px) {
-    grid-template-rows: auto 700px;
+    grid-template-rows: auto 600px;
   }
 `
 
@@ -83,11 +85,11 @@ const TitleLine = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-    padding: 10px 50px;
+    padding: 20px 50px;
   }
 
   @media (max-width: 700px) {
-    padding: 10px 30px;
+    padding: 20px 30px;
   }
 `
 
@@ -180,11 +182,11 @@ const ImageWrapper = styled.div`
   background-size: cover;
 
   animation: ImageAnimation 1.8s 1.8s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  transform: scale(1.58);
+  transform: scale(1.51);
 
   @keyframes ImageAnimation {
     0% {
-      transform: scale(1.58);
+      transform: scale(1.51);
     }
 
     100% {
