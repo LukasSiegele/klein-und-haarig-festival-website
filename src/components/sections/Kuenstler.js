@@ -62,6 +62,9 @@ const Wrapper = styled.div`
 
 const MessageHeader = styled.h2`
   margin-bottom: 15px;
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 `
 
 const MessageText = styled.p`
