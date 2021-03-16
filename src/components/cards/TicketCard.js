@@ -16,7 +16,10 @@ export default function TicketCard(props) {
       limit={props.limit}
       cardBackground={props.cardBackground}
     >
-      <Title titleSize={props.titleSize}> {props.title}</Title>
+      <Title titleSize={props.titleSize} isSelected={props.isSelected}>
+        {" "}
+        {props.title}{" "}
+      </Title>
       <Price>{props.price}</Price>
       <DetailWrapper
         isSelected={props.isSelected}
@@ -38,7 +41,7 @@ const Wrapper = styled.div`
   position: relative;
   transition: ${animations.slow};
   opacity: ${props => (props.limit ? ".3" : "1")};
-  color: white;
+
   /* background: ${props =>
     props.isSelected
       ? `url(${props.cardBackground})`
@@ -47,6 +50,8 @@ const Wrapper = styled.div`
   /* background-size: cover; */
   background-position: -80px -0px;
   /* color: ${props => (props.isSelected ? "black" : "white")}; */
+  color: ${props =>
+    props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
   /* border: ${props => (props.isSelected ? "0px" : "1px solid white")}; */
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   :hover {
@@ -71,8 +76,11 @@ const BgImage = styled.div`
 `
 
 const Title = styled.h1`
+  transition: ${animations.slow};
   font-size: 40px;
   font-size: ${props => props.titleSize};
+  color: ${props =>
+    props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
   text-transform: none;
   padding: 30px 5px;
   :hover {
@@ -93,11 +101,13 @@ const DetailWrapper = styled.div`
   width: 160px;
   bottom: ${props => (props.singleLineDetail ? "89px" : "75px")};
   right: ${props => (props.singleLineDetail ? "-53px" : "-40px")};
-  /* right: -40px; */
+  transition: ${animations.slow};
 
   a  {
-    /* color: ${props => (props.isSelected ? "black" : "white")}; */
-    /* border-color: ${props => (props.isSelected ? "black" : "white")}; */
+    color: ${props =>
+      props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
+    border-color: ${props =>
+      props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
   }
 `
 
