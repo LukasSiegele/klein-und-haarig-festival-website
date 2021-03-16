@@ -6,7 +6,7 @@ export default function Kuenstler() {
     <Container>
       <Wrapper>
         <MessageHeader>
-          Eine Plattform für <Liebe>Nachwuchskuenstler.</Liebe>
+          Eine Plattform für <Liebe>Nachwuchskuenstler:innen.</Liebe>
         </MessageHeader>
         <MessageText>
           Ob Sound, Kunstinstallation, Performance oder Workshop — wenn du dich
@@ -46,7 +46,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  max-width: 1000px;
+  max-width: 1100px;
   align-self: center;
   text-align: center;
   margin: 0 auto;
@@ -61,16 +61,16 @@ const Wrapper = styled.div`
 `
 
 const MessageHeader = styled.h2`
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   @media (max-width: 768px) {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 `
 
 const MessageText = styled.p`
   max-width: 700px;
   font-weight: 500;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   color: white;
 `
 

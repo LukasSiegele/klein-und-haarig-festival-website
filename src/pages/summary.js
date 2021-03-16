@@ -190,7 +190,7 @@ export default function Summary({ location }) {
         },
       ])
       setAutoTicket("Ja")
-      setCamperTicket("Nein")
+      setCamperTicket("Ja")
     }
   }, [sumTickets])
 
