@@ -36,7 +36,7 @@ export default function HeroSection() {
           <ImageWrapper>
             <LogoGroup>
               <Logo src="/images/Logo.png" className="logo" />
-              <TicketWrapper>
+              {/* <TicketWrapper>
                 <TicketGroup
                   to={audienceCount < maxAudience ? "/tickets" : "/voll"}
                   state={{
@@ -48,7 +48,7 @@ export default function HeroSection() {
                     {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
                   </TicketLabel>
                 </TicketGroup>
-              </TicketWrapper>
+              </TicketWrapper> */}
             </LogoGroup>
           </ImageWrapper>
           <Right></Right>
