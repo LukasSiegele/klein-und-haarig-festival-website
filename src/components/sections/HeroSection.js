@@ -35,7 +35,7 @@ export default function HeroSection() {
           </Left>
           <ImageWrapper>
             <LogoGroup>
-              <Logo src="/images/Logo.png" className="logo" />
+              <Logo src="/images/Logo.svg" className="logo" />
               <TicketWrapper>
                 <TicketGroup
                   to={audienceCount < maxAudience ? "/tickets" : "/voll"}

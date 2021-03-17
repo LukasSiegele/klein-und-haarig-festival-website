@@ -76,7 +76,7 @@ const BuntePlatte = styled.h5``
 
 const Description = styled.h5`
   color: white;
-  margin-top: 30px;
+  margin-top: 20px;
   @media (max-width: 768px) {
     margin-top: 10px;
   }
