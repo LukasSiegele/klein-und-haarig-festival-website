@@ -181,6 +181,10 @@ const ImageWrapper = styled.div`
   background-image: url(${LeitgrafikImage});
   background-size: cover;
 
+  @media (max-width: 700px) {
+    background-position-x: -80px;
+  }
+
   animation: ImageAnimation 1.8s 1.8s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   transform: scale(1.51);
 
@@ -206,6 +210,10 @@ const Logo = styled.img`
     cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   visibility: hidden;
+
+  @media (max-width: 700px) {
+    width: 240px;
+  }
 
   @keyframes TicketButtonAnimation {
     0% {

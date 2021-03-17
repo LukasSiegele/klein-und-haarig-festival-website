@@ -34,10 +34,6 @@ export default function Imprint() {
             <Header>Eingetragener Verein</Header>
             <p>Vereinsregisternummer: VR 208738</p>
             <p>Registergericht: Amtsgericht München</p>
-            <p>
-              Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a
-              Umsatzsteuergesetz: [UMSATZSTEUER-ID]
-            </p>
           </Section>
           <Section>
             <Header>EU-Streitschlichtung</Header>
