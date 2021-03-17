@@ -6,7 +6,12 @@ export default function Kuenstler() {
     <Container>
       <Wrapper>
         <MessageHeader>
-          Eine Plattform für <Liebe>Nachwuchskuenstler:innen.</Liebe>
+          Eine Plattform für{" "}
+          <Liebe>
+            Nachwuchskuenstler:
+            <Break />
+            innen.
+          </Liebe>
         </MessageHeader>
         <MessageText>
           Ob Sound, Kunstinstallation, Performance oder Workshop — wenn du dich
@@ -76,6 +81,12 @@ const MessageText = styled.p`
 
 const Liebe = styled.span`
   font-family: "GT-Alpina-Fine-Light-Italic";
+`
+
+const Break = styled.span`
+  @media (max-width: 700px) {
+    display: block;
+  }
 `
 
 const InfoGroup = styled.div`

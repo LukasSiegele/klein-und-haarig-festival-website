@@ -273,6 +273,9 @@ const TicketGroup = styled(Link)`
 `
 const TicketLabel = styled.h3`
   text-align: center;
+  @media (max-width: 700px) {
+    font-size: 18px;
+  }
 `
 
 const Right = styled.div``
