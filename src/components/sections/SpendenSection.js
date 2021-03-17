@@ -4,9 +4,9 @@ import TicketCard from "../cards/TicketCard"
 import { Link } from "gatsby"
 import FormButton from "../buttons/FormButton"
 
-import Background1 from "/static/images/Card-Bg1.jpg"
-import Background2 from "/static/images/Card-Bg2.jpg"
-import Background3 from "/static/images/Card-Bg3.jpg"
+import Background4 from "/static/images/Card-Bg4.jpg"
+import Background5 from "/static/images/Card-Bg5.jpg"
+import Background6 from "/static/images/Card-Bg6.jpg"
 
 export default function SpendenSection(props) {
   const [isCard1, setIsCard1] = useState(true)
@@ -34,7 +34,7 @@ export default function SpendenSection(props) {
               setIsCard3(false)
             }}
             singleLineDetail={true}
-            cardBackground={Background1}
+            cardBackground={Background4}
           />
           <TicketCard
             title="Initiative Musik"
@@ -52,7 +52,7 @@ export default function SpendenSection(props) {
               setIsCard2(true)
               setIsCard3(false)
             }}
-            cardBackground={Background2}
+            cardBackground={Background5}
           />
           <TicketCard
             title="Corona Künstler Hilfe"
@@ -71,7 +71,7 @@ export default function SpendenSection(props) {
               setIsCard3(true)
             }}
             singleLineDetail={true}
-            cardBackground={Background3}
+            cardBackground={Background6}
           />
         </CardWrapper>
         <ShoppingCartWrapper>

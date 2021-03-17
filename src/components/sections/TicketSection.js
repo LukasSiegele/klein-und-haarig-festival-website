@@ -117,7 +117,7 @@ export default function TicketSection(props) {
         </CardWrapper>
         <InfoWrapper>
           <InfoText1>
-            Tickets — die Tickets sind personalisiert. Pro Person und E-Mail
+            Tickets — Die Tickets sind personalisiert. Pro Person und E-Mail
             kann nur ein Ticket erworben werden. Auto- und Campertickets sind
             nur in Kombination mir einem Festivalticket erhältlich.
           </InfoText1>
