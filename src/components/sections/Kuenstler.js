@@ -101,7 +101,7 @@ const InfoGroup = styled.div`
 const KontaktGroup = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  gap 10px;
+  gap: 10px;
 `
 
 const Kontakt = styled.a``
