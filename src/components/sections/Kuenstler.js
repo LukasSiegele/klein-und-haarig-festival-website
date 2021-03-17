@@ -19,17 +19,19 @@ export default function Kuenstler() {
           einfach per:
         </MessageText>
         <InfoGroup>
-          <div>
+          <KontaktGroup>
             <Kontakt href="mailto:booking@kleinundhaarig.de">
               booking@kleinundhaarig.de
             </Kontakt>
-          </div>
+            <KontaktDetail>[DJs]</KontaktDetail>
+          </KontaktGroup>
           {/* <Oder>oder</Oder> */}
-          <div>
+          <KontaktGroup>
             <Kontakt href="mailto:info@kleinundhaarig.de">
               info@kleinundhaarig.de
             </Kontakt>
-          </div>
+            <KontaktDetail>[alle Anderen]</KontaktDetail>
+          </KontaktGroup>
         </InfoGroup>
       </Wrapper>
     </Container>
@@ -92,11 +94,21 @@ const Break = styled.span`
 const InfoGroup = styled.div`
   display: grid;
   grid-template-rows: auto auto;
-  justify-items: center;
+  justify-items: left;
   gap: 15px;
 `
 
+const KontaktGroup = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  gap 10px;
+`
+
 const Kontakt = styled.a``
+
+const KontaktDetail = styled.h4`
+  opacity: 0.5;
+`
 
 // const Oder = styled.p`
 //   text-align: center;
