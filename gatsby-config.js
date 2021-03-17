@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Klein und Haarig Festival`,
-    titleTemplate: "Klein und Haarig Festival",
-    description: `Ein kleines Festival in Bad Wildbad vom 9. bis 11. Juli 2021`,
+    title: `KLEIN UND HAARIG FESTIVAL`,
+    titleTemplate: "KLEIN UND HAARIG FESTIVAL",
+    description: `Ein kleines Festival im Schwarzwald vom 9. bis 11. Juli 2021`,
     author: `Bunte Platte e.V.`,
     url: `https://www.kleinundhaarig.de`,
     image: `/images/kuhthumbnail.jpg`,
