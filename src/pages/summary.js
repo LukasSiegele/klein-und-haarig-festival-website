@@ -22,7 +22,6 @@ export default function Summary({ location }) {
   const { state = {} } = location
   const {
     sumTickets,
-    spende,
     firstName,
     lastName,
     email,
@@ -73,7 +72,6 @@ export default function Summary({ location }) {
         TFESTIVAL: festivalTicket,
         TAUTO: autoTicket,
         TCAMPER: camperTicket,
-        SPENDE: spende,
         BEFORE: helferBefore,
         WHILE: helferWhile,
         AFTER: helferAfter,
@@ -93,7 +91,6 @@ export default function Summary({ location }) {
                   Festival: festivalTicket,
                   Auto: autoTicket,
                   Camper: camperTicket,
-                  Spende: spende,
                   Aufbau: helferBefore,
                   Waehrend: helferWhile,
                   Abbau: helferAfter,
@@ -197,7 +194,7 @@ export default function Summary({ location }) {
   return (
     <Layout>
       <SEO title="Summary" />
-      <ShopTitle info="Schritt 5/5" title="Schick ab das Ding" />
+      <ShopTitle info="Schritt 4/4" title="Schick ab das Ding" />
       <Container>
         <Wrapper>
           <form onSubmit={submit}>
@@ -209,7 +206,7 @@ export default function Summary({ location }) {
                     <Info>{product.ticket}</Info>
                   ))}
                   <InfoSmall>
-                    *10 € Probemitgliedschaft, 5 € Spende, 60 € Unkosten
+                    *10 € Probemitgliedschaft, 65 € Unkosten
                   </InfoSmall>
                 </InfoGroup>
               </Group>
@@ -272,7 +269,6 @@ export default function Summary({ location }) {
                 </Info>
               </Group>
             </Section>
-
             <Section>
               <Group>
                 <Value>Info</Value>

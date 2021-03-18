@@ -33,7 +33,6 @@ export default function Helfer({ location }) {
     navigate("/summary", {
       state: {
         sumTickets: sumTickets,
-        spende: spende,
         firstName: firstName,
         lastName: lastName,
         email: email,
@@ -62,7 +61,7 @@ export default function Helfer({ location }) {
   return (
     <Layout>
       <SEO title="Helfer" />
-      <ShopTitle info="Schritt 4/5" title="Wir suchen Helfer!" />
+      <ShopTitle info="Schritt 3/4" title="Wir suchen Helfer!" />
       <Container>
         <Wrapper>
           {" "}
