@@ -8,7 +8,7 @@ export default function Message() {
         <MessageText>
           Ein kleines <Liebe>Festival</Liebe> im Schwarzwald organisiert von
           Freunden <Break />
-          aus Liebe zur <Liebe>elektronischen Musik</Liebe> und zur
+          aus Liebe zur <Liebe>elektronischen Musik</Liebe> und
           <Liebe> Natur</Liebe>.
         </MessageText>
         <MessageLink
