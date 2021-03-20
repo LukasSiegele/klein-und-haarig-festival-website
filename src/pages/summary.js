@@ -296,7 +296,7 @@ export default function Summary({ location }) {
                   typ="submit"
                   label="Daten abschicken und Ticket(s) reservieren"
                   background={SubmitButton}
-                  color="black"
+                  color="white"
                 ></FormButton>
               </ButtonWrapper>
             </ButtonGroup>
