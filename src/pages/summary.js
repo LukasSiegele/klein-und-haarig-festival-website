@@ -9,6 +9,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import Airtable from "airtable"
 import useAudienceCount from "../helper/useAudienceCount"
 import uniqid from "uniqid"
+import SubmitButton from "/static/images/Submit-Button.jpg"
 
 // test
 
@@ -258,7 +259,17 @@ export default function Summary({ location }) {
             <Section>
               <Group>
                 <Value>Überweisungsdaten</Value>
-                <Info>Erhältst du in der Bestätigungsmail.</Info>
+                <Info>
+                  Erhältst du direkt nachdem deine Daten bei uns eingegangen
+                  sind per E-Mail.
+                </Info>
+              </Group>
+              <Group>
+                <Value>Zahlungsinfo</Value>
+                <Info>
+                  Überweise bitte innerhalb der nächsten 6 Tage. Zahlst du in
+                  diesem Zeitraum nicht, verfällt deine Reservierung.
+                </Info>
               </Group>
               <Group>
                 <Value>Erstattung</Value>
@@ -271,12 +282,11 @@ export default function Summary({ location }) {
             </Section>
             <Section>
               <Group>
-                <Value>Info</Value>
+                <Value>Corona</Value>
                 <Info>
-                  Um deine Reservierung abzuschließen, prüfe deine Daten und
-                  schicke Sie über den Button unten ab. Überweise bitte
-                  innerhalb der nächsten 6 Tage. Zahlst du in diesem Zeitraum
-                  nicht, verfällt deine Reservierung.
+                  Je nach Corona-Situation im Juli müssen wir einen Test- oder
+                  Immunitätsnachweis für die Teilnahme voraussetzen. Dies werden
+                  wir rechtzeitig vor dem Festival kommunizieren.
                 </Info>
               </Group>
             </Section>
@@ -285,6 +295,8 @@ export default function Summary({ location }) {
                 <FormButton
                   typ="submit"
                   label="Daten abschicken und Ticket(s) reservieren"
+                  background={SubmitButton}
+                  color="black"
                 ></FormButton>
               </ButtonWrapper>
             </ButtonGroup>
@@ -347,3 +359,5 @@ const ButtonGroup = styled.div`
 const ButtonWrapper = styled.div`
   max-width: 500px;
 `
+
+// Um deine Reservierung abzuschließen, prüfe deine Daten und schicke Sie über den Button unten ab.

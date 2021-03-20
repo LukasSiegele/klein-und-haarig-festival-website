@@ -66,6 +66,10 @@ const MessageLink = styled.a`
   display: grid;
   grid-template-columns: auto auto;
   gap: 10px;
+
+  & > :hover {
+    cursor: pointer;
+  }
 `
 
 const Icon = styled.div`
