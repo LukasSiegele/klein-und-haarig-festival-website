@@ -274,9 +274,11 @@ export default function Summary({ location }) {
               <Group>
                 <Value>Erstattung</Value>
                 <Info>
-                  Sollte unser Festival nicht stattfinden können, wirst du
-                  zwischen einer Teilrückzahlung und einem Übertrag deines
-                  Tickets auf das Jahr 2022 wählen können.
+                  Sollte das Festival nicht stattfinden können, wirst du
+                  zwischen einem Übertrag deines Tickets auf das Jahr 2022 und
+                  einer Teilrückzahlung wählen können. Wir geben unser Bestes,
+                  Ausgaben bis kurz vor dem Festival gering zu halten, um dir
+                  einen möglichst großen Betrag zu erstatten.
                 </Info>
               </Group>
             </Section>
