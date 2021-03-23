@@ -119,7 +119,7 @@ export default function TicketSection(props) {
           <InfoText1>
             Tickets — Die Tickets sind personalisiert. Pro Person und E-Mail
             kann nur ein Ticket erworben werden. Auto- und Campertickets sind
-            nur in Kombination mir einem Festivalticket erhältlich.
+            nur in Kombination mit einem Festivalticket erhältlich.
           </InfoText1>
           <InfoText2>
             Parken — Wenn du schon ein Ticket hast und noch ein Auto- oder
