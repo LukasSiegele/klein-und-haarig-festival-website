@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import LeitgrafikImage from "/static/images/Leitgrafik.jpg"
-import TicketBackground from "/static/icons/ticket.svg"
+import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
 import useAudienceCount from "../../helper/useAudienceCount"
 import useAutoCount from "../../helper/useAutoCount"
@@ -38,14 +38,18 @@ export default function HeroSection() {
               <Logo src="/images/Logo.svg" className="logo" />
               <TicketWrapper>
                 <TicketGroup
-                  to={audienceCount < maxAudience ? "/tickets" : "/voll"}
+                  // to={audienceCount < maxAudience ? "/tickets" : "/voll"}
+                  to={"/voll"}
                   state={{
                     autoParkplatz: autoCount,
                     camperParkplatz: camperCount,
                   }}
                 >
                   <TicketLabel>
-                    {audienceCount < maxAudience ? "Tickets" : "Ausverkauft"}
+                    {/* {audienceCount < maxAudience
+                      ? "Tickets"
+                      : "Ticketverkauf pausiert"} */}
+                    Ticketverkauf pausiert
                   </TicketLabel>
                 </TicketGroup>
               </TicketWrapper>
@@ -243,7 +247,7 @@ const TicketGroup = styled(Link)`
   opacity: 0;
   visibility: hidden;
   background-image: url(${TicketBackground});
-  width: 152px;
+  width: 320px;
   height: 56px;
   color: white;
   display: grid;

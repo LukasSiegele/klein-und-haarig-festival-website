@@ -14,23 +14,23 @@ export default function Kuenstler() {
           </Liebe>
         </MessageHeader>
         <MessageText>
-          Ob Sound, Kunstinstallation, Performance oder Workshop — wenn du dich
-          auf die eine oder andere Art und Weise einbringen willst, schreib uns
-          einfach per:
+          Ob Kunstinstallation, Performance oder Workshop — wenn du dich auf die
+          eine oder andere Art und Weise einbringen willst, schreib uns einfach
+          per:
         </MessageText>
         <InfoGroup>
           <KontaktGroup>
-            <Kontakt href="mailto:booking@kleinundhaarig.de">
+            {/* <Kontakt href="mailto:booking@kleinundhaarig.de">
               booking@kleinundhaarig.de
             </Kontakt>
-            <KontaktDetail>[DJs]</KontaktDetail>
+            <KontaktDetail>[DJs]</KontaktDetail> */}
           </KontaktGroup>
           {/* <Oder>oder</Oder> */}
           <KontaktGroup>
             <Kontakt href="mailto:info@kleinundhaarig.de">
               info@kleinundhaarig.de
             </Kontakt>
-            <KontaktDetail>[alle Anderen]</KontaktDetail>
+            {/* <KontaktDetail>[alle Anderen]</KontaktDetail> */}
           </KontaktGroup>
         </InfoGroup>
       </Wrapper>
