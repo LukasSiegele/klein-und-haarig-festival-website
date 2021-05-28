@@ -206,6 +206,7 @@ const ImageWrapper = styled.div`
 const LogoGroup = styled.div`
   display: grid;
   justify-items: center;
+  margin-bottom: 40px;
 `
 
 const Logo = styled.img`
@@ -214,6 +215,7 @@ const Logo = styled.img`
     cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   visibility: hidden;
+  margin-bottom: 20px;
 
   @media (max-width: 700px) {
     width: 240px;
