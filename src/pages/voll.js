@@ -38,7 +38,7 @@ const Container = styled.div`
   color: white;
 
   @media (max-width: 768px) {
-    padding: 100px 0px 300px 0px;
+    padding: 100px 0px 50px 0px;
   }
 `
 
