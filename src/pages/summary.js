@@ -292,16 +292,6 @@ export default function Summary({ location }) {
                 </Info>
               </Group>
             </Section>
-            <ButtonGroup>
-              <ButtonWrapper>
-                <FormButton
-                  typ="submit"
-                  label="Daten abschicken und Ticket(s) reservieren"
-                  background={SubmitButton}
-                  color="white"
-                ></FormButton>
-              </ButtonWrapper>
-            </ButtonGroup>
           </form>
         </Wrapper>
       </Container>
