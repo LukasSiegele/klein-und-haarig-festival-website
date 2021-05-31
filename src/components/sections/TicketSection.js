@@ -145,7 +145,7 @@ export default function TicketSection(props) {
               to="/data"
               state={{
                 sumTickets: summary,
-                onlyFriends: onlyFriends,
+                onlyFriends: props.onlyFriends,
               }}
             >
               <FormButton label="Weiter" />

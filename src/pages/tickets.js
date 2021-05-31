@@ -8,8 +8,6 @@ export default function Tickets({ location }) {
   const { state = {} } = location
   const { autoParkplatz, camperParkplatz, onlyFriends } = state
 
-  console.log(autoParkplatz, camperParkplatz)
-
   return (
     <Layout>
       <SEO title="Tickets" />
