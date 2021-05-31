@@ -14,7 +14,7 @@ export default function Data({ location }) {
       <SEO title="Data" />
       <ShopTitle info="Schritt 2/4" title="Ticket personalisieren" />
       <Wrapper>
-        <Form sumTickets={(sumTickets, onlyFriends)} />
+        <Form sumTickets={sumTickets} onlyFriends={onlyFriends} />
       </Wrapper>
     </Layout>
   )
