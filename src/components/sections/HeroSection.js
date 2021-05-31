@@ -40,10 +40,6 @@ export default function HeroSection() {
                 <TicketGroup
                   // to={audienceCount < maxAudience ? "/tickets" : "/voll"}
                   to={"/voll"}
-                  state={{
-                    autoParkplatz: autoCount,
-                    camperParkplatz: camperCount,
-                  }}
                 >
                   <TicketLabel>
                     {/* {audienceCount < maxAudience

@@ -6,7 +6,7 @@ import ShopTitle from "../components/shopping/ShopTitle"
 
 export default function Tickets({ location }) {
   const { state = {} } = location
-  const { autoParkplatz, camperParkplatz } = state
+  const { autoParkplatz, camperParkplatz, onlyFriends } = state
 
   console.log(autoParkplatz, camperParkplatz)
 
@@ -17,6 +17,7 @@ export default function Tickets({ location }) {
       <TicketSection
         autoParkplatz={autoParkplatz}
         camperParkplatz={camperParkplatz}
+        onlyFriends={onlyFriends}
       />
     </Layout>
   )
