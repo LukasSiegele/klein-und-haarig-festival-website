@@ -141,7 +141,13 @@ export default function TicketSection(props) {
             <Summary>Insgesamt {summary || 0} €</Summary>
           </SumWrapper>
           <WeiterWrapper>
-            <Link to="/data" state={{ sumTickets: summary }}>
+            <Link
+              to="/data"
+              state={{
+                sumTickets: summary,
+                onlyFriends: onlyFriends,
+              }}
+            >
               <FormButton label="Weiter" />
             </Link>
           </WeiterWrapper>

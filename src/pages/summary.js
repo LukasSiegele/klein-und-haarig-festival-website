@@ -36,6 +36,7 @@ export default function Summary({ location }) {
     helferBefore,
     helferWhile,
     helferAfter,
+    onlyFriends,
   } = state
 
   // const [ticketType, setTicketType] = useState("")
@@ -58,7 +59,7 @@ export default function Summary({ location }) {
   const submit = e => {
     e.preventDefault()
 
-    if (audienceCount < audienceLimit) {
+    if (audienceCount < audienceLimit && onlyFriends == "Friend") {
       addToMailchimp(email, {
         ID: userID,
         FNAME: firstName,
@@ -76,6 +77,7 @@ export default function Summary({ location }) {
         BEFORE: helferBefore,
         WHILE: helferWhile,
         AFTER: helferAfter,
+        FRIENDS: onlyFriends,
       })
         .then(({ msg, result }) => {
           console.log("msg", `${result}: ${msg}`)

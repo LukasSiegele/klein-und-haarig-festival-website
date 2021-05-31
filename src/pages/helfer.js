@@ -10,7 +10,7 @@ export default function Helfer({ location }) {
   const { state = {} } = location
   const {
     sumTickets,
-    spende,
+    onlyFriends,
     firstName,
     lastName,
     email,
@@ -33,6 +33,7 @@ export default function Helfer({ location }) {
     navigate("/summary", {
       state: {
         sumTickets: sumTickets,
+        onlyFriends: onlyFriends,
         firstName: firstName,
         lastName: lastName,
         email: email,

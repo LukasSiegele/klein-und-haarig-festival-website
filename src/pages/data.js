@@ -7,14 +7,14 @@ import ShopTitle from "../components/shopping/ShopTitle"
 
 export default function Data({ location }) {
   const { state = {} } = location
-  const { sumTickets } = state
+  const { sumTickets, onlyFriends } = state
 
   return (
     <Layout>
       <SEO title="Data" />
       <ShopTitle info="Schritt 2/4" title="Ticket personalisieren" />
       <Wrapper>
-        <Form sumTickets={sumTickets} />
+        <Form sumTickets={(sumTickets, onlyFriends)} />
       </Wrapper>
     </Layout>
   )

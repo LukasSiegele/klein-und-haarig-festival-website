@@ -14,7 +14,7 @@ export default function Imprint() {
   const camperCount = useCamperCount()
 
   // Only Friends
-  const onlyFriends = 1
+  const onlyFriends = "Friend"
 
   return (
     <Layout>
