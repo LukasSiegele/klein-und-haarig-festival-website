@@ -20,6 +20,7 @@ export default function Form(props) {
     navigate("/helfer", {
       state: {
         sumTickets: props.sumTickets,
+        onlyFriends: props.onlyFriends,
         firstName: firstName,
         lastName: lastName,
         email: email,

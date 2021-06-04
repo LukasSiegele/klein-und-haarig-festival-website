@@ -36,6 +36,7 @@ export default function Summary({ location }) {
     helferBefore,
     helferWhile,
     helferAfter,
+    onlyFriends,
   } = state
 
   // const [ticketType, setTicketType] = useState("")
@@ -47,17 +48,18 @@ export default function Summary({ location }) {
 
   // Audience Count
   const audienceCount = useAudienceCount()
-  const audienceLimit = 220
-  const onlyFriends = "Nachzuegler"
+  console.log("hook count: " + audienceCount)
+  const audienceLimit = 229
 
   // Unique ID
   const userID = uniqid()
+  console.log("User ID" + userID)
 
   // POST TO — AIRTABLE
   const submit = e => {
     e.preventDefault()
 
-    if (audienceCount < audienceLimit) {
+    if (audienceCount < audienceLimit && onlyFriends == "Friend") {
       addToMailchimp(email, {
         ID: userID,
         FNAME: firstName,

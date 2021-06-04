@@ -2,9 +2,20 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
+import useAutoCount from "../helper/useAutoCount"
+import useCamperCount from "../helper/useCamperCount"
 import { Link } from "gatsby"
 
 export default function Imprint() {
+  // Auto Count
+  const autoCount = useAutoCount()
+
+  // Camper Count
+  const camperCount = useCamperCount()
+
+  // Only Friends
+  const onlyFriends = "Last Friend"
+
   return (
     <Layout>
       <SEO title="Impressum" />
@@ -14,7 +25,16 @@ export default function Imprint() {
             <SectionHeader>Impressum</SectionHeader>
             <Header>Kontakt</Header>
             <p>
-              Bunte Platte e.V.
+              <HiddenLink
+                to={"/tickets"}
+                state={{
+                  autoParkplatz: autoCount,
+                  camperParkplatz: camperCount,
+                  onlyFriends: onlyFriends,
+                }}
+              >
+                Bunte Platte e.V.
+              </HiddenLink>
               <br />
               T&uuml;rkenstra&szlig;e 21
               <br />
@@ -125,6 +145,10 @@ export default function Imprint() {
     </Layout>
   )
 }
+
+const HiddenLink = styled(Link)`
+  border-bottom: 0;
+`
 
 const Wrapper = styled.div`
   padding: 120px 40px;

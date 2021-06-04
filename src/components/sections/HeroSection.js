@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import LeitgrafikImage from "/static/images/Leitgrafik.jpg"
-// import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
 import useAudienceCount from "../../helper/useAudienceCount"
@@ -12,7 +11,7 @@ import useCamperCount from "../../helper/useCamperCount"
 export default function HeroSection() {
   // Audience Cuunt
   const audienceCount = useAudienceCount()
-  const maxAudience = 220
+  const maxAudience = 229
 
   // Auto Count
   const autoCount = useAutoCount()
@@ -247,7 +246,6 @@ const TicketGroup = styled(Link)`
   visibility: hidden;
   background-image: url(${TicketBackground});
   width: 320px;
-  /* width: 152px; */
   height: 56px;
   color: white;
   display: grid;
