@@ -246,8 +246,8 @@ const TicketGroup = styled(Link)`
   opacity: 0;
   visibility: hidden;
   background-image: url(${TicketBackground});
-  /* width: 320px; */
-  width: 152px;
+  width: 320px;
+  /* width: 152px; */
   height: 56px;
   color: white;
   display: grid;
