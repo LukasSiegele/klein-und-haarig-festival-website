@@ -47,7 +47,6 @@ export default function Summary({ location }) {
 
   // Audience Count
   const audienceCount = useAudienceCount()
-  console.log("hook count: " + audienceCount)
   const audienceLimit = 220
   const onlyFriends = "Nachzuegler"
 
