@@ -11,7 +11,7 @@ import useCamperCount from "../../helper/useCamperCount"
 export default function HeroSection() {
   // Audience Cuunt
   const audienceCount = useAudienceCount()
-  const maxAudience = 210
+  const maxAudience = 229
 
   // Auto Count
   const autoCount = useAutoCount()
