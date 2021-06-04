@@ -6,15 +6,15 @@ export default function Voll() {
     <Container>
       <Wrapper>
         <MessageHeader>
-          Was <Liebe> Ticketverkauf beendet </Liebe> bedeutet
+          Wir sind leider <Liebe> ausverkauft </Liebe>
         </MessageHeader>
         <MessageText>
-          Wir haben aktuell unser Limit an Festivalticket-Reservierungen für
-          dieses Jahr erreicht und den Ticketverkauf vorzeitig beendet.
+          Unser Limit an Festivalticket-Reservierungen für dieses Jahr ist
+          erreicht und der Festivalticket Verkauf wurde vorzeitig beendet.
         </MessageText>
         <MessageText>
-          Ihr wollt ein Auto- oder Camperticket nachträglich kaufen? Schreibt
-          uns einfach per:
+          Ihr wollt nur ein Auto- oder Camperticket nachträglich kaufen?
+          Schreibt uns einfach per:
         </MessageText>
         <Kontakt href="mailto:info@kleinundhaarig.de">
           info@kleinundhaarig.de
