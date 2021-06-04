@@ -9,8 +9,8 @@ export default function Voll() {
           Wir sind leider <Liebe> ausverkauft </Liebe>
         </MessageHeader>
         <MessageText>
-          Unser Limit an Festivalticket-Reservierungen für dieses Jahr ist
-          erreicht und der Festivalticket Verkauf wurde vorzeitig beendet.
+          Unser Limit an Festivalticket Reservierungen ist für dieses Jahr
+          erreicht und der Verkauf wurde vorzeitig beendet.
         </MessageText>
         <MessageText>
           Ihr wollt nur ein Auto- oder Camperticket nachträglich kaufen?
