@@ -52,7 +52,6 @@ export default function Summary({ location }) {
 
   // Unique ID
   const userID = uniqid()
-  console.log("User ID" + userID)
 
   // POST TO — AIRTABLE
   const submit = e => {
