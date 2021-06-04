@@ -6,14 +6,11 @@ export default function Voll() {
     <Container>
       <Wrapper>
         <MessageHeader>
-          Was <Liebe> Ticketverkauf pausiert </Liebe> bedeutet
+          Was <Liebe> Ticketverkauf pausier </Liebe> bedeutet
         </MessageHeader>
         <MessageText>
           Wir haben aktuell unser Limit an Festivalticket-Reservierungen für
-          dieses Jahr erreicht und den Ticketverkauf vorrübergehend pausiert.{" "}
-          <br />
-          Am 4. Juni um 17 Uhr wird der Verkauf nochmal geöffnet und alle bis
-          dahin nicht bezahlten Reservierungen/Tickets zum Verkauf freigegeben.
+          dieses Jahr erreicht und den Ticketverkauf pausiert.{" "}
         </MessageText>
         <MessageText>
           Ihr wollt ein Auto- oder Camperticket nachträglich kaufen? Schreibt
