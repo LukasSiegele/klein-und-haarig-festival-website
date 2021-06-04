@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import LeitgrafikImage from "/static/images/Leitgrafik.jpg"
-import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
+// import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
+import TicketBackground from "/static/icons/ticket.svg"
 
 import useAudienceCount from "../../helper/useAudienceCount"
 import useAutoCount from "../../helper/useAutoCount"
@@ -11,7 +12,7 @@ import useCamperCount from "../../helper/useCamperCount"
 export default function HeroSection() {
   // Audience Cuunt
   const audienceCount = useAudienceCount()
-  const maxAudience = 229
+  const maxAudience = 223
 
   // Auto Count
   const autoCount = useAutoCount()
@@ -38,14 +39,14 @@ export default function HeroSection() {
               <Logo src="/images/Logo.svg" className="logo" />
               <TicketWrapper>
                 <TicketGroup
-                  // to={audienceCount < maxAudience ? "/tickets" : "/voll"}
-                  to={"/voll"}
+                  to={audienceCount < maxAudience ? "/tickets" : "/voll"}
+                  // to={"/voll"}
                 >
                   <TicketLabel>
-                    {/* {audienceCount < maxAudience
+                    {audienceCount < maxAudience
                       ? "Tickets"
-                      : "Ticketverkauf pausiert"} */}
-                    Ticketverkauf pausiert
+                      : "Ticketverkauf pausiert"}
+                    {/* Ticketverkauf pausiert */}
                   </TicketLabel>
                 </TicketGroup>
               </TicketWrapper>
@@ -245,7 +246,8 @@ const TicketGroup = styled(Link)`
   opacity: 0;
   visibility: hidden;
   background-image: url(${TicketBackground});
-  width: 320px;
+  /* width: 320px; */
+  width: 152px;
   height: 56px;
   color: white;
   display: grid;

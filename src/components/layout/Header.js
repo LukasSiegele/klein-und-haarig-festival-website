@@ -9,7 +9,7 @@ import useCamperCount from "../../helper/useCamperCount"
 export default function Header() {
   // Audience Cuunt
   const audienceCount = useAudienceCount()
-  const maxAudience = 229
+  const maxAudience = 223
 
   // Auto Count
   const autoCount = useAutoCount()

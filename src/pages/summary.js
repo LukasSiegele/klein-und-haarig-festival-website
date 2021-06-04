@@ -36,7 +36,6 @@ export default function Summary({ location }) {
     helferBefore,
     helferWhile,
     helferAfter,
-    onlyFriends,
   } = state
 
   // const [ticketType, setTicketType] = useState("")
@@ -49,7 +48,8 @@ export default function Summary({ location }) {
   // Audience Count
   const audienceCount = useAudienceCount()
   console.log("hook count: " + audienceCount)
-  const audienceLimit = 229
+  const audienceLimit = 223
+  const onlyFriends = "Nachzuegler"
 
   // Unique ID
   const userID = uniqid()
@@ -59,7 +59,7 @@ export default function Summary({ location }) {
   const submit = e => {
     e.preventDefault()
 
-    if (audienceCount < audienceLimit && onlyFriends == "Friend") {
+    if (audienceCount < audienceLimit) {
       addToMailchimp(email, {
         ID: userID,
         FNAME: firstName,
