@@ -46,7 +46,7 @@ export default function HeroSection() {
                     {/* {audienceCount < maxAudience
                       ? "Tickets"
                       : "Ticketverkauf pausiert"} */}
-                    Ticketverkauf pausiert
+                    Ticketverkauf beendet
                   </TicketLabel>
                 </TicketGroup>
               </TicketWrapper>
