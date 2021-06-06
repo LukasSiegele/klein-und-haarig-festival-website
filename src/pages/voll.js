@@ -13,8 +13,8 @@ export default function Voll() {
           erreicht und der Verkauf wurde vorzeitig beendet.
         </MessageText>
         <MessageText>
-          Ihr wollt nur ein Auto- oder Camperticket nachträglich kaufen?
-          Schreibt uns einfach per:
+          Ihr habt bereits ein Festivalticket und wollt nur nachträglich ein
+          Auto- oder Camperticket dazukaufen? Schreibt uns einfach per:
         </MessageText>
         <Kontakt href="mailto:info@kleinundhaarig.de">
           info@kleinundhaarig.de
