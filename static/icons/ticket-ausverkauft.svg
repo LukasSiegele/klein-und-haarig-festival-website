@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="320px" height="56px" viewBox="0 0 320 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="215px" height="56px" viewBox="0 0 215 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>ticket-ausverkauft</title>
     <g id="ticket-ausverkauft" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M0,0 L320,0 L320,14 C315.264798,18.6666667 312.897196,23.3333333 312.897196,28 C312.897196,32.6666667 315.264798,37.3333333 320,42 L320,56 L0,56 L0,42 C4.73520249,37.3333333 7.10280374,32.6666667 7.10280374,28 C7.10280374,23.3333333 4.73520249,18.6666667 0,14 L0,0 Z" id="Rectangle" fill="#000000"></path>
+        <path d="M0,0 L215,0 L215,14 C210.264798,18.6666667 207.897196,23.3333333 207.897196,28 C207.897196,32.6666667 210.264798,37.3333333 215,42 L215,56 L0,56 L0,42 C4.73520249,37.3333333 7.10280374,32.6666667 7.10280374,28 C7.10280374,23.3333333 4.73520249,18.6666667 0,14 L0,0 Z" id="Rectangle" fill="#000000"></path>
     </g>
 </svg>

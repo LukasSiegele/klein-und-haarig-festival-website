@@ -45,7 +45,7 @@ export default function HeroSection() {
                     {/* {audienceCount < maxAudience
                       ? "Tickets"
                       : "Ticketverkauf pausiert"} */}
-                    Ticketverkauf beendet
+                    Ausverkauft
                   </TicketLabel>
                 </TicketGroup>
               </TicketWrapper>
@@ -245,7 +245,7 @@ const TicketGroup = styled(Link)`
   opacity: 0;
   visibility: hidden;
   background-image: url(${TicketBackground});
-  width: 320px;
+  width: 215px;
   height: 56px;
   color: white;
   display: grid;
