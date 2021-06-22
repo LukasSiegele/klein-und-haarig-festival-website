@@ -9,11 +9,11 @@ export default function Voll() {
           Wir sind leider <Liebe> ausverkauft </Liebe>
         </MessageHeader>
         <MessageText>
-          Unser Limit an Festivalticket Reservierungen ist für dieses Jahr
+          Unser Limit an Zeltlagerticket Reservierungen ist für dieses Jahr
           erreicht und der Verkauf wurde vorzeitig beendet.
         </MessageText>
         <MessageText>
-          Ihr habt bereits ein Festivalticket und wollt nur nachträglich ein
+          Ihr habt bereits ein Zeltlagerticket und wollt nur nachträglich ein
           Auto- oder Camperticket dazukaufen? Schreibt uns einfach per:
         </MessageText>
         <Kontakt href="mailto:info@kleinundhaarig.de">

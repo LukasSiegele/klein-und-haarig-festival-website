@@ -45,9 +45,9 @@ export default function TicketSection(props) {
         <CardWrapper>
           <Card1>
             <TicketCard
-              title="Festival Ticket"
+              title="Zeltlager Ticket"
               price={festivalPrice + " €"}
-              details="3 Tage Festival mit Zeltplatz"
+              details="3 Tage Zeltlager mit Zeltplatz"
               isSelected={isFestival}
               cardBackground={Background1}
               // handleSelection={() => {
@@ -119,7 +119,7 @@ export default function TicketSection(props) {
           <InfoText1>
             Tickets — Die Tickets sind personalisiert. Pro Person und E-Mail
             kann nur ein Ticket erworben werden. Auto- und Campertickets sind
-            nur in Kombination mit einem Festivalticket erhältlich.
+            nur in Kombination mit einem Zeltlagerticket erhältlich.
           </InfoText1>
           <InfoText2>
             Parken — Wenn du schon ein Ticket hast und noch ein Auto- oder
@@ -133,7 +133,7 @@ export default function TicketSection(props) {
             <br />
             Öffis — Unser Gelände ist problemlos mit öffentlichen
             Verkehrsmitteln erreichbar. Vom nächstgelegenen Bahnhof fährt alle
-            30 min ein Bus direkt vor das Festival.
+            30 min ein Bus direkt vor das Zeltlager.
           </InfoText2>
         </InfoWrapper>
         <ShoppingCartWrapper>

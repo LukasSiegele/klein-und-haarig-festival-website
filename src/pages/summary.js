@@ -131,13 +131,13 @@ export default function Summary({ location }) {
     if (helferBefore && !helferWhile && !helferAfter) {
       setHelfer("Aufbau")
     } else if (helferBefore && helferWhile && !helferAfter) {
-      setHelfer("Aufbau & Während des Festivals")
+      setHelfer("Aufbau & Während des Zeltlagers")
     } else if (helferBefore && helferWhile && helferAfter) {
-      setHelfer("Aufbau, Während des Festivals & Abbau")
+      setHelfer("Aufbau, Während des Zeltlagers & Abbau")
     } else if (!helferBefore && helferWhile && !helferAfter) {
-      setHelfer("Während des Festivals")
+      setHelfer("Während des Zeltlagers")
     } else if (!helferBefore && helferWhile && helferAfter) {
-      setHelfer("Während des Festivals & Abbau")
+      setHelfer("Während des Zeltlagers & Abbau")
     } else if (!helferBefore && !helferWhile && helferAfter) {
       setHelfer("Abbau")
     } else if (helferBefore && !helferWhile && helferAfter) {
@@ -151,14 +151,14 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €*",
+          ticket: "Zeltlager Ticket 75 €*",
         },
       ])
     } else if (sumTickets === 80) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €*",
+          ticket: "Zeltlager Ticket 75 €*",
         },
         {
           ticket: "Auto Parkplatz 5 €",
@@ -169,7 +169,7 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €*",
+          ticket: "Zeltlager Ticket 75 €*",
         },
         {
           ticket: "Camper Stellplatz 10 €",
@@ -180,7 +180,7 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €*",
+          ticket: "Zeltlager Ticket 75 €*",
         },
         {
           ticket: "Auto Parkplatz 5 €",
@@ -276,10 +276,10 @@ export default function Summary({ location }) {
               <Group>
                 <Value>Erstattung</Value>
                 <Info>
-                  Sollte das Festival nicht stattfinden können, wirst du
+                  Sollte das Zeltlager nicht stattfinden können, wirst du
                   zwischen einem Übertrag deines Tickets auf das Jahr 2022 und
                   einer Teilrückzahlung wählen können. Wir geben unser Bestes,
-                  Ausgaben bis kurz vor dem Festival gering zu halten, um dir
+                  Ausgaben bis kurz vor dem Zeltlager gering zu halten, um dir
                   einen möglichst großen Betrag zu erstatten.
                 </Info>
               </Group>
@@ -290,7 +290,7 @@ export default function Summary({ location }) {
                 <Info>
                   Je nach Corona-Situation im Juli müssen wir einen Test- oder
                   Immunitätsnachweis für die Teilnahme voraussetzen. Dies werden
-                  wir rechtzeitig vor dem Festival kommunizieren.
+                  wir rechtzeitig vor dem Zeltlager kommunizieren.
                 </Info>
               </Group>
             </Section>

@@ -36,19 +36,6 @@ export default function HeroSection() {
           <ImageWrapper>
             <LogoGroup>
               <Logo src="/images/Logo.svg" className="logo" />
-              <TicketWrapper>
-                <TicketGroup
-                  // to={audienceCount < maxAudience ? "/tickets" : "/voll"}
-                  to={"/voll"}
-                >
-                  <TicketLabel>
-                    {/* {audienceCount < maxAudience
-                      ? "Tickets"
-                      : "Ticketverkauf pausiert"} */}
-                    Ausverkauft
-                  </TicketLabel>
-                </TicketGroup>
-              </TicketWrapper>
             </LogoGroup>
           </ImageWrapper>
           <Right></Right>
