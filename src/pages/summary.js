@@ -49,7 +49,7 @@ export default function Summary({ location }) {
   // Audience Count
   const audienceCount = useAudienceCount()
   console.log("hook count: " + audienceCount)
-  const audienceLimit = 269
+  const audienceLimit = 359
 
   // Unique ID
   const userID = uniqid()
