@@ -24,8 +24,9 @@ export default function Newsletter() {
         console.log("msg", `${result}: ${msg}`)
 
         if (result !== "success") {
-          navigate("/newsletterAnmeldungErfolgreich")
           throw msg
+        } else {
+          navigate("/newsletterAnmeldungErfolgreich")
         }
       })
       .catch(err => {
