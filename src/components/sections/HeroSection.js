@@ -7,6 +7,7 @@ import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 import useAudienceCount from "../../helper/useAudienceCount"
 import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
+import Newsletter from "../form/Newsletter"
 
 export default function HeroSection() {
   // Audience Cuunt
@@ -26,20 +27,15 @@ export default function HeroSection() {
           <Title>Klein und Haarig</Title>
         </TitleLine>
         <ImageLine>
-          <Left>
-            <InfoGroup>
-              <Date>9—11 Juli 2021</Date>
-              <Icon src="/icons/dot.svg" className="dot" />
-              <Place>Bad Wildbad</Place>
-            </InfoGroup>
-          </Left>
-          <ImageWrapper>
-            <LogoGroup>
-              <Logo src="/images/Logo.svg" className="logo" />
-            </LogoGroup>
-          </ImageWrapper>
-          <Right></Right>
+          <Left></Left>
+          <InfoGroup>
+            <Date>Fr 15 — Mo 18 Juli 2022</Date>
+            <Place>Bad Wildbad</Place>
+          </InfoGroup>
         </ImageLine>
+        <NewsletterGroup>
+          <Newsletter></Newsletter>
+        </NewsletterGroup>
       </Wrapper>
     </Container>
   )
@@ -50,20 +46,20 @@ const Container = styled.div`
   /* height: 910px; */
   overflow: hidden;
   max-width: 2300px;
-  margin: 0 auto;
+  margin: 0 auto 200px;
 `
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: auto 800px;
+  grid-template-rows: auto 400px;
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     grid-template-rows: auto 700px;
   }
 
   @media (max-width: 700px) {
     grid-template-rows: auto 600px;
-  }
+  } */
 `
 
 const TitleLine = styled.div`
@@ -83,9 +79,9 @@ const TitleLine = styled.div`
 const Title = styled.h1`
   text-align: center;
 
-  animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden; */
 
   @keyframes TextAnimation {
     0% {
@@ -102,7 +98,7 @@ const Title = styled.h1`
 
 const ImageLine = styled.div`
   display: grid;
-  grid-template-columns: 90px auto 90px;
+  grid-template-columns: 90px auto;
 
   @media (max-width: 768px) {
     grid-template-columns: 50px auto 50px;
@@ -113,6 +109,12 @@ const ImageLine = styled.div`
   }
 `
 
+const NewsletterGroup = styled.div`
+  position: relative;
+  display: grid;
+  justify-self: center;
+`
+
 const Left = styled.div`
   position: relative;
   display: grid;
@@ -120,14 +122,11 @@ const Left = styled.div`
 `
 
 const InfoGroup = styled.div`
-  position: absolute;
-  width: 500px;
   display: grid;
-  grid-template-columns: auto 24px auto;
-  gap: 10px;
-  transform: rotate(-90deg);
+  grid-template-columns: auto auto;
+  gap: 200px;
+  margin-top: 100px;
   color: white;
-  left: -206px;
 
   @media (max-width: 768px) {
     left: -225px;
@@ -138,9 +137,9 @@ const InfoGroup = styled.div`
     gap: 5px;
   }
 
-  animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden; */
   /* transform-origin: top left;
   align-self: center; */
 `
@@ -153,11 +152,8 @@ const Date = styled.h3`
 const Icon = styled.img`
   /* width: 24px;
   height: 24px; */
-  align-self: center;
 `
-const Place = styled.h3`
-  align-self: center;
-`
+const Place = styled.h3``
 
 const ImageWrapper = styled.div`
   /* background-color: yellow; */

@@ -6,19 +6,19 @@ export default function Message() {
     <Container>
       <Wrapper>
         <MessageText>
-          Ein kleines <Liebe>musikalisches Zeltlager</Liebe> im Schwarzwald
+          Ein kleines <Liebe>musikalisches Festival</Liebe> im Schwarzwald
           organisiert von Freunden <Break />
           aus Liebe zur <Liebe>elektronischen Musik</Liebe> und
           <Liebe> Natur</Liebe>.
         </MessageText>
         <MessageLink
-          href="https://soundcloud.com/kleinundhaarig"
+          href="https://soundcloud.com/kleinundhaarig/sets/s2021"
           target="_blank"
         >
           <Icon>
             <img src={require("/static/icons/soundcloud.svg")} width="24" />
           </Icon>
-          <LinkText>Das war 2020</LinkText>
+          <LinkText>Das war 2021</LinkText>
         </MessageLink>
       </Wrapper>
     </Container>

@@ -234,8 +234,8 @@ p {
 
 @media (max-width: 700px) {
   h3 {
-    font-size: 0.9em;
-    line-height: 1em;
+    /* font-size: 0.9em;
+    line-height: 1em; */
   }
   h2 {
     font-size: 2.4em;
@@ -247,9 +247,10 @@ p {
 }
 
 button {
-  background: white;
-  border: none;
-  color: black;
+  background: black;
+  /* border: none; */
+  color: white;
+  border: 1px solid white;
   padding: 15px 32px;
   width: 100%;
   text-align: center;
@@ -262,12 +263,14 @@ button {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
 
-  transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 button:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
   cursor: pointer;
+  background: white;
+  color: black;
 }
 /*FORMULAR*/
 label {
