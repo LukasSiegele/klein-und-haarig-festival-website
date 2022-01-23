@@ -25,7 +25,7 @@ export default function Newsletter() {
     <Wrapper>
       <NewsletterHeadline>Weitere Infos bald im Newsletter</NewsletterHeadline>
 
-      <form onSubmit={submit}>
+      {/* <form onSubmit={submit}>
         <ButtonInputGroup>
           <InputGroup>
             {/* <Label htmlFor="vorname">Vorname</Label> */}
@@ -52,7 +52,7 @@ export default function Newsletter() {
             <FormButton typ="submit" label="Newsletter bestellen" />
           </ButtonWrapper>
         </ButtonInputGroup>
-      </form>
+      </form> */}
     </Wrapper>
   )
 }
