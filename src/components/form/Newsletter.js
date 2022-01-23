@@ -24,35 +24,6 @@ export default function Newsletter() {
   return (
     <Wrapper>
       <NewsletterHeadline>Weitere Infos bald im Newsletter</NewsletterHeadline>
-
-      {/* <form onSubmit={submit}>
-        <ButtonInputGroup>
-          <InputGroup>
-            {/* <Label htmlFor="vorname">Vorname</Label> */}
-            <input
-              type="text"
-              name="firstName"
-              value={firstName}
-              style={{ height: "51px" }}
-              placeholder="Vorname"
-              required
-              onChange={e => setFirstName(e.target.value)}
-            />
-            <input
-              type="email"
-              name="email"
-              value={email}
-              style={{ height: "51px" }}
-              placeholder="Email"
-              required
-              onChange={e => setEmail(e.target.value)}
-            />
-          </InputGroup>
-          <ButtonWrapper>
-            <FormButton typ="submit" label="Newsletter bestellen" />
-          </ButtonWrapper>
-        </ButtonInputGroup>
-      </form> */}
     </Wrapper>
   )
 }
