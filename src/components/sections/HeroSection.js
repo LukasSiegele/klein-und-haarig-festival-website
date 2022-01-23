@@ -34,7 +34,10 @@ export default function HeroSection() {
           </InfoGroup>
         </ImageLine>
         <NewsletterGroup>
-          <Newsletter></Newsletter>
+          <Newsletter />
+          {/* <NewsletterLink>
+            Weitere Infos bald im <NLLink>Newsletter</NLLink>
+          </NewsletterLink> */}
         </NewsletterGroup>
       </Wrapper>
     </Container>
@@ -44,7 +47,7 @@ export default function HeroSection() {
 const Container = styled.div`
   /* background-color: blue; */
   /* height: 910px; */
-  overflow: hidden;
+  /* overflow: hidden; */
   max-width: 2300px;
   margin: 0 auto 200px;
 `
@@ -61,6 +64,15 @@ const Wrapper = styled.div`
     grid-template-rows: auto 600px;
   } */
 `
+// const NLLink = styled.a`
+//   border-bottom: 2px solid white;
+
+//   :hover {
+//     cursor: pointer;
+//     color: grey;
+//     border-bottom: 2px solid white;
+//   }
+// `
 
 const TitleLine = styled.div`
   padding: 20px 90px;
@@ -113,7 +125,10 @@ const NewsletterGroup = styled.div`
   position: relative;
   display: grid;
   justify-self: center;
+  color: white;
 `
+
+const NewsletterLink = styled.h3``
 
 const Left = styled.div`
   position: relative;
