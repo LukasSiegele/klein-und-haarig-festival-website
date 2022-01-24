@@ -38,7 +38,7 @@ export default function Newsletter() {
 
   return (
     <Wrapper>
-      <NewsletterHeadline>Weitere Infos bald im Newsletter</NewsletterHeadline>
+      <NewsletterHeadline>Bleib auf dem Laufenden!</NewsletterHeadline>
 
       <form onSubmit={submit}>
         <ButtonInputGroup>
@@ -58,13 +58,13 @@ export default function Newsletter() {
               name="email"
               value={email}
               style={{ height: "51px" }}
-              placeholder="Email"
+              placeholder="E-Mail"
               required
               onChange={e => setEmail(e.target.value)}
             />
           </InputGroup>
           <ButtonWrapper>
-            <FormButton typ="submit" label="Newsletter bestellen" />
+            <FormButton typ="submit" label="Newsletter abonnieren" />
           </ButtonWrapper>
         </ButtonInputGroup>
       </form>

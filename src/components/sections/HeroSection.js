@@ -26,19 +26,23 @@ export default function HeroSection() {
         <TitleLine>
           <Title>Klein und Haarig</Title>
         </TitleLine>
-        <ImageLine>
-          <Left></Left>
-          <InfoGroup>
-            <Date>Fr 15 — Mo 18 Juli 2022</Date>
+
+        <InfoGroup>
+          <DateGroup>
+            <DateGhost />
+            <Date>Fr 15. — Mo 18. Juli 2022</Date>
+          </DateGroup>
+          <PlaceGroup>
             <Place>Bad Wildbad</Place>
-          </InfoGroup>
-        </ImageLine>
-        <NewsletterGroup>
-          <Newsletter />
-          {/* <NewsletterLink>
+            <PlaceGhost />
+          </PlaceGroup>
+          <NewsletterGroup>
+            <Newsletter />
+            {/* <NewsletterLink>
             Weitere Infos bald im <NLLink>Newsletter</NLLink>
           </NewsletterLink> */}
-        </NewsletterGroup>
+          </NewsletterGroup>
+        </InfoGroup>
       </Wrapper>
     </Container>
   )
@@ -54,7 +58,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: auto 400px;
+  /* grid-template-rows: auto 400px; */
 
   /* @media (max-width: 768px) {
     grid-template-rows: auto 700px;
@@ -121,15 +125,6 @@ const ImageLine = styled.div`
   }
 `
 
-const NewsletterGroup = styled.div`
-  position: relative;
-  display: grid;
-  justify-self: center;
-  color: white;
-`
-
-const NewsletterLink = styled.h3``
-
 const Left = styled.div`
   position: relative;
   display: grid;
@@ -138,18 +133,13 @@ const Left = styled.div`
 
 const InfoGroup = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 200px;
-  margin-top: 100px;
+  grid-template-rows: auto auto auto;
+  gap: 50px;
+  margin: 100px 75px;
   color: white;
 
-  @media (max-width: 768px) {
-    left: -225px;
-  }
-
-  @media (max-width: 700px) {
-    left: -235px;
-    gap: 5px;
+  @media (max-width: 950px) {
+    gap: 50px;
   }
 
   /* animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -159,16 +149,74 @@ const InfoGroup = styled.div`
   align-self: center; */
 `
 
-const Date = styled.h3`
-  justify-self: end;
-  align-self: center;
+const DateGroup = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+    gap: 0px;
+    text-align: center;
+  }
 `
+
+const Date = styled.h2`
+  background: white;
+  color: black;
+  padding: 15px 30px;
+  justify-self: start;
+  align-self: center;
+  @media (max-width: 950px) {
+    justify-self: center;
+  }
+`
+const DateGhost = styled.div``
 
 const Icon = styled.img`
   /* width: 24px;
   height: 24px; */
 `
-const Place = styled.h3``
+
+const PlaceGroup = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+    gap: 0px;
+    text-align: center;
+  }
+`
+
+const Place = styled.h2`
+  background: white;
+  color: black;
+  padding: 15px 30px;
+  justify-self: end;
+  align-self: center;
+  @media (max-width: 950px) {
+    justify-self: center;
+  }
+`
+
+const PlaceGhost = styled.div``
+
+const NewsletterGroup = styled.div`
+  position: relative;
+  display: grid;
+  justify-self: center;
+  color: white;
+  margin-top: 150px;
+
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+    justify-self: center;
+  }
+`
+
+const NewsletterLink = styled.h3``
 
 const ImageWrapper = styled.div`
   /* background-color: yellow; */

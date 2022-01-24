@@ -197,7 +197,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.8em;
+  font-size: 2.2em;
   line-height: 1.3em;
 }
 
@@ -238,8 +238,8 @@ p {
     line-height: 1em; */
   }
   h2 {
-    font-size: 2.4em;
-    line-height: 1.25em;
+    /* font-size: 2em;
+    line-height: 1.25em; */
   }
   h1 {
     font-size: 12.5vw;
@@ -247,10 +247,9 @@ p {
 }
 
 button {
-  background: black;
-  /* border: none; */
-  color: white;
-  border: 1px solid white;
+  border: none;
+  background: white;
+  color: black;
   padding: 15px 32px;
   width: 100%;
   text-align: center;
@@ -267,10 +266,8 @@ button {
 }
 
 button:hover {
-  /* transform: scale(1.05); */
+  transform: scale(1.05);
   cursor: pointer;
-  background: white;
-  color: black;
 }
 /*FORMULAR*/
 label {
@@ -296,9 +293,10 @@ input {
   padding: 12px;
   margin: 15px 0;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 1);
   background: black;
   color: white;
+  font-size: 16px;
 }
 
 .checkboxText {
