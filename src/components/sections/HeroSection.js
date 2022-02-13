@@ -53,7 +53,7 @@ const Container = styled.div`
   /* height: 910px; */
   /* overflow: hidden; */
   max-width: 2300px;
-  margin: 0 auto 200px;
+  margin: 0 auto;
 `
 
 const Wrapper = styled.div`
@@ -88,7 +88,7 @@ const TitleLine = styled.div`
   }
 
   @media (max-width: 700px) {
-    padding: 20px 30px;
+    padding: 20px 20px;
   }
 `
 
@@ -140,6 +140,7 @@ const InfoGroup = styled.div`
 
   @media (max-width: 950px) {
     gap: 50px;
+    margin: 100px 20px 0;
   }
 
   /* animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -161,7 +162,7 @@ const DateGroup = styled.div`
   }
 `
 
-const Date = styled.h2`
+const Date = styled.h3`
   background: white;
   color: black;
   padding: 15px 30px;
@@ -190,7 +191,7 @@ const PlaceGroup = styled.div`
   }
 `
 
-const Place = styled.h2`
+const Place = styled.h3`
   background: white;
   color: black;
   padding: 15px 30px;

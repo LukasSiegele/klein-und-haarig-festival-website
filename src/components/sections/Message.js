@@ -30,7 +30,6 @@ const Container = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  background-color: black;
   overflow: hidden;
   color: white;
 
