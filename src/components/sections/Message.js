@@ -6,8 +6,8 @@ export default function Message() {
     <Container>
       <Wrapper>
         <MessageText>
-          Ein kleines <Liebe>musikalisches Festival</Liebe> im Schwarzwald
-          organisiert von Freunden <Break />
+          Ein kleines <Liebe> Festival</Liebe> im Schwarzwald organisiert von
+          Freunden <Break />
           aus Liebe zur <Liebe>elektronischen Musik</Liebe> und
           <Liebe> Natur</Liebe>.
         </MessageText>
