@@ -84,7 +84,7 @@ const NewsletterHeadline = styled.h3`
 const InputGroup = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 15px;
 `
 
 const ButtonInputGroup = styled.div`
