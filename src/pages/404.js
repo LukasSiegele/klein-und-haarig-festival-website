@@ -1,8 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+import Layout from "../basics/layout"
+import SEO from "../basics/seo"
 
 export default function NotFoundPage() {
   return (

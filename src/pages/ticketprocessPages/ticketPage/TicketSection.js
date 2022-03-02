@@ -1,14 +1,15 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import TicketCard from "../ticketprocessPages/ticketPage/TicketCard"
+
 import { Link } from "gatsby"
-import FormButton from "../../components/components/FormButton"
-import useAutoCount from "../../helper/useAutoCount"
-import useCamperCount from "../../helper/useCamperCount"
+import TicketCard from "./TicketCard"
+import useAutoCount from "../../../helper/useAutoCount"
+import useCamperCount from "../../../helper/useCamperCount"
 
 import Background1 from "/static/images/Card-Bg1.jpg"
 import Background2 from "/static/images/Card-Bg2.jpg"
 import Background3 from "/static/images/Card-Bg3.jpg"
+import FormButton from "../../../components/FormButton"
 
 export default function TicketSection(props) {
   const isFestival = true

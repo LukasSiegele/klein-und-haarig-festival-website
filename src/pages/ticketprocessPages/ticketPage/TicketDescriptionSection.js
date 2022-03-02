@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { themes } from "../styles/ColorStyles"
 
 export default function TicketDescription(props) {
   return (
@@ -21,7 +20,6 @@ export default function TicketDescription(props) {
 
 const Wrapper = styled.div`
   padding: 60px 40px;
-  background: ${themes.acid.backgroundColor2};
 `
 
 const Title = styled.h4`

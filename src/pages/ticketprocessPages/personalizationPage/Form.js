@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import FormButton from "../buttons/FormButton"
 import { navigate } from "gatsby"
+import FormButton from "../../../components/FormButton"
 
 export default function Form(props) {
   const [firstName, setFirstName] = useState("")

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import ShopTitle from "../components/shopping/ShopTitle"
-import FormButton from "../components/buttons/FormButton"
+import Layout from "../../../basics/layout"
+import SEO from "../../../basics/seo"
 import { navigate } from "gatsby"
+import ShopTitle from "../ShopTitle"
+import FormButton from "../../../components/FormButton"
 
 export default function Helfer({ location }) {
   const { state = {} } = location

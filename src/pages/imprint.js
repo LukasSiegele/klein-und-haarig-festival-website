@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import useAutoCount from "../helper/useAutoCount"
+import Layout from "../basics/layout"
+import SEO from "../basics/seo"
 import useCamperCount from "../helper/useCamperCount"
 import { Link } from "gatsby"
+import useAutoCount from "../helper/useAutoCount"
 
 export default function Imprint() {
   // Auto Count

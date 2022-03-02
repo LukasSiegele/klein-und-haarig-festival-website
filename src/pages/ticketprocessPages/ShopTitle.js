@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { PageHeader, PageInfo } from "../styles/TextStyles"
 
 export default function ShopTitle(props) {
   return (
@@ -27,7 +26,5 @@ const Content = styled.div`
   justify-items: center;
 `
 
-const Info = styled(PageInfo)``
-const Title = styled(PageHeader)`
-  color: white;
-`
+const Info = styled.h4``
+const Title = styled.h3``

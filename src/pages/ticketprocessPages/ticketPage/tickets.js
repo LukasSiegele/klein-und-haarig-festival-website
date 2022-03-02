@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import TicketSection from "../components/sections/TicketSection"
-import ShopTitle from "../components/shopping/ShopTitle"
+import Layout from "../../../basics/layout"
+import SEO from "../../../basics/seo"
+import ShopTitle from "../ShopTitle"
+import TicketSection from "./TicketSection"
 
 export default function Tickets({ location }) {
   const { state = {} } = location

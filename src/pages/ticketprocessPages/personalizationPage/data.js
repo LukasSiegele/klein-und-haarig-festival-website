@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import Form from "../components/form/Form"
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import ShopTitle from "../components/shopping/ShopTitle"
+import Layout from "../../../basics/layout"
+import SEO from "../../../basics/seo"
+import ShopTitle from "../ShopTitle"
+import Form from "./Form"
 
 export default function Data({ location }) {
   const { state = {} } = location

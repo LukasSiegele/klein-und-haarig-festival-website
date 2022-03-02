@@ -128,7 +128,7 @@ section {
 @font-face {
   font-family: "Pilowlava";
   src: local("Pilowlava"),
-    url(../../../static/fonts/Pilowlava/Pilowlava.woff2) format("woff2");
+    url(../../static/fonts/Pilowlava/Pilowlava.woff2) format("woff2");
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Roboto:wght@400;500;900&display=swap");
@@ -136,7 +136,7 @@ section {
 @font-face {
   font-family: "GT-Alpina-Fine-Light-Italic";
   src: local("GT-Alpina-Fine-Light-Italic"),
-    url(../../../static/fonts/GT-Alpina/GT-Alpina-Fine-Condensed-Light-Italic-Trial.woff2)
+    url(../../static/fonts/GT-Alpina/GT-Alpina-Fine-Condensed-Light-Italic-Trial.woff2)
       format("woff2");
 }
 

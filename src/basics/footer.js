@@ -54,12 +54,12 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 220px;
-  align-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  /* gap: 220px; */
+  /* align-content: space-between; */
   color: white;
-  max-width: 900px;
-  justify-self: center;
+  /* max-width: 900px; */
+  /* justify-self: center; */
   @media (max-width: 768px) {
     /* grid-template-columns: auto 1fr; */
     justify-content: space-evenly;
@@ -93,7 +93,7 @@ const WrapperRight = styled.div`
   display: grid;
   grid-template-rows: repeat(3, 0.1fr);
   grid-template-columns: auto;
-  justify-content: left;
+  justify-content: right;
   text-align: right;
   gap: 5px;
 

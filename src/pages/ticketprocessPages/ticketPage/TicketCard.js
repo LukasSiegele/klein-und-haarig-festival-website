@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { animations } from "../styles/AnimationStyles"
+import { animations } from "../../../styles/AnimationStyles"
+
 // import TicketCardImage from "../../../static/images/TicketCardImage.jpg"
 
 // import Background1 from "/static/images/Card-Bg1.jpg"
