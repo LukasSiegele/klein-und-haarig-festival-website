@@ -6,7 +6,7 @@ import Footer from "../Footer/footer"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-export default function Layout({ children }) {
+export default function Cookies({ children }) {
   return (
     <>
       {/* <GlobalStyle /> */}

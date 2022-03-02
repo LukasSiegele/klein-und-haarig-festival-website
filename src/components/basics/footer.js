@@ -9,9 +9,9 @@ export default function Footer() {
         <WrapperLeft>
           <BuntePlatte>Bunte Platte e.V.</BuntePlatte>
           <Description>
-            — Gemeinsam und tolerant die Freiheit und Vielfalt der
-            elektronischen Musikkultur erleben und feiern. Dieser Leitspruch
-            vereint uns und treibt uns an.
+            — Miteinander Vielfalt, Offenheit, Toleranz und Freiheit feiern.
+            Diese Philosophie von Techno zu seiner Gründungszeit vereint uns und
+            treibt uns an.
           </Description>
         </WrapperLeft>
         <WrapperRight>
@@ -30,7 +30,7 @@ export default function Footer() {
               <Link to="/privacy">Datenschutz</Link>
             </Text>
           </Datenschutz>
-          <Text>© 2022</Text>
+          <Text>© 2021</Text>
         </WrapperRight>
       </Content>
     </Wrapper>
@@ -38,6 +38,7 @@ export default function Footer() {
 }
 
 const Wrapper = styled.div`
+  background-color: black;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 40px 50px;
   display: grid;

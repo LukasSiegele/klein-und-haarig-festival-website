@@ -9,7 +9,7 @@ export default function useCamperCount() {
   const [camperCount, setCamperCount] = useState(0)
 
   useEffect(() => {
-    base("Teilnehmer 2021")
+    base("Teilnehmer 2022")
       .select({ view: "Grid" })
       .eachPage((records, fetchNextPage) => {
         records.map(items => {
@@ -22,7 +22,7 @@ export default function useCamperCount() {
   }, [])
 
   // Camper Count
-  const maxCampers = 5
+  const maxCampers = 4
   const [camperParkplatz, setCamperParkplatz] = useState(false)
 
   useEffect(() => {

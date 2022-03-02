@@ -9,7 +9,7 @@ export default function useAutoCount() {
   const [autoCount, setAutoCount] = useState(0)
 
   useEffect(() => {
-    base("Teilnehmer 2021")
+    base("Teilnehmer 2022")
       .select({ view: "Grid" })
       .eachPage((records, fetchNextPage) => {
         records.map(items => {

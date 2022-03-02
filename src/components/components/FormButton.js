@@ -8,7 +8,6 @@ export default function FormButton(props) {
         backgroundImage: `url(${props.background})`,
         backgroundSize: "cover",
         color: props.color,
-        border: props.border,
       }}
     >
       {props.label}

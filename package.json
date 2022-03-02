@@ -31,7 +31,8 @@
     "react-mailchimp-subscribe": "^2.1.0",
     "react-spring": "^8.0.27",
     "styled-components": "^5.2.1",
-    "uniqid": "^5.2.0"
+    "uniqid": "^5.2.0",
+    "zustand": "^3.7.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

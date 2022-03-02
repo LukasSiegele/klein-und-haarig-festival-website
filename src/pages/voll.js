@@ -6,15 +6,18 @@ export default function Voll() {
     <Container>
       <Wrapper>
         <MessageHeader>
-          Wir sind leider <Liebe> ausverkauft </Liebe>
+          Was <Liebe> Ticketverkauf pausiert </Liebe> bedeutet
         </MessageHeader>
         <MessageText>
-          Unser Limit an Zeltlagerticket Reservierungen ist für dieses Jahr
-          erreicht und der Verkauf wurde vorzeitig beendet.
+          Wir haben aktuell unser Limit an Festivalticket-Reservierungen für
+          dieses Jahr erreicht und den Ticketverkauf vorrübergehend pausiert.{" "}
+          <br />
+          Am 4. Juni um 17 Uhr wird der Verkauf nochmal geöffnet und alle bis
+          dahin nicht bezahlten Reservierungen/Tickets zum Verkauf freigegeben.
         </MessageText>
         <MessageText>
-          Ihr habt bereits ein Zeltlagerticket und wollt nur nachträglich ein
-          Auto- oder Camperticket dazukaufen? Schreibt uns einfach per:
+          Ihr wollt ein Auto- oder Camperticket nachträglich kaufen? Schreibt
+          uns einfach per:
         </MessageText>
         <Kontakt href="mailto:info@kleinundhaarig.de">
           info@kleinundhaarig.de

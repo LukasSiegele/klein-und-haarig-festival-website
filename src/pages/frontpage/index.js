@@ -15,7 +15,7 @@ export default function IndexPage() {
       <HeroSection />
       <Message />
       <ImageSection />
-      {/* <Kuenstler /> */}
+      <Kuenstler />
     </Layout>
   )
 }
