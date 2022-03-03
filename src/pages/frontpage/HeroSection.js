@@ -22,7 +22,7 @@ export default function HeroSection() {
   return (
     <Container>
       <Wrapper>
-        <Title>Klein und Haarig</Title>
+        <Title>Klein und Haarig 2022</Title>
       </Wrapper>
     </Container>
   )
