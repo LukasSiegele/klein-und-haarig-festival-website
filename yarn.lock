@@ -1384,6 +1384,28 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@paypal/paypal-js@^5.0.2":
+  "integrity" "sha512-bRQ6P0sftCkunQXKjujDjxCbfCdIZpn29JoQU5HTW50lV1yFGKf8q9DJIAnzHPgDDc0CTJ27dlkLD94oKEd6Jg=="
+  "resolved" "https://registry.npmjs.org/@paypal/paypal-js/-/paypal-js-5.0.2.tgz"
+  "version" "5.0.2"
+  dependencies:
+    "promise-polyfill" "^8.2.1"
+
+"@paypal/react-paypal-js@^7.6.0":
+  "integrity" "sha512-GPaFXOVEh2bCNKOmLmArxWoBM6gfzoP41HfDdEr58geJi+t32/FtVKdaoxymE6f3oStaobt6KDdzxPpKuNeisQ=="
+  "resolved" "https://registry.npmjs.org/@paypal/react-paypal-js/-/react-paypal-js-7.6.0.tgz"
+  "version" "7.6.0"
+  dependencies:
+    "@paypal/paypal-js" "^5.0.2"
+    "@paypal/sdk-constants" "^1.0.116"
+
+"@paypal/sdk-constants@^1.0.116":
+  "integrity" "sha512-r1bTmdl9ed61V6zKh/2RnKeyykGQonGjewE94lJeTQs9OdasLqGXXM2wp8tyuspBBAyXDfHzHn8Nb2Qq14Cskw=="
+  "resolved" "https://registry.npmjs.org/@paypal/sdk-constants/-/sdk-constants-1.0.117.tgz"
+  "version" "1.0.117"
+  dependencies:
+    "hi-base32" "^0.5.0"
+
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   "integrity" "sha512-65+vYGuDkHBCWWjqzzR/Ck318+d6yTI00EqII9qe3aPD1J3Olhvw0X38uM5moQb1PK/ksDXwSoPGt/5QhCiotw=="
   "resolved" "https://registry.npmjs.org/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz"
@@ -6831,6 +6853,11 @@
   "resolved" "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
   "version" "1.1.0"
 
+"hi-base32@^0.5.0":
+  "integrity" "sha512-EmBBpvdYh/4XxsnUybsPag6VikPYnN30td+vQk+GI3qpahVEG9+gTkG0aXVxTjBqQ5T6ijbWIu77O+C5WFWsnA=="
+  "resolved" "https://registry.npmjs.org/hi-base32/-/hi-base32-0.5.1.tgz"
+  "version" "0.5.1"
+
 "hicat@^0.8.0":
   "integrity" "sha512-om8L9O5XwqeSdwl5NtHgrzK3wcF4fT9T4gb/NktoH8EyoZipas/tvUZLV48xT7fQfMYr9qvb0WEutqdf0LWSqA=="
   "resolved" "https://registry.npmjs.org/hicat/-/hicat-0.8.0.tgz"
@@ -10494,6 +10521,11 @@
   "resolved" "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   "version" "1.0.1"
 
+"promise-polyfill@^8.2.1":
+  "integrity" "sha512-Og0+jCRQetV84U8wVjMNccfGCnMQ9mGs9Hv78QFe+pSDD3gWTpz0y+1QCuxy5d/vBFuZ3iwP2eycAkvqIMPmWg=="
+  "resolved" "https://registry.npmjs.org/promise-polyfill/-/promise-polyfill-8.2.3.tgz"
+  "version" "8.2.3"
+
 "prompts@^2.3.2":
   "integrity" "sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q=="
   "resolved" "https://registry.npmjs.org/prompts/-/prompts-2.4.2.tgz"
@@ -10763,7 +10795,7 @@
     "strip-ansi" "3.0.1"
     "text-table" "0.2.0"
 
-"react-dom@^15.0.0 || ^16.0.0", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react-dom@^16.14.0", "react-dom@^16.4.2 || ^17.0.0", "react-dom@^16.8.0", "react-dom@>= 16.8.0", "react-dom@15.x || 16.x || 16.4.0-alpha.0911da3":
+"react-dom@^15.0.0 || ^16.0.0", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react-dom@^16.14.0", "react-dom@^16.4.2 || ^17.0.0", "react-dom@^16.8.0", "react-dom@>= 16.8.0", "react-dom@>=16.3.0", "react-dom@15.x || 16.x || 16.4.0-alpha.0911da3":
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -10826,15 +10858,15 @@
     "prop-types" "^15.5.10"
     "to-querystring" "^1.0.4"
 
+"react-paypal-js@^0.0.1-security":
+  "integrity" "sha512-mryql7EN5LyHtM0WmOE7bwlybGJBVpzXIg+fDPc8TwXs/jPkxm+MFoK35oNYPiBLZ8CHsdO0pNqyKet8McHXxg=="
+  "resolved" "https://registry.npmjs.org/react-paypal-js/-/react-paypal-js-0.0.1-security.tgz"
+  "version" "0.0.1-security"
+
 "react-refresh@^0.8.3":
   "integrity" "sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
   "version" "0.8.3"
-
-"react-refresh@>=0.8.3 <0.10.0":
-  "integrity" "sha512-Gvzk7OZpiqKSkxsQvO/mbTN1poglhmAV7gR/DdIrRrSMXraRQQlfikRJOr3Nb9GTMPC5kof948Zy6jJZIFtDvQ=="
-  "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.9.0.tgz"
-  "version" "0.9.0"
 
 "react-side-effect@^2.1.0":
   "integrity" "sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ=="
@@ -10857,7 +10889,7 @@
     "@babel/runtime" "^7.0.0"
     "memoize-one" ">=3.1.1 <6"
 
-"react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react@^16.13.1 || ^17.0.0", "react@^16.14.0", "react@^16.3.0 || ^17.0.0", "react@^16.4.2 || ^17.0.0", "react@^16.8.0", "react@^16.8.0 || ^17.0.0", "react@>= 16.8.0", "react@>=16.3.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3", "react@15||16":
+"react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react@^16.13.1 || ^17.0.0", "react@^16.14.0", "react@^16.3.0 || ^17.0.0", "react@^16.4.2 || ^17.0.0", "react@^16.8.0", "react@^16.8.0 || ^17.0.0", "react@>= 16.8.0", "react@>=16.3.0", "react@>=16.8", "react@15.x || 16.x || 16.4.0-alpha.0911da3", "react@15||16":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
@@ -12752,11 +12784,6 @@
   dependencies:
     "prelude-ls" "~1.1.2"
 
-"type-fest@^0.13.1":
-  "integrity" "sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg=="
-  "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.13.1.tgz"
-  "version" "0.13.1"
-
 "type-fest@^0.20.2":
   "integrity" "sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ=="
   "resolved" "https://registry.npmjs.org/type-fest/-/type-fest-0.20.2.tgz"
@@ -12816,11 +12843,6 @@
   "integrity" "sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c="
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
-
-"typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
-  "integrity" "sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.5.5.tgz"
-  "version" "4.5.5"
 
 "unbox-primitive@^1.0.1":
   "integrity" "sha512-tZU/3NqK3dA5gpE1KtyiJUrEB0lxnGkMFHptJ7q6ewdZ8s12QrODwNbhIJStmJkd1QDXa1NRA8aF2A1zk/Ypyw=="
@@ -13867,6 +13889,11 @@
     "is-ci" "^2.0.0"
     "read" "^1.0.7"
     "strip-ansi" "^5.2.0"
+
+"zustand@^3.7.0":
+  "integrity" "sha512-USzVzLGrvZ8VK1/sEsOAmeqa8N7D3OBdZskVaL7DL89Q4QLTYD053iIlZ5KDidyZ+Od80Dttin/f8ZulOLFFDQ=="
+  "resolved" "https://registry.npmjs.org/zustand/-/zustand-3.7.0.tgz"
+  "version" "3.7.0"
 
 "zwitch@^2.0.0":
   "integrity" "sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA=="
