@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Layout from "../basics/layout"
-import SEO from "../basics/seo"
+import Layout from "../components/layout/layout"
+import SEO from "../components/layout/seo"
 
 export default function Privacy() {
   return (

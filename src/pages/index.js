@@ -1,27 +1,24 @@
 import React from "react"
-import styled from "styled-components"
-import Layout from "../basics/layout"
-import SEO from "../basics/seo"
-import SideNavigation from "../components/SideNavigation"
-
-import HeroSection from "./frontpage/HeroSection"
-
+import HeroSection from "../components/sections/HeroSection"
+import SideNavigation from "../components/navigation/SideNav"
+import Message from "../components/sections/Message"
+import Layout from "../components/layout/layout"
+import SEO from "../components/layout/seo"
+import Header from "../components/layout/Header"
+import ImageSection from "../components/sections/ImageSection"
+import Kuenstler from "../components/sections/Kuenstler"
+import Ticker from "../components/ticker/Ticker"
 export default function IndexPage() {
   return (
-    <PageGrid>
+    <Layout>
+      <SEO title="Home" />
+      <Header />
       <SideNavigation />
-      <PageContent>
-        <Layout>
-          <SEO title="Home" />
-          <HeroSection />
-        </Layout>
-      </PageContent>
-    </PageGrid>
+      <HeroSection />
+      <Message />
+      <ImageSection />
+      <Kuenstler />
+      <Ticker />
+    </Layout>
   )
 }
-
-const PageContent = styled.div``
-const PageGrid = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-`
