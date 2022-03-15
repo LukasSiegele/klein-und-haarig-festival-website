@@ -7,7 +7,7 @@ import VipAccessForm from "../components/vip/VipAccess"
 import useTicketVerify from "../helper/useTicketVerify"
 
 export default function VIParea() {
-  const queryParams 
+  let queryParams 
   const isBrowser = () => typeof window !== "undefined"
   if(isBrowser()){
     queryParams = new URLSearchParams(window.location.search);
