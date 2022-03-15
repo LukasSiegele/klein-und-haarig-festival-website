@@ -4,20 +4,21 @@ import styled from "styled-components"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import VipAccessForm from "../components/vip/VipAccess"
-import useTicketVerify from "../helper/useTicketVerify"
+//import useTicketVerify from "../helper/useTicketVerify"
 
 export default function VIParea() {
-  let queryParams 
-  const isBrowser = () => typeof window !== "undefined"
-  if(isBrowser()){
-    queryParams = new URLSearchParams(window.location.search);
-  } 
-  const [key, setKey] = useState(queryParams.get('key'));
-  const [hasAccess, setHasAccess] = useState(false);
+  // let queryParams 
+  // const isBrowser = () => typeof window !== "undefined"
+  // if(isBrowser()){
+  //   queryParams = new URLSearchParams(window.location.search);
+  // }
+  // let querykey
+  // const [key, setKey] = useState(queryParams.get('key'));
+  // const [hasAccess, setHasAccess] = useState(false);
   
 
-    const ticketVerify = useTicketVerify(key)
-    console.log(ticketVerify)
+    //const ticketVerify = useTicketVerify(key)
+    //console.log(ticketVerify)
 
   
   
