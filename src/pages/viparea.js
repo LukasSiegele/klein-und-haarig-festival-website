@@ -27,7 +27,7 @@ export default function VIParea() {
     <Layout>
       <SEO title="vip area" />
       <Wrapper>
-        {hasAccess ? <h1>Secret festival information</h1> : <VipAccessForm/>}
+        {/*hasAccess ? <h1>Secret festival information</h1> : <VipAccessForm/>*/}
         <Title>Insert your </Title>
         <Description>I like Turtlefvsvs.</Description>
        
