@@ -2,11 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { PageHeader, PageInfo } from "../styles/TextStyles"
 import LogoSVG from "../../../static/images/LogoSideNav.svg"
+import { Link } from "gatsby"
 
 export default function ShopTitle(props) {
   return (
     <Wrapper>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       <Content>
         <Info>{props.info}</Info>
         <Title>{props.title}</Title>
@@ -35,6 +38,9 @@ const Logo = styled.div`
   align-self: center;
   @media (max-width: 800px) {
     margin-right: 24px;
+  }
+  :hover {
+    cursor: pointer;
   }
 `
 
