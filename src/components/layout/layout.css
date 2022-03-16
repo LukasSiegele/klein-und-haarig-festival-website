@@ -140,7 +140,6 @@ section {
       format("woff2");
 }
 
-
 body {
   font-family: "GT-Alpina-Fine-Light-Italic";
   font-family: "Roboto", sans-serif;
@@ -148,7 +147,7 @@ body {
   font-size: 20px;
   line-height: 1.3;
   color: black;
-  background-color: #F6F4ED;
+  background-color: #f6f4ed;
   background-image: url(../../../public/images/BackgroundTexture.png);
   font-kerning: normal;
   -webkit-font-smoothing: antialiased;

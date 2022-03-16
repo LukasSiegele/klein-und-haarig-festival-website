@@ -39,15 +39,14 @@ export default function HeroSection() {
               <Logo src="/images/Logo.svg" className="logo" />
               <TicketWrapper>
                 <TicketGroup
-                  // to={audienceCount < maxAudience ? "/tickets" : "/voll"}
-                  to={"/voll"}
+                  to={audienceCount < maxAudience ? "/tickets" : "/voll"}
+                  // to={"/voll"}
                 >
-                  <TicketButton/>
+                  <TicketButton />
                   {/* <TicketLabel>
-                    {/* {audienceCount < maxAudience
+                      {audienceCount < maxAudience
                       ? "Tickets"
-                      : "Ticketverkauf pausiert"} }
-                    Ticketverkauf pausiert
+                      : "Ticketverkauf pausiert"}
                   </TicketLabel> */}
                 </TicketGroup>
               </TicketWrapper>
@@ -252,7 +251,8 @@ const TicketWrapper = styled.div`
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
     /* transform: translateY(-10px); */
-    transform: scale(1.03);
+    /* transform: scale(1.03);
+    cursor: pointer; */
   }
 `
 
