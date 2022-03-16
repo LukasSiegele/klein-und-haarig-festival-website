@@ -27,12 +27,12 @@ export const H3 = styled.h3`
 `
 
 export const TickerText = styled.p`
-  font-family: "GT-Alpina-Fine-Thin-Trial";
+  font-family: "GT-Alpina-Extended-Regular";
   font-size: 17px;
 `
 
 export const PageHeader = styled.h3`
-  font-family: "GT-Alpina-Fine-Light-Italic";
+  font-family: "GT-Alpina-Extended-Regular";
   font-size: 35px;
   font-weight: 100;
   color: white;

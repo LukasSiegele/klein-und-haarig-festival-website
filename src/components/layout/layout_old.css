@@ -133,12 +133,12 @@ section {
 
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Roboto:wght@400;500;900&display=swap");
 
-@font-face {
+/* @font-face {
   font-family: "GT-Alpina-Fine-Light-Italic";
   src: local("GT-Alpina-Fine-Light-Italic"),
     url(../../../static/fonts/GT-Alpina/GT-Alpina-Fine-Condensed-Light-Italic-Trial.woff2)
       format("woff2");
-}
+} */
 
 body {
   font-family: GT-Walsheim-Medium;

@@ -97,7 +97,7 @@ const TitleLine = styled.div`
 
 const Title = styled.h1`
   text-align: left;
-  font-family: "GT-Alpina-Fine-Light-Italic";
+  font-family: "GT-Alpina-Extended-Regular";
 
   color: #000;
 

@@ -83,7 +83,7 @@ const MessageText = styled.p`
 `
 
 const Liebe = styled.span`
-  font-family: "GT-Alpina-Fine-Light-Italic";
+  font-family: "GT-Alpina-Extended-Regular";
 `
 
 const Break = styled.span`

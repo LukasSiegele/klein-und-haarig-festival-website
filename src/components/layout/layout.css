@@ -131,23 +131,30 @@ section {
     url(../../../static/fonts/Pilowlava/Pilowlava.woff2) format("woff2");
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@100&family=Roboto:wght@400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
 
 @font-face {
-  font-family: "GT-Alpina-Fine-Light-Italic";
-  src: local("GT-Alpina-Fine-Light-Italic"),
-    url(../../../static/fonts/GT-Alpina/GT-Alpina-Fine-Condensed-Light-Italic-Trial.woff2)
+  font-family: "GT-Alpina-Extended-Regular";
+  src: local("GT-Alpina-Extended-Regular"),
+    url(../../../static/fonts/GT-Alpina/GT-Alpina-Extended-Regular.woff2)
+      format("woff2");
+}
+
+@font-face {
+  font-family: "GT-Alpina-Extended-Bold";
+  src: local("GT-Alpina-Extended-Bold"),
+    url(../../../static/fonts/GT-Alpina/GT-Alpina-Extended-Bold.woff2)
       format("woff2");
 }
 
 body {
-  font-family: "GT-Alpina-Fine-Light-Italic";
-  font-family: "Roboto", sans-serif;
+  font-family: "GT-Alpina-Extended-Regular";
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.3;
   color: black;
-  background-color: #f6f4ed;
+  background-color: blue;
   background-image: url(../../../public/images/BackgroundTexture.png);
   font-kerning: normal;
   -webkit-font-smoothing: antialiased;
@@ -188,7 +195,7 @@ a:hover {
 }
 
 h1 {
-  font-family: Pilowlava;
+  font-family: "GT-Alpina-Extended-Regular";
   font-weight: 50;
   color: rgba(255, 255, 255);
   font-size: 7vw;
@@ -203,8 +210,8 @@ h2 {
 }
 
 h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
   font-size: 1.3em;
 }
 
@@ -260,8 +267,8 @@ button {
   text-transform: uppercase;
 
   letter-spacing: 0.06em;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
 
   transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
