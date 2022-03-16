@@ -158,9 +158,10 @@ export default function TicketSection(props) {
 }
 
 const Wrapper = styled.div`
-  padding: 0px 40px;
+  padding: 120px 40px;
   display: grid;
   justify-content: center;
+  background: black;
 `
 
 const Content = styled.div`

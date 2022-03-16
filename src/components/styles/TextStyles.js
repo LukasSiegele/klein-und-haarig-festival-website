@@ -31,17 +31,17 @@ export const TickerText = styled.p`
   font-size: 17px;
 `
 
+// Shop Title
 export const PageHeader = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 35px;
   font-weight: 100;
-  color: white;
+  color: black;
 `
 
 export const PageInfo = styled.h4`
-  font-size: 20px;
-  /* color: ${themes.acid.secondaryColor}; */
-  color: white;
+  font-size: 1rem;
+  color: black;
 `
 
 export const HeaderText = styled.h3`
