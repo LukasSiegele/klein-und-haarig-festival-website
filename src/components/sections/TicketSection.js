@@ -5,21 +5,23 @@ import { Link } from "gatsby"
 import FormButton from "../buttons/FormButton"
 import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
+import { Note, SubheaderSmall, TextSmall } from "../styles/TextStyles"
 
-import Background1 from "/static/images/Card-Bg1.jpg"
+import Background1 from "/static/images/FestivalTicket.jpg"
 import Background2 from "/static/images/Card-Bg2.jpg"
-import Background3 from "/static/images/Card-Bg3.jpg"
+import Background3 from "/static/images/CamperTicket.jpg"
 
 export default function TicketSection(props) {
   const isFestival = true
   // const [isFestival, setIsFestival] = useState(true)
-  const festivalPrice = 75
+  const festivalPrice = 100
+  const serviceFees = 2
   const [isAuto, setIsAuto] = useState(false)
   const autoPrice = 5
   const [isCamper, setIsCamper] = useState(false)
   const camperPrice = 10
 
-  const [summary, setSummary] = useState(festivalPrice)
+  const [summary, setSummary] = useState(festivalPrice + serviceFees)
 
   // Auto Count
   const autoPTicketsPage = useAutoCount()
@@ -62,34 +64,7 @@ export default function TicketSection(props) {
           </Card1>
           <Card2>
             <TicketCard
-              title="Auto Park Platz"
-              price={
-                props.autoParkplatz || autoPTicketsPage
-                  ? "Ausverkauft"
-                  : autoPrice + " €"
-              }
-              details="Parkplatz auf dem Gelände"
-              isSelected={isAuto}
-              limit={props.autoParkplatz || autoPTicketsPage}
-              handleSelection={() => {
-                if (
-                  props.autoParkplatz === false ||
-                  autoPTicketsPage === false
-                ) {
-                  setIsAuto(!isAuto)
-                  if (!isAuto) {
-                    setSummary(summary + autoPrice)
-                  } else {
-                    setSummary(summary - autoPrice)
-                  }
-                }
-              }}
-              cardBackground={Background2}
-            />
-          </Card2>
-          <Card3>
-            <TicketCard
-              title="Camper Stell Platz"
+              title="Camper Stellplatz"
               price={
                 props.camperParkplatz || camperPTicketsPage
                   ? "Ausverkauft"
@@ -113,32 +88,48 @@ export default function TicketSection(props) {
               }}
               cardBackground={Background3}
             />
-          </Card3>
+          </Card2>
+          {/* <Card3></Card3> */}
         </CardWrapper>
         <InfoWrapper>
-          <InfoText1>
-            Tickets — Die Tickets sind personalisiert. Pro Person und E-Mail
-            kann nur ein Ticket erworben werden. Auto- und Campertickets sind
-            nur in Kombination mit einem Festivalticket erhältlich.
-          </InfoText1>
-          <InfoText2>
-            Parken — Wenn du schon ein Ticket hast und noch ein Auto- oder
-            Camperticket dazubuchen möchtest oder diese bereits ausverkauft
-            sind, wende dich bitte an{" "}
-            <LinkInline href="mailto:info@kleinundhaarig.de" subject="Parken">
-              info@kleinundhaarig.de
-            </LinkInline>
-            . Zum Be- und Entladen kann in jedem Fall vorgefahren werden.
-            <br />
-            <br />
-            Öffis — Unser Gelände ist problemlos mit öffentlichen
-            Verkehrsmitteln erreichbar. Vom nächstgelegenen Bahnhof fährt alle
-            30 min ein Bus direkt vor das Festival.
-          </InfoText2>
+          <LeftBlock>
+            <InfoHeader>Tickets</InfoHeader>
+            <InfoText>
+              Die Tickets sind personalisiert. Pro Person und E-Mail kann nur
+              ein Ticket erworben werden. Auto- und Campertickets sind nur in
+              Kombination mit einem Festival Ticket erhältlich.
+            </InfoText>
+
+            <InfoHeader>Nachkaufen</InfoHeader>
+            <InfoText>
+              Wenn du bereits ein Ticket gekauft hast und noch ein Camperticket
+              dazubuchen möchtest, wende dich bitte an{" "}
+              <LinkInline href="mailto:info@kleinundhaarig.de" subject="Parken">
+                info@kleinundhaarig.de
+              </LinkInline>
+            </InfoText>
+          </LeftBlock>
+
+          <RightBlock>
+            <InfoHeader>Öffis</InfoHeader>
+            <InfoText>
+              Unser Gelände ist gut mit öffentlichen Verkehrsmitteln erreichbar.
+              Vom nächstgelegenen Bahnhof fährt alle 30 min ein Bus vor das
+              Lager.
+            </InfoText>
+            <InfoHeader>Autos</InfoHeader>
+            <InfoText>
+              Es wird dieses Jahr genügend Parkplätze geben, diese werden aber
+              nicht wie im letzten Jahr auf dem Gelände sein. Zum und vom
+              Parkplatz werden wir einen Shuttleservice gegen eine kleine Gebühr
+              einrichten.
+            </InfoText>
+          </RightBlock>
         </InfoWrapper>
         <ShoppingCartWrapper>
           <SumWrapper>
-            <Summary>Insgesamt {summary || 0} €</Summary>
+            <Summary>Dein Gesamtpreis {summary || 0} €</Summary>
+            <SummaryNote>inkl. 2 € Servicegebühren</SummaryNote>
           </SumWrapper>
           <WeiterWrapper>
             <Link
@@ -148,7 +139,7 @@ export default function TicketSection(props) {
                 onlyFriends: props.onlyFriends,
               }}
             >
-              <FormButton label="Weiter" />
+              <FormButton label="Weiter" color="black" />
             </Link>
           </WeiterWrapper>
         </ShoppingCartWrapper>
@@ -165,13 +156,16 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  max-width: 900px;
+  max-width: 800px;
 `
 
 const CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(2, auto);
+  justify-items: start;
+  gap: 60px;
+  width: auto;
+
   margin-bottom: 40px;
 
   @media (max-width: 800px) {
@@ -215,10 +209,10 @@ const Card3 = styled.div`
 
 const ShoppingCartWrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 40px 0 200px;
+  padding: 80px 0 200px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
@@ -228,24 +222,26 @@ const ShoppingCartWrapper = styled.div`
 
 const InfoWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 0 0 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  /* max-width: 500px; */
+  padding: 0 0 80px;
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    max-width: 331px;
   }
 `
 
-const InfoText1 = styled.h5`
-  color: rgba(255, 255, 255, 1);
+const LeftBlock = styled.div``
+
+const RightBlock = styled.div``
+
+const InfoHeader = styled(SubheaderSmall)`
+  margin-top: 40px;
+  margin-bottom: 8px;
 `
-const InfoText2 = styled.h5`
-  grid-area: 1 / 2 / 2 / 4;
-  color: rgba(255, 255, 255, 1);
-  @media (max-width: 800px) {
-    grid-area: 1;
-  }
-`
+
+const InfoText = styled(TextSmall)``
 
 const SumWrapper = styled.div`
   display: grid;
@@ -255,6 +251,7 @@ const SumWrapper = styled.div`
 const Summary = styled.h4`
   color: white;
 `
+const SummaryNote = styled(Note)``
 
 const WeiterWrapper = styled.div`
   width: 242px;

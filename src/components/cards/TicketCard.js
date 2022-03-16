@@ -36,8 +36,8 @@ export default function TicketCard(props) {
 }
 
 const Wrapper = styled.div`
-  height: 464px;
-  max-width: 242px;
+  height: 640px;
+  max-width: 331px;
   position: relative;
   transition: ${animations.slow};
   opacity: ${props => (props.limit ? ".3" : "1")};
@@ -51,11 +51,13 @@ const Wrapper = styled.div`
   background-position: -80px -0px;
   /* color: ${props => (props.isSelected ? "black" : "white")}; */
   color: ${props =>
-    props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
+    props.isSelected ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, .5)"};
   /* border: ${props => (props.isSelected ? "0px" : "1px solid white")}; */
-  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  /* border: 0.5px solid rgba(0, 0, 0, 0.3); */
   :hover {
     transform: translateY(-10px);
+  }
+  & > :hover {
     cursor: pointer;
   }
 `
@@ -70,9 +72,6 @@ const BgImage = styled.div`
   height: 100%;
   width: 100%;
   z-index: -1;
-  :hover {
-    cursor: pointer;
-  }
 `
 
 const Title = styled.h1`
@@ -80,34 +79,28 @@ const Title = styled.h1`
   font-size: 40px;
   font-size: ${props => props.titleSize};
   color: ${props =>
-    props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
+    props.isSelected ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, .5)"};
   text-transform: none;
-  padding: 30px 5px;
-  :hover {
-    cursor: pointer;
-  }
+  padding: 30px 24px;
 `
 
 const Price = styled.h4`
-  /* font-family: GT-Walsheim-Pro-Black;   */
-  margin: 30px 20px;
-  :hover {
-    cursor: pointer;
-  }
+  margin: 30px 24px;
+  font-family: "GT-Alpina-Extended-Regular";
 `
 
 const DetailWrapper = styled.div`
   position: absolute;
-  width: 160px;
-  bottom: ${props => (props.singleLineDetail ? "89px" : "75px")};
-  right: ${props => (props.singleLineDetail ? "-53px" : "-40px")};
+  width: 200px;
+  bottom: ${props => (props.singleLineDetail ? "89px" : "95px")};
+  right: ${props => (props.singleLineDetail ? "-53px" : "-55px")};
   transition: ${animations.slow};
 
   a  {
     color: ${props =>
-      props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
+      props.isSelected ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, .5)"};
     border-color: ${props =>
-      props.isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, .5)"};
+      props.isSelected ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, .5)"};
   }
 `
 

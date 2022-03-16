@@ -26,6 +26,23 @@ export const H3 = styled.h3`
   }
 `
 
+// Kleine Hinweistexte
+export const Note = styled.h5`
+  color: rgba(255, 255, 255, 0.5);
+`
+
+// Headlines in Info Texts
+export const SubheaderSmall = styled.h4`
+  font-family: "GT-Alpina-Extended-Bold";
+  color: white;
+`
+
+// Infotexte
+export const TextSmall = styled.p`
+  color: white;
+  font-size: 0.85rem; ;
+`
+
 export const TickerText = styled.p`
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 17px;
