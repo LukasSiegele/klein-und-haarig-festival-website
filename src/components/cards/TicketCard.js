@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { animations } from "../styles/AnimationStyles"
+import { BigHeadline } from "../styles/TextStyles"
 // import TicketCardImage from "../../../static/images/TicketCardImage.jpg"
 
 // import Background1 from "/static/images/Card-Bg1.jpg"
@@ -74,9 +75,8 @@ const BgImage = styled.div`
   z-index: -1;
 `
 
-const Title = styled.h1`
+const Title = styled(BigHeadline)`
   transition: ${animations.slow};
-  font-size: 40px;
   font-size: ${props => props.titleSize};
   color: ${props =>
     props.isSelected ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, .5)"};
@@ -84,7 +84,7 @@ const Title = styled.h1`
   padding: 30px 24px;
 `
 
-const Price = styled.h4`
+const Price = styled.h3`
   margin: 30px 24px;
   font-family: "GT-Alpina-Extended-Regular";
 `

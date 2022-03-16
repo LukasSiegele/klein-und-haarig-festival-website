@@ -1,6 +1,11 @@
 import styled from "styled-components"
 import { themes } from "./ColorStyles"
 
+// Big Headlines
+export const BigHeadline = styled.h1`
+  font-size: 3.2rem;
+`
+
 export const H1 = styled.h1`
   font-weight: bold;
   font-size: 60px;
