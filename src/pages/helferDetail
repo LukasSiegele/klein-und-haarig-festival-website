@@ -8,7 +8,7 @@ import { navigate } from "gatsby"
 
 import { Headline, SubheaderSmall, Note } from "../components/styles/TextStyles"
 
-export default function Helfer({ location }) {
+export default function HelferDetails({ location }) {
   const { state = {} } = location
   const {
     sumTickets,

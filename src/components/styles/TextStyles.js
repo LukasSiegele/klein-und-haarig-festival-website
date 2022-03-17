@@ -31,6 +31,19 @@ export const H3 = styled.h3`
   }
 `
 
+// Große Headlines
+export const Headline = styled.h2`
+  font-family: "GT-Alpina-Extended-Bold";
+  color: white;
+
+  /* @media (max-width: 450px) {
+    font-size: 28px;
+  } */
+`
+
+// Texte
+export const Text = styled.p``
+
 // Kleine Hinweistexte
 export const Note = styled.h5`
   color: rgba(255, 255, 255, 0.5);
