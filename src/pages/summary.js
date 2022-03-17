@@ -38,6 +38,11 @@ export default function Summary({ location }) {
     helferBefore,
     helferWhile,
     helferAfter,
+    helferSmall,
+    helferMedium,
+    helferLarge,
+    helferBuddy,
+    helferEhrenamtlich
     onlyFriends,
   } = state
 
@@ -82,6 +87,11 @@ export default function Summary({ location }) {
       BEFORE: helferBefore,
       WHILE: helferWhile,
       AFTER: helferAfter,
+      SMALL: helferSmall,
+      MEDIUM: helferMedium,
+      LARGE: helferLarge,
+      BUDDY: helferBuddy,
+      EHRE: helferEhrenamtlich,
       FRIENDS: onlyFriends,
     })
       .then(({ msg, result }) => {

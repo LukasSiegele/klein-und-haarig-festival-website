@@ -12,7 +12,6 @@ export default function HelferDetails({ location }) {
   const { state = {} } = location
   const {
     sumTickets,
-    onlyFriends,
     firstName,
     lastName,
     email,
@@ -24,12 +23,24 @@ export default function HelferDetails({ location }) {
     datenspeicherung,
     vereinsbeitritt,
     newsletter,
+    helferBefore,
+    helferWhile,
+    helferAfter,
+    hSmall,
+    hMedium,
+    hLarge,
+    hBuddy,
+    hEhrenamtlich,
+
+    onlyFriends,
   } = state
 
-  const [hBefore, setHBefore] = useState(false)
-  const [hWhile, setHWhile] = useState(false)
-  const [hAfter, setHAfter] = useState(false)
-  const [buttonLabel, setButtonLabel] = useState("Überspringen")
+  const [hSmall, setHSmall] = useState(false)
+  const [hMedium, setHMedium] = useState(false)
+  const [hLarge, setHLarge] = useState(false)
+  const [hBuddy, setHBuddy] = useState("")
+  const [hEhrenamtlich, setHEhrenamtlich] = useState(false)
+  const [buttonLabel, setButtonLabel] = useState("Zur Zusammenfassung")
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -48,104 +59,128 @@ export default function HelferDetails({ location }) {
         vereinsbeitritt: vereinsbeitritt,
         datenspeicherung: datenspeicherung,
         newsletter: newsletter,
-        helferBefore: hBefore,
-        helferWhile: hWhile,
-        helferAfter: hAfter,
+        helferBefore: helferBefore,
+        helferWhile: helferWhile,
+        helferAfter: helferAfter,
+        helferSmall: hSmall,
+        helferMedium: hMedium,
+        helferLarge: hLarge,
+        helferBuddy: hBuddy,
+        helferEhrenamtlich: hEhrenamtlich,
       },
     })
   }
 
-  useEffect(() => {
-    if (hBefore === true || hWhile === true || hAfter === true) {
-      return setButtonLabel("Weiter")
-    } else {
-      return setButtonLabel("Überspringen")
-    }
-  }, [hBefore, hWhile, hAfter])
-
   return (
     <Layout>
       <SEO title="Helfer" />
-      <ShopTitle info="Schritt 3/4" title="Wir suchen Helfer!" />
+      <ShopTitle info="Schritt 3.5/4" title="Wir suchen Helfer!" />
       <Container>
         <Wrapper>
           <Left>
-            <Header>Wie läuft das ab, wenn ich helfen will?</Header>
+            <Header>Super, dass du uns helfen willst!</Header>
             <HelperDescription>
               <ol>
-                <li> Wähle eine oder mehrer Kategorien aus</li>
-                <li>Zahle ganz normal dein Ticket</li>
-                <li>Wir kommen auf dich zu und klären alles weitere ab</li>
-                <li>Anschließend werden dich einem Team zuteilen.</li>
                 <li>
-                  Nach erledigter Schicht bekommst du deinen Anteil erstattet.
-                  Da wir aus dem Festival keinen Provit schlagen und ein Verein
-                  sind freuen wir uns natürlich über jeden ehrenamtlichen
-                  Helfer. :)
+                  Mit ein paar Präferenzen können wir dich besser einer Schicht
+                  zuordnen.
+                </li>
+                <li>Keine Garantie, Präferenzen.</li>
+                <li>
+                  Wir geben unser bestes deine Präferenzen zu berücksichtigen.
                 </li>
               </ol>
             </HelperDescription>
           </Left>
           <Right>
             {" "}
+            <InfoLabel>Wie lange?</InfoLabel>
+            <InfoText>
+              Deine Arbeit wird in 6 Stunden Schichten eingeteilt. Je nach Paket
+              wirst du ein, zwei oder maximal drei Schichten arbeiten.
+            </InfoText>
             <form onSubmit={handleSubmit}>
-              <Label htmlFor="aufbau">Aufbau</Label>
+              <Label htmlFor="small">S</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
                     className="checkBox"
                     type="checkbox"
-                    name="aufbau"
-                    checked={hBefore}
+                    name="small"
+                    checked={hSmall}
                     onChange={e => {
-                      setHBefore(e.target.checked)
+                      setHSmall(e.target.checked)
                     }}
                   />
                   <div className="b-input"></div>
                 </label>
-                <CheckboxDecription>
-                  Wenn du einen Akkuschrauber halten kannst bist du schonmal
-                  qualifiziert. Aber auch kreative Köpfe werden gebraucht.
-                </CheckboxDecription>
+                <CheckboxDecription>1x 6 h</CheckboxDecription>
               </CheckboxGroup>
               <br />
-              <Label htmlFor="waehrend">Während des Festivals</Label>
+              <Label htmlFor="medium">M</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
                     className="checkBox"
                     type="checkbox"
-                    name="waehrend"
-                    checked={hWhile}
+                    name="medium"
+                    checked={hMedium}
                     onChange={e => {
-                      setHWhile(e.target.checked)
+                      setHMedium(e.target.checked)
                     }}
                   />
                   <div className="b-input"></div>
                 </label>
-                <CheckboxDecription>
-                  Übernimm zusammen mit deinem Bestie eine Schicht an der Bar
-                  oder kümmer dich um die vielen hungrigen Mäuler.
-                </CheckboxDecription>
+                <CheckboxDecription>2x 6 h</CheckboxDecription>
               </CheckboxGroup>
               <br />
-              <Label htmlFor="abbau">Abbau</Label>
+              <Label htmlFor="large">L</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
                     className="checkBox"
                     type="checkbox"
-                    name="abbau"
-                    checked={hAfter}
+                    name="large"
+                    checked={hLarge}
                     onChange={e => {
-                      setHAfter(e.target.checked)
+                      setHLarge(e.target.checked)
                     }}
                   />
                   <div className="b-input"></div>
                 </label>
+                <CheckboxDecription>3x 6 h</CheckboxDecription>
+              </CheckboxGroup>
+              <Seperator />
+              <InfoLabel>Mit wem?</InfoLabel>
+              <InfoText>
+                Hast du einen Buddy mit dem du zusammen helfen möchtest? Falls
+                Ja, sag uns Vor und Nachnamen.
+              </InfoText>
+              <input
+                type="buddy"
+                name="buddy"
+                value={hBuddy}
+                required
+                onChange={e => setHBuddy(e.target.value)}
+              />{" "}
+              <Seperator />
+              <Label htmlFor="ehrenamtlich">Ehrenamtlich helfen?</Label>
+              <CheckboxGroup>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="ehrenamtlich"
+                    checked={hEhrenamtlich}
+                    onChange={e => {
+                      setHEhrenamtlich(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+
                 <CheckboxDecription>
-                  Nur etwas für Hartgesottene, die nach drei Tagen Festival noch
-                  ordentlich mit anpacken können.
+                  Auf Vergütung verzichten kommt dem Festival zugute :)
                 </CheckboxDecription>
               </CheckboxGroup>
               <WeiterWrapper>
@@ -188,6 +223,16 @@ const Header = styled(Headline)``
 const HelperDescription = styled.h5`
   color: white;
   margin-top: 40px;
+`
+
+const InfoLabel = styled(SubheaderSmall)`
+  color: white;
+  margin-top: 20px;
+  display: inline-block;
+`
+
+const InfoText = styled(Note)`
+  margin-top: 8px;
 `
 
 const Label = styled(SubheaderSmall)`

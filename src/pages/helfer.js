@@ -26,6 +26,7 @@ export default function Helfer({ location }) {
     newsletter,
   } = state
 
+  const [nextPage, setNextPage] = useState("/summary")
   const [hBefore, setHBefore] = useState(false)
   const [hWhile, setHWhile] = useState(false)
   const [hAfter, setHAfter] = useState(false)
@@ -33,7 +34,7 @@ export default function Helfer({ location }) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    navigate("/summary", {
+    navigate(nextPage, {
       state: {
         sumTickets: sumTickets,
         onlyFriends: onlyFriends,
@@ -60,6 +61,15 @@ export default function Helfer({ location }) {
       return setButtonLabel("Weiter")
     } else {
       return setButtonLabel("Überspringen")
+    }
+  }, [hBefore, hWhile, hAfter])
+
+  // Checken ob ein Haken gesetzt ist, wenn ja -> Helfer Detailseite
+  useEffect(() => {
+    if (hBefore || hWhile || hAfter) {
+      return setNextPage("/helferDetail")
+    } else {
+      return setNextPage("/summary")
     }
   }, [hBefore, hWhile, hAfter])
 
