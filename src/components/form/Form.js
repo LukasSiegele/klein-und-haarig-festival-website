@@ -171,6 +171,7 @@ export default function Form(props) {
 }
 
 const Container = styled.div`
+  background: black;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -180,7 +181,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   max-width: 500px;
   margin: 0 0 200px;
-  padding: 0 40px;
+  padding: 60px 40px;
   @media (max-width: 768px) {
     padding: 0 20px;
   }

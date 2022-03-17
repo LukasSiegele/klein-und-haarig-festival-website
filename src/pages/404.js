@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
+import FormButton from "../components/buttons/FormButton"
 
 export default function NotFoundPage() {
   return (
@@ -11,7 +12,11 @@ export default function NotFoundPage() {
       <Wrapper>
         <Title>404 — Not Found</Title>
         <Description>I like Turtles.</Description>
-        <Home to="/">Bring me home.</Home>
+        <ButtonWrapper>
+          <Link to="/">
+            <FormButton label="Bring me Home" color="black" />
+          </Link>
+        </ButtonWrapper>
       </Wrapper>
     </Layout>
   )
@@ -19,6 +24,7 @@ export default function NotFoundPage() {
 
 const Wrapper = styled.div`
   padding: 120px 40px;
+  background: black;
 `
 
 const Title = styled.h1`
@@ -29,10 +35,7 @@ const Description = styled.h2`
   color: white;
 `
 
-const Home = styled(Link)`
+const ButtonWrapper = styled.div`
   margin-top: 120px;
-  display: inline-block;
-  padding: 20px;
-  background: white;
-  color: black;
+  width: 250px;
 `

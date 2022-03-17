@@ -4,6 +4,8 @@ import { PageHeader, PageInfo } from "../styles/TextStyles"
 import LogoSVG from "../../../static/images/LogoSideNav.svg"
 import { Link } from "gatsby"
 
+import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
+
 export default function ShopTitle(props) {
   return (
     <Wrapper>
@@ -19,6 +21,7 @@ export default function ShopTitle(props) {
 }
 
 const Wrapper = styled.div`
+  background-image: url(${BackgroundTexture});
   padding: 40px;
   display: grid;
   grid-template-columns: auto auto;
