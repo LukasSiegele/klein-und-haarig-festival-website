@@ -10,16 +10,13 @@ import Airtable from "airtable"
 import useAudienceCount from "../helper/useAudienceCount"
 import uniqid from "uniqid"
 import SubmitButton from "/static/images/Submit-Button.jpg"
-import {
-  PayPalScriptProvider
-} from "@paypal/react-paypal-js";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import PayPalButton from "../components/PayPalButton"
 // test
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
 }).base(process.env.GATSBY_AIRTABLE_BASE)
-
 
 const table = base("Teilnehmer 2022")
 
@@ -31,7 +28,8 @@ export default function Summary({ location }) {
     lastName,
     email,
     phone,
-    streetHouseNumber,
+    street,
+    houseNumber,
     postcode,
     city,
     datenspeicherung,
@@ -60,72 +58,76 @@ export default function Summary({ location }) {
   console.log("User ID" + userID)
 
   // POST TO — AIRTABLE
-  const paypalSuccess = (data) => {
+  const paypalSuccess = data => {
     console.log(data)
-    console.log('audienceCount:  ' + audienceCount, 'audienceLimit:  ' + audienceLimit)
-      addToMailchimp(email, {
-        ID: userID,
-        FNAME: firstName,
-        LNAME: lastName,
-        PHONE: phone,
-        STREETNUMB: streetHouseNumber,
-        POSTCODE: postcode,
-        CITY: city,
-        DATASAVE: datenspeicherung,
-        VEREIN: vereinsbeitritt,
-        NEWSLETTER: newsletter,
-        TFESTIVAL: festivalTicket,
-        TAUTO: autoTicket,
-        TCAMPER: camperTicket,
-        BEFORE: helferBefore,
-        WHILE: helferWhile,
-        AFTER: helferAfter,
-        FRIENDS: onlyFriends,
-      })
-        .then(({ msg, result }) => {
-          console.log("msg", `${result}: ${msg}`)
+    console.log(
+      "audienceCount:  " + audienceCount,
+      "audienceLimit:  " + audienceLimit
+    )
+    addToMailchimp(email, {
+      ID: userID,
+      FNAME: firstName,
+      LNAME: lastName,
+      PHONE: phone,
+      STREET: street,
+      HOUSENUMB: houseNumber,
+      POSTCODE: postcode,
+      CITY: city,
+      DATASAVE: datenspeicherung,
+      VEREIN: vereinsbeitritt,
+      NEWSLETTER: newsletter,
+      TFESTIVAL: festivalTicket,
+      TAUTO: autoTicket,
+      TCAMPER: camperTicket,
+      BEFORE: helferBefore,
+      WHILE: helferWhile,
+      AFTER: helferAfter,
+      FRIENDS: onlyFriends,
+    })
+      .then(({ msg, result }) => {
+        console.log("msg", `${result}: ${msg}`)
 
-          if (result !== "success") {
-            throw msg
-          }
-          // alert(msg)
-          table
-            .create([
-              {
-                fields: {
-                  ID: userID,
-                  Festival: festivalTicket,
-                  Auto: autoTicket,
-                  Camper: camperTicket,
-                  Aufbau: helferBefore,
-                  Waehrend: helferWhile,
-                  Abbau: helferAfter,
-                  OrderID: data.orderID,
-                  Email: email
-                },
+        if (result !== "success") {
+          throw msg
+        }
+        // alert(msg)
+        table
+          .create([
+            {
+              fields: {
+                ID: userID,
+                Festival: festivalTicket,
+                Auto: autoTicket,
+                Camper: camperTicket,
+                Aufbau: helferBefore,
+                Waehrend: helferWhile,
+                Abbau: helferAfter,
+                OrderID: data.orderID,
+                Email: email,
               },
-            ])
-            .then(() => {
-              navigate("/submitted")
-            })
-        })
-        .catch(err => {
-          console.log(err)
-          alert(
-            "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
-          )
-        })
-
-      if (newsletter) {
-        addToMailchimp(
-          email,
-          {
-            FNAME: firstName,
-            LNAME: lastName,
-          },
-          process.env.GATSBY_MAILCHIMP_API_NEWSLETTER
+            },
+          ])
+          .then(() => {
+            navigate("/submitted")
+          })
+      })
+      .catch(err => {
+        console.log(err)
+        alert(
+          "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
         )
-      }
+      })
+
+    if (newsletter) {
+      addToMailchimp(
+        email,
+        {
+          FNAME: firstName,
+          LNAME: lastName,
+        },
+        process.env.GATSBY_MAILCHIMP_API_NEWSLETTER
+      )
+    }
   }
 
   useEffect(() => {
@@ -150,11 +152,11 @@ export default function Summary({ location }) {
     }
 
     // Ticketsumme
-    if (sumTickets === 75) {
+    if (sumTickets === 102) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €*",
+          ticket: "Festival Ticket 100 €*",
         },
       ])
     } else if (sumTickets === 80) {
@@ -172,7 +174,7 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 75 €*",
+          ticket: "Festival Ticket 100 €*",
         },
         {
           ticket: "Camper Stellplatz 10 €",
@@ -199,133 +201,135 @@ export default function Summary({ location }) {
 
   return (
     <PayPalScriptProvider
-                options={{
-                    "client-id": "test",
-                    components: "buttons",
-                    currency: "EUR"
-                }}
-            >
-    <Layout>
-      <SEO title="Summary" />
-      <ShopTitle info="Schritt 4/4" title="Schick ab das Ding" />
-      <Container>
-        <Wrapper>
-          <form>{/*onSubmit={submit}*/}
-            <Section>
-              <Group>
-                <Value>Dein(e) Ticket(s)</Value>
-                <InfoGroup>
-                  {products.map(product => (
-                    <Info>{product.ticket}</Info>
-                  ))}
-                  <InfoSmall>
-                    *10 € Probemitgliedschaft, 65 € Unkosten
-                  </InfoSmall>
-                </InfoGroup>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Du</Value>
-                <Info>
-                  {firstName} {lastName}
-                </Info>
-              </Group>
-              <Group>
-                <Value>E-Mail</Value>
-                <Info>{email}</Info>
-              </Group>
-              <Group>
-                <Value>Telefonnummer</Value>
-                <Info>{phone || "-"}</Info>
-              </Group>
-              <Group>
-                <Value>Adresse</Value>
-                <Info>
-                  {streetHouseNumber}, {postcode}, {city}
-                </Info>
-              </Group>
-              <Group>
-                <Value>Datenspeicherung</Value>
-                <Info>{datenspeicherung ? "Passt" : "Nein"}</Info>
-              </Group>
-              <Group>
-                <Value>Vereinsbeitritt</Value>
-                <Info>
-                  {vereinsbeitritt
-                    ? "Probemitgliedschaft ab 1. Juli 2021 für 90 Tage, endet automatisch"
-                    : "Nein"}
-                </Info>
-              </Group>
-              <Group>
-                <Value>Newsletter</Value>
-                <Info>{newsletter ? "Ja" : "Nein"}</Info>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Helfer</Value>
-                <Info>{helfer}</Info>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Überweisungsdaten</Value>
-                <Info>
-                  Erhältst du direkt nachdem deine Daten bei uns eingegangen
-                  sind per E-Mail.
-                </Info>
-              </Group>
-              <Group>
-                <Value>Zahlungsinfo</Value>
-                <Info>
-                  Überweise bitte innerhalb der nächsten 6 Tage. Zahlst du in
-                  diesem Zeitraum nicht, verfällt deine Reservierung.
-                </Info>
-              </Group>
-              <Group>
-                <Value>Erstattung</Value>
-                <Info>
-                  Sollte das Festival nicht stattfinden können, wirst du
-                  zwischen einem Übertrag deines Tickets auf das Jahr 2022 und
-                  einer Teilrückzahlung wählen können. Wir geben unser Bestes,
-                  Ausgaben bis kurz vor dem Festival gering zu halten, um dir
-                  einen möglichst großen Betrag zu erstatten.
-                </Info>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Corona</Value>
-                <Info>
-                  Je nach Corona-Situation im Juli müssen wir einen Test- oder
-                  Immunitätsnachweis für die Teilnahme voraussetzen. Dies werden
-                  wir rechtzeitig vor dem Festival kommunizieren.
-                </Info>
-              </Group>
-            </Section>
-            {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
-            <ButtonGroup>
-              <ButtonWrapper>
-                {/* <FormButton
+      options={{
+        "client-id": "test",
+        components: "buttons",
+        currency: "EUR",
+      }}
+    >
+      <Layout>
+        <SEO title="Summary" />
+        <ShopTitle info="Schritt 4/4" title="Schick ab das Ding" />
+        <Container>
+          <Wrapper>
+            <form>
+              {/*onSubmit={submit}*/}
+              <Section>
+                <Group>
+                  <Value>Dein(e) Ticket(s)</Value>
+                  <InfoGroup>
+                    {products.map(product => (
+                      <Info>{product.ticket}</Info>
+                    ))}
+                    <InfoSmall>
+                      *10 € Probemitgliedschaft, 90 € Unkosten, 2 € Paypal
+                      Servicegebühren
+                    </InfoSmall>
+                  </InfoGroup>
+                </Group>
+              </Section>
+              <Section>
+                <Group>
+                  <Value>Du</Value>
+                  <Info>
+                    {firstName} {lastName}
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>E-Mail</Value>
+                  <Info>{email}</Info>
+                </Group>
+                <Group>
+                  <Value>Telefonnummer</Value>
+                  <Info>{phone || "-"}</Info>
+                </Group>
+                <Group>
+                  <Value>Adresse</Value>
+                  <Info>
+                    {street}, {houseNumber}, {postcode}, {city}
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>Datenspeicherung</Value>
+                  <Info>{datenspeicherung ? "Passt" : "Nein"}</Info>
+                </Group>
+                <Group>
+                  <Value>Vereinsbeitritt</Value>
+                  <Info>
+                    {vereinsbeitritt
+                      ? "Probemitgliedschaft ab 1. Juli 2021 für 90 Tage, endet automatisch"
+                      : "Nein"}
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>Newsletter</Value>
+                  <Info>{newsletter ? "Ja" : "Nein"}</Info>
+                </Group>
+              </Section>
+              <Section>
+                <Group>
+                  <Value>Helfer</Value>
+                  <Info>{helfer}</Info>
+                </Group>
+              </Section>
+              <Section>
+                <Group>
+                  <Value>Überweisungsdaten</Value>
+                  <Info>
+                    Erhältst du direkt nachdem deine Daten bei uns eingegangen
+                    sind per E-Mail.
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>Zahlungsinfo</Value>
+                  <Info>
+                    Überweise bitte innerhalb der nächsten 6 Tage. Zahlst du in
+                    diesem Zeitraum nicht, verfällt deine Reservierung.
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>Erstattung</Value>
+                  <Info>
+                    Sollte das Festival nicht stattfinden können, wirst du
+                    zwischen einem Übertrag deines Tickets auf das Jahr 2022 und
+                    einer Teilrückzahlung wählen können. Wir geben unser Bestes,
+                    Ausgaben bis kurz vor dem Festival gering zu halten, um dir
+                    einen möglichst großen Betrag zu erstatten.
+                  </Info>
+                </Group>
+              </Section>
+              <Section>
+                <Group>
+                  <Value>Corona</Value>
+                  <Info>
+                    Je nach Corona-Situation im Juli müssen wir einen Test- oder
+                    Immunitätsnachweis für die Teilnahme voraussetzen. Dies
+                    werden wir rechtzeitig vor dem Festival kommunizieren.
+                  </Info>
+                </Group>
+              </Section>
+              {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
+              <ButtonGroup>
+                <ButtonWrapper>
+                  {/* <FormButton
                   typ="submit"
                   label="Daten abschicken und Ticket(s) reservieren"
                   background={SubmitButton}
                   color="white"
                 ></FormButton> */}
-              </ButtonWrapper>
-            </ButtonGroup>
-            ;
-          </form>
-          <PayPalButton 
-            // currency={currency}
-            showSpinner={false}
-            amount={sumTickets}
-            onSuccess={paypalSuccess}
+                </ButtonWrapper>
+              </ButtonGroup>
+              ;
+            </form>
+            <PayPalButton
+              // currency={currency}
+              showSpinner={false}
+              amount={sumTickets}
+              onSuccess={paypalSuccess}
             />
-        </Wrapper>
-      </Container>
-    </Layout>
+          </Wrapper>
+        </Container>
+      </Layout>
     </PayPalScriptProvider>
   )
 }

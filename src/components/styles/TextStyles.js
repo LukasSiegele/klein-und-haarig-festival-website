@@ -42,6 +42,8 @@ export const SubheaderSmall = styled.h4`
   color: white;
 `
 
+// Text
+
 // Infotexte
 export const TextSmall = styled.p`
   color: white;

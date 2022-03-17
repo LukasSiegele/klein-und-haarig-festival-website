@@ -2,13 +2,15 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import { navigate } from "gatsby"
+import { SubheaderSmall, Note } from "../styles/TextStyles"
 
 export default function Form(props) {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
-  const [streetHouseNumber, setStreetHouseNumber] = useState("")
+  const [street, setStreet] = useState("")
+  const [houseNumber, setHouseNumber] = useState("")
   const [postcode, setPostcode] = useState()
   const [city, setCity] = useState("")
   const [vereinsbeitritt, setVereinsbeitritt] = useState(false)
@@ -25,7 +27,8 @@ export default function Form(props) {
         lastName: lastName,
         email: email,
         phone: phone,
-        streetHouseNumber: streetHouseNumber,
+        street: street,
+        houseNumber: houseNumber,
         postcode: postcode,
         city: city,
         vereinsbeitritt: vereinsbeitritt,
@@ -38,6 +41,12 @@ export default function Form(props) {
   return (
     <Container>
       <Wrapper>
+        <Label>Info</Label>
+        <InfoText>
+          Die Hardtickets kommen per Post - bitte trage deshalb alle Daten
+          korrekt ein.
+        </InfoText>
+        <Seperator />
         <form onSubmit={handleSubmit}>
           <Label htmlFor="firstName">Vorname</Label>
           <input
@@ -73,13 +82,21 @@ export default function Form(props) {
             onChange={e => setPhone(e.target.value)}
           />{" "}
           <Seperator />
-          <Label htmlFor="streetHouseNumber">Straße, Hausnummer</Label>
+          <Label htmlFor="street">Straße</Label>
           <input
             type="text"
-            name="streetHouseNumber"
-            value={streetHouseNumber}
+            name="street"
+            value={street}
             required
-            onChange={e => setStreetHouseNumber(e.target.value)}
+            onChange={e => setStreet(e.target.value)}
+          />{" "}
+          <Label htmlFor="houseNumber">Hausnummer</Label>
+          <input
+            type="text"
+            name="houseNumber"
+            value={houseNumber}
+            required
+            onChange={e => setHouseNumber(e.target.value)}
           />{" "}
           <Label htmlFor="postcode">Postleitzahl</Label>
           <input
@@ -187,10 +204,14 @@ const Wrapper = styled.div`
   }
 `
 
-const Label = styled.h4`
+const Label = styled(SubheaderSmall)`
   color: white;
   margin-top: 20px;
   display: inline-block;
+`
+
+const InfoText = styled(Note)`
+  margin-top: 8px;
 `
 
 const Seperator = styled.div`
@@ -211,6 +232,4 @@ const CheckboxGroup = styled.div`
   padding-top: 15px;
 `
 
-const CheckboxDecription = styled.h4`
-  color: rgba(255, 255, 255, 0.5);
-`
+const CheckboxDecription = styled(Note)``
