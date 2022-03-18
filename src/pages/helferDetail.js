@@ -26,18 +26,22 @@ export default function HelferDetails({ location }) {
     helferBefore,
     helferWhile,
     helferAfter,
-    hSmall,
-    hMedium,
-    hLarge,
-    hBuddy,
-    hEhrenamtlich,
-
     onlyFriends,
   } = state
 
   const [hSmall, setHSmall] = useState(false)
   const [hMedium, setHMedium] = useState(false)
   const [hLarge, setHLarge] = useState(false)
+  const [hEssen, setHEssen] = useState(false)
+  const [hBar, setHBar] = useState(false)
+  const [hEinlass, setHEinlass] = useState(false)
+  const [hParken, setHParken] = useState(false)
+  const [hSecuri, setHSecuri] = useState(false)
+  const [hSani, setHSani] = useState(false)
+  const [hAware, setHAware] = useState(false)
+  const [hKlo, setHKlo] = useState(false)
+  const [hTech, setHTech] = useState(false)
+  const [hClean, setHClean] = useState(false)
   const [hBuddy, setHBuddy] = useState("")
   const [hEhrenamtlich, setHEhrenamtlich] = useState(false)
   const [buttonLabel, setButtonLabel] = useState("Zur Zusammenfassung")
@@ -65,6 +69,16 @@ export default function HelferDetails({ location }) {
         helferSmall: hSmall,
         helferMedium: hMedium,
         helferLarge: hLarge,
+        helferEssen: hEssen,
+        helferBar: hBar,
+        helferEinlass: hEinlass,
+        helferParken: hParken,
+        helferSecuri: hSecuri,
+        helferSani: hSani,
+        helferAwareness: hAware,
+        helferKlo: hKlo,
+        helferTech: hTech,
+        helferClean: hClean,
         helferBuddy: hBuddy,
         helferEhrenamtlich: hEhrenamtlich,
       },
@@ -151,6 +165,175 @@ export default function HelferDetails({ location }) {
                 <CheckboxDecription>3x 6 h</CheckboxDecription>
               </CheckboxGroup>
               <Seperator />
+              // WO MÖCHTEST DU HELFEN?
+              <InfoLabel>Wo möchtest du helfen?</InfoLabel>
+              <InfoText>
+                Wir geben unser bestes deine Präferenzen zu berücksichtigen,
+                allerdings können wir sie dir nicht garantieren. Du wirst aber
+                rechtzeitig von uns darüber benachrichtigt welchem Bereich du
+                zugeteilt wurdest.
+              </InfoText>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="essen"
+                    checked={hEssen}
+                    onChange={e => {
+                      setHEssen(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="essen">Essensverkauf</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="bar"
+                    checked={hBar}
+                    onChange={e => {
+                      setHBar(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="bar">Bar</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="einlass"
+                    checked={hEinlass}
+                    onChange={e => {
+                      setHEinlass(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="einlass">Einlass</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="parken"
+                    checked={hParken}
+                    onChange={e => {
+                      setHParken(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="parken">Parkplatzeinweisung</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="security"
+                    checked={hSecuri}
+                    onChange={e => {
+                      setHSecuri(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="security">Security</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="sani"
+                    checked={hSani}
+                    onChange={e => {
+                      setHSani(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="sani">Sanitäter</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="awareness"
+                    checked={hAware}
+                    onChange={e => {
+                      setHAware(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="awareness">Awareness</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="klo"
+                    checked={hKlo}
+                    onChange={e => {
+                      setHKlo(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="klo">Sanitäre Anlagen</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="technik"
+                    checked={hTech}
+                    onChange={e => {
+                      setHTech(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="technik">Technik</Label>
+              </CheckboxGroupKompri>
+              <br />
+              <CheckboxGroupKompri>
+                <label class="b-contain">
+                  <input
+                    className="checkBox"
+                    type="checkbox"
+                    name="clean"
+                    checked={hClean}
+                    onChange={e => {
+                      setHClean(e.target.checked)
+                    }}
+                  />
+                  <div className="b-input"></div>
+                </label>
+                <Label htmlFor="clean">Aufräumdienst</Label>
+              </CheckboxGroupKompri>
+              <Seperator />
               <InfoLabel>Mit wem?</InfoLabel>
               <InfoText>
                 Hast du einen Buddy mit dem du zusammen helfen möchtest? Falls
@@ -233,12 +416,13 @@ const InfoLabel = styled(SubheaderSmall)`
 
 const InfoText = styled(Note)`
   margin-top: 8px;
+  margin-bottom: 20px;
 `
 
 const Label = styled(SubheaderSmall)`
   /* color: white; */
-  margin-top: 20px;
-  display: inline-block;
+  /* margin-top: 20px; */
+  /* display: inline-block; */
 `
 
 const Seperator = styled.div`
@@ -257,6 +441,15 @@ const CheckboxGroup = styled.div`
   grid-template-columns: 42px auto;
   gap: 20px;
   padding-top: 15px;
+  align-items: center;
+`
+
+const CheckboxGroupKompri = styled.div`
+  display: grid;
+  grid-template-columns: 42px auto;
+  gap: 20px;
+  padding-top: 15px;
+  align-items: center;
 `
 
 const CheckboxDecription = styled(Note)``
