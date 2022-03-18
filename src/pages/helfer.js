@@ -31,6 +31,7 @@ export default function Helfer({ location }) {
   const [hWhile, setHWhile] = useState(false)
   const [hAfter, setHAfter] = useState(false)
   const [buttonLabel, setButtonLabel] = useState("Überspringen")
+  const [isWaehrend, setIsWaehrend] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault()

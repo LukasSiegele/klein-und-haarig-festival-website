@@ -165,175 +165,177 @@ export default function HelferDetails({ location }) {
                 <CheckboxDecription>3x 6 h</CheckboxDecription>
               </CheckboxGroup>
               <Seperator />
-              // WO MÖCHTEST DU HELFEN?
-              <InfoLabel>Wo möchtest du helfen?</InfoLabel>
-              <InfoText>
-                Wir geben unser bestes deine Präferenzen zu berücksichtigen,
-                allerdings können wir sie dir nicht garantieren. Du wirst aber
-                rechtzeitig von uns darüber benachrichtigt welchem Bereich du
-                zugeteilt wurdest.
-              </InfoText>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="essen"
-                    checked={hEssen}
-                    onChange={e => {
-                      setHEssen(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="essen">Essensverkauf</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="bar"
-                    checked={hBar}
-                    onChange={e => {
-                      setHBar(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="bar">Bar</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="einlass"
-                    checked={hEinlass}
-                    onChange={e => {
-                      setHEinlass(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="einlass">Einlass</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="parken"
-                    checked={hParken}
-                    onChange={e => {
-                      setHParken(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="parken">Parkplatzeinweisung</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="security"
-                    checked={hSecuri}
-                    onChange={e => {
-                      setHSecuri(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="security">Security</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="sani"
-                    checked={hSani}
-                    onChange={e => {
-                      setHSani(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="sani">Sanitäter</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="awareness"
-                    checked={hAware}
-                    onChange={e => {
-                      setHAware(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="awareness">Awareness</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="klo"
-                    checked={hKlo}
-                    onChange={e => {
-                      setHKlo(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="klo">Sanitäre Anlagen</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="technik"
-                    checked={hTech}
-                    onChange={e => {
-                      setHTech(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="technik">Technik</Label>
-              </CheckboxGroupKompri>
-              <br />
-              <CheckboxGroupKompri>
-                <label class="b-contain">
-                  <input
-                    className="checkBox"
-                    type="checkbox"
-                    name="clean"
-                    checked={hClean}
-                    onChange={e => {
-                      setHClean(e.target.checked)
-                    }}
-                  />
-                  <div className="b-input"></div>
-                </label>
-                <Label htmlFor="clean">Aufräumdienst</Label>
-              </CheckboxGroupKompri>
-              <Seperator />
+              <Wo>
+                // WO MÖCHTEST DU HELFEN?
+                <InfoLabel>Wo möchtest du helfen?</InfoLabel>
+                <InfoText>
+                  Wir geben unser bestes deine Präferenzen zu berücksichtigen,
+                  allerdings können wir sie dir nicht garantieren. Du wirst aber
+                  rechtzeitig von uns darüber benachrichtigt welchem Bereich du
+                  zugeteilt wurdest.
+                </InfoText>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="essen"
+                      checked={hEssen}
+                      onChange={e => {
+                        setHEssen(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="essen">Essensverkauf</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="bar"
+                      checked={hBar}
+                      onChange={e => {
+                        setHBar(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="bar">Bar</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="einlass"
+                      checked={hEinlass}
+                      onChange={e => {
+                        setHEinlass(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="einlass">Einlass</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="parken"
+                      checked={hParken}
+                      onChange={e => {
+                        setHParken(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="parken">Parkplatzeinweisung</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="security"
+                      checked={hSecuri}
+                      onChange={e => {
+                        setHSecuri(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="security">Security</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="sani"
+                      checked={hSani}
+                      onChange={e => {
+                        setHSani(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="sani">Sanitäter</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="awareness"
+                      checked={hAware}
+                      onChange={e => {
+                        setHAware(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="awareness">Awareness</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="klo"
+                      checked={hKlo}
+                      onChange={e => {
+                        setHKlo(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="klo">Sanitäre Anlagen</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="technik"
+                      checked={hTech}
+                      onChange={e => {
+                        setHTech(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="technik">Technik</Label>
+                </CheckboxGroup>
+                <br />
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="clean"
+                      checked={hClean}
+                      onChange={e => {
+                        setHClean(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="clean">Aufräumdienst</Label>
+                </CheckboxGroup>
+                <Seperator />
+              </Wo>
               <InfoLabel>Mit wem?</InfoLabel>
               <InfoText>
                 Hast du einen Buddy mit dem du zusammen helfen möchtest? Falls
@@ -394,6 +396,8 @@ const Wrapper = styled.div`
   }
 `
 
+const Wo = styled.div``
+
 const Left = styled.div`
   max-width: 500px;
 `
@@ -437,14 +441,6 @@ const WeiterWrapper = styled.div`
 `
 
 const CheckboxGroup = styled.div`
-  display: grid;
-  grid-template-columns: 42px auto;
-  gap: 20px;
-  padding-top: 15px;
-  align-items: center;
-`
-
-const CheckboxGroupKompri = styled.div`
   display: grid;
   grid-template-columns: 42px auto;
   gap: 20px;
