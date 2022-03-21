@@ -60,7 +60,7 @@ export const SubheaderSmall = styled.h4`
 // Infotexte
 export const TextSmall = styled.p`
   color: white;
-  font-size: 0.85rem; ;
+  font-size: 0.85em; ;
 `
 
 export const TickerText = styled.p`

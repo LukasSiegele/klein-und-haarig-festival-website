@@ -57,6 +57,7 @@ export default function Helfer({ location }) {
     })
   }
 
+  // Weiter / Überspringen Button
   useEffect(() => {
     if (hBefore === true || hWhile === true || hAfter === true) {
       return setButtonLabel("Weiter")
@@ -183,7 +184,8 @@ const Wrapper = styled.div`
   grid-template-columns: 1.333fr 1fr;
   gap: 40px;
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 60px 20px;
+    grid-template-columns: 1fr;
   }
 `
 
