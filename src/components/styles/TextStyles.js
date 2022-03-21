@@ -46,7 +46,7 @@ export const Text = styled.p``
 
 // Kleine Hinweistexte
 export const Note = styled.h5`
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 `
 
 // Headlines in Info Texts

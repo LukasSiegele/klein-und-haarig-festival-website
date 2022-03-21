@@ -248,7 +248,7 @@ const InfoHeader = styled(SubheaderSmall)`
   margin-bottom: 8px;
 `
 
-const InfoText = styled(TextSmall)``
+const InfoText = styled(Note)``
 
 const SumWrapper = styled.div`
   display: grid;
@@ -273,7 +273,7 @@ const Label = styled.h4`
 `
 
 const LinkInline = styled.a`
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.6);
   padding-bottom: 1px;
-  border-bottom: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 `

@@ -87,6 +87,7 @@ export default function Summary({ location }) {
   const [isWo, setIsWo] = useState(false)
   const [isHelferSection, setIsHelferSection] = useState(false)
   const [isDauer, setIsDauer] = useState()
+  const [isHelperDetails, setIsHelperDetails] = useState()
 
   // Audience Count
   const audienceCount = useAudienceCount()
@@ -369,24 +370,26 @@ export default function Summary({ location }) {
                     <Value>Helfer</Value>
                     <Info>{helfer}</Info>
                   </Group>
-                  <Group>
-                    <Value>Dauer</Value>
-                    <Info>{isDauer}</Info>
-                  </Group>
-                  <Wo isWo={helferWhile}>
+                  <HelferDetail isHelperDetails={isHelferSection}>
                     <Group>
-                      <Value>Präferenz während</Value>
-                      <Info>{whileCategories.join(", ")}</Info>
+                      <Value>Dauer</Value>
+                      <Info>{isDauer}</Info>
                     </Group>
-                  </Wo>
-                  <Group>
-                    <Value>Helferbuddy</Value>
-                    <Info>{helferBuddy == "" ? "Niemand" : helferBuddy}</Info>
-                  </Group>
-                  <Group>
-                    <Value>Ehrenamtlich</Value>
-                    <Info>{helferEhrenamtlich ? "Ja" : "Nein"}</Info>
-                  </Group>
+                    <Wo isWo={helferWhile}>
+                      <Group>
+                        <Value>Präferenz während</Value>
+                        <Info>{whileCategories.join(", ")}</Info>
+                      </Group>
+                    </Wo>
+                    <Group>
+                      <Value>Helferbuddy</Value>
+                      <Info>{helferBuddy == "" ? "Niemand" : helferBuddy}</Info>
+                    </Group>
+                    <Group>
+                      <Value>Ehrenamtlich</Value>
+                      <Info>{helferEhrenamtlich ? "Ja" : "Nein"}</Info>
+                    </Group>
+                  </HelferDetail>
                 </Section>
               </Helfer>
               <Section>
@@ -463,6 +466,10 @@ const Group = styled.div`
     grid-template-columns: 1fr;
     margin-bottom: 15px;
   }
+`
+
+const HelferDetail = styled.div`
+  display: ${props => (props.isHelperDetails ? "grid" : "none")};
 `
 
 const Value = styled(SubheaderSmall)`
