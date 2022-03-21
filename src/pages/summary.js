@@ -306,7 +306,7 @@ export default function Summary({ location }) {
     >
       <Layout>
         <SEO title="Summary" />
-        <ShopTitle info="Schritt 4/4" title="Schick ab das Ding" />
+        <ShopTitle info="Schritt 4/4" title="Übersicht & Bezahlen" />
         <Container>
           <Wrapper>
             <form>
@@ -343,7 +343,7 @@ export default function Summary({ location }) {
                 <Group>
                   <Value>Adresse</Value>
                   <Info>
-                    {street}, {houseNumber}, {postcode}, {city}
+                    {street} {houseNumber}, {postcode}, {city}
                   </Info>
                 </Group>
                 <Group>
@@ -354,7 +354,7 @@ export default function Summary({ location }) {
                   <Value>Vereinsbeitritt</Value>
                   <Info>
                     {vereinsbeitritt
-                      ? "Probemitgliedschaft ab 1. Juli 2021 für 90 Tage, endet automatisch"
+                      ? "Probemitgliedschaft ab 1. Juli 2022 für 90 Tage, endet automatisch"
                       : "Nein"}
                   </Info>
                 </Group>
@@ -446,7 +446,8 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   max-width: 800px;
-  padding: 10px 20px 200px 20px;
+  /* padding: 10px 20px 200px 20px; */
+  padding: 60px 40px;
 `
 
 const Section = styled.div`
