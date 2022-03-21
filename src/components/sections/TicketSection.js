@@ -153,6 +153,9 @@ const Wrapper = styled.div`
   display: grid;
   justify-content: center;
   background: black;
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
 `
 
 const Content = styled.div`
@@ -171,6 +174,7 @@ const CardWrapper = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
+    gap: 30px;
   }
 `
 
@@ -216,7 +220,9 @@ const ShoppingCartWrapper = styled.div`
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
+    padding: 40px 0 80px;
+    gap: 30px;
+    /* justify-items: center; */
   }
 `
 
@@ -228,7 +234,8 @@ const InfoWrapper = styled.div`
   padding: 0 0 80px;
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
-    max-width: 331px;
+    gap: 30px;
+    /* max-width: 331px; */
   }
 `
 
@@ -255,6 +262,9 @@ const SummaryNote = styled(Note)``
 
 const WeiterWrapper = styled.div`
   width: 242px;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `
 
 const Label = styled.h4`

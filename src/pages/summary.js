@@ -253,7 +253,7 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 100 €*",
+          ticket: "Festival Ticket 102 €*",
         },
       ])
     } else if (sumTickets === 80) {
@@ -267,11 +267,11 @@ export default function Summary({ location }) {
         },
       ])
       setAutoTicket("Ja")
-    } else if (sumTickets === 85) {
+    } else if (sumTickets === 112) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 100 €*",
+          ticket: "Festival Ticket 102 €*",
         },
         {
           ticket: "Camper Stellplatz 10 €",
@@ -412,25 +412,22 @@ export default function Summary({ location }) {
                   </Info>
                 </Group>
               </Section>
+              <Section>
+                <Seperator />
+                <Group>
+                  <Value>Bezahlen</Value>
+                  <PayPalGroup>
+                    <PayPalButton
+                      // currency={currency}
+                      showSpinner={false}
+                      amount={sumTickets}
+                      onSuccess={paypalSuccess}
+                    />
+                  </PayPalGroup>
+                </Group>
+              </Section>
               {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
-              <ButtonGroup>
-                <ButtonWrapper>
-                  {/* <FormButton
-                  typ="submit"
-                  label="Daten abschicken und Ticket(s) reservieren"
-                  background={SubmitButton}
-                  color="white"
-                ></FormButton> */}
-                </ButtonWrapper>
-              </ButtonGroup>
-              ;
             </form>
-            <PayPalButton
-              // currency={currency}
-              showSpinner={false}
-              amount={sumTickets}
-              onSuccess={paypalSuccess}
-            />
           </Wrapper>
         </Container>
       </Layout>
@@ -445,9 +442,12 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  max-width: 800px;
+  max-width: 1000px;
   /* padding: 10px 20px 200px 20px; */
   padding: 60px 40px;
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
 `
 
 const Section = styled.div`
@@ -456,21 +456,32 @@ const Section = styled.div`
 
 const Group = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: 30px;
+  @media (max-width: 768px) {
+    gap: 0px;
+    grid-template-columns: 1fr;
+    margin-bottom: 15px;
+  }
 `
 
 const Value = styled(SubheaderSmall)`
   /* color: rgba(255, 255, 255, 0.5); */
   margin-top: 10px;
   justify-self: right;
+  @media (max-width: 768px) {
+    justify-self: left;
+  }
 `
 
-const InfoGroup = styled(Note)``
+const InfoGroup = styled.div``
 
 const Info = styled(Note)`
   /* color: white; */
   margin-top: 13px;
+  @media (max-width: 768px) {
+    margin-top: 4px;
+  }
 `
 
 const InfoSmall = styled(TextSmall)`
@@ -484,12 +495,15 @@ const ButtonGroup = styled.div`
   display: grid;
   justify-content: center;
   /* margin-top: 80px; */
-
   padding: 40px 40px;
+
+  @media (max-width: 768px) {
+    padding: 20px 20px;
+  }
 `
 
-const ButtonWrapper = styled.div`
-  max-width: 500px;
+const PayPalGroup = styled.div`
+  margin-top: 15px;
 `
 
 // Helfer
@@ -499,4 +513,14 @@ const Helfer = styled.div`
 
 const Wo = styled.div`
   display: ${props => (props.isWo ? "grid" : "none")};
+`
+
+const Seperator = styled.div`
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 60px 0;
+  width: 100%;
+  @media (max-width: 768px) {
+    margin: 30px 0;
+  }
 `
