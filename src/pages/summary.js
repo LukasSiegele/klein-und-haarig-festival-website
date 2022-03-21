@@ -14,6 +14,13 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import PayPalButton from "../components/PayPalButton"
 // test
 
+import {
+  Headline,
+  SubheaderSmall,
+  Note,
+  TextSmall,
+} from "../components/styles/TextStyles"
+
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
 }).base(process.env.GATSBY_AIRTABLE_BASE)
@@ -66,7 +73,7 @@ export default function Summary({ location }) {
   // Audience Count
   const audienceCount = useAudienceCount()
   console.log("hook count: " + audienceCount)
-  const audienceLimit = 229
+  const audienceLimit = 200
 
   // Unique ID
   const userID = uniqid()
@@ -304,20 +311,6 @@ export default function Summary({ location }) {
               </Section>
               <Section>
                 <Group>
-                  <Value>Überweisungsdaten</Value>
-                  <Info>
-                    Erhältst du direkt nachdem deine Daten bei uns eingegangen
-                    sind per E-Mail.
-                  </Info>
-                </Group>
-                <Group>
-                  <Value>Zahlungsinfo</Value>
-                  <Info>
-                    Überweise bitte innerhalb der nächsten 6 Tage. Zahlst du in
-                    diesem Zeitraum nicht, verfällt deine Reservierung.
-                  </Info>
-                </Group>
-                <Group>
                   <Value>Erstattung</Value>
                   <Info>
                     Sollte das Festival nicht stattfinden können, wirst du
@@ -332,9 +325,10 @@ export default function Summary({ location }) {
                 <Group>
                   <Value>Corona</Value>
                   <Info>
-                    Je nach Corona-Situation im Juli müssen wir einen Test- oder
-                    Immunitätsnachweis für die Teilnahme voraussetzen. Dies
-                    werden wir rechtzeitig vor dem Festival kommunizieren.
+                    Sehr wahrscheinlich wird ein 2G Nachweis benötigt (keine
+                    Ungeimpften mit Test). Je nach Corona-Situation im Juli
+                    können sich die Bestimmungen noch ändern. Dies werden wir
+                    rechtzeitig vor dem Festival kommunizieren.
                   </Info>
                 </Group>
               </Section>
@@ -385,24 +379,24 @@ const Group = styled.div`
   gap: 30px;
 `
 
-const Value = styled.h4`
-  color: rgba(255, 255, 255, 0.5);
+const Value = styled(SubheaderSmall)`
+  /* color: rgba(255, 255, 255, 0.5); */
   margin-top: 10px;
   justify-self: right;
 `
 
-const InfoGroup = styled.h4``
+const InfoGroup = styled(Note)``
 
-const Info = styled.h4`
-  color: white;
-  margin-top: 10px;
+const Info = styled(Note)`
+  /* color: white; */
+  margin-top: 13px;
 `
 
-const InfoSmall = styled.h4`
+const InfoSmall = styled(TextSmall)`
   margin-top: 10px;
-  color: white;
+  /* color: white; */
   opacity: 0.5;
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
 `
 
 const ButtonGroup = styled.div`
