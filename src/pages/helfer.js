@@ -209,7 +209,7 @@ const Label = styled(SubheaderSmall)`
 
 const Seperator = styled.div`
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
   margin: 40px 0 20px 0;
   width: 100%;
 `

@@ -12,7 +12,7 @@ import TicketButton from "../buttons/TicketButton"
 export default function HeroSection() {
   // Audience Counts
   const audienceCount = useAudienceCount()
-  const maxAudience = 229
+  const maxAudience = 200
 
   // Auto Count
   const autoCount = useAutoCount()
@@ -211,7 +211,7 @@ const LeitgrafikRechts1 = styled.div`
   left: 300px;
   top: 30%;
   width: 100%;
-  heigth: 100%;
+  height: 100%;
 `
 
 const LogoGroup = styled.div`

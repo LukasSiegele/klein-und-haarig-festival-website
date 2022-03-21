@@ -208,7 +208,7 @@ const Card3 = styled.div`
 `
 
 const ShoppingCartWrapper = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: 80px 0 200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

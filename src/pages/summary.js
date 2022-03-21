@@ -68,7 +68,25 @@ export default function Summary({ location }) {
   const festivalTicket = "Ja"
   const [autoTicket, setAutoTicket] = useState("Nein")
   const [camperTicket, setCamperTicket] = useState("Nein")
+
+  // Helfer
   const [helfer, setHelfer] = useState("")
+  const helferArray = [
+    { name: "Essensverkauf", value: helferEssen },
+    { name: "Bar", value: helferBar },
+    { name: "Einlass", value: helferEinlass },
+    { name: "Parkplatzeinweisung", value: helferParken },
+    { name: "Security", value: helferSecuri },
+    { name: "Sani", value: helferSani },
+    { name: "Awareness", value: helferAwareness },
+    { name: "Sanitäre Anlagen", value: helferKlo },
+    { name: "Technik", value: helferTech },
+    { name: "Aufräumdienst", value: helferClean },
+  ]
+  const [whileCategories, setWhileCategories] = useState([])
+  const [isWo, setIsWo] = useState(false)
+  const [isHelferSection, setIsHelferSection] = useState(false)
+  const [isDauer, setIsDauer] = useState()
 
   // Audience Count
   const audienceCount = useAudienceCount()
@@ -166,6 +184,48 @@ export default function Summary({ location }) {
       )
     }
   }
+
+  // Scan Präferenzen für Währenddessen Helfer Array for true
+  useEffect(() => {
+    helferArray
+      .filter(item => item.value === true)
+      .map(filteredHelfer =>
+        // console.log("True Helfers: " + filteredHelfer.name)
+        {
+          setWhileCategories(whileCategories => [
+            ...whileCategories,
+            filteredHelfer.name,
+          ])
+        }
+      )
+  }, [])
+
+  // Helfer Länge
+  useEffect(() => {
+    if (helferLarge) {
+      return setIsDauer("L (3x 6 h)")
+      console.log("Dauer: " + isDauer)
+    }
+    if (helferMedium) {
+      return setIsDauer("M (2x 6 h)")
+      console.log("Dauer: " + isDauer)
+    }
+    if (helferSmall) {
+      return setIsDauer("S (1x 6 h)")
+      console.log("Dauer: " + isDauer)
+    } else {
+      return setIsDauer("Egal")
+    }
+  }, [])
+
+  useEffect(() => {
+    // Scan Helfer Array for true
+    if (helferBefore || helferWhile || helferAfter) {
+      return setIsHelferSection(true)
+    } else {
+      setIsHelferSection(false)
+    }
+  }, [])
 
   useEffect(() => {
     setProducts([])
@@ -303,18 +363,38 @@ export default function Summary({ location }) {
                   <Info>{newsletter ? "Ja" : "Nein"}</Info>
                 </Group>
               </Section>
-              <Section>
-                <Group>
-                  <Value>Helfer</Value>
-                  <Info>{helfer}</Info>
-                </Group>
-              </Section>
+              <Helfer>
+                <Section>
+                  <Group>
+                    <Value>Helfer</Value>
+                    <Info>{helfer}</Info>
+                  </Group>
+                  <Group>
+                    <Value>Dauer</Value>
+                    <Info>{isDauer}</Info>
+                  </Group>
+                  <Wo isWo={helferWhile}>
+                    <Group>
+                      <Value>Präferenz während</Value>
+                      <Info>{whileCategories.join(", ")}</Info>
+                    </Group>
+                  </Wo>
+                  <Group>
+                    <Value>Helferbuddy</Value>
+                    <Info>{helferBuddy == "" ? "Niemand" : helferBuddy}</Info>
+                  </Group>
+                  <Group>
+                    <Value>Ehrenamtlich</Value>
+                    <Info>{helferEhrenamtlich ? "Ja" : "Nein"}</Info>
+                  </Group>
+                </Section>
+              </Helfer>
               <Section>
                 <Group>
                   <Value>Erstattung</Value>
                   <Info>
                     Sollte das Festival nicht stattfinden können, wirst du
-                    zwischen einem Übertrag deines Tickets auf das Jahr 2022 und
+                    zwischen einem Übertrag deines Tickets auf das Jahr 3 und
                     einer Teilrückzahlung wählen können. Wir geben unser Bestes,
                     Ausgaben bis kurz vor dem Festival gering zu halten, um dir
                     einen möglichst großen Betrag zu erstatten.
@@ -411,4 +491,11 @@ const ButtonWrapper = styled.div`
   max-width: 500px;
 `
 
-// Um deine Reservierung abzuschließen, prüfe deine Daten und schicke Sie über den Button unten ab.
+// Helfer
+const Helfer = styled.div`
+  /* display: ${props => (props.helferSection ? "grid" : "none")}; */
+`
+
+const Wo = styled.div`
+  display: ${props => (props.isWo ? "grid" : "none")};
+`

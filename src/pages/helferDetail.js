@@ -45,6 +45,7 @@ export default function HelferDetails({ location }) {
   const [hBuddy, setHBuddy] = useState("")
   const [hEhrenamtlich, setHEhrenamtlich] = useState(false)
   const [buttonLabel, setButtonLabel] = useState("Zur Zusammenfassung")
+  const [isWhile, setIsWhile] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -84,6 +85,8 @@ export default function HelferDetails({ location }) {
       },
     })
   }
+
+  console.log("Helfer Währrend?:", helferWhile)
 
   return (
     <Layout>
@@ -165,8 +168,7 @@ export default function HelferDetails({ location }) {
                 <CheckboxDecription>3x 6 h</CheckboxDecription>
               </CheckboxGroup>
               <Seperator />
-              <Wo>
-                // WO MÖCHTEST DU HELFEN?
+              <Wo isWhile={helferWhile}>
                 <InfoLabel>Wo möchtest du helfen?</InfoLabel>
                 <InfoText>
                   Wir geben unser bestes deine Präferenzen zu berücksichtigen,
@@ -345,11 +347,10 @@ export default function HelferDetails({ location }) {
                 type="buddy"
                 name="buddy"
                 value={hBuddy}
-                required
                 onChange={e => setHBuddy(e.target.value)}
               />{" "}
               <Seperator />
-              <Label htmlFor="ehrenamtlich">Ehrenamtlich helfen?</Label>
+              <InfoLabel>Ehrenamtlich helfen?</InfoLabel>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
@@ -396,7 +397,9 @@ const Wrapper = styled.div`
   }
 `
 
-const Wo = styled.div``
+const Wo = styled.div`
+  display: ${props => (props.isWhile ? "grid" : "none")};
+`
 
 const Left = styled.div`
   max-width: 500px;
@@ -431,7 +434,7 @@ const Label = styled(SubheaderSmall)`
 
 const Seperator = styled.div`
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
   margin: 40px 0 20px 0;
   width: 100%;
 `
