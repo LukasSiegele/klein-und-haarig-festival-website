@@ -104,7 +104,10 @@ export default function TicketSection(props) {
             <InfoText>
               Wenn du bereits ein Ticket gekauft hast und noch ein Camperticket
               dazubuchen möchtest, wende dich bitte an{" "}
-              <LinkInline href="mailto:info@kleinundhaarig.de" subject="Parken">
+              <LinkInline
+                href="mailto:info@kleinundhaarig.de"
+                subject="Website: Parken"
+              >
                 info@kleinundhaarig.de
               </LinkInline>
             </InfoText>

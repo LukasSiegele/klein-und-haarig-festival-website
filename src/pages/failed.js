@@ -6,9 +6,8 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import LogoSVG from "../../static/images/LogoSideNav.svg"
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
-import Stairway from "../../static/images/Stairway.jpg"
-import Zeplin from "../../static/images/SuccessZeppelin.png"
-import Splash from "../../static/images/SuccessSplash.png"
+import FailedGekritzel from "../../static/images/FailedGekritzel2.png"
+import Mannequin from "../../static/images/FailedMannequin.png"
 
 import {
   Headline,
@@ -16,30 +15,45 @@ import {
   ImageDescription,
 } from "../components/styles/TextStyles"
 
-export default function Submitted() {
+export default function Failed() {
   return (
     <Layout>
-      <SEO title="Submitted" />
+      <SEO title="Failed" />
       <Container>
         <Wrapper>
           <Left>
             <Link to="/">
               <Logo />
             </Link>
+            <MannequinGrafik />
             <TextWrapper>
-              <ZeplinGrafik />
-              <Subheader>Ticketkauf erfolgreich</Subheader>
-              <Header>Wir freuen uns auf dich!</Header>
+              <Subheader>Hoppla</Subheader>
+              <Header>Da hat wohl etwas nicht geklappt...</Header>
               <Description>
                 <TextDescription>
-                  Du erhälst in Kürze eine Bestätigung per E-Mail.
+                  Dein Ticketkauf konnte nicht abgeschlossen werden. Mögliche
+                  Gründe dafür:
                 </TextDescription>
+                <TextList>
+                  <ul>
+                    <li>
+                      Ein oder mehrere Tickets (Festival oder Camper) sind
+                      mittlerweile ausverkauft - versuche es bitte erneut
+                    </li>
+                    <li>
+                      Es gab Probleme bei der Bezahlung - bitte überprüfe dein
+                      Paypal Konto oder deine Zahlunsdaten
+                    </li>
+                  </ul>
+                </TextList>
                 <TextDescription>
-                  Mit deiner Ticket-ID (sehr wichtig, nicht verlieren) gelangst
-                  du bald in deine persönliche Ticketarea. Wir geben dir
-                  Bescheid sobald du dich einloggen kannst. Dort findest du dann
-                  unter Anderem dein digitales Ticket, nähere Infos zum Festival
-                  und deinen Helferstatus.
+                  Falls das nicht hilft wende dich bitte an{" "}
+                  <LinkInline
+                    href="mailto:info@kleinundhaarig.de"
+                    subject="Website: Problem beim Ticketkauf"
+                  >
+                    info@kleinundhaarig.de
+                  </LinkInline>
                 </TextDescription>
               </Description>
               <ButtonSection>
@@ -50,10 +64,8 @@ export default function Submitted() {
             </TextWrapper>
           </Left>
           <Right>
-            <SplashGrafik />
             <ImageWrapper>
               <Image />
-              <ImageAuthor>Foto: Michael Reule</ImageAuthor>
             </ImageWrapper>
           </Right>
         </Wrapper>
@@ -63,13 +75,15 @@ export default function Submitted() {
 }
 
 const Container = styled.div`
-  background-image: url(${BackgroundTexture});
+  background: black;
   display: grid;
   justify-content: center;
+  color: white;
 `
 
 const Wrapper = styled.div`
   /* height: 900px; */
+  padding-bottom: 120px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -84,13 +98,13 @@ const Wrapper = styled.div`
     grid-template-columns: 1fr;
     gap: 0px;
     max-width: 700px;
-    /* padding-bottom: 150px; */
   }
 `
 
 const Left = styled.div`
   padding-top: 40px;
   padding-left: 120px;
+  position: relative;
   @media (max-width: 1100px) {
     /* padding-right: 120px; */
     padding: 20px;
@@ -99,13 +113,28 @@ const Left = styled.div`
     padding: 20px;
   }
 `
+
+const MannequinGrafik = styled.div`
+  width: 238px;
+  height: 249px;
+  background-image: url(${Mannequin});
+  background-size: cover;
+  position: absolute;
+  right: -100px;
+  top: 50px;
+  @media (max-width: 1100px) {
+    /* padding-right: 120px; */
+    right: 10px;
+    top: 20px;
+  }
+`
+
 const Right = styled.div`
   padding-right: 120px;
   justify-self: right;
-  /* overflow: hidden; */
-  position: relative;
-  padding-bottom: 300px;
+  overflow: hidden;
   @media (max-width: 1100px) {
+    margin-top: -900px;
     padding-right: 0px;
     justify-self: right;
   }
@@ -114,9 +143,9 @@ const Right = styled.div`
 const ImageWrapper = styled.div``
 
 const Image = styled.div`
-  width: 550px;
-  height: 886px;
-  background-image: url(${Stairway});
+  width: 790px;
+  height: 703px;
+  background-image: url(${FailedGekritzel});
   background-size: cover;
 
   @media (max-width: 1300px) {
@@ -125,22 +154,7 @@ const Image = styled.div`
   }
 `
 
-const ImageAuthor = styled(ImageDescription)`
-  color: black;
-`
-
-const SplashGrafik = styled.div`
-  width: 535px;
-  height: 637px;
-  background-image: url(${Splash});
-  background-size: cover;
-  position: absolute;
-  left: 150px;
-  bottom: 0px;
-  @media (max-width: 1100px) {
-    left: 0px;
-  }
-`
+const ImageAuthor = styled(ImageDescription)``
 
 // KuH Logo in TopNav
 const Logo = styled.div`
@@ -158,41 +172,38 @@ const Logo = styled.div`
   }
 `
 
-const ZeplinGrafik = styled.div`
-  width: 372px;
-  height: 308px;
-  background-image: url(${Zeplin});
-  background-size: cover;
-  position: absolute;
-  left: 250px;
-  top: -80px;
-  @media (max-width: 1100px) {
-    left: 100px;
-    top: -100px;
-  }
-`
-
 const TextWrapper = styled.div`
   padding: 80px 0;
-  position: relative;
 `
 
 const Subheader = styled(PageInfo)`
   margin-bottom: 16px;
+  color: white;
 `
 
 const Header = styled(Headline)`
-  color: black;
+  color: white;
 `
 
 const Description = styled.div`
   margin-top: 40px;
   display: grid;
   gap: 1em;
+`
+
+const TextDescription = styled.h5`
   /* margin-left: 40px; */
 `
 
-const TextDescription = styled.h5``
+const LinkInline = styled.a`
+  color: rgba(255, 255, 255);
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255);
+`
+
+const TextList = styled.h5`
+  /* margin-left: 40px; */
+`
 
 const ButtonSection = styled.div`
   padding: 0;

@@ -63,6 +63,14 @@ export const TextSmall = styled.p`
   font-size: 0.85em; ;
 `
 
+// Bildbeschreibungen
+export const ImageDescription = styled.p`
+  font-family: "GT-Alpina-Extended-Regular";
+  font-size: 0.6em;
+  /* opacity: 0.6; */
+  margin-top: 8px;
+`
+
 export const TickerText = styled.p`
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 17px;
