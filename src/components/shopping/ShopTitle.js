@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   grid-template-columns: auto auto;
   justify-content: start;
   @media (max-width: 800px) {
-    padding: 24px;
+    padding: 20px;
   }
 `
 
@@ -40,7 +40,7 @@ const Logo = styled.div`
   background-size: cover;
   align-self: center;
   @media (max-width: 800px) {
-    margin-right: 24px;
+    margin-right: 20px;
   }
   :hover {
     cursor: pointer;

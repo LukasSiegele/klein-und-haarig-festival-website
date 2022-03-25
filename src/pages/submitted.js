@@ -20,42 +20,45 @@ export default function Submitted() {
   return (
     <Layout>
       <SEO title="Submitted" />
+
       <Container>
+        <Link to="/">
+          <Logo />
+        </Link>
         <Wrapper>
-          <Left>
-            <Link to="/">
-              <Logo />
-            </Link>
-            <TextWrapper>
-              <ZeplinGrafik />
-              <Subheader>Ticketkauf erfolgreich</Subheader>
-              <Header>Wir freuen uns auf dich!</Header>
-              <Description>
-                <TextDescription>
-                  Du erhälst in Kürze eine Bestätigung per E-Mail.
-                </TextDescription>
-                <TextDescription>
-                  Mit deiner Ticket-ID (sehr wichtig, nicht verlieren) gelangst
-                  du bald in deine persönliche Ticketarea. Wir geben dir
-                  Bescheid sobald du dich einloggen kannst. Dort findest du dann
-                  unter Anderem dein digitales Ticket, nähere Infos zum Festival
-                  und deinen Helferstatus.
-                </TextDescription>
-              </Description>
-              <ButtonSection>
-                <Link to="/">
-                  <FormButton label="Zurück zur Startseite"></FormButton>
-                </Link>
-              </ButtonSection>
-            </TextWrapper>
-          </Left>
-          <Right>
-            <SplashGrafik />
-            <ImageWrapper>
-              <Image />
-              <ImageAuthor>Foto: Michael Reule</ImageAuthor>
-            </ImageWrapper>
-          </Right>
+          <MainGrid>
+            <Left>
+              <TextWrapper>
+                <ZeplinGrafik />
+                <Subheader>Ticketkauf erfolgreich</Subheader>
+                <Header>Wir freuen uns auf dich!</Header>
+                <Description>
+                  <TextDescription>
+                    Du erhälst in Kürze eine Bestätigung per E-Mail.
+                  </TextDescription>
+                  <TextDescription>
+                    Mit deiner Ticket-ID (sehr wichtig, nicht verlieren)
+                    gelangst du bald in deine persönliche Ticketarea. Wir geben
+                    dir Bescheid sobald du dich einloggen kannst. Dort findest
+                    du dann unter Anderem dein digitales Ticket, nähere Infos
+                    zum Festival und deinen Helferstatus.
+                  </TextDescription>
+                </Description>
+                <ButtonSection>
+                  <Link to="/">
+                    <FormButton label="Zurück zur Startseite"></FormButton>
+                  </Link>
+                </ButtonSection>
+              </TextWrapper>
+            </Left>
+            <Right>
+              <SplashGrafik />
+              <ImageWrapper>
+                <Image />
+                <ImageAuthor>Foto: Michael Reule</ImageAuthor>
+              </ImageWrapper>
+            </Right>
+          </MainGrid>
         </Wrapper>
       </Container>
     </Layout>
@@ -64,13 +67,16 @@ export default function Submitted() {
 
 const Container = styled.div`
   background-image: url(${BackgroundTexture});
-  display: grid;
-  justify-content: center;
+  overflow: hidden;
 `
 
 const Wrapper = styled.div`
   /* height: 900px; */
+  display: grid;
+  justify-content: center;
+`
 
+const MainGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 120px;
@@ -89,14 +95,11 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
-  padding-top: 40px;
+  padding-top: 120px;
   padding-left: 120px;
   @media (max-width: 1100px) {
     /* padding-right: 120px; */
-    padding: 20px;
-  }
-  @media (max-width: 768px) {
-    padding: 20px;
+    padding: 120px 20px;
   }
 `
 const Right = styled.div`
@@ -148,10 +151,11 @@ const Logo = styled.div`
   height: 79px;
   background-image: url(${LogoSVG});
   background-size: cover;
-  align-self: center;
+  position: absolute;
+  margin: 40px;
 
   @media (max-width: 800px) {
-    margin-right: 24px;
+    margin: 20px;
   }
   :hover {
     cursor: pointer;

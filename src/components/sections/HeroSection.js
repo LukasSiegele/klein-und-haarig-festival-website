@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import LeitgrafikImage1 from "../../../public/images/LeitgrafikImage1.png"
-import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
-import LeitgrafikImage3 from "../../../public/images/LeitgrafikImage3.png"
+// import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
+// import LeitgrafikImage3 from "../../../public/images/LeitgrafikImage3.png"
 
 import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
@@ -27,30 +27,34 @@ export default function HeroSection() {
   return (
     <Container>
       <TitleLine>
-        <TitleKlein> Klein </TitleKlein><TitleUndStroke> und <TitleHaarig>Haarig </TitleHaarig> </TitleUndStroke> 
+        <TitleKlein> Klein </TitleKlein>
+        <TitleUndStroke>
+          {" "}
+          und <TitleHaarig>Haarig </TitleHaarig>{" "}
+        </TitleUndStroke>
       </TitleLine>
       <InfoGroup>
-            <Date>Fr 15 - Mo 18 Juli</Date>
-            <Place>Bad Wildbad</Place>
+        <Date>Fr 15 - Mo 18 Juli</Date>
+        <Place>Bad Wildbad</Place>
       </InfoGroup>
       <ImageWrapper>
-        <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1}/>
-        <LeitgrafikPurpleBrush src={LeitgrafikImage2}/>
-        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3}/>
+        <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1} />
+        {/* <LeitgrafikPurpleBrush src={LeitgrafikImage2} />
+        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3} /> */}
       </ImageWrapper>
-        <TicketWrapper>
-          <TicketGroup
-                  to={audienceCount < maxAudience ? "/tickets" : "/voll"}
-                  // to={"/voll"}
-                >
-            <TicketButton />
-                  {/* <TicketLabel>
+      <TicketWrapper>
+        <TicketGroup
+          to={audienceCount < maxAudience ? "/tickets" : "/voll"}
+          // to={"/voll"}
+        >
+          <TicketButton />
+          {/* <TicketLabel>
                       {audienceCount < maxAudience
                       ? "Tickets"
                       : "Ticketverkauf pausiert"}
                   </TicketLabel> */}
-          </TicketGroup>
-        </TicketWrapper>
+        </TicketGroup>
+      </TicketWrapper>
     </Container>
   )
 }
@@ -93,20 +97,21 @@ const TitleKlein = styled.h1`
 `
 
 const TitleUndStroke = styled.h1`
-  display: inline;  
+  display: inline;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
   text-transform: none;
-  color: #F6F4EE; 
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #f6f4ee;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 `
 
 const TitleHaarig = styled.h1`
-  display: contents;  
+  display: contents;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
   text-transform: none;
-  color: #000000; 
+  color: #000000;
   text-shadow: none;
 `
 
@@ -133,7 +138,7 @@ const InfoGroup = styled.div`
 `
 
 const Date = styled.h3`
-  border: 1px solid rgba(255, 255, 255,);
+  border: 1px solid rgba(255, 255, 255);
   justify-self: end;
   align-self: center;
 `

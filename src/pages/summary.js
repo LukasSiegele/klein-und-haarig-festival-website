@@ -378,12 +378,16 @@ export default function Summary({ location }) {
                     <Wo isWo={helferWhile}>
                       <Group>
                         <Value>Präferenz während</Value>
-                        <Info>{whileCategories.join(", ")}</Info>
+                        <Info>
+                          {whileCategories.length >= 1
+                            ? whileCategories.join(", ")
+                            : "-"}
+                        </Info>
                       </Group>
                     </Wo>
                     <Group>
                       <Value>Helferbuddy</Value>
-                      <Info>{helferBuddy == "" ? "Niemand" : helferBuddy}</Info>
+                      <Info>{helferBuddy == "" ? "-" : helferBuddy}</Info>
                     </Group>
                     <Group>
                       <Value>Ehrenamtlich</Value>
@@ -459,12 +463,17 @@ const Section = styled.div`
 
 const Group = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 2fr;
   gap: 30px;
+  padding-right: 120px;
+  @media (max-width: 1100px) {
+    padding-right: 60px;
+  }
   @media (max-width: 768px) {
     gap: 0px;
     grid-template-columns: 1fr;
     margin-bottom: 15px;
+    padding-right: 0px;
   }
 `
 
@@ -491,11 +500,11 @@ const Info = styled(Note)`
   }
 `
 
-const InfoSmall = styled(TextSmall)`
+const InfoSmall = styled(Note)`
   margin-top: 10px;
   /* color: white; */
   opacity: 0.5;
-  /* font-size: 0.8rem; */
+  font-size: 0.8rem;
 `
 
 const ButtonGroup = styled.div`
