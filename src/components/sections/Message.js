@@ -26,7 +26,6 @@ export default function Message() {
 }
 
 const Container = styled.div`
-  padding: 200px 0;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;

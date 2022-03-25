@@ -27,5 +27,4 @@ export default function IndexPage() {
 
 const Wrapper = styled.div`
   background-image: url(${BackgroundTexture});
-  /* background: blue; */
 `

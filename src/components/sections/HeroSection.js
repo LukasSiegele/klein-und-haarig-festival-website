@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+
 import LeitgrafikImage1 from "../../../public/images/LeitgrafikImage1.png"
+import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
+import LeitgrafikImage3 from "../../../public/images/LeitgrafikImage3.png"
+
 import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
 import useAudienceCount from "../../helper/useAudienceCount"
@@ -22,68 +26,53 @@ export default function HeroSection() {
 
   return (
     <Container>
-      <Wrapper>
-        <TitleLine>
-          <Title> Klein und Haarig </Title>
-        </TitleLine>
-        <ImageLine>
-          <Left>
-            <InfoGroup>
-              <Date>9—11 Juli 2021</Date>
-              <Icon src="/icons/dot.svg" className="dot" />
-              <Place>Bad Wildbad</Place>
-            </InfoGroup>
-          </Left>
-          <ImageWrapper>
-            <LogoGroup>
-              <Logo src="/images/Logo.svg" className="logo" />
-              <TicketWrapper>
-                <TicketGroup
+      <TitleLine>
+        <TitleKlein> Klein </TitleKlein><TitleUndStroke> und <TitleHaarig>Haarig </TitleHaarig> </TitleUndStroke> 
+      </TitleLine>
+      <InfoGroup>
+            <Date>Fr 15 - Mo 18 Juli</Date>
+            <Place>Bad Wildbad</Place>
+      </InfoGroup>
+      <ImageWrapper>
+        <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1}/>
+        <LeitgrafikPurpleBrush src={LeitgrafikImage2}/>
+        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3}/>
+      </ImageWrapper>
+        <TicketWrapper>
+          <TicketGroup
                   to={audienceCount < maxAudience ? "/tickets" : "/voll"}
                   // to={"/voll"}
                 >
-                  <TicketButton />
+            <TicketButton />
                   {/* <TicketLabel>
                       {audienceCount < maxAudience
                       ? "Tickets"
                       : "Ticketverkauf pausiert"}
                   </TicketLabel> */}
-                </TicketGroup>
-              </TicketWrapper>
-            </LogoGroup>
-            <LeitgrafikRechts1 />
-          </ImageWrapper>
-          <Right></Right>
-        </ImageLine>
-      </Wrapper>
+          </TicketGroup>
+        </TicketWrapper>
     </Container>
   )
 }
 
 const Container = styled.div`
-  /* background-color: blue; */
-  /* height: 910px; */
-  overflow: hidden;
-  max-width: 2300px;
-  margin: 0 auto;
-`
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-rows: auto 800px;
+  background-color: none;
+  width: 100vw;
+  height: 100vh;
+  margin-left: 167px;
 
   @media (max-width: 768px) {
-    grid-template-rows: auto 700px;
+    margin-left: 0px;
   }
 
   @media (max-width: 700px) {
-    grid-template-rows: auto 600px;
+    margin-left: 0px;
   }
 `
 
 const TitleLine = styled.div`
-  padding: 20px 200px;
-  display: grid;
+  padding-top: 20px;
+  padding-left: 20px;
   justify-content: left;
 
   @media (max-width: 768px) {
@@ -95,57 +84,38 @@ const TitleLine = styled.div`
   }
 `
 
-const Title = styled.h1`
+const TitleKlein = styled.h1`
+  display: block;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
-
-  color: #000;
-
-  animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  visibility: hidden;
-
-  @keyframes TextAnimation {
-    0% {
-      visibility: visible;
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
+  text-transform: none;
+  color: #000000;
 `
 
-const ImageLine = styled.div`
-  display: grid;
-  grid-template-columns: 90px auto 90px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 50px auto 50px;
-  }
-
-  @media (max-width: 700px) {
-    grid-template-columns: 30px auto 30px;
-  }
+const TitleUndStroke = styled.h1`
+  display: inline;  
+  text-align: left;
+  font-family: "GT-Alpina-Extended-Regular";
+  text-transform: none;
+  color: #F6F4EE; 
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 `
 
-const Left = styled.div`
-  position: relative;
-  display: grid;
-  align-items: center;
+const TitleHaarig = styled.h1`
+  display: contents;  
+  text-align: left;
+  font-family: "GT-Alpina-Extended-Regular";
+  text-transform: none;
+  color: #000000; 
+  text-shadow: none;
 `
 
 const InfoGroup = styled.div`
-  position: absolute;
   left: 150px;
   top: 340px;
   width: 500px;
-  display: grid;
-  grid-template-columns: auto 24px auto;
-  gap: 10px;
-  color: black;
+  heigth: 100vh;
+  color: yellow;
 
   @media (max-width: 768px) {
     left: -225px;
@@ -153,7 +123,6 @@ const InfoGroup = styled.div`
 
   @media (max-width: 700px) {
     left: -235px;
-    gap: 5px;
   }
 
   animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -164,60 +133,46 @@ const InfoGroup = styled.div`
 `
 
 const Date = styled.h3`
+  border: 1px solid rgba(255, 255, 255,);
   justify-self: end;
   align-self: center;
 `
 
-const Icon = styled.img`
-  /* width: 24px;
-  height: 24px; */
-  align-self: center;
-`
 const Place = styled.h3`
   align-self: center;
 `
 
 const ImageWrapper = styled.div`
-  /* background-color: yellow; */
-  /* border-radius: 20px; */
-  align-items: right;
-  left: 40vw;
-  width: 60%;
-  height: auto;
-  background-size: contain;
-  background-image: url(${LeitgrafikImage1});
-
-  @media (max-width: 700px) {
-    background-position-x: -80px;
-  }
-
-  animation: ImageAnimation 1.8s 1.8s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  transform: scale(1.51);
-
-  @keyframes ImageAnimation {
-    0% {
-      transform: scale(1.51);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-`
-
-const LeitgrafikRechts1 = styled.div`
-  background-image: url(${LeitgrafikImage1});
-  position: relative;
-  left: 300px;
-  top: 30%;
   width: 100%;
   height: 100%;
 `
 
-const LogoGroup = styled.div`
-  display: grid;
-  justify-items: center;
-  margin-bottom: 40px;
+// LEITGRAFIK ELEMENTE
+const LeitgrafikRedLineBlackBrush = styled.img`
+  position: absolute;
+  right: -100px;
+  top: 10%;
+  width: 35%;
+  height: auto;
+
+  @media (max-width: 768px) {
+    width: 60%;
+    height: auto;
+  }
+`
+
+const LeitgrafikPurpleBrush = styled.img`
+  position: absolute;
+  top: 200px;
+  width: 20%;
+  height: auto;
+`
+
+const LeitgrafikBlackLinesRedBrush = styled.img`
+  position: absolute;
+  top: 200px;
+  width: 20%;
+  height: auto;
 `
 
 const Logo = styled.img`
@@ -248,6 +203,8 @@ const Logo = styled.img`
 `
 
 const TicketWrapper = styled.div`
+  right: 20px;
+  top: 20px;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
     /* transform: translateY(-10px); */
@@ -295,5 +252,3 @@ const TicketLabel = styled.h3`
     font-size: 18px;
   }
 `
-
-const Right = styled.div``
