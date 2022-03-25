@@ -15,12 +15,12 @@ import {
   PageInfo,
   ImageDescription,
 } from "../components/styles/TextStyles"
+import KuhLogo from "../components/main/logo"
 
 export default function Submitted() {
   return (
     <Layout>
       <SEO title="Submitted" />
-
       <Container>
         <Link to="/">
           <Logo />
@@ -71,7 +71,6 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  /* height: 900px; */
   display: grid;
   justify-content: center;
 `
@@ -98,7 +97,6 @@ const Left = styled.div`
   padding-top: 120px;
   padding-left: 120px;
   @media (max-width: 1100px) {
-    /* padding-right: 120px; */
     padding: 120px 20px;
   }
 `

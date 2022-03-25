@@ -4,8 +4,8 @@ import styled from "styled-components"
 import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
-import LogoSVG from "../../static/images/LogoSideNav.svg"
-import BackgroundTexture from "../../static/images/BackgroundTexture.png"
+import LogoSVG from "../../static/images/LogoSideNavWhite.svg"
+
 import FailedGekritzel from "../../static/images/FailedGekritzel2.png"
 import Mannequin from "../../static/images/FailedMannequin.png"
 
@@ -20,54 +20,56 @@ export default function Failed() {
     <Layout>
       <SEO title="Failed" />
       <Container>
+        <Link to="/">
+          <Logo fill="red" />
+        </Link>
         <Wrapper>
-          <Left>
-            <Link to="/">
-              <Logo />
-            </Link>
-            <MannequinGrafik />
-            <TextWrapper>
-              <Subheader>Hoppla</Subheader>
-              <Header>Da hat wohl etwas nicht geklappt...</Header>
-              <Description>
-                <TextDescription>
-                  Dein Ticketkauf konnte nicht abgeschlossen werden. Mögliche
-                  Gründe dafür:
-                </TextDescription>
-                <TextList>
-                  <ul>
-                    <li>
-                      Ein oder mehrere Tickets (Festival oder Camper) sind
-                      mittlerweile ausverkauft - versuche es bitte erneut
-                    </li>
-                    <li>
-                      Es gab Probleme bei der Bezahlung - bitte überprüfe dein
-                      Paypal Konto oder deine Zahlunsdaten
-                    </li>
-                  </ul>
-                </TextList>
-                <TextDescription>
-                  Falls das nicht hilft wende dich bitte an{" "}
-                  <LinkInline
-                    href="mailto:info@kleinundhaarig.de"
-                    subject="Website: Problem beim Ticketkauf"
-                  >
-                    info@kleinundhaarig.de
-                  </LinkInline>
-                </TextDescription>
-              </Description>
-              <ButtonSection>
-                <Link to="/">
-                  <FormButton label="Zurück zur Startseite"></FormButton>
-                </Link>
-              </ButtonSection>
-            </TextWrapper>
-          </Left>
-          <Right>
-            <ImageWrapper>
-              <Image />
-            </ImageWrapper>
-          </Right>
+          <Maingrid>
+            <Left>
+              <MannequinGrafik />
+              <TextWrapper>
+                <Subheader>Hoppla</Subheader>
+                <Header>Da hat wohl etwas nicht geklappt...</Header>
+                <Description>
+                  <TextDescription>
+                    Dein Ticketkauf konnte nicht abgeschlossen werden. Mögliche
+                    Gründe dafür:
+                  </TextDescription>
+                  <TextList>
+                    <ul>
+                      <li>
+                        Ein oder mehrere Tickets (Festival oder Camper) sind
+                        mittlerweile ausverkauft - versuche es bitte erneut
+                      </li>
+                      <li>
+                        Es gab Probleme bei der Bezahlung - bitte überprüfe dein
+                        Paypal Konto oder deine Zahlunsdaten
+                      </li>
+                    </ul>
+                  </TextList>
+                  <TextDescription>
+                    Falls das nicht hilft wende dich bitte an{" "}
+                    <LinkInline
+                      href="mailto:info@kleinundhaarig.de"
+                      subject="Website: Problem beim Ticketkauf"
+                    >
+                      info@kleinundhaarig.de
+                    </LinkInline>
+                  </TextDescription>
+                </Description>
+                <ButtonSection>
+                  <Link to="/">
+                    <FormButton label="Zurück zur Startseite"></FormButton>
+                  </Link>
+                </ButtonSection>
+              </TextWrapper>
+            </Left>
+            <Right>
+              <ImageWrapper>
+                <Image />
+              </ImageWrapper>
+            </Right>
+          </Maingrid>
         </Wrapper>
       </Container>
     </Layout>
@@ -77,12 +79,16 @@ export default function Failed() {
 const Container = styled.div`
   background: black;
   display: grid;
-  justify-content: center;
+  overflow: hidden;
   color: white;
 `
 
 const Wrapper = styled.div`
-  /* height: 900px; */
+  display: grid;
+  justify-content: center;
+`
+
+const Maingrid = styled.div`
   padding-bottom: 120px;
 
   display: grid;
@@ -102,15 +108,11 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
-  padding-top: 40px;
+  padding-top: 120px;
   padding-left: 120px;
   position: relative;
   @media (max-width: 1100px) {
-    /* padding-right: 120px; */
-    padding: 20px;
-  }
-  @media (max-width: 768px) {
-    padding: 20px;
+    padding: 120px 20px;
   }
 `
 
@@ -162,10 +164,11 @@ const Logo = styled.div`
   height: 79px;
   background-image: url(${LogoSVG});
   background-size: cover;
-  align-self: center;
+  position: absolute;
+  margin: 40px;
 
   @media (max-width: 800px) {
-    margin-right: 24px;
+    margin: 20px;
   }
   :hover {
     cursor: pointer;
