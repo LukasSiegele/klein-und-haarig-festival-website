@@ -15,7 +15,6 @@ import {
   PageInfo,
   ImageDescription,
 } from "../components/styles/TextStyles"
-import KuhLogo from "../components/main/logo"
 
 export default function Submitted() {
   return (

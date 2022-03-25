@@ -313,6 +313,7 @@ input {
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: black;
   color: white;
+  border-radius: 4px;
 }
 
 .checkboxText {
@@ -370,6 +371,7 @@ input[type="number"] {
   background: rgba(255, 255, 255, 0);
   transition: background 250ms;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
 }
 
 .b-contain input[type="checkbox"] ~ .b-input::after {

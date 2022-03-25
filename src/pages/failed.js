@@ -21,7 +21,7 @@ export default function Failed() {
       <SEO title="Failed" />
       <Container>
         <Link to="/">
-          <Logo fill="red" />
+          <Logo />
         </Link>
         <Wrapper>
           <Maingrid>
