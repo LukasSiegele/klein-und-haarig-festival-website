@@ -42,6 +42,7 @@ const Wrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 40px 50px;
   display: grid;
+  max-width: 1440px;
   @media (max-width: 768px) {
     padding: 40px 20px 50px;
   }
