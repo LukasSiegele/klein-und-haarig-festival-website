@@ -42,26 +42,26 @@ const Wrapper = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 40px 50px;
   display: grid;
-  max-width: 1440px;
-  @media (max-width: 768px) {
+
+  @media (max-width: 800px) {
     padding: 40px 20px 50px;
   }
 
   a {
     padding-bottom: 0px;
     border-bottom: 0px;
+    color: white;
   }
 `
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 220px;
-  align-content: space-between;
+  grid-template-columns: 1fr 1fr;
   color: white;
-  max-width: 900px;
+  max-width: 1440px;
+
   justify-self: center;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     /* grid-template-columns: auto 1fr; */
     justify-content: space-evenly;
     gap: 120px;
@@ -73,18 +73,24 @@ const Content = styled.div`
   }
 `
 
-const BuntePlatte = styled.h5``
+const BuntePlatte = styled.h5`
+  color: white;
+`
 
 const Description = styled.h5`
   color: white;
   margin-top: 20px;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     margin-top: 10px;
   }
 `
-const Text = styled.h5``
+const Text = styled.h5`
+  color: white;
+`
 
 const WrapperLeft = styled.div`
+  justify-self: start;
+  max-width: 600px;
   * {
     opacity: 0.5;
   }
@@ -94,13 +100,10 @@ const WrapperRight = styled.div`
   display: grid;
   grid-template-rows: repeat(3, 0.1fr);
   grid-template-columns: auto;
+  justify-self: right;
   justify-content: left;
   text-align: right;
   gap: 5px;
-
-  > * {
-    opacity: 0.5;
-  }
 
   @media (max-width: 700px) {
     grid-template-columns: repeat(4, auto);
