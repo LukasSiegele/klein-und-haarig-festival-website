@@ -119,7 +119,7 @@ const InfoGroup = styled.div`
   left: 150px;
   top: 340px;
   width: 500px;
-  heigth: 100vh;
+  height: 100vh;
   color: yellow;
 
   @media (max-width: 768px) {
