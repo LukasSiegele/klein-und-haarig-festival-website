@@ -25,6 +25,7 @@ export default function TicketCard(props) {
       <DetailWrapper
         isSelected={props.isSelected}
         singleLineDetail={props.singleLineDetail}
+        tripleLineDetail={props.tripleLineDetail}
       >
         <Details>{props.details}</Details>
       </DetailWrapper>
@@ -91,9 +92,11 @@ const Price = styled.h3`
 
 const DetailWrapper = styled.div`
   position: absolute;
-  width: 200px;
-  bottom: ${props => (props.singleLineDetail ? "89px" : "95px")};
-  right: ${props => (props.singleLineDetail ? "-53px" : "-55px")};
+  width: ${props => (props.tripleLineDetail ? "300px" : "200px")};
+  bottom: ${props => (props.tripleLineDetail ? "148px" : "95px")};
+  right: ${props => (props.tripleLineDetail ? "-103px" : "-55px")};
+  /* bottom: ${props => (props.singleLineDetail ? "89px" : "95px")};
+  right: ${props => (props.singleLineDetail ? "-53px" : "-55px")}; */
   transition: ${animations.slow};
 
   a  {

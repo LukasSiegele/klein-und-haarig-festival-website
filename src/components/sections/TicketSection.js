@@ -49,7 +49,8 @@ export default function TicketSection(props) {
             <TicketCard
               title="Festival Ticket"
               price={festivalPrice + " €"}
-              details="3 Tage Festival mit Zeltplatz"
+              details="4 Tage Festival
+inklusive Camping"
               isSelected={isFestival}
               cardBackground={Background1}
               // handleSelection={() => {
@@ -70,8 +71,10 @@ export default function TicketSection(props) {
                   ? "Ausverkauft"
                   : camperPrice + " €"
               }
-              details="Camperstellplatz auf dem Gelände"
+              details="Auf dem Gelände
+maximale Fahrzeuggröße 6 x 2.5 m"
               isSelected={isCamper}
+              tripleLineDetail={true}
               limit={props.camperParkplatz || camperPTicketsPage}
               handleSelection={() => {
                 if (
@@ -95,15 +98,17 @@ export default function TicketSection(props) {
           <LeftBlock>
             <InfoHeader>Tickets</InfoHeader>
             <InfoText>
-              Die Tickets sind personalisiert. Pro Person und E-Mail kann nur
-              ein Ticket erworben werden. Auto- und Campertickets sind nur in
+              Die Tickets sind personalisiert. Pro Person und E-Mail-Adresse
+              kann nur ein Ticket erworben werden. Campertickets sind nur in
               Kombination mit einem Festival Ticket erhältlich.
             </InfoText>
+          </LeftBlock>
 
-            <InfoHeader>Nachkaufen</InfoHeader>
+          <RightBlock>
+            <InfoHeader>Camperticket nachkaufen</InfoHeader>
             <InfoText>
-              Wenn du bereits ein Ticket gekauft hast und noch ein Camperticket
-              dazubuchen möchtest, wende dich bitte an{" "}
+              Wenn du bereits ein Festivalticket besitzt und ein Camperticket
+              nachkaufen möchtest, wende dich bitte an{" "}
               <LinkInline
                 href="mailto:info@kleinundhaarig.de"
                 subject="Website: Parken"
@@ -111,28 +116,27 @@ export default function TicketSection(props) {
                 info@kleinundhaarig.de
               </LinkInline>
             </InfoText>
-          </LeftBlock>
-
-          <RightBlock>
             <InfoHeader>Öffis</InfoHeader>
             <InfoText>
-              Unser Gelände ist gut mit öffentlichen Verkehrsmitteln erreichbar.
-              Vom nächstgelegenen Bahnhof fährt alle 30 min ein Bus vor das
-              Lager.
+              Das Festival ist sehr gut mit öffentlichen Verkehrsmitteln
+              erreichbar. Vom nächstgelegenen Bahnhof fährt alle 30 min ein Bus
+              direkt vor das Gelände. Detailierte Infos bekommst du rechtzeitig
+              vor dem Festival.
             </InfoText>
-            <InfoHeader>Autos</InfoHeader>
+            <InfoHeader>Parkplätze</InfoHeader>
             <InfoText>
-              Es wird dieses Jahr genügend Parkplätze geben, diese werden aber
-              nicht wie im letzten Jahr auf dem Gelände sein. Zum und vom
-              Parkplatz werden wir einen Shuttleservice gegen eine kleine Gebühr
-              einrichten.
+              Dieses Jahr wird es auf dem Festivalgelände keine
+              Parkmöglichkeiten mehr geben. Ein Shuttelservice wird die
+              Parkplätze in der Umgebung mit dem Festival verbinden. Dafür kann
+              eine kleine Gebühr anfallen. Detailierte Infos bekommst du
+              rechtzeitig vor dem Festival.
             </InfoText>
           </RightBlock>
         </InfoWrapper>
         <ShoppingCartWrapper>
           <SumWrapper>
             <Summary>Dein Gesamtpreis {summary || 0} €</Summary>
-            <SummaryNote>inkl. 2 € Servicegebühren</SummaryNote>
+            <SummaryNote>(inkl. 2€ Paypal Servicegebühr)</SummaryNote>
           </SumWrapper>
           <WeiterWrapper>
             <Link
@@ -276,7 +280,7 @@ const Label = styled.h4`
 `
 
 const LinkInline = styled.a`
-  color: rgba(255, 255, 255, 0.6);
+  color: white;
   padding-bottom: 1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 `
