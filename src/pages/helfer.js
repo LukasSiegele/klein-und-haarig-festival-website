@@ -82,18 +82,29 @@ export default function Helfer({ location }) {
       <Container>
         <Wrapper>
           <Left>
-            <Header>Wie läuft das ab, wenn ich helfen will?</Header>
+            <Header>Wie läuft das ab, wenn ich helfen möchte?</Header>
             <HelperDescription>
               <ol>
-                <li> Wähle eine oder mehrer Kategorien aus</li>
-                <li>Zahle ganz normal dein Ticket</li>
-                <li>Wir kommen auf dich zu und klären alles weitere ab</li>
-                <li>Anschließend werden dich einem Team zuteilen.</li>
                 <li>
-                  Nach erledigter Schicht bekommst du deinen Anteil erstattet.
-                  Da wir aus dem Festival keinen Provit schlagen und ein Verein
-                  sind freuen wir uns natürlich über jeden ehrenamtlichen
-                  Helfer. :)
+                  {" "}
+                  Wähle eine oder mehrere Kategorien, bei was und wie lange du
+                  uns helfen möchtest
+                </li>
+                <li>Zahle ganz normal dein Ticket</li>
+                <li>
+                  Wir werden dich unter Berücksichtigung deiner Präferenzen
+                  einem Team zuteilen. Sollten wir weitere Angaben von dir
+                  benötigen, kommen wir auf dich zu.
+                </li>
+                <li>
+                  Du bekommst alle wichtigen Infos wann und wo du arbeiten
+                  wirst.
+                </li>
+                <li>
+                  Nach getaner Arbeit bekommst du deine Vergütung. Als
+                  gemeinnütziger Verein, der kein Profit aus Veranstaltungen
+                  schlägt, freuen wir uns natürlich über jede/n ehrenamtliche/n
+                  Helfer:in.
                 </li>
               </ol>
             </HelperDescription>
@@ -101,7 +112,7 @@ export default function Helfer({ location }) {
           <Right>
             {" "}
             <form onSubmit={handleSubmit}>
-              <Label htmlFor="aufbau">Aufbau</Label>
+              <Label htmlFor="aufbau">Beim Aufbau</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
@@ -116,12 +127,13 @@ export default function Helfer({ location }) {
                   <div className="b-input"></div>
                 </label>
                 <CheckboxDecription>
-                  Wenn du einen Akkuschrauber halten kannst bist du schonmal
-                  qualifiziert. Aber auch kreative Köpfe werden gebraucht.
+                  Du hast Lust richtig mitanzupacken und wirklich was auf die
+                  Beine zu stellen? Ob kreativ oder halbstark - dann bist du
+                  hier genau richtig.
                 </CheckboxDecription>
               </CheckboxGroup>
               <br />
-              <Label htmlFor="waehrend">Während des Festivals</Label>
+              <Label htmlFor="waehrend">Während dem Festival</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
@@ -136,8 +148,9 @@ export default function Helfer({ location }) {
                   <div className="b-input"></div>
                 </label>
                 <CheckboxDecription>
-                  Übernimm zusammen mit deinem Bestie eine Schicht an der Bar
-                  oder kümmer dich um die vielen hungrigen Mäuler.
+                  Hier fallen viele unterschiedliche Aufgaben an. Im nächsten
+                  Schritt kannst du nochmal genauer auswählen, was du dir
+                  vorstellen kannst.
                 </CheckboxDecription>
               </CheckboxGroup>
               <br />
@@ -156,8 +169,9 @@ export default function Helfer({ location }) {
                   <div className="b-input"></div>
                 </label>
                 <CheckboxDecription>
-                  Nur etwas für Hartgesottene, die nach drei Tagen Festival noch
-                  ordentlich mit anpacken können.
+                  Nach dem Festival direkt wieder in den Alltag? Auf keinen
+                  Fall! Geh mit uns in die Verlängerung und pack beim Abbau mit
+                  an. Zusammen geht’s besser!
                 </CheckboxDecription>
               </CheckboxGroup>
               <WeiterWrapper>
@@ -201,6 +215,7 @@ const Header = styled(Headline)``
 const HelperDescription = styled.h5`
   color: white;
   margin-top: 40px;
+  margin-left: 20px;
 `
 
 const Label = styled(SubheaderSmall)`

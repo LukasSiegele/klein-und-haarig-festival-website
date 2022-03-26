@@ -43,8 +43,7 @@ export default function Form(props) {
       <Wrapper>
         <Label>Info</Label>
         <InfoText>
-          Die Hardtickets kommen per Post - bitte trage deshalb alle Daten
-          korrekt ein.
+          Du bekommst dein Ticket per Post — bitte trage alle Daten korrekt ein.
         </InfoText>
         <Seperator />
         <form onSubmit={handleSubmit}>
@@ -131,10 +130,9 @@ export default function Form(props) {
               <div className="b-input"></div>
             </label>
             <CheckboxDecription>
-              Mit dem Kauf eines Tickets trittst du dem eingetragenen Verein
-              Bunte Platte zur Probe bei. Diese Probemitgliedschaft beginnt am
-              1. Juli 2021 und endet nach 90 Tagen automatisch. Du musst nichts
-              weiter tun.
+              Mit dem Kauf eines Tickets trittst du dem Bunte Platte e.V. zur
+              Probe bei. Diese Probemitgliedschaft beginnt am 1. Juli 2022 und
+              endet nach 90 Tagen automatisch. Du musst nichts weiter tun.
             </CheckboxDecription>
           </CheckboxGroup>
           <br />
@@ -175,7 +173,7 @@ export default function Form(props) {
               <div className="b-input"></div>
             </label>
             <CheckboxDecription>
-              Zur Erinnerung für die kommenden Jahre sehr zu empfehlen.
+              Als Erinnerung für kommende Veranstaltungen sehr zu empfehlen.
             </CheckboxDecription>
           </CheckboxGroup>
           <WeiterWrapper>

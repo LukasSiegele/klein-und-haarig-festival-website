@@ -401,10 +401,10 @@ export default function Summary({ location }) {
                   <Value>Erstattung</Value>
                   <Info>
                     Sollte das Festival nicht stattfinden können, wirst du
-                    zwischen einem Übertrag deines Tickets auf das Jahr 3 und
-                    einer Teilrückzahlung wählen können. Wir geben unser Bestes,
-                    Ausgaben bis kurz vor dem Festival gering zu halten, um dir
-                    einen möglichst großen Betrag zu erstatten.
+                    zwischen einem Übertrag deines Tickets auf das nächste Jahr
+                    und einer Teilrückzahlung wählen können. Bitte habe
+                    Verständnis, dass wir Servicegebühren und anfallende
+                    Fixkosten nicht erstatten können.
                   </Info>
                 </Group>
               </Section>
@@ -412,10 +412,9 @@ export default function Summary({ location }) {
                 <Group>
                   <Value>Corona</Value>
                   <Info>
-                    Sehr wahrscheinlich wird ein 2G Nachweis benötigt (keine
-                    Ungeimpften mit Test). Je nach Corona-Situation im Juli
-                    können sich die Bestimmungen noch ändern. Dies werden wir
-                    rechtzeitig vor dem Festival kommunizieren.
+                    Je nach Corona-Maßnahmen im Juli müssen wir einen Test- oder
+                    Immunitätsnachweis für die Teilnahme voraussetzen. Dies
+                    werden wir rechtzeitig kommunizieren.
                   </Info>
                 </Group>
               </Section>

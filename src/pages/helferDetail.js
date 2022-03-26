@@ -113,8 +113,10 @@ export default function HelferDetails({ location }) {
             {" "}
             <InfoLabel>Wie lange?</InfoLabel>
             <InfoText>
-              Deine Arbeit wird in 6 Stunden Schichten eingeteilt. Je nach Paket
-              wirst du ein, zwei oder maximal drei Schichten arbeiten.
+              Wir planen mit Schichten von ca. 6 Stunden. Du kannst wählen, ob
+              du ein, zwei oder maximal drei Schichten arbeiten möchtest. Pro
+              Schicht bekommst du nach getaner Arbeit ein Drittel des bezahlten
+              Ticketpreises erstattet.
             </InfoText>
             <form onSubmit={handleSubmit}>
               <Label htmlFor="small">S</Label>
@@ -172,9 +174,8 @@ export default function HelferDetails({ location }) {
                 <InfoLabel>Wo möchtest du helfen?</InfoLabel>
                 <InfoText>
                   Wir geben unser bestes deine Präferenzen zu berücksichtigen,
-                  allerdings können wir sie dir nicht garantieren. Du wirst aber
-                  rechtzeitig von uns darüber benachrichtigt welchem Bereich du
-                  zugeteilt wurdest.
+                  allerdings können wir sie dir nicht garantieren. Du wirst
+                  rechtzeitig von uns über deine Zuteilung benachrichtigt.
                 </InfoText>
                 <br />
                 <CheckboxGroup>
@@ -338,10 +339,9 @@ export default function HelferDetails({ location }) {
                 </CheckboxGroup>
                 <Seperator />
               </Wo>
-              <InfoLabel>Mit wem?</InfoLabel>
+              <InfoLabel>Hast du einen Helfer:innen Buddy?</InfoLabel>
               <InfoText>
-                Hast du einen Buddy mit dem du zusammen helfen möchtest? Falls
-                Ja, sag uns Vor und Nachnamen.
+                Falls Ja, trage hier seinen uns Vor- und Nachnamen ein.
               </InfoText>
               <input
                 type="buddy"
@@ -366,7 +366,7 @@ export default function HelferDetails({ location }) {
                 </label>
 
                 <CheckboxDecription>
-                  Auf Vergütung verzichten kommt dem Festival zugute :)
+                  Ich möchte, dass meine Vergütung dem Festival zugute kommt.
                 </CheckboxDecription>
               </CheckboxGroup>
               <WeiterWrapper>
