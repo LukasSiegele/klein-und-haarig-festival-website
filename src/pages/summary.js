@@ -307,7 +307,7 @@ export default function Summary({ location }) {
     >
       <Layout>
         <SEO title="Summary" />
-        <ShopTitle info="Schritt 4/4" title="Übersicht & Bezahlen" />
+        <ShopTitle info="Schritt 4/4" title="Zusammenfassung & Bezahlen" />
         <Container>
           <Wrapper>
             <form>
