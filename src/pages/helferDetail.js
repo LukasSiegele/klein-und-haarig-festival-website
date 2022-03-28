@@ -35,9 +35,9 @@ export default function HelferDetails({ location }) {
   const [hEssen, setHEssen] = useState(false)
   const [hBar, setHBar] = useState(false)
   const [hEinlass, setHEinlass] = useState(false)
-  const [hParken, setHParken] = useState(false)
+
   const [hSecuri, setHSecuri] = useState(false)
-  const [hSani, setHSani] = useState(false)
+
   const [hAware, setHAware] = useState(false)
   const [hKlo, setHKlo] = useState(false)
   const [hTech, setHTech] = useState(false)
@@ -73,9 +73,9 @@ export default function HelferDetails({ location }) {
         helferEssen: hEssen,
         helferBar: hBar,
         helferEinlass: hEinlass,
-        helferParken: hParken,
+
         helferSecuri: hSecuri,
-        helferSani: hSani,
+
         helferAwareness: hAware,
         helferKlo: hKlo,
         helferTech: hTech,
@@ -191,7 +191,7 @@ export default function HelferDetails({ location }) {
                     />
                     <div className="b-input"></div>
                   </label>
-                  <Label htmlFor="essen">Essensverkauf</Label>
+                  <Label htmlFor="essen">Foodcourt</Label>
                 </CheckboxGroup>
                 <br />
                 <CheckboxGroup>
@@ -225,22 +225,7 @@ export default function HelferDetails({ location }) {
                   </label>
                   <Label htmlFor="einlass">Einlass</Label>
                 </CheckboxGroup>
-                <br />
-                <CheckboxGroup>
-                  <label class="b-contain">
-                    <input
-                      className="checkBox"
-                      type="checkbox"
-                      name="parken"
-                      checked={hParken}
-                      onChange={e => {
-                        setHParken(e.target.checked)
-                      }}
-                    />
-                    <div className="b-input"></div>
-                  </label>
-                  <Label htmlFor="parken">Parkplatzeinweisung</Label>
-                </CheckboxGroup>
+
                 <br />
                 <CheckboxGroup>
                   <label class="b-contain">
@@ -257,22 +242,7 @@ export default function HelferDetails({ location }) {
                   </label>
                   <Label htmlFor="security">Security</Label>
                 </CheckboxGroup>
-                <br />
-                <CheckboxGroup>
-                  <label class="b-contain">
-                    <input
-                      className="checkBox"
-                      type="checkbox"
-                      name="sani"
-                      checked={hSani}
-                      onChange={e => {
-                        setHSani(e.target.checked)
-                      }}
-                    />
-                    <div className="b-input"></div>
-                  </label>
-                  <Label htmlFor="sani">Sanitäter</Label>
-                </CheckboxGroup>
+
                 <br />
                 <CheckboxGroup>
                   <label class="b-contain">
@@ -303,7 +273,7 @@ export default function HelferDetails({ location }) {
                     />
                     <div className="b-input"></div>
                   </label>
-                  <Label htmlFor="klo">Sanitäre Anlagen</Label>
+                  <Label htmlFor="klo">Hygiene</Label>
                 </CheckboxGroup>
                 <br />
                 <CheckboxGroup>
@@ -335,7 +305,7 @@ export default function HelferDetails({ location }) {
                     />
                     <div className="b-input"></div>
                   </label>
-                  <Label htmlFor="clean">Aufräumdienst</Label>
+                  <Label htmlFor="clean">Entsorgung</Label>
                 </CheckboxGroup>
                 <Seperator />
               </Wo>

@@ -51,9 +51,9 @@ export default function Summary({ location }) {
     helferEssen,
     helferBar,
     helferEinlass,
-    helferParken,
+
     helferSecuri,
-    helferSani,
+
     helferAwareness,
     helferKlo,
     helferTech,
@@ -72,16 +72,16 @@ export default function Summary({ location }) {
   // Helfer
   const [helfer, setHelfer] = useState("")
   const helferArray = [
-    { name: "Essensverkauf", value: helferEssen },
+    { name: "Foodcourt", value: helferEssen },
     { name: "Bar", value: helferBar },
     { name: "Einlass", value: helferEinlass },
-    { name: "Parkplatzeinweisung", value: helferParken },
+
     { name: "Security", value: helferSecuri },
-    { name: "Sani", value: helferSani },
+
     { name: "Awareness", value: helferAwareness },
-    { name: "Sanitäre Anlagen", value: helferKlo },
+    { name: "Hygiene", value: helferKlo },
     { name: "Technik", value: helferTech },
-    { name: "Aufräumdienst", value: helferClean },
+    { name: "Entsorgung", value: helferClean },
   ]
   const [whileCategories, setWhileCategories] = useState([])
   const [isWo, setIsWo] = useState(false)
@@ -129,9 +129,9 @@ export default function Summary({ location }) {
       ESSEN: helferEssen,
       BAR: helferBar,
       EINLASS: helferEinlass,
-      PARK: helferParken,
+
       SECURI: helferSecuri,
-      SANI: helferSani,
+
       AWARE: helferAwareness,
       KLO: helferKlo,
       TECH: helferTech,
