@@ -104,7 +104,7 @@ const Description = styled.h5`
 
 const AccordionWrapper = styled.div`
   margin: 120px 0;
-  @media (max-width: 1300px) {
+  @media (max-width: 800px) {
     margin: 60px 0;
   }
 `

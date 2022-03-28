@@ -30,7 +30,7 @@ export default function Footer() {
               <Link to="/privacy">Datenschutz</Link>
             </Text>
           </Datenschutz>
-          <Text>© 2021</Text>
+          <Text>© 2022</Text>
         </WrapperRight>
       </Content>
     </Wrapper>
