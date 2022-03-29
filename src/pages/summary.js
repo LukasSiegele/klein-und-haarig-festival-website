@@ -106,7 +106,8 @@ export default function Summary({ location }) {
       "audienceLimit:  " + audienceLimit
     )
     addToMailchimp(email, {
-      ID: userID,
+      TICKETID: data.orderID,
+      // UID: userID,
       FNAME: firstName,
       LNAME: lastName,
       PHONE: phone,
@@ -149,7 +150,7 @@ export default function Summary({ location }) {
           .create([
             {
               fields: {
-                ID: userID,
+                UID: userID,
                 Festival: festivalTicket,
                 Auto: autoTicket,
                 Camper: camperTicket,
