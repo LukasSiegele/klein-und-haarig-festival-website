@@ -6,8 +6,8 @@ import ShopTitle from "../components/shopping/ShopTitle"
 
 export default function Tickets({ location }) {
   const { state = {} } = location
-  const { autoParkplatz, camperParkplatz } = {}// state
-  const onlyFriends = "Friend";
+  const { autoParkplatz, camperParkplatz } = {} // state
+  const onlyFriends = "-"
   return (
     <Layout>
       <SEO title="Tickets" />
