@@ -118,26 +118,24 @@ export default function Summary({ location }) {
       VEREIN: vereinsbeitritt,
       NEWSLETTER: newsletter,
       TFESTIVAL: festivalTicket,
-      TAUTO: autoTicket,
+
       TCAMPER: camperTicket,
       BEFORE: helferBefore,
       WHILE: helferWhile,
       AFTER: helferAfter,
-      SMALL: helferSmall,
-      MEDIUM: helferMedium,
-      LARGE: helferLarge,
+      S: helferSmall,
+      M: helferMedium,
+      L: helferLarge,
       ESSEN: helferEssen,
       BAR: helferBar,
       EINLASS: helferEinlass,
-
       SECURI: helferSecuri,
-
       AWARE: helferAwareness,
       KLO: helferKlo,
       TECH: helferTech,
       CLEAN: helferClean,
       BUDDY: helferBuddy,
-      EHRE: helferEhrenamtlich,
+      EHREN: helferEhrenamtlich,
       FRIENDS: onlyFriends,
     })
       .then(({ msg, result }) => {
