@@ -26,5 +26,6 @@ export default function IndexPage() {
 }
 
 const Wrapper = styled.div`
+  z-index: 1;
   background-image: url(${BackgroundTexture});
 `

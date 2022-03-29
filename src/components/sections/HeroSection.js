@@ -3,8 +3,13 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import LeitgrafikImage1 from "../../../public/images/LeitgrafikImage1.png"
-// import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
-// import LeitgrafikImage3 from "../../../public/images/LeitgrafikImage3.png"
+import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
+import LeitgrafikImage3 from "../../../public/images/LeitgrafikImage3.png"
+import LeitgrafikImage4 from "../../../public/images/LeitgrafikImage4.png"
+import LeitgrafikImage5 from "../../../public/images/LeitgrafikImage5.png"
+import LeitgrafikImage6 from "../../../public/images/LeitgrafikImage6.png"
+import LeitgrafikImage7 from "../../../public/images/LeitgrafikImage7.png"
+import LeitgrafikImage8 from "../../../public/images/LeitgrafikImage8.png"
 
 import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
@@ -39,8 +44,13 @@ export default function HeroSection() {
       </InfoGroup>
       <ImageWrapper>
         <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1} />
-        {/* <LeitgrafikPurpleBrush src={LeitgrafikImage2} />
-        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3} /> */}
+        <LeitgrafikPurpleBrush src={LeitgrafikImage2} />
+        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3} />
+        <LeitgrafikBlackLinesFace src={LeitgrafikImage4} />
+        <LeitgrafikRedLines src={LeitgrafikImage5} />
+        <LeitgrafikPurpleSprinkles src={LeitgrafikImage6} />
+        <LeitgrafikYellow1 src={LeitgrafikImage7} />
+        <LeitgrafikYellow2 src={LeitgrafikImage8} />
       </ImageWrapper>
       <TicketWrapper>
         <TicketGroup
@@ -60,6 +70,7 @@ export default function HeroSection() {
 }
 
 const Container = styled.div`
+  overflow: hidden;
   background-color: none;
   width: 100vw;
   height: 100vh;
@@ -78,6 +89,7 @@ const TitleLine = styled.div`
   padding-top: 20px;
   padding-left: 20px;
   justify-content: left;
+  z-index: 2;
 
   @media (max-width: 768px) {
     padding: 20px 50px;
@@ -87,6 +99,8 @@ const TitleLine = styled.div`
     padding: 20px 30px;
   }
 `
+
+// TITLE - Klein und Haarig
 
 const TitleKlein = styled.h1`
   display: block;
@@ -150,36 +164,123 @@ const Place = styled.h3`
 const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
+  overflow: hidden;
 `
 
-// LEITGRAFIK ELEMENTE
+// LEITGRAFIK - Positionierung einzelner Images
 const LeitgrafikRedLineBlackBrush = styled.img`
   position: absolute;
-  right: -100px;
-  top: 10%;
-  width: 35%;
+  right: -5%;
+  top: 5%;
+  width: 25%;
   height: auto;
 
   @media (max-width: 768px) {
-    width: 60%;
+    top: 10%;
+    width: 50%;
     height: auto;
   }
 `
 
 const LeitgrafikPurpleBrush = styled.img`
   position: absolute;
-  top: 200px;
-  width: 20%;
+  top: 60%;
+  left: 55%;
+  width: 17%;
   height: auto;
+
+  @media (max-width: 768px) {
+    top: 70%;
+    width: 35%;
+    height: auto;
+  }
 `
 
 const LeitgrafikBlackLinesRedBrush = styled.img`
-  position: absolute;
-  top: 200px;
-  width: 20%;
+position: absolute;
+top: -12%;
+left: 55%;
+width: 17%;
+height: auto;
+
+@media (max-width: 768px) {
+  top: -9%;
+  left: 55%;
+  width: 35%;
   height: auto;
+}
 `
 
+const LeitgrafikBlackLinesFace = styled.img`
+position: absolute;
+top: 30%;
+left: 10%;
+width: 20%;
+height: auto;
+
+@media (max-width: 768px) {
+  top: 22%;
+  left: -5%;
+  width: 40%;
+  height: auto;
+}
+`
+
+const LeitgrafikRedLines = styled.img`
+position: absolute;
+top: 90%;
+left: 10%;
+width: 15%;
+height: auto;
+
+@media (max-width: 768px) {
+  top: 90%;
+  left: -5%;
+  width: 20%;
+  height: auto;
+}
+`
+
+const LeitgrafikPurpleSprinkles = styled.img`
+position: absolute;
+top: 65%;
+left: 55%;
+width: 30%;
+height: auto;
+
+@media (max-width: 768px) {
+  top: 70%;
+  left: 55%;
+  width: 65%;
+  height: auto;
+}
+`
+
+const LeitgrafikYellow1 = styled.img`
+position: absolute;
+top: -15%;
+left: 8%;
+width: 25%;
+height: auto;
+z-index: 1;
+
+@media (max-width: 768px) {
+}
+`
+
+const LeitgrafikYellow2 = styled.img`
+position: absolute;
+top: -10%;
+left: 35%;
+width: 25%;
+height: auto;
+
+@media (max-width: 768px) {
+}
+`
+
+
+// LOGO - KuH
 const Logo = styled.img`
   width: 300px;
   animation: TicketButtonAnimation 1.8s 0.6s forwards

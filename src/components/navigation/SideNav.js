@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link as SideNavStyledLink} from "gatsby"
 
+import NavBackground from "../../../public/images/SideNavBackground.png"
+
 import LogoSideNav from "../../../public/images/LogoSideNav.svg"
 
 export default function SideNavigation() {
@@ -32,11 +34,15 @@ export default function SideNavigation() {
 // Fixed SideNav on Frontpage
 const SideNavWrapper = styled.div`
     position: fixed;
-    background-color: none;
+    background-image: url(${NavBackground});
     width: 167px;
     height: 100vh;
     z-index: 100;
     border-right: 1px solid;
+
+    @media (max-width: 768px) {
+        display: none;
+      }
 `
 
 const SideNavLogoWrapper = styled.div`
@@ -75,9 +81,14 @@ const SideNavLinks = styled(SideNavStyledLink)`
     font-weight: normal;
     margin-bottom: 12px;
 
-    transition: color 0.4s;
-
-    SideNavLinks:hover {
-        color: red;
+    & > :hover {
+        cursor: pointer;
       }
+
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    :hover {
+      /* transform: translateY(-10px); */
+      /* transform: scale(1.03);
+      cursor: pointer; */
+    }
 `
