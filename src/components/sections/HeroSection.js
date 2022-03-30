@@ -74,18 +74,10 @@ const Container = styled.div`
   background-color: none;
   width: 100vw;
   height: 100vh;
-  margin-left: 167px;
-
-  @media (max-width: 768px) {
-    margin-left: 0px;
-  }
-
-  @media (max-width: 700px) {
-    margin-left: 0px;
-  }
 `
 
 const TitleLine = styled.div`
+  margin-left: 167px;
   padding-top: 20px;
   padding-left: 20px;
   justify-content: left;
@@ -93,10 +85,12 @@ const TitleLine = styled.div`
 
   @media (max-width: 768px) {
     padding: 20px 50px;
+    margin-left: 0px;
   }
 
   @media (max-width: 700px) {
     padding: 20px 30px;
+    margin-left: 0px;
   }
 `
 
@@ -106,59 +100,115 @@ const TitleKlein = styled.h1`
   display: block;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
+  font-size: 120px;
   text-transform: none;
   color: #000000;
+
+  @media (max-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 90px;
+  }
 `
 
 const TitleUndStroke = styled.h1`
   display: inline;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
+  font-size: 120px;
   text-transform: none;
   color: #f6f4ee;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+
+    @media (max-width: 768px) {
+      font-size: 100px;
+    }
+  
+    @media (max-width: 700px) {
+      font-size: 90px;
+    }
 `
 
 const TitleHaarig = styled.h1`
   display: contents;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
+  font-size: 120px;
   text-transform: none;
   color: #000000;
   text-shadow: none;
-`
-
-const InfoGroup = styled.div`
-  left: 150px;
-  top: 340px;
-  width: 500px;
-  height: 100vh;
-  color: yellow;
 
   @media (max-width: 768px) {
-    left: -225px;
+    font-size: 100px;
   }
 
   @media (max-width: 700px) {
-    left: -235px;
+    font-size: 90px;
+  }
+`
+
+const InfoGroup = styled.div`
+  padding-top: 20px;
+  padding-left: 20%;
+  position: absolute;
+  align-items: center;
+  left: 167px;
+  top: 340px;
+  width: 100vw;
+  heigth: 500px;
+
+
+  @media (max-width: 768px) {
+    left: 0px;
   }
 
-  animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  visibility: hidden;
-  /* transform-origin: top left;
-  align-self: center; */
+  @media (max-width: 700px) {
+    left: 0px;
+  }
 `
 
 const Date = styled.h3`
-  border: 1px solid rgba(255, 255, 255);
-  justify-self: end;
-  align-self: center;
+  font-family: "GT-Alpina-Extended-Regular";
+  width: 280px;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 64px;
+  border: 2px solid #000000;
+  padding: 16px;
+  margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+  width: 200px;
+  font-size: 18px;
+  }
+
+  @media (max-width: 700px) {
+    width: 180px;
+    font-size: 16px;
+  }
 `
 
 const Place = styled.h3`
-  align-self: center;
+  font-family: "GT-Alpina-Extended-Regular";
+  width: 220px;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 64px;
+  border: 2px solid #000000;
+  padding: 16px;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    font-size: 18px;
+    }
+  
+    @media (max-width: 700px) {
+      width: 150px;
+      font-size: 16px;
+    }
 `
 
 const ImageWrapper = styled.div`
@@ -185,7 +235,7 @@ const LeitgrafikRedLineBlackBrush = styled.img`
 const LeitgrafikPurpleBrush = styled.img`
   position: absolute;
   top: 60%;
-  left: 55%;
+  left: 40%;
   width: 17%;
   height: auto;
 
@@ -213,13 +263,13 @@ height: auto;
 
 const LeitgrafikBlackLinesFace = styled.img`
 position: absolute;
-top: 30%;
+top: 35%;
 left: 10%;
 width: 20%;
 height: auto;
 
 @media (max-width: 768px) {
-  top: 22%;
+  top: 55%;
   left: -5%;
   width: 40%;
   height: auto;
@@ -309,8 +359,11 @@ const Logo = styled.img`
 `
 
 const TicketWrapper = styled.div`
-  right: 20px;
-  top: 20px;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  scale: 1.2;
+  transform: translate(-50%, -50%);
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
     /* transform: translateY(-10px); */
@@ -321,8 +374,7 @@ const TicketWrapper = styled.div`
 
 const TicketGroup = styled(Link)`
   animation: TicketButtonAnimation 2s 3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
   background-image: none;
   width: 320px;
   height: 56px;
