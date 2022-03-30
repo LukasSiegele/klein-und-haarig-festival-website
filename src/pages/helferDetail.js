@@ -44,7 +44,7 @@ export default function HelferDetails({ location }) {
   const [hClean, setHClean] = useState(false)
   const [hBuddy, setHBuddy] = useState("")
   const [hEhrenamtlich, setHEhrenamtlich] = useState(false)
-  const [buttonLabel, setButtonLabel] = useState("Zur Zusammenfassung")
+  const [buttonLabel, setButtonLabel] = useState("Zur Zusammenfassung ➞")
   const [isWhile, setIsWhile] = useState(false)
 
   const handleSubmit = e => {

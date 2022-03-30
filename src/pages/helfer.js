@@ -60,9 +60,9 @@ export default function Helfer({ location }) {
   // Weiter / Überspringen Button
   useEffect(() => {
     if (hBefore === true || hWhile === true || hAfter === true) {
-      return setButtonLabel("Weiter")
+      return setButtonLabel("Weiter ➞")
     } else {
-      return setButtonLabel("Überspringen")
+      return setButtonLabel("Überspringen ⇢")
     }
   }, [hBefore, hWhile, hAfter])
 

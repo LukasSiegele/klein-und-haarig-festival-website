@@ -177,7 +177,7 @@ export default function Form(props) {
             </CheckboxDecription>
           </CheckboxGroup>
           <WeiterWrapper>
-            <FormButton typ="submit" label="Weiter" />
+            <FormButton typ="submit" label="Weiter ➞" />
           </WeiterWrapper>
         </form>
       </Wrapper>
@@ -198,7 +198,7 @@ const Wrapper = styled.div`
   margin: 0 0 200px;
   padding: 60px 40px;
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 20px;
   }
 `
 

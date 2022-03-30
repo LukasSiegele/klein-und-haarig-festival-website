@@ -146,7 +146,7 @@ maximale Fahrzeuggröße 6 x 2.5 m"
                 onlyFriends: props.onlyFriends,
               }}
             >
-              <FormButton label="Weiter" color="black" />
+              <FormButton label="Weiter ➞" color="black" />
             </Link>
           </WeiterWrapper>
         </ShoppingCartWrapper>

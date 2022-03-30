@@ -9,6 +9,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import Airtable from "airtable"
 import useAudienceCount from "../helper/useAudienceCount"
 import uniqid from "uniqid"
+import { uuid } from "uuidv4"
 import SubmitButton from "/static/images/Submit-Button.jpg"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import PayPalButton from "../components/PayPalButton"
@@ -95,7 +96,7 @@ export default function Summary({ location }) {
   const audienceLimit = 200
 
   // Unique ID
-  const userID = uniqid()
+  const userID = uniqid.process()
   console.log("User ID" + userID)
 
   // POST TO — AIRTABLE
@@ -263,7 +264,7 @@ export default function Summary({ location }) {
           ticket: "Festival Ticket 102 €*",
         },
         {
-          ticket: "Camper Stellplatz 10 €",
+          ticket: "Camper Stellplatz 20 €",
         },
       ])
       setCamperTicket("Ja")
