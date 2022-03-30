@@ -87,6 +87,7 @@ export const PageHeader = styled.h3`
 export const PageInfo = styled.h4`
   color: black;
   text-transform: uppercase;
+  font-size: 0.8em;
 `
 
 export const HeaderText = styled.h3`

@@ -46,10 +46,12 @@ const CookieGroup = styled.div`
 
 const CookieText = styled.h4`
   opacity: 0.5;
+  color: white;
   /* font-size: 14px; */
 `
 
 const InlineLink = styled.a`
   padding-bottom: 2px;
+  color: white;
   border-bottom: 1px solid white;
 `

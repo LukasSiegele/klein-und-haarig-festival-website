@@ -209,7 +209,7 @@ h1 {
 }
 
 h2 {
-  font-size: 5em;
+  font-size: 2.8em;
   line-height: 1.25em;
   color: white;
 }
@@ -250,7 +250,7 @@ p {
 
 @media (max-width: 700px) {
   h4 {
-    font-size: 0.75em;
+    font-size: 0.9em;
     /* line-height: 1em; */
   }
   h3 {
@@ -258,7 +258,7 @@ p {
     line-height: 1em;
   }
   h2 {
-    font-size: 3em;
+    font-size: 2.6em;
     line-height: 1.25em;
   }
   h1 {
