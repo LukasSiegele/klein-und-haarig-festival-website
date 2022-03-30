@@ -59,7 +59,7 @@ export default function Failed() {
                 </Description>
                 <ButtonSection>
                   <Link to="/">
-                    <FormButton label="Zurück zur Startseite"></FormButton>
+                    <FormButton label="Zurück zur Startseite ➞"></FormButton>
                   </Link>
                 </ButtonSection>
               </TextWrapper>

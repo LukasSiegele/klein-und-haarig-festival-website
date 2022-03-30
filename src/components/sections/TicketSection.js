@@ -19,7 +19,7 @@ export default function TicketSection(props) {
   const [isAuto, setIsAuto] = useState(false)
   const autoPrice = 5
   const [isCamper, setIsCamper] = useState(false)
-  const camperPrice = 10
+  const camperPrice = 20
 
   const [summary, setSummary] = useState(festivalPrice + serviceFees)
 
@@ -146,7 +146,7 @@ maximale Fahrzeuggröße 6 x 2.5 m"
                 onlyFriends: props.onlyFriends,
               }}
             >
-              <FormButton label="Weiter" color="black" />
+              <FormButton label="Weiter ➞" color="black" />
             </Link>
           </WeiterWrapper>
         </ShoppingCartWrapper>
