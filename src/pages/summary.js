@@ -20,6 +20,7 @@ import {
   Note,
   TextSmall,
 } from "../components/styles/TextStyles"
+import useTicketRequest from "../helper/useTicketRequest"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -96,15 +97,46 @@ export default function Summary({ location }) {
 
   // Unique ID
   const userID = uniqid()
-  console.log("User ID" + userID)
+  console.log("User ID " + userID)
 
   // POST TO — AIRTABLE
   const paypalSuccess = data => {
+    airtableHandler(data)
+    
     console.log(data)
     console.log(
       "audienceCount:  " + audienceCount,
       "audienceLimit:  " + audienceLimit
     )
+    
+  }
+
+  const airtableHandler = (data) => {
+    table
+    .create([
+      {
+        fields: {
+          ID: userID,
+          Festival: festivalTicket,
+          Auto: autoTicket,
+          Camper: camperTicket,
+          Aufbau: helferBefore,
+          Waehrend: helferWhile,
+          Abbau: helferAfter,
+          OrderID: data.orderID,
+          Email: email,
+        },
+      },
+    ])
+    .then(() => {
+      // const ticketID = useTicketRequest(data.orderID)
+      // console.log(ticketID);
+      //navigate("/submitted")
+      mailChimpSubmission();
+    })
+  }
+
+  const mailChimpSubmission = () => {
     addToMailchimp(email, {
       TICKETID: userID,
       // UID: userID,
@@ -146,25 +178,7 @@ export default function Summary({ location }) {
           throw msg
         }
         // alert(msg)
-        table
-          .create([
-            {
-              fields: {
-                UID: userID,
-                Festival: festivalTicket,
-                Auto: autoTicket,
-                Camper: camperTicket,
-                Aufbau: helferBefore,
-                Waehrend: helferWhile,
-                Abbau: helferAfter,
-                OrderID: data.orderID,
-                Email: email,
-              },
-            },
-          ])
-          .then(() => {
-            navigate("/submitted")
-          })
+        
       })
       .catch(err => {
         console.log(err)

@@ -134,7 +134,7 @@ const InfoGroup = styled.div`
   top: 340px;
   width: 500px;
   height: 100vh;
-  color: yellow;
+  color: black;
 
   @media (max-width: 768px) {
     left: -225px;
@@ -144,11 +144,6 @@ const InfoGroup = styled.div`
     left: -235px;
   }
 
-  animation: TextAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  visibility: hidden;
-  /* transform-origin: top left;
-  align-self: center; */
 `
 
 const Date = styled.h3`
