@@ -256,18 +256,7 @@ export default function Summary({ location }) {
           ticket: "Festival Ticket 102 €*",
         },
       ])
-    } else if (sumTickets === 80) {
-      setProducts(products => [
-        ...products,
-        {
-          ticket: "Festival Ticket 75 €*",
-        },
-        {
-          ticket: "Auto Parkplatz 5 €",
-        },
-      ])
-      setAutoTicket("Ja")
-    } else if (sumTickets === 112) {
+    } else if (sumTickets === 122) {
       setProducts(products => [
         ...products,
         {
@@ -277,21 +266,6 @@ export default function Summary({ location }) {
           ticket: "Camper Stellplatz 10 €",
         },
       ])
-      setCamperTicket("Ja")
-    } else if (sumTickets === 90) {
-      setProducts(products => [
-        ...products,
-        {
-          ticket: "Festival Ticket 75 €*",
-        },
-        {
-          ticket: "Auto Parkplatz 5 €",
-        },
-        {
-          ticket: "Camper Stellplatz 10 €",
-        },
-      ])
-      setAutoTicket("Ja")
       setCamperTicket("Ja")
     }
   }, [sumTickets])

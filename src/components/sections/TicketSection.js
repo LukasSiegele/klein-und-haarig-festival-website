@@ -19,7 +19,7 @@ export default function TicketSection(props) {
   const [isAuto, setIsAuto] = useState(false)
   const autoPrice = 5
   const [isCamper, setIsCamper] = useState(false)
-  const camperPrice = 10
+  const camperPrice = 20
 
   const [summary, setSummary] = useState(festivalPrice + serviceFees)
 
