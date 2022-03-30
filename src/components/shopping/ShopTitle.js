@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { PageHeader, PageInfo } from "../styles/TextStyles"
 import LogoSVG from "../../../static/images/LogoSideNav.svg"
 import { Link } from "gatsby"
+import Zeplin from "../../../static/images/SuccessZeppelin.png"
 
 import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
 
@@ -15,6 +16,7 @@ export default function ShopTitle(props) {
       <Content>
         <Info>{props.info}</Info>
         <Title>{props.title}</Title>
+        <ZeplinGrafik />
       </Content>
     </Wrapper>
   )
@@ -26,6 +28,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   justify-content: start;
+  position: relative;
   @media (max-width: 800px) {
     padding: 20px;
   }
@@ -51,6 +54,17 @@ const Content = styled.div`
   display: grid;
   justify-items: start;
   margin-top: 8px;
+`
+
+const ZeplinGrafik = styled.div`
+  width: 372px;
+  height: 308px;
+  background-image: url(${Zeplin});
+  background-size: cover;
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  z-index: 100;
 `
 
 const Info = styled(PageInfo)`
