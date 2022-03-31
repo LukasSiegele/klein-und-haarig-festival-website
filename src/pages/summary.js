@@ -102,38 +102,65 @@ export default function Summary({ location }) {
   // POST TO — AIRTABLE
   const paypalSuccess = data => {
     airtableHandler(data)
-    
+
     console.log(data)
     console.log(
       "audienceCount:  " + audienceCount,
       "audienceLimit:  " + audienceLimit
     )
-    
   }
 
-  const airtableHandler = (data) => {
+  const airtableHandler = data => {
     table
-    .create([
-      {
-        fields: {
-          ID: userID,
-          Festival: festivalTicket,
-          Auto: autoTicket,
-          Camper: camperTicket,
-          Aufbau: helferBefore,
-          Waehrend: helferWhile,
-          Abbau: helferAfter,
-          OrderID: data.orderID,
-          Email: email,
+      .create([
+        {
+          fields: {
+            TicketID: userID,
+
+            Vorname: firstName,
+            Nachname: lastName,
+            Email: email,
+
+            Festival: festivalTicket,
+            Camper: camperTicket,
+
+            Aufbau: helferBefore,
+            Waehrend: helferWhile,
+            Abbau: helferAfter,
+            S: helferSmall,
+            M: helferMedium,
+            L: helferLarge,
+            Food: helferEssen,
+            Bar: helferBar,
+            Einlass: helferEinlass,
+            Security: helferSecuri,
+            Awareness: helferAwareness,
+            Hygiene: helferKlo,
+            Technik: helferTech,
+            Entsorgung: helferClean,
+            Buddy: helferBuddy,
+            Ehrenamtlich: helferEhrenamtlich,
+
+            Friend: onlyFriends,
+            OrderID: data.orderID,
+
+            Tel: phone,
+            Straße: street,
+            HausNr: houseNumber,
+            PLZ: postcode,
+            Stadt: city,
+            Datenspeicherung: datenspeicherung,
+            Vereinsbeitritt: vereinsbeitritt,
+            Newsletter: newsletter,
+          },
         },
-      },
-    ])
-    .then(() => {
-      // const ticketID = useTicketRequest(data.orderID)
-      // console.log(ticketID);
-      //navigate("/submitted")
-      mailChimpSubmission();
-    })
+      ])
+      .then(() => {
+        // const ticketID = useTicketRequest(data.orderID)
+        // console.log(ticketID);
+        //navigate("/submitted")
+        mailChimpSubmission()
+      })
   }
 
   const mailChimpSubmission = () => {
@@ -178,7 +205,6 @@ export default function Summary({ location }) {
           throw msg
         }
         // alert(msg)
-        
       })
       .catch(err => {
         console.log(err)
