@@ -30,6 +30,7 @@ const base = new Airtable({
 const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
   const { state = {} } = location
   const {
     sumTickets,
@@ -99,7 +100,7 @@ export default function Summary({ location }) {
   // Unique ID
   const userID = uniqid()
   console.log("User ID " + userID)
-
+  console.log(process.env.GATSBY_PAYPAL_CLIENT_ID_SB)
   // POST TO — AIRTABLE
   const paypalSuccess = data => {
     airtableHandler(data)
@@ -317,13 +318,7 @@ export default function Summary({ location }) {
   }, [sumTickets])
 
   return (
-    <PayPalScriptProvider
-      options={{
-        "client-id": "test",
-        components: "buttons",
-        currency: "EUR",
-      }}
-    >
+    
       <Layout>
         <SEO title="Summary" />
         <ShopTitle info="Schritt 4/4" title="Zusammenfassung & Bezahlen" />
@@ -442,12 +437,21 @@ export default function Summary({ location }) {
                 <Group>
                   <Value>Bezahlen</Value>
                   <PayPalGroup>
+                  <PayPalScriptProvider
+                        options={{
+                          "client-id": paypalCLientID,
+                          // components: "buttons",
+                          currency: "EUR",
+                        }}
+                      >
                     <PayPalButton
                       // currency={currency}
                       showSpinner={false}
                       amount={sumTickets}
+                      currency={"EUR"}
                       onSuccess={paypalSuccess}
                     />
+                    </PayPalScriptProvider>
                   </PayPalGroup>
                 </Group>
               </Section>
@@ -456,7 +460,7 @@ export default function Summary({ location }) {
           </Wrapper>
         </Container>
       </Layout>
-    </PayPalScriptProvider>
+    
   )
 }
 
