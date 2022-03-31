@@ -7,12 +7,10 @@ export default function Footer() {
     <Wrapper>
       <Content>
         <WrapperLeft>
-          <BuntePlatte>Bunte Platte e.V.</BuntePlatte>
-          <Description>
-            — Miteinander Vielfalt, Offenheit, Toleranz und Freiheit feiern.
-            Diese Philosophie von Techno zu seiner Gründungszeit vereint uns und
-            treibt uns an.
-          </Description>
+          <BuntePlatte>© Bunte Platte e.V.</BuntePlatte>
+          <BuntePlatte>
+            — eingetragener Verein zur Förderung elektronischer Musikkultur.
+          </BuntePlatte>
         </WrapperLeft>
         <WrapperRight>
           <Kontakt>
@@ -41,7 +39,7 @@ const Wrapper = styled.div`
   background-color: black;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 40px 50px;
-  display: grid;
+  /* display: grid; */
 
   @media (max-width: 800px) {
     padding: 40px 20px 50px;
@@ -58,7 +56,7 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: white;
-  max-width: 1440px;
+  /* max-width: 1440px; */
 
   justify-self: center;
   @media (max-width: 800px) {
@@ -90,7 +88,7 @@ const Text = styled.h5`
 
 const WrapperLeft = styled.div`
   justify-self: start;
-  max-width: 600px;
+  max-width: 500px;
   * {
     opacity: 0.5;
   }

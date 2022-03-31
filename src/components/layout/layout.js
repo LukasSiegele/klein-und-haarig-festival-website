@@ -1,10 +1,11 @@
 import React from "react"
-// import { GlobalStyle } from "../styles/GlobalStyle"
-import "./layout.css"
+import { Headline, SubheaderSmall, Note } from "../styles/TextStyles"
+
 import CookieConsent from "react-cookie-consent"
 import Footer from "../footer/footer"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import "../layout/layout.css"
 
 export default function Layout({ children }) {
   return (
@@ -13,10 +14,11 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <CookieGroup>
         <CookieConsent
-          buttonText="Ja, passt."
+          buttonText="Ja, passt"
           buttonStyle={{
             color: "black",
             background: "white",
+            borderRadius: "3px",
           }}
           style={{
             background: "black",
@@ -25,7 +27,7 @@ export default function Layout({ children }) {
         >
           <CookieText>
             Diese Website verwendet Cookies, um dir das beste Erlebnis zu
-            bieten. Wenn du weiterhin auf unserer Seite surfst, stimmst du
+            bieten. Wenn du weiterhin auf unserer Seite bleibst, stimmst du
             unserer Cookie-Nutzung sowie unserer Datenschutzerklärung zu.{" "}
             <InlineLink>
               {" "}
@@ -39,14 +41,14 @@ export default function Layout({ children }) {
   )
 }
 
-const CookieGroup = styled.div`
-  display: grid;
-  justify-items: center;
-`
+const CookieGroup = styled.div``
 
-const CookieText = styled.h4`
+const CookieText = styled(Note)`
   opacity: 0.5;
   color: white;
+  font-weight: 500;
+  max-width: 900px;
+
   /* font-size: 14px; */
 `
 

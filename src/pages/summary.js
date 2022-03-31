@@ -9,6 +9,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import Airtable from "airtable"
 import useAudienceCount from "../helper/useAudienceCount"
 import uniqid from "uniqid"
+
 import SubmitButton from "/static/images/Submit-Button.jpg"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import PayPalButton from "../components/PayPalButton"
@@ -20,7 +21,7 @@ import {
   Note,
   TextSmall,
 } from "../components/styles/TextStyles"
-import useTicketRequest from "../helper/useTicketRequest"
+import getTicketID from "../helper/useTicketRequest"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -109,20 +110,20 @@ export default function Summary({ location }) {
       "audienceLimit:  " + audienceLimit
     )
   }
+  console.log("onlyFriends: " + onlyFriends)
 
   const airtableHandler = data => {
     table
       .create([
         {
           fields: {
-            TicketID: userID,
 
             Vorname: firstName,
             Nachname: lastName,
             Email: email,
 
-            Festival: festivalTicket,
-            Camper: camperTicket,
+            Festival: festivalTicket === "Ja" ? true : false,
+            Camper: camperTicket === "Ja" ? true : false,
 
             Aufbau: helferBefore,
             Waehrend: helferWhile,
@@ -141,26 +142,31 @@ export default function Summary({ location }) {
             Buddy: helferBuddy,
             Ehrenamtlich: helferEhrenamtlich,
 
-            Friend: onlyFriends,
+            Friend: onlyFriends ? true : false,
             OrderID: data.orderID,
 
             Tel: phone,
             Straße: street,
-            HausNr: houseNumber,
-            PLZ: postcode,
+            HausNr: parseInt(houseNumber),
+            PLZ: parseInt(postcode),
             Stadt: city,
             Datenspeicherung: datenspeicherung,
             Vereinsbeitritt: vereinsbeitritt,
             Newsletter: newsletter,
           },
         },
-      ])
-      .then(() => {
-        // const ticketID = useTicketRequest(data.orderID)
-        // console.log(ticketID);
-        //navigate("/submitted")
-        mailChimpSubmission()
-      })
+      
+    ])
+    .then(() => {
+      
+      base('Teilnehmer 2021').find(data.orderID, function(err, record) {
+        if (err) { console.error(err); return; }
+        console.log('Retrieved', record.id);
+    });
+      //console.log(ticketID);
+      //navigate("/submitted")
+      mailChimpSubmission();
+    })
   }
 
   const mailChimpSubmission = () => {
@@ -296,42 +302,16 @@ export default function Summary({ location }) {
           ticket: "Festival Ticket 102 €*",
         },
       ])
-    } else if (sumTickets === 80) {
-      setProducts(products => [
-        ...products,
-        {
-          ticket: "Festival Ticket 75 €*",
-        },
-        {
-          ticket: "Auto Parkplatz 5 €",
-        },
-      ])
-      setAutoTicket("Ja")
-    } else if (sumTickets === 112) {
+    } else if (sumTickets === 122) {
       setProducts(products => [
         ...products,
         {
           ticket: "Festival Ticket 102 €*",
         },
         {
-          ticket: "Camper Stellplatz 10 €",
+          ticket: "Camper Stellplatz 20 €",
         },
       ])
-      setCamperTicket("Ja")
-    } else if (sumTickets === 90) {
-      setProducts(products => [
-        ...products,
-        {
-          ticket: "Festival Ticket 75 €*",
-        },
-        {
-          ticket: "Auto Parkplatz 5 €",
-        },
-        {
-          ticket: "Camper Stellplatz 10 €",
-        },
-      ])
-      setAutoTicket("Ja")
       setCamperTicket("Ja")
     }
   }, [sumTickets])
@@ -359,7 +339,7 @@ export default function Summary({ location }) {
                       <Info>{product.ticket}</Info>
                     ))}
                     <InfoSmall>
-                      *10 € Probemitgliedschaft, 90 € Unkosten, 2 € Paypal
+                      *10 € Probemitgliedschaft, 90 € Unkosten, 2 € Paypal
                       Servicegebühren
                     </InfoSmall>
                   </InfoGroup>
