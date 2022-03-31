@@ -110,20 +110,20 @@ export default function Summary({ location }) {
       "audienceLimit:  " + audienceLimit
     )
   }
+  console.log("onlyFriends: " + onlyFriends)
 
   const airtableHandler = data => {
     table
       .create([
         {
           fields: {
-            TicketID: userID,
 
             Vorname: firstName,
             Nachname: lastName,
             Email: email,
 
-            Festival: festivalTicket,
-            Camper: camperTicket,
+            Festival: festivalTicket === "Ja" ? true : false,
+            Camper: camperTicket === "Ja" ? true : false,
 
             Aufbau: helferBefore,
             Waehrend: helferWhile,
@@ -142,13 +142,13 @@ export default function Summary({ location }) {
             Buddy: helferBuddy,
             Ehrenamtlich: helferEhrenamtlich,
 
-            Friend: onlyFriends,
+            Friend: onlyFriends ? true : false,
             OrderID: data.orderID,
 
             Tel: phone,
             Straße: street,
-            HausNr: houseNumber,
-            PLZ: postcode,
+            HausNr: parseInt(houseNumber),
+            PLZ: parseInt(postcode),
             Stadt: city,
             Datenspeicherung: datenspeicherung,
             Vereinsbeitritt: vereinsbeitritt,
