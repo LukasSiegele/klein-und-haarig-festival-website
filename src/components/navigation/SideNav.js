@@ -62,6 +62,7 @@ const SideNavLogo = styled.div`
 
 // Div of Links in SideNav
 const SideNavLinkGroup = styled.div`
+    display: none;
     float: left;
     margin-top: 25%;
     margin-left: 15%;
