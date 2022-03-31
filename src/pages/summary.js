@@ -102,7 +102,7 @@ export default function Summary({ location }) {
   console.log("User ID " + userID)
   console.log(process.env.GATSBY_PAYPAL_CLIENT_ID_SB)
   // POST TO — AIRTABLE
-  const paypalSuccess = data => {
+  const paypalSuccess = (data) => {
     airtableHandler(data)
 
     console.log(data)

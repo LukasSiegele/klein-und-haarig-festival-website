@@ -12,7 +12,7 @@ const currency = "USD";
 const style = {"layout":"vertical"};
 
 // Custom component to wrap the PayPalButtons and handle currency changes
-const PayPalButton = ({ currency, showSpinner }) => {
+const PayPalButton = ({ currency, showSpinner, amount, onSuccess }) => {
     // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
     // This is the main reason to wrap the PayPalButtons in a new component
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
@@ -26,6 +26,10 @@ const PayPalButton = ({ currency, showSpinner }) => {
             },
         });
     }, [currency, showSpinner]);
+
+    const approveHandler = (data) => {
+      onSuccess(data);
+    }
 
 
     return (<>
@@ -56,6 +60,7 @@ const PayPalButton = ({ currency, showSpinner }) => {
                     return actions.order.capture().then(function () {
                         // Your code here after capture the order
                         console.log(data)
+                        approveHandler(data)
                     });
                 }}
             />
