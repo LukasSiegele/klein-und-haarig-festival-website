@@ -155,7 +155,7 @@ export default function Summary({ location }) {
             Newsletter: newsletter,
           },
         },
-      },
+      
     ])
     .then(() => {
       
