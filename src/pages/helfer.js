@@ -78,7 +78,7 @@ export default function Helfer({ location }) {
   return (
     <Layout>
       <SEO title="Helfer" />
-      <ShopTitle info="Schritt 3/4" title="Wir suchen Helfer!" />
+      <ShopTitle info="Schritt 3/4" title="Wir suchen Helfer:innen!" />
       <Container>
         <Wrapper>
           <Left>

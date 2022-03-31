@@ -91,22 +91,16 @@ export default function HelferDetails({ location }) {
   return (
     <Layout>
       <SEO title="Helfer" />
-      <ShopTitle info="Schritt 3.5/4" title="Wir suchen Helfer!" />
+      <ShopTitle info="Schritt 3.5/4" title="Wir suchen Helfer:innen!" />
       <Container>
         <Wrapper>
           <Left>
-            <Header>Super, dass du uns helfen willst!</Header>
+            <Header>Super, dass du uns helfen möchtest!</Header>
             <HelperDescription>
-              <ol>
-                <li>
-                  Mit ein paar Präferenzen können wir dich besser einer Schicht
-                  zuordnen.
-                </li>
-                <li>Keine Garantie, Präferenzen.</li>
-                <li>
-                  Wir geben unser bestes deine Präferenzen zu berücksichtigen.
-                </li>
-              </ol>
+              Hast du schon genaue Vorstellungen? <br />
+              Dann gib uns Details und wir können dich besser einer Schicht
+              zuordnen. Wir geben unser Bestes deine Präferenzen zu
+              berücksichtigen.
             </HelperDescription>
           </Left>
           <Right>

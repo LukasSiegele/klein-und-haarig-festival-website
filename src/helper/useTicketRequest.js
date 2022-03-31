@@ -5,17 +5,18 @@ const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
 }).base(process.env.GATSBY_AIRTABLE_BASE)
 
-export default function useAudienceCount() {
-  const [audienceCount, setAudienceCount] = useState(0)
+export default function useTicketRequest(orderID) {
+  const [result, setResult] = useState(null)
 
   useEffect(() => {
     base("Teilnehmer 2022")
-      .select({ view: "Master" })
+      .select({ view: "Master", filterByFormula: `{OrderID} = "${orderID}"` })
       .eachPage((records, fetchNextPage) => {
-        setAudienceCount(audienceCount => audienceCount + records.length)
+        //setAudienceCount(audienceCount => audienceCount + records.length)
+        console.log(records)
+        result = records
         fetchNextPage()
       })
   }, [])
-
-  return audienceCount
+  return result
 }

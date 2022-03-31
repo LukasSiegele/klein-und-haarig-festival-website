@@ -57,14 +57,14 @@ const Content = styled.div`
 `
 
 const ZeplinGrafik = styled.div`
-  width: 372px;
+  /* width: 372px;
   height: 308px;
   background-image: url(${Zeplin});
   background-size: cover;
   position: fixed;
   left: 20px;
   top: 100px;
-  z-index: 100;
+  z-index: 100; */
 `
 
 const Info = styled(PageInfo)`

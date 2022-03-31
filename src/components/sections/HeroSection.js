@@ -157,9 +157,9 @@ const InfoGroup = styled.div`
   align-items: center;
   left: 167px;
   top: 340px;
-  width: 100vw;
-  heigth: 500px;
-
+  width: 500px;
+  height: 100vh;
+  color: black;
 
   @media (max-width: 768px) {
     left: 0px;

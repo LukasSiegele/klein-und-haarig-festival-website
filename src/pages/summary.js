@@ -9,7 +9,6 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import Airtable from "airtable"
 import useAudienceCount from "../helper/useAudienceCount"
 import uniqid from "uniqid"
-import { uuid } from "uuidv4"
 import SubmitButton from "/static/images/Submit-Button.jpg"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import PayPalButton from "../components/PayPalButton"
@@ -21,6 +20,7 @@ import {
   Note,
   TextSmall,
 } from "../components/styles/TextStyles"
+import useTicketRequest from "../helper/useTicketRequest"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -96,16 +96,74 @@ export default function Summary({ location }) {
   const audienceLimit = 200
 
   // Unique ID
-  const userID = uniqid.process()
-  console.log("User ID" + userID)
+  const userID = uniqid()
+  console.log("User ID " + userID)
 
   // POST TO — AIRTABLE
   const paypalSuccess = data => {
+    airtableHandler(data)
+
     console.log(data)
     console.log(
       "audienceCount:  " + audienceCount,
       "audienceLimit:  " + audienceLimit
     )
+  }
+
+  const airtableHandler = data => {
+    table
+      .create([
+        {
+          fields: {
+            TicketID: userID,
+
+            Vorname: firstName,
+            Nachname: lastName,
+            Email: email,
+
+            Festival: festivalTicket,
+            Camper: camperTicket,
+
+            Aufbau: helferBefore,
+            Waehrend: helferWhile,
+            Abbau: helferAfter,
+            S: helferSmall,
+            M: helferMedium,
+            L: helferLarge,
+            Food: helferEssen,
+            Bar: helferBar,
+            Einlass: helferEinlass,
+            Security: helferSecuri,
+            Awareness: helferAwareness,
+            Hygiene: helferKlo,
+            Technik: helferTech,
+            Entsorgung: helferClean,
+            Buddy: helferBuddy,
+            Ehrenamtlich: helferEhrenamtlich,
+
+            Friend: onlyFriends,
+            OrderID: data.orderID,
+
+            Tel: phone,
+            Straße: street,
+            HausNr: houseNumber,
+            PLZ: postcode,
+            Stadt: city,
+            Datenspeicherung: datenspeicherung,
+            Vereinsbeitritt: vereinsbeitritt,
+            Newsletter: newsletter,
+          },
+        },
+      ])
+      .then(() => {
+        // const ticketID = useTicketRequest(data.orderID)
+        // console.log(ticketID);
+        //navigate("/submitted")
+        mailChimpSubmission()
+      })
+  }
+
+  const mailChimpSubmission = () => {
     addToMailchimp(email, {
       TICKETID: userID,
       // UID: userID,
@@ -147,25 +205,6 @@ export default function Summary({ location }) {
           throw msg
         }
         // alert(msg)
-        table
-          .create([
-            {
-              fields: {
-                UID: userID,
-                Festival: festivalTicket,
-                Auto: autoTicket,
-                Camper: camperTicket,
-                Aufbau: helferBefore,
-                Waehrend: helferWhile,
-                Abbau: helferAfter,
-                OrderID: data.orderID,
-                Email: email,
-              },
-            },
-          ])
-          .then(() => {
-            navigate("/submitted")
-          })
       })
       .catch(err => {
         console.log(err)
@@ -257,16 +296,42 @@ export default function Summary({ location }) {
           ticket: "Festival Ticket 102 €*",
         },
       ])
-    } else if (sumTickets === 122) {
+    } else if (sumTickets === 80) {
+      setProducts(products => [
+        ...products,
+        {
+          ticket: "Festival Ticket 75 €*",
+        },
+        {
+          ticket: "Auto Parkplatz 5 €",
+        },
+      ])
+      setAutoTicket("Ja")
+    } else if (sumTickets === 112) {
       setProducts(products => [
         ...products,
         {
           ticket: "Festival Ticket 102 €*",
         },
         {
-          ticket: "Camper Stellplatz 20 €",
+          ticket: "Camper Stellplatz 10 €",
         },
       ])
+      setCamperTicket("Ja")
+    } else if (sumTickets === 90) {
+      setProducts(products => [
+        ...products,
+        {
+          ticket: "Festival Ticket 75 €*",
+        },
+        {
+          ticket: "Auto Parkplatz 5 €",
+        },
+        {
+          ticket: "Camper Stellplatz 10 €",
+        },
+      ])
+      setAutoTicket("Ja")
       setCamperTicket("Ja")
     }
   }, [sumTickets])

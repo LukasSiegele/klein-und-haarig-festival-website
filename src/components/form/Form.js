@@ -16,9 +16,10 @@ export default function Form(props) {
   const [vereinsbeitritt, setVereinsbeitritt] = useState(false)
   const [datenspeicherung, setDatenspeicherung] = useState(false)
   const [newsletter, setNewsletter] = useState(false)
-
+  console.log("Form props: ", props)
   const handleSubmit = e => {
     e.preventDefault()
+    console.log()
     navigate("/helfer", {
       state: {
         sumTickets: props.sumTickets,
