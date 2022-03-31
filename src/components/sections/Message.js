@@ -7,7 +7,7 @@ export default function Message() {
       <Wrapper>
         <MessageText>
           Ein kleines <Liebe>Festival</Liebe> <Break /> 
-          im Schwarzwald organisiert von Freunden aus Liebe <Break /> 
+          im Schwarzwald, organisiert von Freunden aus Liebe <Break /> 
           zur <Liebe>elektronischen Musik</Liebe> und
           <Liebe> Natur</Liebe>.
         </MessageText>
@@ -35,6 +35,7 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 167px 0;
+    margin-bottom: 400px;
   }
 `
 
@@ -79,6 +80,8 @@ const Icon = styled.div`
 `
 
 const LinkText = styled.h4`
+  color: black;
+  text-decoration: none;
 `
 
 const Liebe = styled.span`

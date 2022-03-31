@@ -22,7 +22,7 @@ const Ticker = () => {
         <RTicker speed={6} move={isMoving} >
         {({ index }) => (
             <Wrapper>
-                <TickerText className="tickerText" >Ticketverkauf startet am 15. März!</TickerText>
+                <TickerText className="tickerText" >Ticketverkauf startet am 03. April!</TickerText>
                 <Icon src="/icons/banner-star.svg" ></Icon>
             </Wrapper>
         )}
@@ -43,10 +43,11 @@ const Wrapper = styled.div`
 `
 
 const TickerWrapper = styled.div`
+    z-index: 199;
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     background-color: #000
 `
 

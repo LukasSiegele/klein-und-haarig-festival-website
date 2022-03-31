@@ -10,6 +10,7 @@ import LeitgrafikImage5 from "../../../public/images/LeitgrafikImage5.png"
 import LeitgrafikImage6 from "../../../public/images/LeitgrafikImage6.png"
 import LeitgrafikImage7 from "../../../public/images/LeitgrafikImage7.png"
 import LeitgrafikImage8 from "../../../public/images/LeitgrafikImage8.png"
+import LeitgrafikImage9 from "../../../public/images/LeitgrafikImage9.png"
 
 import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
@@ -37,21 +38,12 @@ export default function HeroSection() {
           {" "}
           und <TitleHaarig>Haarig </TitleHaarig>{" "}
         </TitleUndStroke>
+        <TitleJahr> 2022 </TitleJahr>
       </TitleLine>
       <InfoGroup>
         <Date>Fr 15 - Mo 18 Juli</Date>
         <Place>Bad Wildbad</Place>
       </InfoGroup>
-      <ImageWrapper>
-        <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1} />
-        <LeitgrafikPurpleBrush src={LeitgrafikImage2} />
-        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3} />
-        <LeitgrafikBlackLinesFace src={LeitgrafikImage4} />
-        <LeitgrafikRedLines src={LeitgrafikImage5} />
-        <LeitgrafikPurpleSprinkles src={LeitgrafikImage6} />
-        <LeitgrafikYellow1 src={LeitgrafikImage7} />
-        <LeitgrafikYellow2 src={LeitgrafikImage8} />
-      </ImageWrapper>
       <TicketWrapper>
         <TicketGroup
           to={audienceCount < maxAudience ? "/tickets" : "/voll"}
@@ -65,6 +57,17 @@ export default function HeroSection() {
                   </TicketLabel> */}
         </TicketGroup>
       </TicketWrapper>
+      <ImageWrapper>
+        <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1} />
+        <LeitgrafikPurpleBrush src={LeitgrafikImage2} />
+        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3} />
+        <LeitgrafikBlackLinesFace src={LeitgrafikImage4} />
+        <LeitgrafikRedLines src={LeitgrafikImage5} />
+        <LeitgrafikPurpleSprinkles src={LeitgrafikImage6} />
+        <LeitgrafikYellow1 src={LeitgrafikImage7} />
+        <LeitgrafikYellow2 src={LeitgrafikImage8} />
+        <LeitgrafikYellowBall src={LeitgrafikImage9} />
+      </ImageWrapper>
     </Container>
   )
 }
@@ -97,6 +100,7 @@ const TitleLine = styled.div`
 // TITLE - Klein und Haarig
 
 const TitleKlein = styled.h1`
+  z-index: 20;
   display: block;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
@@ -150,39 +154,64 @@ const TitleHaarig = styled.h1`
   }
 `
 
+const TitleJahr = styled.h1` 
+  z-index: 200;
+  position: absolute;
+  text-align: right;
+  right: 0px;
+  bottom: 60px;
+  font-family: "GT-Alpina-Extended-Regular";
+  font-size: 120px;
+  text-transform: none;
+  color: #000000;
+
+  @media (max-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 90px;
+  }
+`
+
+
+
+// Datum und Ort Pills
+
 const InfoGroup = styled.div`
-  padding-top: 20px;
-  padding-left: 20%;
   position: absolute;
   align-items: center;
-  left: 167px;
-  top: 340px;
+  left: 30%;
+  top: 420px;
   width: 500px;
   height: 100vh;
   color: black;
 
-  @media (max-width: 768px) {
-    left: 0px;
+  @media (max-width: 860px) {
+    left: 7%;
+    top: 420px;
   }
 
   @media (max-width: 700px) {
-    left: 0px;
+    left: 7%;
   }
 `
 
 const Date = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
-  width: 280px;
-  font-size: 24px;
+  background-color: white;
+  width: 240px;
+  font-size: 20px;
   text-align: center;
   border-radius: 64px;
   border: 2px solid #000000;
   padding: 16px;
   margin-bottom: 12px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
   width: 200px;
   font-size: 18px;
+  border: 1px solid #000000;
   }
 
   @media (max-width: 700px) {
@@ -193,16 +222,18 @@ const Date = styled.h3`
 
 const Place = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
-  width: 220px;
-  font-size: 24px;
+  background-color: white;
+  width: 200px;
+  font-size: 20px;
   text-align: center;
   border-radius: 64px;
   border: 2px solid #000000;
   padding: 16px;
 
-  @media (max-width: 768px) {
-    width: 150px;
+  @media (max-width: 860px) {
+    width: 160px;
     font-size: 18px;
+    border: 1px solid #000000;
     }
   
     @media (max-width: 700px) {
@@ -226,8 +257,8 @@ const LeitgrafikRedLineBlackBrush = styled.img`
   height: auto;
 
   @media (max-width: 768px) {
-    top: 10%;
-    width: 50%;
+    top: 8%;
+    width: 40%;
     height: auto;
   }
 `
@@ -235,12 +266,13 @@ const LeitgrafikRedLineBlackBrush = styled.img`
 const LeitgrafikPurpleBrush = styled.img`
   position: absolute;
   top: 60%;
-  left: 40%;
+  left: 38%;
   width: 17%;
   height: auto;
 
   @media (max-width: 768px) {
     top: 70%;
+    left: 10%;
     width: 35%;
     height: auto;
   }
@@ -254,9 +286,9 @@ width: 17%;
 height: auto;
 
 @media (max-width: 768px) {
-  top: -9%;
+  top: -7%;
   left: 55%;
-  width: 35%;
+  width: 30%;
   height: auto;
 }
 `
@@ -269,7 +301,7 @@ width: 20%;
 height: auto;
 
 @media (max-width: 768px) {
-  top: 55%;
+  top: 45%;
   left: -5%;
   width: 40%;
   height: auto;
@@ -308,24 +340,58 @@ height: auto;
 
 const LeitgrafikYellow1 = styled.img`
 position: absolute;
-top: -15%;
+top: -120px;
 left: 8%;
-width: 25%;
+width: 300px;
 height: auto;
-z-index: 1;
+z-index: 0;
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+  left: -10%;
+}
+
+@media (max-width: 700px) {
+  width: 240px;
 }
 `
 
 const LeitgrafikYellow2 = styled.img`
 position: absolute;
-top: -10%;
+top: -20px;
 left: 35%;
-width: 25%;
+width: 380px;
 height: auto;
+z-index: 1;
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+  left: 28%;
+  top: 120px;
+}
+
+@media (max-width: 700px) {
+  width: 240px;
+  top: 120px;
+}
+`
+
+const LeitgrafikYellowBall = styled.img`
+position: absolute;
+bottom: -140px;
+right: 0px;
+width: 500px;
+height: auto;
+z-index: 1;
+
+@media (max-width: 850px) {
+  bottom: -80px;
+  right: 0px;
+  width: 450px;
+}
+
+@media (max-width: 700px) {
+  bottom: -90px;
+  right: 0px;
+  width: 400px;
 }
 `
 
@@ -359,16 +425,20 @@ const Logo = styled.img`
 `
 
 const TicketWrapper = styled.div`
+  z-index: 200;
   position: fixed;
-  top: 10%;
-  right: 10%;
-  scale: 1.2;
-  transform: translate(-50%, -50%);
+  scale: 1.4 ;
+  top: 50vh;
+  left: 25vw;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
     /* transform: translateY(-10px); */
     /* transform: scale(1.03);
     cursor: pointer; */
+  }
+
+  @media (max-width: 700px) {
+    left: 10vw;
   }
 `
 
