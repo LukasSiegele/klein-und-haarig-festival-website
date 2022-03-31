@@ -10,7 +10,7 @@ export default function useTicketVerify(key) {
 
   useEffect(() => {
     base("Teilnehmer 2022")
-      .select({ view: "Grid", filterByFormula: `{ID} = "${key}"` })
+      .select({ view: "Master", filterByFormula: `{ID} = "${key}"` })
       .eachPage((records, fetchNextPage) => {
         setAudienceCount(audienceCount => audienceCount + records.length)
         fetchNextPage()

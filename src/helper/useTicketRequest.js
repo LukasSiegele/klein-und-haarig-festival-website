@@ -7,13 +7,13 @@ const base = new Airtable({
 
 export default function useTicketRequest(orderID) {
   const [result, setResult] = useState(null)
-  
+
   useEffect(() => {
     base("Teilnehmer 2022")
-      .select({ view: "Grid", filterByFormula: `{OrderID} = "${orderID}"` })
+      .select({ view: "Master", filterByFormula: `{OrderID} = "${orderID}"` })
       .eachPage((records, fetchNextPage) => {
         //setAudienceCount(audienceCount => audienceCount + records.length)
-        console.log(records);
+        console.log(records)
         result = records
         fetchNextPage()
       })

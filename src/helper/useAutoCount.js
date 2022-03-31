@@ -10,7 +10,7 @@ export default function useAutoCount() {
 
   useEffect(() => {
     base("Teilnehmer 2022")
-      .select({ view: "Grid" })
+      .select({ view: "Master" })
       .eachPage((records, fetchNextPage) => {
         records.map(items => {
           if (items.fields.Auto === "Ja") {
