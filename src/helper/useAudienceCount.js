@@ -10,7 +10,7 @@ export default function useAudienceCount() {
 
   useEffect(() => {
     base("Teilnehmer 2022")
-      .select({ view: "Grid" })
+      .select({ view: "Master" })
       .eachPage((records, fetchNextPage) => {
         setAudienceCount(audienceCount => audienceCount + records.length)
         fetchNextPage()
