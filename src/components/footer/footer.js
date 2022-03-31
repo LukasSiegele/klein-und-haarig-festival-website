@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   background-color: black;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px 40px 50px;
-  display: grid;
+  /* display: grid; */
 
   @media (max-width: 800px) {
     padding: 40px 20px 50px;
@@ -56,7 +56,7 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: white;
-  max-width: 1440px;
+  /* max-width: 1440px; */
 
   justify-self: center;
   @media (max-width: 800px) {
