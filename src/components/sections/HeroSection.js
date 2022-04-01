@@ -33,7 +33,11 @@ export default function HeroSection() {
   return (
     <Container>
       <TitleLine>
-        <TitleKlein> Klein </TitleKlein>
+        <Klein>
+          <TitleKlein> Klein </TitleKlein>
+          <TitleKleinGhost> Klein </TitleKleinGhost>
+        </Klein>
+
         <TitleUndStroke>
           {" "}
           und <TitleHaarig>Haarig </TitleHaarig>{" "}
@@ -104,6 +108,30 @@ const TitleLine = styled.div`
 
 // TITLE - Klein und Haarig
 
+const Klein = styled.div`
+  position: relative;
+  overflow: hidden;
+`
+
+const TitleKleinGhost = styled.h1`
+  z-index: 20;
+  display: block;
+  text-align: left;
+  font-family: "GT-Alpina-Extended-Regular";
+  font-size: 120px;
+  text-transform: none;
+  color: #000000;
+  visibility: hidden;
+
+  @media (max-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 90px;
+  }
+`
+
 const TitleKlein = styled.h1`
   z-index: 20;
   display: block;
@@ -112,6 +140,9 @@ const TitleKlein = styled.h1`
   font-size: 120px;
   text-transform: none;
   color: #000000;
+  position: absolute;
+
+  animation: TitleAnimation 1.8s forwards cubic-bezier(0.2, 0.9, 0.2, 1);
 
   @media (max-width: 768px) {
     font-size: 100px;
@@ -119,6 +150,16 @@ const TitleKlein = styled.h1`
 
   @media (max-width: 700px) {
     font-size: 90px;
+  }
+
+  @keyframes TitleAnimation {
+    0% {
+      top: 150px;
+    }
+
+    100% {
+      top: 0px;
+    }
   }
 `
 
