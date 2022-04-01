@@ -1,18 +1,18 @@
 import React from "react"
 import styled from "styled-components"
-import { Link as SideNavStyledLink} from "gatsby"
+import { Link as SideNavStyledLink } from "gatsby"
 
 import NavBackground from "../../../public/images/SideNavBackground.png"
 
 import LogoSideNav from "../../../public/images/LogoSideNav.svg"
 
 export default function SideNavigation() {
-    return (
-        <SideNavWrapper>
-            <SideNavLogoWrapper>
-                <SideNavLogo />
-            </SideNavLogoWrapper>
-            {/* <SideNavLinkGroup>
+  return (
+    <SideNavWrapper>
+      <SideNavLogoWrapper>
+        <SideNavLogo />
+      </SideNavLogoWrapper>
+      {/* <SideNavLinkGroup>
                 <SideNavLinks to={"/voll"} activeClassName="active">
                     Festival 
                 </SideNavLinks>
@@ -26,38 +26,40 @@ export default function SideNavigation() {
                     Helfen
                 </SideNavLinks>
             </SideNavLinkGroup> */}
-        </SideNavWrapper>
-    )
-} 
-
+    </SideNavWrapper>
+  )
+}
 
 // Fixed SideNav on Frontpage
 const SideNavWrapper = styled.div`
-    position: fixed;
-    background-image: url(${NavBackground});
-    width: 167px;
-    height: 100vh;
-    z-index: 100;
-    border-right: 1px solid;
+  position: fixed;
+  background-image: url(${NavBackground});
+  width: 167px;
+  height: 100vh;
+  z-index: 100;
+  border-right: 1px solid;
 
-    @media (max-width: 768px) {
-        display: none;
-      }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const SideNavLogoWrapper = styled.div`
-    margin-top: 24px;
-    margin-left: 36px;
-    width: 84px;
-    height: 79px;
+  margin: 40px;
+  width: 84px;
+  height: 79px;
+
+  @media (max-width: 800px) {
+    margin: 20px;
+  }
 `
 
 // KuH Logo in SideNav
 const SideNavLogo = styled.div`
-    max-width: 100%;
-    height: 100%;
-    background-image: url(${LogoSideNav});
-    background-size: cover;
+  max-width: 100%;
+  height: 100%;
+  background-image: url(${LogoSideNav});
+  background-size: cover;
 `
 
 // Div of Links in SideNav

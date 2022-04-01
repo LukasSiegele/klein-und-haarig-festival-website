@@ -91,7 +91,7 @@ export default function HelferDetails({ location }) {
   return (
     <Layout>
       <SEO title="Helfer" />
-      <ShopTitle info="Schritt 3.5/4" title="Wir suchen Helfer:innen!" />
+      <ShopTitle info="Schritt 3.5/4" title="Helfer:innnen Details" />
       <Container>
         <Wrapper>
           <Left>

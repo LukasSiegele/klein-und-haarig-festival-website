@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   grid-template-columns: auto auto;
   justify-content: start;
   position: relative;
+  overflow: hidden;
   @media (max-width: 800px) {
     padding: 20px;
   }
@@ -54,20 +55,28 @@ const Content = styled.div`
   display: grid;
   justify-items: start;
   margin-top: 8px;
+  position: relative;
 `
 
 const ZeplinGrafik = styled.div`
-  /* width: 372px;
+  width: 372px;
   height: 308px;
   background-image: url(${Zeplin});
   background-size: cover;
-  position: fixed;
-  left: 20px;
-  top: 100px;
-  z-index: 100; */
+  position: absolute;
+  left: 500px;
+  top: -100px;
+  z-index: 0;
+
+  @media (max-width: 800px) {
+    left: 50%;
+  }
 `
 
 const Info = styled(PageInfo)`
   margin-bottom: 4px;
+  z-index: 1;
 `
-const Title = styled(PageHeader)``
+const Title = styled(PageHeader)`
+  z-index: 1;
+`
