@@ -48,10 +48,6 @@ const SideNavLogoWrapper = styled.div`
   margin: 40px;
   width: 84px;
   height: 79px;
-
-  @media (max-width: 800px) {
-    margin: 20px;
-  }
 `
 
 // KuH Logo in SideNav
