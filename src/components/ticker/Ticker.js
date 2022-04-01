@@ -43,7 +43,14 @@ const Icon = styled.img`
 `
 
 const Wrapper = styled.div`
-  display: flex;
+  /* display: flex; */
+  padding: 4px 0;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  /* width: auto; */
+  /* display: grid; */
 `
 
 const TickerWrapper = styled.div`
@@ -52,6 +59,8 @@ const TickerWrapper = styled.div`
   left: 0;
   bottom: 0;
   width: 100vw;
+  /* height: 60px; */
+  display: grid;
   background-color: #000;
 `
 
