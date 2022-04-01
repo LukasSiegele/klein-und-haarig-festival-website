@@ -1,34 +1,38 @@
-import React, {useState} from "react"
-import {TickerText} from "../styles/TextStyles"
-import RTicker from 'react-ticker'
-import styled from 'styled-components'
+import React, { useState } from "react"
+import { TickerText } from "../styles/TextStyles"
+import RTicker from "react-ticker"
+import styled from "styled-components"
 import { themes } from "../styles/ColorStyles"
 
-import './Ticker.css'
+import "./Ticker.css"
 const Ticker = () => {
-    const [isMoving , setIsMoving] = useState(true)
+  const [isMoving, setIsMoving] = useState(true)
 
-    const mouseEnterHandler = () => {
-        setIsMoving(false);
-    }
+  const mouseEnterHandler = () => {
+    setIsMoving(false)
+  }
 
-    const mouseLeaveHandler = () => {
-        setIsMoving(true);
-    }
+  const mouseLeaveHandler = () => {
+    setIsMoving(true)
+  }
 
-    return(
-        <TickerWrapper onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler} >
-
-        <RTicker speed={6} move={isMoving} >
+  return (
+    <TickerWrapper
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaveHandler}
+    >
+      <RTicker speed={6} move={isMoving}>
         {({ index }) => (
-            <Wrapper>
-                <TickerText className="tickerText" >Ticketverkauf startet am 03. April!</TickerText>
-                <Icon src="/icons/banner-star.svg" ></Icon>
-            </Wrapper>
+          <Wrapper>
+            <TickerText className="tickerText">
+              Ticketverkauf startet am 03. April um 16 Uhr
+            </TickerText>
+            <Icon src="/icons/banner-star.svg"></Icon>
+          </Wrapper>
         )}
-    </RTicker>
-        </TickerWrapper>
-    )
+      </RTicker>
+    </TickerWrapper>
+  )
 }
 
 const Icon = styled.img`
@@ -39,16 +43,16 @@ const Icon = styled.img`
 `
 
 const Wrapper = styled.div`
-    display: flex;
+  display: flex;
 `
 
 const TickerWrapper = styled.div`
-    z-index: 199;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    background-color: #000
+  z-index: 199;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: #000;
 `
 
 export default Ticker
