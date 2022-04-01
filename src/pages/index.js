@@ -11,17 +11,17 @@ import Ticker from "../components/ticker/Ticker"
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
 
 export default function IndexPage() {
-  return (<>
+  return (
+    <>
       <SEO title="Home" />
       <Wrapper>
         <Header />
         <SideNavigation />
         <HeroSection />
-        {/* <Message /> */}
+
         <Ticker />
       </Wrapper>
-      {/* <Layout /> */}
-      </>
+    </>
   )
 }
 
