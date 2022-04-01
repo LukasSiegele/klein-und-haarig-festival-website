@@ -59,7 +59,7 @@ const TickerWrapper = styled.div`
   left: 0;
   bottom: 0;
   width: 100vw;
-  /* height: 60px; */
+
   display: grid;
   background-color: #000;
 `
