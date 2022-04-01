@@ -35,7 +35,7 @@ const SideNavWrapper = styled.div`
   /* position: fixed; */
   background-image: url(${NavBackground});
 
-  height: 100vh;
+  height: auto;
   /* z-index: 100; */
   border-right: 1px solid;
 

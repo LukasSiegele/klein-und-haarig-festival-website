@@ -21,7 +21,9 @@ export default function IndexPage() {
             <SideNavigation />
             <HeroSection />
           </MainGrid>
-          <Ticker />
+          <TickerGroup>
+            <Ticker />
+          </TickerGroup>
         </Wrapper>
       </Layout>
     </>
@@ -39,4 +41,8 @@ const MainGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+`
+
+const TickerGroup = styled.div`
+  position: relative;
 `
