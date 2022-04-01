@@ -32,11 +32,11 @@ export default function SideNavigation() {
 
 // Fixed SideNav on Frontpage
 const SideNavWrapper = styled.div`
-  position: fixed;
+  /* position: fixed; */
   background-image: url(${NavBackground});
-  width: 167px;
+
   height: 100vh;
-  z-index: 100;
+  /* z-index: 100; */
   border-right: 1px solid;
 
   @media (max-width: 768px) {

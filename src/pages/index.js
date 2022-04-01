@@ -14,13 +14,16 @@ export default function IndexPage() {
   return (
     <>
       <SEO title="Home" />
-      <Wrapper>
-        <Header />
-        <SideNavigation />
-        <HeroSection />
-
-        <Ticker />
-      </Wrapper>
+      <Layout>
+        <Wrapper>
+          <Header />
+          <MainGrid>
+            <SideNavigation />
+            <HeroSection />
+          </MainGrid>
+          <Ticker />
+        </Wrapper>
+      </Layout>
     </>
   )
 }
@@ -28,4 +31,12 @@ export default function IndexPage() {
 const Wrapper = styled.div`
   z-index: 1;
   background-image: url(${BackgroundTexture});
+`
+
+const MainGrid = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `

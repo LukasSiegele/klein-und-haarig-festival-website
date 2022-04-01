@@ -74,7 +74,7 @@ export default function HeroSection() {
 
 const Container = styled.div`
   background-color: none;
-  width: 100vw;
+  width: auto;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -86,7 +86,6 @@ const Wrapper = styled.div`
 `
 
 const TitleLine = styled.div`
-  margin-left: 167px;
   padding-top: 20px;
   padding-left: 20px;
   justify-content: left;
@@ -164,8 +163,8 @@ const TitleJahr = styled.h1`
   z-index: 200;
   position: absolute;
   text-align: right;
-  right: 0px;
-  bottom: 60px;
+  right: 20px;
+  bottom: 40px;
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 120px;
   text-transform: none;
@@ -185,7 +184,7 @@ const TitleJahr = styled.h1`
 const InfoGroup = styled.div`
   position: absolute;
   align-items: center;
-  left: 30%;
+  left: 20%;
   top: 420px;
   width: 500px;
   height: 100vh;
@@ -204,8 +203,8 @@ const InfoGroup = styled.div`
 const Date = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
   /* background-color: white; */
-  width: 240px;
-  font-size: 20px;
+  width: 300px;
+
   text-align: center;
   border-radius: 64px;
   border: 2px solid #000000;
@@ -227,8 +226,7 @@ const Date = styled.h3`
 const Place = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
   /* background-color: white; */
-  width: 200px;
-  font-size: 20px;
+  width: 250px;
   text-align: center;
   border-radius: 64px;
   border: 2px solid #000000;
@@ -257,7 +255,7 @@ const LeitgrafikRedLineBlackBrush = styled.img`
   position: absolute;
   right: -5%;
   top: 0%;
-  width: 25%;
+  width: 30%;
   height: auto;
 
   @media (max-width: 768px) {
@@ -300,7 +298,7 @@ const LeitgrafikBlackLinesRedBrush = styled.img`
 const LeitgrafikBlackLinesFace = styled.img`
   position: absolute;
   top: 35%;
-  left: 10%;
+  left: -2%;
   width: 20%;
   height: auto;
 
