@@ -203,7 +203,7 @@ const InfoGroup = styled.div`
 
 const Date = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
-  background-color: white;
+  /* background-color: white; */
   width: 240px;
   font-size: 20px;
   text-align: center;
@@ -226,7 +226,7 @@ const Date = styled.h3`
 
 const Place = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
-  background-color: white;
+  /* background-color: white; */
   width: 200px;
   font-size: 20px;
   text-align: center;
