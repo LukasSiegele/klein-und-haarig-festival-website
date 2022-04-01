@@ -27,6 +27,7 @@ export default function Message() {
 
 const Container = styled.div`
   width: 100%;
+  height: 0%;
   display: grid;
   grid-template-columns: 1fr;
   background-color: none;

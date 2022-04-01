@@ -252,7 +252,7 @@ const ImageWrapper = styled.div`
 const LeitgrafikRedLineBlackBrush = styled.img`
   position: absolute;
   right: -5%;
-  top: 5%;
+  top: 0%;
   width: 25%;
   height: auto;
 
@@ -425,6 +425,7 @@ const Logo = styled.img`
 `
 
 const TicketWrapper = styled.div`
+  display: none;
   z-index: 200;
   position: fixed;
   scale: 1.4 ;
