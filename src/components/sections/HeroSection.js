@@ -305,7 +305,7 @@ const LeitgrafikBlackLinesFace = styled.img`
   height: auto;
 
   @media (max-width: 768px) {
-    top: 45%;
+    top: 38%;
     left: -5%;
     width: 40%;
     height: auto;
