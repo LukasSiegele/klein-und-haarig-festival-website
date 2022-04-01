@@ -25,7 +25,7 @@ const Ticker = () => {
         {({ index }) => (
           <Wrapper>
             <TickerText className="tickerText">
-              Ticketverkauf startet am 03. April um 16 Uhr
+              Ticketverkauf ab 3. April, 16 Uhr
             </TickerText>
             <Icon src="/icons/banner-star.svg"></Icon>
           </Wrapper>
