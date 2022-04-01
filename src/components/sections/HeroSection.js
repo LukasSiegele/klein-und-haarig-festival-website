@@ -73,10 +73,16 @@ export default function HeroSection() {
 }
 
 const Container = styled.div`
-  overflow: hidden;
   background-color: none;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
+  /* display: grid; */
+`
+
+const Wrapper = styled.div`
+  /* overflow: hidden; */
 `
 
 const TitleLine = styled.div`
@@ -127,13 +133,13 @@ const TitleUndStroke = styled.h1`
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 
-    @media (max-width: 768px) {
-      font-size: 100px;
-    }
-  
-    @media (max-width: 700px) {
-      font-size: 90px;
-    }
+  @media (max-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 90px;
+  }
 `
 
 const TitleHaarig = styled.h1`
@@ -154,7 +160,7 @@ const TitleHaarig = styled.h1`
   }
 `
 
-const TitleJahr = styled.h1` 
+const TitleJahr = styled.h1`
   z-index: 200;
   position: absolute;
   text-align: right;
@@ -173,8 +179,6 @@ const TitleJahr = styled.h1`
     font-size: 90px;
   }
 `
-
-
 
 // Datum und Ort Pills
 
@@ -209,9 +213,9 @@ const Date = styled.h3`
   margin-bottom: 12px;
 
   @media (max-width: 860px) {
-  width: 200px;
-  font-size: 18px;
-  border: 1px solid #000000;
+    width: 200px;
+    font-size: 18px;
+    border: 1px solid #000000;
   }
 
   @media (max-width: 700px) {
@@ -234,12 +238,12 @@ const Place = styled.h3`
     width: 160px;
     font-size: 18px;
     border: 1px solid #000000;
-    }
-  
-    @media (max-width: 700px) {
-      width: 150px;
-      font-size: 16px;
-    }
+  }
+
+  @media (max-width: 700px) {
+    width: 150px;
+    font-size: 16px;
+  }
 `
 
 const ImageWrapper = styled.div`
@@ -279,122 +283,121 @@ const LeitgrafikPurpleBrush = styled.img`
 `
 
 const LeitgrafikBlackLinesRedBrush = styled.img`
-position: absolute;
-top: -12%;
-left: 55%;
-width: 17%;
-height: auto;
-
-@media (max-width: 768px) {
-  top: -7%;
+  position: absolute;
+  top: -12%;
   left: 55%;
-  width: 30%;
+  width: 17%;
   height: auto;
-}
+
+  @media (max-width: 768px) {
+    top: -7%;
+    left: 55%;
+    width: 30%;
+    height: auto;
+  }
 `
 
 const LeitgrafikBlackLinesFace = styled.img`
-position: absolute;
-top: 35%;
-left: 10%;
-width: 20%;
-height: auto;
-
-@media (max-width: 768px) {
-  top: 45%;
-  left: -5%;
-  width: 40%;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  width: 20%;
   height: auto;
-}
+
+  @media (max-width: 768px) {
+    top: 45%;
+    left: -5%;
+    width: 40%;
+    height: auto;
+  }
 `
 
 const LeitgrafikRedLines = styled.img`
-position: absolute;
-top: 90%;
-left: 10%;
-width: 15%;
-height: auto;
-
-@media (max-width: 768px) {
+  position: absolute;
   top: 90%;
-  left: -5%;
-  width: 20%;
+  left: 10%;
+  width: 15%;
   height: auto;
-}
+
+  @media (max-width: 768px) {
+    top: 90%;
+    left: -5%;
+    width: 20%;
+    height: auto;
+  }
 `
 
 const LeitgrafikPurpleSprinkles = styled.img`
-position: absolute;
-top: 65%;
-left: 55%;
-width: 30%;
-height: auto;
-
-@media (max-width: 768px) {
-  top: 70%;
+  position: absolute;
+  top: 65%;
   left: 55%;
-  width: 65%;
+  width: 30%;
   height: auto;
-}
+
+  @media (max-width: 768px) {
+    top: 70%;
+    left: 55%;
+    width: 65%;
+    height: auto;
+  }
 `
 
 const LeitgrafikYellow1 = styled.img`
-position: absolute;
-top: -120px;
-left: 8%;
-width: 300px;
-height: auto;
-z-index: 0;
+  position: absolute;
+  top: -120px;
+  left: 8%;
+  width: 300px;
+  height: auto;
+  z-index: 0;
 
-@media (max-width: 850px) {
-  left: -10%;
-}
+  @media (max-width: 850px) {
+    left: -10%;
+  }
 
-@media (max-width: 700px) {
-  width: 240px;
-}
+  @media (max-width: 700px) {
+    width: 240px;
+  }
 `
 
 const LeitgrafikYellow2 = styled.img`
-position: absolute;
-top: -20px;
-left: 35%;
-width: 380px;
-height: auto;
-z-index: 1;
+  position: absolute;
+  top: -20px;
+  left: 35%;
+  width: 380px;
+  height: auto;
+  z-index: 1;
 
-@media (max-width: 850px) {
-  left: 28%;
-  top: 120px;
-}
+  @media (max-width: 850px) {
+    left: 28%;
+    top: 120px;
+  }
 
-@media (max-width: 700px) {
-  width: 240px;
-  top: 120px;
-}
+  @media (max-width: 700px) {
+    width: 240px;
+    top: 120px;
+  }
 `
 
 const LeitgrafikYellowBall = styled.img`
-position: absolute;
-bottom: -140px;
-right: 0px;
-width: 500px;
-height: auto;
-z-index: 1;
-
-@media (max-width: 850px) {
-  bottom: -80px;
+  position: absolute;
+  bottom: -140px;
   right: 0px;
-  width: 450px;
-}
+  width: 500px;
+  height: auto;
+  z-index: 1;
 
-@media (max-width: 700px) {
-  bottom: -90px;
-  right: 0px;
-  width: 400px;
-}
+  @media (max-width: 850px) {
+    bottom: -80px;
+    right: 0px;
+    width: 450px;
+  }
+
+  @media (max-width: 700px) {
+    bottom: -90px;
+    right: 0px;
+    width: 400px;
+  }
 `
-
 
 // LOGO - KuH
 const Logo = styled.img`
@@ -428,7 +431,7 @@ const TicketWrapper = styled.div`
   display: none;
   z-index: 200;
   position: fixed;
-  scale: 1.4 ;
+  scale: 1.4;
   top: 50vh;
   left: 25vw;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
