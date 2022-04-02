@@ -57,7 +57,7 @@ const TickerWrapper = styled.div`
   z-index: 199;
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 7%;
   width: 100vw;
 
   display: grid;

@@ -36,6 +36,7 @@ export default function Footer() {
 }
 
 const Wrapper = styled.div`
+  bottom: -400px;
   width: 100vw;
   background-color: black;
   border-top: 1px solid rgba(255, 255, 255, 0.15);

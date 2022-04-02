@@ -44,6 +44,7 @@ export default function HeroSection() {
         </TitleUndStroke>
         <TitleJahr> 2022 </TitleJahr>
       </TitleLine>
+      <TitleProps> Artwork: Karla Gondekova </TitleProps>
       <InfoGroup>
         <Date>Fr 15 - Mo 18 Juli</Date>
         <Place>Bad Wildbad</Place>
@@ -205,7 +206,7 @@ const TitleJahr = styled.h1`
   position: absolute;
   text-align: right;
   right: 20px;
-  bottom: 40px;
+  bottom: 90px;
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 120px;
   text-transform: none;
@@ -219,25 +220,54 @@ const TitleJahr = styled.h1`
     font-size: 90px;
   }
 `
+const TitleProps = styled.h5`
+  position: absolute;
+  text-align: left;
+  left: -6%;
+  bottom: 25%;
+  font-family: "GT-Alpina-Extended-Regular";
+  font-size: 14px;
+  color: #5A5A5A;
+
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  writing-mode: lr-tb;
+
+  @media (max-width: 768px) {
+    left: -10%;
+    bottom: 22%;
+    font-size: 10px;
+  }
+
+  @media (max-width: 700px) {
+    left: -10%;
+    bottom: 22%;
+    font-size: 10px;
+  }
+`
+
+
 
 // Datum und Ort Pills
 
 const InfoGroup = styled.div`
   position: absolute;
   align-items: center;
-  left: 20%;
-  top: 420px;
+  top: 320px;
+  left: 16%;
   width: 500px;
   height: 100vh;
   color: black;
 
   @media (max-width: 860px) {
-    left: 7%;
-    top: 420px;
+    top: 360px;
+    left: 38%;
   }
 
   @media (max-width: 700px) {
-    left: 7%;
+    top: 360px;
+    left: 38%;
   }
 `
 
@@ -296,11 +326,11 @@ const LeitgrafikRedLineBlackBrush = styled.img`
   position: absolute;
   right: -5%;
   top: 0%;
-  width: 30%;
+  width: 27%;
   height: auto;
 
   @media (max-width: 768px) {
-    top: 8%;
+    top: 0%;
     width: 40%;
     height: auto;
   }
@@ -308,29 +338,30 @@ const LeitgrafikRedLineBlackBrush = styled.img`
 
 const LeitgrafikPurpleBrush = styled.img`
   position: absolute;
-  top: 60%;
-  left: 38%;
-  width: 17%;
+  bottom: 20%;
+  left: 35%;
+  width: 16%;
   height: auto;
 
   @media (max-width: 768px) {
-    top: 70%;
-    left: 10%;
-    width: 35%;
+    bottom: 18%;
+    left: 8%;
+    width: 30%;
     height: auto;
   }
 `
 
 const LeitgrafikBlackLinesRedBrush = styled.img`
   position: absolute;
-  top: -12%;
-  left: 55%;
-  width: 17%;
+  bottom: 8%;
+  left: 15%;
+  width: 15%;
   height: auto;
 
   @media (max-width: 768px) {
-    top: -7%;
-    left: 55%;
+    display: none;
+    bottom: 18%;
+    left: -10%;
     width: 30%;
     height: auto;
   }
@@ -340,11 +371,11 @@ const LeitgrafikBlackLinesFace = styled.img`
   position: absolute;
   top: 35%;
   left: -2%;
-  width: 20%;
+  width: 17%;
   height: auto;
 
   @media (max-width: 768px) {
-    top: 38%;
+    top: 43%;
     left: -5%;
     width: 40%;
     height: auto;
@@ -353,8 +384,8 @@ const LeitgrafikBlackLinesFace = styled.img`
 
 const LeitgrafikRedLines = styled.img`
   position: absolute;
-  top: 90%;
-  left: 10%;
+  bottom: -5%;
+  left: 0%;
   width: 15%;
   height: auto;
 
@@ -369,13 +400,17 @@ const LeitgrafikRedLines = styled.img`
 const LeitgrafikPurpleSprinkles = styled.img`
   position: absolute;
   top: 65%;
-  left: 55%;
+  right: 32%;
   width: 30%;
   height: auto;
 
+  @media (max-width: 1000px) {
+    width: 50%;
+  }
+
   @media (max-width: 768px) {
     top: 70%;
-    left: 55%;
+    right: 32%;
     width: 65%;
     height: auto;
   }
@@ -419,20 +454,20 @@ const LeitgrafikYellow2 = styled.img`
 
 const LeitgrafikYellowBall = styled.img`
   position: absolute;
-  bottom: -140px;
-  right: 0px;
+  bottom: -100px;
+  right: 60px;
   width: 500px;
   height: auto;
   z-index: 1;
 
   @media (max-width: 850px) {
-    bottom: -80px;
+    bottom: -100px;
     right: 0px;
     width: 450px;
   }
 
   @media (max-width: 700px) {
-    bottom: -90px;
+    bottom: -70px;
     right: 0px;
     width: 400px;
   }
