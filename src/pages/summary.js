@@ -105,10 +105,16 @@ export default function Summary({ location }) {
   const userID = uniqid()
 
   // POST TO — AIRTABLE
-  const paypalSuccess = data => {
-    airtableHandler(data)
 
-    console.log(data)
+  const skipPaypal = () =>{
+    const data = {
+      orderID: '5VX85873R9210334X'
+    }
+    paypalSuccess(data);
+  }
+  const paypalSuccess = data => {
+    airtableHandler(data);
+
     console.log(
       "audienceCount:  " + audienceCount,
       "audienceLimit:  " + audienceLimit
@@ -472,11 +478,13 @@ export default function Summary({ location }) {
                       onSuccess={paypalSuccess}
                     />
                   </PayPalScriptProvider>
+                    
                 </PayPalGroup>
               </Group>
             </Section>
             {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
           </form>
+          <button onClick={skipPaypal}>Skip paypal</button>
         </Wrapper>
       </Container>
     </Layout>
