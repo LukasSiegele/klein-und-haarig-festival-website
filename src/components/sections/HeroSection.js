@@ -43,8 +43,8 @@ export default function HeroSection() {
           und <TitleHaarig>Haarig </TitleHaarig>{" "}
         </TitleUndStroke>
         <TitleJahr> 2022 </TitleJahr>
+        <TitleProps> Artwork: Karla Gondekova </TitleProps>
       </TitleLine>
-      <TitleProps> Artwork: Karla Gondekova </TitleProps>
       <InfoGroup>
         <Date>Fr 15 - Mo 18 Juli</Date>
         <Place>Bad Wildbad</Place>
@@ -223,10 +223,10 @@ const TitleJahr = styled.h1`
 const TitleProps = styled.h5`
   position: absolute;
   text-align: left;
-  left: -6%;
-  bottom: 25%;
+  left: -60px;
+  bottom: 22%;
   font-family: "GT-Alpina-Extended-Regular";
-  font-size: 14px;
+  font-size: 12px;
   color: #5A5A5A;
 
   -webkit-transform: rotate(-90deg);
@@ -235,15 +235,12 @@ const TitleProps = styled.h5`
   writing-mode: lr-tb;
 
   @media (max-width: 768px) {
-    left: -10%;
-    bottom: 22%;
+    left: -50px;
+    bottom: 20%;
     font-size: 10px;
   }
 
   @media (max-width: 700px) {
-    left: -10%;
-    bottom: 22%;
-    font-size: 10px;
   }
 `
 
@@ -371,7 +368,7 @@ const LeitgrafikBlackLinesFace = styled.img`
   position: absolute;
   top: 35%;
   left: -2%;
-  width: 17%;
+  width: 240px;
   height: auto;
 
   @media (max-width: 768px) {
