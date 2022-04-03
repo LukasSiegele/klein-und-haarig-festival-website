@@ -49,6 +49,7 @@ const Wrapper = styled.div`
   align-self: center;
   display: grid;
   grid-template-columns: 1fr auto;
+  white-space: nowrap;
 
   /* width: auto; */
   /* display: grid; */

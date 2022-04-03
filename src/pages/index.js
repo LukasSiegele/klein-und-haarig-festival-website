@@ -52,6 +52,6 @@ const Spacer = styled.div`
   height: 70px;
   background: black;
   @media (max-width: 768px) {
-    height: 100px;
+    height: 60px;
   }
 `
