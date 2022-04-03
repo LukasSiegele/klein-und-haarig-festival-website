@@ -26,6 +26,7 @@ export default function IndexPage() {
           </TickerGroup>
         </Wrapper>
       </Layout>
+      <Spacer />
     </>
   )
 }
@@ -45,4 +46,12 @@ const MainGrid = styled.div`
 
 const TickerGroup = styled.div`
   position: relative;
+`
+
+const Spacer = styled.div`
+  height: 70px;
+  background: black;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
 `

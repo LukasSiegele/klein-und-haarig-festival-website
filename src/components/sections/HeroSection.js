@@ -223,7 +223,7 @@ const YearMask = styled.div`
 const TitleJahr = styled.h1`
   animation: HeroAnimation 1.2s 2.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-  z-index: 200;
+  z-index: 199;
   position: absolute;
   text-align: right;
   right: 20px;
