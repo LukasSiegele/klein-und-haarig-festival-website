@@ -25,8 +25,8 @@ const Ticker = () => {
         {({ index }) => (
           <Wrapper>
             <TickerText className="tickerText">
-              Sorry, der Ticketverkauf verschiebt sich leider aufgrund von
-              technischen Problemen.
+              Sorry, der Ticketverkauf verschiebt sich leider wegen technische
+              Problemen.
             </TickerText>
             <Icon src="/icons/banner-star.svg"></Icon>
           </Wrapper>
