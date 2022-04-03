@@ -9,7 +9,7 @@ export default function Footer() {
         <WrapperLeft>
           <BuntePlatte>© Bunte Platte e.V.</BuntePlatte>
           <BuntePlatte>
-            — eingetragener Verein zur Förderung elektronischer Musikkultur.
+            — gemeinnütziger Verein zur Förderung elektronischer Musikkultur.
           </BuntePlatte>
         </WrapperLeft>
         <WrapperRight>
