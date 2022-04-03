@@ -46,6 +46,9 @@ export default function HeroSection() {
         <YearMask>
           <TitleJahr> 2022 </TitleJahr>
         </YearMask>
+        <ArtistMask>
+          <TitleArtist> Artwork: Karla Gondekova </TitleArtist>
+        </ArtistMask>
       </TitleLine>
       <InfoGroup>
         <DateMask>
@@ -240,11 +243,22 @@ const TitleJahr = styled.h1`
     font-size: 90px;
   }
 `
-const TitleProps = styled.h5`
+
+const ArtistMask = styled.div `
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 0;
+
+  @media (max-width: 700px) {
+    margin-top: -8px;
+  }
+`
+
+const TitleArtist = styled.h5`
   position: absolute;
   text-align: left;
   left: -60px;
-  bottom: 22%;
+  bottom: 24%;
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 14px;
   color: #5a5a5a;
@@ -256,7 +270,7 @@ const TitleProps = styled.h5`
 
   @media (max-width: 768px) {
     left: -50px;
-    bottom: 20%;
+    bottom: 23%;
     font-size: 10px;
   }
 
