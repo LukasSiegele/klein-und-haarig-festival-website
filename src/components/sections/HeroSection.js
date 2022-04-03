@@ -267,21 +267,20 @@ const TitleProps = styled.h5`
 // Datum und Ort Pills
 
 const InfoGroup = styled.div`
-  position: absolute;
+  /* position: absolute; */
   align-items: center;
-  top: 320px;
-  left: 16%;
+  margin-top: 200px;
+  margin-left: 16%;
   width: 500px;
   height: 100vh;
   color: black;
 
   @media (max-width: 860px) {
-    top: 360px;
+    margin-top: 100px;
     left: 38%;
   }
 
   @media (max-width: 700px) {
-    top: 360px;
     left: 38%;
   }
 `
