@@ -31,6 +31,10 @@ const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
   const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
+
+  const [orderID , setOrderID ] = useState(false)
+  const [ticketID, setTicketID] = useState(false)
+
   const { state = {} } = location
   const {
     sumTickets,
@@ -94,13 +98,12 @@ export default function Summary({ location }) {
 
   // Audience Count
   const audienceCount = useAudienceCount()
-  console.log("hook count: " + audienceCount)
+  //console.log("hook count: " + audienceCount)
   const audienceLimit = 200
 
   // Unique ID
   const userID = uniqid()
-  console.log("User ID " + userID)
-  console.log(process.env.GATSBY_PAYPAL_CLIENT_ID_SB)
+
   // POST TO — AIRTABLE
   const paypalSuccess = data => {
     airtableHandler(data)
@@ -157,18 +160,36 @@ export default function Summary({ location }) {
         },
       ])
       .then(() => {
-        base("Teilnehmer 2021").find(data.orderID, function (err, record) {
-          if (err) {
-            console.error(err)
-            return
-          }
-          console.log("Retrieved", record.id)
-        })
         //console.log(ticketID);
         //navigate("/submitted")
-        mailChimpSubmission()
+        //mailChimpSubmission()
+        setOrderID(data.orderID);
       })
   }
+
+  useEffect(() => {
+    //console.log("Order ID effect triggered! Order ID is ", orderID);
+    const catchTicketID = async () => {
+      const recTicketID = await getTicketID(orderID);
+      console.log(ticketID);
+      setTicketID(recTicketID);
+    }
+    if(orderID){
+      try{
+        catchTicketID(orderID)
+      }catch(err){
+        console.log(err);
+      }
+      //setTicketID(recTicketID);
+    }
+  }, [orderID, setTicketID]) 
+
+  // useEffect(() => {
+  //   if(ticketID){
+  //     console.log("Ticket ID effect triggered! Ticket ID is ", ticketID)
+  //     mailChimpSubmission()
+  //   }
+  // }, [ticketID])
 
   const mailChimpSubmission = () => {
     addToMailchimp(email, {
