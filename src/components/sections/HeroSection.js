@@ -33,21 +33,28 @@ export default function HeroSection() {
   return (
     <Container>
       <TitleLine>
-        <Klein>
+        <KleinMask>
           <TitleKlein> Klein </TitleKlein>
-          <TitleKleinGhost> Klein </TitleKleinGhost>
-        </Klein>
+        </KleinMask>
 
-        <TitleUndStroke>
-          {" "}
-          und <TitleHaarig>Haarig </TitleHaarig>{" "}
-        </TitleUndStroke>
-        <TitleJahr> 2022 </TitleJahr>
+        <UndMask>
+          <TitleUndStroke> und </TitleUndStroke>
+        </UndMask>
+        <HaarigMask>
+          <TitleHaarig>Haarig</TitleHaarig>
+        </HaarigMask>
+        <YearMask>
+          <TitleJahr> 2022 </TitleJahr>
+        </YearMask>
       </TitleLine>
       <TitleProps> Artwork: Karla Gondekova </TitleProps>
       <InfoGroup>
-        <Date>Fr 15 - Mo 18 Juli</Date>
-        <Place>Bad Wildbad</Place>
+        <DateMask>
+          <Date>Fr 15 - Mo 18 Juli</Date>
+        </DateMask>
+        <PlaceMask>
+          <Place>Bad Wildbad</Place>
+        </PlaceMask>
       </InfoGroup>
       <TicketWrapper>
         <TicketGroup
@@ -109,41 +116,34 @@ const TitleLine = styled.div`
 
 // TITLE - Klein und Haarig
 
-const Klein = styled.div`
-  position: relative;
-  overflow: hidden;
-`
-
-const TitleKleinGhost = styled.h1`
-  z-index: 20;
+const KleinMask = styled.div`
   display: block;
-  text-align: left;
-  font-family: "GT-Alpina-Extended-Regular";
-  font-size: 120px;
-  text-transform: none;
-  color: #000000;
-  visibility: hidden;
-
-  @media (max-width: 768px) {
-    font-size: 100px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 90px;
-  }
+  overflow: hidden;
+  padding: 8px 0;
 `
 
 const TitleKlein = styled.h1`
   z-index: 20;
-  display: block;
+  /* display: block; */
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 120px;
   text-transform: none;
   color: #000000;
-  position: absolute;
+  animation: HeroAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
 
-  animation: TitleAnimation 1.8s forwards cubic-bezier(0.2, 0.9, 0.2, 1);
+  @keyframes HeroAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(2px);
+    }
+  }
 
   @media (max-width: 768px) {
     font-size: 100px;
@@ -152,20 +152,20 @@ const TitleKlein = styled.h1`
   @media (max-width: 700px) {
     font-size: 90px;
   }
+`
 
-  @keyframes TitleAnimation {
-    0% {
-      top: 150px;
-    }
-
-    100% {
-      top: 0px;
-    }
+const UndMask = styled.div`
+  overflow: hidden;
+  padding: 8px 30px 8px 0;
+  display: inline-block;
+  @media (max-width: 700px) {
+    margin-top: -8px;
   }
 `
 
 const TitleUndStroke = styled.h1`
-  display: inline;
+  animation: HeroAnimation 1.3s 0.7s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 120px;
@@ -183,14 +183,24 @@ const TitleUndStroke = styled.h1`
   }
 `
 
+const HaarigMask = styled.div`
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 0;
+  @media (max-width: 700px) {
+    margin-top: -8px;
+  }
+`
+
 const TitleHaarig = styled.h1`
-  display: contents;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 120px;
   text-transform: none;
   color: #000000;
   text-shadow: none;
+  animation: HeroAnimation 1.3s 0.9s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
 
   @media (max-width: 768px) {
     font-size: 100px;
@@ -201,7 +211,18 @@ const TitleHaarig = styled.h1`
   }
 `
 
+const YearMask = styled.div`
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 0;
+  @media (max-width: 700px) {
+    margin-top: -8px;
+  }
+`
+
 const TitleJahr = styled.h1`
+  animation: HeroAnimation 1.2s 2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
   z-index: 200;
   position: absolute;
   text-align: right;
@@ -227,7 +248,7 @@ const TitleProps = styled.h5`
   bottom: 25%;
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 14px;
-  color: #5A5A5A;
+  color: #5a5a5a;
 
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -246,8 +267,6 @@ const TitleProps = styled.h5`
     font-size: 10px;
   }
 `
-
-
 
 // Datum und Ort Pills
 
@@ -271,7 +290,18 @@ const InfoGroup = styled.div`
   }
 `
 
+const DateMask = styled.div`
+  /* display: inline-block; */
+  overflow: hidden;
+  padding: 8px 0;
+  @media (max-width: 700px) {
+    margin-top: -8px;
+  }
+`
+
 const Date = styled.h3`
+  animation: HeroAnimation 1.3s 1.1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
   font-family: "GT-Alpina-Extended-Regular";
   /* background-color: white; */
   width: 300px;
@@ -294,7 +324,18 @@ const Date = styled.h3`
   }
 `
 
+const PlaceMask = styled.div`
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 0;
+  @media (max-width: 700px) {
+    margin-top: -8px;
+  }
+`
+
 const Place = styled.h3`
+  animation: HeroAnimation 1.3s 1.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
   font-family: "GT-Alpina-Extended-Regular";
   /* background-color: white; */
   width: 250px;
