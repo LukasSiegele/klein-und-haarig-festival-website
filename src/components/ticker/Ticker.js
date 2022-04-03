@@ -25,7 +25,8 @@ const Ticker = () => {
         {({ index }) => (
           <Wrapper>
             <TickerText className="tickerText">
-              Ticketverkauf ab 3. April, 16 Uhr
+              Sorry, der Ticketverkauf verschiebt sich leider aufgrund von
+              technischen Problemen.
             </TickerText>
             <Icon src="/icons/banner-star.svg"></Icon>
           </Wrapper>
