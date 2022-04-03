@@ -25,7 +25,8 @@ const Ticker = () => {
         {({ index }) => (
           <Wrapper>
             <TickerText className="tickerText">
-              Ticketverkauf ab 3. April, 16 Uhr
+              Sorry, der Ticketverkauf verschiebt sich leider aufgrund von
+              technischen Problemen.
             </TickerText>
             <Icon src="/icons/banner-star.svg"></Icon>
           </Wrapper>
@@ -54,7 +55,7 @@ const Wrapper = styled.div`
 `
 
 const TickerWrapper = styled.div`
-  z-index: 199;
+  z-index: 999;
   position: fixed;
   left: 0;
   bottom: 6%;

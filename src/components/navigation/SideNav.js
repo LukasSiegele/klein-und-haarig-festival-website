@@ -33,11 +33,26 @@ export default function SideNavigation() {
 // Fixed SideNav on Frontpage
 const SideNavWrapper = styled.div`
   /* position: fixed; */
-  background-image: url(${NavBackground});
+  /* background-image: url(${NavBackground}); */
 
   height: auto;
   /* z-index: 100; */
   border-right: 1px solid;
+
+  animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+
+  @keyframes SideBarAnimation {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 
   @media (max-width: 768px) {
     display: none;
