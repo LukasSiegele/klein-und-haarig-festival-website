@@ -130,7 +130,7 @@ const TitleKlein = styled.h1`
   font-size: 120px;
   text-transform: none;
   color: #000000;
-  animation: HeroAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: HeroAnimation 1.3s 0.7s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
   @keyframes HeroAnimation {
@@ -164,7 +164,7 @@ const UndMask = styled.div`
 `
 
 const TitleUndStroke = styled.h1`
-  animation: HeroAnimation 1.3s 0.7s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: HeroAnimation 1.3s 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
@@ -199,7 +199,7 @@ const TitleHaarig = styled.h1`
   text-transform: none;
   color: #000000;
   text-shadow: none;
-  animation: HeroAnimation 1.3s 0.9s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: HeroAnimation 1.3s 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
   @media (max-width: 768px) {
@@ -221,7 +221,7 @@ const YearMask = styled.div`
 `
 
 const TitleJahr = styled.h1`
-  animation: HeroAnimation 1.2s 2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: HeroAnimation 1.2s 2.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   z-index: 200;
   position: absolute;
@@ -300,7 +300,7 @@ const DateMask = styled.div`
 `
 
 const Date = styled.h3`
-  animation: HeroAnimation 1.3s 1.1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: HeroAnimation 1.3s 1.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   font-family: "GT-Alpina-Extended-Regular";
   /* background-color: white; */
@@ -334,7 +334,7 @@ const PlaceMask = styled.div`
 `
 
 const Place = styled.h3`
-  animation: HeroAnimation 1.3s 1.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: HeroAnimation 1.3s 1.6s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   font-family: "GT-Alpina-Extended-Regular";
   /* background-color: white; */
