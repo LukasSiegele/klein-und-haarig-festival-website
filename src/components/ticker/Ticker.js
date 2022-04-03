@@ -1,10 +1,15 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { TickerText } from "../styles/TextStyles"
 import RTicker from "react-ticker"
 import styled from "styled-components"
 import { themes } from "../styles/ColorStyles"
 
+import Delayed from "../ticker/useTickerDelay"
+
 import "./Ticker.css"
+
+
+// Ticker Component
 const Ticker = () => {
   const [isMoving, setIsMoving] = useState(true)
 
@@ -17,23 +22,25 @@ const Ticker = () => {
   }
 
   return (
-    <TickerWrapper
-      onMouseEnter={mouseEnterHandler}
-      onMouseLeave={mouseLeaveHandler}
-    >
-      <RTicker speed={6} move={isMoving}>
-        {({ index }) => (
-          <Wrapper>
-            <TickerText className="tickerText">
-              Sorry, der Ticketverkauf verschiebt sich leider wegen technische
-              Problemen.
-            </TickerText>
-            <Icon src="/icons/banner-star.svg"></Icon>
-          </Wrapper>
-        )}
-      </RTicker>
-    </TickerWrapper>
-  )
+    <Delayed>
+      <TickerWrapper
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
+      >
+        <RTicker speed={6} move={isMoving}>
+          {({ index }) => (
+            <Wrapper>
+              <TickerText className="tickerText">
+                Sorry, der Ticketverkauf verschiebt sich leider wegen technische
+                Problemen.
+              </TickerText>
+              <Icon src="/icons/banner-star.svg"></Icon>
+            </Wrapper>
+          )}
+        </RTicker>
+      </TickerWrapper>
+    </Delayed>
+    )
 }
 
 const Icon = styled.img`
