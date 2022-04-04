@@ -178,8 +178,8 @@ export default function Summary({ location }) {
     //console.log("Order ID effect triggered! Order ID is ", orderID);
     const catchTicketID = async () => {
       const recTicketID = await getTicketID(orderID)
-      console.log(ticketID)
-      setTicketID(recTicketID)
+      console.log(recTicketID.substring(3,16))
+      setTicketID(recTicketID.substring(3,16))
     }
     if (orderID) {
       try {
@@ -187,20 +187,20 @@ export default function Summary({ location }) {
       } catch (err) {
         console.log(err)
       }
-      // setTicketID(recTicketID)
+      
     }
   }, [orderID, setTicketID])
 
   useEffect(() => {
     if (ticketID) {
       console.log("Ticket ID effect triggered! Ticket ID is ", ticketID)
-      // mailChimpSubmission()
+      mailChimpSubmission()
     }
   }, [ticketID])
 
   const mailChimpSubmission = () => {
     addToMailchimp(email, {
-      TICKETID: userID,
+      TICKETID: ticketID,
       // UID: userID,
       FNAME: firstName,
       LNAME: lastName,
