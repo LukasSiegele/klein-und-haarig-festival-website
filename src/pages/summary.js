@@ -29,6 +29,7 @@ const base = new Airtable({
 
 const table = base("Teilnehmer 2022")
 
+
 export default function Summary({ location }) {
   const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
 
