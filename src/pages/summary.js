@@ -178,8 +178,8 @@ export default function Summary({ location }) {
     //console.log("Order ID effect triggered! Order ID is ", orderID);
     const catchTicketID = async () => {
       const recTicketID = await getTicketID(orderID)
-      console.log(recTicketID.substring(3,16))
-      setTicketID(recTicketID.substring(3,16))
+      console.log(recTicketID.substring(3,17))
+      setTicketID(recTicketID.substring(3,17))
     }
     if (orderID) {
       try {
@@ -243,7 +243,10 @@ export default function Summary({ location }) {
         navigate("/submitted")
       })
       .catch(err => {
-        navigate("/failed")
+        navigate("/failed",{
+          state: {
+            ticketID: ticketID,
+          }})
         console.log(err)
         alert(
           "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
