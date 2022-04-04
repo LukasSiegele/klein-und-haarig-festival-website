@@ -168,7 +168,7 @@ export default function Summary({ location }) {
       ])
       .then(() => {
         //console.log(ticketID);
-        //navigate("/submitted")
+        
         //mailChimpSubmission()
         setOrderID(data.orderID);
       })
@@ -237,8 +237,11 @@ export default function Summary({ location }) {
         console.log("msg", `${result}: ${msg}`)
 
         if (result !== "success") {
+          navigate("/failed");
           throw msg
         }
+
+        navigate("/submitted");
         // alert(msg)
       })
       .catch(err => {
