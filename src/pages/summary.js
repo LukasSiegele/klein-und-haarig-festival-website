@@ -240,8 +240,10 @@ export default function Summary({ location }) {
           throw msg
         }
         // alert(msg)
+        navigate("/submitted")
       })
       .catch(err => {
+        navigate("/failed")
         console.log(err)
         alert(
           "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
