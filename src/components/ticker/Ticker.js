@@ -84,11 +84,13 @@ const TickerWrapper = styled.div`
   @keyframes TickerAnimation {
     0% {
       opacity: 0;
+      max-height: 0;
       /* transform: translateX(25vw); */
     }
 
     100% {
       opacity: 1;
+      max-height: 50px;
       /* transform: translateX(0px); */
     }
   }
