@@ -21,7 +21,7 @@ import {
   Note,
   TextSmall,
 } from "../components/styles/TextStyles"
-import getTicketID from "../helper/useTicketRequest"
+import { getTicketID } from "../helper/useTicketRequest"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -32,7 +32,7 @@ const table = base("Teilnehmer 2022")
 export default function Summary({ location }) {
   const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
 
-  const [orderID , setOrderID ] = useState(false)
+  const [orderID, setOrderID] = useState(false)
   const [ticketID, setTicketID] = useState(false)
 
   const { state = {} } = location
@@ -106,14 +106,14 @@ export default function Summary({ location }) {
 
   // POST TO — AIRTABLE
 
-  const skipPaypal = () =>{
+  const skipPaypal = () => {
     const data = {
-      orderID: '5VX85873R9210334X'
+      orderID: "5VX85873R9210334X",
     }
-    paypalSuccess(data);
+    paypalSuccess(data)
   }
   const paypalSuccess = data => {
-    airtableHandler(data);
+    airtableHandler(data)
 
     console.log(
       "audienceCount:  " + audienceCount,
@@ -169,33 +169,33 @@ export default function Summary({ location }) {
         //console.log(ticketID);
         //navigate("/submitted")
         //mailChimpSubmission()
-        setOrderID(data.orderID);
+        setOrderID(data.orderID)
       })
   }
 
   useEffect(() => {
     //console.log("Order ID effect triggered! Order ID is ", orderID);
     const catchTicketID = async () => {
-      const recTicketID = await getTicketID(orderID);
-      console.log(ticketID);
-      setTicketID(recTicketID);
+      const recTicketID = await getTicketID(orderID)
+      console.log(ticketID)
+      setTicketID(recTicketID)
     }
-    if(orderID){
-      try{
+    if (orderID) {
+      try {
         catchTicketID(orderID)
-      }catch(err){
-        console.log(err);
+      } catch (err) {
+        console.log(err)
       }
-      //setTicketID(recTicketID);
+      // setTicketID(recTicketID)
     }
-  }, [orderID, setTicketID]) 
+  }, [orderID, setTicketID])
 
-  // useEffect(() => {
-  //   if(ticketID){
-  //     console.log("Ticket ID effect triggered! Ticket ID is ", ticketID)
-  //     mailChimpSubmission()
-  //   }
-  // }, [ticketID])
+  useEffect(() => {
+    if (ticketID) {
+      console.log("Ticket ID effect triggered! Ticket ID is ", ticketID)
+      // mailChimpSubmission()
+    }
+  }, [ticketID])
 
   const mailChimpSubmission = () => {
     addToMailchimp(email, {
@@ -478,7 +478,6 @@ export default function Summary({ location }) {
                       onSuccess={paypalSuccess}
                     />
                   </PayPalScriptProvider>
-                    
                 </PayPalGroup>
               </Group>
             </Section>
