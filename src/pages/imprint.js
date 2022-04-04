@@ -57,7 +57,7 @@ export default function Imprint() {
             <p>Registergericht: Amtsgericht München</p>
           </Section>
           <Section>
-            <Header>EU-Streitschlichtung</Header>
+            <Header>EU Streitschlichtung</Header>
             <p>
               Die Europ&auml;ische Kommission stellt eine Plattform zur
               Online-Streitbeilegung bereit:{" "}
@@ -72,7 +72,7 @@ export default function Imprint() {
             </p>
           </Section>
           <Section>
-            <Header>Verbraucherstreitbeilegung</Header>
+            <Header>Verbraucherstreit Beilegung</Header>
             <p>
               Wir sind nicht bereit oder verpflichtet, an
               Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
@@ -153,9 +153,9 @@ const HiddenLink = styled(Link)`
 const Wrapper = styled.div`
   padding: 120px 40px;
   color: white;
-  display: grid;
-  /* grid-template-columns: 1fr; */
-  justify-content: center;
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
 `
 
 const Content = styled.div`
