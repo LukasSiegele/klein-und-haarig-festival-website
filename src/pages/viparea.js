@@ -24,6 +24,7 @@ export default function VIParea() {
   let queryParams = null
   const [userInfo, setUserInfo] = useState(false);
   const [ticketID, setTicketID] = useState(null);
+  const [submitFailed, setSubmitFailed] = useState(false)
   
   
   if (typeof window !== `undefined`){
@@ -41,6 +42,7 @@ export default function VIParea() {
     const validateTicketID = async() => {
       const result = await verifyTicket(ticketID);
       setUserInfo(result);
+      setSubmitFailed(!result);
     }
 
     if(ticketID){
@@ -48,16 +50,23 @@ export default function VIParea() {
       validateTicketID()
     }
   },[ticketID, setUserInfo])
-  // const [key, setKey] = useState(queryParams.get('key'));
-  // const [hasAccess, setHasAccess] = useState(false);
 
-  // const ticketVerify = useTicketVerify(key)
-  // console.log(ticketVerify)
+
+  useEffect(() => {
+    if(userInfo && queryParams){
+      console.log("User Info effect: ", userInfo.id)
+      navigate('/viparea?k='+userInfo.id.substring(3,17))
+    }
+  },[ticketID, userInfo])
+
+  const handleIDSubmit = (id) =>{
+    setTicketID(id);
+  }
 
   
 
   return ( <>
-    {userInfo ? <PersonalticketSection ticketID={ticketID} userInfo={userInfo}/> : <VipLoginSection/>}
+    {userInfo ? <PersonalticketSection ticketID={ticketID} userInfo={userInfo} /> : <VipLoginSection handleSubmit={handleIDSubmit} hasError={submitFailed}/>}
     </>
   )
 }

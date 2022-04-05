@@ -14,6 +14,7 @@ import Klecks from "../../../static/images/TicketareaLila.png"
 import {
     Headline,
     PageInfo,
+    Note,
     ImageDescription,
   } from "../../components/styles/TextStyles"
 
@@ -23,12 +24,11 @@ const VipLoginSection = props => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        navigate("/VipAccess", {
-        state: {
-            ticketID: ticketid,
-        },
-        })
+        console.log(ticketid)
+       props.handleSubmit(ticketid)
     }
+
+    console.log(props.hasError)
 
     return(
         <Layout>
@@ -71,9 +71,9 @@ const VipLoginSection = props => {
                         />{" "}
                     </InputSection>
                     <ButtonSection>
-                      <Link to="/">
+                    {props.hasError ? <ErrorMsg>Wrong Ticket ID</ErrorMsg> :null}
                         <FormButton typ="submit" label="Login"></FormButton>
-                      </Link>
+                        
                     </ButtonSection>
                   </form>
                 </LoginWrapper>
@@ -255,4 +255,11 @@ const InputSection = styled.div``
 const ButtonSection = styled.div`
   padding: 0;
   max-width: 400px;
+`
+const ErrorMsg = styled(Note)`
+ color: red; 
+margin-top: 13px;
+@media (max-width: 768px) {
+  margin-top: 4px;
+}
 `
