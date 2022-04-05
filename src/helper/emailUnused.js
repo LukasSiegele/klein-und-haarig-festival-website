@@ -4,8 +4,9 @@ const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
 }).base(process.env.GATSBY_AIRTABLE_BASE)
 
-export const emailUnused = async email => {
-  return new Promise((resolve, reject) => {
+export default (email) => {
+  console.log("emailUnused entered")
+  return new Promise((resolve) => {
     let results = []
     base("Teilnehmer 2022")
       .select({ view: "Master", filterByFormula: `{Email} = "${email}"` })
@@ -14,8 +15,10 @@ export const emailUnused = async email => {
         console.log(records)
         results.push(records)
         fetchNextPage()
-        console.log(results.length)
-        if(results.length > 0){reject(false)}
+        console.log(results[0].length)
+        if(results[0].length > 0){
+          resolve(false)
+        }
         else{
           resolve(true)
         }

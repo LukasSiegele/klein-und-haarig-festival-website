@@ -29,10 +29,17 @@ export default function Form(props) {
     setValidation("pending");
   }
 
+  
+
+
   useEffect(() => {
+
+
+    console.log("validation effect triggered");
 
     const validateEmail = async () => {
       const result = await emailUnused(email);
+      console.log("result =", result);
       setError(!result);
       setValidation(result);
     }
@@ -202,10 +209,12 @@ export default function Form(props) {
               Als Erinnerung für kommende Veranstaltungen sehr zu empfehlen.
             </CheckboxDecription>
           </CheckboxGroup>
+          
           <WeiterWrapper>
             <FormButton typ="submit" label="Weiter ➞" />
+            {error ? <ErrorMsg>Email is already used</ErrorMsg> : null}
           </WeiterWrapper>
-          {error ? <p>Email is already used</p> : null}
+          
         </form>
       </Wrapper>
     </Container>
@@ -231,6 +240,12 @@ const Wrapper = styled.div`
 
 const Label = styled(SubheaderSmall)`
   color: white;
+  margin-top: 20px;
+  display: inline-block;
+`
+
+const ErrorMsg = styled(SubheaderSmall)`
+  color: red;
   margin-top: 20px;
   display: inline-block;
 `
