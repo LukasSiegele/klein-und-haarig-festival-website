@@ -4,6 +4,7 @@ const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
 }).base(process.env.GATSBY_AIRTABLE_BASE)
 
+
 export default async (ticketID) => {
 
   return new Promise((resolve) => {
