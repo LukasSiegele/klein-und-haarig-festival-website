@@ -12,6 +12,7 @@ import Kritzel from "../../static/images/TicketareaRotesKritzel.png"
 import Klecks from "../../static/images/TicketareaLila.png"
 import VipLoginSection from "../components/sections/VipLoginSection"
 import PersonalticketSection from "../components/sections/PersonalticketSection"
+import verifyTicket from "../helper/verifyTicket"
 //import useTicketVerify from "../helper/useTicketVerify"
 
 
@@ -38,8 +39,16 @@ export default function VIParea() {
   },[])
 
   useEffect(() => {
+
+    const validateTicketID = async() => {
+      const result = verifyTicket(ticketID);
+      console.log(result)
+      setHasAccess(result);
+    }
+
     if(ticketID){
       console.log(ticketID)
+      validateTicketID()
     }
   },[ticketID])
   // const [key, setKey] = useState(queryParams.get('key'));
