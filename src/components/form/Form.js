@@ -1,8 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import { navigate } from "gatsby"
 import { SubheaderSmall, Note } from "../styles/TextStyles"
+
+import emailUnused from "../../helper/emailUnused"
 
 export default function Form(props) {
   const [firstName, setFirstName] = useState("")
@@ -16,28 +18,51 @@ export default function Form(props) {
   const [vereinsbeitritt, setVereinsbeitritt] = useState(false)
   const [datenspeicherung, setDatenspeicherung] = useState(false)
   const [newsletter, setNewsletter] = useState(false)
+
+  const [validation, setValidation] = useState(false);
+  const [error, setError] = useState(false);
+
   console.log("Form props: ", props)
+  
   const handleSubmit = e => {
     e.preventDefault()
-    console.log()
-    navigate("/helfer", {
-      state: {
-        sumTickets: props.sumTickets,
-        onlyFriends: props.onlyFriends,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phone: phone,
-        street: street,
-        houseNumber: houseNumber,
-        postcode: postcode,
-        city: city,
-        vereinsbeitritt: vereinsbeitritt,
-        datenspeicherung: datenspeicherung,
-        newsletter: newsletter,
-      },
-    })
+    setValidation("pending");
   }
+
+  useEffect(() => {
+
+    const validateEmail = async () => {
+      const result = await emailUnused(email);
+      setError(!result);
+      setValidation(result);
+    }
+
+    if(validation === "pending"){
+      try {
+        validateEmail()
+      } catch (err) {
+        console.log(err)
+      }
+    }else if(validation){
+      navigate("/helfer", {
+        state: {
+          sumTickets: props.sumTickets,
+          onlyFriends: props.onlyFriends,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phone: phone,
+          street: street,
+          houseNumber: houseNumber,
+          postcode: postcode,
+          city: city,
+          vereinsbeitritt: vereinsbeitritt,
+          datenspeicherung: datenspeicherung,
+          newsletter: newsletter,
+        },
+      })
+    }
+  }, [email, validation, setValidation])
 
   return (
     <Container>
@@ -180,6 +205,7 @@ export default function Form(props) {
           <WeiterWrapper>
             <FormButton typ="submit" label="Weiter ➞" />
           </WeiterWrapper>
+          {error ? <p>Email is already used</p> : null}
         </form>
       </Wrapper>
     </Container>
