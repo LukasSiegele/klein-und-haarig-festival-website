@@ -23,8 +23,8 @@ import verifyTicket from "../helper/verifyTicket"
 export default function VIParea() {
   const [hasAccess, setHasAccess] = useState(false);
   
-
-  const [ticketID, setTicketID] = useState(null)
+  let queryParams = null //, setQueryParams] = useState(null);
+  const [ticketID, setTicketID] = useState(null);
 
   // let queryParams
   // const isBrowser = () => typeof window !== "undefined"
@@ -32,10 +32,14 @@ export default function VIParea() {
   //  
   // }
   // let querykey
-  const queryParams = new URLSearchParams(window.location.search);
+  if (typeof window !== `undefined`){
+    queryParams = new URLSearchParams(window.location.search);
+  }
 
   useEffect(() => {
-    setTicketID(queryParams.get('k'));
+    if(queryParams){
+      setTicketID(queryParams.get('k'));
+    }
   },[])
 
   useEffect(() => {
