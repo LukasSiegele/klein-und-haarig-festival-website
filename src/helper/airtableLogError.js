@@ -7,13 +7,19 @@ const base = new Airtable({
 const table = base("errorLog2020");
 
 export default async (ticketID, data, email) =>{
-
+        
+    
+    if(typeof data === 'object'){
+        data = JSON.stringify(data);
+    }else if(Array.isArray(data)){
+        data = String(data)
+    }
             table
             .create([
                 {
                     fields: {
                         ticketID: ticketID,
-                        data: data,
+                        data: String(data),
                         email:email
                     }
                 }

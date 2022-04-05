@@ -110,12 +110,7 @@ export default function Summary({ location }) {
 
   // POST TO — AIRTABLE
 
-  const skipPaypal = () => {
-    const data = {
-      orderID: "5VX85873R9210334X",
-    }
-    paypalSuccess(data)
-  }
+
   const paypalSuccess = data => {
     setOrderData(data);
     airtableHandler(data);
@@ -124,6 +119,11 @@ export default function Summary({ location }) {
       "audienceCount:  " + audienceCount,
       "audienceLimit:  " + audienceLimit
     )
+  }
+
+  const paypalError = err => {
+    airtableLogError(null, err, email);
+    navigate("/failed");
   }
   console.log("onlyFriends: " + onlyFriends)
 
@@ -489,6 +489,7 @@ export default function Summary({ location }) {
                       amount={sumTickets}
                       currency={"EUR"}
                       onSuccess={paypalSuccess}
+                      onError={paypalError}
                     />
                   </PayPalScriptProvider>
                 </PayPalGroup>
@@ -496,7 +497,6 @@ export default function Summary({ location }) {
             </Section>
             {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
           </form>
-          <button onClick={skipPaypal}>Skip paypal</button>
         </Wrapper>
       </Container>
     </Layout>

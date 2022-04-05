@@ -19,7 +19,7 @@ export default function Failed({ location }) {
   const { state = {} } = location
   const {
     ticketID: ticketID,
-  } = state
+  } = state;
   return (
     <Layout>
       <SEO title="Failed" />
@@ -51,15 +51,27 @@ export default function Failed({ location }) {
                       </li>
                     </ul>
                   </TextList>
+                  {ticketID ? 
                   <TextDescription>
-                    Bitte sende eine Email mit deeiner TicketID {ticketID}
-                    <LinkInline
-                      href="mailto:info@kleinundhaarig.de"
-                      subject="Website: Problem beim Ticketkauf"
-                    >
-                      info@kleinundhaarig.de
-                    </LinkInline>
-                  </TextDescription>
+                  Bitte wende dich mit einer Email an{" "}
+                  <LinkInline
+                    href="mailto:info@kleinundhaarig.de"
+                    subject={"TicketFehler: " + (ticketID) +" Problem beim Ticketkauf"}
+                  >
+                    info@kleinundhaarig.de
+                  </LinkInline>
+                </TextDescription> : <TextDescription>
+                  Falls das nicht hilft wende dich bitte an{" "}
+                  <LinkInline
+                    href="mailto:info@kleinundhaarig.de"
+                    subject="Website: Problem beim Ticketkauf"
+                  >
+                    info@kleinundhaarig.de
+                  </LinkInline>
+                </TextDescription>
+
+                  }
+                  
                 </Description>
                 <ButtonSection>
                   <Link to="/">
