@@ -22,6 +22,7 @@ import {
   TextSmall,
 } from "../components/styles/TextStyles"
 import { getTicketID } from "../helper/useTicketRequest"
+import airtableLogError from "../helper/airtableLogError"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -97,6 +98,8 @@ export default function Summary({ location }) {
   const [isDauer, setIsDauer] = useState()
   const [isHelperDetails, setIsHelperDetails] = useState()
 
+  const [orderData, setOrderData] = useState(false)
+
   // Audience Count
   const audienceCount = useAudienceCount()
   //console.log("hook count: " + audienceCount)
@@ -114,7 +117,8 @@ export default function Summary({ location }) {
     paypalSuccess(data)
   }
   const paypalSuccess = data => {
-    airtableHandler(data)
+    setOrderData(data);
+    airtableHandler(data);
 
     console.log(
       "audienceCount:  " + audienceCount,
@@ -186,6 +190,7 @@ export default function Summary({ location }) {
         catchTicketID(orderID)
       } catch (err) {
         console.log(err)
+        airtableLogError(null, {orderData, err}, email)
       }
       
     }
@@ -237,12 +242,14 @@ export default function Summary({ location }) {
         console.log("msg", `${result}: ${msg}`)
 
         if (result !== "success") {
+          airtableLogError(ticketID, {orderData,msg}, email)
           throw msg
         }
         // alert(msg)
         navigate("/submitted")
       })
       .catch(err => {
+        airtableLogError(ticketID, orderData, email)
         navigate("/failed",{
           state: {
             ticketID: ticketID,

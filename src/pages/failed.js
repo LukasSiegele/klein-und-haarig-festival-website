@@ -15,7 +15,11 @@ import {
   ImageDescription,
 } from "../components/styles/TextStyles"
 
-export default function Failed() {
+export default function Failed({ location }) {
+  const { state = {} } = location
+  const {
+    ticketID: ticketID,
+  } = state
   return (
     <Layout>
       <SEO title="Failed" />
@@ -48,7 +52,7 @@ export default function Failed() {
                     </ul>
                   </TextList>
                   <TextDescription>
-                    Falls das nicht hilft wende dich bitte an{" "}
+                    Bitte sende eine Email mit deeiner TicketID {ticketID}
                     <LinkInline
                       href="mailto:info@kleinundhaarig.de"
                       subject="Website: Problem beim Ticketkauf"
