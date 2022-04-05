@@ -21,7 +21,7 @@ import {
   Note,
   TextSmall,
 } from "../components/styles/TextStyles"
-import getTicketID from "../helper/useTicketRequest"
+import { getTicketID } from "../helper/useTicketRequest"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -107,14 +107,14 @@ export default function Summary({ location }) {
 
   // POST TO — AIRTABLE
 
-  const skipPaypal = () =>{
+  const skipPaypal = () => {
     const data = {
-      orderID: '5VX85873R9210334X'
+      orderID: "5VX85873R9210334X",
     }
-    paypalSuccess(data);
+    paypalSuccess(data)
   }
   const paypalSuccess = data => {
-    airtableHandler(data);
+    airtableHandler(data)
 
     console.log(
       "audienceCount:  " + audienceCount,
@@ -170,37 +170,37 @@ export default function Summary({ location }) {
         //console.log(ticketID);
         
         //mailChimpSubmission()
-        setOrderID(data.orderID);
+        setOrderID(data.orderID)
       })
   }
 
   useEffect(() => {
     //console.log("Order ID effect triggered! Order ID is ", orderID);
     const catchTicketID = async () => {
-      const recTicketID = await getTicketID(orderID);
-      console.log(ticketID);
-      setTicketID(recTicketID);
+      const recTicketID = await getTicketID(orderID)
+      console.log(recTicketID.substring(3,17))
+      setTicketID(recTicketID.substring(3,17))
     }
-    if(orderID){
-      try{
+    if (orderID) {
+      try {
         catchTicketID(orderID)
-      }catch(err){
-        console.log(err);
+      } catch (err) {
+        console.log(err)
       }
-      //setTicketID(recTicketID);
+      
     }
-  }, [orderID, setTicketID]) 
+  }, [orderID, setTicketID])
 
-  // useEffect(() => {
-  //   if(ticketID){
-  //     console.log("Ticket ID effect triggered! Ticket ID is ", ticketID)
-  //     mailChimpSubmission()
-  //   }
-  // }, [ticketID])
+  useEffect(() => {
+    if (ticketID) {
+      console.log("Ticket ID effect triggered! Ticket ID is ", ticketID)
+      mailChimpSubmission()
+    }
+  }, [ticketID])
 
   const mailChimpSubmission = () => {
     addToMailchimp(email, {
-      TICKETID: userID,
+      TICKETID: ticketID,
       // UID: userID,
       FNAME: firstName,
       LNAME: lastName,
@@ -243,8 +243,13 @@ export default function Summary({ location }) {
 
         navigate("/submitted");
         // alert(msg)
+        navigate("/submitted")
       })
       .catch(err => {
+        navigate("/failed",{
+          state: {
+            ticketID: ticketID,
+          }})
         console.log(err)
         alert(
           "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
@@ -482,7 +487,6 @@ export default function Summary({ location }) {
                       onSuccess={paypalSuccess}
                     />
                   </PayPalScriptProvider>
-                    
                 </PayPalGroup>
               </Group>
             </Section>
