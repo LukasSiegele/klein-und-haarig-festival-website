@@ -32,7 +32,7 @@ const table = base("Teilnehmer 2022")
 
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
   const [orderID , setOrderID ] = useState(false)
   const [ticketID, setTicketID] = useState(false)
 

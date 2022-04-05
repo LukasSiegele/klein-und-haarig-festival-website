@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import FormButton from "../../components/buttons/FormButton"
-import Layout from "../../components/layout/layout" 
-import SEO from "../../layout/seo"
+import FormButton from "../buttons/FormButton"
+import Layout from "../layout/layout" 
+import SEO from "../layout/seo"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 
@@ -12,9 +12,9 @@ import {
   Headline,
   PageInfo,
   ImageDescription,
-} from "../../components/styles/TextStyles"
+} from "../styles/TextStyles"
 
-const PersonalTicketArea = () => {
+const PersonalTicketSection = () => {
   return (
     <Layout>
       <SEO title="personal ticket area" />
@@ -53,7 +53,7 @@ const PersonalTicketArea = () => {
   )
 }
 
-export default PersonalTicketArea;
+export default PersonalTicketSection;
 
 const Container = styled.div`
   background: black;
