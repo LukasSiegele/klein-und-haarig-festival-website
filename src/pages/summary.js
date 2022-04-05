@@ -32,8 +32,7 @@ const table = base("Teilnehmer 2022")
 
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
-  console.log(paypalCLientID);
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
   const [orderID , setOrderID ] = useState(false)
   const [ticketID, setTicketID] = useState(false)
 
@@ -114,18 +113,13 @@ export default function Summary({ location }) {
   const paypalSuccess = data => {
     setOrderData(data);
     airtableHandler(data);
-
-    console.log(
-      "audienceCount:  " + audienceCount,
-      "audienceLimit:  " + audienceLimit
-    )
   }
 
   const paypalError = err => {
     airtableLogError(null, err, email);
     navigate("/failed");
   }
-  console.log("onlyFriends: " + onlyFriends)
+
 
   const airtableHandler = data => {
     table
@@ -171,18 +165,14 @@ export default function Summary({ location }) {
         },
       ])
       .then(() => {
-        //console.log(ticketID);
-        
-        //mailChimpSubmission()
         setOrderID(data.orderID)
       })
   }
 
   useEffect(() => {
-    //console.log("Order ID effect triggered! Order ID is ", orderID);
     const catchTicketID = async () => {
       const recTicketID = await getTicketID(orderID)
-      console.log(recTicketID.substring(3,17))
+
       setTicketID(recTicketID.substring(3,17))
     }
     if (orderID) {
@@ -198,7 +188,7 @@ export default function Summary({ location }) {
 
   useEffect(() => {
     if (ticketID) {
-      console.log("Ticket ID effect triggered! Ticket ID is ", ticketID)
+
       mailChimpSubmission()
     }
   }, [ticketID])
@@ -239,7 +229,6 @@ export default function Summary({ location }) {
       FRIENDS: onlyFriends,
     })
       .then(({ msg, result }) => {
-        console.log("msg", `${result}: ${msg}`)
 
         if (result !== "success") {
           airtableLogError(ticketID, {orderData,msg}, email)
