@@ -16,8 +16,9 @@ export default async (ticketID) => {
         results.push(records)
         fetchNextPage()
         console.log(results[0].length)
+        const res1 = results[0]
         if(results[0].length === 1){
-          resolve(true)
+          resolve(res1[0]);
         }
         else{
           resolve(false)

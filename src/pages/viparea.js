@@ -21,17 +21,11 @@ import verifyTicket from "../helper/verifyTicket"
 
 
 export default function VIParea() {
-  const [hasAccess, setHasAccess] = useState(false);
-  
-  let queryParams = null //, setQueryParams] = useState(null);
+  let queryParams = null
+  const [userInfo, setUserInfo] = useState(false);
   const [ticketID, setTicketID] = useState(null);
-
-  // let queryParams
-  // const isBrowser = () => typeof window !== "undefined"
-  // if(isBrowser()){
-  //  
-  // }
-  // let querykey
+  
+  
   if (typeof window !== `undefined`){
     queryParams = new URLSearchParams(window.location.search);
   }
@@ -40,21 +34,20 @@ export default function VIParea() {
     if(queryParams){
       setTicketID(queryParams.get('k'));
     }
-  },[])
+  },[setTicketID, queryParams]);
 
   useEffect(() => {
 
     const validateTicketID = async() => {
-      const result = verifyTicket(ticketID);
-      console.log(result)
-      setHasAccess(result);
+      const result = await verifyTicket(ticketID);
+      setUserInfo(result);
     }
 
     if(ticketID){
       console.log(ticketID)
       validateTicketID()
     }
-  },[ticketID])
+  },[ticketID, setUserInfo])
   // const [key, setKey] = useState(queryParams.get('key'));
   // const [hasAccess, setHasAccess] = useState(false);
 
@@ -64,7 +57,7 @@ export default function VIParea() {
   
 
   return ( <>
-    {hasAccess ? <PersonalticketSection/> : <VipLoginSection/>}
+    {userInfo ? <PersonalticketSection ticketID={ticketID} userInfo={userInfo}/> : <VipLoginSection/>}
     </>
   )
 }

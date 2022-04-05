@@ -14,7 +14,13 @@ import {
   ImageDescription,
 } from "../styles/TextStyles"
 
-const PersonalTicketSection = () => {
+/*
+Wir bitten dich um etwas Geduld, diese Seite wird gerade von unsaufgebaut. Bald findest du hier: 
+*/ 
+const PersonalTicketSection = (props) => {
+
+  const userInfo = props.userInfo
+  console.log(userInfo)
   return (
     <Layout>
       <SEO title="personal ticket area" />
@@ -28,13 +34,13 @@ const PersonalTicketSection = () => {
               <TitlePersonalStroke> Personal </TitlePersonalStroke>
               <TitleTicketarea>Ticketarea</TitleTicketarea>
               <Description>
-                Wir bitten dich um etwas Geduld, diese Seite wird gerade von uns
-                aufgebaut. Bald findest du hier:
+                Hallo {userInfo.fields.Vorname}:
               </Description>
             </TextWrapper>
             <AccordionWrapper>
               <AccordionSection>
                 <SectionTitle>01 — Dein Digitales Ticket</SectionTitle>
+                <TicketBackground src="/images/ticket-bg.svg"></TicketBackground>
                 <ComingSoon>coming soon</ComingSoon>
               </AccordionSection>
               <AccordionSection>
@@ -59,6 +65,16 @@ const Container = styled.div`
   background: black;
   overflow: hidden;
   color: white;
+`
+
+const TicketBackground = styled.img`
+  width: 126px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  pointer-events: auto;
+  height: 41px;
 `
 
 const Wrapper = styled.div`
