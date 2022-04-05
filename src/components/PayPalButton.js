@@ -1,14 +1,11 @@
 import React from "react"
 import { useEffect } from "react";
 import {
-    PayPalScriptProvider,
     PayPalButtons,
     usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
 
 // This values are the props in the UI
-const amount = "100";
-const currency = "USD";
 const style = {"layout":"vertical"};
 
 // Custom component to wrap the PayPalButtons and handle currency changes
@@ -25,7 +22,7 @@ const PayPalButton = ({ currency, showSpinner, amount, onSuccess }) => {
                 currency: currency,
             },
         });
-    }, [currency, showSpinner]);
+    }, [currency, showSpinner, dispatch]);
 
     const approveHandler = (data) => {
       onSuccess(data);
