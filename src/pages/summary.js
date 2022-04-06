@@ -76,6 +76,7 @@ export default function Summary({ location }) {
   const festivalTicket = "Ja"
   const [autoTicket, setAutoTicket] = useState("Nein")
   const [camperTicket, setCamperTicket] = useState("Nein")
+  const [paymentPending, setPaymentPending] = useState(false)
 
   // Helfer
   const [helfer, setHelfer] = useState("")
@@ -110,7 +111,12 @@ export default function Summary({ location }) {
   // POST TO — AIRTABLE
 
 
+  const paypalClickHandler = (e) =>{
+    console.log(e)
+  }
+
   const paypalSuccess = data => {
+    setPaymentPending(true);
     setOrderData(data);
     airtableHandler(data);
   }
@@ -354,6 +360,8 @@ export default function Summary({ location }) {
       <SEO title="Summary" />
       <ShopTitle info="Schritt 4/4" title="Zusammenfassung & Bezahlen" />
       <Container>
+      {paymentPending ? <h1>Ticket wird erstellt - bitte bleib auf der Seite!</h1> : 
+      
         <Wrapper>
           <form>
             {/*onSubmit={submit}*/}
@@ -482,6 +490,7 @@ export default function Summary({ location }) {
                       currency={"EUR"}
                       onSuccess={paypalSuccess}
                       onError={paypalError}
+                      onClick={paypalClickHandler}
                     />
                   </PayPalScriptProvider>
                 </PayPalGroup>
@@ -489,7 +498,7 @@ export default function Summary({ location }) {
             </Section>
             {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
           </form>
-        </Wrapper>
+        </Wrapper> }
       </Container>
     </Layout>
   )

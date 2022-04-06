@@ -25,6 +25,7 @@ export default function VIParea() {
   const [userInfo, setUserInfo] = useState(false);
   const [ticketID, setTicketID] = useState(null);
   const [submitFailed, setSubmitFailed] = useState(false)
+
   
   
   if (typeof window !== `undefined`){
