@@ -38,8 +38,8 @@ export default function OwnedTicketCard(props) {
 }
 
 const Wrapper = styled.div`
-  height: 640px;
-  max-width: 331px;
+  height: 320px;
+  max-width: 165px;
   position: relative;
   transition: ${animations.slow};
   opacity: ${props => (props.limit ? ".3" : "1")};
