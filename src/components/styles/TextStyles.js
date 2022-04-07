@@ -6,12 +6,15 @@ export const BigHeadline = styled.h1`
   font-size: 3.2rem;
 `
 
-export const H1 = styled.h1`
-  font-weight: bold;
-  font-size: 60px;
+export const MasterHeadline = styled.h1`
+  font-size: 120px;
 
-  @media (max-width: 450px) {
-    font-size: 34px;
+  @media (max-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 90px;
   }
 `
 export const H2 = styled.h2`

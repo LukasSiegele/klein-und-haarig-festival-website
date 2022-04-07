@@ -3,24 +3,18 @@ import { navigate } from "gatsby"
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
-import Layout from "../layout/layout" 
+import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import VipSection1 from "../sections/vip/VipSection1"
 
-
-import {
-  Headline,
-  PageInfo,
-  ImageDescription,
-} from "../styles/TextStyles"
+import { Headline, PageInfo, ImageDescription } from "../styles/TextStyles"
 
 /*
 Wir bitten dich um etwas Geduld, diese Seite wird gerade von unsaufgebaut. Bald findest du hier: 
-*/ 
-const PersonalTicketSection = (props) => {
-
+*/
+const PersonalTicketSection = props => {
   const userInfo = props.userInfo.fields
   console.log(userInfo)
 
@@ -34,10 +28,8 @@ const PersonalTicketSection = (props) => {
 
   const [summary, setSummary] = useState(festivalPrice + serviceFees)
 
-
-
   // Camper Count
-  const camperPTicketsPage = 1;
+  const camperPTicketsPage = 1
 
   return (
     <Layout>
@@ -52,13 +44,14 @@ const PersonalTicketSection = (props) => {
               <TitlePersonalStroke> Personal </TitlePersonalStroke>
               <TitleTicketarea>Ticketarea</TitleTicketarea>
               <Description>
-                Hallo {userInfo.Vorname}:
+                Hallo {userInfo.Vorname}, wir bitten dich um etwas Geduld, diese
+                Seite wird gerade von uns aufgebaut. Bald findest du hier:
               </Description>
             </TextWrapper>
             <AccordionWrapper>
               <AccordionSection>
                 <SectionTitle>01 — Dein Digitales Ticket</SectionTitle>
-                <VipSection1 userData={userInfo}/>
+                <VipSection1 userData={userInfo} />
                 <ComingSoon>coming soon</ComingSoon>
               </AccordionSection>
               <AccordionSection>
@@ -77,7 +70,7 @@ const PersonalTicketSection = (props) => {
   )
 }
 
-export default PersonalTicketSection;
+export default PersonalTicketSection
 
 const Container = styled.div`
   background: black;
@@ -202,7 +195,5 @@ const Logo = styled.div`
     cursor: pointer;
   }
 `
-
-
 
 const Header = styled(Headline)``
