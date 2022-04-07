@@ -305,8 +305,10 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  box-shadow: 0 0 0 30px black inset;
-  -webkit-box-shadow: 0 0 0 30px black inset;
+  -webkit-box-shadow: 0 0 0 60px #000 inset !important;
+  background-color: #000 !important;
+  background-clip: content-box !important;
+  color: white;
   -webkit-text-fill-color: white;
 }
 
