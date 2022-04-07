@@ -8,7 +8,6 @@ import Delayed from "../ticker/useTickerDelay"
 
 import "./Ticker.css"
 
-
 // Ticker Component
 const Ticker = () => {
   const [isMoving, setIsMoving] = useState(true)
@@ -23,24 +22,26 @@ const Ticker = () => {
 
   return (
     <Delayed>
-      <TickerWrapper
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
-      >
-        <RTicker speed={6} move={isMoving}>
-          {({ index }) => (
-            <Wrapper>
-              <TickerText className="tickerText">
-                Sorry, der Ticketverkauf verschiebt sich leider wegen technische
-                Problemen.
-              </TickerText>
-              <Icon src="/icons/banner-star.svg"></Icon>
-            </Wrapper>
-          )}
-        </RTicker>
-      </TickerWrapper>
+      <TickerMask>
+        <TickerWrapper
+          onMouseEnter={mouseEnterHandler}
+          onMouseLeave={mouseLeaveHandler}
+        >
+          <RTicker speed={6} move={isMoving}>
+            {({ index }) => (
+              <Wrapper>
+                <TickerText className="tickerText">
+                  Sorry, der Ticketverkauf verschiebt sich leider wegen
+                  technischen Problemen.
+                </TickerText>
+                <Icon src="/icons/banner-star.svg"></Icon>
+              </Wrapper>
+            )}
+          </RTicker>
+        </TickerWrapper>
+      </TickerMask>
     </Delayed>
-    )
+  )
 }
 
 const Icon = styled.img`
@@ -62,6 +63,11 @@ const Wrapper = styled.div`
   /* display: grid; */
 `
 
+const TickerMask = styled.div`
+  display: block;
+  overflow: hidden;
+`
+
 const TickerWrapper = styled.div`
   z-index: 999;
   position: fixed;
@@ -71,6 +77,23 @@ const TickerWrapper = styled.div`
 
   display: grid;
   background-color: #000;
+
+  animation: TickerAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+
+  @keyframes TickerAnimation {
+    0% {
+      opacity: 0;
+      max-height: 0;
+      /* transform: translateX(25vw); */
+    }
+
+    100% {
+      opacity: 1;
+      max-height: 50px;
+      /* transform: translateX(0px); */
+    }
+  }
 `
 
 export default Ticker

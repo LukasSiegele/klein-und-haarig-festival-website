@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link as SideNavStyledLink } from "gatsby"
+import { Link } from "gatsby"
 
 import NavBackground from "../../../public/images/SideNavBackground.png"
 
@@ -10,7 +10,9 @@ export default function SideNavigation() {
   return (
     <SideNavWrapper>
       <SideNavLogoWrapper>
-        <SideNavLogo />
+        <Link to="/">
+          <SideNavLogo />
+        </Link>
       </SideNavLogoWrapper>
       {/* <SideNavLinkGroup>
                 <SideNavLinks to={"/voll"} activeClassName="active">
@@ -71,6 +73,9 @@ const SideNavLogo = styled.div`
   height: 100%;
   background-image: url(${LogoSideNav});
   background-size: cover;
+  :hover {
+    cursor: pointer;
+  }
 `
 
 // Div of Links in SideNav

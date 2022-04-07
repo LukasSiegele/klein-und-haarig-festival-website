@@ -16,6 +16,7 @@ export default function Form(props) {
   const [postcode, setPostcode] = useState()
   const [city, setCity] = useState("")
   const [vereinsbeitritt, setVereinsbeitritt] = useState(false)
+  // const [isEighteen, setIsEighteen] = useState(false)
   const [datenspeicherung, setDatenspeicherung] = useState(false)
   const [newsletter, setNewsletter] = useState(false)
 
@@ -169,6 +170,24 @@ export default function Form(props) {
             </CheckboxDecription>
           </CheckboxGroup>
           <br />
+          {/* <Label htmlFor="eighteen">18+</Label>
+          <CheckboxGroup>
+            <label class="b-contain">
+              <input
+                className="checkBox"
+                type="checkbox"
+                name="eighteen"
+                required
+                checked={isEighteen}
+                onChange={e => {
+                  setIsEighteen(e.target.checked)
+                }}
+              />
+              <div className="b-input"></div>
+            </label>
+            <CheckboxDecription>Die</CheckboxDecription>
+          </CheckboxGroup>
+          <br /> */}
           <Label htmlFor="datenspeicherung">Datenspeicherung</Label>
           <CheckboxGroup>
             <label class="b-contain">

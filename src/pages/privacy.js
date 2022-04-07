@@ -693,9 +693,10 @@ export default function Privacy() {
 const Wrapper = styled.div`
   padding: 120px 40px;
   color: white;
-  display: grid;
-  /* grid-template-columns: 1fr; */
-  justify-content: center;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
 `
 
 const Content = styled.div`
