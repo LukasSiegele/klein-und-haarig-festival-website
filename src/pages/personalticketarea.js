@@ -15,60 +15,58 @@ import PersonalticketSection from "../components/sections/PersonalticketSection"
 import verifyTicket from "../helper/verifyTicket"
 //import useTicketVerify from "../helper/useTicketVerify"
 
-
 // import { ProgressPlugin } from "webpack"
 
-
-
-export default function VIParea() {
+export default function PersonalTicketArea() {
   let queryParams = null
-  const [userInfo, setUserInfo] = useState(false);
-  const [ticketID, setTicketID] = useState(null);
+  const [userInfo, setUserInfo] = useState(false)
+  const [ticketID, setTicketID] = useState(null)
   const [submitFailed, setSubmitFailed] = useState(false)
 
-  
-  
-  if (typeof window !== `undefined`){
-    queryParams = new URLSearchParams(window.location.search);
+  if (typeof window !== `undefined`) {
+    queryParams = new URLSearchParams(window.location.search)
   }
 
   useEffect(() => {
-    if(queryParams){
-      setTicketID(queryParams.get('k'));
+    if (queryParams) {
+      setTicketID(queryParams.get("k"))
     }
-  },[setTicketID, queryParams]);
+  }, [setTicketID, queryParams])
 
   useEffect(() => {
-
-    const validateTicketID = async() => {
-      const result = await verifyTicket(ticketID);
-      setUserInfo(result);
-      setSubmitFailed(!result);
+    const validateTicketID = async () => {
+      const result = await verifyTicket(ticketID)
+      setUserInfo(result)
+      setSubmitFailed(!result)
     }
 
-    if(ticketID){
+    if (ticketID) {
       console.log(ticketID)
       validateTicketID()
     }
-  },[ticketID, setUserInfo])
-
+  }, [ticketID, setUserInfo])
 
   useEffect(() => {
-    if(userInfo && queryParams){
+    if (userInfo && queryParams) {
       console.log("User Info effect: ", userInfo.id)
-      navigate('/viparea?k='+userInfo.id.substring(3,17))
+      navigate("/personalticketarea?k=" + userInfo.id.substring(3, 17))
     }
-  },[ticketID, userInfo])
+  }, [ticketID, userInfo])
 
-  const handleIDSubmit = (id) =>{
-    setTicketID(id);
+  const handleIDSubmit = id => {
+    setTicketID(id)
   }
 
-  
-
-  return ( <>
-    {userInfo ? <PersonalticketSection ticketID={ticketID} userInfo={userInfo} /> : <VipLoginSection handleSubmit={handleIDSubmit} hasError={submitFailed}/>}
+  return (
+    <>
+      {userInfo ? (
+        <PersonalticketSection ticketID={ticketID} userInfo={userInfo} />
+      ) : (
+        <VipLoginSection
+          handleSubmit={handleIDSubmit}
+          hasError={submitFailed}
+        />
+      )}
     </>
   )
 }
-
