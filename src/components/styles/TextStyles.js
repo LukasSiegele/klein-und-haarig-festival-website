@@ -82,12 +82,18 @@ export const PageHeader = styled.h3`
   font-size: 35px;
   font-weight: 100;
   color: black;
+  @media (max-width: 800px) {
+    font-size: 28px;
+  }
 `
 
 export const PageInfo = styled.h4`
   color: black;
   text-transform: uppercase;
   font-size: 0.8em;
+  @media (max-width: 800px) {
+    font-size: 0.7em;
+  }
 `
 
 export const HeaderText = styled.h3`
