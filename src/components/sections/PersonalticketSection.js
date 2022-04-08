@@ -66,6 +66,11 @@ const PersonalTicketSection = props => {
                         <ComingSoon>qr code coming soon</ComingSoon>
                       </AccHeader>
                       <AccContent>
+                        <Description>
+                  Hallo {userInfo.Vorname}, <br />
+                  wir bitten dich um etwas Geduld. Diese Seite wird gerade von
+                  uns aufgebaut. Bald findest du hier:
+                </Description>
                         <VipSection1 userData={userInfo} />
                       </AccContent>
                     </AccordionSection>
