@@ -8,7 +8,7 @@ import { BigHeadline } from "../styles/TextStyles"
 // import Background2 from "/static/images/Card-Bg2.jpg"
 // import Background3 from "/static/images/Card-Bg3.jpg"
 
-export default function OwnedTicketCard(props) {
+export default function TicketCard(props) {
   return (
     <Wrapper
       isSelected={props.isSelected}
@@ -38,8 +38,8 @@ export default function OwnedTicketCard(props) {
 }
 
 const Wrapper = styled.div`
-  height: 320px;
-  max-width: 165px;
+  height: 640px;
+  max-width: 331px;
   position: relative;
   transition: ${animations.slow};
   opacity: ${props => (props.limit ? ".3" : "1")};
