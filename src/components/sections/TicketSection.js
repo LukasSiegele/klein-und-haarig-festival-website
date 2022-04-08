@@ -169,7 +169,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   max-width: 800px;
-  overflow: hidden;
+  /* overflow: hidden; */
 `
 
 const CardWrapper = styled.div`

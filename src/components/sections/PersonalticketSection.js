@@ -144,15 +144,13 @@ const MainGrid = styled.div`
   gap: 120px;
   max-width: 1840px;
 
-  @media (max-width: 1300px) {
-    gap: 30px;
-  }
+  
 
-  @media (max-width: 1100px) {
-    grid-template-columns: 1fr;
-    gap: -700px;
-    max-width: 700px;
-  }
+  // @media (max-width: 1100px) {
+  //   // grid-template-columns: 1fr;
+  //   gap: -700px;
+  //   max-width: 700px;
+  // }
 `
 
 const Left = styled.div`
@@ -167,8 +165,8 @@ const Left = styled.div`
 const Right = styled.div`
   /* padding-right: 120px; */
   justify-self: right;
-  overflow: hidden;
-
+  // overflow: hidden;
+position: relative;
   
 `
 
@@ -205,15 +203,15 @@ const TitleTicketarea = styled(MasterHeadline)`
   }
 `
 
-const Description = styled.h5`
-  margin-top: 40px;
+const Description = styled.h3`
+  margin-top: 60px;
   max-width: 600px;
 `
 
 const AccordionWrapper = styled.div`
-  margin: 120px 0 0 20px;
+  margin: 100px 0 0 20px;
   @media (max-width: 800px) {
-    margin: 60px 40px;
+    margin: 60px 20px;
   }
 `
 
@@ -264,10 +262,11 @@ const Kritzelgrafik = styled.div`
   background-image: url(${Kritzel});
   background-size: cover;
   position: absolute;
-  right: -250px;
-  top: 150px;
+  left: -250px;
+  top: 50px;
   @media (max-width: 1300px) {
-    top: 0px;
+    top: -260px;
+    left: -350px;
   }
 `
 
