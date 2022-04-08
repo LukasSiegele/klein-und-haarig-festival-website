@@ -7,6 +7,7 @@ import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
+import Kritzel from "../../../static/images/TicketareaRotesKritzel2.png"
 import VipSection1 from "../sections/vip/VipSection1"
 
 import {
@@ -47,6 +48,7 @@ const PersonalTicketSection = props => {
             <Logo />
           </Link>
           <MainGrid>
+            
             <Left>
               <TextWrapper>
                 <TitlePersonalStroke> Personal </TitlePersonalStroke>
@@ -66,11 +68,9 @@ const PersonalTicketSection = props => {
                         <ComingSoon>qr code coming soon</ComingSoon>
                       </AccHeader>
                       <AccContent>
-                        <Description>
-                  Hallo {userInfo.Vorname}, <br />
-                  wir bitten dich um etwas Geduld. Diese Seite wird gerade von
-                  uns aufgebaut. Bald findest du hier:
-                </Description>
+                        <AccDescription>
+                  Hier schonmal dein/e gekauften Ticket/s. Das offizielle digitale Ticket in Form eines QR Codes wird hier in Kürze angezeigt.
+                </AccDescription>
                         <VipSection1 userData={userInfo} />
                       </AccContent>
                     </AccordionSection>
@@ -98,6 +98,7 @@ const PersonalTicketSection = props => {
             </Left>
 
             <Right>
+              <Kritzelgrafik />
               <ImageWrapper>
                 <Image />
                 <ImageAuthor>Foto: Dominik Merle</ImageAuthor>
@@ -167,12 +168,10 @@ const Right = styled.div`
   /* padding-right: 120px; */
   justify-self: right;
   overflow: hidden;
-  @media (max-width: 1100px) {
-    margin-top: -900px;
-    padding-right: 0px;
-    justify-self: right;
-  }
+
+  
 `
+
 
 const TextWrapper = styled.div`
   padding: 21px 0;
@@ -235,7 +234,12 @@ const AccHeader = styled.div`
 `
 
 const AccContent = styled.div`
-  padding: 30px 0;
+  padding: 20px 0;
+`
+
+const AccDescription = styled.h5`
+  max-width: 600px;
+  padding-bottom: 40px;
 `
 
 const SectionTitle = styled.h3`
@@ -248,18 +252,30 @@ const ComingSoon = styled(PageInfo)`
   color: #fff991;
 `
 
-const ImageWrapper = styled.div``
+const ImageWrapper = styled.div`
+@media (max-width: 1500px) {
+    display: none;
+  }
+`
+
+const Kritzelgrafik = styled.div`
+  width: 501px;
+  height: 445px;
+  background-image: url(${Kritzel});
+  background-size: cover;
+  position: absolute;
+  right: -250px;
+  top: 150px;
+  @media (max-width: 1300px) {
+    top: 0px;
+  }
+`
 
 const Image = styled.div`
   width: 550px;
   height: 886px;
   background-image: url(${Aufbau});
   background-size: cover;
-
-  @media (max-width: 1300px) {
-    width: 352px;
-    height: 548px;
-  }
 `
 
 const ImageAuthor = styled(ImageDescription)``

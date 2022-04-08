@@ -39,7 +39,7 @@ export default function TicketCard(props) {
 
 const Wrapper = styled.div`
   height: 640px;
-  max-width: 331px;
+  width: 331px;
   position: relative;
   transition: ${animations.slow};
   opacity: ${props => (props.limit ? ".3" : "1")};

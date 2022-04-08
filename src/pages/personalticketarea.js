@@ -13,6 +13,8 @@ import Klecks from "../../static/images/TicketareaLila.png"
 import VipLoginSection from "../components/sections/VipLoginSection"
 import PersonalticketSection from "../components/sections/PersonalticketSection"
 import verifyTicket from "../helper/verifyTicket"
+
+
 //import useTicketVerify from "../helper/useTicketVerify"
 
 // import { ProgressPlugin } from "webpack"
@@ -22,6 +24,7 @@ export default function PersonalTicketArea() {
   const [userInfo, setUserInfo] = useState(false)
   const [ticketID, setTicketID] = useState(null)
   const [submitFailed, setSubmitFailed] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   if (typeof window !== `undefined`) {
     queryParams = new URLSearchParams(window.location.search)
@@ -38,6 +41,7 @@ export default function PersonalTicketArea() {
       const result = await verifyTicket(ticketID)
       setUserInfo(result)
       setSubmitFailed(!result)
+      setIsLoading(false)
     }
 
     if (ticketID) {
@@ -55,13 +59,14 @@ export default function PersonalTicketArea() {
 
   const handleIDSubmit = id => {
     setTicketID(id)
+    setIsLoading(true)
   }
 
   return (
     <>
       {userInfo ? (
         <PersonalticketSection ticketID={ticketID} userInfo={userInfo} />
-      ) : (
+      ) : isLoading ? <Logo /> : (
         <VipLoginSection
           handleSubmit={handleIDSubmit}
           hasError={submitFailed}
@@ -70,3 +75,19 @@ export default function PersonalTicketArea() {
     </>
   )
 }
+
+const Logo = styled.div`
+  width: 84px;
+  height: 79px;
+  background-image: url(${LogoSVG});
+  background-size: cover;
+  position: absolute;
+  margin: 40px;
+
+  @media (max-width: 800px) {
+    margin: 20px;
+  }
+  :hover {
+    cursor: pointer;
+  }
+`

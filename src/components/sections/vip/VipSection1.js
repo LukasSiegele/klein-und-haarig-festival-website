@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import OwnedTicketCard from "../../cards/OwnedTicketCard"
 
+import { animated } from 'react-spring';
+import { use3dEffect } from 'use-3d-effect';
+
 import styled from "styled-components"
 
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
@@ -14,6 +17,9 @@ const VipSection1 = props => {
   const userData = props.userData
   const [checkout, setCheckout] = useState(false)
 
+
+  const ref = React.useRef(null);
+  const {style, ...mouseHandlers} = use3dEffect(ref);
   const paypalSuccess = data => {
     console.log(data)
   }
@@ -31,15 +37,25 @@ const VipSection1 = props => {
   return (
     <CardWrapper>
       <Card1>
+      <animated.div
+      ref={ref}
+      style={{
+        ...style
+      }}
+      {...mouseHandlers}
+    >
+
+    
         <OwnedTicketCard
           title="Festival Ticket"
           details="4 Tage Festival
 inklusive Camping"
           isSelected={true}
           cardBackground={Background1}
-        />
+        /></animated.div>
       </Card1>
-      <Card2>
+
+      {userData.Camper ? <Card2>
         <OwnedTicketCard
           title="Camper Stellplatz"
           details="Auf dem Gelände
@@ -49,7 +65,8 @@ maximale Fahrzeuggröße 6 x 2.5 m"
           cardBackground={Background3}
           onClick={camperClickHandler}
         />
-      </Card2>
+      </Card2> : null}
+      
 
       {/* <Card3></Card3> */}
     </CardWrapper>
@@ -60,12 +77,10 @@ export default VipSection1
 
 const CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  max-width: 700px;
+  grid-template-columns: repeat(2, 1fr);
   justify-items: start;
   gap: 60px;
-  width: 100vw;
-  
-left: -400px
   margin-bottom: 40px;
 
   @media (max-width: 800px) {
@@ -96,13 +111,6 @@ const Card1 = styled.div`
   }
 `
 const Card2 = styled.div`
-  animation: TicketCardAnimation 1.3s 0.6s forwards
-    cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
-  visibility: hidden;
-`
-const Card3 = styled.div`
-  width: 80%;
   animation: TicketCardAnimation 1.3s 0.6s forwards
     cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
