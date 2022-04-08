@@ -9,11 +9,14 @@ import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import VipSection1 from "../sections/vip/VipSection1"
 
-import { Headline,   MasterHeadline, PageInfo, ImageDescription } from "../styles/TextStyles"
+import {
+  Headline,
+  MasterHeadline,
+  PageInfo,
+  ImageDescription,
+} from "../styles/TextStyles"
 
 import Aufbau from "../../../static/images/Aufbau.jpg"
-
-
 
 /*
 Wir bitten dich um etwas Geduld, diese Seite wird gerade von unsaufgebaut. Bald findest du hier: 
@@ -58,32 +61,31 @@ const PersonalTicketSection = props => {
                 <ul>
                   <li>
                     <AccordionSection>
-                      {" "}
-                      <SectionTitle>Deine Daten</SectionTitle>
-                      <VipSection1 userData={userInfo} />
-                      <ComingSoon>coming soon</ComingSoon>
-                    </AccordionSection>
-                  </li>
-                  <li>
-                    <AccordionSection>
-                      {" "}
-                      <SectionTitle>Dein Digitales Ticket</SectionTitle>
-                      {/* <VipSection1 /> */}
-                      <ComingSoon>coming soon</ComingSoon>
+                      <AccHeader>
+                        <SectionTitle>Dein Digitales Ticket</SectionTitle>
+                        <ComingSoon>qr code coming soon</ComingSoon>
+                      </AccHeader>
+                      <AccContent>
+                        <VipSection1 userData={userInfo} />
+                      </AccContent>
                     </AccordionSection>
                   </li>
 
                   <li>
                     <AccordionSection>
-                      <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
-                      <ComingSoon>coming soon</ComingSoon>
+                      <AccHeader>
+                        <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
+                        <ComingSoon>coming soon</ComingSoon>
+                      </AccHeader>
                     </AccordionSection>
                   </li>
 
                   <li>
                     <AccordionSection>
-                      <SectionTitle>Anfahrt & Infos</SectionTitle>
-                      <ComingSoon>coming soon</ComingSoon>
+                      <AccHeader>
+                        <SectionTitle>Anfahrt & Infos</SectionTitle>
+                        <ComingSoon>coming soon</ComingSoon>
+                      </AccHeader>
                     </AccordionSection>
                   </li>
                 </ul>
@@ -211,8 +213,10 @@ const AccordionWrapper = styled.div`
   }
 `
 
-const AccordionSection = styled.div`
-  /* margin-top: 60px; */
+const AccordionSection = styled.div``
+
+const AccHeader = styled.div`
+  /* margin-bottom: 60px; */
   /* border-top: 1px solid white; */
   display: grid;
   grid-template-columns: auto 1fr;
@@ -223,6 +227,10 @@ const AccordionSection = styled.div`
     grid-template-columns: 1fr;
     gap: 0px;
   }
+`
+
+const AccContent = styled.div`
+  padding: 30px 0;
 `
 
 const SectionTitle = styled.h3`
