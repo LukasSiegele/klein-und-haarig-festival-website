@@ -17,21 +17,20 @@ import {
 } from "../components/styles/TextStyles"
 
 export default function Submitted({ navigation }) {
-  const [isWindow, setIsWindow] = useState(false);
+  const [isWindow, setIsWindow] = useState(false)
 
-  
-    useEffect(() => {
-      setIsWindow(window !== `undefined`)
-    },[]);
+  useEffect(() => {
+    setIsWindow(window !== `undefined`)
+  }, [])
 
-    useEffect(() => {
-      if(isWindow){
-        window.addEventListener('popstate', (e) => {
-        e.preventDefault();
-        navigate("/");
+  useEffect(() => {
+    if (isWindow) {
+      window.addEventListener("popstate", e => {
+        e.preventDefault()
+        navigate("/")
       })
     }
-    },[isWindow]);
+  }, [isWindow])
 
   return (
     <Layout>
@@ -49,7 +48,8 @@ export default function Submitted({ navigation }) {
                 <Header>Wir freuen uns auf dich!</Header>
                 <Description>
                   <TextDescription>
-                    Du erhälst in Kürze eine Bestätigung per E-Mail.
+                    Du erhälst in Kürze eine Bestätigung per E-Mail. Das kann
+                    bis zu 5 min dauern.
                   </TextDescription>
                   <TextDescription>
                     Mit deiner Ticket-ID (sehr wichtig, nicht verlieren)
