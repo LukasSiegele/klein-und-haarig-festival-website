@@ -47,7 +47,7 @@ inklusive Camping"
             title="Camper Stellplatz"
             details="Auf dem Gelände
 maximale Fahrzeuggröße 6 x 2.5 m"
-            isSelected={userData.Camper   ? userData.Camper : false}
+            isSelected={userData.Camper}
             tripleLineDetail={true}
             cardBackground={Background3}
             onClick={camperClickHandler}
