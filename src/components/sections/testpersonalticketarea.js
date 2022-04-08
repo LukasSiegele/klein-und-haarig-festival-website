@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import FormButton from "../components/buttons/FormButton"
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+import FormButton from "../buttons/FormButton"
+import Layout from "../layout/layout"
+import SEO from "../layout/seo"
 import LogoSVG from "../../static/images/LogoSideNavWhite.svg"
 import Aufbau from "../../static/images/Aufbau.jpg"
 // import VipSection1 from "../sections/vip/VipSection1"
@@ -14,7 +14,7 @@ import {
   PageInfo,
   ImageDescription,
   MasterHeadline,
-} from "../components/styles/TextStyles"
+} from "../styles/TextStyles"
 
 /*
 Wir bitten dich um etwas Geduld, diese Seite wird gerade von unsaufgebaut. Bald findest du hier: 
@@ -61,7 +61,7 @@ export default function TestPersonalTicketSection() {
                     <AccordionSection>
                       {" "}
                       <SectionTitle>Deine Daten</SectionTitle>
-                      {/* <VipSection1 /> */}
+                      <VipSection1 />
                       <ComingSoon>coming soon</ComingSoon>
                     </AccordionSection>
                   </li>

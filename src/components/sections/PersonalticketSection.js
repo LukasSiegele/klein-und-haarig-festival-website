@@ -9,7 +9,11 @@ import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import VipSection1 from "../sections/vip/VipSection1"
 
-import { Headline, PageInfo, ImageDescription } from "../styles/TextStyles"
+import { Headline,   MasterHeadline, PageInfo, ImageDescription } from "../styles/TextStyles"
+
+import Aufbau from "../../../static/images/Aufbau.jpg"
+
+
 
 /*
 Wir bitten dich um etwas Geduld, diese Seite wird gerade von unsaufgebaut. Bald findest du hier: 
@@ -39,31 +43,60 @@ const PersonalTicketSection = props => {
           <Link to="/">
             <Logo />
           </Link>
-          <ContentWrapper>
-            <TextWrapper>
-              <TitlePersonalStroke> Personal </TitlePersonalStroke>
-              <TitleTicketarea>Ticketarea</TitleTicketarea>
-              <Description>
-                Hallo {userInfo.Vorname}, wir bitten dich um etwas Geduld, diese
-                Seite wird gerade von uns aufgebaut. Bald findest du hier:
-              </Description>
-            </TextWrapper>
-            <AccordionWrapper>
-              <AccordionSection>
-                <SectionTitle>01 — Dein Digitales Ticket</SectionTitle>
-                <VipSection1 userData={userInfo} />
-                <ComingSoon>coming soon</ComingSoon>
-              </AccordionSection>
-              <AccordionSection>
-                <SectionTitle>02 — Anfahrt & Infos</SectionTitle>
-                <ComingSoon>coming soon</ComingSoon>
-              </AccordionSection>
-              <AccordionSection>
-                <SectionTitle>03 — Dein Helfer Status</SectionTitle>
-                <ComingSoon>coming soon</ComingSoon>
-              </AccordionSection>
-            </AccordionWrapper>
-          </ContentWrapper>
+          <MainGrid>
+            <Left>
+              <TextWrapper>
+                <TitlePersonalStroke> Personal </TitlePersonalStroke>
+                <TitleTicketarea>Ticket Area</TitleTicketarea>
+                <Description>
+                  Hallo Manuel, <br />
+                  wir bitten dich um etwas Geduld. Diese Seite wird gerade von
+                  uns aufgebaut. Bald findest du hier:
+                </Description>
+              </TextWrapper>
+              <AccordionWrapper>
+                <ul>
+                  <li>
+                    <AccordionSection>
+                      {" "}
+                      <SectionTitle>Deine Daten</SectionTitle>
+                      <VipSection1 userData={userInfo} />
+                      <ComingSoon>coming soon</ComingSoon>
+                    </AccordionSection>
+                  </li>
+                  <li>
+                    <AccordionSection>
+                      {" "}
+                      <SectionTitle>Dein Digitales Ticket</SectionTitle>
+                      {/* <VipSection1 /> */}
+                      <ComingSoon>coming soon</ComingSoon>
+                    </AccordionSection>
+                  </li>
+
+                  <li>
+                    <AccordionSection>
+                      <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
+                      <ComingSoon>coming soon</ComingSoon>
+                    </AccordionSection>
+                  </li>
+
+                  <li>
+                    <AccordionSection>
+                      <SectionTitle>Anfahrt & Infos</SectionTitle>
+                      <ComingSoon>coming soon</ComingSoon>
+                    </AccordionSection>
+                  </li>
+                </ul>
+              </AccordionWrapper>
+            </Left>
+
+            <Right>
+              <ImageWrapper>
+                <Image />
+                <ImageAuthor>Foto: Dominik Merle</ImageAuthor>
+              </ImageWrapper>
+            </Right>
+          </MainGrid>
         </Wrapper>
       </Container>
     </Layout>
@@ -71,7 +104,6 @@ const PersonalTicketSection = props => {
 }
 
 export default PersonalTicketSection
-
 const Container = styled.div`
   background: black;
   overflow: hidden;
@@ -98,7 +130,42 @@ const Wrapper = styled.div`
   }
 `
 
-const ContentWrapper = styled.div``
+const MainGrid = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 120px;
+  max-width: 1840px;
+
+  @media (max-width: 1300px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    gap: -700px;
+    max-width: 700px;
+  }
+`
+
+const Left = styled.div`
+  /* padding-top: 120px; */
+  padding-left: 120px;
+  position: relative;
+  @media (max-width: 1100px) {
+    padding: 40px 20px;
+  }
+`
+
+const Right = styled.div`
+  /* padding-right: 120px; */
+  justify-self: right;
+  overflow: hidden;
+  @media (max-width: 1100px) {
+    margin-top: -900px;
+    padding-right: 0px;
+    justify-self: right;
+  }
+`
 
 const TextWrapper = styled.div`
   padding: 21px 0;
@@ -108,7 +175,7 @@ const TextWrapper = styled.div`
   }
 `
 
-const TitlePersonalStroke = styled.h2`
+const TitlePersonalStroke = styled(MasterHeadline)`
   /* display: inline; */
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
@@ -116,14 +183,20 @@ const TitlePersonalStroke = styled.h2`
   color: black;
   text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
     1px 1px 0 #ffffff;
+  @media (max-width: 700px) {
+    font-size: 70px;
+  }
 `
 
-const TitleTicketarea = styled.h2`
+const TitleTicketarea = styled(MasterHeadline)`
   display: contents;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
   text-transform: none;
   text-shadow: none;
+  @media (max-width: 700px) {
+    font-size: 70px;
+  }
 `
 
 const Description = styled.h5`
@@ -132,21 +205,21 @@ const Description = styled.h5`
 `
 
 const AccordionWrapper = styled.div`
-  margin: 120px 0;
+  margin: 120px 0 0 20px;
   @media (max-width: 800px) {
-    margin: 60px 0;
+    margin: 60px 40px;
   }
 `
 
 const AccordionSection = styled.div`
-  margin-top: 60px;
-  border-top: 1px solid white;
+  /* margin-top: 60px; */
+  /* border-top: 1px solid white; */
   display: grid;
   grid-template-columns: auto 1fr;
   justify-items: start;
   gap: 15px;
   @media (max-width: 800px) {
-    padding: 0 20px;
+    /* padding: 0 20px; */
     grid-template-columns: 1fr;
     gap: 0px;
   }
@@ -167,7 +240,7 @@ const ImageWrapper = styled.div``
 const Image = styled.div`
   width: 550px;
   height: 886px;
-  background-image: url(${Stairway});
+  background-image: url(${Aufbau});
   background-size: cover;
 
   @media (max-width: 1300px) {
@@ -176,9 +249,7 @@ const Image = styled.div`
   }
 `
 
-const ImageAuthor = styled(ImageDescription)`
-  color: black;
-`
+const ImageAuthor = styled(ImageDescription)``
 
 // KuH Logo in TopNav
 const Logo = styled.div`
