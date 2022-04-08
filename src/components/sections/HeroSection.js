@@ -92,7 +92,6 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
-  /* display: grid; */
 `
 
 const Wrapper = styled.div`
@@ -111,6 +110,11 @@ const TitleLine = styled.div`
   }
 
   @media (max-width: 700px) {
+    padding: 20px 30px;
+    margin-left: 0px;
+  }
+
+  @media (min-width: 1650px) {
     padding: 20px 30px;
     margin-left: 0px;
   }
@@ -154,6 +158,10 @@ const TitleKlein = styled.h1`
   @media (max-width: 700px) {
     font-size: 90px;
   }
+
+  @media (min-width: 1650px) {
+    font-size: 160px;
+  }
 `
 
 const UndMask = styled.div`
@@ -183,6 +191,10 @@ const TitleUndStroke = styled.h1`
   @media (max-width: 700px) {
     font-size: 90px;
   }
+
+  @media (min-width: 1650px) {
+    font-size: 160px;
+  }
 `
 
 const HaarigMask = styled.div`
@@ -210,6 +222,10 @@ const TitleHaarig = styled.h1`
 
   @media (max-width: 700px) {
     font-size: 90px;
+  }
+
+  @media (min-width: 1650px) {
+    font-size: 160px;
   }
 `
 
@@ -241,6 +257,13 @@ const TitleJahr = styled.h1`
 
   @media (max-width: 700px) {
     font-size: 90px;
+  }
+
+
+  @media (min-width: 1620px) {
+    font-size: 160px;
+    bottom: 100px;
+    right: 40px;
   }
 `
 
@@ -281,21 +304,36 @@ const TitleArtist = styled.h5`
 // Datum und Ort Pills
 
 const InfoGroup = styled.div`
-  /* position: absolute; */
-  align-items: center;
-  margin-top: 200px;
-  margin-left: 16%;
+  position: absolute;
+  bottom: 200px;
+  left: 16%;
   width: 500px;
-  height: 100vh;
   color: black;
 
-  @media (max-width: 860px) {
-    margin-top: 100px;
-    left: 38%;
+  @media (max-width: 414px) {
+    bottom: 500px;
+    left: 30%;
+  }
+
+  @media (max-width: 1113) {
+    bottom: 300px;
+    left: 25%;
   }
 
   @media (max-width: 700px) {
+    bottom: 200px;
     left: 38%;
+  }
+
+  @media (max-width: 1367px) {
+    bottom: 200px;
+    left: 38%;
+  }
+
+  @media (min-width: 1650px) {
+    width: 700px;
+    bottom: 430px;
+    left: 40%;
   }
 `
 
@@ -331,6 +369,11 @@ const Date = styled.h3`
     width: 180px;
     font-size: 16px;
   }
+
+  @media (min-width: 1650px) {
+    width: 340px;
+    font-size: 32px;
+  }
 `
 
 const PlaceMask = styled.div`
@@ -363,11 +406,16 @@ const Place = styled.h3`
     width: 150px;
     font-size: 16px;
   }
+
+  @media (min-width: 1650px) {
+    width: 280px;
+    font-size: 32px;
+  }
 `
 
 const ImageWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vw;
   overflow: hidden;
 `
 
@@ -382,6 +430,12 @@ const LeitgrafikRedLineBlackBrush = styled.img`
   @media (max-width: 768px) {
     top: 0%;
     width: 40%;
+    height: auto;
+  }
+
+  @media (min-width: 1620px) {
+    top: -50px;
+    width: 30%;
     height: auto;
   }
 `
@@ -399,36 +453,66 @@ const LeitgrafikPurpleBrush = styled.img`
     width: 30%;
     height: auto;
   }
-`
 
-const LeitgrafikBlackLinesRedBrush = styled.img`
-  position: absolute;
-  bottom: 8%;
-  left: 15%;
-  width: 15%;
-  height: auto;
-
-  @media (max-width: 768px) {
-    display: none;
-    bottom: 18%;
-    left: -10%;
-    width: 30%;
+  @media (min-width: 1620px) {
+    bottom: 22%;
+    left: 21%;
+    width: 15%;
     height: auto;
   }
 `
 
-const LeitgrafikBlackLinesFace = styled.img`
+const LeitgrafikBlackLinesRedBrush = styled.img`
   position: absolute;
-  top: 35%;
-  left: -2%;
-  width: 240px;
+  bottom: -80px;
+  left: 15%;
+  width: 200px;
   height: auto;
 
-  @media (max-width: 768px) {
-    top: 43%;
+  @media (max-width: 868px) {
+    display: none;
+  }
+
+  @media (min-width: 1620px) {
+    bottom: 50px;
+    left: 20%;
+    width: 300px;
+  }
+`
+
+const LeitgrafikBlackLinesFace = styled.img`
+  top: 300px;
+  left: -2%;
+  width: 240px;
+
+  @media (max-width: 415px) {
+    top: 300px;
     left: -5%;
-    width: 40%;
-    height: auto;
+    width: 420px;
+  }
+
+  @media (max-width: 800px) {
+    top: 300px;
+    left: -5%;
+    width: 240px;
+  }
+
+  @media (max-width: 896px) {
+    top: 300px;
+    left: -5%;
+    width: 240px;
+  }
+
+  @media (max-width: 953px) {
+    top: 300px;
+    left: -2%;
+    width: 240px;
+  }
+
+  @media (min-width: 1650px) {
+    top: 500px;
+    left: -2%;
+    width: 440px;
   }
 `
 
@@ -442,6 +526,13 @@ const LeitgrafikRedLines = styled.img`
   @media (max-width: 768px) {
     top: 90%;
     left: -5%;
+    width: 20%;
+    height: auto;
+  }
+
+  @media (min-width: 1620px) {
+    bottom: -5%;
+    left: 0%;
     width: 20%;
     height: auto;
   }
@@ -463,6 +554,12 @@ const LeitgrafikPurpleSprinkles = styled.img`
     right: 32%;
     width: 65%;
     height: auto;
+  }
+
+  @media (min-width: 1650px) {
+    top: 55%;
+    right: 22%;
+    width: 45%;
   }
 `
 
@@ -520,6 +617,12 @@ const LeitgrafikYellowBall = styled.img`
     bottom: -70px;
     right: 0px;
     width: 400px;
+  }
+
+  @media (min-width: 1620px) {
+    bottom: -140px;
+    right: 30px;
+    width: 650px;
   }
 `
 
