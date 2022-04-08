@@ -49,7 +49,7 @@ const PersonalTicketSection = props => {
                 <TitlePersonalStroke> Personal </TitlePersonalStroke>
                 <TitleTicketarea>Ticket Area</TitleTicketarea>
                 <Description>
-                  Hallo Manuel, <br />
+                  Hallo {userInfo.Vorname}, <br />
                   wir bitten dich um etwas Geduld. Diese Seite wird gerade von
                   uns aufgebaut. Bald findest du hier:
                 </Description>
