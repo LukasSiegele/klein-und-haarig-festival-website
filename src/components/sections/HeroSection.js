@@ -151,6 +151,10 @@ const TitleKlein = styled.h1`
     }
   }
 
+  @media (max-width: 380px) {
+    font-size: 64px;
+  }
+
   @media (max-width: 768px) {
     font-size: 100px;
   }
@@ -310,23 +314,18 @@ const InfoGroup = styled.div`
   width: 500px;
   color: black;
 
-  @media (max-width: 414px) {
+  @media (min-width: 360px) {
     bottom: 500px;
     left: 30%;
   }
 
-  @media (max-width: 1113) {
+  @media (min-width: 700px) {
     bottom: 300px;
-    left: 25%;
-  }
-
-  @media (max-width: 700px) {
-    bottom: 200px;
     left: 38%;
   }
 
-  @media (max-width: 1367px) {
-    bottom: 200px;
+  @media (min-width: 1000px) {
+    bottom: 500px;
     left: 38%;
   }
 
@@ -447,6 +446,10 @@ const LeitgrafikPurpleBrush = styled.img`
   width: 16%;
   height: auto;
 
+  @media (max-width: 380px) {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     bottom: 18%;
     left: 8%;
@@ -485,10 +488,8 @@ const LeitgrafikBlackLinesFace = styled.img`
   left: -2%;
   width: 240px;
 
-  @media (max-width: 415px) {
-    top: 300px;
-    left: -5%;
-    width: 420px;
+  @media (max-width: 380px) {
+    display: none;
   }
 
   @media (max-width: 800px) {
@@ -549,7 +550,7 @@ const LeitgrafikPurpleSprinkles = styled.img`
     width: 50%;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     top: 70%;
     right: 32%;
     width: 65%;
@@ -655,7 +656,6 @@ const Logo = styled.img`
 `
 
 const TicketWrapper = styled.div`
-  display: none;
   z-index: 200;
   position: fixed;
   scale: 1.4;
@@ -670,6 +670,11 @@ const TicketWrapper = styled.div`
 
   @media (max-width: 700px) {
     left: 10vw;
+  }
+
+  @media (min-width: 1200px) {
+    top: 5vh;
+    left: 62vw;
   }
 `
 
