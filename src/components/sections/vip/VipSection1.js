@@ -10,77 +10,57 @@ import Background1 from "/static/images/FestivalTicket.jpg"
 import Background3 from "/static/images/CamperTicket.jpg"
 
 const VipSection1 = props => {
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
+  const userData = props.userData
+  const [checkout, setCheckout] = useState(false)
 
-    const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
-    const userData = props.userData
-    const [ checkout , setCheckout ] = useState(false);
+  const paypalSuccess = data => {
+    console.log(data)
+  }
 
-    const paypalSuccess = data => {
-        console.log(data);
-    }
+  const paypalError = err => {
+    console.log(err)
+  }
 
-    const paypalError = err => {
-        console.log(err)
-    }
+  const paypalClickHandler = () => {}
 
-    const paypalClickHandler = () => {
+  const camperClickHandler = () => {
+    setCheckout(true)
+  }
 
-    }
-
-    const camperClickHandler = () => {
-        setCheckout(true);
-    }
-
-    return(
+  return (
     <CardWrapper>
-        <Card1>
-          <OwnedTicketCard
-            title="Festival Ticket"
-            details="4 Tage Festival
+      <Card1>
+        <OwnedTicketCard
+          title="Festival Ticket"
+          details="4 Tage Festival
 inklusive Camping"
-            isSelected={true}
-            cardBackground={Background1}
-          />
-        </Card1>
-        <Card2>
-          <OwnedTicketCard
-            title="Camper Stellplatz"
-            details="Auf dem Gelände
+          isSelected={true}
+          cardBackground={Background1}
+        />
+      </Card1>
+      <Card2>
+        <OwnedTicketCard
+          title="Camper Stellplatz"
+          details="Auf dem Gelände
 maximale Fahrzeuggröße 6 x 2.5 m"
-            isSelected={userData.Camper   ? userData.Camper : false}
-            tripleLineDetail={true}
-            cardBackground={Background3}
-            onClick={camperClickHandler}
-          />
-        </Card2>
-        <Card3>
-                <PayPalScriptProvider
-                    options={{
-                      "client-id": paypalCLientID,
-                      // components: "buttons",
-                      currency: "EUR",
-                    }}
-                  >
-                    <PayPalButton
-                      // currency={currency}
-                      showSpinner={true}
-                      amount={22}
-                      currency={"EUR"}
-                      onSuccess={paypalSuccess}
-                      onError={paypalError}
-                      onClick={paypalClickHandler}
-                    />
-                  </PayPalScriptProvider>
-        </Card3>
-        {/* <Card3></Card3> */}
-      </CardWrapper>)
+          isSelected={userData.Camper}
+          tripleLineDetail={true}
+          cardBackground={Background3}
+          onClick={camperClickHandler}
+        />
+      </Card2>
+
+      {/* <Card3></Card3> */}
+    </CardWrapper>
+  )
 }
 
 export default VipSection1
 
 const CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
   justify-items: start;
   gap: 60px;
   width: 100vw;
@@ -122,7 +102,7 @@ const Card2 = styled.div`
   visibility: hidden;
 `
 const Card3 = styled.div`
-    width: 80%;
+  width: 80%;
   animation: TicketCardAnimation 1.3s 0.6s forwards
     cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
