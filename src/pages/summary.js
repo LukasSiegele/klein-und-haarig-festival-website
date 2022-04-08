@@ -95,6 +95,7 @@ export default function Summary({ location }) {
   const [isWo, setIsWo] = useState(false)
   const [isHelferSection, setIsHelferSection] = useState(false)
   const [isDauer, setIsDauer] = useState()
+  const [helferDauer, setHelferDauer] = useState()
   const [isHelperDetails, setIsHelperDetails] = useState()
 
   const [orderData, setOrderData] = useState(false)
@@ -139,9 +140,7 @@ export default function Summary({ location }) {
             Aufbau: helferBefore,
             Waehrend: helferWhile,
             Abbau: helferAfter,
-            S: helferSmall,
-            M: helferMedium,
-            L: helferLarge,
+            Dauer: helferDauer,
             Food: helferEssen,
             Bar: helferBar,
             Einlass: helferEinlass,
@@ -214,9 +213,7 @@ export default function Summary({ location }) {
       BEFORE: helferBefore,
       WHILE: helferWhile,
       AFTER: helferAfter,
-      S: helferSmall,
-      M: helferMedium,
-      L: helferLarge,
+      DAUER: helferDauer,
       ESSEN: helferEssen,
       BAR: helferBar,
       EINLASS: helferEinlass,
@@ -283,17 +280,21 @@ export default function Summary({ location }) {
   // Helfer Länge
   useEffect(() => {
     if (helferLarge) {
+      setHelferDauer("L")
       return setIsDauer("L (3x 6 h)")
       console.log("Dauer: " + isDauer)
     }
     if (helferMedium) {
+      setHelferDauer("M")
       return setIsDauer("M (2x 6 h)")
       console.log("Dauer: " + isDauer)
     }
     if (helferSmall) {
+      setHelferDauer("S")
       return setIsDauer("S (1x 6 h)")
       console.log("Dauer: " + isDauer)
     } else {
+      setHelferDauer("-")
       return setIsDauer("Egal")
     }
   }, [])
