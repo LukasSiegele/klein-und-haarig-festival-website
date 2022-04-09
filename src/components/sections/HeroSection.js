@@ -19,7 +19,7 @@ import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
 import TicketButton from "../buttons/TicketButton"
 
-import { MasterHeadline } from "../styles/TextStyles"
+import { FrontpageHeadline, FrontpageInfos } from "../styles/TextStyles"
 
 export default function HeroSection() {
   // Audience Counts
@@ -54,7 +54,7 @@ export default function HeroSection() {
       </TitleLine>
       <InfoGroup>
         <DateMask>
-          <Date>Fr 15 - Mo 18 Juli</Date>
+          <Datum>Fr 15 - Mo 18 Juli</Datum>
         </DateMask>
         <PlaceMask>
           <Place>Bad Wildbad</Place>
@@ -101,25 +101,25 @@ const Wrapper = styled.div`
 `
 
 const TitleLine = styled.div`
-  padding-top: 20px;
+  padding-top: 12px;
   padding-left: 20px;
   justify-content: left;
   z-index: 2;
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     padding: 20px 50px;
     margin-left: 0px;
   }
 
   @media (max-width: 700px) {
-    padding: 20px 30px;
+    padding: 20px 20px;
     margin-left: 0px;
   }
 
   @media (min-width: 1650px) {
     padding: 20px 30px;
     margin-left: 0px;
-  }
+  } */
 `
 
 // TITLE - Klein und Haarig
@@ -130,7 +130,7 @@ const KleinMask = styled.div`
   padding: 8px 0;
 `
 
-const TitleKlein = styled(MasterHeadline)`
+const TitleKlein = styled(FrontpageHeadline)`
   z-index: 20;
   /* display: block; */
   text-align: left;
@@ -152,7 +152,7 @@ const TitleKlein = styled(MasterHeadline)`
     }
   }
 
-  @media (min-width: 319px) {
+  /* @media (min-width: 319px) {
     font-size: 70px;
   }
 
@@ -170,19 +170,22 @@ const TitleKlein = styled(MasterHeadline)`
 
   @media (min-width: 1650px) {
     font-size: 160px;
-  }
+  } */
 `
 
 const UndMask = styled.div`
   overflow: hidden;
-  padding: 8px 30px 8px 0;
+  padding: 8px 8px 8px 0;
+  margin-right: 32px;
+  margin-top: -24px;
   display: inline-block;
   @media (max-width: 700px) {
     margin-top: -8px;
+    margin-right: 16px;
   }
 `
 
-const TitleUndStroke = styled(MasterHeadline)`
+const TitleUndStroke = styled(FrontpageHeadline)`
   animation: HeroAnimation 1.3s 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   text-align: left;
@@ -193,7 +196,7 @@ const TitleUndStroke = styled(MasterHeadline)`
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 
-  @media (min-width: 319px) {
+  /* @media (min-width: 319px) {
     font-size: 70px;
   }
 
@@ -211,19 +214,20 @@ const TitleUndStroke = styled(MasterHeadline)`
 
   @media (min-width: 1650px) {
     font-size: 160px;
-  }
+  } */
 `
 
 const HaarigMask = styled.div`
   display: inline-block;
   overflow: hidden;
   padding: 8px 0;
+  margin-top: -16px;
   @media (max-width: 700px) {
     margin-top: -8px;
   }
 `
 
-const TitleHaarig = styled(MasterHeadline)`
+const TitleHaarig = styled(FrontpageHeadline)`
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
 
@@ -233,7 +237,7 @@ const TitleHaarig = styled(MasterHeadline)`
   animation: HeroAnimation 1.3s 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
-  @media (min-width: 319px) {
+  /* @media (min-width: 319px) {
     font-size: 70px;
   }
 
@@ -251,7 +255,7 @@ const TitleHaarig = styled(MasterHeadline)`
 
   @media (min-width: 1650px) {
     font-size: 160px;
-  }
+  } */
 `
 
 const YearMask = styled.div`
@@ -263,7 +267,7 @@ const YearMask = styled.div`
   }
 `
 
-const TitleJahr = styled(MasterHeadline)`
+const TitleJahr = styled(FrontpageHeadline)`
   animation: HeroAnimation 1.2s 2.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   z-index: 199;
@@ -276,7 +280,7 @@ const TitleJahr = styled(MasterHeadline)`
   text-transform: none;
   color: #000000;
 
-  @media (min-width: 319px) {
+  /* @media (min-width: 319px) {
     font-size: 70px;
   }
 
@@ -294,7 +298,7 @@ const TitleJahr = styled(MasterHeadline)`
 
   @media (min-width: 1650px) {
     font-size: 160px;
-  }
+  } */
 `
 
 const ArtistMask = styled.div`
@@ -309,6 +313,7 @@ const ArtistMask = styled.div`
 
 const TitleArtist = styled.h5`
   position: absolute;
+  z-index: 100;
   text-align: left;
   left: -60px;
   bottom: 24%;
@@ -335,12 +340,19 @@ const TitleArtist = styled.h5`
 
 const InfoGroup = styled.div`
   position: absolute;
-  top: 200px;
-  left: 16%;
-  width: 500px;
+  margin: 60px 0 300px 290px;
+  /* width: 500px; */
+
   color: black;
 
-  @media (min-width: 319px) {
+  @media (max-width: 900px) {
+    margin: 60px 0 300px 100px;
+  }
+  @media (max-width: 768px) {
+    margin: 60px 0 300px 20px;
+  }
+
+  /* @media (min-width: 319px) {
     top: 43%;
     left: 7%;
   }
@@ -372,8 +384,8 @@ const InfoGroup = styled.div`
 
   @media (min-width: 900px) {
     top: 40%;
-      left: 5%;
-    }
+    left: 5%;
+  }
 
   @media (min-width: 1023px) {
     top: 40%;
@@ -399,7 +411,7 @@ const InfoGroup = styled.div`
   //   width: 700px;
   //   bottom: 430px;
   //   left: 40%;
-  // }
+  // } */
 `
 
 const DateMask = styled.div`
@@ -411,33 +423,22 @@ const DateMask = styled.div`
   }
 `
 
-const Date = styled.h3`
+const Datum = styled(FrontpageInfos)`
   animation: HeroAnimation 1.3s 1.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-  font-family: "GT-Alpina-Extended-Regular";
-  /* background-color: white; */
-  width: 300px;
 
+  /* background-color: white; */
+  /* width: 203px; */
+  width: auto;
   text-align: center;
   border-radius: 64px;
-  border: 2px solid #000000;
-  padding: 16px;
-  margin-bottom: 12px;
+  border: 2px solid black;
+  padding: 16px 24px;
+  margin-bottom: 8px;
 
   @media (max-width: 700px) {
-    width: 180px;
-    font-size: 16px;
-  }
-
-  @media (max-width: 860px) {
-    width: 200px;
-    font-size: 18px;
+    padding: 8px 16px;
     border: 1px solid #000000;
-  }
-
-  @media (min-width: 1650px) {
-    width: 340px;
-    font-size: 32px;
   }
 `
 
@@ -450,31 +451,20 @@ const PlaceMask = styled.div`
   }
 `
 
-const Place = styled.h3`
+const Place = styled(FrontpageInfos)`
   animation: HeroAnimation 1.3s 1.6s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
+  width: auto;
   font-family: "GT-Alpina-Extended-Regular";
   /* background-color: white; */
-  width: 250px;
+  /* width: 250px; */
   text-align: center;
   border-radius: 64px;
   border: 2px solid #000000;
-  padding: 16px;
-
-  @media (max-width: 860px) {
-    width: 160px;
-    font-size: 18px;
-    border: 1px solid #000000;
-  }
-
+  padding: 16px 24px;
   @media (max-width: 700px) {
-    width: 150px;
-    font-size: 16px;
-  }
-
-  @media (min-width: 1650px) {
-    width: 280px;
-    font-size: 32px;
+    padding: 8px 16px;
+    border: 1px solid #000000;
   }
 `
 
@@ -488,12 +478,12 @@ const ImageWrapper = styled.div`
 const LeitgrafikRedLineBlackBrush = styled.img`
   position: absolute;
   right: -5%;
-  top: 0%;
+  top: 100px;
   width: 27%;
   height: auto;
 
   @media (max-width: 768px) {
-    top: 0%;
+    top: 300px;
     width: 40%;
     height: auto;
   }
@@ -564,14 +554,13 @@ const LeitgrafikBlackLinesFace = styled.img`
   position: absolute;
   top: 300px;
   left: -2%;
-  width: 240px;
-  visibility: hidden;
+  width: 280px;
 
   @media (max-width: 919px) {
     visibility: hidden;
   }
 
-  @media (min-width: 920px) {
+  /* @media (min-width: 920px) {
     visibility: visible;
     top: 300px;
     left: -5%;
@@ -590,7 +579,7 @@ const LeitgrafikBlackLinesFace = styled.img`
     top: 500px;
     left: -2%;
     width: 440px;
-  }
+  } */
 `
 
 const LeitgrafikRedLines = styled.img`
@@ -617,16 +606,17 @@ const LeitgrafikRedLines = styled.img`
 
 const LeitgrafikPurpleSprinkles = styled.img`
   position: absolute;
-  top: 65%;
-  right: 32%;
-  width: 30%;
+  bottom: -100px;
+  right: 400px;
+  width: 400px;
   height: auto;
 
   @media (max-width: 500px) {
     visibility: hidden;
+    /* bottom: 0px; */
   }
 
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     width: 50%;
   }
 
@@ -641,7 +631,7 @@ const LeitgrafikPurpleSprinkles = styled.img`
     top: 55%;
     right: 22%;
     width: 45%;
-  }
+  } */
 `
 
 const LeitgrafikYellow1 = styled.img`
@@ -692,17 +682,16 @@ const LeitgrafikYellowBall = styled.img`
   height: auto;
   z-index: 1;
 
-
   @media (max-width: 374px) {
     position: fixed;
-    bottom: -30px;
+    bottom: -20px;
     right: 20px;
     width: 200px;
   }
 
   @media (min-width: 375px) {
-    bottom: 0px;
-    right: 40px;
+    bottom: -60px;
+    right: 20px;
     width: 350px;
   }
 
@@ -763,7 +752,7 @@ const TicketWrapper = styled.div`
   z-index: 200;
   position: absolute;
   scale: 1.4;
-  top: 7vh;
+  top: 40px;
   right: -40px;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
@@ -772,18 +761,25 @@ const TicketWrapper = styled.div`
     cursor: pointer; */
   }
 
+  @media (max-width: 600px) {
+    /* top: 5vh; */
+    right: -80px;
+  }
+
   @media (min-width: 700px) {
-    top: 5vh;
-    right: 200px;
+    /* top: 5vh; */
+    top: 50px;
+    right: 40px;
   }
 
   @media (min-width: 1200px) {
-    top: 5vh;
+    /* top: 5vh; */
+    top: 50px;
     right: 200px;
   }
 
   @media (min-width: 1350px) {
-    top: 5vh;
+    /* top: 5vh; */
     right: 20%;
   }
 `

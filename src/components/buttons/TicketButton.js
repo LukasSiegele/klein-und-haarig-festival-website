@@ -32,6 +32,7 @@ const TicketButton = props => {
 }
 
 const TicketButtonText = styled.p`
+  font-family: "GT-Alpina-Extended-Bold";
   text-align: center;
   position: absolute;
   width: 126px;

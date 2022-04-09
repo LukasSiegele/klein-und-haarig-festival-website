@@ -6,6 +6,26 @@ export const BigHeadline = styled.h1`
   font-size: 3.2rem;
 `
 
+export const FrontpageHeadline = styled.h1`
+  font-size: 120px;
+
+  @media (max-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 70px;
+  }
+`
+
+export const FrontpageInfos = styled.h3`
+  font-family: "GT-Alpina-Extended-Regular";
+  @media (max-width: 700px) {
+    font-size: 0.9em;
+    line-height: 1.35em;
+  }
+`
+
 export const MasterHeadline = styled.h1`
   font-size: 120px;
 
