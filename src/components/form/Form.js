@@ -125,7 +125,7 @@ export default function Form(props) {
           />{" "}
           <Label htmlFor="houseNumber">Hausnummer</Label>
           <input
-            type="number"
+            type="text"
             name="houseNumber"
             value={houseNumber}
             required

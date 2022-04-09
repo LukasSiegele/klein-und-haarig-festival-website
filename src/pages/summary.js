@@ -156,7 +156,7 @@ export default function Summary({ location }) {
 
             Tel: phone,
             Straße: street,
-            HausNr: parseInt(houseNumber),
+            HausNr: houseNumber,
             PLZ: parseInt(postcode),
             Stadt: city,
             Datenspeicherung: datenspeicherung,
@@ -165,6 +165,10 @@ export default function Summary({ location }) {
           },
         },
       ])
+      .catch((err) => {
+        console.log(err);
+        airtableLogError(orderID, err, email)
+      })
       .then(() => {
         setOrderID(data.orderID)
       })
