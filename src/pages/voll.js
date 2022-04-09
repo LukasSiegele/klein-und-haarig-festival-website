@@ -5,24 +5,21 @@ export default function Voll() {
   return (
     <Container>
       <Wrapper>
-        <MessageHeader>
-          Was <Liebe> Ticketverkauf pausiert </Liebe> bedeutet
-        </MessageHeader>
+        <MessageHeader>Was Ticketverkauf pausiert bedeutet</MessageHeader>
         <MessageText>
-          Wir haben aktuell unser Limit an Festivalticket-Reservierungen für
-          dieses Jahr erreicht und den Ticketverkauf vorrübergehend pausiert.{" "}
-          <br />
-          Am 4. Juni um 17 Uhr wird der Verkauf nochmal geöffnet und alle bis
-          dahin nicht bezahlten Reservierungen/Tickets zum Verkauf freigegeben.
+          Wir haben aktuell unser Limit an Festivalticket Reservierungen
+          erreicht und den Ticketverkauf vorrübergehend pausiert. Gegebenfalls
+          wird der Verkauf wieder geöffnet, nähere Infos erhältst du auf unserem
+          Instagram Account.
         </MessageText>
         <MessageText>
-          Ihr wollt ein Auto- oder Camperticket nachträglich kaufen? Schreibt
-          uns einfach per:
+          Ihr wollt ein Camperticket nachträglich kaufen? Schreibt uns einfach
+          per:
         </MessageText>
         <Kontakt href="mailto:info@kleinundhaarig.de">
           info@kleinundhaarig.de
         </Kontakt>
-        <Home href="/">Home</Home>
+        <Home href="/">Zurück zur Startseite</Home>
       </Wrapper>
     </Container>
   )
@@ -58,6 +55,7 @@ const Wrapper = styled.div`
 `
 
 const MessageHeader = styled.h2`
+  font-family: "GT-Alpina-Extended-Regular";
   margin-bottom: 50px;
   @media (max-width: 768px) {
     margin-bottom: 50px;
@@ -71,13 +69,9 @@ const MessageText = styled.p`
   color: white;
 `
 
-const Liebe = styled.span`
-  font-family: "GT-Alpina-Extended-Regular";
-`
-
 const Kontakt = styled.a``
 
 const Home = styled.a`
-  margin-top: 200px;
+  margin-top: 100px;
   opacity: 0.5;
 `
