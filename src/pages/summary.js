@@ -30,7 +30,7 @@ const base = new Airtable({
 const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
   const { state = {} } = location
   const {
     sumTickets,
@@ -99,8 +99,6 @@ export default function Summary({ location }) {
 
   // Unique ID
   const userID = uniqid()
-  console.log("User ID " + userID)
-  console.log(process.env.GATSBY_PAYPAL_CLIENT_ID_SB)
   // POST TO — AIRTABLE
   const paypalSuccess = data => {
     airtableHandler(data)
