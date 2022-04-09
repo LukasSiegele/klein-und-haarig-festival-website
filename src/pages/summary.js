@@ -165,8 +165,8 @@ export default function Summary({ location }) {
           },
         },
       ])
-      .catch((err) => {
-        console.log(err);
+      .catch(err => {
+        console.log(err)
         airtableLogError(orderID, err, email)
       })
       .then(() => {
@@ -333,18 +333,18 @@ export default function Summary({ location }) {
     }
 
     // Ticketsumme
-    if (sumTickets === 102) {
+    if (sumTickets === 103) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 102 €*",
+          ticket: "Festival Ticket 100 €*",
         },
       ])
-    } else if (sumTickets === 122) {
+    } else if (sumTickets === 123) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 102 €*",
+          ticket: "Festival Ticket 100 €*",
         },
         {
           ticket: "Camper Stellplatz 20 €",
@@ -373,7 +373,7 @@ export default function Summary({ location }) {
                       <Info>{product.ticket}</Info>
                     ))}
                     <InfoSmall>
-                      *10 € Probemitgliedschaft, 90 € Unkosten, 2 € Paypal
+                      *10 € Probemitgliedschaft, 90 € Unkosten, 3 € Paypal
                       Servicegebühr
                     </InfoSmall>
                   </InfoGroup>
@@ -476,7 +476,6 @@ export default function Summary({ location }) {
                 <Group>
                   <Value>Bezahlen</Value>
                   <PayPalGroup>
-                    
                     <PayPalScriptProvider
                       options={{
                         "client-id": paypalCLientID,

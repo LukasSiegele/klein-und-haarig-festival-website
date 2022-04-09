@@ -15,7 +15,7 @@ export default function TicketSection(props) {
   const isFestival = true
   // const [isFestival, setIsFestival] = useState(true)
   const festivalPrice = 100
-  const serviceFees = 2
+  const serviceFees = 3
   const [isAuto, setIsAuto] = useState(false)
   const autoPrice = 5
   const [isCamper, setIsCamper] = useState(false)
@@ -138,7 +138,7 @@ maximale Fahrzeuggröße 6 x 2.5 m"
         <ShoppingCartWrapper>
           <SumWrapper>
             <Summary>Dein Gesamtpreis {summary || 0} €</Summary>
-            <SummaryNote>(inkl. 2€ Paypal Servicegebühr)</SummaryNote>
+            <SummaryNote>(inkl. 3 € Paypal Servicegebühr)</SummaryNote>
           </SumWrapper>
           <WeiterWrapper>
             <Link
