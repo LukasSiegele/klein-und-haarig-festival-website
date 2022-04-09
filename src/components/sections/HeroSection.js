@@ -336,48 +336,58 @@ const TitleArtist = styled.h5`
 
 const InfoGroup = styled.div`
   position: absolute;
-  bottom: 200px;
+  top: 200px;
   left: 16%;
   width: 500px;
   color: black;
 
   @media (min-width: 319px) {
-    bottom: 230px;
+    top: 43%;
     left: 7%;
   }
 
-  @media (min-width: 414px) {
-    bottom: 300px;
+  @media (min-width: 370px) {
+    top: 850px;
+    left: 7%;
+  }
+
+  @media (min-width: 400px) {
+    top: 45%;
     left: 7%;
   }
 
   @media (min-width: 530px) {
-    bottom: 200px;
+    top: 40%;
+    left: 7%;
+  }
+
+  @media (min-width: 580px) {
+    top: 400px;
     left: 7%;
   }
 
   @media (min-width: 800px) {
-    bottom: 450px;
+    top: 40%;
     left: 5%;
   }
 
   @media (min-width: 900px) {
-      bottom: 450px;
+    top: 40%;
       left: 5%;
     }
 
   @media (min-width: 1023px) {
-    bottom: 350px;
+    top: 40%;
     left: 38%;
   }
 
   @media (min-width: 1365px) {
-    bottom: 350px;
+    top: 450px;
     left: 38%;
   }
 
   @media (min-width: 1650px) {
-    bottom: 350px;
+    top: 45%;
     left: 38%;
   }
 
@@ -533,14 +543,14 @@ const LeitgrafikBlackLinesRedBrush = styled.img`
   width: 200px;
   height: auto;
 
-  @media (max-width: 568px) {
+  @media (max-width: 818px) {
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 819px) {
     bottom: 50px;
     left: 16%;
-    width: 240px;
+    width: 200px;
   }
 
   @media (min-width: 1366px) {
@@ -560,31 +570,28 @@ const LeitgrafikBlackLinesFace = styled.img`
   top: 300px;
   left: -2%;
   width: 240px;
+  visibility: hidden;
 
-  @media (max-width: 380px) {
-    display: none;
+  @media (max-width: 919px) {
+    visibility: hidden;
   }
 
-  @media (max-width: 800px) {
+  @media (min-width: 920px) {
+    visibility: visible;
     top: 300px;
     left: -5%;
     width: 240px;
   }
-
-  @media (max-width: 896px) {
-    top: 300px;
-    left: -5%;
-    width: 240px;
-  }
-
 
   @media (min-width: 1365px) {
+    visibility: visible;
     top: 350px;
     left: -2%;
     width: 320px;
   }
 
   @media (min-width: 1640px) {
+    visibility: visible;
     top: 500px;
     left: -2%;
     width: 440px;
@@ -619,6 +626,10 @@ const LeitgrafikPurpleSprinkles = styled.img`
   right: 32%;
   width: 30%;
   height: auto;
+
+  @media (max-width: 500px) {
+    visibility: hidden;
+  }
 
   @media (max-width: 1000px) {
     width: 50%;
@@ -681,22 +692,41 @@ const LeitgrafikYellow2 = styled.img`
 
 const LeitgrafikYellowBall = styled.img`
   position: absolute;
-  bottom: -100px;
-  right: 60px;
-  width: 500px;
+  width: 300px;
+  bottom: -30px;
   height: auto;
   z-index: 1;
 
-  @media (max-width: 850px) {
+
+  @media (max-width: 374px) {
+    position: fixed;
+    bottom: -30px;
+    right: 20px;
+    width: 200px;
+  }
+
+  @media (min-width: 375px) {
+    bottom: 0px;
+    right: 40px;
+    width: 350px;
+  }
+
+  @media (min-width: 410px) {
+    bottom: -30px;
+    right: 40px;
+    width: 350px;
+  }
+
+  @media (min-width: 850px) {
     bottom: -100px;
     right: 0px;
     width: 450px;
   }
 
-  @media (max-width: 700px) {
-    bottom: -70px;
-    right: 0px;
-    width: 400px;
+  @media (min-width: 1020px) {
+    bottom: -110px;
+    right: 40px;
+    width: 550px;
   }
 
   @media (min-width: 1620px) {
@@ -736,10 +766,10 @@ const Logo = styled.img`
 
 const TicketWrapper = styled.div`
   z-index: 200;
-  position: fixed;
+  position: absolute;
   scale: 1.4;
-  top: 50vh;
-  left: 25vw;
+  top: 7vh;
+  right: -40px;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   :hover {
     /* transform: translateY(-10px); */
@@ -747,13 +777,19 @@ const TicketWrapper = styled.div`
     cursor: pointer; */
   }
 
-  @media (max-width: 700px) {
-    left: 10vw;
+  @media (min-width: 700px) {
+    top: 5vh;
+    right: 200px;
   }
 
   @media (min-width: 1200px) {
     top: 5vh;
-    left: 62vw;
+    right: 200px;
+  }
+
+  @media (min-width: 1350px) {
+    top: 5vh;
+    right: 20%;
   }
 `
 
