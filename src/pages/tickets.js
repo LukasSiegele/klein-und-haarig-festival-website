@@ -12,11 +12,11 @@ export default function Tickets({ location }) {
     <Layout>
       <SEO title="Tickets" />
       <ShopTitle info="Schritt 1/4" title="Tickets auswaehlen" />
-      {/* <TicketSection
+      <TicketSection
         autoParkplatz={autoParkplatz}
         camperParkplatz={camperParkplatz}
         onlyFriends={onlyFriends}
-      /> */}
+      />
     </Layout>
   )
 }

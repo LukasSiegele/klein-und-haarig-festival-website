@@ -1,8 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import { navigate } from "gatsby"
 import { SubheaderSmall, Note } from "../styles/TextStyles"
+
+import emailUnused from "../../helper/emailUnused"
 
 export default function Form(props) {
   const [firstName, setFirstName] = useState("")
@@ -14,30 +16,61 @@ export default function Form(props) {
   const [postcode, setPostcode] = useState()
   const [city, setCity] = useState("")
   const [vereinsbeitritt, setVereinsbeitritt] = useState(false)
+  // const [isEighteen, setIsEighteen] = useState(false)
   const [datenspeicherung, setDatenspeicherung] = useState(false)
   const [newsletter, setNewsletter] = useState(false)
+
+  const [validation, setValidation] = useState(false);
+  const [error, setError] = useState(false);
+
   console.log("Form props: ", props)
+  
   const handleSubmit = e => {
     e.preventDefault()
-    console.log()
-    navigate("/helfer", {
-      state: {
-        sumTickets: props.sumTickets,
-        onlyFriends: props.onlyFriends,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phone: phone,
-        street: street,
-        houseNumber: houseNumber,
-        postcode: postcode,
-        city: city,
-        vereinsbeitritt: vereinsbeitritt,
-        datenspeicherung: datenspeicherung,
-        newsletter: newsletter,
-      },
-    })
+    setValidation("pending");
   }
+
+  
+
+
+  useEffect(() => {
+
+
+    console.log("validation effect triggered");
+
+    const validateEmail = async () => {
+      const result = await emailUnused(email);
+      console.log("result =", result);
+      setError(!result);
+      setValidation(result);
+    }
+
+    if(validation === "pending"){
+      try {
+        validateEmail()
+      } catch (err) {
+        console.log(err)
+      }
+    }else if(validation){
+      navigate("/helfer", {
+        state: {
+          sumTickets: props.sumTickets,
+          onlyFriends: props.onlyFriends,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phone: phone,
+          street: street,
+          houseNumber: houseNumber,
+          postcode: postcode,
+          city: city,
+          vereinsbeitritt: vereinsbeitritt,
+          datenspeicherung: datenspeicherung,
+          newsletter: newsletter,
+        },
+      })
+    }
+  }, [email, validation, setValidation])
 
   return (
     <Container>
@@ -137,6 +170,24 @@ export default function Form(props) {
             </CheckboxDecription>
           </CheckboxGroup>
           <br />
+          {/* <Label htmlFor="eighteen">18+</Label>
+          <CheckboxGroup>
+            <label class="b-contain">
+              <input
+                className="checkBox"
+                type="checkbox"
+                name="eighteen"
+                required
+                checked={isEighteen}
+                onChange={e => {
+                  setIsEighteen(e.target.checked)
+                }}
+              />
+              <div className="b-input"></div>
+            </label>
+            <CheckboxDecription>Die</CheckboxDecription>
+          </CheckboxGroup>
+          <br /> */}
           <Label htmlFor="datenspeicherung">Datenspeicherung</Label>
           <CheckboxGroup>
             <label class="b-contain">
@@ -177,9 +228,12 @@ export default function Form(props) {
               Als Erinnerung für kommende Veranstaltungen sehr zu empfehlen.
             </CheckboxDecription>
           </CheckboxGroup>
+          
           <WeiterWrapper>
             <FormButton typ="submit" label="Weiter ➞" />
+            {error ? <ErrorMsg>Email is already used</ErrorMsg> : null}
           </WeiterWrapper>
+          
         </form>
       </Wrapper>
     </Container>
@@ -205,6 +259,12 @@ const Wrapper = styled.div`
 
 const Label = styled(SubheaderSmall)`
   color: white;
+  margin-top: 20px;
+  display: inline-block;
+`
+
+const ErrorMsg = styled(SubheaderSmall)`
+  color: red;
   margin-top: 20px;
   display: inline-block;
 `

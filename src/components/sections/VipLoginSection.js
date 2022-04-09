@@ -1,51 +1,37 @@
 import { Link } from "gatsby"
 import { navigate } from "gatsby"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import FormButton from "../components/buttons/FormButton"
-import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import VipAccessForm from "../components/vip/VipAccess"
-import LogoSVG from "../../static/images/LogoSideNavWhite.svg"
-import Stairway from "../../static/images/TicketareaLogin.jpg"
-import Zeplin from "../../static/images/SuccessZeppelin.png"
-import Kritzel from "../../static/images/TicketareaRotesKritzel.png"
-import Klecks from "../../static/images/TicketareaLila.png"
-//import useTicketVerify from "../helper/useTicketVerify"
+import FormButton from "../../components/buttons/FormButton"
+import Layout from "../../components/layout/layout"
+import SEO from "../../components/layout/seo"
+import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
+import Stairway from "../../../static/images/TicketareaLogin.jpg"
+import Zeplin from "../../../static/images/SuccessZeppelin.png"
+import Kritzel from "../../../static/images/TicketareaRotesKritzel.png"
+import Klecks from "../../../static/images/TicketareaLila.png"
 
 import {
-  Headline,
-  PageInfo,
-  ImageDescription,
-} from "../components/styles/TextStyles"
-// import { ProgressPlugin } from "webpack"
+    Headline,
+    PageInfo,
+    Note,
+    ImageDescription,
+  } from "../../components/styles/TextStyles"
 
-export default function VIParea() {
-  // let queryParams
-  // const isBrowser = () => typeof window !== "undefined"
-  // if(isBrowser()){
-  //   queryParams = new URLSearchParams(window.location.search);
-  // }
-  // let querykey
-  // const [key, setKey] = useState(queryParams.get('key'));
-  // const [hasAccess, setHasAccess] = useState(false);
+const VipLoginSection = props => {
 
-  //const ticketVerify = useTicketVerify(key)
-  //console.log(ticketVerify)
+    const [ticketid, setTicketid] = useState("")
 
-  const [ticketid, setTicketid] = useState("")
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(ticketid)
+       props.handleSubmit(ticketid)
+    }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    navigate("/VipAccess", {
-      state: {
-        ticketID: ticketid,
-      },
-    })
-  }
+    console.log(props.hasError)
 
-  return (
-    <Layout>
+    return(
+        <Layout>
       <SEO title="vip area" />
       <Container>
         <Link to="/">
@@ -62,14 +48,14 @@ export default function VIParea() {
                 <Header>Melde dich mit deiner Ticket-ID an</Header>
                 {/* <Description>
                   <TextDescription>
-                    Du erhälst in Kürze eine Bestätigung per E-Mail.
+                  Du erhälst in Kürze eine Bestätigung per E-Mail.
                   </TextDescription>
                   <TextDescription>
-                    Mit deiner Ticket-ID (sehr wichtig, nicht verlieren)
-                    gelangst du bald in deine persönliche Ticketarea. Wir geben
-                    dir Bescheid sobald du dich einloggen kannst. Dort findest
-                    du dann unter Anderem dein digitales Ticket, nähere Infos
-                    zum Festival und deinen Helferstatus.
+                  Mit deiner Ticket-ID (sehr wichtig, nicht verlieren)
+                  gelangst du bald in deine persönliche Ticketarea. Wir geben
+                  dir Bescheid sobald du dich einloggen kannst. Dort findest
+                  du dann unter Anderem dein digitales Ticket, nähere Infos
+                  zum Festival und deinen Helferstatus.
                   </TextDescription>
                 </Description> */}
                 <LoginWrapper>
@@ -82,12 +68,12 @@ export default function VIParea() {
                         placeholder="Ticket-ID"
                         required
                         onChange={e => setTicketid(e.target.value)}
-                      />{" "}
+                        />{" "}
                     </InputSection>
                     <ButtonSection>
-                      <Link to="/">
+                    {props.hasError ? <ErrorMsg>Wrong Ticket ID</ErrorMsg> :null}
                         <FormButton typ="submit" label="Login"></FormButton>
-                      </Link>
+                        
                     </ButtonSection>
                   </form>
                 </LoginWrapper>
@@ -105,11 +91,15 @@ export default function VIParea() {
         </Wrapper>
       </Container>
     </Layout>
-  )
+    )
 }
 
+export default VipLoginSection;
+
+
+
 const Container = styled.div`
-  background: black;
+background: black;
   display: grid;
   overflow: hidden;
   color: white;
@@ -265,4 +255,11 @@ const InputSection = styled.div``
 const ButtonSection = styled.div`
   padding: 0;
   max-width: 400px;
+`
+const ErrorMsg = styled(Note)`
+ color: red; 
+margin-top: 13px;
+@media (max-width: 768px) {
+  margin-top: 4px;
+}
 `

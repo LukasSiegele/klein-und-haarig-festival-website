@@ -78,18 +78,20 @@ const TickerWrapper = styled.div`
   display: grid;
   background-color: #000;
 
-  animation: TickerAnimation 1.3s 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: TickerAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
   @keyframes TickerAnimation {
     0% {
       opacity: 0;
-      transform: translateX(25vw);
+      max-height: 0;
+      /* transform: translateX(25vw); */
     }
 
     100% {
       opacity: 1;
-      transform: translateX(0px);
+      max-height: 50px;
+      /* transform: translateX(0px); */
     }
   }
 `

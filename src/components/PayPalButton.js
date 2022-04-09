@@ -1,18 +1,15 @@
 import React from "react"
 import { useEffect } from "react";
 import {
-    PayPalScriptProvider,
     PayPalButtons,
     usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
 
 // This values are the props in the UI
-const amount = "100";
-const currency = "USD";
 const style = {"layout":"vertical"};
 
 // Custom component to wrap the PayPalButtons and handle currency changes
-const PayPalButton = ({ currency, showSpinner, amount, onSuccess }) => {
+const PayPalButton = ({ currency, showSpinner, amount, onSuccess, onError, onClick }) => {
     // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
     // This is the main reason to wrap the PayPalButtons in a new component
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
@@ -25,10 +22,14 @@ const PayPalButton = ({ currency, showSpinner, amount, onSuccess }) => {
                 currency: currency,
             },
         });
-    }, [currency, showSpinner]);
+    }, [currency, showSpinner, dispatch]);
 
     const approveHandler = (data) => {
       onSuccess(data);
+    }
+
+    const errorHandler = (error) => {
+        onError(error);
     }
 
 
@@ -62,6 +63,13 @@ const PayPalButton = ({ currency, showSpinner, amount, onSuccess }) => {
                         console.log(data)
                         approveHandler(data)
                     });
+                }}
+                onError={function (error) {
+                    errorHandler(error)
+                    
+                }}
+                onClick={function (e) {
+                    onClick(e);
                 }}
             />
         </>

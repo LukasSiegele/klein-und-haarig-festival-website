@@ -19,6 +19,8 @@ import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
 import TicketButton from "../buttons/TicketButton"
 
+import { MasterHeadline } from "../styles/TextStyles"
+
 export default function HeroSection() {
   // Audience Counts
   const audienceCount = useAudienceCount()
@@ -124,12 +126,11 @@ const KleinMask = styled.div`
   padding: 8px 0;
 `
 
-const TitleKlein = styled.h1`
+const TitleKlein = styled(MasterHeadline)`
   z-index: 20;
   /* display: block; */
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
-  font-size: 120px;
   text-transform: none;
   color: #000000;
   animation: HeroAnimation 1.3s 0.7s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -146,14 +147,6 @@ const TitleKlein = styled.h1`
       transform: translateY(2px);
     }
   }
-
-  @media (max-width: 768px) {
-    font-size: 100px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 90px;
-  }
 `
 
 const UndMask = styled.div`
@@ -165,24 +158,16 @@ const UndMask = styled.div`
   }
 `
 
-const TitleUndStroke = styled.h1`
+const TitleUndStroke = styled(MasterHeadline)`
   animation: HeroAnimation 1.3s 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
-  font-size: 120px;
+
   text-transform: none;
   color: #f6f4ee;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-
-  @media (max-width: 768px) {
-    font-size: 100px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 90px;
-  }
 `
 
 const HaarigMask = styled.div`
@@ -194,23 +179,15 @@ const HaarigMask = styled.div`
   }
 `
 
-const TitleHaarig = styled.h1`
+const TitleHaarig = styled(MasterHeadline)`
   text-align: left;
   font-family: "GT-Alpina-Extended-Regular";
-  font-size: 120px;
+
   text-transform: none;
   color: #000000;
   text-shadow: none;
   animation: HeroAnimation 1.3s 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-
-  @media (max-width: 768px) {
-    font-size: 100px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 90px;
-  }
 `
 
 const YearMask = styled.div`
@@ -222,7 +199,7 @@ const YearMask = styled.div`
   }
 `
 
-const TitleJahr = styled.h1`
+const TitleJahr = styled(MasterHeadline)`
   animation: HeroAnimation 1.2s 2.3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
   z-index: 199;
@@ -231,20 +208,12 @@ const TitleJahr = styled.h1`
   right: 20px;
   bottom: 90px;
   font-family: "GT-Alpina-Extended-Regular";
-  font-size: 120px;
+
   text-transform: none;
   color: #000000;
-
-  @media (max-width: 768px) {
-    font-size: 100px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 90px;
-  }
 `
 
-const ArtistMask = styled.div `
+const ArtistMask = styled.div`
   display: inline-block;
   overflow: hidden;
   padding: 8px 0;
