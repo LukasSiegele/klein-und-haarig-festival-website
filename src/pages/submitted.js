@@ -1,5 +1,5 @@
-import { Link } from "gatsby"
-import React from "react"
+import { Link, navigate } from "gatsby"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
@@ -16,7 +16,22 @@ import {
   ImageDescription,
 } from "../components/styles/TextStyles"
 
-export default function Submitted() {
+export default function Submitted({ navigation }) {
+  const [isWindow, setIsWindow] = useState(false)
+
+  useEffect(() => {
+    setIsWindow(window !== `undefined`)
+  }, [])
+
+  useEffect(() => {
+    if (isWindow) {
+      window.addEventListener("popstate", e => {
+        e.preventDefault()
+        navigate("/")
+      })
+    }
+  }, [isWindow])
+
   return (
     <Layout>
       <SEO title="Submitted" />
@@ -33,7 +48,8 @@ export default function Submitted() {
                 <Header>Wir freuen uns auf dich!</Header>
                 <Description>
                   <TextDescription>
-                    Du erhälst in Kürze eine Bestätigung per E-Mail.
+                    Du erhälst in Kürze eine Bestätigung per E-Mail. Das kann
+                    bis zu 5 min dauern.
                   </TextDescription>
                   <TextDescription>
                     Mit deiner Ticket-ID (sehr wichtig, nicht verlieren)

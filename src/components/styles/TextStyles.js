@@ -6,12 +6,15 @@ export const BigHeadline = styled.h1`
   font-size: 3.2rem;
 `
 
-export const H1 = styled.h1`
-  font-weight: bold;
-  font-size: 60px;
+export const MasterHeadline = styled.h1`
+  font-size: 120px;
 
-  @media (max-width: 450px) {
-    font-size: 34px;
+  @media (max-width: 768px) {
+    font-size: 100px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 90px;
   }
 `
 export const H2 = styled.h2`
@@ -82,12 +85,18 @@ export const PageHeader = styled.h3`
   font-size: 35px;
   font-weight: 100;
   color: black;
+  @media (max-width: 800px) {
+    font-size: 28px;
+  }
 `
 
 export const PageInfo = styled.h4`
   color: black;
   text-transform: uppercase;
   font-size: 0.8em;
+  @media (max-width: 800px) {
+    font-size: 0.7em;
+  }
 `
 
 export const HeaderText = styled.h3`

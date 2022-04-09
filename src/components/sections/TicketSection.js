@@ -100,9 +100,9 @@ maximale Fahrzeuggröße 6 x 2.5 m"
             <InfoText>
               Die Tickets sind personalisiert. Pro Person und E-Mail-Adresse
               kann nur ein Ticket erworben werden. Campertickets sind nur in
-              Kombination mit einem Festival Ticket erhältlich. <br />
-              Zutritt nur für Personen über 18 Jahren oder in dauerhafter
-              Begleitung einer oder eines Erziehungsberechtigten
+              Kombination mit einem Festival Ticket erhältlich. Zutritt nur für
+              Personen über 18 Jahren oder in dauerhafter Begleitung einer oder
+              eines Erziehungsberechtigten.
             </InfoText>
           </LeftBlock>
 
@@ -169,6 +169,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   max-width: 800px;
+  /* overflow: hidden; */
 `
 
 const CardWrapper = styled.div`

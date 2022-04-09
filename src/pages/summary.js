@@ -21,7 +21,8 @@ import {
   Note,
   TextSmall,
 } from "../components/styles/TextStyles"
-import getTicketID from "../helper/useTicketRequest"
+import { getTicketID } from "../helper/useTicketRequest"
+import airtableLogError from "../helper/airtableLogError"
 
 const base = new Airtable({
   apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
@@ -30,7 +31,10 @@ const base = new Airtable({
 const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
+  const [orderID, setOrderID] = useState(false)
+  const [ticketID, setTicketID] = useState(false)
+
   const { state = {} } = location
   const {
     sumTickets,
@@ -71,6 +75,7 @@ export default function Summary({ location }) {
   const festivalTicket = "Ja"
   const [autoTicket, setAutoTicket] = useState("Nein")
   const [camperTicket, setCamperTicket] = useState("Nein")
+  const [paymentPending, setPaymentPending] = useState(false)
 
   // Helfer
   const [helfer, setHelfer] = useState("")
@@ -90,28 +95,34 @@ export default function Summary({ location }) {
   const [isWo, setIsWo] = useState(false)
   const [isHelferSection, setIsHelferSection] = useState(false)
   const [isDauer, setIsDauer] = useState()
+  const [helferDauer, setHelferDauer] = useState()
   const [isHelperDetails, setIsHelperDetails] = useState()
+
+  const [orderData, setOrderData] = useState(false)
 
   // Audience Count
   const audienceCount = useAudienceCount()
-  console.log("hook count: " + audienceCount)
+  //console.log("hook count: " + audienceCount)
   const audienceLimit = 200
-
+  console.log("audienceCount is", audienceCount)
   // Unique ID
   const userID = uniqid()
-  console.log("User ID " + userID)
-  console.log(process.env.GATSBY_PAYPAL_CLIENT_ID_SB)
   // POST TO — AIRTABLE
-  const paypalSuccess = data => {
-    airtableHandler(data)
 
-    console.log(data)
-    console.log(
-      "audienceCount:  " + audienceCount,
-      "audienceLimit:  " + audienceLimit
-    )
+  const paypalClickHandler = e => {
+    console.log(e)
   }
-  console.log("onlyFriends: " + onlyFriends)
+
+  const paypalSuccess = data => {
+    setPaymentPending(true)
+    setOrderData(data)
+    airtableHandler(data)
+  }
+
+  const paypalError = err => {
+    airtableLogError(null, err, email)
+    navigate("/failed")
+  }
 
   const airtableHandler = data => {
     table
@@ -128,9 +139,7 @@ export default function Summary({ location }) {
             Aufbau: helferBefore,
             Waehrend: helferWhile,
             Abbau: helferAfter,
-            S: helferSmall,
-            M: helferMedium,
-            L: helferLarge,
+            Dauer: helferDauer,
             Food: helferEssen,
             Bar: helferBar,
             Einlass: helferEinlass,
@@ -147,7 +156,7 @@ export default function Summary({ location }) {
 
             Tel: phone,
             Straße: street,
-            HausNr: parseInt(houseNumber),
+            HausNr: houseNumber,
             PLZ: parseInt(postcode),
             Stadt: city,
             Datenspeicherung: datenspeicherung,
@@ -156,23 +165,40 @@ export default function Summary({ location }) {
           },
         },
       ])
+      .catch((err) => {
+        console.log(err);
+        airtableLogError(orderID, err, email)
+      })
       .then(() => {
-        base("Teilnehmer 2021").find(data.orderID, function (err, record) {
-          if (err) {
-            console.error(err)
-            return
-          }
-          console.log("Retrieved", record.id)
-        })
-        //console.log(ticketID);
-        //navigate("/submitted")
-        mailChimpSubmission()
+        setOrderID(data.orderID)
       })
   }
 
+  useEffect(() => {
+    const catchTicketID = async () => {
+      const recTicketID = await getTicketID(orderID)
+
+      setTicketID(recTicketID.substring(3, 17))
+    }
+    if (orderID) {
+      try {
+        catchTicketID(orderID)
+      } catch (err) {
+        console.log(err)
+        airtableLogError(null, { orderData, err }, email)
+      }
+    }
+  }, [orderID, setTicketID])
+
+  useEffect(() => {
+    if (ticketID) {
+      mailChimpSubmission()
+    }
+  }, [ticketID])
+
   const mailChimpSubmission = () => {
     addToMailchimp(email, {
-      TICKETID: userID,
+      TICKETID: ticketID,
       // UID: userID,
       FNAME: firstName,
       LNAME: lastName,
@@ -190,9 +216,7 @@ export default function Summary({ location }) {
       BEFORE: helferBefore,
       WHILE: helferWhile,
       AFTER: helferAfter,
-      S: helferSmall,
-      M: helferMedium,
-      L: helferLarge,
+      DAUER: helferDauer,
       ESSEN: helferEssen,
       BAR: helferBar,
       EINLASS: helferEinlass,
@@ -206,14 +230,23 @@ export default function Summary({ location }) {
       FRIENDS: onlyFriends,
     })
       .then(({ msg, result }) => {
-        console.log("msg", `${result}: ${msg}`)
-
         if (result !== "success") {
+          airtableLogError(ticketID, { orderData, msg }, email)
+          navigate("/failed")
           throw msg
         }
+
+        navigate("/submitted")
         // alert(msg)
+        navigate("/submitted")
       })
       .catch(err => {
+        airtableLogError(ticketID, orderData, email)
+        navigate("/failed", {
+          state: {
+            ticketID: ticketID,
+          },
+        })
         console.log(err)
         alert(
           "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
@@ -250,17 +283,21 @@ export default function Summary({ location }) {
   // Helfer Länge
   useEffect(() => {
     if (helferLarge) {
+      setHelferDauer("L")
       return setIsDauer("L (3x 6 h)")
       console.log("Dauer: " + isDauer)
     }
     if (helferMedium) {
+      setHelferDauer("M")
       return setIsDauer("M (2x 6 h)")
       console.log("Dauer: " + isDauer)
     }
     if (helferSmall) {
+      setHelferDauer("S")
       return setIsDauer("S (1x 6 h)")
       console.log("Dauer: " + isDauer)
     } else {
+      setHelferDauer("-")
       return setIsDauer("Egal")
     }
   }, [])
@@ -322,141 +359,148 @@ export default function Summary({ location }) {
       <SEO title="Summary" />
       <ShopTitle info="Schritt 4/4" title="Zusammenfassung & Bezahlen" />
       <Container>
-        <Wrapper>
-          <form>
-            {/*onSubmit={submit}*/}
-            <Section>
-              <Group>
-                <Value>Dein(e) Ticket(s)</Value>
-                <InfoGroup>
-                  {products.map(product => (
-                    <Info>{product.ticket}</Info>
-                  ))}
-                  <InfoSmall>
-                    *10 € Probemitgliedschaft, 90 € Unkosten, 2 € Paypal
-                    Servicegebühren
-                  </InfoSmall>
-                </InfoGroup>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Du</Value>
-                <Info>
-                  {firstName} {lastName}
-                </Info>
-              </Group>
-              <Group>
-                <Value>E-Mail</Value>
-                <Info>{email}</Info>
-              </Group>
-              <Group>
-                <Value>Telefonnummer</Value>
-                <Info>{phone || "-"}</Info>
-              </Group>
-              <Group>
-                <Value>Adresse</Value>
-                <Info>
-                  {street} {houseNumber}, {postcode}, {city}
-                </Info>
-              </Group>
-              <Group>
-                <Value>Datenspeicherung</Value>
-                <Info>{datenspeicherung ? "Passt" : "Nein"}</Info>
-              </Group>
-              <Group>
-                <Value>Vereinsbeitritt</Value>
-                <Info>
-                  {vereinsbeitritt
-                    ? "Probemitgliedschaft ab 1. Juli 2022 für 90 Tage, endet automatisch"
-                    : "Nein"}
-                </Info>
-              </Group>
-              <Group>
-                <Value>Newsletter</Value>
-                <Info>{newsletter ? "Ja" : "Nein"}</Info>
-              </Group>
-            </Section>
-            <Helfer>
+        {paymentPending ? (
+          <h1>Ticket wird erstellt - bitte bleib auf der Seite!</h1>
+        ) : (
+          <Wrapper>
+            <form>
+              {/*onSubmit={submit}*/}
               <Section>
                 <Group>
-                  <Value>Helfer</Value>
-                  <Info>{helfer}</Info>
+                  <Value>Dein(e) Ticket(s)</Value>
+                  <InfoGroup>
+                    {products.map(product => (
+                      <Info>{product.ticket}</Info>
+                    ))}
+                    <InfoSmall>
+                      *10 € Probemitgliedschaft, 90 € Unkosten, 2 € Paypal
+                      Servicegebühr
+                    </InfoSmall>
+                  </InfoGroup>
                 </Group>
-                <HelferDetail isHelperDetails={isHelferSection}>
-                  <Group>
-                    <Value>Dauer</Value>
-                    <Info>{isDauer}</Info>
-                  </Group>
-                  <Wo isWo={helferWhile}>
-                    <Group>
-                      <Value>Präferenz während</Value>
-                      <Info>
-                        {whileCategories.length >= 1
-                          ? whileCategories.join(", ")
-                          : "-"}
-                      </Info>
-                    </Group>
-                  </Wo>
-                  <Group>
-                    <Value>Helferbuddy</Value>
-                    <Info>{helferBuddy == "" ? "-" : helferBuddy}</Info>
-                  </Group>
-                  <Group>
-                    <Value>Ehrenamtlich</Value>
-                    <Info>{helferEhrenamtlich ? "Ja" : "Nein"}</Info>
-                  </Group>
-                </HelferDetail>
               </Section>
-            </Helfer>
-            <Section>
-              <Group>
-                <Value>Erstattung</Value>
-                <Info>
-                  Sollte das Festival nicht stattfinden können, wirst du
-                  zwischen einem Übertrag deines Tickets auf das nächste Jahr
-                  und einer Teilrückzahlung wählen können. Bitte habe
-                  Verständnis, dass wir Servicegebühren und anfallende Fixkosten
-                  nicht erstatten können.
-                </Info>
-              </Group>
-            </Section>
-            <Section>
-              <Group>
-                <Value>Corona</Value>
-                <Info>
-                  Je nach Corona-Maßnahmen im Juli müssen wir einen Test- oder
-                  Immunitätsnachweis für die Teilnahme voraussetzen. Dies werden
-                  wir rechtzeitig kommunizieren.
-                </Info>
-              </Group>
-            </Section>
-            <Section>
-              <Seperator />
-              <Group>
-                <Value>Bezahlen</Value>
-                <PayPalGroup>
-                  <PayPalScriptProvider
-                    options={{
-                      "client-id": paypalCLientID,
-                      // components: "buttons",
-                      currency: "EUR",
-                    }}
-                  >
-                    <PayPalButton
-                      // currency={currency}
-                      showSpinner={false}
-                      amount={sumTickets}
-                      currency={"EUR"}
-                      onSuccess={paypalSuccess}
-                    />
-                  </PayPalScriptProvider>
-                </PayPalGroup>
-              </Group>
-            </Section>
-            {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
-          </form>
-        </Wrapper>
+              <Section>
+                <Group>
+                  <Value>Du</Value>
+                  <Info>
+                    {firstName} {lastName}
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>E-Mail</Value>
+                  <Info>{email}</Info>
+                </Group>
+                <Group>
+                  <Value>Telefonnummer</Value>
+                  <Info>{phone || "-"}</Info>
+                </Group>
+                <Group>
+                  <Value>Adresse</Value>
+                  <Info>
+                    {street} {houseNumber}, {postcode}, {city}
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>Datenspeicherung</Value>
+                  <Info>{datenspeicherung ? "Passt" : "Nein"}</Info>
+                </Group>
+                <Group>
+                  <Value>Vereinsbeitritt</Value>
+                  <Info>
+                    {vereinsbeitritt
+                      ? "Probemitgliedschaft ab 1. Juli 2022 für 90 Tage, endet automatisch"
+                      : "Nein"}
+                  </Info>
+                </Group>
+                <Group>
+                  <Value>Newsletter</Value>
+                  <Info>{newsletter ? "Ja" : "Nein"}</Info>
+                </Group>
+              </Section>
+              <Helfer>
+                <Section>
+                  <Group>
+                    <Value>Helfer</Value>
+                    <Info>{helfer}</Info>
+                  </Group>
+                  <HelferDetail isHelperDetails={isHelferSection}>
+                    <Group>
+                      <Value>Dauer</Value>
+                      <Info>{isDauer}</Info>
+                    </Group>
+                    <Wo isWo={helferWhile}>
+                      <Group>
+                        <Value>Präferenz während</Value>
+                        <Info>
+                          {whileCategories.length >= 1
+                            ? whileCategories.join(", ")
+                            : "-"}
+                        </Info>
+                      </Group>
+                    </Wo>
+                    <Group>
+                      <Value>Helferbuddy</Value>
+                      <Info>{helferBuddy == "" ? "-" : helferBuddy}</Info>
+                    </Group>
+                    <Group>
+                      <Value>Ehrenamtlich</Value>
+                      <Info>{helferEhrenamtlich ? "Ja" : "Nein"}</Info>
+                    </Group>
+                  </HelferDetail>
+                </Section>
+              </Helfer>
+              <Section>
+                <Group>
+                  <Value>Erstattung</Value>
+                  <Info>
+                    Sollte das Festival nicht stattfinden können, wirst du
+                    zwischen einem Übertrag deines Tickets auf das nächste Jahr
+                    und einer Teilrückzahlung wählen können. Bitte habe
+                    Verständnis, dass wir Servicegebühren und anfallende
+                    Fixkosten nicht erstatten können.
+                  </Info>
+                </Group>
+              </Section>
+              <Section>
+                <Group>
+                  <Value>Corona</Value>
+                  <Info>
+                    Je nach Corona-Maßnahmen im Juli müssen wir einen Test- oder
+                    Immunitätsnachweis für die Teilnahme voraussetzen. Dies
+                    werden wir rechtzeitig kommunizieren.
+                  </Info>
+                </Group>
+              </Section>
+              <Section>
+                <Seperator />
+                <Group>
+                  <Value>Bezahlen</Value>
+                  <PayPalGroup>
+                    
+                    <PayPalScriptProvider
+                      options={{
+                        "client-id": paypalCLientID,
+                        // components: "buttons",
+                        currency: "EUR",
+                      }}
+                    >
+                      <PayPalButton
+                        // currency={currency}
+                        showSpinner={false}
+                        amount={sumTickets}
+                        currency={"EUR"}
+                        onSuccess={paypalSuccess}
+                        onError={paypalError}
+                        onClick={paypalClickHandler}
+                      />
+                    </PayPalScriptProvider>
+                  </PayPalGroup>
+                </Group>
+              </Section>
+              {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
+            </form>
+          </Wrapper>
+        )}
       </Container>
     </Layout>
   )

@@ -167,7 +167,7 @@ export default function HelferDetails({ location }) {
               <Wo isWhile={helferWhile}>
                 <InfoLabel>Wo möchtest du helfen?</InfoLabel>
                 <InfoText>
-                  Wir geben unser bestes deine Präferenzen zu berücksichtigen,
+                  Wir geben unser Bestes deine Präferenzen zu berücksichtigen,
                   allerdings können wir sie dir nicht garantieren. Du wirst
                   rechtzeitig von uns über deine Zuteilung benachrichtigt.
                 </InfoText>
@@ -305,7 +305,7 @@ export default function HelferDetails({ location }) {
               </Wo>
               <InfoLabel>Hast du einen Helfer:innen Buddy?</InfoLabel>
               <InfoText>
-                Falls Ja, trage hier seinen uns Vor- und Nachnamen ein.
+                Falls Ja, trage hier ihren/seinen Vor- und Nachnamen ein.
               </InfoText>
               <input
                 type="buddy"
