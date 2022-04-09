@@ -193,25 +193,25 @@ const TitleUndStroke = styled(MasterHeadline)`
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 
-    @media (min-width: 319px) {
-      font-size: 70px;
-    }
-  
-    @media (min-width: 420px) {
-      font-size: 100px;
-    }
-  
-    @media (min-width: 1023px) {
-      font-size: 130px;
-    }
-  
-    @media (min-width: 1365px) {
-      font-size: 140px;
-    }
-  
-    @media (min-width: 1650px) {
-      font-size: 160px;
-    }
+  @media (min-width: 319px) {
+    font-size: 70px;
+  }
+
+  @media (min-width: 420px) {
+    font-size: 100px;
+  }
+
+  @media (min-width: 1023px) {
+    font-size: 130px;
+  }
+
+  @media (min-width: 1365px) {
+    font-size: 140px;
+  }
+
+  @media (min-width: 1650px) {
+    font-size: 160px;
+  }
 `
 
 const HaarigMask = styled.div`
@@ -233,7 +233,6 @@ const TitleHaarig = styled(MasterHeadline)`
   animation: HeroAnimation 1.3s 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
-  
   @media (min-width: 319px) {
     font-size: 70px;
   }
@@ -362,9 +361,9 @@ const InfoGroup = styled.div`
   }
 
   @media (min-width: 900px) {
-      bottom: 450px;
-      left: 5%;
-    }
+    bottom: 450px;
+    left: 5%;
+  }
 
   @media (min-width: 1023px) {
     bottom: 350px;
@@ -380,9 +379,6 @@ const InfoGroup = styled.div`
     bottom: 350px;
     left: 38%;
   }
-
-
-
 
   // @media (min-width: 1365px) {
   //   bottom: 38%;
@@ -423,7 +419,7 @@ const Date = styled.h3`
     font-size: 16px;
   }
 
-    @media (max-width: 860px) {
+  @media (max-width: 860px) {
     width: 200px;
     font-size: 18px;
     border: 1px solid #000000;
@@ -517,7 +513,6 @@ const LeitgrafikPurpleBrush = styled.img`
     height: auto;
   }
 
-
   @media (min-width: 1620px) {
     bottom: 22%;
     left: 23%;
@@ -576,7 +571,6 @@ const LeitgrafikBlackLinesFace = styled.img`
     left: -5%;
     width: 240px;
   }
-
 
   @media (min-width: 1365px) {
     top: 350px;
@@ -740,7 +734,7 @@ const TicketWrapper = styled.div`
   scale: 1.4;
   top: 50vh;
   left: 25vw;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); */
   :hover {
     /* transform: translateY(-10px); */
     /* transform: scale(1.03);
@@ -758,7 +752,7 @@ const TicketWrapper = styled.div`
 `
 
 const TicketGroup = styled(Link)`
-  animation: TicketButtonAnimation 2s 3s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* animation: TicketButtonAnimation 2s 3s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
   opacity: 1;
   background-image: none;
   width: 320px;
@@ -774,21 +768,8 @@ const TicketGroup = styled(Link)`
   & > :hover {
     cursor: pointer;
   }
-
-  @keyframes TicketButtonAnimation {
-    0% {
-      visibility: visible;
-      opacity: 0;
-      transform: translateY(0px);
-    }
-
-    100% {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0px);
-    }
-  }
 `
+
 const TicketLabel = styled.h3`
   text-align: center;
   @media (max-width: 700px) {
