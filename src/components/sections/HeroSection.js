@@ -151,16 +151,20 @@ const TitleKlein = styled.h1`
     }
   }
 
-  @media (max-width: 380px) {
-    font-size: 64px;
+  @media (min-width: 319px) {
+    font-size: 70px;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 420px) {
     font-size: 100px;
   }
 
-  @media (max-width: 700px) {
-    font-size: 90px;
+  @media (min-width: 1023px) {
+    font-size: 130px;
+  }
+
+  @media (min-width: 1365px) {
+    font-size: 140px;
   }
 
   @media (min-width: 1650px) {
@@ -188,17 +192,25 @@ const TitleUndStroke = styled.h1`
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 
-  @media (max-width: 768px) {
-    font-size: 100px;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 90px;
-  }
-
-  @media (min-width: 1650px) {
-    font-size: 160px;
-  }
+    @media (min-width: 319px) {
+      font-size: 70px;
+    }
+  
+    @media (min-width: 420px) {
+      font-size: 100px;
+    }
+  
+    @media (min-width: 1023px) {
+      font-size: 130px;
+    }
+  
+    @media (min-width: 1365px) {
+      font-size: 140px;
+    }
+  
+    @media (min-width: 1650px) {
+      font-size: 160px;
+    }
 `
 
 const HaarigMask = styled.div`
@@ -220,12 +232,21 @@ const TitleHaarig = styled.h1`
   animation: HeroAnimation 1.3s 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
-  @media (max-width: 768px) {
+  
+  @media (min-width: 319px) {
+    font-size: 70px;
+  }
+
+  @media (min-width: 420px) {
     font-size: 100px;
   }
 
-  @media (max-width: 700px) {
-    font-size: 90px;
+  @media (min-width: 1023px) {
+    font-size: 130px;
+  }
+
+  @media (min-width: 1365px) {
+    font-size: 140px;
   }
 
   @media (min-width: 1650px) {
@@ -255,19 +276,24 @@ const TitleJahr = styled.h1`
   text-transform: none;
   color: #000000;
 
-  @media (max-width: 768px) {
+  @media (min-width: 319px) {
+    font-size: 70px;
+  }
+
+  @media (min-width: 420px) {
     font-size: 100px;
   }
 
-  @media (max-width: 700px) {
-    font-size: 90px;
+  @media (min-width: 1023px) {
+    font-size: 130px;
   }
 
+  @media (min-width: 1365px) {
+    font-size: 140px;
+  }
 
-  @media (min-width: 1620px) {
+  @media (min-width: 1650px) {
     font-size: 160px;
-    bottom: 100px;
-    right: 40px;
   }
 `
 
@@ -314,26 +340,59 @@ const InfoGroup = styled.div`
   width: 500px;
   color: black;
 
-  @media (min-width: 360px) {
-    bottom: 500px;
-    left: 30%;
+  @media (min-width: 319px) {
+    bottom: 230px;
+    left: 7%;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 414px) {
     bottom: 300px;
+    left: 7%;
+  }
+
+  @media (min-width: 530px) {
+    bottom: 200px;
+    left: 7%;
+  }
+
+  @media (min-width: 800px) {
+    bottom: 450px;
+    left: 5%;
+  }
+
+  @media (min-width: 900px) {
+      bottom: 450px;
+      left: 5%;
+    }
+
+  @media (min-width: 1023px) {
+    bottom: 350px;
     left: 38%;
   }
 
-  @media (min-width: 1000px) {
-    bottom: 500px;
+  @media (min-width: 1365px) {
+    bottom: 350px;
     left: 38%;
   }
 
   @media (min-width: 1650px) {
-    width: 700px;
-    bottom: 430px;
-    left: 40%;
+    bottom: 350px;
+    left: 38%;
   }
+
+
+
+
+  // @media (min-width: 1365px) {
+  //   bottom: 38%;
+  //   left: 38%;
+  // }
+
+  // @media (min-width: 1650px) {
+  //   width: 700px;
+  //   bottom: 430px;
+  //   left: 40%;
+  // }
 `
 
 const DateMask = styled.div`
@@ -358,15 +417,15 @@ const Date = styled.h3`
   padding: 16px;
   margin-bottom: 12px;
 
-  @media (max-width: 860px) {
-    width: 200px;
-    font-size: 18px;
-    border: 1px solid #000000;
-  }
-
   @media (max-width: 700px) {
     width: 180px;
     font-size: 16px;
+  }
+
+    @media (max-width: 860px) {
+    width: 200px;
+    font-size: 18px;
+    border: 1px solid #000000;
   }
 
   @media (min-width: 1650px) {
@@ -446,21 +505,22 @@ const LeitgrafikPurpleBrush = styled.img`
   width: 16%;
   height: auto;
 
-  @media (max-width: 380px) {
+  @media (min-width: 320px) {
     display: none;
   }
 
-  @media (max-width: 768px) {
-    bottom: 18%;
-    left: 8%;
-    width: 30%;
+  @media (max-width: 1364px) {
+    bottom: 15%;
+    left: 15%;
+    width: 15%;
     height: auto;
   }
 
+
   @media (min-width: 1620px) {
     bottom: 22%;
-    left: 21%;
-    width: 15%;
+    left: 23%;
+    width: 11%;
     height: auto;
   }
 `
@@ -472,18 +532,30 @@ const LeitgrafikBlackLinesRedBrush = styled.img`
   width: 200px;
   height: auto;
 
-  @media (max-width: 868px) {
+  @media (max-width: 568px) {
     display: none;
   }
 
-  @media (min-width: 1620px) {
+  @media (min-width: 768px) {
     bottom: 50px;
-    left: 20%;
+    left: 16%;
+    width: 240px;
+  }
+
+  @media (min-width: 1366px) {
+    bottom: 60px;
+    width: 240px;
+  }
+
+  @media (min-width: 1640px) {
+    bottom: 50px;
+    left: 18%;
     width: 300px;
   }
 `
 
 const LeitgrafikBlackLinesFace = styled.img`
+  position: absolute;
   top: 300px;
   left: -2%;
   width: 240px;
@@ -504,13 +576,14 @@ const LeitgrafikBlackLinesFace = styled.img`
     width: 240px;
   }
 
-  @media (max-width: 953px) {
-    top: 300px;
+
+  @media (min-width: 1365px) {
+    top: 350px;
     left: -2%;
-    width: 240px;
+    width: 320px;
   }
 
-  @media (min-width: 1650px) {
+  @media (min-width: 1640px) {
     top: 500px;
     left: -2%;
     width: 440px;
@@ -571,6 +644,11 @@ const LeitgrafikYellow1 = styled.img`
   width: 300px;
   height: auto;
   z-index: 0;
+
+  @media (min-width: 319px) {
+    bottom: 230px;
+    width: 240px;
+  }
 
   @media (max-width: 850px) {
     left: -10%;
