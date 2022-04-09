@@ -337,14 +337,14 @@ export default function Summary({ location }) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 100 €*",
+          ticket: "Festival Ticket 103 €*",
         },
       ])
     } else if (sumTickets === 123) {
       setProducts(products => [
         ...products,
         {
-          ticket: "Festival Ticket 100 €*",
+          ticket: "Festival Ticket 103 €*",
         },
         {
           ticket: "Camper Stellplatz 20 €",

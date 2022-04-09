@@ -52,11 +52,10 @@ export default function Submitted({ navigation }) {
                     bis zu 5 min dauern.
                   </TextDescription>
                   <TextDescription>
-                    Mit deiner Ticket-ID (sehr wichtig, nicht verlieren)
-                    gelangst du bald in deine persönliche Ticketarea. Wir geben
-                    dir Bescheid sobald du dich einloggen kannst. Dort findest
-                    du dann unter Anderem dein digitales Ticket, nähere Infos
-                    zum Festival und deinen Helferstatus.
+                    In der E-Mail findest du deine Ticket-ID und einen Link zu
+                    deiner persönlichen Ticketarea, wo dich bald dein digitales
+                    Ticket, nähere Infos zum Festival und dein Helferstatus
+                    erwarten.
                   </TextDescription>
                 </Description>
                 <ButtonSection>
