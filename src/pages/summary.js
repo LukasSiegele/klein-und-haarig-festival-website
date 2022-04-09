@@ -31,7 +31,7 @@ const base = new Airtable({
 const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
   const [orderID, setOrderID] = useState(false)
   const [ticketID, setTicketID] = useState(false)
 
@@ -104,7 +104,7 @@ export default function Summary({ location }) {
   const audienceCount = useAudienceCount()
   //console.log("hook count: " + audienceCount)
   const audienceLimit = 200
-
+  console.log("audienceCount is", audienceCount)
   // Unique ID
   const userID = uniqid()
 
@@ -473,6 +473,7 @@ export default function Summary({ location }) {
                 <Group>
                   <Value>Bezahlen</Value>
                   <PayPalGroup>
+                    
                     <PayPalScriptProvider
                       options={{
                         "client-id": paypalCLientID,
