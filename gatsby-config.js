@@ -4,13 +4,13 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Severus Snape",
-    titleTemplate: "%s · The Real Hero",
-    description:
-      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
-    url: "https://www.doe.com", // No trailing slash allowed!
-    image: "/snape.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
-    twitterUsername: "@occlumency",
+    title: `Klein und Haarig`,
+    titleTemplate: "Klein und Haarig",
+    description: `Ein kleines Festival im Schwarzwald vom 15. bis 18. Juli 2022`,
+    author: `Bunte Platte e.V.`,
+    url: `https://www.kleinundhaarig.de`,
+    image: `/images/Stairway.jpg`,
+    twitterUsername: "@kleinundhaarig",
   },
   plugins: [
     {
