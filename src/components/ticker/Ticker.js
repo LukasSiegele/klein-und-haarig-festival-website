@@ -31,9 +31,7 @@ const Ticker = () => {
             {({ index }) => (
               <Wrapper>
                 <TickerText className="tickerText">
-                  Wir haben technische Probleme. Der Ticketverkauf verzögert
-                  sich nochmal. Alle die bisher ein Ticket gekauft haben werden
-                  von uns persönlich kontaktiert. Sorry für die Umstände.
+                  Tickets ab jetzt verfügbar.
                 </TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
               </Wrapper>
