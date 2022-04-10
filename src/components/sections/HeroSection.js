@@ -95,7 +95,6 @@ const TicketWrapper = styled(Link)`
   z-index: 200;
   position: absolute;
   /* width: 400px; */
-  scale: 1.4;
   top: 55px;
   right: 160px;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
