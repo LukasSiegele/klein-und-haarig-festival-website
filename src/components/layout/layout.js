@@ -1,13 +1,22 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Headline, SubheaderSmall, Note } from "../styles/TextStyles"
 
 import CookieConsent from "react-cookie-consent"
+import ReactGA from "react-ga"
+
 import Footer from "../footer/footer"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import "../layout/layout.css"
 
+ReactGA.initialize("G-4CWM64QBQ3")
+
 export default function Layout({ children }) {
+  // Google Analytics
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname)
+  }, [])
+
   return (
     <>
       {/* <GlobalStyle /> */}

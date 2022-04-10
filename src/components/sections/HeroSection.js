@@ -774,7 +774,7 @@ const TicketWrapper = styled.div`
 
   @media (min-width: 1200px) {
     /* top: 5vh; */
-    top: 50px;
+    /* top: 50px; */
     right: 200px;
   }
 
