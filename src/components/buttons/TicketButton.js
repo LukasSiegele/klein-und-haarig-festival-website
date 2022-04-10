@@ -55,7 +55,7 @@ const TicketBackground = styled.img`
 `
 const Wrapper = styled.div`
   position: absolute;
-  left: 25vw;
+  /* left: 25vw; */
   height: 41px;
   width: 126px;
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 import LeitgrafikImage1 from "../../../public/images/LeitgrafikImage1.png"
 import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
@@ -13,20 +14,29 @@ import LeitgrafikImage9 from "../../../public/images/LeitgrafikImage9.png"
 
 import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
-import useAutoCount from "../../helper/useAutoCount"
+// import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
+import useAudienceCount from "../../helper/useAudienceCount"
+import TicketButton from "../buttons/TicketButton"
 
 import { FrontpageHeadline, FrontpageInfos } from "../styles/TextStyles"
 
 export default function HeroSection() {
   // Auto Count
-  const autoCount = useAutoCount()
+  // const autoCount = useAutoCount()
 
   // Camper Count
   const camperCount = useCamperCount()
 
+  // Audience Counts
+  const audienceCount = useAudienceCount()
+  const maxAudience = 200
+
   return (
     <Container>
+      <TicketWrapper to={audienceCount < maxAudience ? "/tickets" : "/voll"}>
+        <TicketButton />
+      </TicketWrapper>
       <TitleLine>
         <KleinMask>
           <TitleKlein> Klein </TitleKlein>
@@ -79,6 +89,24 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   /* overflow: hidden; */
+`
+
+const TicketWrapper = styled.div`
+  z-index: 200;
+  position: absolute;
+  /* width: 400px; */
+  scale: 1.4;
+  top: 55px;
+  right: 160px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  & > :hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    top: 40px;
+    right: 150px;
+  }
 `
 
 const TitleLine = styled.div`
