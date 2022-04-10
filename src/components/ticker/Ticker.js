@@ -33,7 +33,7 @@ const Ticker = () => {
                 <TickerText className="tickerText">
                   Wir haben technische Probleme. Der Ticketverkauf verzögert
                   sich nochmal. Alle die bisher ein Ticket gekauft haben werden
-                  persönlich kontektiert. Sorry für die Umstände.
+                  von uns persönlich kontaktiert. Sorry für die Umstände.
                 </TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
               </Wrapper>
