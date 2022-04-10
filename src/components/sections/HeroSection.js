@@ -91,7 +91,7 @@ const Wrapper = styled.div`
   /* overflow: hidden; */
 `
 
-const TicketWrapper = styled.div`
+const TicketWrapper = styled(Link)`
   z-index: 200;
   position: absolute;
   /* width: 400px; */
