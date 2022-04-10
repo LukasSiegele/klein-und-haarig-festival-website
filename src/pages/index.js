@@ -4,7 +4,6 @@ import HeroSection from "../components/sections/HeroSection"
 import SideNavigation from "../components/navigation/SideNav"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
-import Header from "../components/layout/Header"
 import Ticker from "../components/ticker/Ticker"
 
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
@@ -15,7 +14,6 @@ export default function IndexPage() {
       <SEO title="Home" />
       <Layout>
         <Wrapper>
-          <Header />
           <MainGrid>
             <SideNavigation />
             <HeroSection />
