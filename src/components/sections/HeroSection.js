@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 import LeitgrafikImage1 from "../../../public/images/LeitgrafikImage1.png"
 import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
@@ -14,18 +13,12 @@ import LeitgrafikImage9 from "../../../public/images/LeitgrafikImage9.png"
 
 import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
-import useAudienceCount from "../../helper/useAudienceCount"
 import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
-import TicketButton from "../buttons/TicketButton"
 
 import { FrontpageHeadline, FrontpageInfos } from "../styles/TextStyles"
 
 export default function HeroSection() {
-  // Audience Counts
-  const audienceCount = useAudienceCount()
-  const maxAudience = 200
-
   // Auto Count
   const autoCount = useAutoCount()
 
@@ -60,19 +53,7 @@ export default function HeroSection() {
           <Place>Bad Wildbad</Place>
         </PlaceMask>
       </InfoGroup>
-      <TicketWrapper>
-        <TicketGroup
-          to={audienceCount < maxAudience ? "/tickets" : "/voll"}
-          // to={"/voll"}
-        >
-          <TicketButton />
-          {/* <TicketLabel>
-                      {audienceCount < maxAudience
-                      ? "Tickets"
-                      : "Ticketverkauf pausiert"}
-                  </TicketLabel> */}
-        </TicketGroup>
-      </TicketWrapper>
+
       <ImageWrapper>
         <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1} />
         <LeitgrafikPurpleBrush src={LeitgrafikImage2} />
@@ -745,67 +726,5 @@ const Logo = styled.img`
       visibility: visible;
       transform: translateY(0px);
     }
-  }
-`
-
-const TicketWrapper = styled.div`
-  z-index: 200;
-  position: absolute;
-  scale: 1.4;
-  top: 40px;
-  right: -40px;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  :hover {
-    /* transform: translateY(-10px); */
-    /* transform: scale(1.03);
-    cursor: pointer; */
-  }
-
-  @media (max-width: 600px) {
-    /* top: 5vh; */
-    right: -80px;
-  }
-
-  @media (min-width: 700px) {
-    /* top: 5vh; */
-    top: 50px;
-    right: 40px;
-  }
-
-  @media (min-width: 1200px) {
-    /* top: 5vh; */
-    /* top: 50px; */
-    right: 200px;
-  }
-
-  @media (min-width: 1350px) {
-    /* top: 5vh; */
-    right: 20%;
-  }
-`
-
-const TicketGroup = styled(Link)`
-  /* animation: TicketButtonAnimation 2s 3s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
-  opacity: 1;
-  background-image: none;
-  width: 320px;
-  height: 56px;
-  color: white;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  text-transform: uppercase;
-  font-size: 16px;
-  border: 0px;
-
-  & > :hover {
-    cursor: pointer;
-  }
-`
-
-const TicketLabel = styled.h3`
-  text-align: center;
-  @media (max-width: 700px) {
-    font-size: 18px;
   }
 `
