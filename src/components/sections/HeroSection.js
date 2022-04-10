@@ -82,11 +82,11 @@ export default function HeroSection() {
 const Container = styled.div`
   background-color: none;
   width: auto;
-  height: 1100px;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   @media (max-width: 768px) {
-    height: 800px;
+    height: 650px;
   }
 `
 
