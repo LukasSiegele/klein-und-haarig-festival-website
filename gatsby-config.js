@@ -4,12 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `KLEIN UND HAARIG`,
-    titleTemplate: "KLEIN UND HAARIG",
-    description: `Ein kleines Zeltlager im Schwarzwald vom 9. bis 11. Juli 2021`,
+    title: `Klein und Haarig`,
+    titleTemplate: "Klein und Haarig",
+    description: `Ein kleines Festival im Schwarzwald vom 15. bis 18. Juli 2022`,
     author: `Bunte Platte e.V.`,
     url: `https://www.kleinundhaarig.de`,
-    image: `/images/kuhthumbnail.jpg`,
+    image: `/images/Stairway.jpg`,
     twitterUsername: "@kleinundhaarig",
   },
   plugins: [
