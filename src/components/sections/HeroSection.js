@@ -82,9 +82,12 @@ export default function HeroSection() {
 const Container = styled.div`
   background-color: none;
   width: auto;
-  height: 100vh;
+  height: 1100px;
   overflow: hidden;
   position: relative;
+  @media (max-width: 768px) {
+    height: 800px;
+  }
 `
 
 const Wrapper = styled.div`
@@ -349,6 +352,7 @@ const TitleArtist = styled.h5`
 const InfoGroup = styled.div`
   position: absolute;
   margin: 60px 0 300px 290px;
+  z-index: 99;
   /* width: 500px; */
 
   color: black;

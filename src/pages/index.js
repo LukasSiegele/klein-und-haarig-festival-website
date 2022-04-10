@@ -43,7 +43,9 @@ const MainGrid = styled.div`
 `
 
 const TickerGroup = styled.div`
-  position: relative;
+  position: absolute;
+  bottom: 60px;
+  z-index: 999;
 `
 
 const Spacer = styled.div`

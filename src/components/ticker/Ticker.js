@@ -69,9 +69,7 @@ const TickerMask = styled.div`
 
 const TickerWrapper = styled.div`
   z-index: 999;
-  position: fixed;
   left: 0;
-  bottom: 6%;
   width: 100vw;
 
   display: grid;
