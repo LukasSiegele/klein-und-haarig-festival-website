@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   max-width: 331px;
   position: relative;
   transition: ${animations.slow};
-  opacity: ${props => (props.limit ? ".3" : "1")};
+  opacity: ${props => (props.limit ? ".5" : "1")};
 
   /* background: ${props =>
     props.isSelected

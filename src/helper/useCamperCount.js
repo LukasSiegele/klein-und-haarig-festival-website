@@ -13,7 +13,7 @@ export default function useCamperCount() {
       .select({ view: "Master" })
       .eachPage((records, fetchNextPage) => {
         records.map(items => {
-          if (items.fields.Camper === "Ja") {
+          if (items.fields.Camper == true) {
             setCamperCount(camperCount => camperCount + 1)
           }
         })
@@ -22,11 +22,12 @@ export default function useCamperCount() {
   }, [])
 
   // Camper Count
-  const maxCampers = 4
+  const maxCampers = 10
   const [camperParkplatz, setCamperParkplatz] = useState(false)
 
   useEffect(() => {
     // Check for Max. Campers
+    console.log("Airtable Camperanzahl: " + camperCount)
     if (camperCount >= maxCampers) {
       setCamperParkplatz(true)
     } else {
