@@ -27,7 +27,6 @@ export default function useCamperCount() {
 
   useEffect(() => {
     // Check for Max. Campers
-    console.log("Airtable Camperanzahl: " + camperCount)
     if (camperCount >= maxCampers) {
       setCamperParkplatz(true)
     } else {
