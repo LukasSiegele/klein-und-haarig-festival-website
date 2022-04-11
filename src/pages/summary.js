@@ -34,6 +34,7 @@ export default function Summary({ location }) {
   const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
   const [orderID, setOrderID] = useState(false)
   const [ticketID, setTicketID] = useState(false)
+  const [paypalDisabled, setPaypalDisabled] = useState(false)
 
   const { state = {} } = location
   const {
@@ -97,20 +98,29 @@ export default function Summary({ location }) {
   const [isDauer, setIsDauer] = useState()
   const [helferDauer, setHelferDauer] = useState()
   const [isHelperDetails, setIsHelperDetails] = useState()
-
+  const [audienceCount, setAudienceCount] = useState(null);
   const [orderData, setOrderData] = useState(false)
 
   // Audience Count
-  const audienceCount = useAudienceCount()
+  const hookAudienceCount = useAudienceCount();
+
+  useEffect(() => {
+    setAudienceCount(hookAudienceCount)
+  })
   //console.log("hook count: " + audienceCount)
   const audienceLimit = 200
   console.log("audienceCount is", audienceCount)
+  useEffect(() => {
+    if(audienceCount > audienceLimit){
+      setPaypalDisabled(true);
+    }
+  }, [audienceCount, setPaypalDisabled, audienceLimit])
   // Unique ID
   const userID = uniqid()
   // POST TO — AIRTABLE
 
-  const paypalClickHandler = e => {
-    console.log(e)
+  const paypalClickHandler = () => {
+
   }
 
   const paypalSuccess = data => {
@@ -489,6 +499,7 @@ export default function Summary({ location }) {
                     >
                       <PayPalButton
                         // currency={currency}
+                        disabled={paypalDisabled}
                         showSpinner={false}
                         amount={sumTickets}
                         currency={"EUR"}
