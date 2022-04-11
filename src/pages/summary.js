@@ -241,16 +241,16 @@ export default function Summary({ location }) {
         navigate("/submitted")
       })
       .catch(err => {
-        airtableLogError(ticketID, orderData, email)
+        airtableLogError(ticketID, {orderData, err}, email)
         navigate("/failed", {
           state: {
             ticketID: ticketID,
           },
         })
         console.log(err)
-        alert(
-          "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
-        )
+        // alert(
+        //   "Du hast du Probleme ein Ticket zu buchen? Bitte versuche es noch einmal in einem privaten Tab oder in einem anderen Browser, ohne dabei über die Browsernavigation vor oder zurück zu springen. Pro E-Mail-Adresse kann nur ein Ticket erworben werden."
+        // )
       })
 
     if (newsletter) {
