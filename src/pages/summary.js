@@ -232,7 +232,11 @@ export default function Summary({ location }) {
       .then(({ msg, result }) => {
         if (result !== "success") {
           airtableLogError(ticketID, { orderData, msg }, email)
-          navigate("/failed")
+          navigate("/failed", {
+            state: {
+              ticketID: ticketID,
+            },
+          })
           throw msg
         }
 
