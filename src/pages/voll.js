@@ -1,25 +1,35 @@
+import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import FormButton from "../components/buttons/FormButton"
 
 export default function Voll() {
   return (
     <Container>
       <Wrapper>
-        <MessageHeader>Was Ticketverkauf pausiert bedeutet</MessageHeader>
+        <MessageHeader>Ticketverkauf vorrübergehend pausiert</MessageHeader>
         <MessageText>
-          Wir haben aktuell unser Limit an Festivalticket Reservierungen
-          erreicht und den Ticketverkauf vorrübergehend pausiert. Gegebenfalls
-          wird der Verkauf wieder geöffnet, nähere Infos erhältst du auf unserem
-          Instagram Account.
+          Wir haben unser aktuelles Limit an Festivaltickets erreicht und den
+          Ticketverkauf vorrübergehend pausiert. Gegebenenfalls wird der Verkauf
+          wieder geöffnet. Wann genau erfährst du über unseren{" "}
+          <InlineLink href="https://www.instagram.com/kleinundhaarig/">
+            Instagram
+          </InlineLink>{" "}
+          Account.
         </MessageText>
         <MessageText>
-          Ihr wollt ein Camperticket nachträglich kaufen? Schreibt uns einfach
-          per:
+          Du willst nachträglich ein Camperticket kaufen? Schreibt uns einfach
+          per:{" "}
+          <InlineLink href="mailto:info@kleinundhaarig.de">
+            info@kleinundhaarig.de
+          </InlineLink>
         </MessageText>
-        <Kontakt href="mailto:info@kleinundhaarig.de">
-          info@kleinundhaarig.de
-        </Kontakt>
-        <Home href="/">Zurück zur Startseite</Home>
+
+        <ButtonGroup>
+          <Link to="/">
+            <FormButton label="Zurück zur Startseite ➞"></FormButton>
+          </Link>
+        </ButtonGroup>
       </Wrapper>
     </Container>
   )
@@ -67,9 +77,22 @@ const MessageText = styled.p`
   font-weight: 500;
   margin-bottom: 30px;
   color: white;
+  opacity: 0.5;
 `
 
-const Kontakt = styled.a``
+const InlineLink = styled.a`
+  color: white;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255);
+`
+
+const ButtonGroup = styled.div`
+  max-width: 400px;
+  margin-top: 60px;
+  @media (max-width: 768px) {
+    width: auto;
+  }
+`
 
 const Home = styled.a`
   margin-top: 100px;
