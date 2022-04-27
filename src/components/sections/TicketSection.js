@@ -142,7 +142,7 @@ maximale Fahrzeuggröße 6 x 2.5 m"
           </SumWrapper>
           <WeiterWrapper>
             <Link
-              to="/data"
+              to="/Gob7sEZH8zE8KR"
               state={{
                 sumTickets: summary,
                 onlyFriends: props.onlyFriends,

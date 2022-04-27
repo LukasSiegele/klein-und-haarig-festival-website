@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
 
-export default function Data({ location }) {
+export default function Gob7sEZH8zE8KR({ location }) {
   const { state = {} } = location
   const { sumTickets, onlyFriends } = state
 

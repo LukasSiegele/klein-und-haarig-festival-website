@@ -4,7 +4,7 @@ import SEO from "../components/layout/seo"
 import TicketSection from "../components/sections/TicketSection"
 import ShopTitle from "../components/shopping/ShopTitle"
 
-export default function Tickets({ location }) {
+export default function JaxXuwMQu6TEcd({ location }) {
   const { state = {} } = location
   const { autoParkplatz, camperParkplatz } = {} // state
   const onlyFriends = "-"
