@@ -31,7 +31,7 @@ const base = new Airtable({
 const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
   const [orderID, setOrderID] = useState(false)
   const [ticketID, setTicketID] = useState(false)
   const [paypalDisabled, setPaypalDisabled] = useState(false)
@@ -123,8 +123,12 @@ export default function Summary({ location }) {
 
   }
 
-  const paypalSuccess = data => {
+  const paypalSuccess = e => {
+    e.preventDefault();
     setPaymentPending(true)
+    const data = {
+      orderID: userID
+    }
     setOrderData(data)
     airtableHandler(data)
   }
@@ -489,26 +493,7 @@ export default function Summary({ location }) {
                 <Seperator />
                 <Group>
                   <Value>Bezahlen</Value>
-                  <PayPalGroup>
-                    <PayPalScriptProvider
-                      options={{
-                        "client-id": paypalCLientID,
-                        // components: "buttons",
-                        currency: "EUR",
-                      }}
-                    >
-                      <PayPalButton
-                        // currency={currency}
-                        disabled={paypalDisabled}
-                        showSpinner={false}
-                        amount={sumTickets}
-                        currency={"EUR"}
-                        onSuccess={paypalSuccess}
-                        onError={paypalError}
-                        onClick={paypalClickHandler}
-                      />
-                    </PayPalScriptProvider>
-                  </PayPalGroup>
+                  <button onClick={paypalSuccess}>register</button>
                 </Group>
               </Section>
               {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
