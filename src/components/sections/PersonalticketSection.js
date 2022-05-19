@@ -9,13 +9,15 @@ import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import Kritzel from "../../../static/images/TicketareaRotesKritzel2.png"
 import VipSection1 from "../sections/vip/VipSection1"
-import QRCode from 'react-qr-code';
+import QRCode from "react-qr-code"
 
 import {
   Headline,
   MasterHeadline,
   PageInfo,
   ImageDescription,
+  SubheaderSmall,
+  Note,
 } from "../styles/TextStyles"
 
 import Aufbau from "../../../static/images/Aufbau.jpg"
@@ -44,69 +46,93 @@ const PersonalTicketSection = props => {
     <Layout>
       <SEO title="personal ticket area" />
       <Container>
+        <MobileSection></MobileSection>
+
         <Wrapper>
-          <Link to="/">
-            <Logo />
-          </Link>
-          <MainGrid>
-            
-            <Left>
-              <TextWrapper>
-                <TitlePersonalStroke> Personal </TitlePersonalStroke>
-                <TitleTicketarea>Ticket Area</TitleTicketarea>
-                <Description>
-                  Hallo {userInfo.Vorname}, <br />
-                  wir bitten dich um etwas Geduld. Diese Seite wird gerade von
-                  uns aufgebaut. Bald findest du hier:
-                </Description>
-              </TextWrapper>
-              <AccordionWrapper>
-                <ul>
-                  <li>
-                    <AccordionSection>
-                      <AccHeader>
-                        <SectionTitle>Dein Digitales Ticket</SectionTitle>
-                        <ComingSoon>qr code coming soon</ComingSoon>
-                        <QRCode value={userInfo.TicketID} />
-                      </AccHeader>
-                      <AccContent>
-                        <AccDescription>
-                  Hier schonmal dein/e gekauften Ticket/s. Das offizielle digitale Ticket in Form eines QR Codes wird hier in Kürze angezeigt.
-                </AccDescription>
-                        <VipSection1 userData={userInfo} />
-                      </AccContent>
-                    </AccordionSection>
-                  </li>
+          <Left>
+            <Link to="/">
+              <Logo />
+            </Link>
+          </Left>
+          <Right>
+            <TextWrapper>
+              <TitlePersonalStroke> Personal </TitlePersonalStroke>
+              <TitleTicketarea>Ticket Area</TitleTicketarea>
+              <Description>
+                Hallo {userInfo.Vorname}, <br />
+                dein digitales Ticket ist ab jetzt auf dieser Seite einsehbar.
+              </Description>
+            </TextWrapper>
+            <AccordionWrapper>
+              <AccordionSection>
+                <AccHeader>
+                  <SectionTitle>Dein Digitales Ticket</SectionTitle>
+                  {/* <ComingSoon>qr code coming soon</ComingSoon> */}
+                </AccHeader>
+                {/* <AccDescription>
+                  Hier dein offizielles digitale Tickets.
+                </AccDescription> */}
+                <AccContent>
+                  <Tile>
+                    <TileGrid>
+                      <QRGroup>
+                        <Outline>
+                          <QRCode value={userInfo.TicketID} />
+                        </Outline>
+                        <IDGroup>
+                          <LabelIDGroup>
+                            <LabelID> ID</LabelID>
+                          </LabelIDGroup>
+                          <TicketID>{userInfo.TicketID}</TicketID>
+                        </IDGroup>
+                      </QRGroup>
+                      <VipSection1 userData={userInfo} />
+                    </TileGrid>
+                  </Tile>
 
-                  <li>
-                    <AccordionSection>
-                      <AccHeader>
-                        <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
-                        <ComingSoon>coming soon</ComingSoon>
-                      </AccHeader>
-                    </AccordionSection>
-                  </li>
+                  <DescriptionGrid>
+                    <DescriptionGridContent>
+                      <InfoLabel>Wie funktioniert das?</InfoLabel>
+                      <InfoText>
+                        Halte einfach am Eingang deinen Ausweis und entweder
+                        diesen QR Code oder dein Hardticket bereit.
+                      </InfoText>
+                    </DescriptionGridContent>
+                    <DescriptionGridContent>
+                      <InfoLabel>Tipp</InfoLabel>
+                      <InfoText>
+                        Auf dem Festivalgelände gibt es schlechten Empfang. Wenn
+                        du kein Hardticket hast empfehlen wir einen Screenshot
+                        vom QR Code zu machen und das Foto bereitzuhalten.
+                      </InfoText>
+                    </DescriptionGridContent>
+                  </DescriptionGrid>
+                </AccContent>
+              </AccordionSection>
 
-                  <li>
-                    <AccordionSection>
-                      <AccHeader>
-                        <SectionTitle>Anfahrt & Infos</SectionTitle>
-                        <ComingSoon>coming soon</ComingSoon>
-                      </AccHeader>
-                    </AccordionSection>
-                  </li>
-                </ul>
-              </AccordionWrapper>
-            </Left>
+              <AccordionSection>
+                <AccHeader>
+                  <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
+                  <ComingSoon>coming soon</ComingSoon>
+                </AccHeader>
+              </AccordionSection>
 
-            <Right>
+              <AccordionSection>
+                <AccHeader>
+                  <SectionTitle>Anfahrt & Infos</SectionTitle>
+                  <ComingSoon>coming soon</ComingSoon>
+                </AccHeader>
+              </AccordionSection>
+            </AccordionWrapper>
+          </Right>
+
+          {/* <Right>
               <Kritzelgrafik />
               <ImageWrapper>
                 <Image />
                 <ImageAuthor>Foto: Dominik Merle</ImageAuthor>
               </ImageWrapper>
-            </Right>
-          </MainGrid>
+            </Right> */}
         </Wrapper>
       </Container>
     </Layout>
@@ -118,6 +144,15 @@ const Container = styled.div`
   background: black;
   overflow: hidden;
   color: white;
+`
+
+const MobileSection = styled.div`
+  background: blue;
+  height: 400px;
+
+  @media only screen and (min-device-width: 480px) {
+    display: none;
+  }
 `
 
 const TicketBackground = styled.img`
@@ -143,39 +178,32 @@ const Wrapper = styled.div`
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 120px;
-  max-width: 1840px;
-
-  
-
-  // @media (max-width: 1100px) {
-  //   // grid-template-columns: 1fr;
-  //   gap: -700px;
-  //   max-width: 700px;
-  // }
 `
 
-const Left = styled.div`
-  /* padding-top: 120px; */
-  padding-left: 120px;
+const Left = styled.div``
+
+const Right = styled.div`
   position: relative;
-  @media (max-width: 1100px) {
-    padding: 40px 20px;
+`
+
+// KuH Logo in TopNav
+const Logo = styled.div`
+  width: 84px;
+  height: 79px;
+  background-image: url(${LogoSVG});
+  background-size: cover;
+  margin: 40px;
+
+  @media (max-width: 800px) {
+    margin: 20px;
+  }
+  :hover {
+    cursor: pointer;
   }
 `
 
-const Right = styled.div`
-  /* padding-right: 120px; */
-  justify-self: right;
-  // overflow: hidden;
-position: relative;
-  
-`
-
-
 const TextWrapper = styled.div`
-  padding: 21px 0;
-
+  padding: 24px 0;
   @media (max-width: 800px) {
     padding: 0px 20px;
   }
@@ -211,30 +239,116 @@ const Description = styled.h3`
 `
 
 const AccordionWrapper = styled.div`
-  margin: 100px 0 0 20px;
+  margin: 100px 0;
   @media (max-width: 800px) {
     margin: 60px 20px;
   }
+
+  @media (max-width: 480px) {
+    margin: 60px 0px;
+  }
 `
 
-const AccordionSection = styled.div``
+const AccordionSection = styled.div`
+  margin-bottom: 40px;
+`
 
 const AccHeader = styled.div`
-  /* margin-bottom: 60px; */
-  /* border-top: 1px solid white; */
+  margin-bottom: 60px;
+  border-top: 0.5px solid white;
   display: grid;
   grid-template-columns: auto 1fr;
   justify-items: start;
   gap: 15px;
   @media (max-width: 800px) {
-    /* padding: 0 20px; */
+    padding: 0 20px;
     grid-template-columns: 1fr;
     gap: 0px;
   }
 `
 
-const AccContent = styled.div`
-  padding: 20px 0;
+const AccContent = styled.div``
+
+const Tile = styled.div`
+  padding: 60px;
+  border-radius: 30px 0 0 30px;
+  background: rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 800px) {
+    padding: 20px;
+    border-radius: 30px;
+  }
+`
+
+const QRGroup = styled.div``
+
+const Outline = styled.div`
+  background: #cbc3ff;
+  padding: 10px;
+  border-radius: 8px;
+`
+
+const IDGroup = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  justify-items: center;
+`
+
+const LabelIDGroup = styled.div`
+  margin-top: 20px;
+  background: black;
+  padding: 16px;
+  border-radius: 8px;
+  width: auto;
+`
+
+const LabelID = styled.div`
+  opacity: 0.5;
+`
+
+const TicketID = styled.div`
+  margin-top: 20px;
+  background: black;
+  padding: 16px;
+  border-radius: 8px;
+  width: auto;
+`
+
+const TileGrid = styled.div`
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`
+
+const DescriptionGrid = styled.div`
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`
+
+const DescriptionGridContent = styled.div``
+
+const InfoLabel = styled(SubheaderSmall)`
+  color: white;
+  margin-top: 20px;
+  display: inline-block;
+`
+
+const InfoText = styled(Note)`
+  margin-top: 8px;
+  margin-bottom: 20px;
 `
 
 const AccDescription = styled.h5`
@@ -253,7 +367,7 @@ const ComingSoon = styled(PageInfo)`
 `
 
 const ImageWrapper = styled.div`
-@media (max-width: 1500px) {
+  @media (max-width: 1500px) {
     display: none;
   }
 `
@@ -280,21 +394,5 @@ const Image = styled.div`
 `
 
 const ImageAuthor = styled(ImageDescription)``
-
-// KuH Logo in TopNav
-const Logo = styled.div`
-  width: 84px;
-  height: 79px;
-  background-image: url(${LogoSVG});
-  background-size: cover;
-  margin: 40px;
-
-  @media (max-width: 800px) {
-    margin: 20px;
-  }
-  :hover {
-    cursor: pointer;
-  }
-`
 
 const Header = styled(Headline)``
