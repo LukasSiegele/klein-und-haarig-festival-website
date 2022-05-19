@@ -9,6 +9,7 @@ import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import Kritzel from "../../../static/images/TicketareaRotesKritzel2.png"
 import VipSection1 from "../sections/vip/VipSection1"
+import QRCode from 'react-qr-code';
 
 import {
   Headline,
@@ -66,6 +67,7 @@ const PersonalTicketSection = props => {
                       <AccHeader>
                         <SectionTitle>Dein Digitales Ticket</SectionTitle>
                         <ComingSoon>qr code coming soon</ComingSoon>
+                        <QRCode value={userInfo.TicketID} />
                       </AccHeader>
                       <AccContent>
                         <AccDescription>
