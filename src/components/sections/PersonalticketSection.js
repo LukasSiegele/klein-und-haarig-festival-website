@@ -110,7 +110,8 @@ const PersonalTicketSection = props => {
                 <InfoText>
                   Auf dem Festivalgelände gibt es schlechten Empfang. Wenn du
                   kein Hardticket hast empfehlen wir einen Screenshot vom QR
-                  Code zu machen und das Foto bereitzuhalten.
+                  Code mit deinem Smartphone zu machen und das Foto
+                  bereitzuhalten.
                 </InfoText>
               </DescriptionGridContent>
             </DescriptionGrid>
@@ -137,7 +138,7 @@ const PersonalTicketSection = props => {
               <DesktopDigitalesTicket>
                 <AccordionSection>
                   <AccHeader>
-                    <SectionTitle>Dein Digitales Ticket</SectionTitle>
+                    <SectionTitle>Dein Digitales Ticket (QR Code)</SectionTitle>
                     {/* <ComingSoon>qr code coming soon</ComingSoon> */}
                   </AccHeader>
                   {/* <AccDescription>
