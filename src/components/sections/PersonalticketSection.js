@@ -183,7 +183,7 @@ const PersonalTicketSection = props => {
               </DesktopDigitalesTicket>
               <AccordionSection>
                 <AccHeader>
-                  <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
+                  <SectionTitle>Dein Helfer:innen Status</SectionTitle>
                   <ComingSoon>coming soon</ComingSoon>
                 </AccHeader>
               </AccordionSection>
