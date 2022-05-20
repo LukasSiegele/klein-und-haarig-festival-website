@@ -129,7 +129,8 @@ const PersonalTicketSection = props => {
               <TitleTicketarea>Ticket Area</TitleTicketarea>
               <Description>
                 Hallo {userInfo.Vorname}, <br />
-                dein digitales Ticket ist ab jetzt auf dieser Seite einsehbar.
+                dein digitales Ticket (QR Code) ist ab jetzt auf dieser Seite
+                einsehbar.
               </Description>
             </TextWrapper>
             <AccordionWrapper>
