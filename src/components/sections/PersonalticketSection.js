@@ -6,14 +6,18 @@ import FormButton from "../buttons/FormButton"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
+import MobileLogoSVG from "../../../static/images/LogoSideNav.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import Kritzel from "../../../static/images/TicketareaRotesKritzel2.png"
 import VipSection1 from "../sections/vip/VipSection1"
 import QRCode from "react-qr-code"
+import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
+import MobileTicket from "../../../static/images/MobileTicketBackground.png"
 
 import {
   Headline,
   MasterHeadline,
+  PageHeader,
   PageInfo,
   ImageDescription,
   SubheaderSmall,
@@ -42,11 +46,76 @@ const PersonalTicketSection = props => {
   // Camper Count
   const camperPTicketsPage = 1
 
+  // Gekaufte Tickets als Text anzeigen
+  const [isTickets, setIsTickets] = useState(false)
+  useEffect(() => {
+    if (userInfo.Camper) {
+      return setIsTickets("1x Festival, 1x Camper")
+    } else {
+      return setIsTickets("1x Festival")
+    }
+  }, [])
+
   return (
     <Layout>
       <SEO title="personal ticket area" />
       <Container>
-        <MobileSection></MobileSection>
+        <MobileSection>
+          <MUpper>
+            <MHeaderSection>
+              <Link to="/">
+                <MLogo />
+              </Link>
+              <MHeaderContent>
+                <Info>Klein und Haarig 2022</Info>
+                <Title>Digitales Ticket</Title>
+              </MHeaderContent>
+            </MHeaderSection>
+            <MTicketSection>
+              <MQRCodeGroup>
+                <Outline>
+                  <QRCode value={userInfo.TicketID} />
+                </Outline>
+                <IDGroup>
+                  <LabelIDGroup>
+                    <LabelID> ID</LabelID>
+                  </LabelIDGroup>
+                  <TicketID>{userInfo.TicketID}</TicketID>
+                </IDGroup>
+              </MQRCodeGroup>
+            </MTicketSection>
+          </MUpper>
+
+          <MTicketInfoSection>
+            <MTicketInfoGroup>
+              <Title>
+                {userInfo.Vorname} {userInfo.Nachname}
+              </Title>
+              <Title>{isTickets}</Title>
+            </MTicketInfoGroup>
+          </MTicketInfoSection>
+
+          <MInfoSection>
+            <DescriptionGrid>
+              <DescriptionGridContent>
+                <InfoLabel>Wie funktioniert das?</InfoLabel>
+                <InfoText>
+                  Halte einfach am Eingang deinen Ausweis und entweder diesen QR
+                  Code oder dein Hardticket bereit.
+                </InfoText>
+                <Seperator />
+              </DescriptionGridContent>
+              <DescriptionGridContent>
+                <InfoLabel>Tipp</InfoLabel>
+                <InfoText>
+                  Auf dem Festivalgelände gibt es schlechten Empfang. Wenn du
+                  kein Hardticket hast empfehlen wir einen Screenshot vom QR
+                  Code zu machen und das Foto bereitzuhalten.
+                </InfoText>
+              </DescriptionGridContent>
+            </DescriptionGrid>
+          </MInfoSection>
+        </MobileSection>
 
         <Wrapper>
           <Left>
@@ -64,59 +133,60 @@ const PersonalTicketSection = props => {
               </Description>
             </TextWrapper>
             <AccordionWrapper>
-              <AccordionSection>
-                <AccHeader>
-                  <SectionTitle>Dein Digitales Ticket</SectionTitle>
-                  {/* <ComingSoon>qr code coming soon</ComingSoon> */}
-                </AccHeader>
-                {/* <AccDescription>
+              <DesktopDigitalesTicket>
+                <AccordionSection>
+                  <AccHeader>
+                    <SectionTitle>Dein Digitales Ticket</SectionTitle>
+                    {/* <ComingSoon>qr code coming soon</ComingSoon> */}
+                  </AccHeader>
+                  {/* <AccDescription>
                   Hier dein offizielles digitale Tickets.
                 </AccDescription> */}
-                <AccContent>
-                  <Tile>
-                    <TileGrid>
-                      <QRGroup>
-                        <Outline>
-                          <QRCode value={userInfo.TicketID} />
-                        </Outline>
-                        <IDGroup>
-                          <LabelIDGroup>
-                            <LabelID> ID</LabelID>
-                          </LabelIDGroup>
-                          <TicketID>{userInfo.TicketID}</TicketID>
-                        </IDGroup>
-                      </QRGroup>
-                      <VipSection1 userData={userInfo} />
-                    </TileGrid>
-                  </Tile>
+                  <AccContent>
+                    <Tile>
+                      <TileGrid>
+                        <QRGroup>
+                          <Outline>
+                            <QRCode value={userInfo.TicketID} />
+                          </Outline>
+                          <IDGroup>
+                            <LabelIDGroup>
+                              <LabelID> ID</LabelID>
+                            </LabelIDGroup>
+                            <TicketID>{userInfo.TicketID}</TicketID>
+                          </IDGroup>
+                        </QRGroup>
+                        <VipSection1 userData={userInfo} />
+                      </TileGrid>
+                    </Tile>
 
-                  <DescriptionGrid>
-                    <DescriptionGridContent>
-                      <InfoLabel>Wie funktioniert das?</InfoLabel>
-                      <InfoText>
-                        Halte einfach am Eingang deinen Ausweis und entweder
-                        diesen QR Code oder dein Hardticket bereit.
-                      </InfoText>
-                    </DescriptionGridContent>
-                    <DescriptionGridContent>
-                      <InfoLabel>Tipp</InfoLabel>
-                      <InfoText>
-                        Auf dem Festivalgelände gibt es schlechten Empfang. Wenn
-                        du kein Hardticket hast empfehlen wir einen Screenshot
-                        vom QR Code zu machen und das Foto bereitzuhalten.
-                      </InfoText>
-                    </DescriptionGridContent>
-                  </DescriptionGrid>
-                </AccContent>
-              </AccordionSection>
-
+                    <DescriptionGrid>
+                      <DescriptionGridContent>
+                        <InfoLabel>Wie funktioniert das?</InfoLabel>
+                        <InfoText>
+                          Halte einfach am Eingang deinen Ausweis und entweder
+                          diesen QR Code oder dein Hardticket bereit.
+                        </InfoText>
+                      </DescriptionGridContent>
+                      <DescriptionGridContent>
+                        <InfoLabel>Tipp</InfoLabel>
+                        <InfoText>
+                          Auf dem Festivalgelände gibt es schlechten Empfang.
+                          Wenn du kein Hardticket hast empfehlen wir einen
+                          Screenshot vom QR Code zu machen und das Foto
+                          bereitzuhalten.
+                        </InfoText>
+                      </DescriptionGridContent>
+                    </DescriptionGrid>
+                  </AccContent>
+                </AccordionSection>
+              </DesktopDigitalesTicket>
               <AccordionSection>
                 <AccHeader>
                   <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
                   <ComingSoon>coming soon</ComingSoon>
                 </AccHeader>
               </AccordionSection>
-
               <AccordionSection>
                 <AccHeader>
                   <SectionTitle>Anfahrt & Infos</SectionTitle>
@@ -147,12 +217,66 @@ const Container = styled.div`
 `
 
 const MobileSection = styled.div`
-  background: blue;
-  height: 400px;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  border-bottom: 3px dashed rgba(255, 255, 255, 0.4);
+  overflow: hidden;
 
   @media only screen and (min-device-width: 480px) {
     display: none;
   }
+`
+
+const MUpper = styled.div`
+  background-image: url(${BackgroundTexture});
+`
+
+const MHeaderSection = styled.div`
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid black;
+`
+
+const MHeaderContent = styled.div``
+
+const Info = styled(PageInfo)`
+  margin-bottom: 4px;
+  z-index: 1;
+`
+const Title = styled(PageHeader)`
+  z-index: 1;
+`
+
+const MLogo = styled.div`
+  width: 84px;
+  height: 79px;
+  background-image: url(${MobileLogoSVG});
+  background-size: cover;
+`
+
+const MTicketSection = styled.div`
+  background-image: url(${MobileTicket});
+  background-size: cover;
+`
+
+const MQRCodeGroup = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  padding: 150px 20px;
+`
+
+const MTicketInfoSection = styled.div`
+  background: #cbc3ff;
+  padding: 20px;
+`
+
+const MTicketInfoGroup = styled.div`
+  display: grid;
+  gap: 5px;
 `
 
 const TicketBackground = styled.img`
@@ -164,6 +288,8 @@ const TicketBackground = styled.img`
   pointer-events: auto;
   height: 41px;
 `
+
+const MInfoSection = styled.div``
 
 const Wrapper = styled.div`
   display: grid;
@@ -266,6 +392,11 @@ const AccHeader = styled.div`
     gap: 0px;
   }
 `
+const DesktopDigitalesTicket = styled.div`
+  @media only screen and (max-device-width: 480px) {
+    display: none;
+  }
+`
 
 const AccContent = styled.div``
 
@@ -293,6 +424,7 @@ const IDGroup = styled.div`
   grid-template-columns: repeat(2, auto);
   align-items: center;
   justify-items: center;
+  gap: 10px;
 `
 
 const LabelIDGroup = styled.div`
@@ -313,6 +445,7 @@ const TicketID = styled.div`
   padding: 16px;
   border-radius: 8px;
   width: auto;
+  letter-spacing: 1px;
 `
 
 const TileGrid = styled.div`
@@ -328,6 +461,7 @@ const TileGrid = styled.div`
 `
 
 const DescriptionGrid = styled.div`
+  margin-top: 20px;
   padding: 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -335,6 +469,7 @@ const DescriptionGrid = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 20px;
   }
 `
 
@@ -342,13 +477,17 @@ const DescriptionGridContent = styled.div``
 
 const InfoLabel = styled(SubheaderSmall)`
   color: white;
-  margin-top: 20px;
   display: inline-block;
 `
 
 const InfoText = styled(Note)`
   margin-top: 8px;
   margin-bottom: 20px;
+`
+
+const Seperator = styled.div`
+  height: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 `
 
 const AccDescription = styled.h5`
