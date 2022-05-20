@@ -266,7 +266,7 @@ const MQRCodeGroup = styled.div`
   display: grid;
   grid-template-columns: auto;
   justify-items: center;
-  padding: 150px 20px;
+  padding: 100px 20px;
 `
 
 const MTicketInfoSection = styled.div`
