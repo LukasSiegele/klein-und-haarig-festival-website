@@ -10,6 +10,7 @@ import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import Kritzel from "../../../static/images/TicketareaRotesKritzel2.png"
 import VipSection1 from "../sections/vip/VipSection1"
 import QRCode from "react-qr-code"
+import HelperSection from "../sections/vip/HelperSection";
 
 import {
   Headline,
@@ -114,6 +115,7 @@ const PersonalTicketSection = props => {
                 <AccHeader>
                   <SectionTitle>Deinen Helfer:innen Status</SectionTitle>
                   <ComingSoon>coming soon</ComingSoon>
+                  <HelperSection userData={userInfo}/>
                 </AccHeader>
               </AccordionSection>
 
