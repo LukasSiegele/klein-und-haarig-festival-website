@@ -40,7 +40,17 @@ const HelperSection = props => {
               {isHelfer && 
                 <HelperInfo>Deine Präferenzen: {createPreferenceString()}</HelperInfo>
               }
-            </div></> : null }
+            </div></> : 
+            <>
+            <StatusBad/> 
+            <Note>nicht zugeteilt</Note>
+            <div></div>
+            <div>
+              <HelperInfo>Du hast dich noch nicht als Helfer registriert.</HelperInfo>
+              <CustomButton>Als Helfer registrieren</CustomButton> 
+            </div>
+            </>
+            }
               
         </TileGrid>
         
@@ -69,15 +79,31 @@ const HelperSection = props => {
 export default HelperSection
 
 const Status = styled.div`
-  height: 18px;
-  width: 18px;
+  height: 16px;
+  width: 16px;
   margin: 3px 6px;
   border-radius: 9px;
   background-color: #00FF38;
 `
 
+const StatusBad = styled.div`
+  height: 16px;
+  width: 16px;
+  margin: 3px 6px;
+  border-radius: 9px;
+  background-color: #FF004D;
+`
+
+
 const CardWrapper = styled.div`
 `
+
+const CustomButton = styled.button`
+  max-width: 400px;
+  margin-top: 16px;
+`
+
+
 
 const Tile = styled.div`
   padding: 30px 32px;
@@ -92,7 +118,8 @@ const Tile = styled.div`
 `
 
 const HelperInfo = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
+  font-family: "GT-Alpina-Extended-Bold";
 `
 
 const DescriptionGrid = styled.div`
