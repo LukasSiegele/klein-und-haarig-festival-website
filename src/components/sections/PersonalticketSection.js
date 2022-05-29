@@ -98,10 +98,10 @@ const PersonalTicketSection = props => {
           <MInfoSection>
             <DescriptionGrid>
               <DescriptionGridContent>
-                <InfoLabel>Wie funktioniert das?</InfoLabel>
+                <InfoLabel>Was brauche ich für den Einlass?</InfoLabel>
                 <InfoText>
-                  Halte einfach am Eingang deinen Ausweis und entweder diesen QR
-                  Code oder dein Hardticket bereit.
+                  Halte am Eingang deinen Ausweis und entweder diesen QR Code
+                  oder den auf deinem Hardticket bereit.
                 </InfoText>
                 <Seperator />
               </DescriptionGridContent>
@@ -164,10 +164,10 @@ const PersonalTicketSection = props => {
 
                     <DescriptionGrid>
                       <DescriptionGridContent>
-                        <InfoLabel>Wie funktioniert das?</InfoLabel>
+                        <InfoLabel>Was brauche ich für den Einlass?</InfoLabel>
                         <InfoText>
-                          Halte einfach am Eingang deinen Ausweis und entweder
-                          diesen QR Code oder dein Hardticket bereit.
+                          Halte am Eingang deinen Ausweis und entweder diesen QR
+                          Code oder den auf deinem Hardticket bereit.
                         </InfoText>
                       </DescriptionGridContent>
                       <DescriptionGridContent>
