@@ -78,6 +78,11 @@ export const SubheaderSmall = styled.h4`
   color: white;
 `
 
+export const SubheaderSuperSmall = styled.h5`
+  font-family: "GT-Alpina-Extended-Bold";
+  color: white;
+`
+
 // Text
 
 // Infotexte

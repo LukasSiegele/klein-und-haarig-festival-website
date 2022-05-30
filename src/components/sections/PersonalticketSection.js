@@ -21,6 +21,7 @@ import {
   PageInfo,
   ImageDescription,
   SubheaderSmall,
+  SubheaderSuperSmall,
   Note,
 } from "../styles/TextStyles"
 
@@ -138,7 +139,9 @@ const PersonalTicketSection = props => {
               <DesktopDigitalesTicket>
                 <AccordionSection>
                   <AccHeader>
-                    <SectionTitle>Dein Digitales Ticket (QR Code)</SectionTitle>
+                    <SectionTitle>
+                      01 — Dein Digitales Ticket (QR Code)
+                    </SectionTitle>
                     {/* <ComingSoon>qr code coming soon</ComingSoon> */}
                   </AccHeader>
                   {/* <AccDescription>
@@ -185,15 +188,148 @@ const PersonalTicketSection = props => {
               </DesktopDigitalesTicket>
               <AccordionSection>
                 <AccHeader>
-                  <SectionTitle>Dein Helfer:innen Status</SectionTitle>
+                  <SectionTitle>02 — Dein Helfer:innen Status</SectionTitle>
                   <ComingSoon>coming soon</ComingSoon>
                 </AccHeader>
               </AccordionSection>
               <AccordionSection>
                 <AccHeader>
-                  <SectionTitle>Anfahrt & Infos</SectionTitle>
-                  <ComingSoon>coming soon</ComingSoon>
+                  <SectionTitle>03 — Infos</SectionTitle>
                 </AccHeader>
+
+                <InfoSection>
+                  <InfoLabel>Neu</InfoLabel>
+                  <InfoText>
+                    Dieses Jahr geht das Festival einen Tag länger, von Freitag
+                    12 Uhr bis Montag 12 Uhr. Die Secondstage wird durchgehend
+                    laufen, damit jeder auf seinen Geschmack kommt. Zusätzlich
+                    wird es eine Ambient Stage geben und mehr
+                    Kunstinstallationen. Außerdem gibt es ein offizielles
+                    Rahmenprogramm mit Tattooartists, einem Modular Synthesizer
+                    Workshop, Vorträgen,...Bleibt gespannt.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Anfahrt</InfoLabel>
+                  <InfoText>
+                    Das Festivalgelände befindet sich auf dem{" "}
+                    <LinkInline href="https://goo.gl/maps/muaWAGwPx7nebDjJ9">
+                      Zeltplatz Christophshof, 75323 Bad Wildbad.
+                    </LinkInline>
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Öffis</InfoLabel>
+                  <InfoText>
+                    Die{" "}
+                    <LinkInline href="https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type=">
+                      Buslinie 7780
+                    </LinkInline>{" "}
+                    fährt alle 30 min vom Bahnhof Bad Wildbad und bringt dich in
+                    10 min direkt vor das Gelände an die Haltestelle
+                    "Zeltplatz".
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Parken & Shuttle</InfoLabel>
+                  <InfoText>
+                    Auf dem Festivalgelände wird es dieses Jahr keine Parkplätze
+                    für Autos geben. Unser Parkplatz befindet sich dieses Jahr
+                    hier:{" "}
+                    <LinkInline href="https://goo.gl/maps/muaWAGwPx7nebDjJ9">
+                      Zeltplatz Christophshof, 75323 Bad Wildbad.
+                    </LinkInline>{" "}
+                    <br />
+                    Ein Shuttle bringt euch von dort bei Anreise zum Festival
+                    bzw. zur Abreise dorthin zurück. Zum Aus- und Einladen könnt
+                    ihr direkt an den Einlass fahren. Zu Stoßzeiten solltet ihr
+                    Wartezeiten einplanen. Wir bitten um euer Verständnis und
+                    eure Geduld.
+                  </InfoText>
+                  <DetailLabel>Parkplatz -> Festival</DetailLabel>{" "}
+                  <List>
+                    <ListItem>Fr: 12-20 Uhr</ListItem>
+                    <ListItem>Sa: 12-18 Uhr </ListItem>
+                  </List>
+                  <DetailLabel>Festival -> Parkplatz</DetailLabel>{" "}
+                  <List>
+                    <ListItem>So: 10-20 Uhr </ListItem>
+                    <ListItem>Mo: 10-20 Uhr</ListItem>
+                  </List>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Camperticket </InfoLabel>
+                  <InfoText>
+                    Wichtig: Bitte bringt eine Plastikplane mit, auf die ihr das
+                    Fahrzeug abstellt. Da wir ein am Rande eines
+                    Naturschutzgebietes sind, darf kein Öl in den Boden
+                    gelangen. <br />
+                    Mit dem Camperticket könnt ihr direkt aufs Gelände fahren
+                    und dort für die Dauer des Festivals stehen bleiben. Haltet
+                    dazu bitte am Einlass und zeigt euer Ticket vor (QR Code).
+                    Wir weißen euch dann einem Platz zu.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Mitfahrgelegenheiten [coming soon] </InfoLabel>
+                  <InfoText>
+                    Wir werden für euch von bisher vielgebuchten Städten
+                    Whatsapp Gruppen anlegen, in denen ihr Mitfahrgelegenheiten
+                    bilden könnt: München, Stuttgart, Ulm, Berlin, Leipzig,
+                    Wien. <br /> Falls ihr weitere Vorschläge habt schreibt uns
+                    gerne per Mail oder Instagram.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Einlass </InfoLabel>
+                  <InfoText>
+                    Haltet am Einlass euren Ausweis und den QR Code bereit.
+                    Anschließend erhaltet ihr das Festivalband.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Naturschutzgebiet</InfoLabel>
+                  <InfoText>
+                    Das Gelände grenzt direkt an ein Naturschutzgebiet und wir
+                    verpflichten uns den Platz wie vorgefunden zu hinterlassen.
+                    Bitte nutzt die Mülleimer, Mülltüten und Taschenascher. Jede
+                    weggeworfene Zigarette müssen wir am Ende wieder aufsammeln.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Zelten</InfoLabel>
+                  <InfoText>
+                    Unter dem Gelände läuft eine Starkstromleitung in 40 cm
+                    Tiefe. Normale Zeltheringe sind kein Problem, allerdings ist
+                    von tieferen Bohrungen/Löchern abzusehen.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Grillen</InfoLabel>
+                  <InfoText>
+                    An der gemeinschaftlichen Grillstelle könnt ihr
+                    Mitgebrachtes zubereiten. Eigens mitgebrachte Grills sind
+                    nicht gestattet.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Klo & Duschen</InfoLabel>
+                  <InfoText>
+                    Auf dem Gelände gibt es feste sanitäre Anlagen (Klos,
+                    Duschen & Waschbecken) mit fließend Wasser. Graffitis sind
+                    hier nicht erwünscht.
+                  </InfoText>
+                </InfoSection>
               </AccordionSection>
             </AccordionWrapper>
           </Right>
@@ -369,7 +505,7 @@ const Description = styled.h3`
 const AccordionWrapper = styled.div`
   margin: 100px 0;
   @media (max-width: 800px) {
-    margin: 60px 20px;
+    margin: 60px 0px;
   }
 
   @media (max-width: 480px) {
@@ -477,6 +613,14 @@ const DescriptionGrid = styled.div`
 
 const DescriptionGridContent = styled.div``
 
+const InfoSection = styled.div`
+  max-width: 800px;
+  margin-bottom: 56px;
+  @media (max-width: 800px) {
+    padding: 0 20px;
+  }
+`
+
 const InfoLabel = styled(SubheaderSmall)`
   color: white;
   display: inline-block;
@@ -537,3 +681,25 @@ const Image = styled.div`
 const ImageAuthor = styled(ImageDescription)``
 
 const Header = styled(Headline)``
+
+const LinkInline = styled.a`
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+`
+
+const List = styled.div`
+  margin-top: 16px;
+  margin-left: 24px;
+`
+
+const ListItem = styled(Note)`
+  margin-top: 8px;
+`
+
+const DetailLabel = styled(SubheaderSuperSmall)`
+  margin-top: 32px;
+`
+
+const DetailText = styled(Note)`
+  margin-top: 4px;
+`

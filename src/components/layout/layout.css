@@ -160,10 +160,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ol,
 ul {
   list-style: none;
-} */
+}
 
 li {
   margin-bottom: 16px;
@@ -218,7 +217,6 @@ h3 {
   font-family: "GT-Alpina-Extended-Regular";
   font-weight: 50;
   font-size: 1.3em;
-  
 }
 
 h4 {
@@ -230,7 +228,7 @@ h4 {
 h5 {
   font-size: 0.85em;
   line-height: 1.35em;
-  opacity: 0.5;
+  opacity: 0.55;
 }
 
 p {
