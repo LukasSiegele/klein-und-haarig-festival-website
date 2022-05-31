@@ -31,7 +31,20 @@ const Ticker = () => {
             {({ index }) => (
               <Wrapper>
                 <TickerText className="tickerText">
-                  Tickets ab jetzt verfügbar.
+                  Mehr Eindrücke auf{" "}
+                  <LinkInline
+                    href="https://instagram.com/kleinundhaarig?igshid=YmMyMTA2M2Y="
+                    target="_blank"
+                  >
+                    Instagram
+                  </LinkInline>{" "}
+                  &{" "}
+                  <LinkInline
+                    href="https://soundcloud.com/kleinundhaarig?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                    target="_blank"
+                  >
+                    Soundcloud
+                  </LinkInline>
                 </TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
               </Wrapper>
@@ -42,6 +55,11 @@ const Ticker = () => {
     </Delayed>
   )
 }
+
+const LinkInline = styled.a`
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255);
+`
 
 const Icon = styled.img`
   margin: 0px 16px 0px 16px;
