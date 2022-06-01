@@ -131,7 +131,7 @@ const PersonalTicketSection = props => {
           <Right>
             <TextWrapper>
               <TitlePersonalStroke> Personal </TitlePersonalStroke>
-              <TitleTicketarea>Ticket Areaaa</TitleTicketarea>
+              <TitleTicketarea>Ticket Area</TitleTicketarea>
               <Description>
                 Hallo {userInfo.Vorname}, <br />
                 dein digitales Ticket (QR Code) ist ab jetzt auf dieser Seite
