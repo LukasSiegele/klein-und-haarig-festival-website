@@ -13,6 +13,7 @@ import VipSection1 from "../sections/vip/VipSection1"
 import QRCode from "react-qr-code"
 import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
 import MobileTicket from "../../../static/images/MobileTicketBackground.png"
+import Shuttle from "../../../static/images/Shuttle.jpg"
 
 import {
   Headline,
@@ -22,7 +23,9 @@ import {
   ImageDescription,
   SubheaderSmall,
   SubheaderSuperSmall,
+  SubheaderBig,
   Note,
+  Text,
 } from "../styles/TextStyles"
 
 import Aufbau from "../../../static/images/Aufbau.jpg"
@@ -198,15 +201,29 @@ const PersonalTicketSection = props => {
                 </AccHeader>
 
                 <InfoSection>
-                  <InfoLabel>Neu</InfoLabel>
+                  <InfoLabel>Neu dieses Jahr</InfoLabel>
                   <InfoText>
-                    Dieses Jahr geht das Festival einen Tag länger, von Freitag
+                    Dieses Jahr geht das Festival einen Tag länger — von Freitag
                     12 Uhr bis Montag 12 Uhr. Die Secondstage wird durchgehend
                     laufen, damit jeder auf seinen Geschmack kommt. Zusätzlich
-                    wird es eine Ambient Stage geben und mehr
-                    Kunstinstallationen. Außerdem gibt es ein offizielles
-                    Rahmenprogramm mit Tattooartists, einem Modular Synthesizer
-                    Workshop, Vorträgen,...Bleibt gespannt.
+                    wird es eine Ambient Stage und mehr Kunstinstallationen
+                    geben. Außerdem gibt es ein offizielles Rahmenprogramm mit
+                    Tattooartists, einem Modular Synthesizer Workshop,
+                    Rückenwohl mit Matze, Vorträgen, einer
+                    Filmvorführung,...Bleibt gespannt.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Achtsamkeit, Empathie & Awareness</InfoLabel>
+                  <InfoText>
+                    Auch bei uns gilt Consent: Nur ein Ja ist ein Ja. Wir
+                    wollen, dass alle eine gute Zeit haben, indem wir einen Raum
+                    schaffen in dem sich jeder frei ausleben kann. Habt deshalb
+                    alle ein Auge auf einander. Geht aufeinander zu, falls es
+                    jemandem schlecht geht. Respektiert und seid offen für
+                    andere Lebens- und Denkensweisen und lernt neue Perspektiven
+                    kennen.
                   </InfoText>
                 </InfoSection>
 
@@ -214,7 +231,10 @@ const PersonalTicketSection = props => {
                   <InfoLabel>Anfahrt</InfoLabel>
                   <InfoText>
                     Das Festivalgelände befindet sich auf dem{" "}
-                    <LinkInline href="https://goo.gl/maps/muaWAGwPx7nebDjJ9">
+                    <LinkInline
+                      href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
+                      target="_blank"
+                    >
                       Zeltplatz Christophshof, 75323 Bad Wildbad.
                     </LinkInline>
                   </InfoText>
@@ -224,11 +244,14 @@ const PersonalTicketSection = props => {
                   <InfoLabel>Öffis</InfoLabel>
                   <InfoText>
                     Die{" "}
-                    <LinkInline href="https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type=">
+                    <LinkInline
+                      href="https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type="
+                      target="_blank"
+                    >
                       Buslinie 7780
                     </LinkInline>{" "}
                     fährt alle 30 min vom Bahnhof Bad Wildbad und bringt dich in
-                    10 min direkt vor das Gelände an die Haltestelle
+                    10 min direkt vor das Gelände. Die Bushaltestelle heißt
                     "Zeltplatz".
                   </InfoText>
                 </InfoSection>
@@ -239,44 +262,70 @@ const PersonalTicketSection = props => {
                     Auf dem Festivalgelände wird es dieses Jahr keine Parkplätze
                     für Autos geben. Unser Parkplatz befindet sich dieses Jahr
                     hier:{" "}
-                    <LinkInline href="https://goo.gl/maps/muaWAGwPx7nebDjJ9">
-                      Zeltplatz Christophshof, 75323 Bad Wildbad.
+                    <LinkInline
+                      href="https://goo.gl/maps/VYxFbGm8zefcC2dG7"
+                      target="_blank"
+                    >
+                      Parkplatz Kaltenbronn
                     </LinkInline>{" "}
-                    <br />
-                    Ein Shuttle bringt euch von dort bei Anreise zum Festival
-                    bzw. zur Abreise dorthin zurück. Zum Aus- und Einladen könnt
-                    ihr direkt an den Einlass fahren. Zu Stoßzeiten solltet ihr
-                    Wartezeiten einplanen. Wir bitten um euer Verständnis und
-                    eure Geduld.
+                    (Nicht der Wanderparkplatz, siehe Karte)
                   </InfoText>
-                  <DetailLabel>Parkplatz -> Festival</DetailLabel>{" "}
+                  <ImageContainer>
+                    <img
+                      src={require("../../../static/images/Shuttle.jpg")}
+                      width="100%"
+                      height="auto"
+                    />
+                  </ImageContainer>
+                  <DetailLabel>→ Anreise</DetailLabel>
+                  <InfoText>
+                    Fahrt bei der Anreise direkt zum zum Festivaleingang, um
+                    dort alles was ihr auf dem Festival benötigt auszuladen.
+                    Fahrt dann alleine zum Parkplatz. Ein Shuttle Auto bringt
+                    euch von dort wieder zurück zum Festival.
+                  </InfoText>
+                  <DetailLabel>Abreise →</DetailLabel>
+                  <InfoText>
+                    Vom Festivaleingang bringt euch ein Shuttle zum Parkplatz.
+                    Von dort aus könnt ihr zum Eingang wieder zurück fahren um
+                    einzuladen.
+                  </InfoText>
+                  <DetailLabel>Hinweis</DetailLabel>
+                  <InfoText>
+                    Das Shuttle kann nur zur An- und Abreise genutzt werden.
+                    Bitte nehmt alles aus dem Auto was ihr auf dem Festival
+                    braucht. Insbesondere Wert-gegenstände, da dieser
+                    öffentliche Parkplatz nicht überwacht wird. Wir übernehmen
+                    keine Haftung. Zu Stoßzeiten solltet ihr Wartezeiten
+                    einplanen. Wir bitten um euer Verständnis und eure Geduld.
+                  </InfoText>
+                  <DetailLabel>Shuttle Zeiten</DetailLabel>
                   <List>
-                    <ListItem>Fr: 12-20 Uhr</ListItem>
-                    <ListItem>Sa: 12-18 Uhr </ListItem>
-                  </List>
-                  <DetailLabel>Festival -> Parkplatz</DetailLabel>{" "}
-                  <List>
-                    <ListItem>So: 10-20 Uhr </ListItem>
-                    <ListItem>Mo: 10-20 Uhr</ListItem>
+                    <ListItem>Fr: 12-22 Uhr</ListItem>
+                    <ListItem>Sa: 12-15 Uhr </ListItem>
+                    <ListItem>So: 11-16 Uhr </ListItem>
+                    <ListItem>Mo: 11-16 Uhr</ListItem>
                   </List>
                 </InfoSection>
 
                 <InfoSection>
                   <InfoLabel>Camperticket </InfoLabel>
                   <InfoText>
-                    Wichtig: Bitte bringt eine Plastikplane mit, auf die ihr das
-                    Fahrzeug abstellt. Da wir ein am Rande eines
-                    Naturschutzgebietes sind, darf kein Öl in den Boden
-                    gelangen. <br />
                     Mit dem Camperticket könnt ihr direkt aufs Gelände fahren
                     und dort für die Dauer des Festivals stehen bleiben. Haltet
                     dazu bitte am Einlass und zeigt euer Ticket vor (QR Code).
                     Wir weißen euch dann einem Platz zu.
                   </InfoText>
+                  <DetailLabel>Wichtig: Plane mitbringen</DetailLabel>
+                  <InfoText>
+                    Bitte bringt eine Plastikplane mit, auf die ihr das Fahrzeug
+                    abstellt. Da wir ein am Rande eines Naturschutzgebietes
+                    sind, darf kein Öl in den Boden gelangen.{" "}
+                  </InfoText>
                 </InfoSection>
 
                 <InfoSection>
-                  <InfoLabel>Mitfahrgelegenheiten [coming soon] </InfoLabel>
+                  <InfoLabel>Mitfahr Gelegenheiten [coming soon] </InfoLabel>
                   <InfoText>
                     Wir werden für euch von bisher vielgebuchten Städten
                     Whatsapp Gruppen anlegen, in denen ihr Mitfahrgelegenheiten
@@ -287,19 +336,12 @@ const PersonalTicketSection = props => {
                 </InfoSection>
 
                 <InfoSection>
-                  <InfoLabel>Einlass </InfoLabel>
+                  <InfoLabel>Naturschutzgebiet & Müll</InfoLabel>
                   <InfoText>
-                    Haltet am Einlass euren Ausweis und den QR Code bereit.
-                    Anschließend erhaltet ihr das Festivalband.
-                  </InfoText>
-                </InfoSection>
-
-                <InfoSection>
-                  <InfoLabel>Naturschutzgebiet</InfoLabel>
-                  <InfoText>
-                    Das Gelände grenzt direkt an ein Naturschutzgebiet und wir
-                    verpflichten uns den Platz wie vorgefunden zu hinterlassen.
-                    Bitte nutzt die Mülleimer, Mülltüten und Taschenascher. Jede
+                    Das Gelände grenzt direkt an ein Naturschutzgebiet (Bach)
+                    und wir verpflichten uns den Platz wie vorgefunden zu
+                    hinterlassen. Bitte nutzt die Mülleimer, Mülltüten und
+                    Taschenascher, die ihr beim Einlass bekommt. Jede
                     weggeworfene Zigarette müssen wir am Ende wieder aufsammeln.
                   </InfoText>
                 </InfoSection>
@@ -317,8 +359,21 @@ const PersonalTicketSection = props => {
                   <InfoLabel>Grillen</InfoLabel>
                   <InfoText>
                     An der gemeinschaftlichen Grillstelle könnt ihr
-                    Mitgebrachtes zubereiten. Eigens mitgebrachte Grills sind
-                    nicht gestattet.
+                    Mitgebrachtes zubereiten. Eigene Grills oder offene Feuer
+                    sind nicht gestattet. Campingkocher sind kein Problem.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Essen</InfoLabel>
+                  <InfoText>Alles Vegetarisch/Vegan. Infos folgen.</InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Bar</InfoLabel>
+                  <InfoText>
+                    Faire Preise für nicht alkoholische Getränke, sowie für
+                    Bier, Wein, Secco, Longdrinks & Kurze.
                   </InfoText>
                 </InfoSection>
 
@@ -327,7 +382,26 @@ const PersonalTicketSection = props => {
                   <InfoText>
                     Auf dem Gelände gibt es feste sanitäre Anlagen (Klos,
                     Duschen & Waschbecken) mit fließend Wasser. Graffitis sind
-                    hier nicht erwünscht.
+                    hier nicht erwünscht, da wir die Reinigungkosten tragen.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Lost & Found</InfoLabel>
+                  <InfoText>
+                    Der Kiosk ist unsere Sammelstelle und Fundgrube. Im
+                    Nachhinein könnt ihr uns unter info@kleinundhaarig.de
+                    schreiben, falls euch später auffällt, dass irh etwas
+                    verloren habt.
+                  </InfoText>
+                </InfoSection>
+
+                <InfoSection>
+                  <InfoLabel>Minderjährige</InfoLabel>
+                  <InfoText>
+                    Minderjährige dürfen nur in Begeleitung eines
+                    Erziehungsberechtigten auf Gelände. Muttizettel werden nicht
+                    akzeptiert.
                   </InfoText>
                 </InfoSection>
               </AccordionSection>
@@ -614,21 +688,47 @@ const DescriptionGrid = styled.div`
 const DescriptionGridContent = styled.div``
 
 const InfoSection = styled.div`
-  max-width: 800px;
-  margin-bottom: 56px;
+  margin-bottom: 80px;
   @media (max-width: 800px) {
     padding: 0 20px;
   }
 `
 
-const InfoLabel = styled(SubheaderSmall)`
+const InfoLabel = styled.h3`
   color: white;
+  margin-bottom: 8px;
   display: inline-block;
+  max-width: 800px;
 `
 
-const InfoText = styled(Note)`
-  margin-top: 8px;
+const InfoText = styled(Text)`
   margin-bottom: 20px;
+  opacity: 0.55;
+  max-width: 800px;
+`
+
+const DetailLabel = styled(SubheaderSmall)`
+  margin-top: 32px;
+  margin-bottom: 6px;
+  opacity: 1;
+`
+
+const DetailText = styled(Note)``
+
+const List = styled.div`
+  margin-top: 16px;
+`
+
+const ListItem = styled(Text)`
+  padding: 4px 0 4px 24px;
+  max-width: 800px;
+
+  opacity: 0.55;
+  border-bottom: 1px solid white;
+
+  &:first-child {
+    border-top: 1px solid white;
+  }
 `
 
 const Seperator = styled.div`
@@ -643,7 +743,7 @@ const AccDescription = styled.h5`
 
 const SectionTitle = styled.h3`
   margin-top: 20px;
-  display: inline;
+  /* display: inline; */
 `
 
 const ComingSoon = styled(PageInfo)`
@@ -687,19 +787,15 @@ const LinkInline = styled.a`
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 `
 
-const List = styled.div`
-  margin-top: 16px;
-  margin-left: 24px;
+const ImageContainer = styled.div`
+  margin-bottom: 40px;
 `
 
-const ListItem = styled(Note)`
-  margin-top: 8px;
-`
-
-const DetailLabel = styled(SubheaderSuperSmall)`
-  margin-top: 32px;
-`
-
-const DetailText = styled(Note)`
-  margin-top: 4px;
+const ShuttleGrafik = styled.img`
+  width: 100%;
+  height: auto;
+  background-image: url(${Shuttle});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 `
