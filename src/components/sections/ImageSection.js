@@ -5,11 +5,22 @@ import Stairway from "../../../static/images/image-01.jpg"
 import Smoke from "../../../static/images/image-02.jpg"
 import Night from "../../../static/images/image-03.jpg"
 
+import { PageHeader, TextSmall } from "../styles/TextStyles"
+
 export default function ImageSection() {
   return (
     <Container>
       <Content>
         <Row1>
+          <ListWrapper1>
+            <ListItem>Freitag</ListItem>
+            <ListItem>Samstag</ListItem>
+            <ListItem>Sonntag</ListItem>
+            <NeuGroup>
+              <ListItem>Montag</ListItem>
+              <Icon src="/icons/Star.svg"></Icon>
+            </NeuGroup>
+          </ListWrapper1>
           <ImageWrapper1>
             <Parallax speed={10}>
               <Image01></Image01>
@@ -22,6 +33,14 @@ export default function ImageSection() {
               <Image02></Image02>
             </Parallax>
           </ImageWrapper2>
+          <ListWrapper2>
+            <ListItem>Wald Stage</ListItem>
+            <ListItem>Fluss Stage</ListItem>
+            <NeuGroup>
+              <ListItem>Ambient Stage</ListItem>
+              <Icon src="/icons/Star.svg"></Icon>
+            </NeuGroup>
+          </ListWrapper2>
         </Row2>
         <Row3>
           <ImageWrapper3>
@@ -40,10 +59,10 @@ const Container = styled.div`
   max-width: 1700px;
   overflow: hidden;
   position: relative;
-  padding: 200px 0;
-  @media (max-width: 768px) {
+  padding: 300px 0 100px 0;
+  /* @media (max-width: 768px) {
     padding: 150px 0;
-  }
+  } */
 `
 
 const Content = styled.div`
@@ -51,7 +70,7 @@ const Content = styled.div`
   grid-template-rows: repeat(3, auto);
   gap: 100px;
   @media (max-width: 768px) {
-    gap: 400px;
+    gap: 300px;
   }
 `
 
@@ -91,8 +110,8 @@ const Row2 = styled.div`
   justify-items: left;
   padding-left: 20%;
   @media (max-width: 768px) {
-    margin-right: 0%;
-    justify-items: center;
+    padding-left: 18%;
+    /* justify-items: center; */
   }
 `
 
@@ -129,4 +148,31 @@ const Image03 = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+`
+
+const ListWrapper1 = styled.div`
+  position: absolute;
+  top: 150px; ;
+`
+const ListWrapper2 = styled.div``
+
+const ListItem = styled(PageHeader)`
+  color: white;
+`
+
+const NeuGroup = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+`
+const Neu = styled(TextSmall)`
+  margin-top: 4px;
+  color: #fff991;
+`
+
+const Icon = styled.img`
+  margin: 4px 16px 0px 0px;
+  width: 16px;
+  height: 16px;
+  color: red;
 `
