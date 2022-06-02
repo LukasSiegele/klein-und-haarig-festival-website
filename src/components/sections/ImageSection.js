@@ -12,16 +12,16 @@ export default function ImageSection() {
     <Container>
       <Content>
         <Row1>
-          <ListWrapper1>
-            <ListItem>Freitag</ListItem>
-            <ListItem>Samstag</ListItem>
-            <ListItem>Sonntag</ListItem>
-            <NeuGroup>
-              <ListItem>Montag</ListItem>
-              <Icon src="/icons/Star.svg"></Icon>
-            </NeuGroup>
-          </ListWrapper1>
           <ImageWrapper1>
+            <ListWrapper1>
+              <ListItem>Freitag</ListItem>
+              <ListItem>Samstag</ListItem>
+              <ListItem>Sonntag</ListItem>
+              <NeuGroup>
+                <ListItem>Montag</ListItem>
+                <Icon src="/icons/Star.svg"></Icon>
+              </NeuGroup>
+            </ListWrapper1>
             <Parallax speed={10}>
               <Image01></Image01>
             </Parallax>
@@ -86,6 +86,7 @@ const Row1 = styled.div`
 `
 
 const ImageWrapper1 = styled.div`
+  position: relative;
   @media (max-width: 768px) {
     height: 420px;
     width: 90%;
@@ -152,7 +153,8 @@ const Image03 = styled.div`
 
 const ListWrapper1 = styled.div`
   position: absolute;
-  top: 150px; ;
+  top: -150px;
+  right: 0;
 `
 const ListWrapper2 = styled.div``
 
