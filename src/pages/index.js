@@ -7,6 +7,7 @@ import SEO from "../components/layout/seo"
 import Ticker from "../components/ticker/Ticker"
 
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
+import ImageSection from "../components/sections/ImageSection"
 
 export default function IndexPage() {
   return (
@@ -22,6 +23,7 @@ export default function IndexPage() {
             <Ticker />
           </TickerGroup>
         </Wrapper>
+        <ImageSection />
       </Layout>
       <Spacer />
     </>

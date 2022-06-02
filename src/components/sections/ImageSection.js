@@ -1,69 +1,79 @@
 import React from "react"
 import styled from "styled-components"
-import NightImage from "../../../static/images/Night.jpg"
-import DayImage from "../../../static/images/Day.jpg"
+import Stairway from "../../../static/images/image-01.jpg"
+import Smoke from "../../../static/images/image-02.jpg"
+import Night from "../../../static/images/image-03.jpg"
 
 export default function ImageSection() {
   return (
-    <Wrapper>
+    <Container>
       <Content>
-        <Night></Night>
-        <Day></Day>
+        <Image01></Image01>
+        <Image02></Image02>
+        <Image03></Image03>
       </Content>
-    </Wrapper>
+    </Container>
   )
 }
 
-const Wrapper = styled.div`
-  padding: 40px 40px 0px 40px;
-  display: grid;
-  justify-items: center;
+const Container = styled.div`
+  background-color: black;
+  max-width: 1700px;
   overflow: hidden;
-
+  position: relative;
+  padding: 200px 0;
   @media (max-width: 768px) {
-    padding: 20px 20px 0px 20px;
+    padding: 150px 0;
   }
 `
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 100px;
 `
 
-const Night = styled.div`
-  width: 532px;
-  height: 1087px;
-  background-image: url(${NightImage});
-  background-size: cover;
-  grid-column: 3 / span 3;
-  grid-row: 1 / span 3;
-
-  @media (max-width: 900px) {
-    width: 400px;
-    height: 800px;
-  }
-
-  @media (max-width: 600px) {
-    width: 250px;
-    height: 500px;
-  }
-`
-
-const Day = styled.div`
-  width: 364px;
-  height: 543px;
-  grid-column: 1 / span 3;
-  grid-row: 3 / span 3;
-  background-image: url(${DayImage});
-  background-size: cover;
-
-  @media (max-width: 900px) {
-    width: 300px;
+const Image01 = styled.div`
+  background-image: url(${Stairway});
+  width: 445px;
+  height: 667px;
+  justify-self: right;
+  margin-right: 20%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 768px) {
+    margin-right: 0%;
+    background-size: cover;
+    width: 90%;
     height: 420px;
   }
+`
 
-  @media (max-width: 600px) {
-    width: 200px;
-    height: 320px;
+const Image02 = styled.div`
+  background-image: url(${Smoke});
+  width: 284px;
+  height: 437px;
+  justify-self: left;
+  margin-left: 20%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 768px) {
+    margin-left: 0%;
+  }
+`
+
+const Image03 = styled.div`
+  background-image: url(${Night});
+  width: 648px;
+  height: 432px;
+  justify-self: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 768px) {
+    justify-self: center;
+    width: 100%;
   }
 `
