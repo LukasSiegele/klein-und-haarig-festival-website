@@ -52,7 +52,7 @@ export default function ImageSection() {
 
         <Row25>
           <ImageWrapper25>
-            <Parallax speed={17}>
+            <Parallax speed={14}>
               <Image025></Image025>
             </Parallax>
             <ListWrapper25>
@@ -91,9 +91,9 @@ const Container = styled.div`
   max-width: 1700px;
   overflow: hidden;
   position: relative;
-  padding: 300px 0;
+  padding: 300px 0 200px 0;
   @media (max-width: 768px) {
-    padding: 300 0 200px 0;
+    padding: 300 0 50px 0;
   }
 `
 
