@@ -6,6 +6,8 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Ticker from "../components/ticker/Ticker"
 
+import { ParallaxProvider } from "react-scroll-parallax"
+
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
 import ImageSection from "../components/sections/ImageSection"
 
@@ -14,16 +16,18 @@ export default function IndexPage() {
     <>
       <SEO title="Home" />
       <Layout>
-        <Wrapper>
-          <MainGrid>
-            <SideNavigation />
-            <HeroSection />
-          </MainGrid>
-          <TickerGroup>
-            <Ticker />
-          </TickerGroup>
-        </Wrapper>
-        <ImageSection />
+        <ParallaxProvider>
+          <Wrapper>
+            <MainGrid>
+              <SideNavigation />
+              <HeroSection />
+            </MainGrid>
+            <TickerGroup>
+              <Ticker />
+            </TickerGroup>
+          </Wrapper>
+          <ImageSection />
+        </ParallaxProvider>
       </Layout>
       <Spacer />
     </>
