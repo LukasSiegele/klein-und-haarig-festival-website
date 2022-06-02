@@ -30,7 +30,7 @@ export default function HeroSection() {
 
   // Audience Counts
   const audienceCount = useAudienceCount()
-  const maxAudience = 200
+  const maxAudience = 427
 
   return (
     <Container>
