@@ -282,6 +282,6 @@ const ListWrapper25 = styled.div`
   bottom: 25px;
 
   @media (max-width: 768px) {
-    padding-left: 20px;
+    left: -40px;
   }
 `
