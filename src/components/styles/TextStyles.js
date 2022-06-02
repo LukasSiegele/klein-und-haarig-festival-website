@@ -73,7 +73,18 @@ export const Note = styled.h5`
 `
 
 // Headlines in Info Texts
+export const SubheaderBig = styled.h3`
+  font-size: 40px;
+  font-family: "GT-Alpina-Extended-Bold";
+  color: white;
+`
+
 export const SubheaderSmall = styled.h4`
+  font-family: "GT-Alpina-Extended-Bold";
+  color: white;
+`
+
+export const SubheaderSuperSmall = styled.h5`
   font-family: "GT-Alpina-Extended-Bold";
   color: white;
 `
