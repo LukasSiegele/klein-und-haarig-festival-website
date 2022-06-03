@@ -116,7 +116,7 @@ const Content = styled.div`
   grid-template-rows: repeat(3, auto);
   gap: 0px;
   @media (max-width: 768px) {
-    gap: 100px;
+    gap: 75px;
   }
 `
 
