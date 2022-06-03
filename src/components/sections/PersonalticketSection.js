@@ -203,36 +203,9 @@ const PersonalTicketSection = props => {
 
                 <InfoContainer>
                   <InfoSection>
-                    <InfoLabel>Neu dieses Jahr</InfoLabel>
+                    <InfoLabel>Location</InfoLabel>
                     <InfoText>
-                      Dieses Jahr geht das Festival einen Tag länger — von
-                      Freitag 12 Uhr bis Montag 12 Uhr. Die Secondstage wird
-                      durchgehend laufen, damit jeder auf seinen Geschmack
-                      kommt. Zusätzlich wird es eine Ambient Stage und mehr
-                      Kunstinstallationen geben. Außerdem gibt es ein
-                      offizielles Rahmenprogramm mit Tattooartists, einem
-                      Modular Synthesizer Workshop, Rückenwohl mit Matze,
-                      Vorträgen, einer Filmvorführung,...Bleibt gespannt.
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>Achtsamkeit, Empathie & Awareness</InfoLabel>
-                    <InfoText>
-                      Auch bei uns gilt Consent: Nur ein Ja ist ein Ja. Wir
-                      wollen, dass alle eine gute Zeit haben, indem wir einen
-                      Raum schaffen in dem sich jeder frei ausleben kann. Habt
-                      deshalb alle ein Auge auf einander. Geht aufeinander zu,
-                      falls es jemandem schlecht geht. Respektiert und seid
-                      offen für andere Lebens- und Denkensweisen und lernt neue
-                      Perspektiven kennen.
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>Anfahrt</InfoLabel>
-                    <InfoText>
-                      Das Festivalgelände befindet sich auf dem{" "}
+                      Das KLEIN UND HAARIG Festival findet auf dem{" "}
                       <LinkInline
                         href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
                         target="_blank"
@@ -243,34 +216,45 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Öffis</InfoLabel>
+                    <InfoLabel>Anreise mit Öffis</InfoLabel>
                     <InfoText>
-                      Die{" "}
+                      Die Buslinien 7780 oder 723 bringen dich ca. alle 30 min
+                      vom{" "}
                       <LinkInline
                         href="https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type="
                         target="_blank"
                       >
-                        Buslinie 7780
+                        Bahnhof Bad Wildbad
                       </LinkInline>{" "}
-                      fährt alle 30 min vom Bahnhof Bad Wildbad und bringt dich
-                      in 10 min direkt vor das Gelände. Die Bushaltestelle heißt
-                      "Zeltplatz".
+                      oder vom{" "}
+                      <LinkInline
+                        href="https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-Württemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-Württemberg&origin_type=stop&originname=%20Stadtbahnhof%20%2F%20ZOB%2C%20Freudenstadt&passengers_train_card=&person=1&time=11%3A30&transport_type="
+                        target="_blank"
+                      >
+                        ZOB Freudenstadt
+                      </LinkInline>{" "}
+                      direkt vor das Gelände - Haltestelle "Bad Wildbad,
+                      Zeltplatz".
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Parken & Shuttle</InfoLabel>
+                    <InfoLabel>An- / Abreise mit dem Auto</InfoLabel>
                     <InfoText>
-                      Auf dem Festivalgelände wird es dieses Jahr keine
-                      Parkplätze für Autos geben. Unser Parkplatz befindet sich
-                      dieses Jahr hier:{" "}
+                      Auf dem Festivalgelände wird es in diesem Jahr keine
+                      Parkmöglichkeiten für Autos geben. Wir werden aber eine
+                      Ladezone einrichten, in die du zum Be- und Entladen (max.
+                      5 min) vorfahren kannst.
+                      <br />
+                      Unser Parkplatz befindet sich hier:{" "}
                       <LinkInline
                         href="https://goo.gl/maps/VYxFbGm8zefcC2dG7"
                         target="_blank"
                       >
                         Parkplatz Kaltenbronn
-                      </LinkInline>{" "}
-                      (Nicht der Wanderparkplatz, siehe Karte)
+                      </LinkInline>
+                      . Ein Shuttle bringt dich bei deiner Anreise von dort zum
+                      Festival bzw. bei deiner Abreise dorthin zurück.
                     </InfoText>
                     <ImageContainer>
                       <img
@@ -279,29 +263,30 @@ const PersonalTicketSection = props => {
                         height="auto"
                       />
                     </ImageContainer>
-                    <DetailLabel>→ Anreise</DetailLabel>
+                    <DetailLabel>— Anreise</DetailLabel>
                     <InfoText>
-                      Fahrt bei der Anreise direkt zum zum Festivaleingang, um
-                      dort alles was ihr auf dem Festival benötigt auszuladen.
-                      Fahrt dann alleine zum Parkplatz. Ein Shuttle Auto bringt
-                      euch von dort wieder zurück zum Festival.
+                      Komme bei deiner Anreise bitte zuerst zum Festivaleingang,
+                      um dort dein Gepäck und deine Mitfahrenden abzuladen (max.
+                      5 min). Fahre dann alleine zum Parkplatz. Der Shuttle
+                      bringt dich von dort wieder zurück zum Festival.
                     </InfoText>
-                    <DetailLabel>Abreise →</DetailLabel>
+                    <DetailLabel>— Abreise</DetailLabel>
                     <InfoText>
-                      Vom Festivaleingang bringt euch ein Shuttle zum Parkplatz.
-                      Von dort aus könnt ihr zum Eingang wieder zurück fahren um
-                      einzuladen.
+                      Vom Festivaleingang bringt der Shuttle alle Fahrer*innen
+                      zum Parkplatz. Fahre anschließend zum Festival um dort zu
+                      Beladen.
                     </InfoText>
-                    <DetailLabel>Hinweis</DetailLabel>
+                    <DetailLabel>— Hinweis</DetailLabel>
                     <InfoText>
-                      Das Shuttle kann nur zur An- und Abreise genutzt werden.
-                      Bitte nehmt alles aus dem Auto was ihr auf dem Festival
-                      braucht. Insbesondere Wert-gegenstände, da dieser
-                      öffentliche Parkplatz nicht überwacht wird. Wir übernehmen
-                      keine Haftung. Zu Stoßzeiten solltet ihr Wartezeiten
-                      einplanen. Wir bitten um euer Verständnis und eure Geduld.
+                      Der Shuttle kann ausschließlich zur An- und Abreise
+                      genutzt werden. Vergewissere dich daher, dein gesamtes
+                      Gepäck, insbesondere alle Wertgegenstände, aus dem Auto zu
+                      laden. Der Parkplatz ist öffentlich und wird nicht
+                      überwacht. Wir übernehmen keine Haftung. Zu Stoßzeiten
+                      solltest du Wartezeiten einplanen. Wir bitten um dein
+                      Verständnis und deine Geduld.
                     </InfoText>
-                    <DetailLabel>Shuttle Zeiten</DetailLabel>
+                    <DetailLabel>— Shuttle Zeiten</DetailLabel>
                     <List>
                       <ListItem>Fr: 12-22 Uhr</ListItem>
                       <ListItem>Sa: 12-15 Uhr </ListItem>
@@ -311,61 +296,74 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Camperticket </InfoLabel>
+                    <InfoLabel>Anreise mit dem Camper </InfoLabel>
                     <InfoText>
-                      Mit dem Camperticket könnt ihr direkt aufs Gelände fahren
-                      und dort für die Dauer des Festivals stehen bleiben.
-                      Haltet dazu bitte am Einlass und zeigt euer Ticket vor (QR
-                      Code). Wir weißen euch dann einem Platz zu.
+                      Mit einem Camperticket kannst du auf das Gelände fahren
+                      und dort für die Dauer des Festivals stehen bleiben. Melde
+                      dich dazu mit deinem Ticket am Einlass und wir zeigen dir
+                      deinen Parkplatz.
                     </InfoText>
-                    <DetailLabel>Wichtig: Plane mitbringen</DetailLabel>
+
+                    <DetailLabel>— Wichtig: Plane mitbringen</DetailLabel>
                     <InfoText>
-                      Bitte bringt eine Plastikplane mit, auf die ihr das
-                      Fahrzeug abstellt. Da wir ein am Rande eines
-                      Naturschutzgebietes sind, darf kein Öl in den Boden
-                      gelangen.{" "}
+                      Wichtig: Das Gelände befindet sich in einem
+                      Wasserschutzgebiet. Bringe deshalb bitte eine
+                      undurchlässiche Plane mit, auf die du deinen Camper
+                      stellen kannst. Es darf kein Öl oder Treibstoff in den
+                      Boden gelangen.
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>Mitfahr Gelegenheiten [coming soon] </InfoLabel>
                     <InfoText>
-                      Wir werden für euch von bisher vielgebuchten Städten
-                      Whatsapp Gruppen anlegen, in denen ihr
-                      Mitfahrgelegenheiten bilden könnt: München, Stuttgart,
-                      Ulm, Berlin, Leipzig, Wien. <br /> Falls ihr weitere
-                      Vorschläge habt schreibt uns gerne per Mail oder
-                      Instagram.
+                      Wir werden aus Städten mit vielen Ticketkäufen (bisher
+                      München, Stuttgart, Ulm, Berlin, Leipzig, Wien)
+                      Chat-Gruppen einrichten. So kannst du mit anderen Gästen
+                      in Kontakt treten und Fahrgemeinschaften bilden. Wenn du
+                      eine weitere Stadt vorschlagen möchtest, schreibe uns
+                      einfach auf Instagram oder per Mail.
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Naturschutzgebiet & Müll</InfoLabel>
+                    <InfoLabel>Einlass </InfoLabel>
                     <InfoText>
-                      Das Gelände grenzt direkt an ein Naturschutzgebiet (Bach)
-                      und wir verpflichten uns den Platz wie vorgefunden zu
-                      hinterlassen. Bitte nutzt die Mülleimer, Mülltüten und
-                      Taschenascher, die ihr beim Einlass bekommt. Jede
-                      weggeworfene Zigarette müssen wir am Ende wieder
-                      aufsammeln.
+                      Halte am Einlass bitte deinen Ausweis und dein Ticket
+                      (QR-Code) bereit. Kein Einlass ohne Ticket!
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>Müll</InfoLabel>
+                    <InfoText>
+                      Das gesamte Festivalgelände befindet sich in einem
+                      Wasserschutzgebiet. Wir haben uns verpflichtet den
+                      Zeltplatz so zu verlassen, wie wir ihn vorgefunden haben.
+                      Bitte hilf uns dabei - nutze die von uns bereitgestellten
+                      Mülleimer, Mülltüten und Taschenascher und lasse weder
+                      defekte noch intakte Zelte, Pavillons oder Campingstühle
+                      auf dem Gelände stehen.
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>Zelten</InfoLabel>
                     <InfoText>
-                      Unter dem Gelände läuft eine Starkstromleitung in 40 cm
-                      Tiefe. Normale Zeltheringe sind kein Problem, allerdings
-                      ist von tieferen Bohrungen/Löchern abzusehen.
+                      Du kannst dein Zelt auf der ausgewiesenen Campingfläche
+                      aufstellen. Achtung! Unter dem Zeltplatz verläuft eine
+                      Starkstromleitung. Heringe und Zeltanker über 30 cm Länge
+                      sind deshalb nicht zulässig.
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Grillen</InfoLabel>
+                    <InfoLabel>Grillen & Feuer</InfoLabel>
                     <InfoText>
-                      An der gemeinschaftlichen Grillstelle könnt ihr
-                      Mitgebrachtes zubereiten. Eigene Grills oder offene Feuer
-                      sind nicht gestattet. Campingkocher sind kein Problem.
+                      An unserer Grillstelle kannst du Mitgebrachtes zubereiten.
+                      Private Grills sind auf dem Gelände nicht gestattet.
+                      Offenes Feuer ist außer in der zentralen Feuerstelle
+                      strengstens verboten. Campingkocher sind kein Problem.
                     </InfoText>
                   </InfoSection>
 
@@ -383,30 +381,54 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Klo & Duschen</InfoLabel>
+                    <InfoLabel>WCs & Duschen</InfoLabel>
                     <InfoText>
-                      Auf dem Gelände gibt es feste sanitäre Anlagen (Klos,
-                      Duschen & Waschbecken) mit fließend Wasser. Graffitis sind
-                      hier nicht erwünscht, da wir die Reinigungkosten tragen.
+                      Auf dem Festival gibt es feste sanitäre Anlagen. Tags und
+                      Graffitis sind hier nicht erwünscht. Wir müssen sie sonst
+                      aufwändig und teuer entfernen lassen.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>Sicherheit</InfoLabel>
+                    <InfoText>
+                      Wir möchten mit dir ein friedliches Festival verbringen
+                      bei dem sich jede:r sicher fühlen und frei ausleben kann.
+                      Wir lehnen Gewalt, Rassismus, Homophobie, Sexismus und
+                      sonstiges menschenverachtendes Verhalten jeglicher Art ab.
+                      Achte auf andere Gäste. Gehe auf sie zu, sollte etwas
+                      nicht stimmen und respektiere andere Lebens- und
+                      Denkweisen. Die folgenden Gegenstände sind auf dem
+                      Festival strengstens untersagt: sämtliche Pyrotechnik,
+                      Drogen, Drohnen, Waffen aller Art und andere gefährliche
+                      Gegenstände.
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>Lost & Found</InfoLabel>
                     <InfoText>
-                      Der Kiosk ist unsere Sammelstelle und Fundgrube. Im
-                      Nachhinein könnt ihr uns unter info@kleinundhaarig.de
-                      schreiben, falls euch später auffällt, dass irh etwas
-                      verloren habt.
+                      Bitte sei ehrlich und bringe Gefundenes an unseren Kiosk.
+                      Er sollte auch immer die erste Anlaufstelle sein, wenn du
+                      etwas verloren hast. Wenn dort nichts abgegeben wurde oder
+                      du deinen Verlust erst Zuhause bemerkst, schreib uns eine
+                      Mail und wir werden sehen was wir tun können.
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Minderjährige</InfoLabel>
+                    <InfoLabel>Kinder & Minderjährige</InfoLabel>
                     <InfoText>
-                      Minderjährige dürfen nur in Begeleitung eines
-                      Erziehungsberechtigten auf Gelände. Muttizettel werden
-                      nicht akzeptiert.
+                      Kinder und Minderjährige haber nur in Begleitung einer
+                      oder eines Erziehungsberechtigten Zutritt zum Festival.
+                      Wir raten ausdrücklich davon ab in Begleitung von Kindern
+                      oder Jugendlichen anzureisen, da wir keine Ruhezonen zur
+                      Verfügung stellen können. Solltest du dich dennoch dazu
+                      entscheiden, erwarten wir von dir, dich deiner
+                      Verantwortung bewusst zu sein und für die Betreuung deiner
+                      Kinder selbst zu sorgen. Kinder unter 14 Jahren benötigen
+                      kein Ticket. Für Kinder unter 10 Jahren besteht
+                      Gehörschutzpflicht. Muttizettel werden nicht akzeptiert.
                     </InfoText>
                   </InfoSection>
                 </InfoContainer>
@@ -694,7 +716,7 @@ const DescriptionGrid = styled.div`
 const DescriptionGridContent = styled.div``
 
 const InfoContainer = styled.div`
-  display: none;
+  /* display: none; */
 `
 
 const InfoSection = styled.div`
@@ -718,9 +740,10 @@ const InfoText = styled(Text)`
 `
 
 const DetailLabel = styled(SubheaderSmall)`
+  font-family: "GT-Alpina-Extended-Regular";
   margin-top: 32px;
   margin-bottom: 6px;
-  opacity: 1;
+  opacity: 0.7;
 `
 
 const DetailText = styled(Note)``
@@ -730,14 +753,14 @@ const List = styled.div`
 `
 
 const ListItem = styled(Text)`
-  padding: 4px 0 4px 24px;
+  padding: 8px 0 8px 24px;
   max-width: 800px;
 
   opacity: 0.55;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
 
   &:first-child {
-    border-top: 1px solid white;
+    border-top: 1px solid rgba(255, 255, 255, 0.55);
   }
 `
 
