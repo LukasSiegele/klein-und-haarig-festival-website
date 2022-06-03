@@ -6,7 +6,12 @@ import Smoke from "../../../static/images/image-02.jpg"
 import Night from "../../../static/images/image-03.jpg"
 import Discowald from "../../../static/images/image-025.jpg"
 
-import { PageHeader, TextSmall, ImageDescription } from "../styles/TextStyles"
+import {
+  PageHeader,
+  TextSmall,
+  ImageDescription,
+  Note,
+} from "../styles/TextStyles"
 
 export default function ImageSection() {
   return (
@@ -15,6 +20,7 @@ export default function ImageSection() {
         <Row1>
           <ImageWrapper1>
             <ListWrapper1>
+              <ListHeader>4 Tage Festival</ListHeader>
               <ListItem>Freitag</ListItem>
               <ListItem>Samstag</ListItem>
               <ListItem>Sonntag</ListItem>
@@ -38,7 +44,14 @@ export default function ImageSection() {
             </Parallax>
           </ImageWrapper2>
           <ListWrapper2>
-            <ListItem>Lichtung</ListItem>
+            <ListHeader>Zwei Stages</ListHeader>
+            <NeuGroup>
+              <ListItem>Lichtung</ListItem>
+              <Up>
+                <Icon src="/icons/Star.svg"></Icon>
+                <Neu>Funktion One</Neu>
+              </Up>
+            </NeuGroup>
             <ListItem>Am Bach</ListItem>
           </ListWrapper2>
         </Row2>
@@ -49,6 +62,7 @@ export default function ImageSection() {
               <Image025></Image025>
             </Parallax>
             <ListWrapper25>
+              <ListHeader>Rahmenprogramm</ListHeader>
               <NeuGroup>
                 <ListItem>Kunstinstallationen</ListItem>
                 <Up>
@@ -100,9 +114,9 @@ const Container = styled.div`
 const Content = styled.div`
   display: grid;
   grid-template-rows: repeat(3, auto);
-  gap: 100px;
+  gap: 0px;
   @media (max-width: 768px) {
-    gap: 200px;
+    gap: 100px;
   }
 `
 
@@ -209,13 +223,21 @@ const Image03 = styled.div`
 
 const ListWrapper1 = styled.div`
   position: absolute;
-  top: -150px;
+  top: -170px;
   right: 0;
   @media (max-width: 768px) {
     padding-right: 20px;
   }
 `
 const ListWrapper2 = styled.div``
+
+const ListHeader = styled(ImageDescription)`
+  font-family: "Inter";
+
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+`
 
 const ListItem = styled(PageHeader)`
   color: white;
