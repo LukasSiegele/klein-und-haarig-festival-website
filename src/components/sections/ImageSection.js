@@ -273,15 +273,20 @@ const Row25 = styled.div`
   grid-template-columns: 1;
   justify-items: right;
   padding-right: 22%;
+  position: static;
 
   @media (max-width: 768px) {
     padding-right: 0%;
+    position: relative;
     /* justify-items: center; */
   }
 `
 
 const ImageWrapper25 = styled.div`
   position: relative;
+  @media (max-width: 768px) {
+    position: static;
+  }
 `
 
 const Image025 = styled.div`
@@ -304,6 +309,6 @@ const ListWrapper25 = styled.div`
   bottom: 25px;
 
   @media (max-width: 768px) {
-    left: -40px;
+    left: 15px;
   }
 `

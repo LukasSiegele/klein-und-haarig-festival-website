@@ -695,8 +695,8 @@ const LeitgrafikYellowBall = styled.img`
   z-index: 1;
 
   @media (max-width: 374px) {
-    position: fixed;
-    bottom: -20px;
+    /* position: fixed; */
+    bottom: 20px;
     right: 20px;
     width: 200px;
   }
@@ -710,7 +710,7 @@ const LeitgrafikYellowBall = styled.img`
   @media (min-width: 410px) {
     bottom: -30px;
     right: 40px;
-    width: 350px;
+    width: 300px;
   }
 
   @media (min-width: 850px) {
@@ -722,13 +722,13 @@ const LeitgrafikYellowBall = styled.img`
   @media (min-width: 1020px) {
     bottom: -110px;
     right: 40px;
-    width: 550px;
+    width: 500px;
   }
 
   @media (min-width: 1620px) {
     bottom: -140px;
     right: 30px;
-    width: 650px;
+    width: 550px;
   }
 `
 
