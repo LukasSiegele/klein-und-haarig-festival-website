@@ -38,15 +38,8 @@ export default function ImageSection() {
             </Parallax>
           </ImageWrapper2>
           <ListWrapper2>
-            <ListItem>Wald Stage</ListItem>
-            <ListItem>Fluss Stage</ListItem>
-            <NeuGroup>
-              <ListItem>Ambient Stage</ListItem>
-              <Up>
-                <Icon src="/icons/Star.svg"></Icon>
-                <Neu>neu</Neu>
-              </Up>
-            </NeuGroup>
+            <ListItem>Lichtung</ListItem>
+            <ListItem>Am Bach</ListItem>
           </ListWrapper2>
         </Row2>
 
@@ -64,7 +57,14 @@ export default function ImageSection() {
                 </Up>
               </NeuGroup>
               <NeuGroup>
-                <ListItem>Rahmenprogramm</ListItem>
+                <ListItem>Workshops</ListItem>
+                <Up>
+                  <Icon src="/icons/Star.svg"></Icon>
+                  <Neu>neu</Neu>
+                </Up>
+              </NeuGroup>
+              <NeuGroup>
+                <ListItem>Vorträge</ListItem>
                 <Up>
                   <Icon src="/icons/Star.svg"></Icon>
                   <Neu>neu</Neu>

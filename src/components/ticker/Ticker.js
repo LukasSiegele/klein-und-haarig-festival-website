@@ -31,7 +31,7 @@ const Ticker = () => {
             {({ index }) => (
               <Wrapper>
                 <TickerText className="tickerText">
-                  Mehr Eindrücke auf{" "}
+                  Weitere Infos auf{" "}
                   <LinkInline
                     href="https://instagram.com/kleinundhaarig?igshid=YmMyMTA2M2Y="
                     target="_blank"
