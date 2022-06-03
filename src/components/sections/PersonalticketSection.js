@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import { navigate } from "gatsby"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import Layout from "../layout/layout"
@@ -30,6 +30,7 @@ import {
 
 import Aufbau from "../../../static/images/Aufbau.jpg"
 
+// The rest of the code
 /*
 Wir bitten dich um etwas Geduld, diese Seite wird gerade von unsaufgebaut. Bald findest du hier: 
 */
@@ -59,6 +60,8 @@ const PersonalTicketSection = props => {
       return setIsTickets("1x Festival")
     }
   }, [])
+
+  // Image Viewer
 
   return (
     <Layout>
@@ -112,10 +115,9 @@ const PersonalTicketSection = props => {
               <DescriptionGridContent>
                 <InfoLabel>Tipp</InfoLabel>
                 <InfoText>
-                  Auf dem Festivalgelände gibt es schlechten Empfang. Wenn du
-                  kein Hardticket hast empfehlen wir einen Screenshot vom QR
-                  Code mit deinem Smartphone zu machen und das Foto
-                  bereitzuhalten.
+                  Wenn du kein Hardticket mitbringst, empfehlen wir dir einen
+                  Screenshot von dem QR Code auf deinem Smartphone zu sichern.
+                  Der Einlass ist auch damit möglich.
                 </InfoText>
               </DescriptionGridContent>
             </DescriptionGrid>
@@ -179,10 +181,9 @@ const PersonalTicketSection = props => {
                       <DescriptionGridContent>
                         <InfoLabel>Tipp</InfoLabel>
                         <InfoText>
-                          Auf dem Festivalgelände gibt es schlechten Empfang.
-                          Wenn du kein Hardticket hast empfehlen wir einen
-                          Screenshot vom QR Code zu machen und das Foto
-                          bereitzuhalten.
+                          Wenn du kein Hardticket mitbringst, empfehlen wir dir
+                          einen Screenshot von dem QR Code auf deinem Smartphone
+                          zu sichern. Der Einlass ist auch damit möglich.
                         </InfoText>
                       </DescriptionGridContent>
                     </DescriptionGrid>
@@ -257,11 +258,15 @@ const PersonalTicketSection = props => {
                       Festival bzw. bei deiner Abreise dorthin zurück.
                     </InfoText>
                     <ImageContainer>
-                      <img
+                      <ShuttleGrafik
+                        src={require("../../../static/images/Shuttle.jpg")}
+                      />
+
+                      {/* <img
                         src={require("../../../static/images/Shuttle.jpg")}
                         width="100%"
                         height="auto"
-                      />
+                      /> */}
                     </ImageContainer>
                     <DetailLabel>— Anreise</DetailLabel>
                     <InfoText>
@@ -306,11 +311,10 @@ const PersonalTicketSection = props => {
 
                     <DetailLabel>— Wichtig: Plane mitbringen</DetailLabel>
                     <InfoText>
-                      Wichtig: Das Gelände befindet sich in einem
-                      Wasserschutzgebiet. Bringe deshalb bitte eine
-                      undurchlässiche Plane mit, auf die du deinen Camper
-                      stellen kannst. Es darf kein Öl oder Treibstoff in den
-                      Boden gelangen.
+                      Das Gelände befindet sich in einem Wasserschutzgebiet.
+                      Bringe deshalb bitte eine undurchlässiche Plane mit, auf
+                      die du deinen Camper stellen kannst. Es darf kein Öl oder
+                      Treibstoff in den Boden gelangen.
                     </InfoText>
                   </InfoSection>
 
@@ -716,7 +720,7 @@ const DescriptionGrid = styled.div`
 const DescriptionGridContent = styled.div``
 
 const InfoContainer = styled.div`
-  /* display: none; */
+  display: none;
 `
 
 const InfoSection = styled.div`
@@ -817,18 +821,18 @@ const Header = styled(Headline)``
 
 const LinkInline = styled.a`
   padding-bottom: 1px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `
 
 const ImageContainer = styled.div`
   margin-bottom: 40px;
+
+  /* & > :hover {
+    cursor: pointer;
+  } */
 `
 
 const ShuttleGrafik = styled.img`
   width: 100%;
   height: auto;
-  background-image: url(${Shuttle});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 `
