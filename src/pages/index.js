@@ -22,7 +22,6 @@ export default function IndexPage() {
           <Wrapper>
             <MainGrid>
               <SideNavigation />
-
               <HeroSection />
             </MainGrid>
             <TickerGroup>

@@ -76,8 +76,8 @@ const SecondaryText = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
   /* font-size: 17px; */
   color: black;
-  max-width: 450px;
-  @media (max-width: 768px) {
+  max-width: 440px;
+  @media (max-width: 500px) {
     max-width: 100%;
   }
 `
