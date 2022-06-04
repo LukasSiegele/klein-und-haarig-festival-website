@@ -22,7 +22,7 @@ export default function Message() {
           <Icon src="/icons/StarYellow.svg"></Icon>
           <SecondaryText>
             Organisiert von Freunden, dem Bunte Platte e.V. <br /> <br />
-            Wir wollen einen nicht kommerziellen Raum schaffen in dem Menschen
+            Wir wollen einen nicht kommerziellen Raum schaffen, in dem Menschen
             zusammenkommen und mit ihnen Vielfalt, Offenheit, Toleranz und
             Freiheit feiern.
           </SecondaryText>
