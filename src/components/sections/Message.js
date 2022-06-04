@@ -14,18 +14,17 @@ export default function Message() {
     <Wrapper>
       <Container>
         <MainText>
-          Klein und Haarig — Ein kleines 4-Tages-Festival in einem idyllischen
-          Tal im Schwarzwald, das die elektronische Musikkultur in all ihren
-          Facetten erfahrbar macht.
+          Klein und Haarig — 4 Tage Festival in einem idyllischen Tal im
+          Schwarzwald, die die elektronische Musikkultur in all ihren Farben und
+          Facetten erfahrbar machen.
         </MainText>
         <SecondaryGroup>
           <Icon src="/icons/StarYellow.svg"></Icon>
           <SecondaryText>
-            Organisiert von Freunden, angebtrieben durch die Liebe zur Musik.{" "}
-            <br /> <br />
-            Wir möchten Menschen zusammenbringen, die sich möglicherweise nie
-            begegnet wären und damit unseren Beitrag zu einer offeneren,
-            toleranteren, vielfältigen und freien Gesellschaft leisten.
+            Organisiert von Freunden, dem Bunte Platte e.V. <br /> <br />
+            Wir wollen einen nicht kommerziellen Raum schaffen in dem Menschen
+            zusammenkommen und mit ihnen Vielfalt, Offenheit, Toleranz und
+            Freiheit feiern.
           </SecondaryText>
         </SecondaryGroup>
       </Container>
@@ -61,7 +60,6 @@ const Container = styled.div`
 
 const MainText = styled(HeadlineRegular2)`
   color: black;
-
   max-width: 970px;
 `
 
@@ -76,7 +74,7 @@ const SecondaryText = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
   /* font-size: 17px; */
   color: black;
-  max-width: 440px;
+  max-width: 450px;
   @media (max-width: 500px) {
     max-width: 100%;
   }

@@ -240,7 +240,9 @@ const ListHeader = styled(TextSmall)`
   margin-bottom: 8px;
 `
 
-const ListItem = styled(HeadlineRegular)``
+const ListItem = styled(HeadlineRegular)`
+  mix-blend-mode: exclusion;
+`
 
 const NeuGroup = styled.div`
   display: grid;
