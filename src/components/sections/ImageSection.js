@@ -10,7 +10,7 @@ import {
   PageHeader,
   TextSmall,
   ImageDescription,
-  Note,
+  HeadlineRegular,
 } from "../styles/TextStyles"
 
 export default function ImageSection() {
@@ -105,9 +105,9 @@ const Container = styled.div`
   max-width: 1700px;
   overflow: hidden;
   position: relative;
-  padding: 300px 0 200px 0;
+  padding: 400px 0 200px 0;
   @media (max-width: 768px) {
-    padding: 300 0 50px 0;
+    padding: 300px 0 50px 0;
   }
 `
 
@@ -223,25 +223,24 @@ const Image03 = styled.div`
 
 const ListWrapper1 = styled.div`
   position: absolute;
-  top: -170px;
+  top: -260px;
   right: 0;
   @media (max-width: 768px) {
+    top: -170px;
     padding-right: 20px;
   }
 `
 const ListWrapper2 = styled.div``
 
-const ListHeader = styled(ImageDescription)`
+const ListHeader = styled(TextSmall)`
   font-family: "Inter";
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.55);
   text-transform: uppercase;
   margin-bottom: 8px;
 `
 
-const ListItem = styled(PageHeader)`
-  color: white;
-`
+const ListItem = styled(HeadlineRegular)``
 
 const NeuGroup = styled.div`
   display: grid;

@@ -495,13 +495,17 @@ const LeitgrafikRedLineBlackBrush = styled.img`
   height: auto;
 
   @media (max-width: 768px) {
-    top: 300px;
+    top: 150px;
     width: 40%;
     height: auto;
   }
 
+  @media (max-width: 450px) {
+    top: 250px;
+  }
+
   @media (min-width: 1620px) {
-    top: -50px;
+    top: -0px;
     width: 30%;
     height: auto;
   }

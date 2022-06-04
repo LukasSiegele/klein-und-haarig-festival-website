@@ -10,6 +10,8 @@ import { ParallaxProvider } from "react-scroll-parallax"
 
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
 import ImageSection from "../components/sections/ImageSection"
+import Message from "../components/sections/Message"
+import SideLine from "../components/navigation/SideLine"
 
 export default function IndexPage() {
   return (
@@ -20,12 +22,19 @@ export default function IndexPage() {
           <Wrapper>
             <MainGrid>
               <SideNavigation />
+
               <HeroSection />
             </MainGrid>
             <TickerGroup>
               <Ticker />
             </TickerGroup>
           </Wrapper>
+
+          <SecondaryGrid>
+            <SideLine />
+            <Message />
+          </SecondaryGrid>
+
           <ImageSection />
         </ParallaxProvider>
       </Layout>
@@ -42,6 +51,15 @@ const Wrapper = styled.div`
 
 const MainGrid = styled.div`
   display: grid;
+  grid-template-columns: auto 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`
+const SecondaryGrid = styled.div`
+  display: grid;
+  background-color: #cbc3ff;
+  background-color: none;
   grid-template-columns: auto 1fr;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

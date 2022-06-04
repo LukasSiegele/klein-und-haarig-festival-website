@@ -63,6 +63,22 @@ export const Headline = styled.h2`
     font-size: 28px;
   } */
 `
+export const HeadlineRegular = styled.h2`
+  font-family: "GT-Alpina-Extended-Regular";
+  color: white;
+
+  @media (max-width: 800px) {
+    font-size: 28px;
+  }
+`
+export const HeadlineRegular2 = styled.h2`
+  font-family: "GT-Alpina-Extended-Regular";
+  color: white;
+
+  @media (max-width: 800px) {
+    font-size: 35px;
+  }
+`
 
 // Texte
 export const Text = styled.p``

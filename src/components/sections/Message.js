@@ -1,96 +1,110 @@
 import React from "react"
 import styled from "styled-components"
+import FaceGrafik from "../../../static/images/Face.png"
+
+import {
+  // PageHeader,
+  TextSmall,
+  // ImageDescription,
+  HeadlineRegular2,
+} from "../styles/TextStyles"
 
 export default function Message() {
   return (
-    <Container>
-      <Wrapper>
-        <MessageText>
-          Ein kleines <Liebe>Festival</Liebe> <Break /> 
-          im Schwarzwald, organisiert von Freunden aus Liebe <Break /> 
-          zur <Liebe>elektronischen Musik</Liebe> und
-          <Liebe> Natur</Liebe>.
-        </MessageText>
-        <MessageLink
-          href="https://soundcloud.com/kleinundhaarig"
-          target="_blank"
-        >
-          <Icon>
-            <img src={require("/static/icons/soundcloud.svg")} width="24" />
-          </Icon>
-          <LinkText>Das war 2021</LinkText>
-        </MessageLink>
-      </Wrapper>
-    </Container>
+    <Wrapper>
+      <Container>
+        <MainText>
+          Klein und Haarig — Ein kleines 4-Tages-Festival in einem idyllischen
+          Tal im Schwarzwald, das die elektronische Musikkultur in all ihren
+          Facetten erfahrbar macht.
+        </MainText>
+        <SecondaryGroup>
+          <Icon src="/icons/StarYellow.svg"></Icon>
+          <SecondaryText>
+            Organisiert von Freunden, angebtrieben durch die Liebe zur Musik.{" "}
+            <br /> <br />
+            Wir möchten Menschen zusammenbringen, die sich möglicherweise nie
+            begegnet wären und damit unseren Beitrag zu einer offeneren,
+            toleranteren, vielfältigen und freien Gesellschaft leisten.
+          </SecondaryText>
+        </SecondaryGroup>
+      </Container>
+      <Face />
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.div`
+  padding: 60px 60px 60px 60px;
+  @media (max-width: 768px) {
+    padding: 60px 20px 60px 20px;
+  }
+  position: relative;
+`
+
 const Container = styled.div`
   width: 100%;
-  height: 0%;
   display: grid;
-  grid-template-columns: 1fr;
+  position: relative;
+  z-index: 99;
+  grid-template-rows: 1fr auto;
+  gap: 200px;
+  align-items: end;
   background-color: none;
-  overflow: hidden;
+  /* overflow: hidden; */
   color: white;
 
   @media (max-width: 768px) {
-    padding: 167px 0;
-    margin-bottom: 400px;
+    gap: 100px;
   }
 `
 
-const Wrapper = styled.div`
-  max-width: 1100px;
-  align-self: center;
-  margin: 0 auto;
-  display: grid;
-  justify-items: center;
-  padding: 0 40px;
+const MainText = styled(HeadlineRegular2)`
+  color: black;
 
+  max-width: 970px;
+`
+
+const SecondaryGroup = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  /* margin-top: 80px; */
+`
+
+const SecondaryText = styled(TextSmall)`
+  font-family: "GT-Alpina-Extended-Regular";
+  /* font-size: 17px; */
+  color: black;
+  max-width: 450px;
   @media (max-width: 768px) {
     max-width: 100%;
-    padding: 0 20px;
   }
 `
 
-const MessageText = styled.h2`
-  margin-bottom: 60px;
-  text-align: left;
-  color: black;
-`
-
-const MessageLink = styled.a`
-  text-align: center;
-  padding-bottom: 5 px;
-  border-bottom: 1px solid white;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 10px;
-
-  & > :hover {
-    cursor: pointer;
-  }
-`
-
-// Soundcloud Icon (Inverted Color)
-const Icon = styled.div`
+const Icon = styled.img`
   margin-top: 1px;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
+  width: 16px;
+  height: 16px;
 `
 
-const LinkText = styled.h4`
-  color: black;
-  text-decoration: none;
-`
-
-const Liebe = styled.span`
-  font-family: "GT-Alpina-Extended-Regular";
-`
-
-const Break = styled.span`
-  @media (max-width: 700px) {
-    display: block;
+const Face = styled.div`
+  background-image: url(${FaceGrafik});
+  width: 450px;
+  height: 476px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: -5px;
+  right: 10%;
+  transform: rotate(180deg);
+  @media (max-width: 1200px) {
+    right: 3%;
+  }
+  @media (max-width: 1100px) {
+    width: 367px;
+    height: 387px;
+    bottom: -50px;
   }
 `
