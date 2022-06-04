@@ -98,11 +98,11 @@ const Face = styled.div`
   right: 10%;
   transform: rotate(180deg);
   @media (max-width: 1200px) {
-    right: 3%;
+    right: -1%;
   }
   @media (max-width: 1100px) {
     width: 367px;
     height: 387px;
-    bottom: -50px;
+    bottom: -40px;
   }
 `
