@@ -6,6 +6,7 @@ import {
   // PageHeader,
   TextSmall,
   // ImageDescription,
+  HeadlineRegular,
   HeadlineRegular2,
 } from "../styles/TextStyles"
 
@@ -58,7 +59,7 @@ const Container = styled.div`
   }
 `
 
-const MainText = styled(HeadlineRegular2)`
+const MainText = styled(HeadlineRegular)`
   color: black;
   max-width: 970px;
 `
