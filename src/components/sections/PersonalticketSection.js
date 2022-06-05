@@ -193,7 +193,7 @@ const PersonalTicketSection = props => {
               <AccordionSection>
                 <AccHeader>
                   <SectionTitle>02 — Dein Helfer:innen Status</SectionTitle>
-                  <ComingSoon>coming soon</ComingSoon>
+                  {/* <ComingSoon>coming soon</ComingSoon> */}
                 </AccHeader>
               </AccordionSection>
               <AccordionSection>
@@ -720,7 +720,7 @@ const DescriptionGrid = styled.div`
 const DescriptionGridContent = styled.div``
 
 const InfoContainer = styled.div`
-  display: none;
+  /* display: none; */
 `
 
 const InfoSection = styled.div`
