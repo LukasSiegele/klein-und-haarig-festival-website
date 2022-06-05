@@ -46,6 +46,7 @@ const Wrapper = styled.div`
   z-index: 1;
   background-image: url(${BackgroundTexture});
   position: relative;
+  overflow: hidden;
 `
 
 const MainGrid = styled.div`
@@ -60,6 +61,7 @@ const SecondaryGrid = styled.div`
   background-color: #cbc3ff;
   background-color: none;
   grid-template-columns: auto 1fr;
+  overflow: hidden;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
