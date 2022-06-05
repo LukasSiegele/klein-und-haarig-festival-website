@@ -193,13 +193,13 @@ const PersonalTicketSection = props => {
               <AccordionSection>
                 <AccHeader>
                   <SectionTitle>02 — Dein Helfer:innen Status</SectionTitle>
-                  {/* <ComingSoon>coming soon</ComingSoon> */}
+                  <ComingSoon>coming soon</ComingSoon>
                 </AccHeader>
               </AccordionSection>
               <AccordionSection>
                 <AccHeader>
                   <SectionTitle>03 — Infos</SectionTitle>
-                  <ComingSoon>coming soon</ComingSoon>
+                  {/* <ComingSoon>coming soon</ComingSoon> */}
                 </AccHeader>
 
                 <InfoContainer>
