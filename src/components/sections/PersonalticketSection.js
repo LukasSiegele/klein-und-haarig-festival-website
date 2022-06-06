@@ -339,6 +339,14 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
+                    <InfoLabel>Bezahlen </InfoLabel>
+                    <InfoText>
+                      Auf dem Festival kannst du nur mit Bargeld bezahlen. Es
+                      gibt keine Möglichkeit Geld abzuheben.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Müll</InfoLabel>
                     <InfoText>
                       Das gesamte Festivalgelände befindet sich in einem
