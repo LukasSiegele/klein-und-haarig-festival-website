@@ -112,7 +112,7 @@ export default function Helfer({ location }) {
           <Right>
             {" "}
             <form onSubmit={handleSubmit}>
-              <Label htmlFor="aufbau">Beim Aufbau</Label>
+              <Label htmlFor="aufbau">Beim Aufbau (Mo-Do)</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
@@ -133,7 +133,7 @@ export default function Helfer({ location }) {
                 </CheckboxDecription>
               </CheckboxGroup>
               <br />
-              <Label htmlFor="waehrend">Während dem Festival</Label>
+              <Label htmlFor="waehrend">Während dem Festival (Fr-Mo)</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
@@ -154,7 +154,7 @@ export default function Helfer({ location }) {
                 </CheckboxDecription>
               </CheckboxGroup>
               <br />
-              <Label htmlFor="abbau">Abbau</Label>
+              <Label htmlFor="abbau">Abbau (Di-Do)</Label>
               <CheckboxGroup>
                 <label class="b-contain">
                   <input
