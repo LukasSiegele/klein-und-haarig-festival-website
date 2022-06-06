@@ -303,9 +303,12 @@ export default function HelferDetails({ location }) {
                 </CheckboxGroup>
                 <Seperator />
               </Wo>
-              <InfoLabel>Hast du einen Helfer:innen Buddy?</InfoLabel>
+              <InfoLabel>
+                Von wann bis wann bist du verfügbar? Helfer:innen Buddy?
+              </InfoLabel>
               <InfoText>
-                Falls Ja, trage hier ihren/seinen Vor- und Nachnamen ein.
+                Nenne uns deinen An- und Abreisetag und falls du einen Buddy
+                hast, trage hier ihren/seinen Vor- und Nachnamen ein.
               </InfoText>
               <input
                 type="buddy"
