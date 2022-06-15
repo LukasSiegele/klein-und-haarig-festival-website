@@ -115,10 +115,11 @@ export default function Summary({ location }) {
       setPaypalDisabled(true)
     }
   }, [audienceCount, setPaypalDisabled, audienceLimit])
+
   // Unique ID
   const userID = uniqid()
-  // POST TO — AIRTABLE
 
+  // POST TO — AIRTABLE
   const paypalClickHandler = () => {}
 
   const paypalSuccess = data => {
