@@ -301,6 +301,7 @@ export default function HelferDetails({ location }) {
                   </label>
                   <Label htmlFor="clean">Entsorgung</Label>
                 </CheckboxGroup>
+                <br />
                 <CheckboxGroup>
                   <label class="b-contain">
                     <input
