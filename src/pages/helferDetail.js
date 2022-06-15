@@ -42,6 +42,7 @@ export default function HelferDetails({ location }) {
   const [hKlo, setHKlo] = useState(false)
   const [hTech, setHTech] = useState(false)
   const [hClean, setHClean] = useState(false)
+  const [hSani, setHSani] = useState(false)
   const [hBuddy, setHBuddy] = useState("")
   const [hEhrenamtlich, setHEhrenamtlich] = useState(false)
   const [buttonLabel, setButtonLabel] = useState("Zur Zusammenfassung ➞")
@@ -73,13 +74,12 @@ export default function HelferDetails({ location }) {
         helferEssen: hEssen,
         helferBar: hBar,
         helferEinlass: hEinlass,
-
         helferSecuri: hSecuri,
-
         helferAwareness: hAware,
         helferKlo: hKlo,
         helferTech: hTech,
         helferClean: hClean,
+        helferSani: hSani,
         helferBuddy: hBuddy,
         helferEhrenamtlich: hEhrenamtlich,
       },
@@ -300,6 +300,21 @@ export default function HelferDetails({ location }) {
                     <div className="b-input"></div>
                   </label>
                   <Label htmlFor="clean">Entsorgung</Label>
+                </CheckboxGroup>
+                <CheckboxGroup>
+                  <label class="b-contain">
+                    <input
+                      className="checkBox"
+                      type="checkbox"
+                      name="sani"
+                      checked={hSani}
+                      onChange={e => {
+                        setHSani(e.target.checked)
+                      }}
+                    />
+                    <div className="b-input"></div>
+                  </label>
+                  <Label htmlFor="clean">Sani</Label>
                 </CheckboxGroup>
                 <Seperator />
               </Wo>
