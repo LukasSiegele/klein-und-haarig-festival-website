@@ -233,10 +233,12 @@ const ListWrapper1 = styled.div`
 const ListWrapper2 = styled.div``
 
 const ListHeader = styled(TextSmall)`
-  font-family: "Inter";
+  /* font-family: "Inter";
+  font-weight: 600; */
+  font-family: "GT-Alpina-Extended-Regular";
 
-  color: rgba(255, 255, 255, 0.55);
-  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  /* text-transform: uppercase; */
   margin-bottom: 8px;
 `
 
@@ -263,7 +265,7 @@ const Neu = styled(ImageDescription)`
 `
 
 const Icon = styled.img`
-  margin-top: 8px;
+  margin-top: 7px;
   width: 16px;
   height: 16px;
   color: red;

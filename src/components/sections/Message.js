@@ -20,7 +20,7 @@ export default function Message() {
           Facetten erfahrbar machen.
         </MainText>
         <SecondaryGroup>
-          <Icon src="/icons/StarYellow.svg"></Icon>
+          <Icon src="/icons/StarRed.svg"></Icon>
           <SecondaryText>
             Organisiert von Freunden, dem Bunte Platte e.V. <br /> <br />
             Wir wollen einen nicht kommerziellen Raum schaffen, in dem Menschen
@@ -35,8 +35,9 @@ export default function Message() {
 }
 
 const Wrapper = styled.div`
-  padding: 60px 60px 60px 60px;
-  @media (max-width: 768px) {
+  padding: 120px 60px 120px 60px;
+  border-top: 1px solid black;
+  @media (max-width: 800px) {
     padding: 60px 20px 60px 20px;
   }
   position: relative;
@@ -54,7 +55,7 @@ const Container = styled.div`
   /* overflow: hidden; */
   color: white;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     gap: 100px;
   }
 `
@@ -82,9 +83,15 @@ const SecondaryText = styled(TextSmall)`
 `
 
 const Icon = styled.img`
-  margin-top: 1px;
-  width: 16px;
-  height: 16px;
+  margin-top: -2px;
+  width: 24px;
+  height: 24px;
+
+  @media (max-width: 800px) {
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+  }
 `
 
 const Face = styled.div`

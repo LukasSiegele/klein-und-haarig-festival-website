@@ -12,6 +12,7 @@ import BackgroundTexture from "../../static/images/BackgroundTexture.png"
 import ImageSection from "../components/sections/ImageSection"
 import Message from "../components/sections/Message"
 import SideLine from "../components/navigation/SideLine"
+import Lineup from "../components/sections/Lineup"
 
 export default function IndexPage() {
   return (
@@ -29,10 +30,15 @@ export default function IndexPage() {
             </TickerGroup>
           </Wrapper>
 
-          <SecondaryGrid>
+          <MessageSection>
             <SideLine />
             <Message />
-          </SecondaryGrid>
+          </MessageSection>
+
+          <LineupSection>
+            <SideLine />
+            <Lineup />
+          </LineupSection>
 
           <ImageSection />
         </ParallaxProvider>
@@ -52,17 +58,26 @@ const Wrapper = styled.div`
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 `
-const SecondaryGrid = styled.div`
+const MessageSection = styled.div`
   display: grid;
-  background-color: #cbc3ff;
-  background-color: none;
+  background-image: url(${BackgroundTexture});
   grid-template-columns: auto 1fr;
   overflow: hidden;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const LineupSection = styled.div`
+  display: grid;
+  background-color: #cbc3ff;
+  grid-template-columns: auto 1fr;
+  overflow: hidden;
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 `
@@ -76,7 +91,7 @@ const TickerGroup = styled.div`
 const Spacer = styled.div`
   height: 70px;
   background: black;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     height: 60px;
   }
 `
