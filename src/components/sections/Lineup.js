@@ -20,16 +20,16 @@ export default function Lineup() {
   const [l4, setl4] = useState(0)
   const [l5, setl5] = useState(0)
   const [l6, setl6] = useState(0)
-  const [rotation, setRotation] = useState(0)
+  const [height, setHeight] = useState(100)
 
   const mouseEnterHandler = () => {
     setl1(Math.floor(Math.random() * 50))
     setl2(Math.floor(Math.random() * 100))
-    setl3(Math.floor(Math.random() * 400))
-    setl4(Math.floor(-Math.random() * 50))
-    setl5(Math.floor(-Math.random() * 100))
-    setl6(Math.floor(-Math.random() * 400))
-    setRotation(90)
+    setl3(Math.floor(Math.random() * 350))
+    setl4(Math.floor(Math.random() * -50))
+    setl5(Math.floor(Math.random() * -100))
+    setl6(Math.floor(Math.random() * -350))
+    setHeight(300)
   }
   const mouseLeaveHandler = () => {
     setl1(0)
@@ -38,7 +38,7 @@ export default function Lineup() {
     setl4(0)
     setl5(0)
     setl6(0)
-    setRotation(0)
+    setHeight(100)
   }
 
   const ref = React.useRef(null)
@@ -47,65 +47,66 @@ export default function Lineup() {
   return (
     <Wrapper>
       <Container>
-        <Header>Lineup [in progress]</Header>
-        <LineupSection
+        <HoverGroup
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <Item>
-            <Artist>AGY3NA</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>Chaos Angel</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>ChewChew</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>Cristalyne</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>Ghosttown</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>Lucie Vuittong</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>Schnapolitur 3000</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>Selin</Artist>
-            <Icon src="/icons/StarYellow.svg"></Icon>
-          </Item>
-          <Item>
-            <Artist>Sophie Pschorr</Artist>
-            <IconLast src="/icons/StarYellow.svg"></IconLast>
-          </Item>
-        </LineupSection>
-
-        <RingGroup>
-          {/* <animated.div
+          <Header>Lineup [in progress]</Header>
+          <LineupSection>
+            <Item>
+              <Artist>AGY3NA</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>Chaos Angel</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>ChewChew</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>Cristalyne</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>Ghosttown</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>Lucie Vuittong</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>Schnapolitur 3000</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>Selin</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <Artist>Sophie Pschorr</Artist>
+              <IconLast src="/icons/StarYellow.svg"></IconLast>
+            </Item>
+          </LineupSection>
+          <RingGroup>
+            {/* <animated.div
             ref={ref}
             style={{
               ...style,
             }}
             {...mouseHandlers}
           > */}
-          <RingLineup top={l1} rotation={rotation}></RingLineup>
-          <RingLineup top={l2} rotation={rotation}></RingLineup>
-          <RingLineup top={l3} rotation={rotation}></RingLineup>
-          <RingLineup top={l4} rotation={rotation}></RingLineup>
-          <RingLineup top={l5} rotation={rotation}></RingLineup>
-          <RingLineup top={l6} rotation={rotation}></RingLineup>
-          {/* </animated.div> */}
-        </RingGroup>
+            <RingLineup top={l1} height={height}></RingLineup>
+            <RingLineup top={l2} height={height}></RingLineup>
+            <RingLineup top={l3} height={height}></RingLineup>
+            <RingLineup top={l4} height={height}></RingLineup>
+            <RingLineup top={l5} height={height}></RingLineup>
+            <RingLineup top={l6} height={height}></RingLineup>
+            {/* </animated.div> */}
+          </RingGroup>
+        </HoverGroup>
       </Container>
     </Wrapper>
   )
@@ -151,6 +152,8 @@ const Container = styled.div`
   /* overflow: hidden; */
   color: white;
 `
+
+const HoverGroup = styled.div``
 
 const Header = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
