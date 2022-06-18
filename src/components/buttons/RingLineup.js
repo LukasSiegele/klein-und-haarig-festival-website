@@ -4,7 +4,7 @@ import styled from "styled-components"
 const RingLineup = props => {
   console.log(props.top)
 
-  return <Ring top={props.top} height={props.height} />
+  return <Ring top={props.top} h={props.h} />
 }
 export default RingLineup
 
@@ -14,7 +14,7 @@ const Ring = styled.div`
   position: absolute;
   z-index: 10;
   top: ${props => (props.top ? props.top : props.top)}px;
-  height: ${props => (props.height ? props.height : props.height)}px;
+  height: ${props => (props.h ? props.h : props.h)}px;
   /* transform: rotate3d(${props =>
     props.top ? props.top : props.top}deg, 0, 1); */
 

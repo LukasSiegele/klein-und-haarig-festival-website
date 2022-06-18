@@ -20,7 +20,7 @@ export default function Lineup() {
   const [l4, setl4] = useState(0)
   const [l5, setl5] = useState(0)
   const [l6, setl6] = useState(0)
-  const [height, setHeight] = useState(50)
+  const [h1, setH1] = useState(50)
 
   const mouseEnterHandler = () => {
     setl1(Math.floor(Math.random() * 50))
@@ -29,7 +29,7 @@ export default function Lineup() {
     setl4(Math.floor(Math.random() * -100))
     setl5(Math.floor(Math.random() * -175))
     setl6(Math.floor(Math.random() * -350))
-    setHeight(300)
+    setH1(300)
   }
   const mouseLeaveHandler = () => {
     setl1(0)
@@ -38,7 +38,7 @@ export default function Lineup() {
     setl4(0)
     setl5(0)
     setl6(0)
-    setHeight(50)
+    setH1(50)
   }
 
   const ref = React.useRef(null)
@@ -98,12 +98,12 @@ export default function Lineup() {
             }}
             {...mouseHandlers}
           > */}
-            <RingLineup top={l1} height={height}></RingLineup>
-            <RingLineup top={l2} height={height}></RingLineup>
-            <RingLineup top={l3} height={height}></RingLineup>
-            <RingLineup top={l4} height={height}></RingLineup>
-            <RingLineup top={l5} height={height}></RingLineup>
-            <RingLineup top={l6} height={height}></RingLineup>
+            <RingLineup top={l1} h={h1}></RingLineup>
+            <RingLineup top={l2} h={h1}></RingLineup>
+            <RingLineup top={l3} h={h1}></RingLineup>
+            <RingLineup top={l4} h={h1}></RingLineup>
+            <RingLineup top={l5} h={h1}></RingLineup>
+            <RingLineup top={l6} h={h1}></RingLineup>
             {/* </animated.div> */}
           </RingGroup>
         </HoverGroup>
