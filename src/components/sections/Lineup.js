@@ -20,14 +20,14 @@ export default function Lineup() {
   const [l4, setl4] = useState(0)
   const [l5, setl5] = useState(0)
   const [l6, setl6] = useState(0)
-  const [height, setHeight] = useState(100)
+  const [height, setHeight] = useState(50)
 
   const mouseEnterHandler = () => {
     setl1(Math.floor(Math.random() * 50))
     setl2(Math.floor(Math.random() * 100))
-    setl3(Math.floor(Math.random() * 350))
-    setl4(Math.floor(Math.random() * -50))
-    setl5(Math.floor(Math.random() * -100))
+    setl3(Math.floor(Math.random() * 200))
+    setl4(Math.floor(Math.random() * -100))
+    setl5(Math.floor(Math.random() * -175))
     setl6(Math.floor(Math.random() * -350))
     setHeight(300)
   }
@@ -38,7 +38,7 @@ export default function Lineup() {
     setl4(0)
     setl5(0)
     setl6(0)
-    setHeight(100)
+    setHeight(50)
   }
 
   const ref = React.useRef(null)
@@ -119,7 +119,7 @@ const RingGroup = styled.div`
   gap: 0px;
   position: absolute;
   left: 50%;
-  top: 42%;
+  top: 36%;
   transform: translate(-50%, 0);
   z-index: 100;
 
