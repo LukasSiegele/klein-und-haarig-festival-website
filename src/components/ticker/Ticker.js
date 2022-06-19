@@ -27,7 +27,7 @@ const Ticker = () => {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <RTicker speed={6} move={isMoving}>
+          <RTicker speed={10} move={isMoving}>
             {({ index }) => (
               <Wrapper>
                 {/* <TickerText className="tickerText">
@@ -96,7 +96,8 @@ const TickerWrapper = styled.div`
   width: 100vw;
 
   display: grid;
-  background-color: #000;
+  /* background-color: #000; */
+  background-color: #ff003a;
 
   animation: TickerAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;

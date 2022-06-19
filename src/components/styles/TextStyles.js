@@ -124,6 +124,7 @@ export const ImageDescription = styled.p`
 export const TickerText = styled.p`
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 17px;
+  /* color: black; */
 `
 
 // Shop Title
