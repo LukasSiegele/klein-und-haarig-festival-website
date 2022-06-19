@@ -489,12 +489,12 @@ export default function Summary({ location }) {
                 <Seperator />
                 <Group>
                   <Value>Bezahlen</Value>
-                  <ImportantInfo>
+                  {/* <ImportantInfo>
                     Der Paypal Button wird nicht angezeigt? Die Tickets sind
                     nicht ausverkauft, wir oder Paypal haben aktuell ein Problem
                     an dem wir dran sind. Bitte hab Geduld und schau heute
                     Abend/ Morgen nochmal ob es funktioniert.
-                  </ImportantInfo>
+                  </ImportantInfo> */}
                   <PayPalGroup>
                     <PayPalScriptProvider
                       options={{
