@@ -489,6 +489,12 @@ export default function Summary({ location }) {
                 <Seperator />
                 <Group>
                   <Value>Bezahlen</Value>
+                  <ImportantInfo>
+                    Der Paypal Button wird nicht angezeigt? Die Tickets sind
+                    nicht ausverkauft, wir oder Paypal haben aktuell ein Problem
+                    an dem wir dran sind. Bitte hab Geduld und schau heute
+                    Abend/ Morgen nochmal ob es funktioniert.
+                  </ImportantInfo>
                   <PayPalGroup>
                     <PayPalScriptProvider
                       options={{
@@ -572,6 +578,13 @@ const InfoGroup = styled.div``
 
 const Info = styled(Note)`
   /* color: white; */
+  margin-top: 13px;
+  @media (max-width: 768px) {
+    margin-top: 4px;
+  }
+`
+const ImportantInfo = styled(Note)`
+  color: red;
   margin-top: 13px;
   @media (max-width: 768px) {
     margin-top: 4px;

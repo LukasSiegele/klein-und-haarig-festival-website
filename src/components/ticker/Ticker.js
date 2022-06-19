@@ -30,7 +30,7 @@ const Ticker = () => {
           <RTicker speed={6} move={isMoving}>
             {({ index }) => (
               <Wrapper>
-                <TickerText className="tickerText">
+                {/* <TickerText className="tickerText">
                   Weitere Infos auf{" "}
                   <LinkInline
                     href="https://instagram.com/kleinundhaarig?igshid=YmMyMTA2M2Y="
@@ -45,6 +45,11 @@ const Ticker = () => {
                   >
                     Soundcloud
                   </LinkInline>
+                </TickerText> */}
+                <TickerText className="tickerText">
+                  Aktuell sind keine Zahlungen möglich. Wir haben ein Problem
+                  mit Paypal, sind aber an der Lösung dran. Danke für dein
+                  Verständnis & Geduld.
                 </TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
               </Wrapper>
