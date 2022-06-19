@@ -27,7 +27,7 @@ const Ticker = () => {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <RTicker speed={10} move={isMoving}>
+          <RTicker speed={6} move={isMoving}>
             {({ index }) => (
               <Wrapper>
                 {/* <TickerText className="tickerText">
@@ -47,10 +47,13 @@ const Ticker = () => {
                   </LinkInline>
                 </TickerText> */}
                 <TickerText className="tickerText">
+                  Der Ticketkauf funktioniert wieder!
+                </TickerText>
+                {/* <TickerText className="tickerText">
                   Aktuell sind keine Zahlungen möglich. Wir haben ein Problem
                   mit Paypal, sind aber an der Lösung dran. Danke für dein
                   Verständnis & Geduld.
-                </TickerText>
+                </TickerText> */}
                 <Icon src="/icons/banner-star.svg"></Icon>
               </Wrapper>
             )}
@@ -96,8 +99,8 @@ const TickerWrapper = styled.div`
   width: 100vw;
 
   display: grid;
-  /* background-color: #000; */
-  background-color: #ff003a;
+  background-color: #000;
+  /* background-color: #ff003a; */
 
   animation: TickerAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
