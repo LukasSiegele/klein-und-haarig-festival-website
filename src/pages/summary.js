@@ -108,7 +108,7 @@ export default function Summary({ location }) {
     setAudienceCount(hookAudienceCount)
   })
   //console.log("hook count: " + audienceCount)
-  const audienceLimit = 200
+  const audienceLimit = 427
   console.log("audienceCount is", audienceCount)
   useEffect(() => {
     if (audienceCount > audienceLimit) {
