@@ -31,7 +31,7 @@ const base = new Airtable({
 const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
   const [orderID, setOrderID] = useState(false)
   const [ticketID, setTicketID] = useState(false)
   const [paypalDisabled, setPaypalDisabled] = useState(false)
