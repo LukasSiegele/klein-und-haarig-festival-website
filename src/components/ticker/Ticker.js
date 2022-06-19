@@ -47,7 +47,7 @@ const Ticker = () => {
                   </LinkInline>
                 </TickerText> */}
                 <TickerText className="tickerText">
-                  Der Ticketkauf funktioniert wieder!
+                  Der Ticketkauf ist wieder möglich!
                 </TickerText>
                 {/* <TickerText className="tickerText">
                   Aktuell sind keine Zahlungen möglich. Wir haben ein Problem
