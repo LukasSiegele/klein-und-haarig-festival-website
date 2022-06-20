@@ -62,7 +62,7 @@ export default function Lineup() {
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
             <Item>
-              <Artist>ChewChew</Artist>
+              <Artist>chewchew</Artist>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
             <Item>
