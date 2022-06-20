@@ -193,8 +193,19 @@ const PersonalTicketSection = props => {
               <AccordionSection>
                 <AccHeader>
                   <SectionTitle>02 — Dein Helfer:innen Status</SectionTitle>
-                  <ComingSoon>coming soon</ComingSoon>
                 </AccHeader>
+                <InfoSection>
+                  <InfoLabel>Location</InfoLabel>
+                  <InfoText>
+                    Das KLEIN UND HAARIG Festival findet auf dem{" "}
+                    <LinkInline
+                      href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
+                      target="_blank"
+                    >
+                      Zeltplatz Christophshof, 75323 Bad Wildbad.
+                    </LinkInline>
+                  </InfoText>
+                </InfoSection>
               </AccordionSection>
               <AccordionSection>
                 <AccHeader>
