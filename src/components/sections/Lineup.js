@@ -52,44 +52,6 @@ export default function Lineup() {
           onMouseLeave={mouseLeaveHandler}
         >
           <Header>Lineup [in progress]</Header>
-          <LineupSection>
-            <Item>
-              <Artist>AGY3NA</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>Chaos Angel</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>chewchew</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>Cristalyne</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>Ghosttown</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>Lucie Vuittong</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>Schnapolitur 3000</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>Selin</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item>
-            <Item>
-              <Artist>Sophie Pschorr</Artist>
-              <IconLast src="/icons/StarYellow.svg"></IconLast>
-            </Item>
-          </LineupSection>
           <RingGroup>
             {/* <animated.div
             ref={ref}
@@ -106,6 +68,154 @@ export default function Lineup() {
             <RingLineup top={l6} h={h1}></RingLineup>
             {/* </animated.div> */}
           </RingGroup>
+          <LineupSection>
+            <Item>
+              <LinkInline href="https://soundcloud.com/agyena" target="_blank">
+                {" "}
+                <Artist>AGY3NA</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/pinkfatbuddha"
+                target="_blank"
+              >
+                <Artist>Chaos Angel</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/schuh_schuh"
+                target="_blank"
+              >
+                <Artist>chewchew</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/cristalyne"
+                target="_blank"
+              >
+                <Artist>Cristalyne</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            {/* <Item>
+              <Artist>FEEL X</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item> */}
+            <Item>
+              <LinkInline href="https://soundcloud.com/frdnnd" target="_blank">
+                <Artist>Ferdinand Domes [live]</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline href="https://soundcloud.com/ghsttwn" target="_blank">
+                <Artist>Ghosttown</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/jannischoppin"
+                target="_blank"
+              >
+                <Artist>Jannis Choplin</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            {/* <Item>
+              <Artist>Kalut</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item> */}
+            {/* <Item>
+              <Artist>Kia</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item> */}
+            <Item>
+              <LinkInline href="https://soundcloud.com/kiawash" target="_blank">
+                <Artist>Kiawash</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/lucievuittong"
+                target="_blank"
+              >
+                <Artist>Lucie Vuittong</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/minaeminae"
+                target="_blank"
+              >
+                <Artist>MinaeMinae</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              {/* <LinkInline
+                href="https://soundcloud.com/minaeminae"
+                target="_blank"
+              > */}
+              <Artist>nåmuh</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+              {/* </LinkInline> */}
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/schnapolitur3000"
+                target="_blank"
+              >
+                <Artist>Schnapolitur 3000</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/selinselinselinselin"
+                target="_blank"
+              >
+                <Artist>Selin</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/shannon_felicitas"
+                target="_blank"
+              >
+                <Artist>Shannon</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/sophiepschorr"
+                target="_blank"
+              >
+                <Artist>Sophie Pschorr</Artist>
+                <Icon src="/icons/StarYellow.svg"></Icon>
+              </LinkInline>
+            </Item>
+            <Item>
+              {/* <LinkInline
+                href="https://soundcloud.com/sophiepschorr"
+                target="_blank"
+              > */}
+              <Artist>21palomas</Artist>
+              <IconLast src="/icons/StarYellow.svg"></IconLast>
+              {/* </LinkInline> */}
+            </Item>
+          </LineupSection>
         </HoverGroup>
       </Container>
     </Wrapper>
@@ -121,7 +231,7 @@ const RingGroup = styled.div`
   left: 50%;
   top: 36%;
   transform: translate(-50%, 0);
-  z-index: 100;
+  z-index: 0;
 
   @media (max-width: 800px) {
     display: none;
@@ -167,6 +277,15 @@ const Header = styled(TextSmall)`
 
 const LineupSection = styled.div`
   /* display: inline; */
+  position: relative;
+`
+const LinkInline = styled.a`
+  /* display: inline; */
+  overflow: hidden;
+  & > :hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
 `
 
 const Item = styled.div`
