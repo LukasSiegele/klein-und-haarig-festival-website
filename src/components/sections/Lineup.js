@@ -178,6 +178,7 @@ export default function Lineup() {
                 target="_blank"
               >
                 <Artist>Schnapolitur 3000</Artist>
+                <Neu>live</Neu>
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
@@ -212,6 +213,7 @@ export default function Lineup() {
             {/* <Item>
             
               <Artist>21palomas</Artist>
+               <Neu>live</Neu>
               <IconLast src="/icons/StarYellow.svg"></IconLast>
               
             </Item> */}
