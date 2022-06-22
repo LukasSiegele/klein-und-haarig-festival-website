@@ -8,7 +8,7 @@ import { use3dEffect } from "use-3d-effect"
 import {
   // PageHeader,
   TextSmall,
-  // ImageDescription,
+  ImageDescription,
   HeadlineRegular,
   HeadlineRegular2,
 } from "../styles/TextStyles"
@@ -76,32 +76,35 @@ export default function Lineup() {
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
+
             <Item>
               <LinkInline
                 href="https://soundcloud.com/pinkfatbuddha"
                 target="_blank"
               >
                 <Artist>Chaos Angel</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
+
             <Item>
               <LinkInline
                 href="https://soundcloud.com/schuh_schuh"
                 target="_blank"
               >
                 <Artist>chewchew</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
+
             <Item>
               <LinkInline
                 href="https://soundcloud.com/cristalyne"
                 target="_blank"
               >
                 <Artist>Cristalyne</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
             {/* <Item>
               <Artist>FEEL X</Artist>
@@ -109,25 +112,27 @@ export default function Lineup() {
             </Item> */}
             <Item>
               <LinkInline href="https://soundcloud.com/frdnnd" target="_blank">
-                <Artist>Ferdinand Domes [live]</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
+                <Artist>Ferdinand Domes</Artist>
+                <Neu>live</Neu>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
+
             <Item>
               <LinkInline href="https://soundcloud.com/ghsttwn" target="_blank">
                 <Artist>Ghosttown</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/jannischoppin"
                 target="_blank"
               >
                 <Artist>Jannis Choplin</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
-            </Item>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item> */}
             {/* <Item>
               <Artist>Kalut</Artist>
               <Icon src="/icons/StarYellow.svg"></Icon>
@@ -139,8 +144,8 @@ export default function Lineup() {
             <Item>
               <LinkInline href="https://soundcloud.com/kiawash" target="_blank">
                 <Artist>Kiawash</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
 
             <Item>
@@ -149,72 +154,67 @@ export default function Lineup() {
                 target="_blank"
               >
                 <Artist>Lucie Vuittong</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/minaeminae"
                 target="_blank"
               >
                 <Artist>MinaeMinae</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
-            </Item>
-            <Item>
-              {/* <LinkInline
-                href="https://soundcloud.com/minaeminae"
-                target="_blank"
-              > */}
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item> */}
+            {/* <Item>
+              
               <Artist>nåmuh</Artist>
               <Icon src="/icons/StarYellow.svg"></Icon>
-              {/* </LinkInline> */}
-            </Item>
+              
+            </Item> */}
             <Item>
               <LinkInline
                 href="https://soundcloud.com/schnapolitur3000"
                 target="_blank"
               >
                 <Artist>Schnapolitur 3000</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
+
             <Item>
               <LinkInline
                 href="https://soundcloud.com/selinselinselinselin"
                 target="_blank"
               >
                 <Artist>Selin</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/shannon_felicitas"
                 target="_blank"
               >
                 <Artist>Shannon</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
-            </Item>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item> */}
             <Item>
               <LinkInline
                 href="https://soundcloud.com/sophiepschorr"
                 target="_blank"
               >
                 <Artist>Sophie Pschorr</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
-            <Item>
-              {/* <LinkInline
-                href="https://soundcloud.com/sophiepschorr"
-                target="_blank"
-              > */}
+            {/* <Item>
+            
               <Artist>21palomas</Artist>
               <IconLast src="/icons/StarYellow.svg"></IconLast>
-              {/* </LinkInline> */}
-            </Item>
+              
+            </Item> */}
           </LineupSection>
         </HoverGroup>
       </Container>
@@ -281,7 +281,7 @@ const LineupSection = styled.div`
 `
 const LinkInline = styled.a`
   /* display: inline; */
-  overflow: hidden;
+
   & > :hover {
     cursor: pointer;
     opacity: 0.6;
@@ -291,6 +291,9 @@ const LinkInline = styled.a`
 const Item = styled.div`
   display: inline-block;
   margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+
   @media (max-width: 1100px) {
     display: block;
   }
@@ -320,6 +323,7 @@ const Icon = styled.img`
   margin: 20px 16px 0 16px;
   width: 24px;
   height: 24px;
+  float: left;
 
   @media (max-width: 1100px) {
     display: none;
@@ -347,4 +351,20 @@ const IconLast = styled.img`
     width: 16px;
     height: 16px;
   }
+`
+
+const LiveArtist = styled.div`
+  /* display: grid; */
+`
+
+const Up = styled.div``
+
+const Neu = styled(ImageDescription)`
+  display: inline;
+  float: left;
+  font-family: "Inter";
+  margin-left: 8px;
+  /* position: absolute; */
+  color: black;
+  text-transform: uppercase;
 `
