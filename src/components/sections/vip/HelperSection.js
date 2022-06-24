@@ -66,7 +66,7 @@ const HelperSection = props => {
             </> } </> : 
             <>
             <StatusBad/> 
-            <Note>nicht zugeteilt</Note>
+            <Note>nicht als Helfer registriert</Note>
             <div></div>
             <div>
               <HelperInfo>Du hast dich nicht als Helfer registriert.</HelperInfo>
