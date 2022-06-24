@@ -5,6 +5,7 @@ import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
+import HelperSection from "./vip/HelperSection"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import MobileLogoSVG from "../../../static/images/LogoSideNav.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
@@ -183,7 +184,7 @@ const PersonalTicketSection = props => {
                         <InfoText>
                           Wenn du kein Hardticket mitbringst, empfehlen wir dir
                           einen Screenshot von dem QR Code auf deinem Smartphone
-                          zu sichern. Der Einlass ist auch damit möglich.
+                          zu sichern. Der Einlass ist auch damit möglich. 
                         </InfoText>
                       </DescriptionGridContent>
                     </DescriptionGrid>
@@ -194,6 +195,7 @@ const PersonalTicketSection = props => {
                 <AccHeader>
                   <SectionTitle>02 — Dein Helfer:innen Status</SectionTitle>
                 </AccHeader>
+                <HelperSection userData={userInfo} />
                 <InfoSection>
                   <InfoLabel>Location</InfoLabel>
                   <InfoText>
