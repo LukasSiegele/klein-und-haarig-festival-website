@@ -44,8 +44,10 @@ const HelperSection = props => {
               <>
                 {isAssigned ? (
                   <>
-                    <Status />
-                    <Note>zugeteilt</Note>
+                    <StatusGroup>
+                      <Status />
+                      <StatusLabel>zugeteilt</StatusLabel>
+                    </StatusGroup>
                     <div></div>
                     <div>
                       <HelperInfo>{userData.Helferzuweisung}</HelperInfo>
@@ -56,8 +58,12 @@ const HelperSection = props => {
                   </>
                 ) : (
                   <>
-                    <StatusUnassigned />
-                    <Note>noch nicht zugeteilt</Note>
+                    <StatusGroupUnassigned>
+                      <StatusUnassigned />
+                      <StatusLabelUnassigned>
+                        noch nicht zugeteilt
+                      </StatusLabelUnassigned>
+                    </StatusGroupUnassigned>
                     <div></div>
                     {/*<div>
               <HelperInfo>Deine Angaben
@@ -68,19 +74,24 @@ const HelperSection = props => {
               }
             </div>*/}
 
-                    <InfoText>
-                      Alle Schichten während dem Festival werden erst kurz davor
-                      bekannt gegeben. Zuweisungen können nach dem Ticketkauf
-                      ein paar Tage dauern. Bitte checke ab und zu deinen
-                      Status.
-                    </InfoText>
+                    <InfoGroup>
+                      <InfoIcon src="/icons/Info.svg" />
+                      <InfoText>
+                        Alle Schichten während dem Festival werden erst kurz
+                        davor bekannt gegeben. Zuweisungen können nach dem
+                        Ticketkauf ein paar Tage dauern. Bitte checke ab und zu
+                        deinen Status.
+                      </InfoText>
+                    </InfoGroup>
                   </>
                 )}{" "}
               </>
             ) : (
               <>
-                <StatusBad />
-                <Note>nicht als Helfer registriert</Note>
+                <StatusGroupBad>
+                  <StatusBad />
+                  <StatusLabelBad>nicht als Helfer registriert</StatusLabelBad>
+                </StatusGroupBad>
                 <div></div>
                 <div>
                   <HelperInfo>
@@ -110,11 +121,10 @@ const HelperSection = props => {
           </InfoText>
         </DescriptionGridContent>
         <DescriptionGridContent>
-          <InfoLabel>Noch nicht oder nur teilweise zugeteilt?</InfoLabel>
+          <InfoLabel>Nur teilweise zugeteilt?</InfoLabel>
           <InfoText>
             Alle Schichten während dem Festival werden erst kurz davor bekannt
-            gegeben. Zuweisungen können nach dem Ticketkauf ein paar Tage
-            dauern. Bitte checke ab und zu deinen Status.
+            gegeben. Bitte checke ab und zu deinen Status.
           </InfoText>
         </DescriptionGridContent>
       </DescriptionGrid>
@@ -124,12 +134,41 @@ const HelperSection = props => {
 
 export default HelperSection
 
+const StatusGroup = styled.div`
+  padding: 16px;
+  padding-right: 18px;
+  background-color: rgba(0, 255, 56, 0.15);
+  margin-bottom: 24px;
+  display: inline-flex;
+  width: auto;
+  border-radius: 12px;
+`
+const StatusGroupUnassigned = styled.div`
+  padding: 16px;
+  padding-right: 18px;
+  background-color: rgba(235, 255, 0, 0.15);
+  margin-bottom: 24px;
+  display: inline-flex;
+  width: auto;
+  border-radius: 12px;
+`
+const StatusGroupBad = styled.div`
+  padding: 16px;
+  padding-right: 18px;
+  background-color: rgba(240, 240, 240, 0.15);
+  margin-bottom: 24px;
+  display: inline-flex;
+  width: auto;
+  border-radius: 12px;
+`
+
 const Status = styled.div`
   height: 16px;
   width: 16px;
-  margin: 3px 6px;
+
   border-radius: 9px;
   background-color: #00ff38;
+  /* float: left; */
 `
 
 const StatusUnassigned = styled.div`
@@ -206,19 +245,41 @@ const IsHelper = styled.div`
   display: flex;
 `
 
-const TileGrid = styled.div`
-  display: grid;
-  grid-template-columns: 32px auto;
-  row-gap: 8px;
-`
+const TileGrid = styled.div``
+
 const InfoGrid = styled.div`
   display: grid;
   grid-template-columns: 32px auto;
   row-gap: 8px;
+`
+
+const InfoGroup = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
 `
 const Icon = styled.img`
   margin: 0px 16px 0px 16px;
   width: 24px;
   height: 24px;
   align-self: center;
+`
+const InfoIcon = styled.img`
+  margin-top: 10px;
+  width: 18px;
+  height: 18px;
+  /* align-self: center; */
+`
+
+export const StatusLabel = styled(Note)`
+  color: #00ff38;
+  margin-left: 12px;
+`
+export const StatusLabelUnassigned = styled(Note)`
+  color: #ebff00;
+  margin-left: 12px;
+`
+export const StatusLabelBad = styled(Note)`
+  color: #f0f0f0;
+  margin-left: 12px;
 `

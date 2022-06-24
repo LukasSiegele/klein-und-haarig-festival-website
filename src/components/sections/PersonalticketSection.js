@@ -106,20 +106,20 @@ const PersonalTicketSection = props => {
           <MInfoSection>
             <DescriptionGrid>
               <DescriptionGridContent>
-                <InfoLabel>Was brauche ich für den Einlass?</InfoLabel>
-                <InfoText>
+                <SmallLabel>Was brauche ich für den Einlass?</SmallLabel>
+                <SmallText>
                   Halte am Eingang deinen Ausweis und entweder diesen QR Code
                   oder den auf deinem Hardticket bereit.
-                </InfoText>
+                </SmallText>
                 <Seperator />
               </DescriptionGridContent>
               <DescriptionGridContent>
-                <InfoLabel>Tipp</InfoLabel>
-                <InfoText>
+                <SmallLabel>Tipp</SmallLabel>
+                <SmallText>
                   Wenn du kein Hardticket mitbringst, empfehlen wir dir einen
                   Screenshot von dem QR Code auf deinem Smartphone zu sichern.
                   Der Einlass ist auch damit möglich.
-                </InfoText>
+                </SmallText>
               </DescriptionGridContent>
             </DescriptionGrid>
           </MInfoSection>
@@ -173,19 +173,21 @@ const PersonalTicketSection = props => {
 
                     <DescriptionGrid>
                       <DescriptionGridContent>
-                        <InfoLabel>Was brauche ich für den Einlass?</InfoLabel>
-                        <InfoText>
+                        <SmallLabel>
+                          Was brauche ich für den Einlass?
+                        </SmallLabel>
+                        <SmallText>
                           Halte am Eingang deinen Ausweis und entweder diesen QR
                           Code oder den auf deinem Hardticket bereit.
-                        </InfoText>
+                        </SmallText>
                       </DescriptionGridContent>
                       <DescriptionGridContent>
-                        <InfoLabel>Tipp</InfoLabel>
-                        <InfoText>
+                        <SmallLabel>Tipp</SmallLabel>
+                        <SmallText>
                           Wenn du kein Hardticket mitbringst, empfehlen wir dir
                           einen Screenshot von dem QR Code auf deinem Smartphone
                           zu sichern. Der Einlass ist auch damit möglich.
-                        </InfoText>
+                        </SmallText>
                       </DescriptionGridContent>
                     </DescriptionGrid>
                   </AccContent>
@@ -747,6 +749,18 @@ const InfoLabel = styled.h3`
 `
 
 const InfoText = styled(Text)`
+  margin-bottom: 20px;
+  opacity: 0.55;
+  max-width: 800px;
+`
+const SmallLabel = styled(SubheaderSmall)`
+  color: white;
+  margin-bottom: 8px;
+  display: inline-block;
+  max-width: 800px;
+`
+
+const SmallText = styled(Note)`
   margin-bottom: 20px;
   opacity: 0.55;
   max-width: 800px;
