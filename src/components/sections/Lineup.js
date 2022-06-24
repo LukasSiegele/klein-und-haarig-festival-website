@@ -51,7 +51,7 @@ export default function Lineup() {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <Header>Lineup [in progress]</Header>
+          <Header>Lineup [more tba]</Header>
           <RingGroup>
             {/* <animated.div
             ref={ref}
