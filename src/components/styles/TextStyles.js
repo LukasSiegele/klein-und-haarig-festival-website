@@ -86,7 +86,6 @@ export const Text = styled.p``
 // Kleine Hinweistexte
 export const Note = styled.h5`
   color: white;
-  margin-left: 12px;
 `
 
 // Headlines in Info Texts
