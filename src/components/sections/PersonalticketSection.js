@@ -184,7 +184,7 @@ const PersonalTicketSection = props => {
                         <InfoText>
                           Wenn du kein Hardticket mitbringst, empfehlen wir dir
                           einen Screenshot von dem QR Code auf deinem Smartphone
-                          zu sichern. Der Einlass ist auch damit möglich. 
+                          zu sichern. Der Einlass ist auch damit möglich.
                         </InfoText>
                       </DescriptionGridContent>
                     </DescriptionGrid>
@@ -196,18 +196,6 @@ const PersonalTicketSection = props => {
                   <SectionTitle>02 — Dein Helfer:innen Status</SectionTitle>
                 </AccHeader>
                 <HelperSection userData={userInfo} />
-                <InfoSection>
-                  <InfoLabel>Location</InfoLabel>
-                  <InfoText>
-                    Das KLEIN UND HAARIG Festival findet auf dem{" "}
-                    <LinkInline
-                      href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
-                      target="_blank"
-                    >
-                      Zeltplatz Christophshof, 75323 Bad Wildbad.
-                    </LinkInline>
-                  </InfoText>
-                </InfoSection>
               </AccordionSection>
               <AccordionSection>
                 <AccHeader>

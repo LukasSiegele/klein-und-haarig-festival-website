@@ -1,4 +1,4 @@
-import React, { useState }from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import {
@@ -11,88 +11,111 @@ import {
 } from "../../styles/TextStyles"
 
 const HelperSection = props => {
-  const [formActive, setFormActive] = useState(false);
+  const [formActive, setFormActive] = useState(false)
   const userData = props.userData
-  const isHelfer = userData.Waehrend || userData.Aufbau || userData.Abbau 
-  const isAssigned = userData.Helferzuweisung && userData.Schichtzeitraum && userData.Schichtinfo
-  const shiftCount = userData.Dauer === 'S' ? 1 : userData.Dauer === 'M' ? 2 : 3
+  const isHelfer = userData.Waehrend || userData.Aufbau || userData.Abbau
+  const isAssigned =
+    userData.Helferzuweisung && userData.Schichtzeitraum && userData.Schichtinfo
+  const shiftCount = userData.Dauer === "S" ? 1 : userData.Dauer === "M" ? 2 : 3
 
-  const createPreferenceString = () => { 
-    let preferenceString = userData.Food ? ' Foodcourt,' :'' ;
-    preferenceString += userData.Bar ? ' Bar,' : '' ;
-    preferenceString += userData.Einlass ? ' Einlass,' :'' ; 
-    preferenceString += userData.Security ? ' Security,' :'' ;
-    preferenceString += userData.Awareness ? ' Awareness,' :'' ;  
-    preferenceString += userData.Hygiene ? ' Hygiene,' :'' ; 
-    preferenceString += userData.Technik ? ' Technik,' :'' ; 
-    preferenceString += userData.Entsorgung  ? ' Entsorgung,' :'' ;
-    return preferenceString.slice(0, -1);
+  const createPreferenceString = () => {
+    let preferenceString = userData.Food ? " Foodcourt," : ""
+    preferenceString += userData.Bar ? " Bar," : ""
+    preferenceString += userData.Einlass ? " Einlass," : ""
+    preferenceString += userData.Security ? " Security," : ""
+    preferenceString += userData.Awareness ? " Awareness," : ""
+    preferenceString += userData.Hygiene ? " Hygiene," : ""
+    preferenceString += userData.Technik ? " Technik," : ""
+    preferenceString += userData.Entsorgung ? " Entsorgung," : ""
+    return preferenceString.slice(0, -1)
   }
 
   const clickHandler = () => {
-    setFormActive(true);
+    setFormActive(true)
   }
   return (
     <CardWrapper>
       <Tile>
-        {formActive ? <p>Form coming soon</p> : 
-        <TileGrid>
-          { isHelfer ? <>
-            {isAssigned ? <>
-              <Status/>
-              <Note>zugeteilt</Note>
-              <div></div>
-              <div>
-                <HelperInfo>{userData.Helferzuweisung}</HelperInfo>
-                <HelperInfo>{userData.Schichtanzahl}</HelperInfo>
-                <HelperInfo>{userData.Schichtzeitraum}</HelperInfo>
-                <InfoText>{userData.Schichtinfo}</InfoText>
-              </div>
-            </> : <>
-            <StatusUnassigned/>
-            <Note>noch nicht zugeteilt</Note>
-            <div></div>
-            {/*<div>
+        {formActive ? (
+          <p>Form coming soon</p>
+        ) : (
+          <TileGrid>
+            {isHelfer ? (
+              <>
+                {isAssigned ? (
+                  <>
+                    <Status />
+                    <Note>zugeteilt</Note>
+                    <div></div>
+                    <div>
+                      <HelperInfo>{userData.Helferzuweisung}</HelperInfo>
+                      <HelperInfo>{userData.Schichtanzahl}</HelperInfo>
+                      <HelperInfo>{userData.Schichtzeitraum}</HelperInfo>
+                      <InfoText>{userData.Schichtinfo}</InfoText>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <StatusUnassigned />
+                    <Note>noch nicht zugeteilt</Note>
+                    <div></div>
+                    {/*<div>
               <HelperInfo>Deine Angaben
               <HelperInfo>{userData.Aufbau ? 'Aufbau (Mo-Do)' : userData.Waehrend ? 'Während des Festivals' : 'Abbau (Di-Do)'}</HelperInfo>
               <HelperInfo>{`${shiftCount}x 6h (${userData.Dauer})`}</HelperInfo>
               {userData.Waehrend && 
                 <HelperInfo>Deine Präferenzen: {createPreferenceString()}</HelperInfo>
               }
-            </div>*/} 
+            </div>*/}
 
-              <InfoText>Alle Schichten während dem Festival werden erst kurz vor dem Festival zugeteilt. Zuweisungen können nach dem Ticketkauf ein paar Tage dauern. Bitte checke ab und zu deinen Status.</InfoText>
-
-            </> } </> : 
-            <>
-            <StatusBad/> 
-            <Note>nicht als Helfer registriert</Note>
-            <div></div>
-            <div>
-              <HelperInfo>Du hast dich nicht als Helfer registriert.</HelperInfo>
-              <HelperInfo>Wenn du das noch ändern möchtest wende dich bitter per Mail an</HelperInfo>
-              <MailTo href="mailto:ticket@kleinundhaarig.de">ticket@kleinundhaarig.de</MailTo>
-            </div>
-            </>
-            }
-              
-        </TileGrid>
-        }
+                    <InfoText>
+                      Alle Schichten während dem Festival werden erst kurz davor
+                      bekannt gegeben. Zuweisungen können nach dem Ticketkauf
+                      ein paar Tage dauern. Bitte checke ab und zu deinen
+                      Status.
+                    </InfoText>
+                  </>
+                )}{" "}
+              </>
+            ) : (
+              <>
+                <StatusBad />
+                <Note>nicht als Helfer registriert</Note>
+                <div></div>
+                <div>
+                  <HelperInfo>
+                    Du hast dich nicht als Helfer registriert.
+                  </HelperInfo>
+                  <HelperInfo>
+                    Wenn du das ändern möchtest wende dich bitter per Mail an
+                  </HelperInfo>
+                  <MailTo href="mailto:ticket@kleinundhaarig.de">
+                    ticket@kleinundhaarig.de
+                  </MailTo>
+                </div>
+              </>
+            )}
+          </TileGrid>
+        )}
       </Tile>
       <DescriptionGrid>
         <DescriptionGridContent>
-          <InfoLabel>Wie läuft das ab?</InfoLabel>
+          <InfoLabel>Passt etwas nicht?</InfoLabel>
           <InfoText>
-          Halte am Eingang deinen Ausweis und entweder diesen QR Code oder dein Hardticket bereit.
+            Sollte etwas für dich nicht passen gib uns bitte zeitnah Bescheid
+            über{" "}
+            <MailTo href="mailto:ticket@kleinundhaarig.de">
+              ticket@kleinundhaarig.de
+            </MailTo>
           </InfoText>
         </DescriptionGridContent>
         <DescriptionGridContent>
-          <InfoLabel>Tipp</InfoLabel>
-            <InfoText>
-              Auf dem Festivalgelände gibt es schlechten Empfang. Wenn
-              du kein Hardticket hast empfehlen wir einen Screenshot
-              vom QR Code zu machen und das Foto bereitzuhalten.
-            </InfoText>
+          <InfoLabel>Noch nicht oder nur teilweise zugeteilt?</InfoLabel>
+          <InfoText>
+            Alle Schichten während dem Festival werden erst kurz davor bekannt
+            gegeben. Zuweisungen können nach dem Ticketkauf ein paar Tage
+            dauern. Bitte checke ab und zu deinen Status.
+          </InfoText>
         </DescriptionGridContent>
       </DescriptionGrid>
     </CardWrapper>
@@ -106,7 +129,7 @@ const Status = styled.div`
   width: 16px;
   margin: 3px 6px;
   border-radius: 9px;
-  background-color: #00FF38;
+  background-color: #00ff38;
 `
 
 const StatusUnassigned = styled.div`
@@ -114,7 +137,7 @@ const StatusUnassigned = styled.div`
   width: 16px;
   margin: 3px 6px;
   border-radius: 9px;
-  background-color: #EBFF00;
+  background-color: #ebff00;
 `
 
 const StatusBad = styled.div`
@@ -122,18 +145,15 @@ const StatusBad = styled.div`
   width: 16px;
   margin: 3px 6px;
   border-radius: 9px;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 `
 const MailTo = styled.a`
   padding-top: 10px;
-  color: rgba(255, 115, 33, 1);
   padding-top: 32px;
+  border-bottom: 1px solid white;
 `
 
-const CardWrapper = styled.div`
-`
-
-
+const CardWrapper = styled.div``
 
 const Tile = styled.div`
   padding: 30px 32px;
@@ -147,9 +167,7 @@ const Tile = styled.div`
   }
 `
 
-const SoftInfo = styled.h4`
-
-`
+const SoftInfo = styled.h4``
 
 const HelperInfo = styled.h3`
   font-size: 20px;
@@ -185,7 +203,7 @@ const InfoText = styled(Note)`
 `
 
 const IsHelper = styled.div`
-  display: flex ;
+  display: flex;
 `
 
 const TileGrid = styled.div`
