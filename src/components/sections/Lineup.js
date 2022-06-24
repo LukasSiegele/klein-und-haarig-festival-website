@@ -286,6 +286,8 @@ const LinkInline = styled.a`
 
   & > :hover {
     cursor: pointer;
+  }
+  :hover {
     opacity: 0.6;
   }
 `
