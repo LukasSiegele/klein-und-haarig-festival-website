@@ -317,7 +317,7 @@ const Artist = styled(HeadlineRegular)`
     float: left;
   }
   @media (max-width: 450px) {
-    float: none;
+    float: left;
   }
 `
 

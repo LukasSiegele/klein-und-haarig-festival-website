@@ -54,8 +54,8 @@ export default function Submitted({ navigation }) {
                   <TextDescription>
                     In der E-Mail findest du deine Ticket-ID und einen Link zu
                     deiner persönlichen Ticketarea, wo dich dein digitales
-                    Ticket erwartet. Bald findest du dort auch nähere Infos zum
-                    Festival und deinen Helferstatus.
+                    Ticket, Helfer:innen Status und alle Infos zum Festival
+                    erwarten.
                   </TextDescription>
                 </Description>
                 <ButtonSection>

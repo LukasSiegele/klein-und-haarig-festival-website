@@ -5,6 +5,7 @@ import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import Layout from "../layout/layout"
 import SEO from "../layout/seo"
+import HelperSection from "./vip/HelperSection"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import MobileLogoSVG from "../../../static/images/LogoSideNav.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
@@ -105,20 +106,20 @@ const PersonalTicketSection = props => {
           <MInfoSection>
             <DescriptionGrid>
               <DescriptionGridContent>
-                <InfoLabel>Was brauche ich für den Einlass?</InfoLabel>
-                <InfoText>
+                <SmallLabel>Was brauche ich für den Einlass?</SmallLabel>
+                <SmallText>
                   Halte am Eingang deinen Ausweis und entweder diesen QR Code
                   oder den auf deinem Hardticket bereit.
-                </InfoText>
+                </SmallText>
                 <Seperator />
               </DescriptionGridContent>
               <DescriptionGridContent>
-                <InfoLabel>Tipp</InfoLabel>
-                <InfoText>
+                <SmallLabel>Tipp</SmallLabel>
+                <SmallText>
                   Wenn du kein Hardticket mitbringst, empfehlen wir dir einen
                   Screenshot von dem QR Code auf deinem Smartphone zu sichern.
                   Der Einlass ist auch damit möglich.
-                </InfoText>
+                </SmallText>
               </DescriptionGridContent>
             </DescriptionGrid>
           </MInfoSection>
@@ -172,19 +173,21 @@ const PersonalTicketSection = props => {
 
                     <DescriptionGrid>
                       <DescriptionGridContent>
-                        <InfoLabel>Was brauche ich für den Einlass?</InfoLabel>
-                        <InfoText>
+                        <SmallLabel>
+                          Was brauche ich für den Einlass?
+                        </SmallLabel>
+                        <SmallText>
                           Halte am Eingang deinen Ausweis und entweder diesen QR
                           Code oder den auf deinem Hardticket bereit.
-                        </InfoText>
+                        </SmallText>
                       </DescriptionGridContent>
                       <DescriptionGridContent>
-                        <InfoLabel>Tipp</InfoLabel>
-                        <InfoText>
+                        <SmallLabel>Tipp</SmallLabel>
+                        <SmallText>
                           Wenn du kein Hardticket mitbringst, empfehlen wir dir
                           einen Screenshot von dem QR Code auf deinem Smartphone
                           zu sichern. Der Einlass ist auch damit möglich.
-                        </InfoText>
+                        </SmallText>
                       </DescriptionGridContent>
                     </DescriptionGrid>
                   </AccContent>
@@ -194,18 +197,7 @@ const PersonalTicketSection = props => {
                 <AccHeader>
                   <SectionTitle>02 — Dein Helfer:innen Status</SectionTitle>
                 </AccHeader>
-                <InfoSection>
-                  <InfoLabel>Location</InfoLabel>
-                  <InfoText>
-                    Das KLEIN UND HAARIG Festival findet auf dem{" "}
-                    <LinkInline
-                      href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
-                      target="_blank"
-                    >
-                      Zeltplatz Christophshof, 75323 Bad Wildbad.
-                    </LinkInline>
-                  </InfoText>
-                </InfoSection>
+                <HelperSection userData={userInfo} />
               </AccordionSection>
               <AccordionSection>
                 <AccHeader>
@@ -757,6 +749,18 @@ const InfoLabel = styled.h3`
 `
 
 const InfoText = styled(Text)`
+  margin-bottom: 20px;
+  opacity: 0.55;
+  max-width: 800px;
+`
+const SmallLabel = styled(SubheaderSmall)`
+  color: white;
+  margin-bottom: 8px;
+  display: inline-block;
+  max-width: 800px;
+`
+
+const SmallText = styled(Note)`
   margin-bottom: 20px;
   opacity: 0.55;
   max-width: 800px;
