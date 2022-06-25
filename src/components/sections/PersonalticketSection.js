@@ -214,7 +214,7 @@ const PersonalTicketSection = props => {
                         href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
                         target="_blank"
                       >
-                        Zeltplatz Christophshof, 75323 Bad Wildbad.
+                        Zeltplatz Christophshof, 75323 Bad Wildbad statt.
                       </LinkInline>
                     </InfoText>
                   </InfoSection>
@@ -423,11 +423,12 @@ const PersonalTicketSection = props => {
                   <InfoSection>
                     <InfoLabel>Lost & Found</InfoLabel>
                     <InfoText>
-                      Bitte sei ehrlich und bringe Gefundenes an unseren Kiosk.
-                      Er sollte auch immer die erste Anlaufstelle sein, wenn du
-                      etwas verloren hast. Wenn dort nichts abgegeben wurde oder
-                      du deinen Verlust erst Zuhause bemerkst, schreib uns eine
-                      Mail und wir werden sehen was wir tun können.
+                      Bitte sei ehrlich und bringe Gefundenes an eine unserer
+                      offenen Bars. Diese sollten auch immer die erste
+                      Anlaufstelle sein, wenn du etwas verloren hast. Wenn dort
+                      nichts abgegeben wurde oder du deinen Verlust erst Zuhause
+                      bemerkst, schreib uns eine Mail und wir werden sehen was
+                      wir tun können.
                     </InfoText>
                   </InfoSection>
 
