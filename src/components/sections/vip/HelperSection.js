@@ -184,7 +184,7 @@ const StatusBad = styled.div`
   width: 16px;
   margin: 3px 6px;
   border-radius: 9px;
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.6);
 `
 const MailTo = styled.a`
   padding-top: 10px;
