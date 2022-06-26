@@ -202,7 +202,7 @@ const Tile = styled.div`
   padding: 30px 32px;
   border-radius: 30px 0 0 30px;
   background: rgba(255, 255, 255, 0.1);
-  width: 100vw;
+  /* width: 100vw; */
 
   @media (max-width: 800px) {
     padding: 20px;
@@ -218,6 +218,7 @@ const HelperInfo = styled.h3`
   padding-bottom: 10px;
   font-family: "GT-Alpina-Extended-Bold";
   color: rgba(255, 255, 255, 1);
+  max-width: 650px;
 `
 
 const DescriptionGrid = styled.div`
