@@ -139,7 +139,7 @@ export default function Lineup() {
                 href="https://soundcloud.com/jannischoppin"
                 target="_blank"
               >
-                <Artist>Jannis Choplin</Artist>
+                <Artist>Jannis Choppin</Artist>
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
