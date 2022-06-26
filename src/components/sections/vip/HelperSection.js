@@ -15,7 +15,7 @@ const HelperSection = props => {
   const userData = props.userData
   const isHelfer = userData.Waehrend || userData.Aufbau || userData.Abbau
   const isAssigned =
-    userData.Helferzuweisung && userData.Schichtzeitraum && userData.Schichtinfo
+    userData.Schichttyp && userData.Schichtzeitraum && userData.Schichtinfo
   const shiftCount = userData.Dauer === "S" ? 1 : userData.Dauer === "M" ? 2 : 3
 
   const createPreferenceString = () => {
@@ -50,10 +50,13 @@ const HelperSection = props => {
                     </StatusGroup>
                     <div></div>
                     <div>
-                      <HelperInfo>{userData.Helferzuweisung}</HelperInfo>
+                      <HelperInfo>{userData.Schichttyp}</HelperInfo>
                       <HelperInfo>{userData.Schichtanzahl}</HelperInfo>
                       <HelperInfo>{userData.Schichtzeitraum}</HelperInfo>
-                      <InfoText>{userData.Schichtinfo}</InfoText>
+                      <InfoGroup>
+                        <InfoIcon src="/icons/Info.svg" />
+                        <InfoText>{userData.Schichtinfo}</InfoText>
+                      </InfoGroup>
                     </div>
                   </>
                 ) : (
@@ -121,10 +124,11 @@ const HelperSection = props => {
           </InfoText>
         </DescriptionGridContent>
         <DescriptionGridContent>
-          <InfoLabel>Nur teilweise zugeteilt?</InfoLabel>
+          <InfoLabel>Was bedeutet "tba"?</InfoLabel>
           <InfoText>
-            Alle Schichten während dem Festival werden erst kurz davor bekannt
-            gegeben. Bitte checke ab und zu deinen Status.
+            Viele Schichten, und vor allem Schichtzeiträume, während dem
+            Festival werden erst kurz davor bekannt gegeben. Bitte checke ab und
+            zu deinen Status.
           </InfoText>
         </DescriptionGridContent>
       </DescriptionGrid>
@@ -165,7 +169,7 @@ const StatusGroupBad = styled.div`
 const Status = styled.div`
   height: 16px;
   width: 16px;
-
+  margin: 4px 0;
   border-radius: 9px;
   background-color: #00ff38;
   /* float: left; */
@@ -174,7 +178,7 @@ const Status = styled.div`
 const StatusUnassigned = styled.div`
   height: 16px;
   width: 16px;
-  margin: 3px 6px;
+  margin: 4px 0;
   border-radius: 9px;
   background-color: #ebff00;
 `
@@ -182,7 +186,7 @@ const StatusUnassigned = styled.div`
 const StatusBad = styled.div`
   height: 16px;
   width: 16px;
-  margin: 3px 6px;
+  margin: 4px 0;
   border-radius: 9px;
   background-color: rgba(255, 255, 255, 0.6);
 `
