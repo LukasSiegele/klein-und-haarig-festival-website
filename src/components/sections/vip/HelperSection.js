@@ -53,7 +53,10 @@ const HelperSection = props => {
                       <HelperInfo>{userData.Schichttyp}</HelperInfo>
                       <HelperInfo>{userData.Schichtanzahl}</HelperInfo>
                       <HelperInfo>{userData.Schichtzeitraum}</HelperInfo>
-                      <InfoText>{userData.Schichtinfo}</InfoText>
+                      <InfoGroup>
+                        <InfoIcon src="/icons/Info.svg" />
+                        <InfoText>{userData.Schichtinfo}</InfoText>
+                      </InfoGroup>
                     </div>
                   </>
                 ) : (
@@ -166,7 +169,7 @@ const StatusGroupBad = styled.div`
 const Status = styled.div`
   height: 16px;
   width: 16px;
-
+  margin: 4px 0;
   border-radius: 9px;
   background-color: #00ff38;
   /* float: left; */
@@ -175,7 +178,7 @@ const Status = styled.div`
 const StatusUnassigned = styled.div`
   height: 16px;
   width: 16px;
-  margin: 3px 6px;
+  margin: 4px 0;
   border-radius: 9px;
   background-color: #ebff00;
 `
@@ -183,7 +186,7 @@ const StatusUnassigned = styled.div`
 const StatusBad = styled.div`
   height: 16px;
   width: 16px;
-  margin: 3px 6px;
+  margin: 4px 0;
   border-radius: 9px;
   background-color: rgba(255, 255, 255, 0.6);
 `
