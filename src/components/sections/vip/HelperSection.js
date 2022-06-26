@@ -15,7 +15,7 @@ const HelperSection = props => {
   const userData = props.userData
   const isHelfer = userData.Waehrend || userData.Aufbau || userData.Abbau
   const isAssigned =
-    userData.Helferzuweisung && userData.Schichtzeitraum && userData.Schichtinfo
+    userData.Schichttyp && userData.Schichtzeitraum && userData.Schichtinfo
   const shiftCount = userData.Dauer === "S" ? 1 : userData.Dauer === "M" ? 2 : 3
 
   const createPreferenceString = () => {
@@ -50,7 +50,7 @@ const HelperSection = props => {
                     </StatusGroup>
                     <div></div>
                     <div>
-                      <HelperInfo>{userData.Helferzuweisung}</HelperInfo>
+                      <HelperInfo>{userData.Schichttyp}</HelperInfo>
                       <HelperInfo>{userData.Schichtanzahl}</HelperInfo>
                       <HelperInfo>{userData.Schichtzeitraum}</HelperInfo>
                       <InfoText>{userData.Schichtinfo}</InfoText>
