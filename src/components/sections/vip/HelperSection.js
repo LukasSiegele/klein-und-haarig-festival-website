@@ -121,10 +121,11 @@ const HelperSection = props => {
           </InfoText>
         </DescriptionGridContent>
         <DescriptionGridContent>
-          <InfoLabel>Nur teilweise zugeteilt?</InfoLabel>
+          <InfoLabel>Was bedeutet "tba"?</InfoLabel>
           <InfoText>
-            Alle Schichten während dem Festival werden erst kurz davor bekannt
-            gegeben. Bitte checke ab und zu deinen Status.
+            Viele Schichten, und vor allem Schichtzeiträume, während dem
+            Festival werden erst kurz davor bekannt gegeben. Bitte checke ab und
+            zu deinen Status.
           </InfoText>
         </DescriptionGridContent>
       </DescriptionGrid>
