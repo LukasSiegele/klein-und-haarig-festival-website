@@ -70,7 +70,7 @@ export default function Lineup() {
           </RingGroup>
           <LineupSection>
             {/* <Item>
-              <Artist>21palomas</Artist>
+              <Artist>16palomas</Artist>
               <Neu>live</Neu>
               <IconLast src="/icons/StarYellow.svg"></IconLast>
             </Item> */}
