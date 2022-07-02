@@ -84,6 +84,16 @@ export default function Lineup() {
 
             <Item>
               <LinkInline
+                href="https://soundcloud.com/bleepgeeks"
+                target="_blank"
+              >
+                <Artist>Bleepgeeks</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
                 href="https://soundcloud.com/pinkfatbuddha"
                 target="_blank"
               >
