@@ -445,6 +445,7 @@ const PersonalTicketSection = props => {
                       Kinder selbst zu sorgen. Kinder unter 14 Jahren benötigen
                       kein Ticket. Für Kinder unter 10 Jahren besteht
                       Gehörschutzpflicht. Muttizettel werden nicht akzeptiert.
+                      Eltern haften für ihre Kinder.
                     </InfoText>
                   </InfoSection>
                 </InfoContainer>
