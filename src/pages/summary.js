@@ -121,7 +121,11 @@ export default function Summary({ location }) {
 
   // POST TO — AIRTABLE
   const paypalClickHandler = () => {}
-
+  const handleRegister = () => {
+    let data = {};
+    data.orderID = 'guestlist'
+    paypalSuccess(data)
+  }
   const paypalSuccess = data => {
     setPaymentPending(true)
     setOrderData(data)
@@ -495,8 +499,7 @@ export default function Summary({ location }) {
                     an dem wir dran sind. Bitte hab Geduld und schau heute
                     Abend/ Morgen nochmal ob es funktioniert.
                   </ImportantInfo> */}
-                  <PayPalGroup>
-                    <PayPalScriptProvider
+                    {/* <PayPalScriptProvider
                       options={{
                         "client-id": paypalCLientID,
                         // components: "buttons",
@@ -513,8 +516,10 @@ export default function Summary({ location }) {
                         onError={paypalError}
                         onClick={paypalClickHandler}
                       />
-                    </PayPalScriptProvider>
-                  </PayPalGroup>
+                    </PayPalScriptProvider> */}
+                    <button onClick={handleRegister}>registrieren
+                    </button>
+                  
                 </Group>
               </Section>
               {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
