@@ -31,7 +31,7 @@ const base = new Airtable({
 const table = base("Teilnehmer 2022")
 
 export default function Summary({ location }) {
-  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID_SB
+  const paypalCLientID = process.env.GATSBY_PAYPAL_CLIENT_ID
   const [orderID, setOrderID] = useState(false)
   const [ticketID, setTicketID] = useState(false)
   const [paypalDisabled, setPaypalDisabled] = useState(false)
@@ -59,13 +59,12 @@ export default function Summary({ location }) {
     helferEssen,
     helferBar,
     helferEinlass,
-
     helferSecuri,
-
     helferAwareness,
     helferKlo,
     helferTech,
     helferClean,
+    helferSani,
     helferBuddy,
     helferEhrenamtlich,
     onlyFriends,
@@ -91,6 +90,7 @@ export default function Summary({ location }) {
     { name: "Hygiene", value: helferKlo },
     { name: "Technik", value: helferTech },
     { name: "Entsorgung", value: helferClean },
+    { name: "Sani", value: helferSani },
   ]
   const [whileCategories, setWhileCategories] = useState([])
   const [isWo, setIsWo] = useState(false)
@@ -98,37 +98,36 @@ export default function Summary({ location }) {
   const [isDauer, setIsDauer] = useState()
   const [helferDauer, setHelferDauer] = useState()
   const [isHelperDetails, setIsHelperDetails] = useState()
-  const [audienceCount, setAudienceCount] = useState(null);
+  const [audienceCount, setAudienceCount] = useState(null)
   const [orderData, setOrderData] = useState(false)
 
   // Audience Count
-  const hookAudienceCount = useAudienceCount();
+  const hookAudienceCount = useAudienceCount()
 
   useEffect(() => {
     setAudienceCount(hookAudienceCount)
   })
   //console.log("hook count: " + audienceCount)
-  const audienceLimit = 200
+  const audienceLimit = 427
   console.log("audienceCount is", audienceCount)
   useEffect(() => {
-    if(audienceCount > audienceLimit){
-      setPaypalDisabled(true);
+    if (audienceCount > audienceLimit) {
+      setPaypalDisabled(true)
     }
   }, [audienceCount, setPaypalDisabled, audienceLimit])
+
   // Unique ID
   const userID = uniqid()
+
   // POST TO — AIRTABLE
-
-  const paypalClickHandler = () => {
-
+  const paypalClickHandler = () => {}
+  const handleRegister = () => {
+    let data = {};
+    data.orderID = 'guestlist'
+    paypalSuccess(data)
   }
-
-  const paypalSuccess = e => {
-    e.preventDefault();
+  const paypalSuccess = data => {
     setPaymentPending(true)
-    const data = {
-      orderID: userID
-    }
     setOrderData(data)
     airtableHandler(data)
   }
@@ -162,9 +161,9 @@ export default function Summary({ location }) {
             Hygiene: helferKlo,
             Technik: helferTech,
             Entsorgung: helferClean,
+            Sani: helferSani,
             Buddy: helferBuddy,
             Ehrenamtlich: helferEhrenamtlich,
-
             Friend: onlyFriends ? true : false,
             OrderID: data.orderID,
 
@@ -239,6 +238,7 @@ export default function Summary({ location }) {
       KLO: helferKlo,
       TECH: helferTech,
       CLEAN: helferClean,
+      SANI: helferSani,
       BUDDY: helferBuddy,
       EHREN: helferEhrenamtlich,
       FRIENDS: onlyFriends,
@@ -259,7 +259,7 @@ export default function Summary({ location }) {
         navigate("/submitted")
       })
       .catch(err => {
-        airtableLogError(ticketID, {orderData, err}, email)
+        airtableLogError(ticketID, { orderData, err }, email)
         navigate("/failed", {
           state: {
             ticketID: ticketID,
@@ -493,7 +493,33 @@ export default function Summary({ location }) {
                 <Seperator />
                 <Group>
                   <Value>Bezahlen</Value>
-                  <button onClick={paypalSuccess}>register</button>
+                  {/* <ImportantInfo>
+                    Der Paypal Button wird nicht angezeigt? Die Tickets sind
+                    nicht ausverkauft, wir oder Paypal haben aktuell ein Problem
+                    an dem wir dran sind. Bitte hab Geduld und schau heute
+                    Abend/ Morgen nochmal ob es funktioniert.
+                  </ImportantInfo> */}
+                    {/* <PayPalScriptProvider
+                      options={{
+                        "client-id": paypalCLientID,
+                        // components: "buttons",
+                        currency: "EUR",
+                      }}
+                    >
+                      <PayPalButton
+                        // currency={currency}
+                        disabled={paypalDisabled}
+                        showSpinner={false}
+                        amount={sumTickets}
+                        currency={"EUR"}
+                        onSuccess={paypalSuccess}
+                        onError={paypalError}
+                        onClick={paypalClickHandler}
+                      />
+                    </PayPalScriptProvider> */}
+                    <button onClick={handleRegister}>registrieren
+                    </button>
+                  
                 </Group>
               </Section>
               {/* <PayPalButtons style={{ layout: "horizontal" }} /> */}
@@ -557,6 +583,13 @@ const InfoGroup = styled.div``
 
 const Info = styled(Note)`
   /* color: white; */
+  margin-top: 13px;
+  @media (max-width: 768px) {
+    margin-top: 4px;
+  }
+`
+const ImportantInfo = styled(Note)`
+  color: red;
   margin-top: 13px;
   @media (max-width: 768px) {
     margin-top: 4px;

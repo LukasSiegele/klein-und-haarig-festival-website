@@ -63,6 +63,22 @@ export const Headline = styled.h2`
     font-size: 28px;
   } */
 `
+export const HeadlineRegular = styled.h2`
+  font-family: "GT-Alpina-Extended-Regular";
+  color: white;
+
+  @media (max-width: 800px) {
+    font-size: 28px;
+  }
+`
+export const HeadlineRegular2 = styled.h2`
+  font-family: "GT-Alpina-Extended-Regular";
+  color: white;
+
+  @media (max-width: 800px) {
+    font-size: 35px;
+  }
+`
 
 // Texte
 export const Text = styled.p``
@@ -73,7 +89,18 @@ export const Note = styled.h5`
 `
 
 // Headlines in Info Texts
+export const SubheaderBig = styled.h3`
+  font-size: 40px;
+  font-family: "GT-Alpina-Extended-Bold";
+  color: white;
+`
+
 export const SubheaderSmall = styled.h4`
+  font-family: "GT-Alpina-Extended-Bold";
+  color: white;
+`
+
+export const SubheaderSuperSmall = styled.h5`
   font-family: "GT-Alpina-Extended-Bold";
   color: white;
 `
@@ -97,6 +124,7 @@ export const ImageDescription = styled.p`
 export const TickerText = styled.p`
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 17px;
+  /* color: black; */
 `
 
 // Shop Title

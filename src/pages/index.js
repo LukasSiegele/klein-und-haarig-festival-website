@@ -6,22 +6,42 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Ticker from "../components/ticker/Ticker"
 
+import { ParallaxProvider } from "react-scroll-parallax"
+
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
+import ImageSection from "../components/sections/ImageSection"
+import Message from "../components/sections/Message"
+import SideLine from "../components/navigation/SideLine"
+import Lineup from "../components/sections/Lineup"
 
 export default function IndexPage() {
   return (
     <>
       <SEO title="Home" />
       <Layout>
-        <Wrapper>
-          <MainGrid>
-            <SideNavigation />
-            <HeroSection />
-          </MainGrid>
-          <TickerGroup>
-            <Ticker />
-          </TickerGroup>
-        </Wrapper>
+        <ParallaxProvider>
+          <Wrapper>
+            <MainGrid>
+              <SideNavigation />
+              <HeroSection />
+            </MainGrid>
+            <TickerGroup>
+              <Ticker />
+            </TickerGroup>
+          </Wrapper>
+
+          <MessageSection>
+            <SideLine />
+            <Message />
+          </MessageSection>
+
+          <LineupSection>
+            <SideLine />
+            <Lineup />
+          </LineupSection>
+
+          <ImageSection />
+        </ParallaxProvider>
       </Layout>
       <Spacer />
     </>
@@ -32,12 +52,32 @@ const Wrapper = styled.div`
   z-index: 1;
   background-image: url(${BackgroundTexture});
   position: relative;
+  overflow: hidden;
 `
 
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+`
+const MessageSection = styled.div`
+  display: grid;
+  background-image: url(${BackgroundTexture});
+  grid-template-columns: auto 1fr;
+  overflow: hidden;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const LineupSection = styled.div`
+  display: grid;
+  background-color: #cbc3ff;
+  grid-template-columns: auto 1fr;
+  overflow: hidden;
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 `
@@ -51,7 +91,7 @@ const TickerGroup = styled.div`
 const Spacer = styled.div`
   height: 70px;
   background: black;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     height: 60px;
   }
 `

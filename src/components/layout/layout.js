@@ -9,7 +9,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import "../layout/layout.css"
 
-ReactGA.initialize("UA-225443150-1")
+ReactGA.initialize("UA-228004106-1")
 
 export default function Layout({ children }) {
   // Google Analytics

@@ -31,8 +31,29 @@ const Ticker = () => {
             {({ index }) => (
               <Wrapper>
                 <TickerText className="tickerText">
-                  Tickets ab jetzt verfügbar.
+                  Weitere Infos auf{" "}
+                  <LinkInline
+                    href="https://instagram.com/kleinundhaarig?igshid=YmMyMTA2M2Y="
+                    target="_blank"
+                  >
+                    Instagram
+                  </LinkInline>{" "}
+                  &{" "}
+                  <LinkInline
+                    href="https://soundcloud.com/kleinundhaarig?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                    target="_blank"
+                  >
+                    Soundcloud
+                  </LinkInline>
                 </TickerText>
+                {/* <TickerText className="tickerText">
+                  Der Ticketkauf ist wieder möglich!
+                </TickerText> */}
+                {/* <TickerText className="tickerText">
+                  Aktuell sind keine Zahlungen möglich. Wir haben ein Problem
+                  mit Paypal, sind aber an der Lösung dran. Danke für dein
+                  Verständnis & Geduld.
+                </TickerText> */}
                 <Icon src="/icons/banner-star.svg"></Icon>
               </Wrapper>
             )}
@@ -42,6 +63,11 @@ const Ticker = () => {
     </Delayed>
   )
 }
+
+const LinkInline = styled.a`
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255);
+`
 
 const Icon = styled.img`
   margin: 0px 16px 0px 16px;
@@ -74,6 +100,7 @@ const TickerWrapper = styled.div`
 
   display: grid;
   background-color: #000;
+  /* background-color: #ff003a; */
 
   animation: TickerAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;

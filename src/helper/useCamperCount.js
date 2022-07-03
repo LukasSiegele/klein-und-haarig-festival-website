@@ -22,7 +22,7 @@ export default function useCamperCount() {
   }, [])
 
   // Camper Count
-  const maxCampers = 20
+  const maxCampers = 19
   const [camperParkplatz, setCamperParkplatz] = useState(false)
 
   useEffect(() => {
