@@ -34,7 +34,7 @@ export default function HeroSection() {
 
   return (
     <Container>
-      <TicketWrapper to={audienceCount < maxAudience ? "/tickets" : "/voll"}>
+      <TicketWrapper to={audienceCount < maxAudience ? "/JaxXuwMQu6TEcd" : "/voll"}>
         <TicketButton />
       </TicketWrapper>
       <TitleLine>
