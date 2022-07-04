@@ -469,11 +469,11 @@ const PersonalTicketSection = props => {
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
-                    <InfoLabel>Tiere</InfoLabel>
+                    <InfoLabel>Hunde & andere Tiere</InfoLabel>
                     <InfoText>
                       Da wir aufgrund der Geländegröße keine Ruhezonen
-                      einrichten können sind, zum Wohl der Gesundheit euerer
-                      Vierbeiner, diese nicht gestattet.
+                      einrichten können sind diese nicht gestattet - zum Wohl
+                      der Gesundheit euerer Vierbeiner,.
                     </InfoText>
                   </InfoSection>
                 </InfoContainer>
