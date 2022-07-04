@@ -334,6 +334,35 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
+                    <InfoLabel>Awareness</InfoLabel>
+                    <InfoText>
+                      Wir möchten gemeinsam mit dir einen Raum schaffen, in dem
+                      sich alle Personen sicher fühlen und ausleben können.
+                      Dafür braucht es von allen Aufmerksamkeit. <br />
+                      Bitte achte auf andere! Wenn du merkst dass es jemandem
+                      schlecht geht, deine oder andere Grenzen missachtet
+                      werden, zögere nicht zu handeln! Wenn du dich einer
+                      Situation nicht gewachsen fühlst oder Unterstützung
+                      benötigst, wende dich an das Awareness Team oder einen
+                      Menschen mit Funkgerät. Du musst niemandem direkt
+                      erzählen, was vorgefallen ist. Sage nur, dass du in
+                      Kontakt mit dem Awareness Team treten möchtest. Es gibt
+                      auf dem Gelände einen Safe-Space, wo du aufgefangen werden
+                      kannst. Psychische wie physische Gewalt in Form von
+                      rassistischem, sexistischem, homophoben und
+                      menschenverachtenden Verhalten jeglicher Art wird von uns
+                      nicht toleriert und wird zum Ausschluss der Veranstaltung
+                      führen.
+                      <br /> Wenn diese Art von Aufmerksamkeit für dich neu ist,
+                      informiere dich vor dem Festival eigenständig oder beim
+                      Awareness Team vor Ort. Das Team steht außerdem für Fragen
+                      und Informationen rund um das Thema Safer Use bereit und
+                      kann bei Interesse angesprochen werden. Auch am Infostand
+                      findest du Infomaterial.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Einlass </InfoLabel>
                     <InfoText>
                       Halte am Einlass bitte deinen Ausweis und dein Ticket
@@ -401,32 +430,6 @@ const PersonalTicketSection = props => {
                       Auf dem Festival gibt es feste sanitäre Anlagen. Tags und
                       Graffitis sind hier nicht erwünscht. Wir müssen sie sonst
                       aufwändig und teuer entfernen lassen.
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>Awareness</InfoLabel>
-                    <InfoText>
-                      Wir möchten gemeinsam mit dir einen Raum schaffen, in dem
-                      sich alle Personen sicher fühlen und ausleben können.
-                      Dafür braucht es von allen Aufmerksamkeit. Bitte achte auf
-                      andere! Wenn du merkst dass es jemandem schlecht geht,
-                      deine oder andere Grenzen missachtet werden, zögere nicht
-                      zu handeln! Wenn du dich einer Situation nicht gewachsen
-                      fühlst oder Unterstützung benötigst, wende dich an das
-                      Awareness Team oder einen Menschen mit Funkgerät. Du musst
-                      niemandem direkt erzählen, was vorgefallen ist. Sage nur,
-                      dass du in Kontakt mit dem Awareness Team treten möchtest.
-                      Es gibt auf dem Gelände einen Safe-Space, wo du
-                      aufgefangen werden kannst. Psychische wie physische Gewalt
-                      in Form von rassistischem, sexistischem, homophoben und
-                      menschenverachtenden Verhalten jeglicher Art wird von uns
-                      nicht toleriert. Wenn diese Art von Aufmerksamkeit für
-                      dich neu ist, informiere dich vor dem Festival
-                      eigenständig oder beim Awareness Team vor Ort. Das Team
-                      steht außerdem für Fragen und Informationen rund um das
-                      Thema Safer Use bereit und kann bei Interesse angesprochen
-                      werden. Auch am Infostand findest du Infomaterial.
                     </InfoText>
                   </InfoSection>
 
