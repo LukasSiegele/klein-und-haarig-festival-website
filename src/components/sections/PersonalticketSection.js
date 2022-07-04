@@ -405,17 +405,37 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
+                    <InfoLabel>Awareness</InfoLabel>
+                    <InfoText>
+                      Wir möchten gemeinsam mit dir einen Raum schaffen, in dem
+                      sich alle Personen sicher fühlen und ausleben können.
+                      Dafür braucht es von allen Aufmerksamkeit. Bitte achte auf
+                      andere! Wenn du merkst dass es jemandem schlecht geht,
+                      deine oder andere Grenzen missachtet werden, zögere nicht
+                      zu handeln! Wenn du dich einer Situation nicht gewachsen
+                      fühlst oder Unterstützung benötigst, wende dich an das
+                      Awareness Team oder einen Menschen mit Funkgerät. Du musst
+                      niemandem direkt erzählen, was vorgefallen ist. Sage nur,
+                      dass du in Kontakt mit dem Awareness Team treten möchtest.
+                      Es gibt auf dem Gelände einen Safe-Space, wo du
+                      aufgefangen werden kannst. Psychische wie physische Gewalt
+                      in Form von rassistischem, sexistischem, homophoben und
+                      menschenverachtenden Verhalten jeglicher Art wird von uns
+                      nicht toleriert. Wenn diese Art von Aufmerksamkeit für
+                      dich neu ist, informiere dich vor dem Festival
+                      eigenständig oder beim Awareness Team vor Ort. Das Team
+                      steht außerdem für Fragen und Informationen rund um das
+                      Thema Safer Use bereit und kann bei Interesse angesprochen
+                      werden. Auch am Infostand findest du Infomaterial.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Sicherheit</InfoLabel>
                     <InfoText>
-                      Wir möchten mit dir ein friedliches Festival verbringen
-                      bei dem sich jede:r sicher fühlen und frei ausleben kann.
-                      Wir lehnen Gewalt, Rassismus, Homophobie, Sexismus und
-                      sonstiges menschenverachtendes Verhalten jeglicher Art ab.
-                      Achte auf andere Gäste. Gehe auf sie zu, sollte etwas
-                      nicht stimmen und respektiere andere Lebens- und
-                      Denkweisen. Die folgenden Gegenstände sind auf dem
-                      Festival strengstens untersagt: sämtliche Pyrotechnik,
-                      Drogen, Drohnen, Waffen aller Art und andere gefährliche
+                      Die folgenden Gegenstände sind auf dem Festival
+                      strengstens untersagt: sämtliche Pyrotechnik, Drogen,
+                      Drohnen, Waffen aller Art und andere gefährliche
                       Gegenstände.
                     </InfoText>
                   </InfoSection>
@@ -446,6 +466,14 @@ const PersonalTicketSection = props => {
                       kein Ticket. Für Kinder unter 10 Jahren besteht
                       Gehörschutzpflicht. Muttizettel werden nicht akzeptiert.
                       Eltern haften für ihre Kinder.
+                    </InfoText>
+                  </InfoSection>
+                  <InfoSection>
+                    <InfoLabel>Tiere</InfoLabel>
+                    <InfoText>
+                      Da wir aufgrund der Geländegröße keine Ruhezonen
+                      einrichten können sind, zum Wohl der Gesundheit euerer
+                      Vierbeiner, diese nicht gestattet.
                     </InfoText>
                   </InfoSection>
                 </InfoContainer>
