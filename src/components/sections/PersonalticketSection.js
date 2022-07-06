@@ -351,8 +351,8 @@ const PersonalTicketSection = props => {
                       kannst. Psychische wie physische Gewalt in Form von
                       rassistischem, sexistischem, homophoben und
                       menschenverachtenden Verhalten jeglicher Art wird von uns
-                      nicht toleriert und wird zum Ausschluss der Veranstaltung
-                      führen.
+                      nicht toleriert und führt zum Ausschluss der
+                      Veranstaltung.
                       <br /> Wenn diese Art von Aufmerksamkeit für dich neu ist,
                       informiere dich vor dem Festival eigenständig oder beim
                       Awareness Team vor Ort. Das Team steht außerdem für Fragen
