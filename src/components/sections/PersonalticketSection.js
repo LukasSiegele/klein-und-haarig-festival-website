@@ -299,7 +299,7 @@ const PersonalTicketSection = props => {
                       <ListItem>Fr: 12-22 Uhr</ListItem>
                       <ListItem>Sa: 12-15 Uhr </ListItem>
                       <ListItem>So: 11-16 Uhr </ListItem>
-                      <ListItem>Mo: 11-16 Uhr</ListItem>
+                      <ListItem>Mo: 11-18 Uhr</ListItem>
                     </List>
                   </InfoSection>
 
