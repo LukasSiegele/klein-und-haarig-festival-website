@@ -299,7 +299,7 @@ const PersonalTicketSection = props => {
                       <ListItem>Fr: 12-22 Uhr</ListItem>
                       <ListItem>Sa: 12-15 Uhr </ListItem>
                       <ListItem>So: 11-16 Uhr </ListItem>
-                      <ListItem>Mo: 11-16 Uhr</ListItem>
+                      <ListItem>Mo: 11-18 Uhr</ListItem>
                     </List>
                   </InfoSection>
 
@@ -351,8 +351,8 @@ const PersonalTicketSection = props => {
                       kannst. Psychische wie physische Gewalt in Form von
                       rassistischem, sexistischem, homophoben und
                       menschenverachtenden Verhalten jeglicher Art wird von uns
-                      nicht toleriert und wird zum Ausschluss der Veranstaltung
-                      führen.
+                      nicht toleriert und führt zum Ausschluss der
+                      Veranstaltung.
                       <br /> Wenn diese Art von Aufmerksamkeit für dich neu ist,
                       informiere dich vor dem Festival eigenständig oder beim
                       Awareness Team vor Ort. Das Team steht außerdem für Fragen
