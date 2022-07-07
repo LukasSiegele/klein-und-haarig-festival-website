@@ -322,15 +322,66 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Mitfahr Gelegenheiten [coming soon] </InfoLabel>
+                    <InfoLabel>Mitfahr Gelegenheiten</InfoLabel>
                     <InfoText>
-                      Wir werden aus Städten mit vielen Ticketkäufen (bisher
-                      München, Stuttgart, Ulm, Berlin, Leipzig, Wien)
-                      Chat-Gruppen einrichten. So kannst du mit anderen Gästen
-                      in Kontakt treten und Fahrgemeinschaften bilden. Wenn du
-                      eine weitere Stadt vorschlagen möchtest, schreibe uns
-                      einfach auf Instagram oder per Mail.
+                      Wir haben aus Städten mit vielen Ticketkäufen
+                      Whatsapp-Gruppen eingerichtet. So kannst du mit anderen
+                      Gästen in Kontakt treten und Fahrgemeinschaften bilden.
+                      Wenn du eine weitere Stadt vorschlagen möchtest, schreibe
+                      uns einfach auf Instagram oder per Mail.
                     </InfoText>
+
+                    <DetailLabel>Whatsapp Gruppen</DetailLabel>
+                    <List>
+                      <ListItem>
+                        <LinkInline2
+                          href="https://chat.whatsapp.com/I1aMzOjdu4BL8nOP91n2za"
+                          target="_blank"
+                        >
+                          Berlin {"<>"} KuH beitreten ➞
+                        </LinkInline2>
+                      </ListItem>
+                      <ListItem>
+                        <LinkInline2
+                          href="https://chat.whatsapp.com/DWTTwYPmPfWGmuwOzfiIa3"
+                          target="_blank"
+                        >
+                          Leipzig {"<>"} KuH beitreten ➞
+                        </LinkInline2>
+                      </ListItem>
+                      <ListItem>
+                        <LinkInline2
+                          href="https://chat.whatsapp.com/KqatInu5niS71TUu3JNCf5"
+                          target="_blank"
+                        >
+                          München {"<>"} KuH beitreten ➞
+                        </LinkInline2>
+                      </ListItem>
+                      <ListItem>
+                        <LinkInline2
+                          href="https://chat.whatsapp.com/GUiamTvtyTUBj7yfOPAl5p"
+                          target="_blank"
+                        >
+                          Stuttgart {"<>"} KuH beitreten ➞
+                        </LinkInline2>
+                      </ListItem>
+                      <ListItem>
+                        <LinkInline2
+                          href="https://chat.whatsapp.com/KHEAktqDyKMG1piHRqe6ZV"
+                          target="_blank"
+                        >
+                          Ulm {"<>"} KuH beitreten ➞
+                        </LinkInline2>
+                      </ListItem>
+                      <ListItem>
+                        <LinkInline2
+                          href="https://chat.whatsapp.com/HsToHcs5D9JIDlgmtbVlyf"
+                          target="_blank"
+                        >
+                          Wien {"<>"} KuH beitreten ➞
+                        </LinkInline2>
+                      </ListItem>
+                    </List>
                   </InfoSection>
 
                   <InfoSection>
@@ -879,6 +930,7 @@ const LinkInline = styled.a`
   padding-bottom: 1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `
+const LinkInline2 = styled.a``
 
 const ImageContainer = styled.div`
   margin-bottom: 40px;
