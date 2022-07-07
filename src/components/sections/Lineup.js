@@ -51,7 +51,7 @@ export default function Lineup() {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <Header>Lineup [more tba]</Header>
+          {/* <Header>Lineup</Header> */}
           <RingGroup>
             {/* <animated.div
             ref={ref}
@@ -69,15 +69,32 @@ export default function Lineup() {
             {/* </animated.div> */}
           </RingGroup>
           <LineupSection>
-            {/* <Item>
+            <Item>
               <Artist>16palomas</Artist>
               <Neu>live</Neu>
-              <IconLast src="/icons/StarYellow.svg"></IconLast>
-            </Item> */}
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
             <Item>
               <LinkInline href="https://soundcloud.com/agyena" target="_blank">
                 {" "}
                 <Artist>AGY3NA</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/anjana-bbb"
+                target="_blank"
+              >
+                <Artist>Anjana</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline href="https://soundcloud.com/ssg-b_e" target="_blank">
+                <Artist>Balearic Eric</Artist>
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
@@ -130,6 +147,7 @@ export default function Lineup() {
                 <Icon src="/icons/StarYellow.svg"></Icon>
               </LinkInline>
             </Item>
+
             <Item>
               <LinkInline href="https://soundcloud.com/frdnnd" target="_blank">
                 <Artist>Ferdinand Domes</Artist>
@@ -144,6 +162,7 @@ export default function Lineup() {
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
+
             <Item>
               <LinkInline
                 href="https://soundcloud.com/jannischoppin"
@@ -153,18 +172,54 @@ export default function Lineup() {
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
-            {/* <Item>
-              <Artist>Kalut</Artist>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/nils-moritz-766797471"
+                target="_blank"
+              >
+                <Artist>Kalut</Artist>
+              </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item> */}
-            {/* <Item>
-              <Artist>Kia</Artist>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/kia-sydney"
+                target="_blank"
+              >
+                <Artist>Kia</Artist>
+              </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item> */}
+            </Item>
+
             <Item>
               <LinkInline href="https://soundcloud.com/kiawash" target="_blank">
                 <Artist>Kiawash</Artist>
               </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/laf-musik"
+                target="_blank"
+              >
+                <Artist>LAF</Artist>
+              </LinkInline>
+              <Artist>+</Artist>
+              <LinkInline
+                href="https://soundcloud.com/orbital_reflector/sets/forum"
+                target="_blank"
+              >
+                <Artist>FORUM</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+
+            <Item>
+              <Artist>Lu Copper</Artist>
+
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
 
@@ -177,29 +232,53 @@ export default function Lineup() {
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
+
+            <Item>
+              <LinkInline href="https://soundcloud.com/luedj" target="_blank">
+                <Artist>luedj</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/kanapee-nordwand"
+                target="_blank"
+              >
+                <Artist>Max Langer</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+
             <Item>
               <LinkInline
                 href="https://soundcloud.com/minaeminae"
                 target="_blank"
               >
-                <Artist>MinaeMinae</Artist>
-                <Neu>live</Neu>
+                <Artist>minäminä</Artist>
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
-            {/* <Item>
-              
+
+            <Item>
               <Artist>nåmuh</Artist>
               <Icon src="/icons/StarYellow.svg"></Icon>
-              
-            </Item> */}
-            {/* <Item>
-              
-              <Artist>Nin</Artist>
+            </Item>
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/nina-gohl"
+                target="_blank"
+              >
+                <Artist>Nin</Artist>
+              </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
-              
-            </Item> */}
-            {/* <Item>
+            </Item>
+
+            <Item>
+              <Artist>SAT 70</Artist>
+              <Icon src="/icons/StarYellow.svg"></Icon>
+            </Item>
+            <Item>
               <LinkInline
                 href="https://soundcloud.com/schnapolitur3000"
                 target="_blank"
@@ -208,7 +287,7 @@ export default function Lineup() {
                 <Neu>live</Neu>
               </LinkInline>
               <Icon src="/icons/StarYellow.svg"></Icon>
-            </Item> */}
+            </Item>
 
             <Item>
               <LinkInline
