@@ -51,7 +51,7 @@ export default function Lineup() {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <Header>Lineup [more tba]</Header>
+          {/* <Header>Lineup</Header> */}
           <RingGroup>
             {/* <animated.div
             ref={ref}
@@ -72,7 +72,7 @@ export default function Lineup() {
             <Item>
               <Artist>16palomas</Artist>
               <Neu>live</Neu>
-              <IconLast src="/icons/StarYellow.svg"></IconLast>
+              <Icon src="/icons/StarYellow.svg"></Icon>
             </Item>
             <Item>
               <LinkInline href="https://soundcloud.com/agyena" target="_blank">
