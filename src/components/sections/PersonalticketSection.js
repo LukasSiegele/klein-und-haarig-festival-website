@@ -324,11 +324,11 @@ const PersonalTicketSection = props => {
                   <InfoSection>
                     <InfoLabel>Mitfahr Gelegenheiten</InfoLabel>
                     <InfoText>
-                      Wir haben aus Städten mit vielen Ticketkäufen
-                      Whatsapp-Gruppen eingerichtet. So kannst du mit anderen
-                      Gästen in Kontakt treten und Fahrgemeinschaften bilden.
-                      Wenn du eine weitere Stadt vorschlagen möchtest, schreibe
-                      uns einfach auf Instagram oder per Mail.
+                      Wir haben aus Städten mit vielen Ticketkäufen Whatsapp
+                      Gruppen eingerichtet. So kannst du mit anderen Gästen in
+                      Kontakt treten und Fahrgemeinschaften bilden. Wenn du eine
+                      weitere Stadt vorschlagen möchtest, schreibe uns einfach
+                      auf Instagram oder per Mail.
                     </InfoText>
 
                     <DetailLabel>Whatsapp Gruppen</DetailLabel>
@@ -355,6 +355,14 @@ const PersonalTicketSection = props => {
                           target="_blank"
                         >
                           München {"<>"} KuH beitreten ➞
+                        </LinkInline2>
+                      </ListItem>
+                      <ListItem>
+                        <LinkInline2
+                          href="https://chat.whatsapp.com/KumquIM5XBiHLzZSVP7dI0"
+                          target="_blank"
+                        >
+                          NRW {"<>"} KuH beitreten ➞
                         </LinkInline2>
                       </ListItem>
                       <ListItem>
