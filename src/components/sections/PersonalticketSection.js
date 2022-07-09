@@ -393,6 +393,14 @@ const PersonalTicketSection = props => {
                   </InfoSection>
 
                   <InfoSection>
+                    <InfoLabel>Corona</InfoLabel>
+                    <InfoText>
+                      Bitte testet euch vor der Anreise zum Schutz aller
+                      Anderen.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Awareness</InfoLabel>
                     <InfoText>
                       Wir möchten gemeinsam mit dir einen Raum schaffen, in dem
