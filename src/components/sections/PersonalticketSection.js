@@ -534,8 +534,8 @@ const PersonalTicketSection = props => {
                     <InfoLabel>Hunde & andere Tiere</InfoLabel>
                     <InfoText>
                       Da wir aufgrund der Geländegröße keine Ruhezonen
-                      einrichten können sind diese nicht gestattet - zum Wohl
-                      der Gesundheit euerer Vierbeiner,.
+                      einrichten können sind Tiere nicht gestattet - zum Wohl
+                      der Gesundheit eurer Vierbeiner.
                     </InfoText>
                   </InfoSection>
                 </InfoContainer>
