@@ -123,7 +123,7 @@ export default function Summary({ location }) {
   const paypalClickHandler = () => {}
   const handleRegister = () => {
     let data = {};
-    data.orderID = 'guestlist'
+    data.orderID = 'guestlist'+ String(userID);
     paypalSuccess(data)
   }
   const paypalSuccess = data => {
