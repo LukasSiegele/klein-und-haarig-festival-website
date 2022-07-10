@@ -20,38 +20,33 @@ export default function Form(props) {
   const [datenspeicherung, setDatenspeicherung] = useState(false)
   const [newsletter, setNewsletter] = useState(false)
 
-  const [validation, setValidation] = useState(false);
-  const [error, setError] = useState(false);
+  const [validation, setValidation] = useState(false)
+  const [error, setError] = useState(false)
 
   console.log("Form props: ", props)
-  
+
   const handleSubmit = e => {
     e.preventDefault()
-    setValidation("pending");
+    setValidation("pending")
   }
 
-  
-
-
   useEffect(() => {
-
-
-    console.log("validation effect triggered");
+    console.log("validation effect triggered")
 
     const validateEmail = async () => {
-      const result = await emailUnused(email);
-      console.log("result =", result);
-      setError(!result);
-      setValidation(result);
+      const result = await emailUnused(email)
+      console.log("result =", result)
+      setError(!result)
+      setValidation(result)
     }
 
-    if(validation === "pending"){
+    if (validation === "pending") {
       try {
         validateEmail()
       } catch (err) {
         console.log(err)
       }
-    }else if(validation){
+    } else if (validation) {
       navigate("/helfer", {
         state: {
           sumTickets: props.sumTickets,
@@ -84,6 +79,7 @@ export default function Form(props) {
           <Label htmlFor="firstName">Vorname</Label>
           <input
             type="text"
+            pattern="[^()/><\][\\\x22,;|]+"
             name="firstName"
             value={firstName}
             required
@@ -93,6 +89,7 @@ export default function Form(props) {
           <Label htmlFor="lastName">Nachname</Label>
           <input
             type="text"
+            pattern="[^()/><\][\\\x22,;|]+"
             name="lastName"
             value={lastName}
             required
@@ -228,12 +225,10 @@ export default function Form(props) {
               Als Erinnerung für kommende Veranstaltungen sehr zu empfehlen.
             </CheckboxDecription>
           </CheckboxGroup>
-          
           <WeiterWrapper>
             <FormButton typ="submit" label="Weiter ➞" />
             {error ? <ErrorMsg>Email is already used</ErrorMsg> : null}
           </WeiterWrapper>
-          
         </form>
       </Wrapper>
     </Container>
