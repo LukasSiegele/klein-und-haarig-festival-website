@@ -213,8 +213,8 @@ export default function Summary({ location }) {
     addToMailchimp(email, {
       TICKETID: ticketID,
       // UID: userID,
-      FNAME: firstName,
-      LNAME: lastName,
+      FNAME: firstName.replace(/[^\w\s]/gi, ''),
+      LNAME: lastName.replace(/[^\w\s]/gi, ''),
       PHONE: phone,
       STREET: street,
       HOUSENUMB: houseNumber,
