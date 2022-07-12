@@ -118,6 +118,7 @@ export default function Summary({ location }) {
 
   // Unique ID
   const userID = uniqid()
+  console.log(userID)
 
   // POST TO — AIRTABLE
   const paypalClickHandler = () => {}
