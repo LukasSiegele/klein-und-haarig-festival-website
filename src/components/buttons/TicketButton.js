@@ -26,7 +26,7 @@ const TicketButton = props => {
       <Ring open={l2 < 100 ? true : false} left={l2}></Ring>
       <Ring open={l3 < 100 ? true : false} left={l3}></Ring>
       <TicketBackground src="/images/ticket-bg.svg"></TicketBackground>
-      <TicketButtonText>TICKETS</TicketButtonText>
+      <TicketButtonText>DANKE</TicketButtonText>
     </Wrapper>
   )
 }
