@@ -7,21 +7,37 @@ export default function Voll() {
   return (
     <Container>
       <Wrapper>
-        <MessageHeader>Ticketverkauf vorrübergehend pausiert</MessageHeader>
+        <MessageHeader>
+          Danke. <br />
+          Das war wirklich etwas Besonderes!{" "}
+        </MessageHeader>
         <MessageText>
-          Wir haben unser aktuelles Limit an Festivaltickets erreicht und den
-          Ticketverkauf vorrübergehend pausiert. Gegebenenfalls wird der Verkauf
-          wieder geöffnet. Wann genau erfährst du über unseren{" "}
+          Es ist schwer in Worte zu fassen, wie glücklich wir uns fühlen, wenn
+          wir auf diese fünfte Ausgabe des Klein und Haarig Festivals
+          zurückblicken. Diese 4 unvergesslichen Tage mit euch auf unserem
+          schönen Gelände, die umwerfende Musik, die beeindruckende Kunst und
+          all die lieben Worte und glücklichen gesichter haben alles
+          wettgemacht. <br />
+          <br />
+          Ein besonderer Dank gilt allen Helfer:innen - ohne Sie wäre dieses
+          Festival nicht möglich! <br />
+          <br />
+          Wochenende! Wir sehen uns alle im nächsten Jahr. Mit Liebe, Euer Und
+          an alle Künstler und Gäste: Danke für dieses wunderbare Wochenende!
+          Und an alle Künstler und Gäste: Danke für dieses wunderbare
+          Wochenende! <br />
+          <br />
+          Wir sehen uns alle im nächsten Jahr.
+          <br />
+          <br />
+          In Liebe, dein KuH-Team.
+          <br />
+          <br />
+          <br />
+          <br />
+          Bleib auf dem Laufenden und folge uns auf{" "}
           <InlineLink href="https://www.instagram.com/kleinundhaarig/">
             Instagram
-          </InlineLink>{" "}
-          Account.
-        </MessageText>
-        <MessageText>
-          Du willst nachträglich ein Camperticket kaufen? Schreibt uns einfach
-          per:{" "}
-          <InlineLink href="mailto:info@kleinundhaarig.de">
-            info@kleinundhaarig.de
           </InlineLink>
         </MessageText>
 
