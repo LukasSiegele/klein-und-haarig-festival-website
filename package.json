@@ -24,6 +24,7 @@
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-styled-components": "^3.8.0",
+    "node": "^19.1.0",
     "react": "^16.14.0",
     "react-3d-hover": "^1.1.1",
     "react-bootstrap": "^2.4.0",
