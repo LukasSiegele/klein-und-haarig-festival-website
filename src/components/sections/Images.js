@@ -13,7 +13,7 @@ import {
   HeadlineRegular,
 } from "../styles/TextStyles"
 
-export default function ImageSection() {
+export default function Images() {
   return (
     <Container>
       <Content>

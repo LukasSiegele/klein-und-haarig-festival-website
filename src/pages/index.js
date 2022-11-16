@@ -9,10 +9,11 @@ import Ticker from "../components/ticker/Ticker"
 import { ParallaxProvider } from "react-scroll-parallax"
 
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
-import ImageSection from "../components/sections/ImageSection"
+import Images from "../components/sections/Images"
 import Message from "../components/sections/Message"
 import SideLine from "../components/navigation/SideLine"
 import Lineup from "../components/sections/Lineup"
+import Foerderungen from "../components/sections/Foerderungen"
 
 export default function IndexPage() {
   return (
@@ -40,7 +41,17 @@ export default function IndexPage() {
             <Lineup />
           </LineupSection>
 
-          <ImageSection />
+          {/* <ImageSection> */}
+          {/* <SideLine /> */}
+          <Images />
+          {/* </ImageSection> */}
+
+          <FoerderungSection>
+            {/* <HideSideline>
+              <SideLine />
+            </HideSideline> */}
+            <Foerderungen />
+          </FoerderungSection>
         </ParallaxProvider>
       </Layout>
       <Spacer />
@@ -80,6 +91,20 @@ const LineupSection = styled.div`
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
+`
+
+const FoerderungSection = styled.div`
+  /* display: grid; */
+  background-color: white;
+  /* grid-template-columns: auto 1fr;
+  overflow: hidden;
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  } */
+`
+
+const HideSideline = styled.div`
+  opacity: 0;
 `
 
 const TickerGroup = styled.div`
