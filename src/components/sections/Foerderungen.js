@@ -40,7 +40,7 @@ const Content = styled.div`
   max-width: 800px;
   display: grid;
   justify-content: center;
-  /* overflow: hidden; */
+  overflow: hidden;
 `
 
 const Headline = styled(TextSmall)`
@@ -55,6 +55,9 @@ const LogoGroup = styled.div`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   gap: 64px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const Logo = styled.img`
