@@ -7,18 +7,18 @@ export const BigHeadline = styled.h1`
 `
 
 export const FrontpageHeadline = styled.h1`
-  font-size: 80px;
+  font-size: 70px;
 
   @media (max-width: 768px) {
-    font-size: 70px;
+    font-size: 60px;
   }
 
   @media (max-width: 700px) {
-    font-size: 50px;
+    font-size: 40px;
   }
 `
 
-export const FrontpageInfos = styled.h3`
+export const FrontpageInfos = styled.p`
   font-family: "GT-Alpina-Extended-Regular";
   @media (max-width: 700px) {
     font-size: 0.9em;

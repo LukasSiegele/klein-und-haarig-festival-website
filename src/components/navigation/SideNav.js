@@ -69,8 +69,8 @@ const SideNavLogoWrapper = styled.div`
 
 // KuH Logo in SideNav
 const SideNavLogo = styled.div`
-  max-width: 100%;
-  height: 100%;
+  max-width: 87%;
+  height: 87%;
   background-image: url(${LogoSideNav});
   background-size: cover;
   :hover {
