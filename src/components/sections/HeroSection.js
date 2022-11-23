@@ -54,7 +54,7 @@ export default function HeroSection() {
             <Datum>14 — 17/07/2023</Datum>
           </DateMask>
           <PlaceMask>
-            <Place>Bad Wildbadi</Place>
+            <Place>Bad Wildbad</Place>
           </PlaceMask>
         </Column2>
         <Column3>
