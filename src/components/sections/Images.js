@@ -24,13 +24,7 @@ export default function Images() {
               <ListItem>Freitag</ListItem>
               <ListItem>Samstag</ListItem>
               <ListItem>Sonntag</ListItem>
-              <NeuGroup>
-                <ListItem>Montag</ListItem>
-                <Up>
-                  <Icon src="/icons/Star.svg"></Icon>
-                  <Neu>neu</Neu>
-                </Up>
-              </NeuGroup>
+              <ListItem>Montag</ListItem>
             </ListWrapper1>
             <Parallax speed={10}>
               <Image01></Image01>
@@ -52,7 +46,14 @@ export default function Images() {
                 <Neu>Funktion One</Neu>
               </Up>
             </NeuGroup>
-            <ListItem>Am Bach</ListItem>
+
+            <NeuGroup>
+              <ListItem>Am Bach</ListItem>
+              <Up>
+                <Icon src="/icons/Star.svg"></Icon>
+                <Neu>Funktion One</Neu>
+              </Up>
+            </NeuGroup>
           </ListWrapper2>
         </Row2>
 
@@ -63,27 +64,12 @@ export default function Images() {
             </Parallax>
             <ListWrapper25>
               <ListHeader>Rahmenprogramm</ListHeader>
-              <NeuGroup>
-                <ListItem>Kunstinstallationen</ListItem>
-                <Up>
-                  <Icon src="/icons/Star.svg"></Icon>
-                  <Neu>neu</Neu>
-                </Up>
-              </NeuGroup>
-              <NeuGroup>
-                <ListItem>Workshops</ListItem>
-                <Up>
-                  <Icon src="/icons/Star.svg"></Icon>
-                  <Neu>neu</Neu>
-                </Up>
-              </NeuGroup>
-              <NeuGroup>
-                <ListItem>Vorträge</ListItem>
-                <Up>
-                  <Icon src="/icons/Star.svg"></Icon>
-                  <Neu>neu</Neu>
-                </Up>
-              </NeuGroup>
+
+              <ListItem>Kunstinstallationen</ListItem>
+
+              <ListItem>Workshops</ListItem>
+
+              <ListItem>Vorträge</ListItem>
             </ListWrapper25>
           </ImageWrapper25>
         </Row25>

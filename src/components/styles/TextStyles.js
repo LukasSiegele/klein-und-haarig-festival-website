@@ -7,14 +7,14 @@ export const BigHeadline = styled.h1`
 `
 
 export const FrontpageHeadline = styled.h1`
-  font-size: 120px;
+  font-size: 80px;
 
   @media (max-width: 768px) {
-    font-size: 100px;
+    font-size: 70px;
   }
 
   @media (max-width: 700px) {
-    font-size: 70px;
+    font-size: 50px;
   }
 `
 

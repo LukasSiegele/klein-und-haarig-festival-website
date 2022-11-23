@@ -51,7 +51,7 @@ export default function Lineup() {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          {/* <Header>Lineup</Header> */}
+          <Header>2022</Header>
           <RingGroup>
             {/* <animated.div
             ref={ref}
@@ -368,11 +368,8 @@ const HoverGroup = styled.div``
 
 const Header = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
-  /* font-family: "Inter"; */
-  /* font-weight: 600; */
   color: black;
   opacity: 0.75;
-  /* text-transform: uppercase; */
   margin-bottom: 40px;
 `
 

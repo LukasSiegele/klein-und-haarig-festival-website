@@ -34,60 +34,84 @@ export default function HeroSection() {
 
   return (
     <Container>
+      <Content3erGrid>
+        <Column1>
+          <TitleLine>
+            <KleinMask>
+              <TitleKlein> Klein </TitleKlein>
+            </KleinMask>
+
+            <UndMask>
+              <TitleUndStroke> und </TitleUndStroke>
+            </UndMask>
+            <HaarigMask>
+              <TitleHaarig>Haarig</TitleHaarig>
+            </HaarigMask>
+          </TitleLine>
+        </Column1>
+        <Column2>
+          <DateMask>
+            <Datum>14 — 17/07/2023</Datum>
+          </DateMask>
+          <PlaceMask>
+            <Place>Bad Wildbad</Place>
+          </PlaceMask>
+        </Column2>
+        <Column3>
+          <DateMask>
+            <Datum>More Infos soon...</Datum>
+          </DateMask>
+        </Column3>
+      </Content3erGrid>
       <TicketWrapper to={audienceCount < maxAudience ? "/tickets" : "/voll"}>
-        <TicketButton />
+        {/* <TicketButton /> */}
       </TicketWrapper>
-      <TitleLine>
-        <KleinMask>
-          <TitleKlein> Klein </TitleKlein>
-        </KleinMask>
 
-        <UndMask>
-          <TitleUndStroke> und </TitleUndStroke>
-        </UndMask>
-        <HaarigMask>
-          <TitleHaarig>Haarig</TitleHaarig>
-        </HaarigMask>
-        <YearMask>
-          <TitleJahr> 2022 </TitleJahr>
-        </YearMask>
-        <ArtistMask>
+      {/* <YearMask>
+        <TitleJahr> 2023 </TitleJahr>
+      </YearMask> */}
+      {/* <ArtistMask>
           <TitleArtist> Artwork: Karla Gondekova </TitleArtist>
-        </ArtistMask>
-      </TitleLine>
-      <InfoGroup>
-        <DateMask>
-          <Datum>Fr 15 - Mo 18 Juli</Datum>
-        </DateMask>
-        <PlaceMask>
-          <Place>Bad Wildbad</Place>
-        </PlaceMask>
-      </InfoGroup>
+        </ArtistMask> */}
 
-      <ImageWrapper>
-        <LeitgrafikRedLineBlackBrush src={LeitgrafikImage1} />
-        <LeitgrafikPurpleBrush src={LeitgrafikImage2} />
-        <LeitgrafikBlackLinesRedBrush src={LeitgrafikImage3} />
-        <LeitgrafikBlackLinesFace src={LeitgrafikImage4} />
-        <LeitgrafikRedLines src={LeitgrafikImage5} />
-        <LeitgrafikPurpleSprinkles src={LeitgrafikImage6} />
-        <LeitgrafikYellow1 src={LeitgrafikImage7} />
-        <LeitgrafikYellow2 src={LeitgrafikImage8} />
-        <LeitgrafikYellowBall src={LeitgrafikImage9} />
-      </ImageWrapper>
+      <InfoGroup></InfoGroup>
     </Container>
   )
 }
 
 const Container = styled.div`
-  background-color: none;
-  width: auto;
-  height: 100vh;
+  /* width: auto; */
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
   @media (max-width: 768px) {
     height: 650px;
   }
+`
+
+const Content3erGrid = styled.div`
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  padding-top: 12px;
+`
+
+const Column1 = styled.div`
+  display: grid;
+  /* align-content: center; */
+  /* background-color: red; */
+  /* opacity: 0.4; */
+  padding: 20px;
+`
+const Column2 = styled.div`
+  /* background-color: red; */
+  /* opacity: 0.2; */
+  padding: 20px;
+`
+const Column3 = styled.div`
+  /* background-color: red; */
+  /* opacity: 0.4; */
+  padding: 20px;
 `
 
 const Wrapper = styled.div`
@@ -112,10 +136,8 @@ const TicketWrapper = styled(Link)`
 `
 
 const TitleLine = styled.div`
-  padding-top: 12px;
-  padding-left: 20px;
-  justify-content: left;
-  z-index: 2;
+  /* justify-content: left; */
+  /* z-index: 2; */
 
   /* @media (max-width: 768px) {
     padding: 20px 50px;
@@ -136,9 +158,10 @@ const TitleLine = styled.div`
 // TITLE - Klein und Haarig
 
 const KleinMask = styled.div`
-  display: block;
+  display: inline-block;
   overflow: hidden;
   padding: 8px 0;
+  margin-right: 20px;
 `
 
 const TitleKlein = styled(FrontpageHeadline)`
@@ -162,32 +185,11 @@ const TitleKlein = styled(FrontpageHeadline)`
       transform: translateY(2px);
     }
   }
-
-  /* @media (min-width: 319px) {
-    font-size: 70px;
-  }
-
-  @media (min-width: 420px) {
-    font-size: 100px;
-  }
-
-  @media (min-width: 1023px) {
-    font-size: 130px;
-  }
-
-  @media (min-width: 1365px) {
-    font-size: 140px;
-  }
-
-  @media (min-width: 1650px) {
-    font-size: 160px;
-  } */
 `
 
 const UndMask = styled.div`
   overflow: hidden;
   padding: 8px 8px 8px 0;
-  margin-right: 32px;
   margin-top: -24px;
   display: inline-block;
   @media (max-width: 700px) {
@@ -206,26 +208,6 @@ const TitleUndStroke = styled(FrontpageHeadline)`
   color: #f6f4ee;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-
-  /* @media (min-width: 319px) {
-    font-size: 70px;
-  }
-
-  @media (min-width: 420px) {
-    font-size: 100px;
-  }
-
-  @media (min-width: 1023px) {
-    font-size: 130px;
-  }
-
-  @media (min-width: 1365px) {
-    font-size: 140px;
-  }
-
-  @media (min-width: 1650px) {
-    font-size: 160px;
-  } */
 `
 
 const HaarigMask = styled.div`
@@ -247,26 +229,6 @@ const TitleHaarig = styled(FrontpageHeadline)`
   text-shadow: none;
   animation: HeroAnimation 1.3s 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-
-  /* @media (min-width: 319px) {
-    font-size: 70px;
-  }
-
-  @media (min-width: 420px) {
-    font-size: 100px;
-  }
-
-  @media (min-width: 1023px) {
-    font-size: 130px;
-  }
-
-  @media (min-width: 1365px) {
-    font-size: 140px;
-  }
-
-  @media (min-width: 1650px) {
-    font-size: 160px;
-  } */
 `
 
 const YearMask = styled.div`
@@ -290,26 +252,6 @@ const TitleJahr = styled(FrontpageHeadline)`
 
   text-transform: none;
   color: #000000;
-
-  /* @media (min-width: 319px) {
-    font-size: 70px;
-  }
-
-  @media (min-width: 420px) {
-    font-size: 100px;
-  }
-
-  @media (min-width: 1023px) {
-    font-size: 130px;
-  }
-
-  @media (min-width: 1365px) {
-    font-size: 140px;
-  }
-
-  @media (min-width: 1650px) {
-    font-size: 160px;
-  } */
 `
 
 const ArtistMask = styled.div`
@@ -363,73 +305,12 @@ const InfoGroup = styled.div`
   @media (max-width: 768px) {
     margin: 60px 0 300px 20px;
   }
-
-  /* @media (min-width: 319px) {
-    top: 43%;
-    left: 7%;
-  }
-
-  @media (min-width: 370px) {
-    top: 850px;
-    left: 7%;
-  }
-
-  @media (min-width: 400px) {
-    top: 45%;
-    left: 7%;
-  }
-
-  @media (min-width: 530px) {
-    top: 40%;
-    left: 7%;
-  }
-
-  @media (min-width: 580px) {
-    top: 400px;
-    left: 7%;
-  }
-
-  @media (min-width: 800px) {
-    top: 40%;
-    left: 5%;
-  }
-
-  @media (min-width: 900px) {
-    top: 40%;
-    left: 5%;
-  }
-
-  @media (min-width: 1023px) {
-    top: 40%;
-    left: 38%;
-  }
-
-  @media (min-width: 1365px) {
-    top: 450px;
-    left: 38%;
-  }
-
-  @media (min-width: 1650px) {
-    top: 45%;
-    left: 38%;
-  }
-
-  // @media (min-width: 1365px) {
-  //   bottom: 38%;
-  //   left: 38%;
-  // }
-
-  // @media (min-width: 1650px) {
-  //   width: 700px;
-  //   bottom: 430px;
-  //   left: 40%;
-  // } */
 `
 
 const DateMask = styled.div`
-  /* display: inline-block; */
+  /* margin-top: 100px; */
   overflow: hidden;
-  padding: 8px 0;
+  padding: 8px 8px 0px 0;
   @media (max-width: 700px) {
     margin-top: -8px;
   }
@@ -438,26 +319,12 @@ const DateMask = styled.div`
 const Datum = styled(FrontpageInfos)`
   animation: HeroAnimation 1.3s 1.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-
-  /* background-color: white; */
-  /* width: 203px; */
-  width: auto;
-  text-align: center;
-  border-radius: 64px;
-  border: 2px solid black;
-  padding: 16px 24px;
   margin-bottom: 8px;
-
-  @media (max-width: 700px) {
-    padding: 8px 16px;
-    border: 1px solid #000000;
-  }
 `
 
 const PlaceMask = styled.div`
   display: inline-block;
   overflow: hidden;
-  padding: 8px 0;
   @media (max-width: 700px) {
     margin-top: -8px;
   }
@@ -466,274 +333,12 @@ const PlaceMask = styled.div`
 const Place = styled(FrontpageInfos)`
   animation: HeroAnimation 1.3s 1.6s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
-  width: auto;
-  font-family: "GT-Alpina-Extended-Regular";
-  /* background-color: white; */
-  /* width: 250px; */
-  text-align: center;
-  border-radius: 64px;
-  border: 2px solid #000000;
-  padding: 16px 24px;
-  @media (max-width: 700px) {
-    padding: 8px 16px;
-    border: 1px solid #000000;
-  }
 `
 
 const ImageWrapper = styled.div`
   width: 100vh;
   height: 100vw;
   overflow: hidden;
-`
-
-// LEITGRAFIK - Positionierung einzelner Images
-const LeitgrafikRedLineBlackBrush = styled.img`
-  position: absolute;
-  right: -5%;
-  top: 100px;
-  width: 27%;
-  height: auto;
-
-  @media (max-width: 768px) {
-    top: 150px;
-    width: 40%;
-    height: auto;
-  }
-
-  @media (max-width: 450px) {
-    top: 250px;
-  }
-
-  @media (min-width: 1620px) {
-    top: -0px;
-    width: 30%;
-    height: auto;
-  }
-`
-
-const LeitgrafikPurpleBrush = styled.img`
-  position: absolute;
-  bottom: 20%;
-  left: 35%;
-  width: 16%;
-  height: auto;
-
-  @media (min-width: 320px) {
-    display: none;
-  }
-
-  @media (max-width: 1364px) {
-    bottom: 15%;
-    left: 15%;
-    width: 15%;
-    height: auto;
-  }
-
-  @media (min-width: 1620px) {
-    bottom: 22%;
-    left: 23%;
-    width: 11%;
-    height: auto;
-  }
-`
-
-const LeitgrafikBlackLinesRedBrush = styled.img`
-  position: absolute;
-  bottom: -80px;
-  left: 15%;
-  width: 200px;
-  height: auto;
-
-  @media (max-width: 818px) {
-    display: none;
-  }
-
-  @media (min-width: 819px) {
-    bottom: 50px;
-    left: 16%;
-    width: 200px;
-  }
-
-  @media (min-width: 1366px) {
-    bottom: 60px;
-    width: 240px;
-  }
-
-  @media (min-width: 1640px) {
-    bottom: 50px;
-    left: 18%;
-    width: 300px;
-  }
-`
-
-const LeitgrafikBlackLinesFace = styled.img`
-  position: absolute;
-  top: 300px;
-  left: -2%;
-  width: 280px;
-
-  @media (max-width: 919px) {
-    visibility: hidden;
-  }
-
-  /* @media (min-width: 920px) {
-    visibility: visible;
-    top: 300px;
-    left: -5%;
-    width: 240px;
-  }
-
-  @media (min-width: 1365px) {
-    visibility: visible;
-    top: 350px;
-    left: -2%;
-    width: 320px;
-  }
-
-  @media (min-width: 1640px) {
-    visibility: visible;
-    top: 500px;
-    left: -2%;
-    width: 440px;
-  } */
-`
-
-const LeitgrafikRedLines = styled.img`
-  position: absolute;
-  bottom: -5%;
-  left: 0%;
-  width: 15%;
-  height: auto;
-
-  @media (max-width: 768px) {
-    top: 90%;
-    left: -5%;
-    width: 20%;
-    height: auto;
-  }
-
-  @media (min-width: 1620px) {
-    bottom: -5%;
-    left: 0%;
-    width: 20%;
-    height: auto;
-  }
-`
-
-const LeitgrafikPurpleSprinkles = styled.img`
-  position: absolute;
-  bottom: -100px;
-  right: 400px;
-  width: 400px;
-  height: auto;
-
-  @media (max-width: 500px) {
-    visibility: hidden;
-    /* bottom: 0px; */
-  }
-
-  /* @media (max-width: 1000px) {
-    width: 50%;
-  }
-
-  @media (min-width: 768px) {
-    top: 70%;
-    right: 32%;
-    width: 65%;
-    height: auto;
-  }
-
-  @media (min-width: 1650px) {
-    top: 55%;
-    right: 22%;
-    width: 45%;
-  } */
-`
-
-const LeitgrafikYellow1 = styled.img`
-  position: absolute;
-  top: -120px;
-  left: 8%;
-  width: 300px;
-  height: auto;
-  z-index: 0;
-
-  @media (min-width: 319px) {
-    bottom: 230px;
-    width: 240px;
-  }
-
-  @media (max-width: 850px) {
-    left: -10%;
-  }
-
-  @media (max-width: 700px) {
-    width: 240px;
-  }
-`
-
-const LeitgrafikYellow2 = styled.img`
-  position: absolute;
-  top: -20px;
-  left: 35%;
-  width: 380px;
-  height: auto;
-  z-index: 1;
-
-  @media (max-width: 850px) {
-    left: 28%;
-    top: 120px;
-  }
-
-  @media (max-width: 700px) {
-    width: 240px;
-    top: 120px;
-  }
-`
-
-const LeitgrafikYellowBall = styled.img`
-  position: absolute;
-  width: 300px;
-  bottom: -30px;
-  height: auto;
-  z-index: 1;
-
-  @media (max-width: 374px) {
-    /* position: fixed; */
-    bottom: 20px;
-    right: 20px;
-    width: 200px;
-  }
-
-  @media (min-width: 375px) {
-    bottom: -60px;
-    right: 20px;
-    width: 350px;
-  }
-
-  @media (min-width: 410px) {
-    bottom: -30px;
-    right: 40px;
-    width: 300px;
-  }
-
-  @media (min-width: 850px) {
-    bottom: -100px;
-    right: 0px;
-    width: 450px;
-  }
-
-  @media (min-width: 1020px) {
-    bottom: -110px;
-    right: 40px;
-    width: 500px;
-  }
-
-  @media (min-width: 1620px) {
-    bottom: -140px;
-    right: 30px;
-    width: 550px;
-  }
 `
 
 // LOGO - KuH

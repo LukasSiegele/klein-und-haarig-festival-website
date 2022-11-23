@@ -20,7 +20,7 @@ export default function Message() {
           Facetten erfahrbar machen.
         </MainText>
         <SecondaryGroup>
-          <Icon src="/icons/StarRed.svg"></Icon>
+          <Icon src="/icons/StarBlack.svg"></Icon>
           <SecondaryText>
             Organisiert von Freunden, dem Bunte Platte e.V. <br /> <br />
             Wir wollen einen nicht kommerziellen Raum schaffen, in dem Menschen
@@ -29,7 +29,6 @@ export default function Message() {
           </SecondaryText>
         </SecondaryGroup>
       </Container>
-      <Face />
     </Wrapper>
   )
 }
@@ -91,26 +90,5 @@ const Icon = styled.img`
     margin-top: 2px;
     width: 16px;
     height: 16px;
-  }
-`
-
-const Face = styled.div`
-  background-image: url(${FaceGrafik});
-  width: 450px;
-  height: 476px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  bottom: -5px;
-  right: 10%;
-  transform: rotate(180deg);
-  @media (max-width: 1200px) {
-    right: -1%;
-  }
-  @media (max-width: 1100px) {
-    width: 367px;
-    height: 387px;
-    bottom: -40px;
   }
 `
