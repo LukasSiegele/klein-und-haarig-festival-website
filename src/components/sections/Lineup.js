@@ -72,14 +72,14 @@ export default function Lineup() {
             <Item>
               <Artist>16palomas</Artist>
               <Neu>live</Neu>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
             <Item>
               <LinkInline href="https://soundcloud.com/agyena" target="_blank">
                 {" "}
                 <Artist>AGY3NA</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -89,14 +89,14 @@ export default function Lineup() {
               >
                 <Artist>Anjana</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline href="https://soundcloud.com/ssg-b_e" target="_blank">
                 <Artist>Balearic Eric</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -106,7 +106,7 @@ export default function Lineup() {
               >
                 <Artist>Bleepgeeks</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -116,7 +116,7 @@ export default function Lineup() {
               >
                 <Artist>Chaos Angel</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -126,7 +126,7 @@ export default function Lineup() {
               >
                 <Artist>chewchew</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -136,7 +136,7 @@ export default function Lineup() {
               >
                 <Artist>Cristalyne</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
             <Item>
               <LinkInline
@@ -144,7 +144,7 @@ export default function Lineup() {
                 target="_blank"
               >
                 <Artist>FEEL X</Artist>
-                <Icon src="/icons/StarYellow.svg"></Icon>
+                <Icon src="/icons/StarBlack.svg"></Icon>
               </LinkInline>
             </Item>
 
@@ -153,14 +153,14 @@ export default function Lineup() {
                 <Artist>Ferdinand Domes</Artist>
                 <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline href="https://soundcloud.com/ghsttwn" target="_blank">
                 <Artist>Ghosttown</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -170,7 +170,7 @@ export default function Lineup() {
               >
                 <Artist>Jannis Choppin</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -180,7 +180,7 @@ export default function Lineup() {
               >
                 <Artist>Kalut</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -190,14 +190,14 @@ export default function Lineup() {
               >
                 <Artist>Kia</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline href="https://soundcloud.com/kiawash" target="_blank">
                 <Artist>Kiawash</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -214,13 +214,13 @@ export default function Lineup() {
               >
                 <Artist>FORUM</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
               <Artist>Lu Copper</Artist>
 
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -230,14 +230,14 @@ export default function Lineup() {
               >
                 <Artist>Lucie Vuittong</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline href="https://soundcloud.com/luedj" target="_blank">
                 <Artist>luedj</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -247,7 +247,7 @@ export default function Lineup() {
               >
                 <Artist>Max Langer</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -257,12 +257,12 @@ export default function Lineup() {
               >
                 <Artist>minäminä</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
               <Artist>nåmuh</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
             <Item>
               <LinkInline
@@ -271,12 +271,12 @@ export default function Lineup() {
               >
                 <Artist>Nin</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
               <Artist>SAT 70</Artist>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
             <Item>
               <LinkInline
@@ -286,7 +286,7 @@ export default function Lineup() {
                 <Artist>Schnapolitur 3000</Artist>
                 <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
 
             <Item>
@@ -296,7 +296,7 @@ export default function Lineup() {
               >
                 <Artist>Selin</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
             <Item>
               <LinkInline
@@ -305,7 +305,7 @@ export default function Lineup() {
               >
                 <Artist>Shannon</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
             <Item>
               <LinkInline
@@ -314,7 +314,7 @@ export default function Lineup() {
               >
                 <Artist>Sophie Pschorr</Artist>
               </LinkInline>
-              <Icon src="/icons/StarYellow.svg"></Icon>
+              <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
           </LineupSection>
         </HoverGroup>
