@@ -14,9 +14,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "16": "0.0.2",
+    // "16": "0.0.2",
     "18": "0.0.0",
-    "@airtable/blocks": "^1.15.0",
+    // "@airtable/blocks": "^1.15.0",
     "@paypal/react-paypal-js": "^7.8.1",
     "@rogovdm/gatsby-source-mailchimp": "^1.0.16",
     "airtable": "^0.11.5",
