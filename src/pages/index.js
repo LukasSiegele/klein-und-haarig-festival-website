@@ -1,4 +1,5 @@
 import React from "react"
+import ReactDOM from "react-dom"
 import styled from "styled-components"
 import HeroSection from "../components/sections/HeroSection"
 import SideNavigation from "../components/navigation/SideNav"
