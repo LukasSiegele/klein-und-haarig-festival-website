@@ -19,7 +19,7 @@
     "@rogovdm/gatsby-source-mailchimp": "^1.0.16",
     "airtable": "^0.10.1",
     "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^2.32.13",
+    "gatsby": "^5.1.0",
     "gatsby-plugin-config": "^1.0.7",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-react-helmet": "^3.10.0",
