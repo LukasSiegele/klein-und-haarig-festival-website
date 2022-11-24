@@ -7,15 +7,15 @@ export const BigHeadline = styled.h1`
 `
 
 export const FrontpageHeadline = styled.h1`
-  font-size: 70px;
+  /* font-size: 70px; */
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     font-size: 60px;
-  }
+  } */
 
-  @media (max-width: 700px) {
+  /* @media (max-width: 700px) {
     font-size: 40px;
-  }
+  } */
 `
 
 export const FrontpageInfos = styled.p`
@@ -67,9 +67,9 @@ export const HeadlineRegular = styled.h2`
   font-family: "GT-Alpina-Extended-Regular";
   color: white;
 
-  @media (max-width: 800px) {
+  /* @media (max-width: 800px) {
     font-size: 28px;
-  }
+  } */
 `
 export const HeadlineRegular2 = styled.h2`
   font-family: "GT-Alpina-Extended-Regular";
@@ -121,9 +121,9 @@ export const ImageDescription = styled.p`
   margin-top: 8px;
 `
 
-export const TickerText = styled.p`
+export const TickerText = styled.h2`
   font-family: "GT-Alpina-Extended-Regular";
-  font-size: 17px;
+  /* font-size: 17px; */
   /* color: black; */
 `
 

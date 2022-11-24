@@ -56,13 +56,13 @@ const SideNavWrapper = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `
 
 const SideNavLogoWrapper = styled.div`
-  margin: 40px;
+  margin: 14px;
   width: 84px;
   height: 79px;
 `

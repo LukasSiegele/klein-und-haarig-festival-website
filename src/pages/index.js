@@ -69,6 +69,7 @@ const Wrapper = styled.div`
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
+  background-color: #ff7121;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
@@ -109,7 +110,8 @@ const HideSideline = styled.div`
 
 const TickerGroup = styled.div`
   position: absolute;
-  bottom: 60px;
+  bottom: 0;
+
   z-index: 999;
 `
 

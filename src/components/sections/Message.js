@@ -19,22 +19,29 @@ export default function Message() {
           Schwarzwald, die die elektronische Musikkultur in all ihren Farben und
           Facetten erfahrbar machen.
         </MainText>
-        <SecondaryGroup>
-          <Icon src="/icons/StarBlack.svg"></Icon>
-          <SecondaryText>
-            Organisiert von Freunden, dem Bunte Platte e.V. <br /> <br />
-            Wir wollen einen nicht kommerziellen Raum schaffen, in dem Menschen
-            zusammenkommen und mit ihnen Vielfalt, Offenheit, Toleranz und
-            Freiheit feiern.
-          </SecondaryText>
-        </SecondaryGroup>
+
+        <Content3erGrid>
+          <Column1 />
+          <Column2>
+            <SecondaryGroup>
+              <Icon src="/icons/StarBlack.svg"></Icon>
+              <SecondaryText>
+                Organisiert von Freunden, dem Bunte Platte e.V. <br /> <br />
+                Wir wollen einen nicht kommerziellen Raum schaffen, in dem
+                Menschen zusammenkommen und mit ihnen Vielfalt, Offenheit,
+                Toleranz und Freiheit feiern.
+              </SecondaryText>
+            </SecondaryGroup>
+          </Column2>
+          <Column3 />
+        </Content3erGrid>
       </Container>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  padding: 120px 60px 120px 60px;
+  padding: 120px 20px 120px 20px;
   border-top: 1px solid black;
   @media (max-width: 800px) {
     padding: 60px 20px 60px 20px;
@@ -48,7 +55,7 @@ const Container = styled.div`
   position: relative;
   z-index: 99;
   grid-template-rows: 1fr auto;
-  gap: 200px;
+  gap: 100px;
   align-items: end;
   background-color: none;
   /* overflow: hidden; */
@@ -69,6 +76,23 @@ const SecondaryGroup = styled.div`
   grid-template-columns: auto 1fr;
   gap: 16px;
   /* margin-top: 80px; */
+`
+
+const Content3erGrid = styled.div`
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+`
+
+const Column1 = styled.div`
+  display: grid;
+  padding: 20px;
+`
+const Column2 = styled.div`
+  padding: 20px;
+`
+const Column3 = styled.div`
+  padding: 20px;
 `
 
 const SecondaryText = styled(TextSmall)`

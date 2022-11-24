@@ -30,7 +30,7 @@ const Ticker = () => {
           <RTicker speed={6} move={isMoving}>
             {({ index }) => (
               <Wrapper>
-                <TickerText className="tickerText">
+                {/* <TickerText className="tickerText">
                   Weitere Infos auf{" "}
                   <LinkInline
                     href="https://instagram.com/kleinundhaarig?igshid=YmMyMTA2M2Y="
@@ -45,6 +45,9 @@ const Ticker = () => {
                   >
                     Soundcloud
                   </LinkInline>
+                </TickerText> */}
+                <TickerText className="tickerText">
+                  Das Datum für nächstes Jahr steht fest
                 </TickerText>
                 {/* <TickerText className="tickerText">
                   Der Ticketkauf ist wieder möglich!
@@ -78,31 +81,36 @@ const Icon = styled.img`
 
 const Wrapper = styled.div`
   /* display: flex; */
-  padding: 4px 0;
+
   align-self: center;
   display: grid;
   grid-template-columns: 1fr auto;
   white-space: nowrap;
+  padding: -10px;
 
   /* width: auto; */
   /* display: grid; */
 `
 
 const TickerMask = styled.div`
-  display: block;
-  overflow: hidden;
+  /* display: grid;
+  align-content: center; */
+  /* padding: 20px 0; */
+
+  /* overflow: hidden; */
 `
 
 const TickerWrapper = styled.div`
-  z-index: 999;
+  /* z-index: 999; */
   left: 0;
   width: 100vw;
 
   display: grid;
   background-color: #000;
+  padding: 10px 0;
   /* background-color: #ff003a; */
 
-  animation: TickerAnimation 1.3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: TickerAnimation 3.3s 0s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
   @keyframes TickerAnimation {
@@ -114,7 +122,7 @@ const TickerWrapper = styled.div`
 
     100% {
       opacity: 1;
-      max-height: 50px;
+      max-height: 200px;
       /* transform: translateX(0px); */
     }
   }
