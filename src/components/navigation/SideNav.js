@@ -77,36 +77,3 @@ const SideNavLogo = styled.div`
     cursor: pointer;
   }
 `
-
-// Div of Links in SideNav
-// const SideNavLinkGroup = styled.div`
-//     float: left;
-//     margin-top: 25%;
-//     margin-left: 15%;
-//     display: block;
-//     width: 70%;
-//     height: auto;
-// `
-
-// // Links in SideNav
-// const SideNavLinks = styled(SideNavStyledLink)`
-//     text-decoration: none;
-//     display: block;
-//     float: left;
-//     width: 130px;
-//     color: black;
-//     font-size: 0.8em;
-//     font-weight: normal;
-//     margin-bottom: 12px;
-
-//     & > :hover {
-//         cursor: pointer;
-//       }
-
-//     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-//     :hover {
-//       /* transform: translateY(-10px); */
-//       /* transform: scale(1.03);
-//       cursor: pointer; */
-//     }
-// `
