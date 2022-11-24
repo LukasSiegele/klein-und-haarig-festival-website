@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import NavBackground from "../../../public/images/SideNavBackground.png"
+import NavBackground from "../../static/images/SideNavBackground.png"
 
-import LogoSideNav from "../../../public/images/LogoSideNav.svg"
+import LogoSideNav from "../../static/images/LogoSideNav.svg"
 
 export default function SideNavigation() {
   return (

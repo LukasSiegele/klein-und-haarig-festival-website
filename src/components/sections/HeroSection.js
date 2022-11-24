@@ -2,17 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import LeitgrafikImage1 from "../../../public/images/LeitgrafikImage1.png"
-import LeitgrafikImage2 from "../../../public/images/LeitgrafikImage2.png"
-import LeitgrafikImage3 from "../../../public/images/LeitgrafikImage3.png"
-import LeitgrafikImage4 from "../../../public/images/LeitgrafikImage4.png"
-import LeitgrafikImage5 from "../../../public/images/LeitgrafikImage5.png"
-import LeitgrafikImage6 from "../../../public/images/LeitgrafikImage6.png"
-import LeitgrafikImage7 from "../../../public/images/LeitgrafikImage7.png"
-import LeitgrafikImage8 from "../../../public/images/LeitgrafikImage8.png"
-import LeitgrafikImage9 from "../../../public/images/LeitgrafikImage9.png"
-
-import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
+// import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
 // import useAutoCount from "../../helper/useAutoCount"
 import useCamperCount from "../../helper/useCamperCount"
