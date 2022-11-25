@@ -28,11 +28,11 @@ export default function HeroSection() {
         <Column1>
           <TitleLine>
             <KleinMask>
-              <TitleKlein> Klein </TitleKlein>
+              <TitleKlein>Klein </TitleKlein>
             </KleinMask>
 
             <UndMask>
-              <TitleUndStroke> und </TitleUndStroke>
+              <TitleUndStroke>und </TitleUndStroke>
             </UndMask>
             <HaarigMask>
               <TitleHaarig>Haarig</TitleHaarig>
