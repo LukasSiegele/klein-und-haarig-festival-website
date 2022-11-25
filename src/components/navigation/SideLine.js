@@ -42,6 +42,13 @@ const SideNavWrapper = styled.div`
 `
 
 const Ghost = styled.div`
-  width: 84px;
+  width: 20px;
   margin: 40px;
 `
+
+// const SideNavLogoWrapper = styled.div`
+//   margin: 14px;
+//   margin-right: 3px;
+//   width: 84px;
+//   height: 79px;
+// `

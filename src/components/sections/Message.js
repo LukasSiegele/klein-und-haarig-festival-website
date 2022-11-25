@@ -42,7 +42,7 @@ export default function Message() {
 
 const Wrapper = styled.div`
   padding: 120px 20px 120px 20px;
-  border-top: 1px solid black;
+
   @media (max-width: 800px) {
     padding: 60px 20px 60px 20px;
   }

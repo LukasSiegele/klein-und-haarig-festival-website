@@ -63,6 +63,7 @@ const SideNavWrapper = styled.div`
 
 const SideNavLogoWrapper = styled.div`
   margin: 14px;
+  margin-right: 3px;
   width: 84px;
   height: 79px;
 `
