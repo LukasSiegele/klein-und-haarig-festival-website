@@ -41,7 +41,8 @@ export default function HeroSection() {
         </Column1>
         <Column2>
           <DateMask>
-            <Datum>14 — 17/07/2023</Datum>
+            <Datum>14 — 17</Datum>
+            <Datum>07/2023</Datum>
           </DateMask>
           <DateMask>
             <LinkInline
