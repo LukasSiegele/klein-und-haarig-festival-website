@@ -88,7 +88,7 @@ export default function Images() {
 
 const Container = styled.div`
   background-color: black;
-  max-width: 1700px;
+  /* max-width: 1700px; */
   overflow: hidden;
   position: relative;
   padding: 400px 0 200px 0;

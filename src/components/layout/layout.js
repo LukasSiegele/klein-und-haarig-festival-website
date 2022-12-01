@@ -4,7 +4,7 @@ import { Headline, SubheaderSmall, Note } from "../styles/TextStyles"
 import CookieConsent from "react-cookie-consent"
 import ReactGA from "react-ga"
 
-import Footer from "../footer/footer"
+// import Footer from "../footer/footer"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import "../layout/layout.css"
@@ -45,7 +45,7 @@ export default function Layout({ children }) {
           </CookieText>{" "}
         </CookieConsent>
       </CookieGroup>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

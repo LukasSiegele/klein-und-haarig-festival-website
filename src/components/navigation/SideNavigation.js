@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import NavBackground from "../../../static/images/SideNavBackground.png"
 
-import LogoSideNav from "../../../static/images/LogoSideNav.svg"
+import LogoSideNav from "../../../static/images/LogoSideNav.png"
 
 export default function SideNavigation() {
   return (
@@ -34,12 +34,14 @@ export default function SideNavigation() {
 
 // Fixed SideNav on Frontpage
 const SideNavWrapper = styled.div`
-  /* position: fixed; */
+  position: fixed;
+
+  /* background-color: white; */
   /* background-image: url(${NavBackground}); */
 
-  height: auto;
-  /* z-index: 100; */
-  border-right: 1px solid;
+  height: 100vh;
+  z-index: 100;
+  /* border-right: 1px solid; */
 
   animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
@@ -62,8 +64,8 @@ const SideNavWrapper = styled.div`
 `
 
 const SideNavLogoWrapper = styled.div`
-  margin: 14px;
-  margin-right: 3px;
+  margin: 30px;
+  margin-right: 20px;
   width: 84px;
   height: 79px;
 `
@@ -73,6 +75,8 @@ const SideNavLogo = styled.div`
   max-width: 87%;
   height: 87%;
   background-image: url(${LogoSideNav});
+  mix-blend-mode: color-dodge;
+
   background-size: cover;
   :hover {
     cursor: pointer;

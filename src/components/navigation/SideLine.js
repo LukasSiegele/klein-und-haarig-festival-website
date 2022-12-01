@@ -19,8 +19,8 @@ const SideBarBG = styled.div`
 
 const SideNavWrapper = styled.div`
   height: auto;
-  border-right: 1px solid white;
-  mix-blend-mode: difference;
+  border-right: 1px solid black;
+  /* mix-blend-mode: difference; */
   animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
 
@@ -42,7 +42,7 @@ const SideNavWrapper = styled.div`
 `
 
 const Ghost = styled.div`
-  width: 20px;
+  width: 54px;
   margin: 40px;
 `
 

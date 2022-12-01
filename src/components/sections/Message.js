@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import FaceGrafik from "../../../static/images/Face.png"
+
+import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
 
 import {
   // PageHeader,
@@ -41,6 +42,8 @@ export default function Message() {
 }
 
 const Wrapper = styled.div`
+  /* background-image: url(${BackgroundTexture}); */
+  /* background-color: #79837c; */
   padding: 120px 20px 120px 20px;
 
   @media (max-width: 800px) {
@@ -106,13 +109,7 @@ const SecondaryText = styled(TextSmall)`
 `
 
 const Icon = styled.img`
-  margin-top: -2px;
-  width: 24px;
-  height: 24px;
-
-  @media (max-width: 800px) {
-    margin-top: 2px;
-    width: 16px;
-    height: 16px;
-  }
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
 `

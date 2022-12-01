@@ -393,64 +393,63 @@ const Item = styled.div`
   margin-bottom: 8px;
   position: relative;
   overflow: hidden;
-
-  @media (max-width: 1100px) {
+  @media (max-width: 800px) {
     display: block;
   }
-  @media (max-width: 800px) {
+  /* @media (max-width: 800px) {
     display: inline-block;
   }
   @media (max-width: 450px) {
     display: block;
-  }
+  } */
 `
 
 const Artist = styled(HeadlineRegular)`
   color: black;
   float: left;
-  @media (max-width: 1100px) {
+  /* @media (max-width: 800px) {
     float: none;
-  }
-  @media (max-width: 800px) {
+  } */
+  /* @media (max-width: 800px) {
     float: left;
   }
   @media (max-width: 450px) {
     float: left;
-  }
+  } */
 `
 
 const Icon = styled.img`
-  margin: 20px 16px 0 16px;
+  margin: 10px 16px 0 16px;
   width: 24px;
   height: 24px;
   float: left;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 800px) {
     display: none;
   }
 
-  @media (max-width: 800px) {
+  /* @media (max-width: 800px) {
     display: inline-block;
-    margin: 8px 8px 0 8px;
+    margin: 12px 8px 0 8px;
     width: 16px;
     height: 16px;
   }
 
   @media (max-width: 450px) {
     display: none;
-  }
+  } */
 `
 const IconLast = styled.img`
-  margin: 20px 16px 0 16px;
+  margin: 10px 16px 0 16px;
   width: 24px;
   height: 24px;
   opacity: 0;
 
-  @media (max-width: 800px) {
-    margin: 8px 8px 0 8px;
+  /* @media (max-width: 800px) {
+    margin: 12px 8px 0 8px;
     width: 16px;
     height: 16px;
-  }
+  } */
 `
 
 const LiveArtist = styled.div`

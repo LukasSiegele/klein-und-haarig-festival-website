@@ -37,14 +37,14 @@ export default function Footer() {
 
 const Wrapper = styled.div`
   bottom: -400px;
-  width: 100vw;
+  /* width: 100vw; */
   background-color: black;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 40px 40px 50px;
+  padding: 40px 40px 150px 40px;
   /* display: grid; */
 
   @media (max-width: 800px) {
-    padding: 40px 20px 50px;
+    padding: 40px 40px 50px 40px;
   }
 
   a {

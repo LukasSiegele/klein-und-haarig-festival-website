@@ -121,8 +121,8 @@ export const ImageDescription = styled.p`
   margin-top: 8px;
 `
 
-export const TickerText = styled.h2`
-  font-family: "GT-Alpina-Extended-Regular";
+export const TickerText = styled.h3`
+  /* font-family: "GT-Alpina-Extended-Regular"; */
   /* font-size: 17px; */
   /* color: black; */
 `

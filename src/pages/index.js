@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import HeroSection from "../components/sections/HeroSection"
-import SideNavigation from "../components/navigation/SideNav"
+import Hero from "../components/sections/Hero"
+import SideNavigation from "../components/navigation/SideNavigation"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Ticker from "../components/ticker/Ticker"
+import Footer from "../components/footer/footer"
 
 import { ParallaxProvider } from "react-scroll-parallax"
 
@@ -19,89 +20,113 @@ export default function IndexPage() {
   return (
     <>
       <SEO title="Home" />
-      <Layout>
-        <ParallaxProvider>
-          <Wrapper>
-            <MainGrid>
-              <SideNavigation />
-              <HeroSection />
-            </MainGrid>
-            <TickerGroup>
+
+      <ParallaxProvider>
+        <Wrapper>
+          {/* <MainGrid> */}
+          <SideNavigation />
+
+          <Content>
+            <Layout>
+              {/* <Wrapper> */}
+              <HeroSection>
+                <MainGrid>
+                  <SideLine />
+                  <Hero />
+                </MainGrid>
+              </HeroSection>
+              {/* <TickerGroup>
               <Ticker />
-            </TickerGroup>
-          </Wrapper>
+            </TickerGroup> */}
+              {/* </Wrapper> */}
 
-          <MessageSection>
-            <SideLine />
-            <Message />
-          </MessageSection>
+              <MessageSection>
+                <MainGrid>
+                  <SideLine />
+                  <Message />
+                </MainGrid>
+              </MessageSection>
 
-          <LineupSection>
-            <SideLine />
-            <Lineup />
-          </LineupSection>
+              <LineupSection>
+                <MainGrid>
+                  <SideLine />
+                  <Lineup />
+                </MainGrid>
+              </LineupSection>
 
-          {/* <ImageSection> */}
-          {/* <SideLine /> */}
-          <Images />
-          {/* </ImageSection> */}
+              <ImageSection>
+                <MainGrid>
+                  <SideLine />
+                  <Images />
+                </MainGrid>
+              </ImageSection>
 
-          <FoerderungSection>
-            {/* <HideSideline>
+              {/* <FoerderungSection> */}
+              {/* <HideSideline>
               <SideLine />
             </HideSideline> */}
-            <Foerderungen />
-          </FoerderungSection>
-        </ParallaxProvider>
-      </Layout>
-      <Spacer />
+              <MainGrid>
+                <SideLine />
+                <Foerderungen />
+              </MainGrid>
+
+              <MainGrid>
+                <SideLine />
+                <Footer />
+              </MainGrid>
+              {/* </FoerderungSection> */}
+            </Layout>
+          </Content>
+          {/* </MainGrid> */}
+
+          <TickerGroup>
+            <Ticker />
+          </TickerGroup>
+        </Wrapper>
+      </ParallaxProvider>
     </>
   )
 }
 
 const Wrapper = styled.div`
-  z-index: 1;
-  background-image: url(${BackgroundTexture});
-  position: relative;
   overflow: hidden;
 `
 
+// const SideNav = styled.div`
+//   obsolute
+//   overflow: hidden;
+// `
+
+const Content = styled.div`
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+`
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  background-color: #ff7121;
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
-  }
-`
-const MessageSection = styled.div`
-  display: grid;
-  background-image: url(${BackgroundTexture});
-  grid-template-columns: auto 1fr;
   overflow: hidden;
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
+`
+
+const HeroSection = styled.div`
+  background-color: #ff7121;
+`
+const MessageSection = styled.div`
+  background-image: url(${BackgroundTexture});
+`
+
+const ImageSection = styled.div`
+  background-image: black;
 `
 
 const LineupSection = styled.div`
-  display: grid;
   background-color: #cbc3ff;
-  grid-template-columns: auto 1fr;
-  overflow: hidden;
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
-  }
 `
 
 const FoerderungSection = styled.div`
-  /* display: grid; */
   background-color: white;
-  /* grid-template-columns: auto 1fr;
-  overflow: hidden;
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
-  } */
 `
 
 const HideSideline = styled.div`
@@ -109,7 +134,7 @@ const HideSideline = styled.div`
 `
 
 const TickerGroup = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
 
   z-index: 999;
