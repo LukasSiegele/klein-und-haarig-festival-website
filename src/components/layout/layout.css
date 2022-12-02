@@ -208,17 +208,17 @@ h1 {
   line-height: 0.9em;
 }
 
-h2 {
+/* h2 {
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 2em;
   line-height: 1.1em;
   color: white;
-}
+} */
 
 h2,
 h3,
 button,
-label,
+/* label, */
 input {
   font-family: "GT-Alpina-Extended-Regular";
   font-size: 2em;
@@ -250,7 +250,7 @@ p {
 @media (max-width: 800px) {
   h2,
   h3,
-  label,
+  button,
   input {
     font-size: 1.64em;
   }

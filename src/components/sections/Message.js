@@ -65,7 +65,7 @@ const Container = styled.div`
   color: white;
 
   @media (max-width: 800px) {
-    gap: 100px;
+    gap: 20px;
   }
 `
 
@@ -78,6 +78,7 @@ const SecondaryGroup = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 16px;
+
   /* margin-top: 80px; */
 `
 
@@ -85,6 +86,9 @@ const Content3erGrid = styled.div`
   z-index: 10;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const Column1 = styled.div`

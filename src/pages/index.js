@@ -28,61 +28,60 @@ export default function IndexPage() {
           <SideNavigation />
 
           <Content>
-            <Layout>
-              {/* <Wrapper> */}
-              <HeroSection>
-                <MainGrid>
-                  <SideLine />
-                  <Hero />
-                </MainGrid>
-              </HeroSection>
-              {/* <TickerGroup>
+            {/* <Wrapper> */}
+            <HeroSection>
+              <MainGrid>
+                <SideLine />
+                <Hero />
+              </MainGrid>
+            </HeroSection>
+            {/* <TickerGroup>
               <Ticker />
             </TickerGroup> */}
-              {/* </Wrapper> */}
+            {/* </Wrapper> */}
 
-              <MessageSection>
-                <MainGrid>
-                  <SideLine />
-                  <Message />
-                </MainGrid>
-              </MessageSection>
+            <MessageSection>
+              <MainGrid>
+                <SideLine />
+                <Message />
+              </MainGrid>
+            </MessageSection>
 
-              <LineupSection>
-                <MainGrid>
-                  <SideLine />
-                  <Lineup />
-                </MainGrid>
-              </LineupSection>
+            <LineupSection>
+              <MainGrid>
+                <SideLine />
+                <Lineup />
+              </MainGrid>
+            </LineupSection>
 
-              <ImageSection>
-                <MainGrid>
-                  <SideLine />
-                  <Images />
-                </MainGrid>
-              </ImageSection>
+            <ImageSection>
+              <MainGrid>
+                <SideLine />
+                <Images />
+              </MainGrid>
+            </ImageSection>
 
-              {/* <FoerderungSection> */}
-              {/* <HideSideline>
+            {/* <FoerderungSection> */}
+            {/* <HideSideline>
               <SideLine />
             </HideSideline> */}
-              <MainGrid>
-                <SideLine />
-                <Foerderungen />
-              </MainGrid>
+            <MainGrid>
+              <SideLine />
+              <Foerderungen />
+            </MainGrid>
 
-              <MainGrid>
-                <SideLine />
-                <Footer />
-              </MainGrid>
-              {/* </FoerderungSection> */}
-            </Layout>
+            <MainGrid>
+              <SideLine />
+              <Footer />
+            </MainGrid>
+            {/* </FoerderungSection> */}
           </Content>
           {/* </MainGrid> */}
 
           <TickerGroup>
             <Ticker />
           </TickerGroup>
+          <Layout />
         </Wrapper>
       </ParallaxProvider>
     </>
