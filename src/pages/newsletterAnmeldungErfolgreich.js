@@ -5,7 +5,7 @@ import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
-import SubmittedImage from "../../static/images/Bach.jpg"
+import SubmittedImage from "../../static/images/Bach.JPG"
 
 export default function NewsletterAnmeldungErfolgreich() {
   return (
