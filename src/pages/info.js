@@ -22,9 +22,9 @@ export default function Info() {
           <MainGrid>
             <SideLine />
             <ContentSection>
-              <ImageSection_Mobile>
+              <ImageSectionMobile>
                 <InfoBild1 />
-              </ImageSection_Mobile>
+              </ImageSectionMobile>
               <TextSection>
                 <HeaderSection>
                   <InfoHeadline>
@@ -199,9 +199,9 @@ export default function Info() {
                   </InfoText>
                 </InfoSection>
               </TextSection>
-              <ImageSection_Desktop>
+              <ImageSectionDesktop>
                 <InfoBild1 />
-              </ImageSection_Desktop>
+              </ImageSectionDesktop>
             </ContentSection>
           </MainGrid>
         </Content>
@@ -299,7 +299,7 @@ const LinkInline = styled.a`
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `
 
-const ImageSection_Desktop = styled.div`
+const ImageSectionDesktop = styled.div`
   background-color: green;
   height: 100vh;
   @media (max-width: 1100px) {
@@ -307,7 +307,7 @@ const ImageSection_Desktop = styled.div`
   }
 `
 
-const ImageSection_Mobile = styled.div`
+const ImageSectionMobile = styled.div`
   background-color: green;
   height: 70vh;
   @media (min-width: 1101px) {
