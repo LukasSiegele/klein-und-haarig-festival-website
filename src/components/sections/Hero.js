@@ -414,8 +414,8 @@ const IconGroup = styled.div`
 
 const Icon = styled.img`
   /* margin-top: -2px; */
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   align-self: center;
   color: white;
 
