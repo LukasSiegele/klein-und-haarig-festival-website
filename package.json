@@ -86,7 +86,7 @@
     "dotenv": "^16.0.3",
     "prettier": "2.8.0",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0"
+    "webpack-cli": "^5.0.1"
   },
   "repository": {
     "type": "git",
