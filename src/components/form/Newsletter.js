@@ -66,7 +66,7 @@ export default function Newsletter() {
           </InputGroup>
 
           <ButtonWrapper>
-            <FormButton typ="submit" label="Beitreten" />
+            <FormButton typ="submit" label="Anmelden" />
           </ButtonWrapper>
         </ButtonInputGroup>
       </form>

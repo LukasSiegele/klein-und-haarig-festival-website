@@ -14,20 +14,16 @@ export default function SideNavigation() {
           <SideNavLogo />
         </Link>
       </SideNavLogoWrapper>
-      {/* <SideNavLinkGroup>
-                <SideNavLinks to={"/voll"} activeClassName="active">
-                    Festival 
-                </SideNavLinks>
-                <SideNavLinks to={"/voll"}>
-                    Programm
-                </SideNavLinks>
-                <SideNavLinks to={"/voll"}>
-                    Infos
-                </SideNavLinks>
-                <SideNavLinks to={"/helfer"}>
-                    Helfen
-                </SideNavLinks>
-            </SideNavLinkGroup> */}
+      <SideNavLinkGroup>
+        {/* <SideNavLinks to={"/voll"} activeClassName="active">
+          Festival
+        </SideNavLinks>
+        <SideNavLinks to={"/voll"}>Programm</SideNavLinks>
+        <SideNavLinks to={"/voll"}>Infos</SideNavLinks> */}
+        {/* <Link to={"/info"}>
+          <ListItem>Info</ListItem>
+        </Link> */}
+      </SideNavLinkGroup>
     </SideNavWrapper>
   )
 }
@@ -42,6 +38,7 @@ const SideNavWrapper = styled.div`
   height: 100vh;
   z-index: 100;
   /* border-right: 1px solid; */
+  padding: 30px;
 
   animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
@@ -64,8 +61,8 @@ const SideNavWrapper = styled.div`
 `
 
 const SideNavLogoWrapper = styled.div`
-  margin: 30px;
   margin-right: 20px;
+  margin-bottom: 40px;
   width: 84px;
   height: 79px;
 `
@@ -82,3 +79,7 @@ const SideNavLogo = styled.div`
     cursor: pointer;
   }
 `
+
+const SideNavLinkGroup = styled.div``
+
+const ListItem = styled.p``

@@ -74,13 +74,13 @@ export default function Hero() {
         <Column2>
           {/* <DateMask> */}
           <InfoText>
-            Melde dich zu unserem Newsletter an und bekomme frühzeitig
-            Informationen zum vergünstigten Presale und Festival 2023.
+            Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
+            zum Ticket Presale und zum Festival 2023.
           </InfoText>
           {/* </DateMask> */}
           <Newsletter></Newsletter>
           <InstagramSection>
-            <InfoText>Und folg uns auf Insta du kleiner Racker ;)</InfoText>
+            <InfoText>Folge uns auf Instagram</InfoText>
             <InstaButton>
               <Link
                 to="https://www.instagram.com/kleinundhaarig/"
