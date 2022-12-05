@@ -45,9 +45,10 @@
     "dotenv": "^16.0.3",
     "prettier": "2.8.0",
     "react-dom": "^18.2.0",
-    
-    
   },
+  "engines" : {  
+    "node" : ">=18.0.0"
+  }
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
