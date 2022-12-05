@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 
 export default function Privacy() {
   return (
     <Layout>
-      <SEO title="Datenschutz" />
+      {/* <SEO title="Datenschutz" /> */}
       <Wrapper>
         <Content>
           <Section>

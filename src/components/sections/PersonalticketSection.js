@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback } from "react"
 import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import Layout from "../layout/layout"
-import SEO from "../layout/seo"
+// import SEO from "../layout/seo"
 import HelperSection from "./vip/HelperSection"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import MobileLogoSVG from "../../../static/images/LogoSideNav.svg"
@@ -66,7 +66,7 @@ const PersonalTicketSection = props => {
 
   return (
     <Layout>
-      <SEO title="personal ticket area" />
+      {/* <SEO title="personal ticket area" /> */}
       <Container>
         <MobileSection>
           <MUpper>

@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import LogoSVG from "../../static/images/LogoSideNavWhite.svg"
 
 import FailedGekritzel from "../../static/images/FailedGekritzel2.png"
@@ -20,7 +20,7 @@ export default function Failed({ location }) {
   const { ticketID: ticketID } = state
   return (
     <Layout>
-      <SEO title="Failed" />
+      {/* <SEO title="Failed" /> */}
       <Container>
         <Link to="/">
           <Logo />

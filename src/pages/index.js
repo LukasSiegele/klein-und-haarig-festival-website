@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Hero from "../components/sections/Hero"
 import SideNavigation from "../components/navigation/SideNavigation"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import Ticker from "../components/ticker/Ticker"
 import Footer from "../components/footer/footer"
 
@@ -19,7 +19,7 @@ import Foerderungen from "../components/sections/Foerderungen"
 export default function IndexPage() {
   return (
     <>
-      <SEO title="Home" />
+      {/* <SEO title="Home" /> */}
 
       <ParallaxProvider>
         <Wrapper>

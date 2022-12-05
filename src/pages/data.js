@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Form from "../components/form/Form"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
 
 export default function Data({ location }) {
@@ -11,7 +11,7 @@ export default function Data({ location }) {
 
   return (
     <Layout>
-      <SEO title="Data" />
+      {/* <SEO title="Data" /> */}
       <ShopTitle info="Schritt 2/4" title="Ticket personalisieren" />
       <Wrapper>
         <Form sumTickets={sumTickets} onlyFriends={onlyFriends} />

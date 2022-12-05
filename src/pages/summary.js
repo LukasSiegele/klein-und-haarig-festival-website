@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
 import { navigate } from "gatsby"
 import addToMailchimp from "gatsby-plugin-mailchimp"
@@ -370,7 +370,7 @@ export default function Summary({ location }) {
 
   return (
     <Layout>
-      <SEO title="Summary" />
+      {/* <SEO title="Summary" /> */}
       <ShopTitle info="Schritt 4/4" title="Zusammenfassung & Bezahlen" />
       <Container>
         {paymentPending ? (

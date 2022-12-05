@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import FormButton from "../buttons/FormButton"
 import Layout from "../layout/layout"
-import SEO from "../layout/seo"
+// import SEO from "../layout/seo"
 import LogoSVG from "../../static/images/LogoSideNavWhite.svg"
 import Aufbau from "../../static/images/Aufbau.jpg"
 // import VipSection1 from "../sections/vip/VipSection1"
@@ -38,7 +38,7 @@ export default function TestPersonalTicketSection() {
 
   return (
     <Layout>
-      <SEO title="personal ticket area" />
+      {/* <SEO title="personal ticket area" /> */}
       <Container>
         <Wrapper>
           <Link to="/">

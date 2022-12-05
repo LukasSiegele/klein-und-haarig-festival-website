@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import LogoSVG from "../../static/images/LogoSideNav.svg"
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
 import Stairway from "../../static/images/Stairway.jpg"
@@ -34,7 +34,7 @@ export default function Submitted({ navigation }) {
 
   return (
     <Layout>
-      <SEO title="Submitted" />
+      {/* <SEO title="Submitted" /> */}
       <Container>
         <Link to="/">
           <Logo />

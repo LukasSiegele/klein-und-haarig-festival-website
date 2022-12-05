@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import FormButton from "../../components/buttons/FormButton"
 import Layout from "../../components/layout/layout"
-import SEO from "../../components/layout/seo"
+// import SEO from "../../components/layout/seo"
 import LogoSVG from "../../../static/images/LogoSideNavWhite.svg"
 import Stairway from "../../../static/images/TicketareaLogin.jpg"
 import Zeplin from "../../../static/images/SuccessZeppelin.png"
@@ -12,27 +12,26 @@ import Kritzel from "../../../static/images/TicketareaRotesKritzel.png"
 import Klecks from "../../../static/images/TicketareaLila.png"
 
 import {
-    Headline,
-    PageInfo,
-    Note,
-    ImageDescription,
-  } from "../../components/styles/TextStyles"
+  Headline,
+  PageInfo,
+  Note,
+  ImageDescription,
+} from "../../components/styles/TextStyles"
 
 const VipLoginSection = props => {
+  const [ticketid, setTicketid] = useState("")
 
-    const [ticketid, setTicketid] = useState("")
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log(ticketid)
+    props.handleSubmit(ticketid)
+  }
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        console.log(ticketid)
-       props.handleSubmit(ticketid)
-    }
+  console.log(props.hasError)
 
-    console.log(props.hasError)
-
-    return(
-        <Layout>
-      <SEO title="vip area" />
+  return (
+    <Layout>
+      {/* <SEO title="vip area" /> */}
       <Container>
         <Link to="/">
           <Logo />
@@ -68,12 +67,13 @@ const VipLoginSection = props => {
                         placeholder="Ticket-ID"
                         required
                         onChange={e => setTicketid(e.target.value)}
-                        />{" "}
+                      />{" "}
                     </InputSection>
                     <ButtonSection>
-                    {props.hasError ? <ErrorMsg>Wrong Ticket ID</ErrorMsg> :null}
-                        <FormButton typ="submit" label="Login"></FormButton>
-                        
+                      {props.hasError ? (
+                        <ErrorMsg>Wrong Ticket ID</ErrorMsg>
+                      ) : null}
+                      <FormButton typ="submit" label="Login"></FormButton>
                     </ButtonSection>
                   </form>
                 </LoginWrapper>
@@ -91,15 +91,13 @@ const VipLoginSection = props => {
         </Wrapper>
       </Container>
     </Layout>
-    )
+  )
 }
 
-export default VipLoginSection;
-
-
+export default VipLoginSection
 
 const Container = styled.div`
-background: black;
+  background: black;
   display: grid;
   overflow: hidden;
   color: white;
@@ -257,9 +255,9 @@ const ButtonSection = styled.div`
   max-width: 400px;
 `
 const ErrorMsg = styled(Note)`
- color: red; 
-margin-top: 13px;
-@media (max-width: 768px) {
-  margin-top: 4px;
-}
+  color: red;
+  margin-top: 13px;
+  @media (max-width: 768px) {
+    margin-top: 4px;
+  }
 `

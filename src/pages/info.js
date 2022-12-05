@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
@@ -14,7 +14,7 @@ import Info1 from "../../static/images/InfoBild1.jpg"
 export default function Info() {
   return (
     <Layout>
-      <SEO title="Info" />
+      {/* <SEO title="Info" /> */}
       <Wrapper>
         <SideNavigation />
 

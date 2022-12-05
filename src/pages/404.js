@@ -2,13 +2,13 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import FormButton from "../components/buttons/FormButton"
 
 export default function NotFoundPage() {
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      {/* <SEO title="404: Not found" /> */}
       <Wrapper>
         <Title>404 — Not Found</Title>
         <Description>I like Turtles.</Description>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
+// import SEO from "../components/layout/seo"
 import ShopTitle from "../components/shopping/ShopTitle"
 import FormButton from "../components/buttons/FormButton"
 import { navigate } from "gatsby"
@@ -90,7 +90,7 @@ export default function HelferDetails({ location }) {
 
   return (
     <Layout>
-      <SEO title="Helfer" />
+      {/* <SEO title="Helfer" /> */}
       <ShopTitle info="Schritt 3.5/4" title="Helfer:innnen Details" />
       <Container>
         <Wrapper>
