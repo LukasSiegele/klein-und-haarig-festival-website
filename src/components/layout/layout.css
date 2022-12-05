@@ -203,7 +203,7 @@ h1 {
   font-weight: 50;
   color: rgba(255, 255, 255);
   font-size: 4.5em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin: 0;
   line-height: 0.9em;
 }

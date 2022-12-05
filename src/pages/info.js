@@ -9,6 +9,8 @@ import { Link } from "gatsby"
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
 
+import Info1 from "../../static/images/InfoBild1.jpg"
+
 export default function Info() {
   return (
     <Layout>
@@ -20,7 +22,18 @@ export default function Info() {
           <MainGrid>
             <SideLine />
             <ContentSection>
-              <InfoSection>
+              <ImageSection_Mobile>
+                <InfoBild1 />
+              </ImageSection_Mobile>
+              <TextSection>
+                <HeaderSection>
+                  <InfoHeadline>
+                    {" "}
+                    Wir glauben daran, dass das Unsichere, das nicht ganz
+                    Greifbare den Reiz ausmacht. Deshalb hier das Wichtigste in
+                    Kürze.
+                  </InfoHeadline>
+                </HeaderSection>
                 <InfoSection>
                   <InfoLabel>Location</InfoLabel>
                   <InfoText>
@@ -58,78 +71,8 @@ export default function Info() {
                 </InfoSection>
 
                 <InfoSection>
-                  <InfoLabel>An- / Abreise mit dem Auto</InfoLabel>
-                  <InfoText>
-                    Auf dem Festivalgelände wird es in diesem Jahr keine
-                    Parkmöglichkeiten für Autos geben. Wir werden aber eine
-                    Ladezone einrichten, in die du zum Be- und Entladen (max. 5
-                    min) vorfahren kannst.
-                    <br />
-                    Unser Parkplatz befindet sich hier:{" "}
-                    <LinkInline
-                      href="https://goo.gl/maps/VYxFbGm8zefcC2dG7"
-                      target="_blank"
-                    >
-                      Parkplatz Kaltenbronn
-                    </LinkInline>
-                    . Ein Shuttle bringt dich bei deiner Anreise von dort zum
-                    Festival bzw. bei deiner Abreise dorthin zurück.
-                  </InfoText>
-
-                  {/* <img
-                        src={require("../../../static/images/Shuttle.jpg")}
-                        width="100%"
-                        height="auto"
-                      /> */}
-
-                  <DetailLabel>— Anreise</DetailLabel>
-                  <InfoText>
-                    Komme bei deiner Anreise bitte zuerst zum Festivaleingang,
-                    um dort dein Gepäck und deine Mitfahrenden abzuladen (max. 5
-                    min). Fahre dann alleine zum Parkplatz. Der Shuttle bringt
-                    dich von dort wieder zurück zum Festival.
-                  </InfoText>
-                  <DetailLabel>— Abreise</DetailLabel>
-                  <InfoText>
-                    Vom Festivaleingang bringt der Shuttle alle Fahrer*innen zum
-                    Parkplatz. Fahre anschließend zum Festival um dort zu
-                    Beladen.
-                  </InfoText>
-                  <DetailLabel>— Hinweis</DetailLabel>
-                  <InfoText>
-                    Der Shuttle kann ausschließlich zur An- und Abreise genutzt
-                    werden. Vergewissere dich daher, dein gesamtes Gepäck,
-                    insbesondere alle Wertgegenstände, aus dem Auto zu laden.
-                    Der Parkplatz ist öffentlich und wird nicht überwacht. Wir
-                    übernehmen keine Haftung. Zu Stoßzeiten solltest du
-                    Wartezeiten einplanen. Wir bitten um dein Verständnis und
-                    deine Geduld.
-                  </InfoText>
-                </InfoSection>
-
-                <InfoSection>
-                  <InfoLabel>Anreise mit dem Camper </InfoLabel>
-                  <InfoText>
-                    Mit einem Camperticket kannst du auf das Gelände fahren und
-                    dort für die Dauer des Festivals stehen bleiben. Melde dich
-                    dazu mit deinem Ticket am Einlass und wir zeigen dir deinen
-                    Parkplatz.
-                  </InfoText>
-
-                  <DetailLabel>— Wichtig: Plane mitbringen</DetailLabel>
-                  <InfoText>
-                    Das Gelände befindet sich in einem Wasserschutzgebiet.
-                    Bringe deshalb bitte eine undurchlässiche Plane mit, auf die
-                    du deinen Camper stellen kannst. Es darf kein Öl oder
-                    Treibstoff in den Boden gelangen.
-                  </InfoText>
-                </InfoSection>
-
-                <InfoSection>
-                  <InfoLabel>Corona</InfoLabel>
-                  <InfoText>
-                    Bitte teste dich vor der Anreise zum Schutz aller Anderen.
-                  </InfoText>
+                  <InfoLabel>Anreise mit dem Auto</InfoLabel>
+                  <InfoText>Infos folgen.</InfoText>
                 </InfoSection>
 
                 <InfoSection>
@@ -160,14 +103,6 @@ export default function Info() {
                 </InfoSection>
 
                 <InfoSection>
-                  <InfoLabel>Einlass </InfoLabel>
-                  <InfoText>
-                    Halte am Einlass bitte deinen Ausweis und dein Ticket
-                    (QR-Code) bereit. Kein Einlass ohne Ticket!
-                  </InfoText>
-                </InfoSection>
-
-                <InfoSection>
                   <InfoLabel>Bezahlen </InfoLabel>
                   <InfoText>
                     Auf dem Festival kannst du nur mit Bargeld bezahlen. Es gibt
@@ -176,7 +111,7 @@ export default function Info() {
                 </InfoSection>
 
                 <InfoSection>
-                  <InfoLabel>Müll</InfoLabel>
+                  <InfoLabel>Müll und Umweltschutz</InfoLabel>
                   <InfoText>
                     Das gesamte Festivalgelände befindet sich in einem
                     Wasserschutzgebiet. Wir haben uns verpflichtet den Zeltplatz
@@ -191,10 +126,10 @@ export default function Info() {
                 <InfoSection>
                   <InfoLabel>Zelten</InfoLabel>
                   <InfoText>
-                    Du kannst dein Zelt auf der ausgewiesenen Campingfläche
-                    aufstellen. Achtung! Unter dem Zeltplatz verläuft eine
-                    Starkstromleitung. Heringe und Zeltanker über 30 cm Länge
-                    sind deshalb nicht zulässig.
+                    Zelten ist im Festivalticket inklusive. Du kannst dein Zelt
+                    auf der ausgewiesenen Campingfläche aufstellen. Achtung!
+                    Unter dem Zeltplatz verläuft eine Starkstromleitung. Heringe
+                    und Zeltanker über 30 cm Länge sind deshalb nicht zulässig.
                   </InfoText>
                 </InfoSection>
 
@@ -240,18 +175,6 @@ export default function Info() {
                 </InfoSection>
 
                 <InfoSection>
-                  <InfoLabel>Lost & Found</InfoLabel>
-                  <InfoText>
-                    Bitte sei ehrlich und bringe Gefundenes an eine unserer
-                    offenen Bars. Diese sollten auch immer die erste
-                    Anlaufstelle sein, wenn du etwas verloren hast. Wenn dort
-                    nichts abgegeben wurde oder du deinen Verlust erst Zuhause
-                    bemerkst, schreib uns eine Mail und wir werden sehen was wir
-                    tun können.
-                  </InfoText>
-                </InfoSection>
-
-                <InfoSection>
                   <InfoLabel>Kinder & Minderjährige</InfoLabel>
                   <InfoText>
                     Kinder und Minderjährige haber nur in Begleitung einer oder
@@ -275,8 +198,10 @@ export default function Info() {
                     eurer Vierbeiner.
                   </InfoText>
                 </InfoSection>
-              </InfoSection>
-              <ImageSection></ImageSection>
+              </TextSection>
+              <ImageSection_Desktop>
+                <InfoBild1 />
+              </ImageSection_Desktop>
             </ContentSection>
           </MainGrid>
         </Content>
@@ -291,8 +216,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  overflow-x: hidden;
-  background-color: blue;
+  background-color: white;
   display: grid;
   grid-template-columns: auto;
 `
@@ -309,32 +233,60 @@ const ContentSection = styled.div`
   background-color: red;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const TextSection = styled.div`
+  overflow-x: hidden;
+  background-color: white;
+  height: 100vh;
+  padding: 25px 10px 0 10px;
+  @media (max-width: 1100px) {
+    height: auto;
+  }
+  @media (max-width: 1100px) {
+    padding: 10px 10px 0 10px;
+  }
+`
+
+const HeaderSection = styled.div`
+  height: 85vh;
+  @media (max-width: 1100px) {
+    height: auto;
+    margin-bottom: 200px;
+  }
 `
 
 const InfoSection = styled.div`
-  background-color: yellow;
-  height: 100vh;
+  margin-bottom: 60px;
 `
 
-const ImageSection = styled.div`
-  background-color: green;
-  height: 100vh;
+const InfoHeadline = styled.h3`
+  color: black;
+  display: inline-block;
+  max-width: 800px;
+  text-indent: 60px;
 `
 
 const InfoLabel = styled.h3`
-  color: white;
-  margin-bottom: 8px;
+  color: black;
+  margin-bottom: 12px;
   display: inline-block;
   max-width: 800px;
 `
 
-const InfoText = styled(Text)`
+const InfoText = styled.p`
+  color: black;
+  font-family: "GT-Alpina-Extended-Regular";
   margin-bottom: 20px;
-  opacity: 0.55;
+  opacity: 0.8;
   max-width: 800px;
 `
 
 const DetailLabel = styled(SubheaderSmall)`
+  color: black;
   font-family: "GT-Alpina-Extended-Regular";
   margin-top: 32px;
   margin-bottom: 6px;
@@ -342,6 +294,40 @@ const DetailLabel = styled(SubheaderSmall)`
 `
 
 const LinkInline = styled.a`
+  color: black;
   padding-bottom: 1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+`
+
+const ImageSection_Desktop = styled.div`
+  background-color: green;
+  height: 100vh;
+  @media (max-width: 1100px) {
+    display: none;
+  }
+`
+
+const ImageSection_Mobile = styled.div`
+  background-color: green;
+  height: 70vh;
+  @media (min-width: 1101px) {
+    display: none;
+  }
+`
+
+const InfoBild1 = styled.div`
+  height: 100vh;
+  /* width: 300px; */
+  /* border: 20px solid white; */
+  background-image: url(${Info1});
+  background-size: cover;
+  @media (max-width: 1100px) {
+    max-width: 100%;
+    max-height: 100%;
+    height: inherit !important;
+  }
+  /* @media (max-width: 1300px) {
+    width: 352px;
+    height: 548px;
+  } */
 `
