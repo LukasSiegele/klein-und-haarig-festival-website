@@ -33,11 +33,11 @@ export default function Hero() {
           {/* <KleinMask> */}
 
           <C1Content>
-            <MLogoGroup>
+            {/* <MLogoGroup>
               <Link to="/">
                 <MLogo />
               </Link>
-            </MLogoGroup>
+            </MLogoGroup> */}
             <TitleKlein>Klein und Haarig Festival</TitleKlein>
             {/* </KleinMask> */}
 

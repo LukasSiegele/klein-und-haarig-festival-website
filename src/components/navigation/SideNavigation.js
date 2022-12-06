@@ -4,7 +4,9 @@ import { Link } from "gatsby"
 
 import NavBackground from "../../../static/images/SideNavBackground.png"
 
-import LogoSideNav from "../../../static/images/LogoSideNav.png"
+import LogoSideNav from "../../../static/images/LogoSideNav-White.png"
+
+import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation() {
   return (
@@ -15,14 +17,18 @@ export default function SideNavigation() {
         </Link>
       </SideNavLogoWrapper>
       <SideNavLinkGroup>
-        {/* <SideNavLinks to={"/voll"} activeClassName="active">
-          Festival
-        </SideNavLinks>
-        <SideNavLinks to={"/voll"}>Programm</SideNavLinks>
-        <SideNavLinks to={"/voll"}>Infos</SideNavLinks> */}
         {/* <Link to={"/info"}>
           <ListItem>Info</ListItem>
+        </Link>
+        <Link to={"/info"}>
+          <ListItem>Info</ListItem>
+        </Link>
+        <Link to={"/info"}>
+          <ListItem>Info</ListItem>
         </Link> */}
+        <Link to={"/info"}>
+          <ListItem>Info</ListItem>
+        </Link>
       </SideNavLinkGroup>
     </SideNavWrapper>
   )
@@ -31,14 +37,16 @@ export default function SideNavigation() {
 // Fixed SideNav on Frontpage
 const SideNavWrapper = styled.div`
   position: fixed;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: auto auto;
 
-  /* background-color: white; */
   /* background-image: url(${NavBackground}); */
 
   height: 100vh;
   z-index: 100;
   /* border-right: 1px solid; */
-  padding: 30px;
+  width: 133px;
 
   animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
@@ -61,16 +69,13 @@ const SideNavWrapper = styled.div`
 `
 
 const SideNavLogoWrapper = styled.div`
-  margin-right: 20px;
-  margin-bottom: 40px;
-  width: 84px;
-  height: 79px;
+  padding: 15px;
 `
 
 // KuH Logo in SideNav
 const SideNavLogo = styled.div`
-  max-width: 87%;
-  height: 87%;
+  width: 64px;
+  height: 62px;
   background-image: url(${LogoSideNav});
   mix-blend-mode: color-dodge;
 
@@ -80,6 +85,9 @@ const SideNavLogo = styled.div`
   }
 `
 
-const SideNavLinkGroup = styled.div``
+const SideNavLinkGroup = styled.div`
+  /* display: grid; */
+  text-align: center;
+`
 
-const ListItem = styled.p``
+const ListItem = styled(TextSmall)``

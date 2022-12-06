@@ -20,6 +20,8 @@ const SideBarBG = styled.div`
 const SideNavWrapper = styled.div`
   height: auto;
   border-right: 1px solid black;
+  width: 133px;
+  background-color: black;
   /* mix-blend-mode: difference; */
   animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0;
