@@ -16,11 +16,11 @@ export default function Info() {
     <Layout>
       {/* <SEO title="Info" /> */}
       <Wrapper>
-        <SideNavigation />
+        <SideNavigation bgColor="white"/>
 
         <Content>
           <MainGrid>
-            <SideLine />
+            <SideLine/>
             <ContentSection>
               <ImageSectionMobile>
                 <InfoBild1 />

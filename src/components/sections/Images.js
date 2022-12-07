@@ -42,7 +42,7 @@ export default function Images() {
             <NeuGroup>
               <ListItem>Lichtung</ListItem>
               <Up>
-                <Icon src="/icons/Star.svg"></Icon>
+                <Icon src="/icons/banner-star.svg"></Icon>
                 <Neu>Funktion One</Neu>
               </Up>
             </NeuGroup>
@@ -50,7 +50,7 @@ export default function Images() {
             <NeuGroup>
               <ListItem>Am Bach</ListItem>
               <Up>
-                <Icon src="/icons/Star.svg"></Icon>
+                <Icon src="/icons/banner-star.svg"></Icon>
                 <Neu>Funktion One</Neu>
               </Up>
             </NeuGroup>
@@ -87,11 +87,10 @@ export default function Images() {
 }
 
 const Container = styled.div`
-  background-color: black;
   /* max-width: 1700px; */
   overflow: hidden;
   position: relative;
-  padding: 400px 0 200px 0;
+  padding: 300px 0;
   @media (max-width: 768px) {
     padding: 300px 0 50px 0;
   }
@@ -223,13 +222,14 @@ const ListHeader = styled(TextSmall)`
   font-weight: 600; */
   font-family: "GT-Alpina-Extended-Regular";
 
-  color: rgba(255, 255, 255, 0.75);
+  color: black;
   /* text-transform: uppercase; */
   margin-bottom: 8px;
 `
 
 const ListItem = styled(HeadlineRegular)`
-  mix-blend-mode: exclusion;
+  /* mix-blend-mode: exclusion; */
+  color: black;
 `
 
 const NeuGroup = styled.div`
@@ -245,15 +245,15 @@ const Up = styled.div`
 `
 
 const Neu = styled(ImageDescription)`
-  font-family: "Inter";
-  color: #cbc3ff;
-  text-transform: uppercase;
+  /* font-family: "Inter"; */
+  color: white;
+  /* text-transform: uppercase; */
 `
 
 const Icon = styled.img`
-  margin-top: 7px;
-  width: 16px;
-  height: 16px;
+  margin-top: 10px;
+  width: 10px;
+  height: 10px;
   color: red;
 `
 
@@ -261,7 +261,7 @@ const Row25 = styled.div`
   display: grid;
   grid-template-columns: 1;
   justify-items: right;
-  padding-right: 22%;
+  padding-right: 12%;
   position: static;
 
   @media (max-width: 768px) {
@@ -294,8 +294,8 @@ const Image025 = styled.div`
 
 const ListWrapper25 = styled.div`
   position: absolute;
-  left: -240px;
-  bottom: 25px;
+  left: -540px;
+  bottom: -10px;
 
   @media (max-width: 768px) {
     left: 15px;

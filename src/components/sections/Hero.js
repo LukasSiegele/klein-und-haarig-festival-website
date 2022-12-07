@@ -108,11 +108,10 @@ export default function Hero() {
 
 const Container = styled.div`
   height: 100vh;
-
+  margin-bottom: 200px;
   /* position: relative; */
   @media (max-width: 1100px) {
     height: auto;
-    padding-bottom: 120px;
   }
 `
 
@@ -135,7 +134,7 @@ const Column1 = styled.div`
   /* align-content: center; */
   /* background-color: red; */
   /* opacity: 0.4; */
-  padding: 25px 10px 0 10px;
+  padding: 25px 20px 0 20px;
   @media (max-width: 800px) {
     padding: 10px 10px 0 10px;
   }
@@ -143,10 +142,10 @@ const Column1 = styled.div`
 const Column2 = styled.div`
   /* background-color: red; */
   /* opacity: 0.2; */
-  padding: 25px 10px 0 10px;
+  padding: 25px 20px 0 20px;
   border-left: 1px solid black;
   @media (max-width: 1100px) {
-    padding: 120px 10px 0 10px;
+    padding: 120px 20px 0 20px;
     border: 0;
   }
 `

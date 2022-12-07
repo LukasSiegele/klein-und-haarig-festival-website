@@ -24,7 +24,7 @@ export default function IndexPage() {
       <ParallaxProvider>
         <Wrapper>
           {/* <MainGrid> */}
-          <SideNavigation />
+          <SideNavigation bgColor="#ff7121" />
 
           <Content>
             {/* <Wrapper> */}
@@ -60,19 +60,19 @@ export default function IndexPage() {
               </MainGrid>
             </ImageSection>
 
-            {/* <FoerderungSection> */}
-            {/* <HideSideline>
-              <SideLine />
-            </HideSideline> */}
-            <MainGrid>
-              <SideLine />
-              <Foerderungen />
-            </MainGrid>
+            <FoerderungenSection>
+              <MainGrid>
+                <SideLine />
+                <Foerderungen />
+              </MainGrid>
+            </FoerderungenSection>
 
-            <MainGrid>
-              <SideLine />
-              <Footer />
-            </MainGrid>
+            <FooterSection>
+              <MainGrid>
+                <SideLine />
+                <Footer bgColor="#ff7121" />
+              </MainGrid>
+            </FooterSection>
             {/* </FoerderungSection> */}
           </Content>
           {/* </MainGrid> */}
@@ -103,7 +103,7 @@ const Content = styled.div`
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  overflow: hidden;
+  /* overflow: hidden; */
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
@@ -113,19 +113,27 @@ const HeroSection = styled.div`
   background-color: #ff7121;
 `
 const MessageSection = styled.div`
-  background-image: url(${BackgroundTexture});
-`
-
-const ImageSection = styled.div`
-  background-image: black;
+  /* background-image: url(${BackgroundTexture}); */
+  background-color: #ff7121;
 `
 
 const LineupSection = styled.div`
-  background-color: #cbc3ff;
+  /* background-color: #cbc3ff; */
+  background-color: #ff7121;
+  z-index: 9;
 `
 
-const FoerderungSection = styled.div`
-  background-color: white;
+const ImageSection = styled.div`
+  /* background-image: black; */
+  background-color: #ff7121;
+`
+
+const FoerderungenSection = styled.div`
+  background-color: #ff7121;
+`
+
+const FooterSection = styled.div`
+  background-color: #ff7121;
 `
 
 const HideSideline = styled.div`

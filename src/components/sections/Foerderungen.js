@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   padding: 120px 40px;
   display: grid;
   justify-content: center;
-  background: white;
+  /* background: white; */
   @media (max-width: 768px) {
     padding: 60px 20px;
   }
@@ -40,7 +40,6 @@ const Content = styled.div`
   max-width: 800px;
   display: grid;
   justify-content: center;
-  overflow: hidden;
 `
 
 const Headline = styled(TextSmall)`
@@ -55,7 +54,12 @@ const LogoGroup = styled.div`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   gap: 64px;
+  background-color: white;
+  border-radius: 400px;
+  border: 0px solid black;
+  padding: 40px;
   @media (max-width: 768px) {
+    padding: 30px;
     grid-template-columns: 1fr;
   }
 `

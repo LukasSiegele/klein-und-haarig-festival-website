@@ -51,7 +51,7 @@ export default function Lineup() {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <Header>2022</Header>
+          <Header>Lineup 2022</Header>
           <RingGroup>
             {/* <animated.div
             ref={ref}
@@ -348,9 +348,10 @@ const Ring = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding: 120px 60px 120px 60px;
+  padding: 0 20px 0 20px;
+  margin-bottom: 200px;
   @media (max-width: 800px) {
-    padding: 60px 20px 60px 20px;
+    padding: 0 10px 0 10px;
   }
   position: relative;
 `

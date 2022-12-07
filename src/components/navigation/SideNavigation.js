@@ -4,20 +4,21 @@ import { Link } from "gatsby"
 
 import NavBackground from "../../../static/images/SideNavBackground.png"
 
-import LogoSideNav from "../../../static/images/LogoSideNav-White.png"
+import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
 
 import { TextSmall } from "../styles/TextStyles"
 
-export default function SideNavigation() {
+export default function SideNavigation(props) {
   return (
-    <SideNavWrapper>
-      <SideNavLogoWrapper>
-        <Link to="/">
-          <SideNavLogo />
-        </Link>
-      </SideNavLogoWrapper>
-      <SideNavLinkGroup>
-        {/* <Link to={"/info"}>
+    <Desktop>
+      <SideNavWrapper bgColor={props.bgColor}>
+        <SideNavLogoWrapper>
+          <Link to="/">
+            <SideNavLogo />
+          </Link>
+        </SideNavLogoWrapper>
+        <SideNavLinkGroup>
+          {/* <Link to={"/info"}>
           <ListItem>Info</ListItem>
         </Link>
         <Link to={"/info"}>
@@ -26,26 +27,38 @@ export default function SideNavigation() {
         <Link to={"/info"}>
           <ListItem>Info</ListItem>
         </Link> */}
-        <Link to={"/info"}>
-          <ListItem>Info</ListItem>
-        </Link>
-      </SideNavLinkGroup>
-    </SideNavWrapper>
+          {/* <Link to={"/info"}>
+            <a>
+              <ListItem>Info</ListItem>
+            </a>
+          </Link> */}
+        </SideNavLinkGroup>
+      </SideNavWrapper>
+    </Desktop>
   )
 }
 
 // Fixed SideNav on Frontpage
+const MobileView = styled.div`
+  /* display: none; */
+`
+
+const Desktop = styled.div`
+  /* display: none; */
+`
+
 const SideNavWrapper = styled.div`
   position: fixed;
   display: grid;
   justify-items: center;
   grid-template-rows: auto auto;
+  background-color: ${props => props.bgColor};
 
   /* background-image: url(${NavBackground}); */
 
   height: 100vh;
   z-index: 100;
-  /* border-right: 1px solid; */
+  border-right: 1px solid;
   width: 133px;
 
   animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -77,7 +90,6 @@ const SideNavLogo = styled.div`
   width: 64px;
   height: 62px;
   background-image: url(${LogoSideNav});
-  mix-blend-mode: color-dodge;
 
   background-size: cover;
   :hover {
@@ -90,4 +102,11 @@ const SideNavLinkGroup = styled.div`
   text-align: center;
 `
 
-const ListItem = styled(TextSmall)``
+const ListItem = styled(TextSmall)`
+  color: black;
+  font-family: "GT-Alpina-Extended-Regular";
+
+  &:hover {
+    cursor: pointer;
+  }
+`

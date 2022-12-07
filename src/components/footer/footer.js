@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-export default function Footer() {
+export default function Footer(props) {
   return (
-    <Wrapper>
+    <Wrapper bgColor={props.bgColor}>
       <Content>
         <WrapperLeft>
           <BuntePlatte>© Bunte Platte e.V.</BuntePlatte>
@@ -38,8 +38,9 @@ export default function Footer() {
 const Wrapper = styled.div`
   bottom: -400px;
   /* width: 100vw; */
-  background-color: black;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  /* background-color: black; */
+  background-color: ${props => props.bgColor};
+  /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
   padding: 40px 40px 150px 40px;
   /* display: grid; */
 
@@ -50,7 +51,7 @@ const Wrapper = styled.div`
   a {
     padding-bottom: 0px;
     border-bottom: 0px;
-    color: white;
+    color: black;
   }
 `
 
@@ -74,25 +75,25 @@ const Content = styled.div`
 `
 
 const BuntePlatte = styled.h5`
-  color: white;
+  color: black;
 `
 
 const Description = styled.h5`
-  color: white;
+  color: black;
   margin-top: 20px;
   @media (max-width: 800px) {
     margin-top: 10px;
   }
 `
 const Text = styled.h5`
-  color: white;
+  color: black;
 `
 
 const WrapperLeft = styled.div`
   justify-self: start;
   max-width: 500px;
   * {
-    opacity: 0.5;
+    /* opacity: 0.8; */
   }
 `
 

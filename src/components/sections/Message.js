@@ -15,13 +15,18 @@ export default function Message() {
   return (
     <Wrapper>
       <Container>
-        <MainText>
-          Klein und Haarig — 4 Tage Festival in einem idyllischen Tal im
-          Schwarzwald, die die elektronische Musikkultur in all ihren Farben und
-          Facetten erfahrbar machen.
-        </MainText>
+        <FirstGrid>
+          <Column1>
+            <MainText>
+              Klein und Haarig — 4 Tage Festival in einem idyllischen Tal im
+              Schwarzwald, die die elektronische Musikkultur in all ihren Farben
+              und Facetten erfahrbar machen.
+            </MainText>
+          </Column1>
+          <Column2 />
+        </FirstGrid>
 
-        <Content3erGrid>
+        <SecondGrid>
           <Column1 />
           <Column2>
             <SecondaryGroup>
@@ -34,8 +39,8 @@ export default function Message() {
               </SecondaryText>
             </SecondaryGroup>
           </Column2>
-          <Column3 />
-        </Content3erGrid>
+          {/* <Column3 /> */}
+        </SecondGrid>
       </Container>
     </Wrapper>
   )
@@ -44,10 +49,11 @@ export default function Message() {
 const Wrapper = styled.div`
   /* background-image: url(${BackgroundTexture}); */
   /* background-color: #79837c; */
-  padding: 120px 20px 120px 20px;
+  padding: 0px 20px 0 20px;
+  margin-bottom: 200px;
 
   @media (max-width: 800px) {
-    padding: 60px 20px 60px 20px;
+    padding: 0px 10px 0 10px;
   }
   position: relative;
 `
@@ -71,21 +77,32 @@ const Container = styled.div`
 
 const MainText = styled(HeadlineRegular)`
   color: black;
-  max-width: 970px;
+  /* max-width: 970px; */
 `
 
 const SecondaryGroup = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 16px;
+  border-left: 1px solid black;
+  padding-left: 10px;
 
-  /* margin-top: 80px; */
+  margin-top: 40px;
 `
 
-const Content3erGrid = styled.div`
+const FirstGrid = styled.div`
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const SecondGrid = styled.div`
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
@@ -93,14 +110,15 @@ const Content3erGrid = styled.div`
 
 const Column1 = styled.div`
   display: grid;
-  padding: 20px;
+
+  @media (max-width: 800px) {
+    border: none;
+  }
 `
-const Column2 = styled.div`
-  padding: 20px;
-`
-const Column3 = styled.div`
-  padding: 20px;
-`
+const Column2 = styled.div``
+// const Column3 = styled.div`
+//   padding: 20px;
+// `
 
 const SecondaryText = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
