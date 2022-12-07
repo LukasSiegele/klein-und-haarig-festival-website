@@ -64,14 +64,14 @@ const Container = styled.div`
   position: relative;
   z-index: 99;
   grid-template-rows: 1fr auto;
-  gap: 100px;
+  gap: 80px;
   align-items: end;
   background-color: none;
   /* overflow: hidden; */
   color: white;
 
   @media (max-width: 800px) {
-    gap: 20px;
+    gap: 60px;
   }
 `
 
@@ -87,7 +87,7 @@ const SecondaryGroup = styled.div`
   border-left: 1px solid black;
   padding-left: 10px;
 
-  margin-top: 40px;
+  /* margin-top: 20px; */
 `
 
 const FirstGrid = styled.div`

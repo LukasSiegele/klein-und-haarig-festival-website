@@ -15,6 +15,7 @@ import Message from "../components/sections/Message"
 import SideLine from "../components/navigation/SideLine"
 import Lineup from "../components/sections/Lineup"
 import Foerderungen from "../components/sections/Foerderungen"
+import MobileNavigation from "../components/navigation/MobileNavigation"
 
 export default function IndexPage() {
   return (
@@ -28,6 +29,7 @@ export default function IndexPage() {
 
           <Content>
             {/* <Wrapper> */}
+            {/* <MobileNavigation /> */}
             <HeroSection>
               <MainGrid>
                 <SideLine />
@@ -111,6 +113,9 @@ const MainGrid = styled.div`
 
 const HeroSection = styled.div`
   background-color: #ff7121;
+  @media (max-width: 800px) {
+    padding-top: 75px;
+  }
 `
 const MessageSection = styled.div`
   /* background-image: url(${BackgroundTexture}); */
