@@ -21,7 +21,7 @@
     "gatsby": "^5.2.0",
     "gatsby-plugin-config": "^1.0.7",
     "gatsby-plugin-mailchimp": "^5.2.2",
-    "gatsby-plugin-styled-components": "^6.2.0",
+    "gatsby-plugin-styled-components": "^3.10.0",
     "node": "^18.12.1",
     "react-bootstrap": "^2.6.0",
     "react-cookie-consent": "^8.0.1",
