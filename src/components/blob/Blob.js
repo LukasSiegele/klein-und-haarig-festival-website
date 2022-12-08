@@ -30,10 +30,7 @@ export default function Goo() {
         onMouseMove={e => set({ xy: [e.clientX, e.clientY] })}
       >
         {trail.map((props, index) => (
-          <animated.div
-            key={index}
-            style={{ transform: props.xy.interpolate(trans) }}
-          />
+          <animated.div key={index} style={{ transform: props.xy.to(trans) }} />
         ))}
       </div>
     </>
