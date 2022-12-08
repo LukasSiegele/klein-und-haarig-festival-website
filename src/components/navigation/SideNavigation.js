@@ -27,11 +27,11 @@ export default function SideNavigation(props) {
         <Link to={"/info"}>
           <ListItem>Info</ListItem>
         </Link> */}
-          {/* <Link to={"/info"}>
+          <Link to={"/info"}>
             <a>
               <ListItem>Info</ListItem>
             </a>
-          </Link> */}
+          </Link>
         </SideNavLinkGroup>
       </SideNavWrapper>
     </Desktop>
@@ -52,9 +52,8 @@ const SideNavWrapper = styled.div`
   display: grid;
   justify-items: center;
   grid-template-rows: auto auto;
-  background-color: ${props => props.bgColor};
 
-  /* background-image: url(${NavBackground}); */
+  /* background-color: ${props => props.bgColor}; */
 
   height: 100vh;
   z-index: 100;
@@ -83,6 +82,7 @@ const SideNavWrapper = styled.div`
 
 const SideNavLogoWrapper = styled.div`
   padding: 15px;
+  /* mix-blend-mode: difference !important; */
 `
 
 // KuH Logo in SideNav
@@ -100,10 +100,12 @@ const SideNavLogo = styled.div`
 const SideNavLinkGroup = styled.div`
   /* display: grid; */
   text-align: center;
+  filter: invert(1) !important;
+  mix-blend-mode: difference !important;
 `
 
 const ListItem = styled(TextSmall)`
-  color: black;
+  color: #999;
   font-family: "GT-Alpina-Extended-Regular";
 
   &:hover {
