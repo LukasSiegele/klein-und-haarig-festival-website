@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^7.8.2",
-    "@rogovdm/gatsby-source-mailchimp": "^1.0.16",
     "airtable": "^0.11.6",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.2.0",
@@ -46,7 +45,7 @@
     "prettier": "2.8.0",
     "react-dom": "^18.2.0",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0"
+    "webpack-cli": "^5.0.1"
   },
   "repository": {
     "type": "git",
