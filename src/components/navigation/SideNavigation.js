@@ -27,11 +27,11 @@ export default function SideNavigation(props) {
         <Link to={"/info"}>
           <ListItem>Info</ListItem>
         </Link> */}
-          <Link to={"/info"}>
+          {/* <Link to={"/info"}>
             <a>
               <ListItem>Info</ListItem>
             </a>
-          </Link>
+          </Link> */}
         </SideNavLinkGroup>
       </SideNavWrapper>
     </Desktop>
