@@ -26,12 +26,12 @@ export default function SideNavigation(props) {
         </Link>
         <Link to={"/info"}>
           <ListItem>Info</ListItem>
-        </Link> */}
-          {/* <Link to={"/info"}>
+        {/* </Link> */}
+          <Link to={"/info"}>
             <a>
               <ListItem>Info</ListItem>
             </a>
-          </Link> */}
+          </Link>{" "}
         </SideNavLinkGroup>
       </SideNavWrapper>
     </Desktop>
@@ -100,12 +100,10 @@ const SideNavLogo = styled.div`
 const SideNavLinkGroup = styled.div`
   /* display: grid; */
   text-align: center;
-  filter: invert(1) !important;
-  mix-blend-mode: difference !important;
 `
 
 const ListItem = styled(TextSmall)`
-  color: #999;
+  color: black;
   font-family: "GT-Alpina-Extended-Regular";
 
   &:hover {

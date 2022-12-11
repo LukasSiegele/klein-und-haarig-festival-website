@@ -29,7 +29,7 @@ export default function IndexPage() {
 
           <Content>
             {/* <Wrapper> */}
-            {/* <MobileNavigation /> */}
+            <MobileNavigation bgColor="#ff7121" />
             <HeroSection>
               <MainGrid>
                 <SideLine />
@@ -120,13 +120,13 @@ const HeroSection = styled.div`
 const MessageSection = styled.div`
   /* background-image: url(${BackgroundTexture}); */
   background-color: #ff7121;
-  background-color: black;
+  /* background-color: black; */
 `
 
 const LineupSection = styled.div`
   /* background-color: #cbc3ff; */
   background-color: #ff7121;
-  background-color: #cbc3ff;
+  /* background-color: #cbc3ff; */
   z-index: 9;
 `
 

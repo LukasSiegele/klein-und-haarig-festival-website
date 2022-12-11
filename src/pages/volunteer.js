@@ -12,14 +12,14 @@ import { SubheaderSmall, Text } from "../components/styles/TextStyles"
 import Info1 from "../../static/images/InfoBild1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 
-export default function Info() {
+export default function Volunteer() {
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
       <Wrapper>
-        <MobileNavigation isInfo="info" bgColor="white" />
-
+        <MobileNavigation isVolunteer="true" bgColor="white" />
         <SideNavigation bgColor="white" />
+
         <Content>
           <MainGrid>
             <SideLine />

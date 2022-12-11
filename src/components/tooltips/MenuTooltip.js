@@ -1,39 +1,45 @@
+import { Link } from "gatsby"
 import React, { useState } from "react"
 import styled from "styled-components"
 
 export default function MenuTooltip(props) {
-  const { isOpen } = props
+  const { isOpen, isInfo, isVolunteer, bgColor } = props
   return (
-    <Wrapper isOpen={isOpen}>
+    <Wrapper isOpen={isOpen} bgColor={bgColor}>
       <MenuButton>
-        <MenuLabel>Info</MenuLabel>
+        <Link to="/info">
+          <MenuLabel isInfo={isInfo}>Info</MenuLabel>
+        </Link>
       </MenuButton>
       <MenuButton>
-        <MenuLabel>Volunteer</MenuLabel>
+        <Link to="/volunteer">
+          <MenuLabel isVolunteer={isVolunteer}>Volunteer</MenuLabel>
+        </Link>
       </MenuButton>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  background-color: white;
+  background-color: ${props => props.bgColor};
   padding: 20px;
   position: absolute;
   left: 0;
   top: 75px;
   width: 100vw;
+
   opacity: ${props => (props.isOpen ? 1 : 0)};
   height: ${props => (props.isOpen ? "100vh" : "0vh")};
   z-index: 1000;
   transition: 0.3 ease-in-out;
   /* display: ${props => (props.isOpen ? "block" : "none")}; */
-  visability: ${props => (props.isOpen ? "visible" : "hidden")};
+  visibility: ${props => (props.isOpen ? "visible" : "hidden")};
 `
 
 const MenuButton = styled.div`
   padding: 20px;
   height: 75px;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 100px;
   margin-bottom: 10px;
   /* display: grid; */
@@ -45,4 +51,6 @@ const MenuLabel = styled.h1`
   color: black;
   text-align: center;
   vertical-align: center;
+  text-decoration: ${props =>
+    props.isInfo || props.isVolunteer ? "#ff7121 wavy line-through" : "none"};
 `
