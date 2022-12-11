@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Klein und Haarig`,
     titleTemplate: "Klein und Haarig",
-    description: `Ein kleines Festival im Schwarzwald vom 15. bis 18. Juli 2022`,
+    description: `Ein kleines Festival im Schwarzwald vom 14. bis 17. Juli 2023`,
     author: `Bunte Platte e.V.`,
     url: `https://www.kleinundhaarig.de`,
     image: `/images/Stairway.jpg`,
@@ -25,6 +25,14 @@ module.exports = {
         endpoint: process.env.GATSBY_MAILCHIMP_API_TICKET, // string; add your MC list endpoint here; see instructions below
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
     },
   ],
 }
