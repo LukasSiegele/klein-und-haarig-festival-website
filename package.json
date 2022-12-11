@@ -14,12 +14,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "18": "0.0.0",
     "@paypal/react-paypal-js": "^7.8.2",
     "airtable": "^0.11.6",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.2.0",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-styled-components": "^6.2.0",
+    "node": "^19.2.0",
     "react-cookie-consent": "^8.0.1",
     "react-ga": "^3.3.1",
     "react-qr-code": "^2.0.8",
