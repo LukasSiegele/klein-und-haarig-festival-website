@@ -233,6 +233,7 @@ h4 {
 }
 
 h5 {
+  font-family: "GT-Alpina-Extended-Regular";
   font-size: 0.85em;
   line-height: 1.35em;
   opacity: 0.55;
@@ -401,4 +402,23 @@ input[type="number"] {
 
 .b-contain input:checked ~ .b-input {
   background: white;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

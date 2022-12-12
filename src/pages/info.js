@@ -19,7 +19,7 @@ export default function Info() {
       <Wrapper>
         <MobileNavigation isInfo="info" bgColor="white" />
 
-        <SideNavigation bgColor="white" />
+        <SideNavigation isInfo="info" bgColor="white" />
         <Content>
           <MainGrid>
             <SideLine />
@@ -200,6 +200,7 @@ export default function Info() {
                     eurer Vierbeiner.
                   </InfoText>
                 </InfoSection>
+                <Footer bgColor="black " />
               </TextSection>
               <ImageSectionDesktop>
                 <InfoBild1 />
@@ -245,6 +246,10 @@ const TextSection = styled.div`
   background-color: white;
   height: 100vh;
   padding: 25px 10px 0 10px;
+  overflow-y: hidden;
+  :hover {
+    overflow-y: scroll;
+  }
   @media (max-width: 1100px) {
     height: auto;
   }

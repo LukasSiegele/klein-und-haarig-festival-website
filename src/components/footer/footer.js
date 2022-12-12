@@ -39,6 +39,7 @@ const Wrapper = styled.div`
   bottom: -400px;
   /* width: 100vw; */
   /* background-color: black; */
+  color: white;
   background-color: ${props => props.bgColor};
   /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
   padding: 40px 40px 150px 40px;
@@ -51,14 +52,12 @@ const Wrapper = styled.div`
   a {
     padding-bottom: 0px;
     border-bottom: 0px;
-    color: black;
   }
 `
 
 const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: white;
   /* max-width: 1440px; */
 
   justify-self: center;
@@ -74,20 +73,15 @@ const Content = styled.div`
   }
 `
 
-const BuntePlatte = styled.h5`
-  color: black;
-`
+const BuntePlatte = styled.h5``
 
 const Description = styled.h5`
-  color: black;
   margin-top: 20px;
   @media (max-width: 800px) {
     margin-top: 10px;
   }
 `
-const Text = styled.h5`
-  color: black;
-`
+const Text = styled.h5``
 
 const WrapperLeft = styled.div`
   justify-self: start;

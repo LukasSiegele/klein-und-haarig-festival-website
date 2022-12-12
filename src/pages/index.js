@@ -72,7 +72,7 @@ export default function IndexPage() {
             <FooterSection>
               <MainGrid>
                 <SideLine />
-                <Footer bgColor="#ff7121" />
+                <Footer bgColor="black" />
               </MainGrid>
             </FooterSection>
             {/* </FoerderungSection> */}

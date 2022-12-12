@@ -22,8 +22,8 @@ const SideNavWrapper = styled.div`
   border-right: 1px solid black;
   width: 133px;
   /* mix-blend-mode: difference; */
-  animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
+  /* animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
+  opacity: 1;
 
   @keyframes SideBarAnimation {
     0% {

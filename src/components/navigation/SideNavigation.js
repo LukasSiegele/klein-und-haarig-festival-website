@@ -9,31 +9,32 @@ import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
+  const { isInfo, isVolunteer } = props
   return (
     <Desktop>
-      <SideNavWrapper bgColor={props.bgColor}>
-        <SideNavLogoWrapper>
+      <Wrapper bgColor={props.bgColor}>
+        <LogoWrapper>
           <Link to="/">
-            <SideNavLogo />
+            <Logo />
           </Link>
-        </SideNavLogoWrapper>
-        <SideNavLinkGroup>
-          {/* <Link to={"/info"}>
-          <ListItem>Info</ListItem>
-        </Link>
-        <Link to={"/info"}>
-          <ListItem>Info</ListItem>
-        </Link>
-        <Link to={"/info"}>
-          <ListItem>Info</ListItem>
-        {/* </Link> */}
-          <Link to={"/info"}>
-            <a>
-              <ListItem>Info</ListItem>
-            </a>
-          </Link>{" "}
-        </SideNavLinkGroup>
-      </SideNavWrapper>
+        </LogoWrapper>
+        <LinkWrapper>
+          <LinkGroup>
+            <Link to={"/info"}>
+              <a>
+                <ListInfo isInfo={isInfo}>Info</ListInfo>
+              </a>
+            </Link>
+            <Link to={"/volunteer"}>
+              <a>
+                <ListVolunteer isVolunteer={isVolunteer}>
+                  Volunteer
+                </ListVolunteer>
+              </a>
+            </Link>
+          </LinkGroup>
+        </LinkWrapper>
+      </Wrapper>
     </Desktop>
   )
 }
@@ -47,11 +48,10 @@ const Desktop = styled.div`
   /* display: none; */
 `
 
-const SideNavWrapper = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   display: grid;
-  justify-items: center;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr;
 
   /* background-color: ${props => props.bgColor}; */
 
@@ -60,8 +60,8 @@ const SideNavWrapper = styled.div`
   border-right: 1px solid;
   width: 133px;
 
-  animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
-  opacity: 0;
+  /* animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
+  opacity: 1;
 
   @keyframes SideBarAnimation {
     0% {
@@ -80,13 +80,15 @@ const SideNavWrapper = styled.div`
   }
 `
 
-const SideNavLogoWrapper = styled.div`
+const LogoWrapper = styled.div`
   padding: 15px;
+  display: grid;
+  justify-items: center;
   /* mix-blend-mode: difference !important; */
 `
 
 // KuH Logo in SideNav
-const SideNavLogo = styled.div`
+const Logo = styled.div`
   width: 64px;
   height: 62px;
   background-image: url(${LogoSideNav});
@@ -97,14 +99,36 @@ const SideNavLogo = styled.div`
   }
 `
 
-const SideNavLinkGroup = styled.div`
-  /* display: grid; */
+const LinkWrapper = styled.div`
+  display: grid;
   text-align: center;
+  align-items: center;
 `
 
-const ListItem = styled(TextSmall)`
+const LinkGroup = styled.div`
+  text-align: center;
+  display: grid;
+
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+`
+
+const ListInfo = styled(TextSmall)`
   color: black;
   font-family: "GT-Alpina-Extended-Regular";
+  text-decoration: ${props =>
+    props.isInfo ? "#ff7121 wavy line-through" : "none"};
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+const ListVolunteer = styled(TextSmall)`
+  color: black;
+  font-family: "GT-Alpina-Extended-Regular";
+  text-decoration: ${props =>
+    props.isVolunteer ? "#CBC3FF wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;

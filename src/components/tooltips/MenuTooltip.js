@@ -6,16 +6,18 @@ export default function MenuTooltip(props) {
   const { isOpen, isInfo, isVolunteer, bgColor } = props
   return (
     <Wrapper isOpen={isOpen} bgColor={bgColor}>
-      <MenuButton>
-        <Link to="/info">
-          <MenuLabel isInfo={isInfo}>Info</MenuLabel>
-        </Link>
-      </MenuButton>
-      <MenuButton>
-        <Link to="/volunteer">
-          <MenuLabel isVolunteer={isVolunteer}>Volunteer</MenuLabel>
-        </Link>
-      </MenuButton>
+      <MenuGrid>
+        <MenuButton>
+          <Link to="/info">
+            <MenuInfo isInfo={isInfo}>Info</MenuInfo>
+          </Link>
+        </MenuButton>
+        <MenuButton>
+          <Link to="/volunteer">
+            <MenuVolunteer isVolunteer={isVolunteer}>Volunteer</MenuVolunteer>
+          </Link>
+        </MenuButton>
+      </MenuGrid>
     </Wrapper>
   )
 }
@@ -27,6 +29,9 @@ const Wrapper = styled.div`
   left: 0;
   top: 75px;
   width: 100vw;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
 
   opacity: ${props => (props.isOpen ? 1 : 0)};
   height: ${props => (props.isOpen ? "100vh" : "0vh")};
@@ -34,6 +39,11 @@ const Wrapper = styled.div`
   transition: 0.3 ease-in-out;
   /* display: ${props => (props.isOpen ? "block" : "none")}; */
   visibility: ${props => (props.isOpen ? "visible" : "hidden")};
+`
+
+const MenuGrid = styled.div`
+  display: grid;
+  gap: 10px;
 `
 
 const MenuButton = styled.div`
@@ -47,10 +57,18 @@ const MenuButton = styled.div`
   justify-items: center;
 `
 
-const MenuLabel = styled.h1`
+const MenuInfo = styled.h1`
   color: black;
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isInfo || props.isVolunteer ? "#ff7121 wavy line-through" : "none"};
+    props.isInfo ? "#ff7121 wavy line-through" : "none"};
+`
+
+const MenuVolunteer = styled.h1`
+  color: black;
+  text-align: center;
+  vertical-align: center;
+  text-decoration: ${props =>
+    props.isVolunteer ? "#CBC3FF wavy line-through" : "none"};
 `
