@@ -281,7 +281,7 @@ const TitleUndStroke = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
 
   text-transform: none;
-  color: #ff7121;
+  color: #9a9eff;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 `

@@ -307,7 +307,7 @@ const LinkInline = styled.a`
 `
 
 const ImageSectionDesktop = styled.div`
-  background-color: #ff7121;
+  background-color: #9a9eff;
   height: 100vh;
   @media (max-width: 1100px) {
     display: none;

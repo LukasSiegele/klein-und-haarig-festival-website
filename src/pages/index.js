@@ -25,11 +25,11 @@ export default function IndexPage() {
       <ParallaxProvider>
         <Wrapper>
           {/* <MainGrid> */}
-          <SideNavigation bgColor="#ff7121" />
+          <SideNavigation bgColor="#9A9EFF" />
 
           <Content>
             {/* <Wrapper> */}
-            <MobileNavigation bgColor="#ff7121" />
+            <MobileNavigation bgColor="#9A9EFF" />
             <HeroSection>
               <MainGrid>
                 <SideLine />
@@ -112,35 +112,35 @@ const MainGrid = styled.div`
 `
 
 const HeroSection = styled.div`
-  background-color: #ff7121;
+  background-color: #9a9eff;
   @media (max-width: 800px) {
     padding-top: 75px;
   }
 `
 const MessageSection = styled.div`
   /* background-image: url(${BackgroundTexture}); */
-  background-color: #ff7121;
+  background-color: #9a9eff;
   /* background-color: black; */
 `
 
 const LineupSection = styled.div`
   /* background-color: #cbc3ff; */
-  background-color: #ff7121;
+  background-color: #9a9eff;
   /* background-color: #cbc3ff; */
   z-index: 9;
 `
 
 const ImageSection = styled.div`
   /* background-image: black; */
-  background-color: #ff7121;
+  background-color: #9a9eff;
 `
 
 const FoerderungenSection = styled.div`
-  background-color: #ff7121;
+  background-color: #9a9eff;
 `
 
 const FooterSection = styled.div`
-  background-color: #ff7121;
+  background-color: #9a9eff;
 `
 
 const HideSideline = styled.div`

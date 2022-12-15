@@ -12,11 +12,11 @@ export default function MenuTooltip(props) {
             <MenuInfo isInfo={isInfo}>Info</MenuInfo>
           </Link>
         </MenuButton>
-        <MenuButton>
+        {/* <MenuButton>
           <Link to="/volunteer">
             <MenuVolunteer isVolunteer={isVolunteer}>Volunteer</MenuVolunteer>
           </Link>
-        </MenuButton>
+        </MenuButton> */}
       </MenuGrid>
     </Wrapper>
   )
@@ -62,7 +62,7 @@ const MenuInfo = styled.h1`
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isInfo ? "#ff7121 wavy line-through" : "none"};
+    props.isInfo ? "#9A9EFF wavy line-through" : "none"};
 `
 
 const MenuVolunteer = styled.h1`

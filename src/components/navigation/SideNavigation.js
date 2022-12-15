@@ -25,13 +25,13 @@ export default function SideNavigation(props) {
                 <ListInfo isInfo={isInfo}>Info</ListInfo>
               </a>
             </Link>
-            <Link to={"/volunteer"}>
+            {/* <Link to={"/volunteer"}>
               <a>
                 <ListVolunteer isVolunteer={isVolunteer}>
                   Volunteer
                 </ListVolunteer>
               </a>
-            </Link>
+            </Link> */}
           </LinkGroup>
         </LinkWrapper>
       </Wrapper>
@@ -117,7 +117,7 @@ const ListInfo = styled(TextSmall)`
   color: black;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
-    props.isInfo ? "#ff7121 wavy line-through" : "none"};
+    props.isInfo ? "#9A9EFF wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;

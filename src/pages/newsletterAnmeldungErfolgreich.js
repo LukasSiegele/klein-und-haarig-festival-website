@@ -58,7 +58,7 @@ const Section = styled.div`
 const Info = styled.h2`
   margin-top: 10px;
   color: #b9adff;
-  color: #ff7121;
+  color: #9a9eff;
   /* text-shadow: 0px 0px 15px black; */
 `
 
