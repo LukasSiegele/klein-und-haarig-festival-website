@@ -71,13 +71,13 @@ export default function Hero() {
           </C1Content>
           {/* </DateMask> */}
         </Column1>
-        <Column2>
-          {/* <DateMask> */}
+        {/* <Column2>
+          
           <InfoText>
             Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
             zum Ticket Presale und zum Festival 2023.
           </InfoText>
-          {/* </DateMask> */}
+          
           <Newsletter></Newsletter>
           <InstagramSection>
             <InfoText>Folge uns auf Instagram</InfoText>
@@ -90,6 +90,11 @@ export default function Hero() {
               </Link>
             </InstaButton>
           </InstagramSection>
+        </Column2> */}
+        <Column2>
+          <Link to="/tickets">
+            <FormButton label="Tickets" />
+          </Link>
         </Column2>
       </ContentGrid>
       <TicketWrapper to={audienceCount < maxAudience ? "/tickets" : "/voll"}>
