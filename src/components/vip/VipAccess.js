@@ -1,22 +1,19 @@
+// import React, { useEffect } from "react"
 
-import React, { useEffect } from "react"
+// const VipAccessForm = () => {
 
+//     const onTokenSubmit = e => {
+//         e.preventDefault()
+//         console.log("submit");
+//     }
 
-const VipAccessForm = () => {
+//   return (
 
-    const onTokenSubmit = e => {
-        e.preventDefault()
-        console.log("submit");
-    }
-    
+//         <form onSubmit={onTokenSubmit}>
+//             <input></input>
+//             <button type="submit">submit</button>
+//         </form>
+//   )
+// }
 
-  return (
-
-        <form onSubmit={onTokenSubmit}>
-            <input></input>
-            <button type="submit">submit</button>
-        </form>
-  )
-}
-
-export default VipAccessForm
+// export default VipAccessForm
