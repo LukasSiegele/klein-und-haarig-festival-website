@@ -19,11 +19,11 @@ export default function Hero() {
   // const autoCount = useAutoCount()
 
   // Camper Count
-  const camperCount = useCamperCount()
+  // const camperCount = useCamperCount()
 
   // Audience Counts
-  const audienceCount = useAudienceCount()
-  const maxAudience = 1
+  // const audienceCount = useAudienceCount()
+  // const maxAudience = 1
 
   return (
     <Container>
@@ -71,13 +71,12 @@ export default function Hero() {
           </C1Content>
           {/* </DateMask> */}
         </Column1>
-        {/* <Column2>
-          
+        <Column2>
           <InfoText>
             Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
             zum Ticket Presale und zum Festival 2023.
           </InfoText>
-          
+
           <Newsletter></Newsletter>
           <InstagramSection>
             <InfoText>Folge uns auf Instagram</InfoText>
@@ -90,16 +89,16 @@ export default function Hero() {
               </Link>
             </InstaButton>
           </InstagramSection>
-        </Column2> */}
-        <Column2>
-          <Link to="/tickets">
+        </Column2>
+        {/* <Column2>
+          <Link to="https://pretix.eu/bunteplatte/kleinundhaarig">
             <FormButton label="Tickets" />
           </Link>
-        </Column2>
+        </Column2> */}
       </ContentGrid>
-      <TicketWrapper to={audienceCount < maxAudience ? "/tickets" : "/voll"}>
-        {/* <TicketButton /> */}
-      </TicketWrapper>
+      {/* <TicketWrapper to={audienceCount < maxAudience ? "/tickets" : "/voll"}> */}
+      {/* <TicketButton /> */}
+      {/* </TicketWrapper> */}
 
       {/* <YearMask>
         <TitleJahr> 2023 </TitleJahr>
