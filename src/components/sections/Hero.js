@@ -96,9 +96,8 @@ export default function Hero() {
           </Link>
         </Column2> */}
       </ContentGrid>
-      {/* <TicketWrapper to={audienceCount < maxAudience ? "/tickets" : "/voll"}> */}
+
       {/* <TicketButton /> */}
-      {/* </TicketWrapper> */}
 
       {/* <YearMask>
         <TitleJahr> 2023 </TitleJahr>
