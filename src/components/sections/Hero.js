@@ -5,9 +5,9 @@ import { Link } from "gatsby"
 // import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
 
 // import useAutoCount from "../../helper/useAutoCount"
-import useCamperCount from "../../helper/useCamperCount"
-import useAudienceCount from "../../helper/useAudienceCount"
-import TicketButton from "../buttons/TicketButton"
+// import useCamperCount from "../../helper/useCamperCount"
+// import useAudienceCount from "../../helper/useAudienceCount"
+// import TicketButton from "../buttons/TicketButton"
 
 import { FrontpageHeadline, FrontpageInfos } from "../styles/TextStyles"
 import Newsletter from "../form/Newsletter"
