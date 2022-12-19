@@ -2,29 +2,12 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-// import TicketBackground from "/static/icons/ticket-ausverkauft.svg"
-
-// import useAutoCount from "../../helper/useAutoCount"
-// import useCamperCount from "../../helper/useCamperCount"
-// import useAudienceCount from "../../helper/useAudienceCount"
-// import TicketButton from "../buttons/TicketButton"
-
 import { FrontpageHeadline, FrontpageInfos } from "../styles/TextStyles"
 import Newsletter from "../form/Newsletter"
 import FormButton from "../buttons/FormButton"
 import KUHLogo from "../../../static/images/LogoSideNav.png"
 
 export default function Hero() {
-  // Auto Count
-  // const autoCount = useAutoCount()
-
-  // Camper Count
-  // const camperCount = useCamperCount()
-
-  // Audience Counts
-  // const audienceCount = useAudienceCount()
-  // const maxAudience = 1
-
   return (
     <Container>
       <ContentGrid>
