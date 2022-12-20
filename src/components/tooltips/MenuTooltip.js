@@ -12,11 +12,11 @@ export default function MenuTooltip(props) {
             <MenuInfo isInfo={isInfo}>Info</MenuInfo>
           </Link>
         </MenuButton>
-        {/* <MenuButton>
+        <MenuButton>
           <Link to="/volunteer">
             <MenuVolunteer isVolunteer={isVolunteer}>Volunteer</MenuVolunteer>
           </Link>
-        </MenuButton> */}
+        </MenuButton>
       </MenuGrid>
     </Wrapper>
   )

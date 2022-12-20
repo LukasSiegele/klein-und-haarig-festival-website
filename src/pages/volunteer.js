@@ -25,69 +25,140 @@ export default function Volunteer() {
         <Content>
           <MainGrid>
             <SideLine />
-            <ContentSection>
-              <ImageSectionMobile>
-                <VolunteerBild1 />
-              </ImageSectionMobile>
-              <TextSection>
-                <HeaderSection>
-                  <InfoHeadline>
-                    {" "}
-                    Ohne Helfer:innen kein KuH. So einfach. Und das wissen wir
-                    zu schätzen. Mach mit und werde Teil der KuH Crew.
-                  </InfoHeadline>
-                  <AnmeldeGroup>
-                    <Link>
-                      <FormButton label="Volunteer werden"></FormButton>
-                    </Link>
-                  </AnmeldeGroup>
-                </HeaderSection>
-
-                <InfoSection>
-                  <InfoLabel>Location</InfoLabel>
-                  <InfoText>
-                    Das KLEIN UND HAARIG Festival findet auf dem{" "}
-                    <LinkInline
-                      href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
-                      target="_blank"
-                    >
-                      Zeltplatz Christophshof, 75323 Bad Wildbad statt.
-                    </LinkInline>
-                  </InfoText>
-                </InfoSection>
-
-                <InfoSection>
-                  <InfoLabel>Bezahlen </InfoLabel>
-                  <InfoText>
-                    Auf dem Festival kannst du nur mit Bargeld bezahlen. Es gibt
-                    keine Möglichkeit Geld abzuheben.
-                  </InfoText>
-                </InfoSection>
-
-                <InfoSection>
-                  <InfoLabel>Müll und Umweltschutz</InfoLabel>
-                  <InfoText>
-                    Das gesamte Festivalgelände befindet sich in einem
-                    Wasserschutzgebiet. Wir haben uns verpflichtet den Zeltplatz
-                    so zu verlassen, wie wir ihn vorgefunden haben. Bitte hilf
-                    uns dabei - nutze die von uns bereitgestellten Mülleimer,
-                    Mülltüten und Taschenascher und lasse weder defekte noch
-                    intakte Zelte, Pavillons oder Campingstühle auf dem Gelände
-                    stehen.
-                  </InfoText>
-                </InfoSection>
-              </TextSection>
-              <ImageSectionDesktop>
-                <FirstImageGroup>
+            <ContentContainer>
+              <ContentSection>
+                <ImageSectionMobile>
                   <VolunteerBild1 />
-                </FirstImageGroup>
-                <SecondImageGroup>
-                  <VolunteerBild2 />
-                </SecondImageGroup>
-              </ImageSectionDesktop>
-            </ContentSection>
+                </ImageSectionMobile>
+                <TextSection>
+                  <HeaderSection>
+                    <InfoHeadline>
+                      {" "}
+                      Ohne Helfer:innen kein KuH. So einfach. Und das wissen wir
+                      zu schätzen. Werde Teil des Klein und Haarig Teams 2023!
+                    </InfoHeadline>
+                    <AnmeldeGroup>
+                      {/* <Link>
+                        <FormButton label="Volunteer werden"></FormButton>
+                      </Link> */}
+                      <InfoText>
+                        Bald findest du hier den Link zur Volunteer Anmeldung.
+                      </InfoText>
+                    </AnmeldeGroup>
+                  </HeaderSection>
+
+                  <InfoSection>
+                    <InfoLabel>Wie funktioniert das?</InfoLabel>
+                    <InfoText>
+                      Wie auch im letzten Jahr wird es wieder unser bewährtes
+                      Helfer:innen Modell geben, bei dem du frei wählen kannst
+                      wie viel (S, M, L), wann (Aufbau, Während, Abbau) und bei
+                      was (Einlass, Food, Security,...) du helfen möchtest.
+                      Außerdem kannst einen Schicht-Buddy wählen. Wir geben
+                      unser Bestes deine Präferenzen zu erfüllen. <br />
+                      Klicke einfach auf "Volunteer werden", fülle das Formular
+                      aus und kaufe dir ganz normal ein Festival Ticket.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>Welche Aufgabenbereiche gibt es?</InfoLabel>
+                    <List>
+                      <ListItem>Aufbau</ListItem>
+                      <ListItem>Abbau</ListItem>
+                      <ListItem>Einlass</ListItem>
+                      <ListItem>Security</ListItem>
+                      <ListItem>Sauberkeit</ListItem>
+                      <ListItem>Technik</ListItem>
+                    </List>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>Wie werde ich vergütet?</InfoLabel>
+                    <InfoText>
+                      Als Volunteer unterstützt du das Festival als
+                      ehrenamtliche Helfer:in. Nach getaner Arbeit erhältst du,
+                      je nach Schichtgröße, deine Vergütung. Während der
+                      Schichten wirst du mit Getränken und Snacks versorgt. Beim
+                      Auf- und Abbau gibt es zudem volle Mahlzeiten.
+                    </InfoText>
+                    <List>
+                      <ListItem>
+                        <List1>S</List1>
+                        <List2>3 h</List2>
+                        <List3>40 €</List3>
+                      </ListItem>
+                      <ListItem>
+                        <List1>M</List1>
+                        <List2>6 h</List2>
+                        <List3>80 €</List3>
+                      </ListItem>
+                      <ListItem>
+                        <List1>L</List1>
+                        <List2>9 h</List2>
+                        <List3>120 €</List3>
+                      </ListItem>
+                    </List>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      Brauche ich trotz Volunteer Anmeldung ein Festival Ticket?
+                    </InfoLabel>
+                    <InfoText>
+                      Ja, du brauchst auch als Volunteer ein Ticket. Nach
+                      Ausfüllen des Volunteer Formulars erhältst du einen Link
+                      zum Ticketkauf. Falls du dir vorher ein Ticket gekauft
+                      hast ist das auch kein Problem.
+                    </InfoText>
+                  </InfoSection>
+                  <InfoSection>
+                    <InfoLabel>
+                      Ich verspäte mich oder kann doch nicht...
+                    </InfoLabel>
+                    <InfoText>
+                      Bitte gib uns zeitnah Bescheid wenn du deine Schicht nicht
+                      antreten kannst oder du zu spät kommst. Wir legen Wert auf
+                      Zuverlässigkeit, da sonst die Arbeit bei jemand Anderen
+                      hängenbleibt.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>Wann werde ich zugeteilt?</InfoLabel>
+                    <InfoText>
+                      Wir geben dir sobald wie möglich Bescheid und mit genügend
+                      Vorlauf vor dem Festival Bescheid, damit es planbar für
+                      dich ist. Bei Fragen kannst du dich nach Anmeldung bei der
+                      Volunteer-Zentrale per E-Mail melden.
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>Muss ich sonst noch was wissen?</InfoLabel>
+                    <InfoText>
+                      Bei aller Ernsthaftigkeit ein Festival zu erschaffen heißt
+                      Volunteer sein nicht nur arbeiten. Gerade beim Auf und
+                      Abbau fühlt es sich eher wie ein Pfadfinder Camp an. Wir
+                      würden uns sehr freuen dich nächstes Jahr mit an Bord zu
+                      haben. <br /> Dein KuH Team
+                    </InfoText>
+                  </InfoSection>
+                </TextSection>
+                <ImageSectionDesktop>
+                  <FirstImageGroup>
+                    <VolunteerBild1 />
+                  </FirstImageGroup>
+                  <SecondImageGroup>
+                    <VolunteerBild2 />
+                  </SecondImageGroup>
+                </ImageSectionDesktop>
+              </ContentSection>
+              <FooterSection>
+                <Footer bgColor="black" />
+              </FooterSection>
+            </ContentContainer>
           </MainGrid>
-          <Footer bgColor="black " />
         </Content>
       </Wrapper>
     </Layout>
@@ -111,6 +182,8 @@ const MainGrid = styled.div`
     grid-template-columns: 1fr;
   }
 `
+
+const ContentContainer = styled.div``
 
 const ContentSection = styled.div`
   display: grid;
@@ -148,13 +221,14 @@ const HeaderSection = styled.div`
 
 const AnmeldeGroup = styled.div`
   max-width: 450px;
+  opacity: 0.3;
   @media (max-width: 1100px) {
     margin-bottom: 100px;
   }
 `
 
 const InfoSection = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 `
 
 const InfoHeadline = styled.h3`
@@ -167,14 +241,13 @@ const InfoHeadline = styled.h3`
 
 const InfoLabel = styled.h3`
   color: black;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   display: inline-block;
   max-width: 800px;
 `
 
 const InfoText = styled.p`
   color: black;
-  font-family: "GT-Alpina-Extended-Regular";
   margin-bottom: 20px;
   opacity: 0.8;
   max-width: 800px;
@@ -245,4 +318,29 @@ const VolunteerBild2 = styled.div`
   width: 465px;
   background-image: url(${Volunteer2});
   background-size: cover;
+`
+
+const List = styled.div`
+  margin-top: 16px;
+`
+
+const ListItem = styled.p`
+  padding: 8px 0 8px 16px;
+  max-width: 800px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  &:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+`
+
+const List1 = styled.div``
+const List2 = styled.div``
+const List3 = styled.div``
+
+const FooterSection = styled.div`
+  background-color: #9a9eff;
 `

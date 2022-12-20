@@ -25,13 +25,13 @@ export default function SideNavigation(props) {
                 <ListInfo isInfo={isInfo}>Info</ListInfo>
               </a>
             </Link>
-            {/* <Link to={"/volunteer"}>
+            <Link to={"/volunteer"}>
               <a>
                 <ListVolunteer isVolunteer={isVolunteer}>
                   Volunteer
                 </ListVolunteer>
               </a>
-            </Link> */}
+            </Link>
           </LinkGroup>
         </LinkWrapper>
       </Wrapper>
