@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 
 import { Link } from "gatsby"
 
-export default function Imprint() {
+export default function AGBS() {
   return (
     <Layout>
       <Wrapper>
