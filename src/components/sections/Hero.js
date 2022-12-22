@@ -94,7 +94,7 @@ export default function Hero() {
 
 const Container = styled.div`
   height: 100vh;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   /* position: relative; */
   @media (max-width: 1100px) {
     height: auto;

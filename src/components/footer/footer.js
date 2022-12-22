@@ -28,6 +28,11 @@ export default function Footer(props) {
               <Link to="/privacy">Datenschutz</Link>
             </Text>
           </Datenschutz>
+          <AGB>
+            <Text>
+              <Link to="/agbs">AGBs</Link>
+            </Text>
+          </AGB>
           <Text>© 2022</Text>
         </WrapperRight>
       </Content>
@@ -110,5 +115,7 @@ const WrapperRight = styled.div`
 const Imprint = styled.div``
 
 const Datenschutz = styled.div``
+
+const AGB = styled.div``
 
 const Kontakt = styled.div``

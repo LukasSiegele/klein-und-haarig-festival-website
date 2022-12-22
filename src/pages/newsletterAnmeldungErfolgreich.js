@@ -16,8 +16,8 @@ export default function NewsletterAnmeldungErfolgreich() {
             <Info>Danke für deine Anmeldung zum Newsletter.</Info>
             <br />
             <Info>
-              Keine Angt, wir spammen dich nicht voll. Du bekommst nur die
-              relevantesten Infos zum Festival.
+              Du bekommst ab sofort die relevantesten Infos zum Festival auch
+              per Mail.
             </Info>
             <br />
             <Info>— Dein KuH Team</Info>

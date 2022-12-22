@@ -9,7 +9,7 @@ import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
-  const { isInfo, isVolunteer } = props
+  const { isInfo, isVolunteer, isVerein } = props
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>
@@ -30,6 +30,11 @@ export default function SideNavigation(props) {
                 <ListVolunteer isVolunteer={isVolunteer}>
                   Volunteer
                 </ListVolunteer>
+              </a>
+            </Link>
+            <Link to={"/verein"}>
+              <a>
+                <ListVerein isVerein={isVerein}>Verein</ListVerein>
               </a>
             </Link>
           </LinkGroup>
@@ -84,6 +89,7 @@ const LogoWrapper = styled.div`
   padding: 15px;
   display: grid;
   justify-items: center;
+  z-index: 99;
   /* mix-blend-mode: difference !important; */
 `
 
@@ -103,6 +109,7 @@ const LinkWrapper = styled.div`
   display: grid;
   text-align: center;
   align-items: center;
+  margin-top: -94px;
 `
 
 const LinkGroup = styled.div`
@@ -129,6 +136,17 @@ const ListVolunteer = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
     props.isVolunteer ? "#CBC3FF wavy line-through" : "none"};
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+const ListVerein = styled(TextSmall)`
+  color: black;
+  font-family: "GT-Alpina-Extended-Regular";
+  text-decoration: ${props =>
+    props.isVerein ? "#CBC3FF wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;

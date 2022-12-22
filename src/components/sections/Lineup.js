@@ -12,6 +12,7 @@ import {
   HeadlineRegular,
   HeadlineRegular2,
 } from "../styles/TextStyles"
+import TickerInline from "../ticker/TickerInline"
 
 export default function Lineup() {
   const [l1, setl1] = useState(0)
@@ -51,7 +52,9 @@ export default function Lineup() {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >
-          <Header>Lineup 2022</Header>
+          <TickerInline />
+          {/* <Header>Lineup 2022</Header> */}
+          <Header></Header>
           <RingGroup>
             {/* <animated.div
             ref={ref}
@@ -317,6 +320,9 @@ export default function Lineup() {
               <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
           </LineupSection>
+          <Header></Header>
+          <TickerInline />
+          {/* <Header>Lineup 2022</Header> */}
         </HoverGroup>
       </Container>
     </Wrapper>
@@ -348,11 +354,8 @@ const Ring = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding: 0 20px 0 20px;
   margin-bottom: 200px;
-  @media (max-width: 800px) {
-    padding: 0 10px 0 10px;
-  }
+
   position: relative;
 `
 
@@ -377,6 +380,10 @@ const Header = styled(TextSmall)`
 const LineupSection = styled.div`
   /* display: inline; */
   position: relative;
+  padding: 0 20px 0 20px;
+  @media (max-width: 800px) {
+    padding: 0 10px 0 10px;
+  }
 `
 const LinkInline = styled.a`
   /* display: inline; */

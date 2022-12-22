@@ -46,9 +46,18 @@ const Ticker = () => {
                     Soundcloud
                   </LinkInline>
                 </TickerText> */}
+                <TickerText className="tickerText">Infrastruktur</TickerText>
+                <Icon src="/icons/banner-star.svg"></Icon>
+                <TickerText className="tickerText">Verpflegung</TickerText>
+                <Icon src="/icons/banner-star.svg"></Icon>
                 <TickerText className="tickerText">
-                  Das Datum für nächstes Jahr steht fest
+                  Veranstaltungstechnik
                 </TickerText>
+                <Icon src="/icons/banner-star.svg"></Icon>
+                <TickerText className="tickerText">
+                  Wir suchen dringend Unterstützung für die folgenden Bereiche
+                </TickerText>
+                <Icon src="/icons/banner-star.svg"></Icon>
                 {/* <TickerText className="tickerText">
                   Der Ticketkauf ist wieder möglich!
                 </TickerText> */}
@@ -57,7 +66,16 @@ const Ticker = () => {
                   mit Paypal, sind aber an der Lösung dran. Danke für dein
                   Verständnis & Geduld.
                 </TickerText> */}
-                <Icon src="/icons/banner-star.svg"></Icon>
+
+                {/* <TickerText className="tickerText">
+                  Schreib uns
+                  <LinkInline
+                    href="mailto:info@kleinundhaarig.de"
+                    target="_blank"
+                  >
+                    inf0@kleinundhaarig.de
+                  </LinkInline>
+                </TickerText> */}
               </Wrapper>
             )}
           </RTicker>
@@ -84,7 +102,7 @@ const Wrapper = styled.div`
 
   align-self: center;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto;
   white-space: nowrap;
   padding: -10px;
 
@@ -107,7 +125,7 @@ const TickerWrapper = styled.div`
 
   display: grid;
   background-color: #000;
-  padding: 10px 0;
+  padding: 15px 0;
   /* background-color: #ff003a; */
 
   animation: TickerAnimation 3.3s 0s forwards cubic-bezier(0.2, 0.8, 0.2, 1);

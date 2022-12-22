@@ -33,8 +33,8 @@ export default function Info() {
                     <InfoHeadline>
                       {" "}
                       Wir glauben daran, dass das Unsichere, das nicht ganz
-                      Greifbare den Reiz ausmacht. Deshalb hier das Wichtigste
-                      in Kürze.
+                      Greifbare den Reiz ausmacht. Deshalb hier nur das
+                      Wichtigste in Kürze.
                     </InfoHeadline>
                   </HeaderSection>
                   <InfoSection>

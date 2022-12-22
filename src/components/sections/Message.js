@@ -18,9 +18,8 @@ export default function Message() {
         <FirstGrid>
           <Column1>
             <MainText>
-              Klein und Haarig — 4 Tage Festival in einem idyllischen Tal im
-              Schwarzwald, die die elektronische Musikkultur in all ihren Farben
-              und Facetten erfahrbar machen.
+              Klein und Haarig <br />— 4 Tage elektronische Musik, Kunst und
+              Workshops in einem idyllischen Tal im Schwarzwald.
             </MainText>
           </Column1>
           <Column2 />
@@ -64,7 +63,7 @@ const Container = styled.div`
   position: relative;
   z-index: 99;
   grid-template-rows: 1fr auto;
-  gap: 80px;
+  gap: 40px;
   align-items: end;
   background-color: none;
   /* overflow: hidden; */

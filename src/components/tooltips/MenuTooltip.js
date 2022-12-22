@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 export default function MenuTooltip(props) {
-  const { isOpen, isInfo, isVolunteer, bgColor } = props
+  const { isOpen, isInfo, isVolunteer, isVerein, bgColor } = props
   return (
     <Wrapper isOpen={isOpen} bgColor={bgColor}>
       <MenuGrid>
@@ -15,6 +15,11 @@ export default function MenuTooltip(props) {
         <MenuButton>
           <Link to="/volunteer">
             <MenuVolunteer isVolunteer={isVolunteer}>Volunteer</MenuVolunteer>
+          </Link>
+        </MenuButton>
+        <MenuButton>
+          <Link to="/support">
+            <MenuVerein isVerein={isVerein}>Support</MenuVerein>
           </Link>
         </MenuButton>
       </MenuGrid>
@@ -71,4 +76,12 @@ const MenuVolunteer = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isVolunteer ? "#CBC3FF wavy line-through" : "none"};
+`
+
+const MenuVerein = styled.h1`
+  color: black;
+  text-align: center;
+  vertical-align: center;
+  text-decoration: ${props =>
+    props.isVerein ? "#CBC3FF wavy line-through" : "none"};
 `

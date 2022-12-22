@@ -25,6 +25,7 @@ export default function MobileNavigation(props) {
             isOpen={isOpen}
             isInfo={props.isInfo}
             isVolunteer={props.isVolunteer}
+            isVerein={props.isVerein}
             bgColor={props.bgColor}
           />
         </MenuWrapper>

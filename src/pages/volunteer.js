@@ -50,14 +50,12 @@ export default function Volunteer() {
                   <InfoSection>
                     <InfoLabel>Wie funktioniert das?</InfoLabel>
                     <InfoText>
-                      Wie auch im letzten Jahr wird es wieder unser bewährtes
-                      Helfer:innen Modell geben, bei dem du frei wählen kannst
-                      wie viel (S, M, L), wann (Aufbau, Während, Abbau) und bei
-                      was (Einlass, Food, Security,...) du helfen möchtest.
-                      Außerdem kannst einen Schicht-Buddy wählen. Wir geben
-                      unser Bestes deine Präferenzen zu erfüllen. <br />
-                      Klicke einfach auf "Volunteer werden", fülle das Formular
-                      aus und kaufe dir ganz normal ein Festival Ticket.
+                      Klicke oben auf "Volunteer werden", fülle das Formular aus
+                      und kaufe dir ganz normal ein Festival Ticket. Wähle frei
+                      wie lange (S, M, L), wann (Aufbau, Während, Abbau) und wie
+                      (Einlass, Food, Security, usw.) du uns helfen möchtest. Du
+                      kannst uns dabei auch deinen Wunsch-Buddy mitteilen. Wir
+                      geben unser Bestes deine Präferenzen zu erfüllen.
                     </InfoText>
                   </InfoSection>
 
@@ -70,32 +68,41 @@ export default function Volunteer() {
                       <ListItem>Security</ListItem>
                       <ListItem>Sauberkeit</ListItem>
                       <ListItem>Technik</ListItem>
+                      <ListItem>Bar</ListItem>
+                      <ListItem>Verpflegung</ListItem>
                     </List>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>Wie werde ich vergütet?</InfoLabel>
                     <InfoText>
-                      Als Volunteer unterstützt du das Festival als
-                      ehrenamtliche Helfer:in. Nach getaner Arbeit erhältst du,
-                      je nach Schichtgröße, deine Vergütung. Während der
-                      Schichten wirst du mit Getränken und Snacks versorgt. Beim
-                      Auf- und Abbau gibt es zudem volle Mahlzeiten.
+                      Das Klein und Haarig Festival wird vom gemeinnützigen
+                      Bunte Platte e.V. organisiert. Das gesamte Team arbeitet
+                      ehrenamtlich, alle Einnahmen kommen ausschließlich dem
+                      Projekt zugute. Als Volunteer unterstützt du das Festival
+                      ebenfalls ehrenamtlich. Du bekommst einen Einblick, wie
+                      ein Festival entsteht und funktioniert. Du lernst das Team
+                      und die vielen anderen Leute kennen, die das Festival zu
+                      dem machen, was es ist. Trotzdem wollen wir dich für deine
+                      Unterstützung belohnen. Du erhälst nach getaner Arbeit
+                      eine Vergütung, deren Höhe sich nach der Anzahl deiner
+                      Schichten richtet (siehe unten). Während dem Auf- und
+                      Abbau wirst du zudem mit Essen und Getränken versorgt.
                     </InfoText>
                     <List>
                       <ListItem>
                         <List1>S</List1>
-                        <List2>3 h</List2>
+                        <List2>min. 1x 6 h</List2>
                         <List3>40 €</List3>
                       </ListItem>
                       <ListItem>
                         <List1>M</List1>
-                        <List2>6 h</List2>
+                        <List2>min. 2 x 6 h</List2>
                         <List3>80 €</List3>
                       </ListItem>
                       <ListItem>
                         <List1>L</List1>
-                        <List2>9 h</List2>
+                        <List2>min. 3 x 6 h</List2>
                         <List3>120 €</List3>
                       </ListItem>
                     </List>
@@ -103,18 +110,19 @@ export default function Volunteer() {
 
                   <InfoSection>
                     <InfoLabel>
-                      Brauche ich trotz Volunteer Anmeldung ein Festival Ticket?
+                      Brauche ich als Volunteer ein Festival Ticket??
                     </InfoLabel>
                     <InfoText>
-                      Ja, du brauchst auch als Volunteer ein Ticket. Nach
+                      Ja, auch als Volunteer benötigst du ein Ticket. Nach dem
                       Ausfüllen des Volunteer Formulars erhältst du einen Link
-                      zum Ticketkauf. Falls du dir vorher ein Ticket gekauft
-                      hast ist das auch kein Problem.
+                      zu unserem Ticketshop. Wenn du schon ein Ticket hast,
+                      kannst du dich natürlich trotzdem noch als Volunteer
+                      registrieren.
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
                     <InfoLabel>
-                      Ich verspäte mich oder kann doch nicht...
+                      Ich verspäte mich oder kann doch nicht helfen...
                     </InfoLabel>
                     <InfoText>
                       Bitte gib uns zeitnah Bescheid wenn du deine Schicht nicht
@@ -127,10 +135,10 @@ export default function Volunteer() {
                   <InfoSection>
                     <InfoLabel>Wann werde ich zugeteilt?</InfoLabel>
                     <InfoText>
-                      Wir geben dir sobald wie möglich Bescheid und mit genügend
-                      Vorlauf vor dem Festival Bescheid, damit es planbar für
-                      dich ist. Bei Fragen kannst du dich nach Anmeldung bei der
-                      Volunteer-Zentrale per E-Mail melden.
+                      Wir geben dir mit genügend Vorlauf vor dem Festival
+                      Bescheid, damit auch du planen kannst. Bei Fragen kannst
+                      du dich nach deiner Anmeldung jederzeit bei unserer
+                      Volunteer-Zentrale melden.
                     </InfoText>
                   </InfoSection>
 
