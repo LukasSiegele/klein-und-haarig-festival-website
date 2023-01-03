@@ -31,8 +31,8 @@ export default function Info() {
                 <TextSection>
                   <HeaderSection>
                     <InfoHeadline>
-                      Wir möchten nicht zu viel verraten. Hier trotzdem die
-                      wichtigsten Infos rund um das Festival — kurz und knapp.
+                      Wir möchten nicht zu viel verraten. Hier das Wichtigste —
+                      kurz und knapp.
                     </InfoHeadline>
                   </HeaderSection>
 
