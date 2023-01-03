@@ -313,7 +313,7 @@ const InfoHeadline = styled.h3`
 
 const InfoLabel = styled.h3`
   color: black;
-  margin-bottom: cpx;
+  margin-bottom: 16px;
   display: inline-block;
   max-width: 800px;
 `
