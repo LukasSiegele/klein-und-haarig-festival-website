@@ -249,7 +249,7 @@ const InfoHeadline = styled.h3`
 
 const InfoLabel = styled.h3`
   color: black;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   display: inline-block;
   max-width: 800px;
 `
@@ -297,8 +297,8 @@ const FirstImageGroup = styled.div`
 `
 
 const VolunteerBild1 = styled.div`
-  height: 90%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   justify-self: end;
   align-self: center;
   /* width: 300px; */
@@ -318,12 +318,12 @@ const VolunteerBild1 = styled.div`
 `
 
 const SecondImageGroup = styled.div`
-  margin-left: 20px;
+  /* margin-left: 20px; */
 `
 
 const VolunteerBild2 = styled.div`
-  height: 300px;
-  width: 465px;
+  height: 380px;
+  width: 100%;
   background-image: url(${Volunteer2});
   background-size: cover;
 `

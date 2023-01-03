@@ -31,7 +31,8 @@ export default function Message() {
             <SecondaryGroup>
               <Icon src="/icons/StarBlack.svg"></Icon>
               <SecondaryText>
-                Organisiert von Freunden, dem Bunte Platte e.V. <br /> <br />
+                Ehrenamtlich organisiert von Freunden, dem Bunte Platte e.V.{" "}
+                <br /> <br />
                 Wir wollen einen nicht kommerziellen Raum schaffen, in dem
                 Menschen zusammenkommen und mit ihnen Vielfalt, Offenheit,
                 Toleranz und Freiheit feiern.

@@ -55,7 +55,7 @@ const Ticker = () => {
                 </TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
                 <TickerText className="tickerText">
-                  Wir suchen dringend Unterstützung für die folgenden Bereiche
+                  Wir suchen dringend Unterstützung für
                 </TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
                 {/* <TickerText className="tickerText">

@@ -9,7 +9,7 @@ import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
-  const { isInfo, isVolunteer, isVerein } = props
+  const { isInfo, isVolunteer, isVerein, isOpenCalls } = props
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>
@@ -22,7 +22,7 @@ export default function SideNavigation(props) {
           <LinkGroup>
             <Link to={"/info"}>
               <a>
-                <ListInfo isInfo={isInfo}>Info</ListInfo>
+                <ListInfo isInfo={isInfo}>Infos</ListInfo>
               </a>
             </Link>
             <Link to={"/volunteer"}>
@@ -32,6 +32,13 @@ export default function SideNavigation(props) {
                 </ListVolunteer>
               </a>
             </Link>
+            {/* <Link to={"/opencalls"}>
+              <a>
+                <ListVolunteer isOpenCalls={isOpenCalls}>
+                  Open Calls
+                </ListVolunteer>
+              </a>
+            </Link> */}
             <Link to={"/verein"}>
               <a>
                 <ListVerein isVerein={isVerein}>Verein</ListVerein>

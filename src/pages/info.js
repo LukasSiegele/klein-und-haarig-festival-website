@@ -32,7 +32,7 @@ export default function Info() {
                   <HeaderSection>
                     <InfoHeadline>
                       Wir möchten nicht zu viel verraten. Hier trotzdem die
-                      wichtigsten Infos rund um das Festival - kurz und knapp.
+                      wichtigsten Infos rund um das Festival — kurz und knapp.
                     </InfoHeadline>
                   </HeaderSection>
 
@@ -313,7 +313,7 @@ const InfoHeadline = styled.h3`
 
 const InfoLabel = styled.h3`
   color: black;
-  margin-bottom: 12px;
+  margin-bottom: cpx;
   display: inline-block;
   max-width: 800px;
 `

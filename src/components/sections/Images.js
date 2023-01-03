@@ -2,8 +2,8 @@ import React from "react"
 import { Parallax } from "react-scroll-parallax"
 import styled from "styled-components"
 import Stairway from "../../../static/images/image-01.jpg"
-import Smoke from "../../../static/images/image-02.jpg"
-import Night from "../../../static/images/image-03.jpg"
+import Smoke from "../../../static/images/Main2.jpg"
+import Night from "../../../static/images/Main4.jpg"
 import Discowald from "../../../static/images/image-025.jpg"
 
 import {
@@ -162,8 +162,8 @@ const ImageWrapper2 = styled.div``
 
 const Image02 = styled.div`
   background-image: url(${Smoke});
-  width: 350px;
-  height: 540px;
+  width: 455px;
+  height: 702px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

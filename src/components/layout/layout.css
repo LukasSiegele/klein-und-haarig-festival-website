@@ -195,7 +195,7 @@ a {
 
 a:hover {
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 h1 {
@@ -283,7 +283,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
   cursor: pointer;
 }
 /*FORMULAR*/

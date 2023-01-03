@@ -9,7 +9,7 @@ export default function MenuTooltip(props) {
       <MenuGrid>
         <MenuButton>
           <Link to="/info">
-            <MenuInfo isInfo={isInfo}>Info</MenuInfo>
+            <MenuInfo isInfo={isInfo}>Infos</MenuInfo>
           </Link>
         </MenuButton>
         <MenuButton>
@@ -19,7 +19,7 @@ export default function MenuTooltip(props) {
         </MenuButton>
         <MenuButton>
           <Link to="/support">
-            <MenuVerein isVerein={isVerein}>Support</MenuVerein>
+            <MenuVerein isVerein={isVerein}>Verein</MenuVerein>
           </Link>
         </MenuButton>
       </MenuGrid>
