@@ -79,7 +79,7 @@ export default function Verein() {
                   <InfoSection>
                     <InfoLabel>2 — Finanzspritze</InfoLabel>
                     <InfoText>
-                      Du willst nicht direkt Mitlgied werden und uns einfach
+                      Du willst nicht direkt Mitglied werden und uns einfach
                       einmalig finanziell unterstützen? <br />
                       Hier unsere Bankdaten, wir freuen uns über jeden Betrag.
                     </InfoText>
