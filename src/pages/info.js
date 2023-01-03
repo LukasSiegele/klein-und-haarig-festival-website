@@ -31,33 +31,32 @@ export default function Info() {
                 <TextSection>
                   <HeaderSection>
                     <InfoHeadline>
-                      {" "}
-                      Wir glauben daran, dass das Unsichere, das nicht ganz
-                      Greifbare den Reiz ausmacht. Deshalb hier nur das
-                      Wichtigste in Kürze.
+                      Wir möchten nicht zu viel verraten. Hier trotzdem die
+                      wichtigsten Infos rund um das Festival - kurz und knapp.
                     </InfoHeadline>
                   </HeaderSection>
+
+                  <InfoSection>
+                    <InfoLabel>Ablauf</InfoLabel>
+                    <InfoText>
+                      Das Festival findet vom 14. bis zum 17. Juli statt. Du
+                      kannst am Freitag ab 12 Uhr einchecken. Für Volunteers
+                      steht unser Tor natürlich schon früher offen.
+                      Musikalisches Ende wird vorraussichtlich Montag 16 Uhr
+                      sein. Nähere Infos folgen.
+                    </InfoText>
+                  </InfoSection>
+
                   <InfoSection>
                     <InfoLabel>Location</InfoLabel>
                     <InfoText>
-                      Das KLEIN UND HAARIG Festival findet auf dem{" "}
+                      Das Klein und Haarig findet auf dem{" "}
                       <LinkInline
                         href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
                         target="_blank"
                       >
                         Zeltplatz Christophshof, 75323 Bad Wildbad statt.
                       </LinkInline>
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>Dauer</InfoLabel>
-                    <InfoText>
-                      Das Festival geht von Freitag den 14. bis einschließlich
-                      Montag den 17 Juli. Musik ist es durchgehend geben, wobei
-                      wir uns noc 1-2 kurze Pausen offenhalten. Anreisen kannst
-                      du am Freitag ab 12 Uhr. Festival und musikalisches Ende
-                      wird vorraussichtlich Montag 16 Uhr sein.
                     </InfoText>
                   </InfoSection>
 
@@ -87,20 +86,20 @@ export default function Info() {
                   <InfoSection>
                     <InfoLabel>Anreise mit dem Auto</InfoLabel>
                     <InfoText>
-                      Wie auch im letzten Jahr werden wir einen Shuttle Service
-                      zum{" "}
+                      Auf dem Festivalgelände gibt es keine Parkmöglichkeiten.
+                      Wie auch im letzten Jahr bringt dich ein Shuttle vom{" "}
                       <LinkInline
                         href="https://goo.gl/maps/VYxFbGm8zefcC2dG7"
                         target="_blank"
                       >
                         Parkplatz Kaltenbronn
                       </LinkInline>{" "}
-                      in einrichten.
+                      zum Festival.
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Awareness</InfoLabel>
+                    <InfoLabel>Spielregeln</InfoLabel>
                     <InfoText>
                       Wir möchten gemeinsam mit dir einen Raum schaffen, in dem
                       sich alle Personen sicher fühlen und ausleben können.
@@ -123,8 +122,7 @@ export default function Info() {
                       informiere dich vor dem Festival eigenständig oder beim
                       Awareness Team vor Ort. Das Team steht außerdem für Fragen
                       und Informationen rund um das Thema Safer Use bereit und
-                      kann bei Interesse angesprochen werden. Auch am Infostand
-                      findest du Infomaterial.
+                      kann bei Interesse angesprochen werden.
                     </InfoText>
                   </InfoSection>
 
@@ -176,10 +174,14 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Bar</InfoLabel>
+                    <InfoLabel>Getränke</InfoLabel>
                     <InfoText>
                       Faire Preise für nicht alkoholische Getränke, sowie für
-                      Bier, Wein, Secco, Longdrinks & Kurze.
+                      Bier, Wein, Secco, Longdrinks & Kurze. Du kannst auch
+                      eigene Getränke in normalen Mengen mit auf das
+                      Festivalgelände nehmen. Bitte bedenke aber, dass wir zur
+                      Erhaltung unseres Festivals auch auf die Einnahmen der
+                      Bars angewiesen sind.
                     </InfoText>
                   </InfoSection>
 
