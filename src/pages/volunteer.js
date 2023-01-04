@@ -38,12 +38,12 @@ export default function Volunteer() {
                       zu schätzen. Werde Teil des Klein und Haarig Teams 2023!
                     </InfoHeadline>
                     <AnmeldeGroup>
-                      {/* <Link>
+                      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
                         <FormButton label="Volunteer werden"></FormButton>
-                      </Link> */}
-                      <InfoText>
+                      </Link>
+                      {/* <InfoText>
                         Bald findest du hier den Link zur Volunteer Anmeldung.
-                      </InfoText>
+                      </InfoText> */}
                     </AnmeldeGroup>
                   </HeaderSection>
 
@@ -228,8 +228,8 @@ const HeaderSection = styled.div`
 `
 
 const AnmeldeGroup = styled.div`
-  max-width: 450px;
-  opacity: 0.3;
+  /* max-width: 450px; */
+  /* opacity: 0.3; */
   @media (max-width: 1100px) {
     margin-bottom: 100px;
   }
