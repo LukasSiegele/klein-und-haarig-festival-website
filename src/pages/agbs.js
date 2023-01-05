@@ -49,44 +49,7 @@ export default function AGBS() {
               </p>
             </Section>
             <Section>
-              <Header>4. Hausrecht</Header>
-              <p>
-                Während des Festivals besteht für die Veranstalter:innen
-                Hausrecht. Die Veranstalter:innen sind berechtigt, Personen, die
-                sich nicht an die Hausordnung oder die geltenden Gesetze halten,
-                vom Festivalgelände zu verweisen. Die Veranstalter:innen sind
-                nicht verpflichtet, eine Rückerstattung der Festivalgebühren
-                vorzunehmen, wenn eine Person aufgrund ihres Verhaltens vom
-                Festivalgelände verwiesen wird.
-              </p>
-            </Section>
-            <Section>
-              <Header>5. Haftung</Header>
-              <p>
-                Die Veranstalter:innen haften nicht für Schäden, die den
-                Käufer:innen während des Festivals entstehen, es sei denn, diese
-                Schäden sind auf vorsätzliches oder grob fahrlässiges Handeln
-                der Veranstalter:innen zurückzuführen. Die Käufer:innen haften
-                für von ihnen verursachte Schäden.
-              </p>
-            </Section>
-            <Section>
-              <Header>6. Altersbeschränkung</Header>
-              <p>
-                Das Festival "Klein und Haarig" ist ausschließlich für Personen
-                ab 18 Jahren zugelassen. Teilnehmer:innen, die das 18.
-                Lebensjahr noch nicht vollendet haben, dürfen nur in Begleitung
-                einer volljährigen Person teilnehmen. Die Veranstalter:innen
-                behalten sich vor, bei Vorlage eines gültigen Ausweises das
-                Alter der Teilnehmer:innen zu überprüfen. Teilnehmer:innen, die
-                das 18. Lebensjahr noch nicht vollendet haben und ohne
-                Begleitung einer volljährigen Person anreisen, werden vom
-                Festival ausgeschlossen. In diesem Fall wird der Kaufpreis des
-                Festivaltickets nicht erstattet.
-              </p>
-            </Section>
-            <Section>
-              <Header>7. Einlassband</Header>
+              <Header>4. Einlassband</Header>
               <p>
                 Der Zutritt zum Festivalgelände ist nur mit einem gültigen
                 Einlassband gestattet. Das Einlassband wird bei Vorlage des
@@ -101,7 +64,64 @@ export default function AGBS() {
               </p>
             </Section>
             <Section>
-              <Header>8. Salvatorische Klausel</Header>
+              <Header>5. Hausrecht</Header>
+              <p>
+                Während des Festivals besteht für die Veranstalter:innen
+                Hausrecht. Die Veranstalter:innen sind berechtigt, Personen, die
+                sich nicht an die Hausordnung oder die geltenden Gesetze halten,
+                vom Festivalgelände zu verweisen. Die Veranstalter:innen sind
+                nicht verpflichtet, eine Rückerstattung der Festivalgebühren
+                vorzunehmen, wenn eine Person aufgrund ihres Verhaltens vom
+                Festivalgelände verwiesen wird.
+              </p>
+            </Section>
+            <Section>
+              <Header>6. Haftung</Header>
+              <p>
+                Die Veranstalter:innen haften nicht für Schäden, die den
+                Käufer:innen während des Festivals entstehen, es sei denn, diese
+                Schäden sind auf vorsätzliches oder grob fahrlässiges Handeln
+                der Veranstalter:innen zurückzuführen. Die Käufer:innen haften
+                für von ihnen verursachte Schäden.
+              </p>
+            </Section>
+            <Section>
+              <Header>7. Altersbeschränkung</Header>
+              <p>
+                Das Festival "Klein und Haarig" ist ausschließlich für Personen
+                ab 18 Jahren zugelassen. Teilnehmer:innen, die das 18.
+                Lebensjahr noch nicht vollendet haben, dürfen nur in Begleitung
+                einer volljährigen Person teilnehmen. Die Veranstalter:innen
+                behalten sich vor, bei Vorlage eines gültigen Ausweises das
+                Alter der Teilnehmer:innen zu überprüfen. Teilnehmer:innen, die
+                das 18. Lebensjahr noch nicht vollendet haben und ohne
+                Begleitung einer volljährigen Person anreisen, werden vom
+                Festival ausgeschlossen. In diesem Fall wird der Kaufpreis des
+                Festivaltickets nicht erstattet.
+              </p>
+            </Section>
+            <Section>
+              <Header>8. Verbotene Gegenstände</Header>
+              <p>
+                Der Besitz und/oder der Verkauf von illegalen Substanzen, Waffen
+                oder anderen gefährlichen Gegenständen ist verboten. Die
+                Veranstalter:innen behalten sich das Recht vor, Gegenstände zu
+                beschlagnahmen, den Zutritt zum Festival zu verweigern und/oder
+                die betreffenden Teilnehmer:innen vom Festivalgelände zu
+                verweisen.
+              </p>
+            </Section>
+            <Section>
+              <Header>9. Film- und Fotoaufnahmen</Header>
+              <p>
+                Der Veranstalter behält sich das Recht vor, Film- und
+                Fotoaufnahmen von Festivalbesuchern zu machen und diese für
+                Marketing- und Promotionszwecke zu nutzen.
+              </p>
+            </Section>
+
+            <Section>
+              <Header>10. Salvatorische Klausel</Header>
               <p>
                 Sollte eine Bestimmung dieser AGB unwirksam sein oder werden, so
                 bleibt die Wirksamkeit der übrigen Bestimmungen hiervon
@@ -112,7 +132,7 @@ export default function AGBS() {
               </p>
             </Section>
             <Section>
-              <Header>9. Schlussbestimmungen</Header>
+              <Header>11. Schlussbestimmungen</Header>
               <p>
                 Es gilt ausschließlich das Recht der Bundesrepublik Deutschland.
                 Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder
