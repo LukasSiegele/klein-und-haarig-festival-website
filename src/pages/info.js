@@ -276,9 +276,10 @@ const ScrollContainer = styled.div`
   background-color: white;
   height: 100vh;
   overflow-y: hidden;
-  :hover {
+  overflow-y: scroll;
+  /* :hover {
     overflow-y: scroll;
-  }
+  } */
   @media (max-width: 1100px) {
     height: auto;
   }

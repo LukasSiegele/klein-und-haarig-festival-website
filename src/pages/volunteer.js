@@ -110,7 +110,7 @@ export default function Volunteer() {
 
                   <InfoSection>
                     <InfoLabel>
-                      Brauche ich als Volunteer ein Festival Ticket??
+                      Brauche ich als Volunteer ein Festival Ticket?
                     </InfoLabel>
                     <InfoText>
                       Ja, auch als Volunteer benötigst du ein Ticket. Nach dem
@@ -125,10 +125,10 @@ export default function Volunteer() {
                       Ich verspäte mich oder kann doch nicht helfen...
                     </InfoLabel>
                     <InfoText>
-                      Bitte gib uns zeitnah Bescheid wenn du deine Schicht nicht
-                      antreten kannst oder du zu spät kommst. Wir legen Wert auf
-                      Zuverlässigkeit, da sonst die Arbeit bei jemand Anderen
-                      hängenbleibt.
+                      Bitte melde dich in diesen Fällen sofort bei uns, damit
+                      wir rechtzeitig reagieren können. Der Ablauf des Festivals
+                      ist strikt getaktet - nur so kann es reibungslos
+                      funktionieren. Wir verlassen uns auf dich.
                     </InfoText>
                   </InfoSection>
 
@@ -139,17 +139,6 @@ export default function Volunteer() {
                       Bescheid, damit auch du planen kannst. Bei Fragen kannst
                       du dich nach deiner Anmeldung jederzeit bei unserer
                       Volunteer-Zentrale melden.
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>Muss ich sonst noch was wissen?</InfoLabel>
-                    <InfoText>
-                      Bei aller Ernsthaftigkeit ein Festival zu erschaffen heißt
-                      Volunteer sein nicht nur arbeiten. Gerade beim Auf und
-                      Abbau fühlt es sich eher wie ein Pfadfinder Camp an. Wir
-                      würden uns sehr freuen dich nächstes Jahr mit an Bord zu
-                      haben. <br /> Dein KuH Team
                     </InfoText>
                   </InfoSection>
                 </TextSection>

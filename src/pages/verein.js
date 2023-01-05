@@ -41,31 +41,42 @@ export default function Verein() {
                   </HeaderSection>
 
                   <InfoSection>
-                    <InfoLabel>Etwas zu uns...</InfoLabel>
+                    <InfoLabel>Zu uns</InfoLabel>
                     <InfoText>
-                      Wir sind ein gemeinnütziger Verein mit Sitz in München,
-                      der schon seit 5 Jahren das Klein und Haarig auf die Beine
-                      stellt. Anfangs mit 40 Gästen zu Dritt, während Corona nur
-                      als musikalisches Zaltlager und seit zwei Jahren als
-                      eingetragener Verein mit 8 Mitgliedern und 350 Gästen.
-                      Dabei haben wir uns auf die Fahne geschrieben, dass wir
+                      Wir sind ein gemeinnütziger Verein mit Sitz in München.
+                      Bereits seit 5 Jahren stellen wir das Klein und Haarig
+                      Festival auf die Beine. Anfangs zu Dritt mit 40 Gästen,
+                      während Corona als musikalisches Zeltlager und seit 2020
+                      als eingetragener Verein mit mittlerweile 14 Mitgliedern
+                      und 350 Gästen. Wir haben uns auf die Fahne geschrieben,
                       die elektronische Musikkultur in all ihren bunten,
-                      herrlich weirden und progressiven Facetten erfahrbahr
-                      machen wollen. Nicht das immer gleichbleibende Konzept,
-                      sondern das Neue und Unentdeckte treibt uns an. Das in
-                      Einklang mit der Natur zu organisieren und mit Euch in
-                      einem familiären Umfeld am Ende zu feiern macht das Klein
-                      und Haarig aus.
+                      herrlich weirden und progressiven Facetten erfahrbar zu
+                      machen. Nicht ein stetiges Konzept, sondern das Neue und
+                      Unentdeckte treibt uns dabei an. <br />
+                      <br />
+                      Das KuH im Einklang mit der Natur zu organisieren und es
+                      mit Euch zu feiern ist das Größte für uns. <br />
+                      <br />
+                      Dabei sind wir immer auf der Suche nach Gleichgesinnten,
+                      die unser Team oder das Festival unterstützen wollen und
+                      können. Dafür gibt es zwei Möglichkeiten:
+                      <br />
+                      <br />
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
                     <InfoLabel>1 — Verein beitreten</InfoLabel>
                     <InfoText>
-                      Wenn du nicht mit anpacken möchtest oder kannst, du uns
-                      aber unterstützen willst, bist du hier genau richtig.
-                      Unterstütze das Klein und Haarig mit einer frei wählbaren
-                      jährlichen Zahlung, indem du uns die folgende
-                      Einzugsermächtigung ausgefüllt zuschickst.
+                      Wenn du aktiv Aufgaben oder Verantwortung im Bunte Platte
+                      e.V. oder bei der Organisation des Klein und Haarig
+                      Festivals übernehmen möchtest, kontaktiere uns am Besten
+                      direkt per Mail. Wir freuen uns über jede Anfrage. Wenn du
+                      nicht mit anpacken möchtest oder kannst, uns aber dennoch
+                      unterstützen willst, kannst du dies mit einer jährlichen
+                      Zahlung in Form einer Fördermitgliedschaft tun. Kreuze
+                      dazu auf der folgender Aufnahmeantrag eine der zur Auswahl
+                      stehenden Beträge an und schicke uns sie ausgefüllt und
+                      unterschrieben zu.
                     </InfoText>
                     {/* <Link href="mailto:info@bunteplatte.de?subject=Mitglied werden&body=Hallo Bunte Platte Crew, %0A %0A ich möchte Mitlgied im Bunte Platte e.V. werden. Könnt ihr mir das Mitgliedsformular zusenden auf dem alle weiteren Infos stehen? %0A %0A Liebe Grüße">
                       <FormButton label="Mitglied werden" />
@@ -79,9 +90,9 @@ export default function Verein() {
                   <InfoSection>
                     <InfoLabel>2 — Finanzspritze</InfoLabel>
                     <InfoText>
-                      Du willst nicht direkt Mitglied werden und uns einfach
-                      einmalig finanziell unterstützen? <br />
-                      Hier unsere Bankdaten, wir freuen uns über jeden Betrag.
+                      Du möchtest nicht direkt Mitglied werden und uns einmalig
+                      finanziell unterstützen? Hier unsere Bankdaten, wir freuen
+                      uns über jeden Betrag.
                     </InfoText>
                     <List>
                       <ListItem>
@@ -150,9 +161,10 @@ const ScrollContainer = styled.div`
   background-color: white;
   height: 100vh;
   overflow-y: hidden;
-  :hover {
+  overflow-y: scroll;
+  /* :hover {
     overflow-y: scroll;
-  }
+  } */
   @media (max-width: 1100px) {
     height: auto;
   }
