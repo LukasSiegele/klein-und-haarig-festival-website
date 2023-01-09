@@ -85,7 +85,7 @@ export default function Volunteer() {
                       und die vielen anderen Leute kennen, die das Festival zu
                       dem machen, was es ist. Trotzdem wollen wir dich für deine
                       Unterstützung belohnen. Du erhälst nach getaner Arbeit
-                      eine Vergütung, deren Höhe sich nach der Anzahl deiner
+                      eine Erstattung, deren Höhe sich nach der Anzahl deiner
                       Schichten richtet (siehe unten). Während dem Auf- und
                       Abbau wirst du zudem mit Essen und Getränken versorgt.
                     </InfoText>
