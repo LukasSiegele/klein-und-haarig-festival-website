@@ -42,7 +42,7 @@ export default function Hero() {
 
             <PlaceGroup>
               <LinkInline
-                href="https://goo.gl/maps/rqgmPhj2zV1KfUXeA"
+                href="https://goo.gl/maps/bag7SAmH1RZ6YNLZ6"
                 target="_blank"
               >
                 <IconGroup>
