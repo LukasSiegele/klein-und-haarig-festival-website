@@ -70,6 +70,8 @@ export default function Volunteer() {
                       <ListItem>Technik</ListItem>
                       <ListItem>Bar</ListItem>
                       <ListItem>Verpflegung</ListItem>
+                      <ListItem>Awareness</ListItem>
+                      <ListItem>Erste Hilfe</ListItem>
                     </List>
                   </InfoSection>
 
