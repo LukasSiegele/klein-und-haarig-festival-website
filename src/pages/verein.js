@@ -13,8 +13,6 @@ import Verein1 from "../../static/images/Verein1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 import FormButton from "../components/buttons/FormButton"
 
-import Einzugsermaechtigung from "../../static/pdf/Einzugsermaechtigung_BuntePlatte_2023.pdf"
-
 export default function Verein() {
   return (
     <Layout>
