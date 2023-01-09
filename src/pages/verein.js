@@ -74,14 +74,14 @@ export default function Verein() {
                       nicht mit anpacken möchtest oder kannst, uns aber dennoch
                       unterstützen willst, kannst du dies mit einer jährlichen
                       Zahlung in Form einer Fördermitgliedschaft tun. Kreuze
-                      dazu auf der folgender Aufnahmeantrag eine der zur Auswahl
-                      stehenden Beträge an und schicke uns sie ausgefüllt und
+                      dazu auf dem folgenden Aufnahmeantrag eine der zur Auswahl
+                      stehenden Beträge an und schicke uns ihn ausgefüllt und
                       unterschrieben zu.
                     </InfoText>
                     {/* <Link href="mailto:info@bunteplatte.de?subject=Mitglied werden&body=Hallo Bunte Platte Crew, %0A %0A ich möchte Mitlgied im Bunte Platte e.V. werden. Könnt ihr mir das Mitgliedsformular zusenden auf dem alle weiteren Infos stehen? %0A %0A Liebe Grüße">
                       <FormButton label="Mitglied werden" />
                     </Link> */}
-                    <Link href="/pdf/Einzugsermaechtigung_BuntePlatte_2023.pdf">
+                    <Link href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf">
                       <FormButton label="Mitglied werden" />
                     </Link>
 
