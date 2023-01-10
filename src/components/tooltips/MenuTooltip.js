@@ -18,7 +18,7 @@ export default function MenuTooltip(props) {
           </Link>
         </MenuButton>
         <MenuButton>
-          <Link to="/support">
+          <Link to="/verein">
             <MenuVerein isVerein={isVerein}>Verein</MenuVerein>
           </Link>
         </MenuButton>
