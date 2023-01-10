@@ -2,20 +2,20 @@ import React, { useEffect } from "react"
 import { Headline, SubheaderSmall, Note } from "../styles/TextStyles"
 
 import CookieConsent from "react-cookie-consent"
-import ReactGA from "react-ga"
+import ReactGA from "react-ga4"
 
 // import Footer from "../footer/footer"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import "../layout/layout.css"
 
-ReactGA.initialize("UA-228004106-1")
+ReactGA.initialize("G-H99FJYXKS1")
 
 export default function Layout({ children }) {
-  // Google Analytics
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname)
-  }, [])
+  // // Google Analytics
+  // useEffect(() => {
+  //   ReactGA.pageview(window.location.pathname)
+  // }, [])
 
   return (
     <>
