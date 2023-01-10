@@ -2,10 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import NavBackground from "../../../static/images/SideNavBackground.png"
-
-import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
-
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
@@ -15,7 +11,7 @@ export default function SideNavigation(props) {
       <Wrapper bgColor={props.bgColor}>
         <LogoWrapper>
           <Link to="/">
-            <Logo />
+            <Logo src="/icons/Logo-Black.svg"></Logo>
           </Link>
         </LogoWrapper>
         <LinkWrapper>
@@ -101,12 +97,10 @@ const LogoWrapper = styled.div`
 `
 
 // KuH Logo in SideNav
-const Logo = styled.div`
+const Logo = styled.img`
   width: 64px;
   height: 62px;
-  background-image: url(${LogoSideNav});
 
-  background-size: cover;
   :hover {
     cursor: pointer;
   }

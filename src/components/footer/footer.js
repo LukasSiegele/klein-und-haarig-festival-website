@@ -33,7 +33,7 @@ export default function Footer(props) {
               <Link to="/agbs">AGBs</Link>
             </Text>
           </AGB>
-          <Text>© 2022</Text>
+          <Text>© 2023</Text>
         </WrapperRight>
       </Content>
     </Wrapper>
