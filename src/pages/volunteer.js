@@ -34,8 +34,10 @@ export default function Volunteer() {
                   <HeaderSection>
                     <InfoHeadline>
                       {" "}
-                      Ohne Helfer:innen kein KuH. So einfach. Und das wissen wir
-                      zu schätzen. Werde Teil des Klein und Haarig Teams 2023!
+                      Ohne Volunteers kein KuH. Deshalb sind wir auf deine Hilfe
+                      angewiesen. Unterstütze uns beim Auf- und Abbau oder
+                      während dem Festival und trage so deinen Teil zum Festival
+                      bei.
                     </InfoHeadline>
                     <AnmeldeGroup>
                       <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
@@ -52,10 +54,11 @@ export default function Volunteer() {
                     <InfoText>
                       Klicke oben auf "Volunteer werden", fülle das Formular aus
                       und kaufe dir ganz normal ein Festival Ticket. Wähle frei
-                      wie lange (S, M, L), wann (Aufbau, Während, Abbau) und wie
-                      (Einlass, Food, Security, usw.) du uns helfen möchtest. Du
-                      kannst uns dabei auch deinen Wunsch-Buddy mitteilen. Wir
-                      geben unser Bestes deine Präferenzen zu erfüllen.
+                      wie lange (S, M, L), wann (Aufbau, Während, Abbau) und
+                      wobei (Einlass, Food, Security, usw.) du uns helfen
+                      möchtest. Du kannst uns dabei auch deinen Wunsch-Buddy
+                      mitteilen. Wir geben unser Bestes deine Wünsche zu
+                      erfüllen.
                     </InfoText>
                   </InfoSection>
 
