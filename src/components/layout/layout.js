@@ -12,10 +12,10 @@ import "../layout/layout.css"
 ReactGA.initialize("G-H99FJYXKS1")
 
 export default function Layout({ children }) {
-  // // Google Analytics
-  // useEffect(() => {
-  //   ReactGA.pageview(window.location.pathname)
-  // }, [])
+  // Google Analytics
+  useEffect(() => {
+    ReactGA.send("pageview")
+  }, [])
 
   return (
     <>
