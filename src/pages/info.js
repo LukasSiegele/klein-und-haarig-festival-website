@@ -84,7 +84,7 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>An-/Abreise mit dem Auto</InfoLabel>
+                    <InfoLabel>An- & Abreise mit dem Auto</InfoLabel>
                     <InfoText>
                       Auf dem Festivalgelände gibt es keine Parkmöglichkeiten.
                       Wie auch im letzten Jahr bringt dich ein Shuttle vom{" "}
