@@ -84,7 +84,7 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Anreise mit dem Auto</InfoLabel>
+                    <InfoLabel>An-/Abreise mit dem Auto</InfoLabel>
                     <InfoText>
                       Auf dem Festivalgelände gibt es keine Parkmöglichkeiten.
                       Wie auch im letzten Jahr bringt dich ein Shuttle vom{" "}
@@ -100,11 +100,11 @@ export default function Info() {
                       Anreise — Komme bei deiner Anreise bitte zuerst zum
                       Festivaleingang, um dort dein Gepäck und deine
                       Mitfahrenden abzuladen (max. 5 min). Fahre dann alleine
-                      zum Parkplatz. Der Shuttle bringt dich von dort wieder
+                      zum Parkplatz. Das Shuttle bringt dich von dort wieder
                       zurück zum Festival.
                     </InfoText>
                     <InfoText>
-                      Abreise — Vom Festivaleingang bringt der Shuttle alle
+                      Abreise — Vom Festivaleingang bringt das Shuttle alle
                       Fahrer*innen zum Parkplatz. Fahre anschließend zum
                       Festival um dort zu Beladen.
                     </InfoText>
