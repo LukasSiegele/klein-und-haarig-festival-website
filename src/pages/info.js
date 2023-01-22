@@ -96,6 +96,18 @@ export default function Info() {
                       </LinkInline>{" "}
                       zum Festival.
                     </InfoText>
+                    <InfoText>
+                      Anreise — Komme bei deiner Anreise bitte zuerst zum
+                      Festivaleingang, um dort dein Gepäck und deine
+                      Mitfahrenden abzuladen (max. 5 min). Fahre dann alleine
+                      zum Parkplatz. Der Shuttle bringt dich von dort wieder
+                      zurück zum Festival.
+                    </InfoText>
+                    <InfoText>
+                      Abreise — Vom Festivaleingang bringt der Shuttle alle
+                      Fahrer*innen zum Parkplatz. Fahre anschließend zum
+                      Festival um dort zu Beladen.
+                    </InfoText>
                   </InfoSection>
 
                   <InfoSection>
