@@ -15,21 +15,41 @@ export default function Foerderungen() {
     <Wrapper>
       <Content>
         <Headline>Gefördert durch</Headline>
-        <LogoGroup>
-          <Logo src="/icons/neustartKultur.png"></Logo>
-          <Logo src="/icons/bkm.png"></Logo>
-          <Logo src="/icons/initiativeMusik.png"></Logo>
-        </LogoGroup>
+        <LogoLineGroup>
+          <LogoGroup>
+            <Logo src="/icons/neustartKultur.png"></Logo>
+            <Logo src="/icons/bkm.png"></Logo>
+            <Logo src="/icons/initiativeMusik.png"></Logo>
+          </LogoGroup>
+        </LogoLineGroup>
+        {/* <LineGroup>
+          <Line></Line>
+          <Line></Line>
+          <Line></Line>
+        </LineGroup> */}
       </Content>
       {/* <Face /> */}
     </Wrapper>
   )
 }
 
+const LogoLineGroup = styled.div`
+  /* position: relative; */
+`
+const LineGroup = styled.div`
+  /* top: 200px; */
+`
+
+const Line = styled.div`
+  height: 10px;
+  background-color: red;
+  margin-bottom: 3px;
+`
+
 const Wrapper = styled.div`
   padding: 120px 40px;
-  display: grid;
-  justify-content: center;
+  /* display: grid; */
+  /* justify-content: center; */
   /* background: white; */
   @media (max-width: 768px) {
     padding: 60px 20px;
@@ -38,7 +58,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   /* max-width: 800px; */
-  display: grid;
+  /* display: grid; */
   justify-content: center;
 `
 
@@ -56,36 +76,15 @@ const LogoGroup = styled.div`
   gap: 64px;
   background-color: white;
   border-radius: 400px;
-  border: 0px solid black;
+  border: 10px solid black;
   padding: 40px;
   @media (max-width: 768px) {
-    padding: 30px;
-    grid-template-columns: 1fr;
+    /* padding: 30px; */
+    /* grid-template-columns: 1fr; */
   }
 `
 
 const Logo = styled.img`
   height: 120px;
   background-color: white;
-`
-
-const Face = styled.div`
-  background-image: url(${FaceGrafik});
-  width: 450px;
-  height: 476px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  bottom: -5px;
-  right: 10%;
-  transform: rotate(180deg);
-  @media (max-width: 1200px) {
-    right: -1%;
-  }
-  @media (max-width: 1100px) {
-    width: 367px;
-    height: 387px;
-    bottom: -40px;
-  }
 `
