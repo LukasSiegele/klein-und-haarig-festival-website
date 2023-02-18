@@ -16,6 +16,7 @@ import SideLine from "../components/navigation/SideLine"
 import Lineup from "../components/sections/Lineup"
 import Foerderungen from "../components/sections/Foerderungen"
 import MobileNavigation from "../components/navigation/MobileNavigation"
+import LinkList from "../components/sections/LinkList"
 
 export default function IndexPage() {
   return (
@@ -68,6 +69,13 @@ export default function IndexPage() {
                 <Foerderungen />
               </MainGrid>
             </FoerderungenSection>
+
+            <LinkListSection>
+              <MainGrid>
+                <SideLine />
+                <LinkList />
+              </MainGrid>
+            </LinkListSection>
 
             <FooterSection>
               <MainGrid>
@@ -136,6 +144,9 @@ const ImageSection = styled.div`
 `
 
 const FoerderungenSection = styled.div`
+  background-color: #9a9eff;
+`
+const LinkListSection = styled.div`
   background-color: #9a9eff;
 `
 

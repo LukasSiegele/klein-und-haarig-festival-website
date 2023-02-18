@@ -54,7 +54,7 @@ export default function Hero() {
           </C1Content>
           {/* </DateMask> */}
         </Column1>
-        <Column2>
+        {/* <Column2>
           <InfoText>
             Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
             zum Ticket Presale und zum Festival 2023.
@@ -72,12 +72,12 @@ export default function Hero() {
               </Link>
             </InstaButton>
           </InstagramSection>
-        </Column2>
-        {/* <Column2>
+        </Column2> */}
+        <Column2>
           <Link to="https://pretix.eu/bunteplatte/kleinundhaarig">
             <FormButton label="Tickets" />
           </Link>
-        </Column2> */}
+        </Column2>
       </ContentGrid>
 
       {/* <TicketButton /> */}

@@ -46,7 +46,7 @@ const Ticker = () => {
                     Soundcloud
                   </LinkInline>
                 </TickerText> */}
-                <TickerText className="tickerText">Infrastruktur</TickerText>
+                {/* <TickerText className="tickerText">Infrastruktur</TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
                 <TickerText className="tickerText">Verpflegung</TickerText>
                 <Icon src="/icons/banner-star.svg"></Icon>
@@ -57,10 +57,12 @@ const Ticker = () => {
                 <TickerText className="tickerText">
                   Wir suchen dringend Unterstützung für
                 </TickerText>
+                 */}
                 <Icon src="/icons/banner-star.svg"></Icon>
-                {/* <TickerText className="tickerText">
-                  Der Ticketkauf ist wieder möglich!
-                </TickerText> */}
+                <TickerText className="tickerText">
+                  Early Bird Tickets ab jetzt verfügbar
+                </TickerText>
+
                 {/* <TickerText className="tickerText">
                   Aktuell sind keine Zahlungen möglich. Wir haben ein Problem
                   mit Paypal, sind aber an der Lösung dran. Danke für dein
@@ -86,7 +88,6 @@ const Ticker = () => {
 }
 
 const LinkInline = styled.a`
-  padding-bottom: 1px;
   border-bottom: 1px solid rgba(255, 255, 255);
 `
 
@@ -102,7 +103,7 @@ const Wrapper = styled.div`
 
   align-self: center;
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto;
+  grid-template-columns: 1fr auto;
   white-space: nowrap;
   padding: -10px;
 

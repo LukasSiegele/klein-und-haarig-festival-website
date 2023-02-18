@@ -37,7 +37,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  max-width: 800px;
+  /* max-width: 800px; */
   display: grid;
   justify-content: center;
 `
@@ -45,7 +45,7 @@ const Content = styled.div`
 const Headline = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
   color: rgba(0, 0, 0, 0.75);
-  margin-bottom: 64px;
+  margin-bottom: 32px;
   text-align: center;
 `
 
