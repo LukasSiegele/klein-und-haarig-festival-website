@@ -110,7 +110,7 @@ export const SubheaderSuperSmall = styled.h5`
 // Infotexte
 export const TextSmall = styled.p`
   color: white;
-  font-size: 0.85em; ;
+  font-size: 0.85em;
 `
 
 // Bildbeschreibungen
