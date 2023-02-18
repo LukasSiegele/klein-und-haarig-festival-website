@@ -64,7 +64,7 @@ const Content = styled.div`
 
 const Headline = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
-  color: rgba(0, 0, 0, 0.75);
+  color: black;
   margin-bottom: 32px;
   text-align: center;
 `
