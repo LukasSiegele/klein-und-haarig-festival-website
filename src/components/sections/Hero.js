@@ -74,7 +74,10 @@ export default function Hero() {
           </InstagramSection>
         </Column2> */}
         <Column2>
-          <Link to="https://pretix.eu/bunteplatte/kleinundhaarig">
+          <Link
+            to="https://pretix.eu/bunteplatte/kleinundhaarig"
+            target="_blank"
+          >
             <FormButton label="Tickets" />
           </Link>
         </Column2>
