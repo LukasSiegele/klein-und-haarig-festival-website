@@ -36,9 +36,9 @@ export default function AGBS() {
             <Section>
               <Header>3. Rücktritt und Stornierung</Header>
               <p>
-                Die Käufer:innen können bis zu acht Wochen vor Festivalbeginn
+                Die Käufer:innen können bis zu vier Wochen vor Festivalbeginn
                 schriftlich vom Kaufvertrag zurücktreten. In diesem Fall wird
-                eine Stornogebühr in Höhe von 25% des Ticketpreises erhoben. Bei
+                eine Stornogebühr in Höhe von 12% des Ticketpreises erhoben. Bei
                 späterem Rücktritt oder Nichterscheinen wird keine
                 Rückerstattung des Ticketpreises gewährt. Die Veranstalter:innen
                 behalten sich das Recht vor, das Festival aus wichtigem Grund
