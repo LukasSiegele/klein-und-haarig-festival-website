@@ -89,7 +89,7 @@ const Wrapper = styled.div`
 `
 
 const LogoWrapper = styled.div`
-  padding: 15px;
+  padding: 30px 15px 15px 15px;
   display: grid;
   justify-items: center;
   z-index: 99;
