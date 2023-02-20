@@ -126,7 +126,7 @@ const TickerWrapper = styled.div`
 
   display: grid;
   background-color: #000;
-  padding: 15px 0;
+  padding: 5px 0;
   /* background-color: #ff003a; */
 
   animation: TickerAnimation 3.3s 0s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
