@@ -140,7 +140,7 @@ const ListVolunteer = styled(TextSmall)`
   color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
-    props.isVolunteer ? "#CBC3FF wavy line-through" : "none"};
+    props.isVolunteer ? "#6A79FF wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -151,7 +151,7 @@ const ListVerein = styled(TextSmall)`
   color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
-    props.isVerein ? "#CBC3FF wavy line-through" : "none"};
+    props.isVerein ? "#FF965B wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
