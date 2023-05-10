@@ -13,11 +13,11 @@ export default function Footer(props) {
           </BuntePlatte>
         </WrapperLeft>
         <WrapperRight>
-          <Kontakt>
+          {/* <Kontakt>
             <Text>
               <a href="mailto:info@kleinundhaarig.de">Kontakt</a>
             </Text>
-          </Kontakt>
+          </Kontakt> */}
           <Imprint>
             <Text>
               <Link to="/imprint">Impressum</Link>
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   /* background-color: black; */
   color: white;
   background-color: ${props => props.bgColor};
-  /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
+  border-top: 0.5px solid rgba(255, 255, 255, 0.2);
   padding: 40px 40px 150px 40px;
   /* display: grid; */
 

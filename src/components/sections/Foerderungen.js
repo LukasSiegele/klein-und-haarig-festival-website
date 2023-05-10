@@ -47,7 +47,7 @@ const Line = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding: 120px 40px;
+  padding: 200px 40px 80px 40px;
   /* display: grid; */
   /* justify-content: center; */
   /* background: white; */
@@ -64,7 +64,7 @@ const Content = styled.div`
 
 const Headline = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
-  color: black;
+  color: white;
   margin-bottom: 32px;
   text-align: center;
 `
@@ -76,15 +76,19 @@ const LogoGroup = styled.div`
   gap: 64px;
   background-color: white;
   border-radius: 400px;
-  border: 10px solid black;
+  /* border: 10px solid #48b9f8; */
   padding: 40px;
   @media (max-width: 768px) {
-    /* padding: 30px; */
-    /* grid-template-columns: 1fr; */
+    padding: 30px;
+    grid-template-columns: 1fr;
   }
 `
 
 const Logo = styled.img`
   height: 120px;
   background-color: white;
+
+  @media (max-width: 768px) {
+    height: 100px;
+  }
 `

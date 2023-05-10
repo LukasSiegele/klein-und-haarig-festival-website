@@ -18,7 +18,7 @@ import Foerderungen from "../components/sections/Foerderungen"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 import LinkList from "../components/sections/LinkList"
 
-import HeroArtwork from "../../static/images/HeroArtwork.jpg"
+import HeroArtwork from "../../static/images/HeroArtwork3.jpg"
 
 export default function IndexPage() {
   return (
@@ -28,11 +28,11 @@ export default function IndexPage() {
       <ParallaxProvider>
         <Wrapper>
           {/* <MainGrid> */}
-          <SideNavigation bgColor="#CAE3F1" />
+          <SideNavigation bgColor="#000" />
 
           <Content>
             {/* <Wrapper> */}
-            <MobileNavigation bgColor="#CAE3F1" />
+            <MobileNavigation bgColor="#000" />
             <HeroSection>
               <Artwork>
                 <MainGrid>
@@ -124,7 +124,6 @@ const MainGrid = styled.div`
 `
 
 const HeroSection = styled.div`
-  background-color: blue;
   @media (max-width: 800px) {
     padding-top: 75px;
   }
@@ -140,31 +139,31 @@ const Artwork = styled.div`
 
 const MessageSection = styled.div`
   /* background-image: url(${BackgroundTexture}); */
-  background-color: #cae3f1;
+  background-color: #000;
   /* background-color: black; */
 `
 
 const LineupSection = styled.div`
   /* background-color: #cbc3ff; */
-  background-color: #cae3f1;
+  background-color: #b3dbf1;
   /* background-color: #cbc3ff; */
   z-index: 9;
 `
 
 const ImageSection = styled.div`
   /* background-image: black; */
-  background-color: #cae3f1;
+  background-color: #000;
 `
 
 const FoerderungenSection = styled.div`
-  background-color: #cae3f1;
+  background-color: #000;
 `
 const LinkListSection = styled.div`
-  background-color: #cae3f1;
+  background-color: #000;
 `
 
 const FooterSection = styled.div`
-  background-color: #cae3f1;
+  background-color: #000;
 `
 
 const HideSideline = styled.div`

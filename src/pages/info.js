@@ -17,9 +17,9 @@ export default function Info() {
     <Layout>
       {/* <SEO title="Info" /> */}
       <Wrapper>
-        <MobileNavigation isInfo="info" bgColor="white" />
+        <MobileNavigation isInfo="info" bgColor="black" />
 
-        <SideNavigation isInfo="info" bgColor="white" />
+        <SideNavigation isInfo="info" bgColor="black" />
         <Content>
           <MainGrid>
             <SideLine />
@@ -261,7 +261,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  background-color: white;
+  background-color: black;
   display: grid;
   grid-template-columns: auto;
 `
@@ -275,7 +275,6 @@ const MainGrid = styled.div`
 `
 
 const ContentSection = styled.div`
-  background-color: red;
   display: grid;
   grid-template-columns: 1fr 1fr;
   @media (max-width: 1100px) {
@@ -285,7 +284,7 @@ const ContentSection = styled.div`
 
 const ScrollContainer = styled.div`
   overflow-x: hidden;
-  background-color: white;
+  background-color: black;
   height: 100vh;
   overflow-y: hidden;
   overflow-y: scroll;
@@ -318,29 +317,29 @@ const InfoSection = styled.div`
 `
 
 const InfoHeadline = styled.h3`
-  color: black;
+  color: white;
   display: inline-block;
   max-width: 800px;
   text-indent: 60px;
 `
 
 const InfoLabel = styled.h3`
-  color: black;
+  color: white;
   margin-bottom: 16px;
   display: inline-block;
   max-width: 800px;
 `
 
 const InfoText = styled.p`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   margin-bottom: 20px;
-  opacity: 0.8;
+  opacity: 0.75;
   max-width: 800px;
 `
 
 const DetailLabel = styled(SubheaderSmall)`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   margin-top: 32px;
   margin-bottom: 6px;
@@ -348,7 +347,7 @@ const DetailLabel = styled(SubheaderSmall)`
 `
 
 const LinkInline = styled.a`
-  color: black;
+  color: white;
   padding-bottom: 1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `

@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import { FrontpageHeadline, FrontpageInfos } from "../styles/TextStyles"
+import {
+  FrontpageHeadline,
+  FrontpageInfos,
+  TextSmall,
+} from "../styles/TextStyles"
 import Newsletter from "../form/Newsletter"
 import FormButton from "../buttons/FormButton"
 import KUHLogo from "../../../static/images/LogoSideNav.png"
@@ -37,6 +41,7 @@ export default function Hero() {
               <Datum>14 — 17</Datum>
               <Datum>07/2023</Datum>
             </DateGroup>
+
             {/* </DateMask> */}
             {/* <DateMask> */}
 
@@ -51,6 +56,7 @@ export default function Hero() {
                 </IconGroup>
               </LinkInline>
             </PlaceGroup>
+            <ArtistText> Artwork — Amelie Straubmüller </ArtistText>
           </C1Content>
           {/* </DateMask> */}
         </Column1>
@@ -95,12 +101,24 @@ export default function Hero() {
   )
 }
 
+const ArtistText = styled(TextSmall)`
+  position: absolute;
+  color: #485af8;
+  bottom: 20px;
+  @media (max-width: 1100px) {
+    bottom: 0px;
+  }
+`
+
 const Container = styled.div`
   height: 100vh;
+
   margin-bottom: 150px;
   /* position: relative; */
+  border-bottom: 1px solid black;
   @media (max-width: 1100px) {
     height: auto;
+    border-bottom: none;
   }
 `
 

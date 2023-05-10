@@ -11,7 +11,7 @@ export default function SideNavigation(props) {
       <Wrapper bgColor={props.bgColor}>
         <LogoWrapper>
           <Link to="/">
-            <Logo src="/icons/Logo-Black.svg"></Logo>
+            <Logo src="/icons/Logo-White.svg"></Logo>
           </Link>
         </LogoWrapper>
         <LinkWrapper>
@@ -59,13 +59,15 @@ const Desktop = styled.div`
 const Wrapper = styled.div`
   position: fixed;
   display: grid;
+  background-color: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(0px);
   grid-template-rows: auto 1fr;
 
   /* background-color: ${props => props.bgColor}; */
 
   height: 100vh;
   z-index: 100;
-  border-right: 1px solid;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   width: 133px;
 
   /* animation: SideBarAnimation 1.3s 0.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
@@ -93,6 +95,7 @@ const LogoWrapper = styled.div`
   display: grid;
   justify-items: center;
   z-index: 99;
+
   /* mix-blend-mode: difference !important; */
 `
 
@@ -100,6 +103,7 @@ const LogoWrapper = styled.div`
 const Logo = styled.img`
   width: 64px;
   height: 62px;
+  mix-blend-mode: difference;
 
   :hover {
     cursor: pointer;
@@ -122,7 +126,7 @@ const LinkGroup = styled.div`
 `
 
 const ListInfo = styled(TextSmall)`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
     props.isInfo ? "#9A9EFF wavy line-through" : "none"};
@@ -133,7 +137,7 @@ const ListInfo = styled(TextSmall)`
 `
 
 const ListVolunteer = styled(TextSmall)`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
     props.isVolunteer ? "#CBC3FF wavy line-through" : "none"};
@@ -144,7 +148,7 @@ const ListVolunteer = styled(TextSmall)`
 `
 
 const ListVerein = styled(TextSmall)`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
     props.isVerein ? "#CBC3FF wavy line-through" : "none"};

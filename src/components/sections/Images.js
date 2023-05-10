@@ -90,6 +90,7 @@ const Container = styled.div`
   /* max-width: 1700px; */
   overflow: hidden;
   position: relative;
+  margin-top: 100px;
   padding: 300px 0 0;
   @media (max-width: 768px) {
     padding: 300px 0 50px 0;
@@ -222,14 +223,15 @@ const ListHeader = styled(TextSmall)`
   font-weight: 600; */
   font-family: "GT-Alpina-Extended-Regular";
 
-  color: black;
+  color: rgba(255, 255, 255, 0.55);
+  color: #485af8;
   /* text-transform: uppercase; */
   margin-bottom: 8px;
 `
 
 const ListItem = styled(HeadlineRegular)`
   /* mix-blend-mode: exclusion; */
-  color: black;
+  color: white;
 `
 
 const NeuGroup = styled.div`

@@ -64,7 +64,7 @@ const Container = styled.div`
   position: relative;
   z-index: 99;
   grid-template-rows: 1fr auto;
-  gap: 40px;
+  gap: 80px;
   align-items: end;
   background-color: none;
   /* overflow: hidden; */
@@ -76,15 +76,14 @@ const Container = styled.div`
 `
 
 const MainText = styled(HeadlineRegular)`
-  color: black;
+  color: white;
   /* max-width: 970px; */
 `
 
 const SecondaryGroup = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 16px;
-  border-left: 1px solid black;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
   padding-left: 10px;
 
   /* margin-top: 20px; */
@@ -93,7 +92,7 @@ const SecondaryGroup = styled.div`
 const FirstGrid = styled.div`
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
   }
@@ -123,7 +122,7 @@ const Column2 = styled.div``
 const SecondaryText = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
   /* font-size: 17px; */
-  color: black;
+  color: white;
   max-width: 450px;
   @media (max-width: 500px) {
     max-width: 100%;

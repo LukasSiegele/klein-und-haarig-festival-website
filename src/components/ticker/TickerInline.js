@@ -17,8 +17,10 @@ const TickerInline = () => {
           <RTicker speed={12}>
             {({ index }) => (
               <Wrapper>
-                <TickerTextSmall>Line up 2022</TickerTextSmall>
-                {/* <Icon src="/icons/banner-star-black.svg"></Icon> */}
+                <TickerTextSmall>Lineup 2023</TickerTextSmall>
+                <Icon src="/icons/banner-star-black.svg"></Icon>
+                <TickerTextSmall>more tba</TickerTextSmall>
+                <Icon src="/icons/banner-star-black.svg"></Icon>
               </Wrapper>
             )}
           </RTicker>
@@ -50,7 +52,7 @@ const Wrapper = styled.div`
 
   align-self: center;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr auto 1fr;
   white-space: nowrap;
   padding: -10px;
 

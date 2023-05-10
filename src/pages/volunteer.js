@@ -19,8 +19,8 @@ export default function Volunteer() {
     <Layout>
       {/* <SEO title="Info" /> */}
       <Wrapper>
-        <MobileNavigation isVolunteer="true" bgColor="white" />
-        <SideNavigation isVolunteer="true" bgColor="white" />
+        <MobileNavigation isVolunteer="true" bgColor="black" />
+        <SideNavigation isVolunteer="true" bgColor="black" />
 
         <Content>
           <MainGrid>
@@ -41,7 +41,10 @@ export default function Volunteer() {
                     </InfoHeadline>
                     <AnmeldeGroup>
                       <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
-                        <FormButton label="Volunteer werden"></FormButton>
+                        <FormButton
+                          backgroundColor="#485AF8"
+                          label="Volunteer werden"
+                        ></FormButton>
                       </Link>
                       {/* <InfoText>
                         Bald findest du hier den Link zur Volunteer Anmeldung.
@@ -168,11 +171,11 @@ export default function Volunteer() {
 }
 
 const Wrapper = styled.div`
-  background-color: white;
+  background-color: black;
 `
 
 const Content = styled.div`
-  background-color: white;
+  background-color: black;
   display: grid;
   grid-template-columns: auto;
 `
@@ -200,7 +203,7 @@ const TextSection = styled.div`
 
   /* height: 100vh; */
   padding: 25px 10px 0 10px;
-  border-right: 1px solid black;
+  /* border-right: 1px solid black; */
   /* overflow-y: hidden; */
   /* :hover {
     overflow-y: scroll;
@@ -234,7 +237,7 @@ const InfoSection = styled.div`
 `
 
 const InfoHeadline = styled.h3`
-  color: black;
+  color: white;
   display: inline-block;
   max-width: 800px;
   text-indent: 60px;
@@ -242,21 +245,21 @@ const InfoHeadline = styled.h3`
 `
 
 const InfoLabel = styled.h3`
-  color: black;
+  color: white;
   margin-bottom: 16px;
   display: inline-block;
   max-width: 800px;
 `
 
 const InfoText = styled.p`
-  color: black;
+  color: white;
   margin-bottom: 20px;
-  opacity: 0.8;
+  opacity: 0.75;
   max-width: 800px;
 `
 
 const DetailLabel = styled(SubheaderSmall)`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   margin-top: 32px;
   margin-bottom: 6px;
@@ -264,7 +267,7 @@ const DetailLabel = styled(SubheaderSmall)`
 `
 
 const LinkInline = styled.a`
-  color: black;
+  color: white;
   padding-bottom: 1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `
@@ -288,11 +291,12 @@ const ImageSectionMobile = styled.div`
 const FirstImageGroup = styled.div`
   height: 100vh;
   display: grid;
+  overflow: hidden;
 `
 
 const VolunteerBild1 = styled.div`
-  height: 100%;
-  width: 100%;
+  height: 110%;
+  width: 110%;
   justify-self: end;
   align-self: center;
   /* width: 300px; */
@@ -313,11 +317,16 @@ const VolunteerBild1 = styled.div`
 
 const SecondImageGroup = styled.div`
   /* margin-left: 20px; */
+  overflow: hidden;
+  position: relative;
 `
 
 const VolunteerBild2 = styled.div`
   height: 380px;
-  width: 100%;
+  width: 110%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
   background-image: url(${Volunteer2});
   background-size: cover;
 `
@@ -327,15 +336,16 @@ const List = styled.div`
 `
 
 const ListItem = styled.p`
+  color: rgba(255, 255, 255, 0.8);
   padding: 8px 0 8px 16px;
   max-width: 800px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   &:first-child {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 `
 

@@ -18,9 +18,9 @@ export default function Verein() {
     <Layout>
       {/* <SEO title="Info" /> */}
       <Wrapper>
-        <MobileNavigation isVerein="verein" bgColor="white" />
+        <MobileNavigation isVerein="verein" bgColor="black" />
 
-        <SideNavigation isVerein="verein" bgColor="white" />
+        <SideNavigation isVerein="verein" bgColor="black" />
         <Content>
           <MainGrid>
             <SideLine />
@@ -80,7 +80,10 @@ export default function Verein() {
                       <FormButton label="Mitglied werden" />
                     </Link> */}
                     <Link href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf">
-                      <FormButton label="Mitglied werden" />
+                      <FormButton
+                        backgroundColor="#F89248"
+                        label="Mitglied werden"
+                      />
                     </Link>
 
                     {/* <a href="mailto:info@kleinundhaarig.de">Kontakt</a> */}
@@ -132,7 +135,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  background-color: white;
+  background-color: black;
   display: grid;
   grid-template-columns: auto;
 `
@@ -156,7 +159,7 @@ const ContentSection = styled.div`
 
 const ScrollContainer = styled.div`
   overflow-x: hidden;
-  background-color: white;
+  background-color: black;
   height: 100vh;
   overflow-y: hidden;
   overflow-y: scroll;
@@ -189,37 +192,37 @@ const InfoSection = styled.div`
 `
 
 const InfoHeadline = styled.h3`
-  color: black;
+  color: white;
   display: inline-block;
   max-width: 800px;
   text-indent: 60px;
 `
 
 const InfoLabel = styled.h3`
-  color: black;
+  color: white;
   margin-bottom: 16px;
   display: inline-block;
   max-width: 800px;
 `
 
 const InfoText = styled.p`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   margin-bottom: 20px;
-  opacity: 0.8;
+  opacity: 0.75;
   max-width: 800px;
 `
 
 const DetailLabel = styled(SubheaderSmall)`
-  color: black;
+  color: white;
   font-family: "GT-Alpina-Extended-Regular";
   margin-top: 32px;
   margin-bottom: 6px;
-  opacity: 0.7;
+  opacity: 0.75;
 `
 
 const LinkInline = styled.a`
-  color: black;
+  color: white;
   padding-bottom: 1px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `
@@ -262,15 +265,16 @@ const List = styled.div`
 `
 
 const ListItem = styled.p`
+  color: rgba(255, 255, 255, 0.75);
   padding: 8px 0 8px 16px;
   max-width: 800px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 12px;
   &:first-child {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 `
 

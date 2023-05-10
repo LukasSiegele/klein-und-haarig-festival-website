@@ -5,7 +5,7 @@ export default function FormButton(props) {
     <button
       type={props.typ}
       style={{
-        backgroundImage: `url(${props.background})`,
+        backgroundColor: props.backgroundColor,
         backgroundSize: "cover",
         color: props.color,
       }}

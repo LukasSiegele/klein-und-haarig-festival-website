@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
-import Menu from "../../../static/icons/Menu.svg"
+import Menu from "../../../static/icons/Menu-White.svg"
 
 import { TextSmall } from "../styles/TextStyles"
 import MenuTooltip from "../tooltips/MenuTooltip"
@@ -16,7 +16,7 @@ export default function MobileNavigation(props) {
       <Wrapper bgColor={props.bgColor}>
         <SideNavLogoWrapper>
           <Link to="/">
-            <Logo src="/icons/Logo-Black.svg"></Logo>
+            <Logo src="/icons/Logo-White.svg"></Logo>
           </Link>
         </SideNavLogoWrapper>
         <MenuWrapper onClick={() => setIsOpen(!isOpen)}>
@@ -57,6 +57,8 @@ const Wrapper = styled.div`
 
 const SideNavLogoWrapper = styled.div`
   justify-self: start;
+  padding-left: 3px;
+  padding-top: 1px;
 `
 
 const MenuWrapper = styled.div`
@@ -76,8 +78,8 @@ const MenuIcon = styled.div`
 
 // KuH Logo in SideNav
 const Logo = styled.img`
-  width: 54px;
-  height: 52px;
+  width: 51px;
+  height: 50px;
 
   :hover {
     cursor: pointer;
