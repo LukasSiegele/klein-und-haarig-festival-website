@@ -18,6 +18,8 @@ import Foerderungen from "../components/sections/Foerderungen"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 import LinkList from "../components/sections/LinkList"
 
+import HeroArtwork from "../../static/images/HeroArtwork.jpg"
+
 export default function IndexPage() {
   return (
     <>
@@ -26,16 +28,18 @@ export default function IndexPage() {
       <ParallaxProvider>
         <Wrapper>
           {/* <MainGrid> */}
-          <SideNavigation bgColor="#9A9EFF" />
+          <SideNavigation bgColor="#CAE3F1" />
 
           <Content>
             {/* <Wrapper> */}
-            <MobileNavigation bgColor="#9A9EFF" />
+            <MobileNavigation bgColor="#CAE3F1" />
             <HeroSection>
-              <MainGrid>
-                <SideLine />
-                <Hero />
-              </MainGrid>
+              <Artwork>
+                <MainGrid>
+                  <SideLine />
+                  <Hero />
+                </MainGrid>
+              </Artwork>
             </HeroSection>
             {/* <TickerGroup>
               <Ticker />
@@ -120,38 +124,47 @@ const MainGrid = styled.div`
 `
 
 const HeroSection = styled.div`
-  background-color: #9a9eff;
+  background-color: blue;
   @media (max-width: 800px) {
     padding-top: 75px;
   }
 `
+const ImageSectionDesktop = styled.div``
+const Artwork = styled.div`
+  height: 100vh;
+  /* width: 300px; */
+  /* border: 20px solid white; */
+  background-image: url(${HeroArtwork});
+  background-size: cover;
+`
+
 const MessageSection = styled.div`
   /* background-image: url(${BackgroundTexture}); */
-  background-color: #9a9eff;
+  background-color: #cae3f1;
   /* background-color: black; */
 `
 
 const LineupSection = styled.div`
   /* background-color: #cbc3ff; */
-  background-color: #9a9eff;
+  background-color: #cae3f1;
   /* background-color: #cbc3ff; */
   z-index: 9;
 `
 
 const ImageSection = styled.div`
   /* background-image: black; */
-  background-color: #9a9eff;
+  background-color: #cae3f1;
 `
 
 const FoerderungenSection = styled.div`
-  background-color: #9a9eff;
+  background-color: #cae3f1;
 `
 const LinkListSection = styled.div`
-  background-color: #9a9eff;
+  background-color: #cae3f1;
 `
 
 const FooterSection = styled.div`
-  background-color: #9a9eff;
+  background-color: #cae3f1;
 `
 
 const HideSideline = styled.div`

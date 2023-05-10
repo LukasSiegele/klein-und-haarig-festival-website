@@ -50,7 +50,7 @@ const Wrapper = styled.div`
   /* background-image: url(${BackgroundTexture}); */
   /* background-color: #79837c; */
   padding: 0px 20px 0 20px;
-  margin-bottom: 200px;
+  margin: 100px 0 200px 0;
 
   @media (max-width: 800px) {
     padding: 0px 10px 0 10px;
