@@ -19,7 +19,7 @@ export default function LinkList() {
         <LinkButton>
           <Link to="https://www.instagram.com/kleinundhaarig/" target="_blank">
             <FormButton
-              backgroundColor="#485AF8"
+              backgroundColor="#6A79FF"
               color="black"
               label="Instagram"
             />
@@ -31,7 +31,7 @@ export default function LinkList() {
             target="_blank"
           >
             <FormButton
-              backgroundColor="#F89248"
+              backgroundColor="#FF965B"
               color="black"
               label="Soundcloud"
             />

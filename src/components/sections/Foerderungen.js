@@ -80,6 +80,7 @@ const LogoGroup = styled.div`
   padding: 40px;
   @media (max-width: 768px) {
     padding: 30px;
+    gap: 32px;
     grid-template-columns: 1fr;
   }
 `

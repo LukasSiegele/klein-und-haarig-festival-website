@@ -63,25 +63,25 @@ const MenuButton = styled.div`
 `
 
 const MenuInfo = styled.h1`
-  color: black;
+  color: white;
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isInfo ? "#9A9EFF wavy line-through" : "none"};
+    props.isInfo ? "#A19089 wavy line-through" : "none"};
 `
 
 const MenuVolunteer = styled.h1`
-  color: black;
+  color: white;
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isVolunteer ? "#CBC3FF wavy line-through" : "none"};
+    props.isVolunteer ? "#6A79FF wavy line-through" : "none"};
 `
 
 const MenuVerein = styled.h1`
-  color: black;
+  color: white;
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isVerein ? "#CBC3FF wavy line-through" : "none"};
+    props.isVerein ? "#FF965B wavy line-through" : "none"};
 `

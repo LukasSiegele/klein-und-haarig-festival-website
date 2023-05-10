@@ -361,7 +361,7 @@ const ImageSectionDesktop = styled.div`
 `
 
 const ImageSectionMobile = styled.div`
-  background-color: green;
+  background-color: A19089;
   height: 70vh;
   @media (min-width: 1101px) {
     display: none;

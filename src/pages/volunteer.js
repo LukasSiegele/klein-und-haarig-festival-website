@@ -42,7 +42,7 @@ export default function Volunteer() {
                     <AnmeldeGroup>
                       <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
                         <FormButton
-                          backgroundColor="#485AF8"
+                          backgroundColor="#6A79FF"
                           label="Volunteer werden"
                         ></FormButton>
                       </Link>

@@ -224,7 +224,7 @@ const ListHeader = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
 
   color: rgba(255, 255, 255, 0.55);
-  color: #485af8;
+  color: #6a79ff;
   /* text-transform: uppercase; */
   margin-bottom: 8px;
 `
