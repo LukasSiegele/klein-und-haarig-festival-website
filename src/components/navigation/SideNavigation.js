@@ -129,7 +129,7 @@ const ListInfo = styled(TextSmall)`
   color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
-    props.isInfo ? "#9A9EFF wavy line-through" : "none"};
+    props.isInfo ? "#A19089 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;

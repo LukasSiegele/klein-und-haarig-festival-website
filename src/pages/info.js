@@ -353,7 +353,7 @@ const LinkInline = styled.a`
 `
 
 const ImageSectionDesktop = styled.div`
-  background-color: #9a9eff;
+  background-color: #a19089;
   height: 100vh;
   @media (max-width: 1100px) {
     display: none;
@@ -361,7 +361,7 @@ const ImageSectionDesktop = styled.div`
 `
 
 const ImageSectionMobile = styled.div`
-  background-color: A19089;
+  background-color: #a19089;
   height: 70vh;
   @media (min-width: 1101px) {
     display: none;
