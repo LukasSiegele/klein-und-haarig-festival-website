@@ -8,6 +8,7 @@ import Ticker from "../components/ticker/Ticker"
 import Footer from "../components/footer/footer"
 
 import { ParallaxProvider } from "react-scroll-parallax"
+import { TextSmall } from "../components/styles/TextStyles"
 
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
 import Images from "../components/sections/Images"
@@ -40,6 +41,7 @@ export default function IndexPage() {
                   <Hero />
                 </MainGrid>
               </Artwork>
+              <ArtistText> Artwork — Amelie Straubmüller </ArtistText>
             </HeroSection>
             {/* <TickerGroup>
               <Ticker />
@@ -100,6 +102,21 @@ export default function IndexPage() {
     </>
   )
 }
+
+const ArtistText = styled(TextSmall)`
+  position: absolute;
+  mix-blend-mode: difference;
+  color: white;
+  opacity: 0.55;
+  right: 4px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  /* border-radius: 20px; */
+  padding: 3px;
+  @media (max-width: 1100px) {
+    /* bottom: 80px; */
+    right: 4px;
+  }
+`
 
 const Wrapper = styled.div`
   overflow: hidden;

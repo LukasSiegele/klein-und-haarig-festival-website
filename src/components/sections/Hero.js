@@ -56,7 +56,6 @@ export default function Hero() {
                 </IconGroup>
               </LinkInline>
             </PlaceGroup>
-            <ArtistText> Artwork — Amelie Straubmüller </ArtistText>
           </C1Content>
           {/* </DateMask> */}
         </Column1>
@@ -100,15 +99,6 @@ export default function Hero() {
     </Container>
   )
 }
-
-const ArtistText = styled(TextSmall)`
-  position: absolute;
-  color: #485af8;
-  bottom: 20px;
-  @media (max-width: 1100px) {
-    bottom: 0px;
-  }
-`
 
 const Container = styled.div`
   height: 100vh;
