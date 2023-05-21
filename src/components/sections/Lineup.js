@@ -6,13 +6,14 @@ import { animated } from "react-spring"
 import { use3dEffect } from "use-3d-effect"
 
 import {
-  // PageHeader,
   TextSmall,
   ImageDescription,
   HeadlineRegular,
-  HeadlineRegular2,
 } from "../styles/TextStyles"
 import TickerInline from "../ticker/TickerInline"
+import FormButton from "../buttons/FormButton"
+import { Link } from "gatsby"
+import FormButtonSmall from "../buttons/FormButtonSmall"
 
 export default function Lineup() {
   const [l1, setl1] = useState(0)
@@ -208,6 +209,18 @@ export default function Lineup() {
                 <Neu>crew</Neu>
               </LinkInline>
             </Item>
+
+            <PlaylistSection>
+              <PlaylistLeft>
+                <Link
+                  to="https://soundcloud.com/kleinundhaarig/sets/kuh-2023/s-F9pR0vOnXl5?si=c66c43c2bd304134ad8d69e1e8de54a0&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                  target="_blank"
+                >
+                  <FormButtonSmall label="KuH 2023 Preview — Soundcloud Playlist" />
+                </Link>
+              </PlaylistLeft>
+              <PlaylistRight />
+            </PlaylistSection>
           </LineupSection>
 
           <TickerBottom>
@@ -288,6 +301,16 @@ const LineupSection = styled.div`
     padding: 125px 10px 125px 10px;
   }
 `
+
+const PlaylistSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 80px;
+  z-index: 999;
+`
+const PlaylistLeft = styled.div``
+const PlaylistRight = styled.div``
+
 const LinkInline = styled.a`
   /* display: inline; */
 
