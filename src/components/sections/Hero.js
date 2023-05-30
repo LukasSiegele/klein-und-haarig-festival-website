@@ -123,6 +123,9 @@ const ArtworkAnimation = styled.video`
   top: 0;
   left: 0;
   z-index: -9;
+  @media (max-width: 1100px) {
+    width: auto;
+  }
 `
 
 const ContentGrid = styled.div`
