@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+import HeroAnimation from "../../../static/videos/KuH2023Animation.mp4"
+
 import {
   FrontpageHeadline,
   FrontpageInfos,
@@ -87,7 +89,9 @@ export default function Hero() {
           </Link>
         </Column2>
       </ContentGrid>
-
+      <ArtworkAnimation autoPlay loop muted>
+        <source src={HeroAnimation} type="video/mp4"></source>
+      </ArtworkAnimation>
       {/* <TicketButton /> */}
 
       {/* <YearMask>
@@ -102,7 +106,7 @@ export default function Hero() {
 
 const Container = styled.div`
   height: 100vh;
-
+  position: realtive;
   margin-bottom: 150px;
   /* position: relative; */
   border-bottom: 1px solid black;
@@ -110,6 +114,15 @@ const Container = styled.div`
     height: auto;
     border-bottom: none;
   }
+`
+
+const ArtworkAnimation = styled.video`
+  width: 1800px;
+  height: 900px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9;
 `
 
 const ContentGrid = styled.div`

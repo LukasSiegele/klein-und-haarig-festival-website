@@ -20,6 +20,7 @@ import MobileNavigation from "../components/navigation/MobileNavigation"
 import LinkList from "../components/sections/LinkList"
 
 import HeroArtwork from "../../static/images/HeroArtwork3.jpg"
+import HeroAnimation from "../../static/videos/KuH2023Animation.mp4"
 
 export default function IndexPage() {
   return (
@@ -41,6 +42,7 @@ export default function IndexPage() {
                   <Hero />
                 </MainGrid>
               </Artwork>
+
               <ArtistText> Artwork — Amelie Straubmüller </ArtistText>
             </HeroSection>
             {/* <TickerGroup>
@@ -141,6 +143,7 @@ const MainGrid = styled.div`
 `
 
 const HeroSection = styled.div`
+  position: relative;
   @media (max-width: 800px) {
     padding-top: 75px;
   }
@@ -150,8 +153,15 @@ const Artwork = styled.div`
   height: 100vh;
   /* width: 300px; */
   /* border: 20px solid white; */
-  background-image: url(${HeroArtwork});
-  background-size: cover;
+  /* background-image: url(${HeroArtwork}); */
+  /* background-size: cover; */
+`
+
+const ArtworkAnimation = styled.video`
+  width: 1800px;
+  height: 900px;
+  position: absolute;
+  top: 0;
 `
 
 const MessageSection = styled.div`
