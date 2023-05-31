@@ -73,7 +73,7 @@ const LogoGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  gap: 63px;
+  gap: 64px;
   background-color: white;
   border-radius: 400px;
   /* border: 10px solid #48b9f8; */
