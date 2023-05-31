@@ -291,7 +291,10 @@ export default function Lineup() {
             </Item>
 
             <Item>
-              <LinkInline href="" target="_blank">
+              <LinkInline
+                href="https://www.instagram.com/lynneazzam/"
+                target="_blank"
+              >
                 {" "}
                 <Artist>KETTALYNNE</Artist>
                 <Neu>live</Neu>
