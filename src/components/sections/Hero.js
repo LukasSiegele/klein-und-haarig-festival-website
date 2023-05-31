@@ -16,7 +16,8 @@ import KUHLogo from "../../../static/images/LogoSideNav.png"
 export default function Hero() {
   return (
     <Container>
-      <ContentGrid>
+      <ContentContainer>
+        {/* <ContentGrid> */}
         <Column1>
           {/* <TitleLine> */}
           {/* <KleinMask> */}
@@ -88,10 +89,14 @@ export default function Hero() {
             <FormButton label="Tickets" />
           </Link>
         </Column2>
-      </ContentGrid>
-      <ArtworkAnimation autoPlay loop muted>
-        <source src={HeroAnimation} type="video/mp4"></source>
-      </ArtworkAnimation>
+        {/* </ContentGrid> */}
+
+        <AnimationContainer>
+          <ArtworkAnimation autoPlay loop muted>
+            <source src={HeroAnimation} type="video/mp4"></source>
+          </ArtworkAnimation>
+        </AnimationContainer>
+      </ContentContainer>
       {/* <TicketButton /> */}
 
       {/* <YearMask>
@@ -105,10 +110,9 @@ export default function Hero() {
 }
 
 const Container = styled.div`
-  height: 100vh;
-  position: realtive;
-  margin-bottom: 150px;
   /* position: relative; */
+  /* overflow: hidden; */
+
   border-bottom: 1px solid black;
   @media (max-width: 1100px) {
     height: auto;
@@ -116,26 +120,20 @@ const Container = styled.div`
   }
 `
 
-const ArtworkAnimation = styled.video`
-  width: 1800px;
-  height: 900px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -9;
-  @media (max-width: 1100px) {
-    width: auto;
-  }
+const ContentContainer = styled.div`
+  /* position: absolute; */
+  display: grid;
 `
 
 const ContentGrid = styled.div`
   /* z-index: 10; */
-  display: grid;
-  height: 100vh;
-  grid-template-columns: repeat(2, 1fr);
+  /* display: grid; */
+  /* height: 100vh; */
+  /* display: flex; */
+  /* grid-template-columns: repeat(2, 1fr); */
   /* padding-top: 12px; */
   @media (max-width: 1100px) {
-    height: auto;
+    /* height: auto; */
     grid-template-columns: repeat(1, 1fr);
     /* grid-template-rows: repeat(3, auto);
     gap: 30px; */
@@ -147,6 +145,8 @@ const Column1 = styled.div`
   /* align-content: center; */
   /* background-color: red; */
   /* opacity: 0.4; */
+  grid-area: 1 / 1 / 1 / 2;
+  z-index: 2;
   padding: 25px 20px 0 20px;
   @media (max-width: 800px) {
     padding: 10px 10px 0 10px;
@@ -155,13 +155,34 @@ const Column1 = styled.div`
 const Column2 = styled.div`
   /* background-color: red; */
   /* opacity: 0.2; */
+  grid-area: 1 / 2 / 1 / 3;
+  z-index: 2;
+
   padding: 25px 20px 0 20px;
   border-left: 1px solid black;
   @media (max-width: 1100px) {
-    padding: 120px 20px 0 20px;
+    padding: 20px 20px 0 20px;
     border: 0;
   }
 `
+
+const AnimationContainer = styled.div`
+  /* overflow: hidden; */
+  grid-area: 1 / 1 / 1 / 3;
+`
+
+const ArtworkAnimation = styled.video`
+  /* position: absolute; */
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  @media (max-width: 1100px) {
+    width: auto;
+  }
+`
+
 // const Column3 = styled.div`
 //   /* background-color: red; */
 //   /* opacity: 0.4; */
@@ -375,11 +396,11 @@ const InstaButton = styled.div`
   margin-top: 10px;
 `
 
-const ImageWrapper = styled.div`
-  width: 100vh;
-  height: 100vw;
-  overflow: hidden;
-`
+// const ImageWrapper = styled.div`
+//   width: 100vh;
+//   height: 100vw;
+//   overflow: hidden;
+// `
 
 // LOGO - KuH
 const Logo = styled.img`

@@ -111,6 +111,7 @@ const ArtistText = styled(TextSmall)`
   color: white;
   opacity: 0.55;
   right: 4px;
+  /* margin-bottom: 150px; */
   /* background-color: rgba(0, 0, 0, 0.2); */
   /* border-radius: 20px; */
   padding: 3px;
@@ -150,7 +151,7 @@ const HeroSection = styled.div`
 `
 const ImageSectionDesktop = styled.div``
 const Artwork = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   /* width: 300px; */
   /* border: 20px solid white; */
   /* background-image: url(${HeroArtwork}); */
@@ -167,6 +168,10 @@ const ArtworkAnimation = styled.video`
 const MessageSection = styled.div`
   /* background-image: url(${BackgroundTexture}); */
   background-color: #000;
+  margin-top: 150px;
+  @media (max-width: 800px) {
+    margin-top: 75px;
+  }
   /* background-color: black; */
 `
 
