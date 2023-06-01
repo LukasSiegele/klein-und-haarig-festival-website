@@ -15,12 +15,11 @@ export default function FormButtonSmall(props) {
 // export default FormButton
 
 const SmallButton = styled.div`
-  /* background-color: black; */
-
+  background-color: black;
   border-radius: 500px;
   padding: 4px 16px;
   text-align: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 
   & > :hover {
     cursor: pointer;
@@ -29,5 +28,5 @@ const SmallButton = styled.div`
 `
 
 const ButtonLabel = styled(TextSmall)`
-  color: black;
+  color: white;
 `
