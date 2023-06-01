@@ -323,14 +323,6 @@ export default function Lineup() {
             </Item>
 
             <Item>
-              <LinkInline href="https://soundcloud.com/kiawash" target="_blank">
-                {" "}
-                <Artist>Kiawash</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
               <LinkInline
                 href="https://soundcloud.com/lara-kobayashi-maru"
                 target="_blank"
