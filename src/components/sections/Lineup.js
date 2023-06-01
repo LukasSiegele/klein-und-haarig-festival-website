@@ -510,6 +510,7 @@ export default function Lineup() {
               >
                 {" "}
                 <Artist>sense</Artist>
+                <Neu>crew</Neu>
               </LinkInline>
               <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
@@ -520,7 +521,7 @@ export default function Lineup() {
                 target="_blank"
               >
                 {" "}
-                <Artist>sevicekit</Artist>
+                <Artist>servicekit</Artist>
               </LinkInline>
               <Icon src="/icons/StarBlack.svg"></Icon>
             </Item>
