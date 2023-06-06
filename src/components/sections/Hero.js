@@ -132,9 +132,12 @@ const ContentGrid = styled.div`
   /* display: flex; */
   /* grid-template-columns: repeat(2, 1fr); */
   /* padding-top: 12px; */
+
   @media (max-width: 1100px) {
+    position: absolute;
+    z-index: 9;
     /* height: auto; */
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-rows: repeat(2, auto); */
     /* grid-template-rows: repeat(3, auto);
     gap: 30px; */
   }
@@ -150,6 +153,10 @@ const Column1 = styled.div`
   padding: 25px 20px 0 20px;
   @media (max-width: 800px) {
     padding: 10px 10px 0 10px;
+    /* grid-area: revert; */
+    /* position: absolute; */
+    /* grid-template-columns: none; */
+    /* grid-area: 1 / 1 / 2 / 1; */
   }
 `
 const Column2 = styled.div`
@@ -159,8 +166,15 @@ const Column2 = styled.div`
   z-index: 2;
 
   padding: 25px 20px 0 20px;
-  border-left: 1px solid black;
+  /* border-left: 1px solid black; */
   @media (max-width: 1100px) {
+    /* grid-template-columns: none; */
+    /* grid-area: 2 / 1 / 3 / 1; */
+    /* grid-area: revert; */
+    grid-area: 2 / 1 / 3 / 2;
+    /* position: absolute; */
+    margin-top: 120px;
+    max-width: 360px;
     padding: 20px 20px 0 20px;
     border: 0;
   }
@@ -168,7 +182,11 @@ const Column2 = styled.div`
 
 const AnimationContainer = styled.div`
   /* overflow: hidden; */
-  grid-area: 1 / 1 / 1 / 3;
+  grid-area: 1 / 1 / 4 / 3;
+  @media (max-width: 800px) {
+    /* grid-area: revert; */
+    /* position: relative; */
+  }
 `
 
 const ArtworkAnimation = styled.video`

@@ -40,6 +40,14 @@ export default function SideNavigation(props) {
                 <ListVerein isVerein={isVerein}>Verein</ListVerein>
               </a>
             </Link>
+            <Link
+              to="https://pretix.eu/bunteplatte/kleinundhaarig"
+              target="_blank"
+            >
+              <a>
+                <ListTickets>Tickets</ListTickets>
+              </a>
+            </Link>
           </LinkGroup>
         </LinkWrapper>
       </Wrapper>
@@ -153,6 +161,14 @@ const ListVerein = styled(TextSmall)`
   text-decoration: ${props =>
     props.isVerein ? "#FF965B wavy line-through" : "none"};
 
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+const ListTickets = styled(TextSmall)`
+  color: white;
+  font-family: "GT-Alpina-Extended-Regular";
   &:hover {
     cursor: pointer;
   }

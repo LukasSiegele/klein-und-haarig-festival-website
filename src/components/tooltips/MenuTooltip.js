@@ -22,6 +22,14 @@ export default function MenuTooltip(props) {
             <MenuVerein isVerein={isVerein}>Verein</MenuVerein>
           </Link>
         </MenuButton>
+        <MenuButton>
+          <Link
+            to="https://pretix.eu/bunteplatte/kleinundhaarig"
+            target="_blank"
+          >
+            <MenuTickets>Tickets</MenuTickets>
+          </Link>
+        </MenuButton>
       </MenuGrid>
     </Wrapper>
   )
@@ -84,4 +92,10 @@ const MenuVerein = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isVerein ? "#FF965B wavy line-through" : "none"};
+`
+
+const MenuTickets = styled.h1`
+  color: white;
+  text-align: center;
+  vertical-align: center;
 `
