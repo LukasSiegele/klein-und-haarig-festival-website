@@ -56,10 +56,10 @@ export default function AGBS() {
                 gültigen Festivaltickets und eines gültigen Ausweises am Eingang
                 ausgehändigt. Das Einlassband ist während der gesamten
                 Veranstaltung sichtbar am Handgelenk zu tragen und berechtigt
-                zum einmaligen Eintritt auf das Festivalgelände. Sollten die
-                Einlassbänder verloren gehen, werden bei Vorlage der
-                Eintrittskarten und gültigen Ausweise neue Bänder ausgehändigt.
-                Die Veranstalter:innen haften nicht für Schäden, die aufgrund
+                zum Eintritt auf das Festivalgelände. Ein Wiedereinlass ist zu
+                jeder Zeit möglich. Beim erneuten Einlass muss das Einlassband
+                dem Personal am Eingang ohne Aufforderung vorgezeigt werden. Die
+                Veranstalter:innen haften nicht für Schäden, die aufgrund
                 fehlender oder beschädigter Einlassbänder entstehen.
               </p>
             </Section>
