@@ -64,9 +64,9 @@ export default function Info() {
                       >
                         Ticketswap
                       </LinkInline>{" "}
-                      erhältlich. Bei Letzterem kannst du dein Ticket, falls du
-                      aus Gründen nicht kannst, weiterverkaufen. Weitere
-                      Stornierungsoptionen findest du in unseren{" "}
+                      erhältlich. Bei Letzterem kannst du dein Ticket
+                      weiterverkaufen, falls du nicht am Festival teilnehmen
+                      kannst. Weitere Stornierungsoptionen findest du in unseren{" "}
                       <LinkInline to={"/agbs"} target="_blank">
                         AGBs.
                       </LinkInline>
