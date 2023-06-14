@@ -20,32 +20,41 @@ export default function AGBS() {
                 Festival erkennen die Teilnehmer:innen diese AGB an.
               </p>
             </Section>
-
             <Section>
               <Header>2. Tickets</Header>
               <p>
                 Die Tickets können über den Onlineshop des Anbieters
                 "www.pretix.eu" erworben werden. Die Käufer:innen erhalten nach
                 erfolgreicher Bezahlung eine Bestätigungs-E-Mail mit dem Ticket
-                als PDF-Anhang. Dieses Ticket ist die Eintrittsberechtigung für
-                das Festival und muss beim Einlass vorgelegt werden. Die
+                QR-Code als PDF-Anhang. Dieser Ticket QR-Code ist die
+                Eintrittsberechtigung für das Festival und muss beim Einlass in
+                digitaler oder ausgedruckter Form vorgelegt werden. Die
                 Veranstalter:innen übernehmen keine Haftung für verloren
                 gegangene oder gestohlene Tickets.
               </p>
             </Section>
+
             <Section>
-              <Header>3. Rücktritt und Stornierung</Header>
+              <Header>3. Weitergabe, Rücktritt und Stornierung</Header>
               <p>
-                Die Käufer:innen können bis zu vier Wochen vor Festivalbeginn
-                schriftlich vom Kaufvertrag zurücktreten. In diesem Fall wird
-                eine Stornogebühr in Höhe von 12% des Ticketpreises erhoben. Bei
-                späterem Rücktritt oder Nichterscheinen wird keine
-                Rückerstattung des Ticketpreises gewährt. Die Veranstalter:innen
-                behalten sich das Recht vor, das Festival aus wichtigem Grund
-                oder höherer Gewalt (Wetterbedingungen, Naturereignisse oder
-                anderen Umständen) abzusagen oder zu verschieben. In diesem Fall
-                werden die Ticketpreise in voller Höhe erstattet. Weitergehende
-                Ansprüche der Käufer:innen sind ausgeschlossen.
+                Die Käufer:innen können über unseren Partner{" "}
+                <LinkInline
+                  href="https://www.ticketswap.com/kleinundhaarig"
+                  target="_blank"
+                >
+                  Ticketswap
+                </LinkInline>{" "}
+                die Tickets weiterkaufen. Alternativ können Käufer:innen bis zu
+                vier Wochen vor Festivalbeginn schriftlich vom Kaufvertrag
+                zurücktreten. In diesem Fall wird eine Stornogebühr in Höhe von
+                12% des Ticketpreises erhoben. Bei späterem Rücktritt oder
+                Nichterscheinen wird keine Rückerstattung des Ticketpreises
+                gewährt. Die Veranstalter:innen behalten sich das Recht vor, das
+                Festival aus wichtigem Grund oder höherer Gewalt
+                (Wetterbedingungen, Naturereignisse oder anderen Umständen)
+                abzusagen oder zu verschieben. In diesem Fall werden die
+                Ticketpreise in voller Höhe erstattet. Weitergehende Ansprüche
+                der Käufer:innen sind ausgeschlossen.
               </p>
             </Section>
             <Section>
@@ -119,7 +128,6 @@ export default function AGBS() {
                 Marketing- und Promotionszwecke zu nutzen.
               </p>
             </Section>
-
             <Section>
               <Header>10. Salvatorische Klausel</Header>
               <p>
@@ -179,4 +187,10 @@ const SectionHeader = styled.h2`
 const Header = styled.h2`
   font-size: 1.7em;
   margin-bottom: 15px;
+`
+
+const LinkInline = styled.a`
+  color: white;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 `

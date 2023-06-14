@@ -48,6 +48,32 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
+                    <InfoLabel>Tickets & Ticketswap</InfoLabel>
+                    <InfoText>
+                      Tickets sind über unseren{" "}
+                      <LinkInline
+                        href="https://pretix.eu/bunteplatte/kleinundhaarig/"
+                        target="_blank"
+                      >
+                        pretix.eu Ticketshop
+                      </LinkInline>{" "}
+                      oder bei unserem Partner{" "}
+                      <LinkInline
+                        href="https://www.ticketswap.com/listing/klein-und-haarig-festival-2023/9508967/c851a7a229"
+                        target="_blank"
+                      >
+                        Ticketswap
+                      </LinkInline>{" "}
+                      erhältlich. Bei Letzterem kannst du dein Ticket, falls du
+                      aus Gründen nicht kannst, weiterverkaufen. Weitere
+                      Stornierungsoptionen findest du in unseren{" "}
+                      <LinkInline to={"/agbs"} target="_blank">
+                        AGBs.
+                      </LinkInline>
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Location</InfoLabel>
                     <InfoText>
                       Das Klein und Haarig findet auf dem{" "}
