@@ -137,6 +137,76 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
+                    <InfoLabel>
+                      Mitfahrgelegenheiten (Whatsapp Gruppen)
+                    </InfoLabel>
+
+                    <List>
+                      <ListItem>
+                        <LinkInline
+                          href="https://chat.whatsapp.com/I1aMzOjdu4BL8nOP91n2za"
+                          target="_blank"
+                        >
+                          Berlin
+                        </LinkInline>{" "}
+                      </ListItem>
+                      <ListItem>
+                        <LinkInline
+                          href="https://chat.whatsapp.com/DWTTwYPmPfWGmuwOzfiIa3"
+                          target="_blank"
+                        >
+                          Leipzig
+                        </LinkInline>{" "}
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        <LinkInline
+                          href="https://chat.whatsapp.com/KqatInu5niS71TUu3JNCf5"
+                          target="_blank"
+                        >
+                          München
+                        </LinkInline>{" "}
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        <LinkInline
+                          href="https://chat.whatsapp.com/KumquIM5XBiHLzZSVP7dI0"
+                          target="_blank"
+                        >
+                          NRW
+                        </LinkInline>{" "}
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        <LinkInline
+                          href="https://chat.whatsapp.com/GUiamTvtyTUBj7yfOPAl5p"
+                          target="_blank"
+                        >
+                          Stuttgart
+                        </LinkInline>{" "}
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        <LinkInline
+                          href="https://chat.whatsapp.com/KHEAktqDyKMG1piHRqe6ZV"
+                          target="_blank"
+                        >
+                          Ulm
+                        </LinkInline>{" "}
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        <LinkInline
+                          href="https://chat.whatsapp.com/HsToHcs5D9JIDlgmtbVlyf"
+                          target="_blank"
+                        >
+                          Wien
+                        </LinkInline>{" "}
+                      </ListItem>
+                    </List>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Spielregeln</InfoLabel>
                     <InfoText>
                       Wir möchten gemeinsam mit dir einen Raum schaffen, in dem
@@ -409,4 +479,22 @@ const InfoBild1 = styled.div`
     width: 352px;
     height: 548px;
   } */
+`
+
+const List = styled.div`
+  margin-top: 16px;
+`
+
+const ListItem = styled.p`
+  color: rgba(255, 255, 255, 0.8);
+  padding: 8px 0 8px 16px;
+  max-width: 800px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* display: grid;
+  grid-template-columns: repeat(1, auto); */
+  /* gap: 12px; */
+  &:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
 `
