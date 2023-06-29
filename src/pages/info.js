@@ -207,26 +207,72 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Spielregeln</InfoLabel>
+                    <InfoLabel>Code of Conduct</InfoLabel>
                     <InfoText>
-                      Wir möchten gemeinsam mit dir einen Raum schaffen, in dem
-                      sich alle Personen sicher fühlen und ausleben können.
-                      Dafür braucht es von allen Aufmerksamkeit. <br />
-                      Bitte achte auf andere! Wenn du merkst dass es jemandem
-                      schlecht geht, deine oder andere Grenzen missachtet
-                      werden, zögere nicht zu handeln! Wenn du dich einer
-                      Situation nicht gewachsen fühlst oder Unterstützung
-                      benötigst, wende dich an das Awareness Team oder einen
+                      Wir möchten gemeinsam mit dir einen möglichst
+                      diskriminierungsfreien, nicht wertenden Raum schaffen, in
+                      dem sich alle Personen sicher fühlen und ausleben können –
+                      hierfür sind alle Teilnehmenden verantwortlich.
+                      <br />
+                      Psychische wie physische Gewalt in Form von rassistischem,
+                      sexistischem, queerfeindlichen und menschenverachtenden
+                      Verhalten jeglicher Art wird von uns nicht toleriert und
+                      führt zu einem Ausschluss aus der Veranstaltung. <br />
+                      Bitte achte auf Andere! Wenn du merkst, dass es jemandem
+                      schlecht geht, jemand in irgendeiner Form diskriminiert
+                      wird, deine oder andere Grenzen missachtet werden, zögere
+                      nicht zu handeln! Wenn du dich einer Situation nicht
+                      gewachsen fühlst oder Unterstützung benötigst, wende dich
+                      an das Awareness Team (über das Erkennungszeichen der
+                      Awarenesspersonen wirst du vor Ort informiert) oder einen
                       Menschen mit Funkgerät. Du musst niemandem direkt
                       erzählen, was vorgefallen ist. Sage nur, dass du in
-                      Kontakt mit dem Awareness Team treten möchtest. Es gibt
-                      auf dem Gelände einen Safe-Space, wo du aufgefangen werden
-                      kannst. Psychische wie physische Gewalt in Form von
-                      rassistischem, sexistischem, homophoben und
-                      menschenverachtenden Verhalten jeglicher Art wird von uns
-                      nicht toleriert und führt zum Ausschluss der
-                      Veranstaltung.
-                      <br /> Wenn diese Art von Aufmerksamkeit für dich neu ist,
+                      Kontakt mit dem Awareness Team treten möchtest (oder nutze
+                      unser Codewort an der Bar). Du findest auf dem Gelände
+                      einen Awarenessstand und einen Safe-Space, wo dir, wenn du
+                      das wünschst, geholfen werden kann, du dich informieren
+                      oder einfach zurückziehen kannst. Wichtig dabei: Die
+                      Definitionsmacht liegt immer bei den Betroffenen. Die
+                      betroffene Person definiert selbst, wann und welche Form
+                      von Gewalt oder Diskriminierung sie erlebt hat. Diese
+                      Definition wird ernst genommen, als wahr empfunden und
+                      nicht in Frage gestellt. <br />
+                      Nur ja heißt ja! Handle nach diesem Konsens-Prinzip und
+                      achte darauf immer das Einverständnis deiner Mitmenschen
+                      einzuholen. <br />
+                      Bitte schließe nicht vom äußeren Erscheinungsbild auf die
+                      Geschlechtsidentität einer anderen Person. Nur weil du
+                      jemanden als männlich oder weiblich liest, bedeutet das
+                      nicht, dass diese Person sich auch so identifiziert.{" "}
+                      <br />
+                      Um Diskriminierung auf Toiletten zu verhindern, sind
+                      während unserer Veranstaltung alle Toiletten Unisex.
+                      Generell bitten wir dich, dich daran zu erinnern, dass
+                      Menschen unabhängig davon, wie du sie liest, auf jede
+                      Toilette gehen können, die sie als für sich richtig
+                      erachten.
+                      <br /> Wenn du ein Foto/Video von Teilnehmenden machst und
+                      posten möchtest, bitte um Erlaubnis oder mache die
+                      Gesichter unkenntlich. Nicht jede*r möchte im Internet
+                      abgebildet werden.
+                      <br /> Bitte achte auch beim Thema Konsum auf Andere! Der
+                      offene Konsum von illegalen Drogen ist auf dem gesamten
+                      Festivalgelände verboten! <br />
+                      Wir machen alle Fehler. Wenn Personen diskriminierende
+                      Sprache oder Denkweisen verwenden, versuchen wir sie durch
+                      konstruktive Kritik darauf aufmerksam zu machen. Wir
+                      bitten dich, wenn Menschen konstruktiv Kritik an dich
+                      richten, dafür offen zu sein und zuzuhören. <br />
+                      Diese Richtlinien gelten für Besucher*innen,
+                      Künstler*innen und Mitarbeitende. Kommst du auf unsere
+                      Veranstaltung, so erwarten wir von dir, dass du dich an
+                      unsere Spielregeln hältst. Alle auftretenden
+                      Künstler*innen werden vorab über unsere Richtlinien zur
+                      Schaffung sicherer Räume und Nulltoleranz für Vorfälle
+                      informiert. Wir behalten uns das Recht vor, Verträge zu
+                      annullieren, wenn wir feststellen, dass ein*e Künstler*in
+                      gegen unsere Richtlinien verstoßen hat. <br />
+                      Wenn diese Art von Aufmerksamkeit für dich neu ist,
                       informiere dich vor dem Festival eigenständig oder beim
                       Awareness Team vor Ort. Das Team steht außerdem für Fragen
                       und Informationen rund um das Thema Safer Use bereit und
