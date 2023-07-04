@@ -112,27 +112,17 @@ export default function Info() {
                   <InfoSection>
                     <InfoLabel>An- & Abreise mit dem Auto</InfoLabel>
                     <InfoText>
-                      Auf dem Festivalgelände gibt es keine Parkmöglichkeiten.
-                      Wie auch im letzten Jahr bringt dich ein Shuttle vom{" "}
-                      <LinkInline
-                        href="https://goo.gl/maps/VYxFbGm8zefcC2dG7"
-                        target="_blank"
-                      >
-                        Parkplatz Kaltenbronn
-                      </LinkInline>{" "}
-                      zum Festival.
-                    </InfoText>
-                    <InfoText>
-                      Anreise — Komme bei deiner Anreise bitte zuerst zum
-                      Festivaleingang, um dort dein Gepäck und deine
-                      Mitfahrenden abzuladen (max. 5 min). Fahre dann alleine
-                      zum Parkplatz. Das Shuttle bringt dich von dort wieder
-                      zurück zum Festival.
-                    </InfoText>
-                    <InfoText>
-                      Abreise — Vom Festivaleingang bringt das Shuttle alle
-                      Fahrer*innen zum Parkplatz. Fahre anschließend zum
-                      Festival um dort zu Beladen.
+                      In diesem Jahr kannst du direkt vor dem Festivalgelände
+                      parken. Wir werden Parkzonen auf dem Seitenstreifen der
+                      Enztalstraße in Richtung Bad Wildbad einrichten. Bitte
+                      parke so, dass der Verkehr weiterhin gut fließen kann und
+                      beachte unbedingt die ausgewiesenen Halteverbotszonen. Für
+                      das Parken deines Autos benötigst du ein Auto Ticket, das
+                      du in unserem Ticketshop kaufen kannst. Übernachten in
+                      Fahrzeugen, die nicht auf dem Festivalgelände abgestellt
+                      sind, ist strengstens verboten! <br />
+                      Camper mit entsprechendem Ticket dürfen auf das Gelände
+                      fahren.
                     </InfoText>
                   </InfoSection>
 
