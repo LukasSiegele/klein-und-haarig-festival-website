@@ -37,6 +37,14 @@ export default function Info() {
                   </HeaderSection>
 
                   <InfoSection>
+                    <InfoLabelImportant>Temperatur Warnung</InfoLabelImportant>
+                    <InfoTextImportant>
+                      Bitte sei vorbereitet! Die Nächte auf dem Gelände können
+                      kalt werden.
+                    </InfoTextImportant>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Ablauf</InfoLabel>
                     <InfoText>
                       Das Festival findet vom 14. bis zum 17. Juli statt. Du
@@ -467,6 +475,20 @@ const InfoText = styled.p`
   font-family: "GT-Alpina-Extended-Regular";
   margin-bottom: 20px;
   opacity: 0.75;
+  max-width: 800px;
+`
+const InfoLabelImportant = styled.h3`
+  color: red;
+  margin-bottom: 16px;
+  display: inline-block;
+  max-width: 800px;
+`
+
+const InfoTextImportant = styled.p`
+  color: red;
+  font-family: "GT-Alpina-Extended-Regular";
+  margin-bottom: 20px;
+  opacity: 0.9;
   max-width: 800px;
 `
 
