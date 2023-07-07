@@ -45,6 +45,18 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
+                    <InfoLabelImportant>Verkehrs Warnung</InfoLabelImportant>
+                    <InfoTextImportant>
+                      Achtung an alle Autoanreisenden aus Ulm und München: Die
+                      A8 wird vom 13. Juli 22 Uhr bis 17. Juli 5 Uhr zwischen
+                      Ulm-West und Mühlhausen (Richtung Stuttgart/Karlsruhe)
+                      gesperrt. Bitte rechne mit Verspätungen. Folge immer den
+                      ausgeschilderten Umleitungen - verlasse dich nicht auf
+                      (Google) Maps oder dein Navi! Trotzdem gute Fahrt!
+                    </InfoTextImportant>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>Ablauf</InfoLabel>
                     <InfoText>
                       Das Festival findet vom 14. bis zum 17. Juli statt. Du
