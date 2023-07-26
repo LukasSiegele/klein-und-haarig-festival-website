@@ -86,7 +86,7 @@ export default function Hero() {
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
             target="_blank"
           >
-            <FormButton label="Tickets" />
+            {/* <FormButton label="Tickets" /> */}
           </Link>
         </Column2>
         {/* </ContentGrid> */}

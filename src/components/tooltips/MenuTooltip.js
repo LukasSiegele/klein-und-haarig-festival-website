@@ -22,14 +22,14 @@ export default function MenuTooltip(props) {
             <MenuVerein isVerein={isVerein}>Verein</MenuVerein>
           </Link>
         </MenuButton>
-        <MenuButton>
+        {/* <MenuButton>
           <Link
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
             target="_blank"
           >
             <MenuTickets>Tickets</MenuTickets>
           </Link>
-        </MenuButton>
+        </MenuButton> */}
       </MenuGrid>
     </Wrapper>
   )

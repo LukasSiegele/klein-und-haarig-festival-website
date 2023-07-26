@@ -40,12 +40,12 @@ export default function Volunteer() {
                       bei.
                     </InfoHeadline>
                     <AnmeldeGroup>
-                      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
+                      {/* <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
                         <FormButton
                           backgroundColor="#6A79FF"
                           label="Volunteer werden"
                         ></FormButton>
-                      </Link>
+                      </Link> */}
                       {/* <InfoText>
                         Bald findest du hier den Link zur Volunteer Anmeldung.
                       </InfoText> */}
@@ -55,13 +55,13 @@ export default function Volunteer() {
                   <InfoSection>
                     <InfoLabel>Wie funktioniert das?</InfoLabel>
                     <InfoText>
-                      Klicke oben auf "Volunteer werden", fülle das Formular aus
-                      und kaufe dir ganz normal ein Festival Ticket. Wähle frei
-                      wie lange (S, M, L), wann (Aufbau, Während, Abbau) und
-                      wobei (Einlass, Food, Security, usw.) du uns helfen
-                      möchtest. Du kannst uns dabei auch deinen Wunsch-Buddy
-                      mitteilen. Wir geben unser Bestes deine Wünsche zu
-                      erfüllen.
+                      Klicke oben auf "Volunteer werden" (aktuell nicht
+                      verfügbar), fülle das Formular aus und kaufe dir ganz
+                      normal ein Festival Ticket. Wähle frei wie lange (S, M,
+                      L), wann (Aufbau, Während, Abbau) und wobei (Einlass,
+                      Food, Security, usw.) du uns helfen möchtest. Du kannst
+                      uns dabei auch deinen Wunsch-Buddy mitteilen. Wir geben
+                      unser Bestes deine Wünsche zu erfüllen.
                     </InfoText>
                   </InfoSection>
 
@@ -94,8 +94,9 @@ export default function Volunteer() {
                       dem machen, was es ist. Trotzdem wollen wir dich für deine
                       Unterstützung belohnen. Du erhälst nach getaner Arbeit
                       eine Erstattung, deren Höhe sich nach der Anzahl deiner
-                      Schichten richtet (siehe unten). Während dem Auf- und
-                      Abbau wirst du zudem mit Essen und Getränken versorgt.
+                      Schichten richtet ((max. aber in Höhe des von dir
+                      gezahlten Ticketpreises)). Während dem Auf- und Abbau
+                      wirst du zudem mit Essen und Getränken versorgt.
                     </InfoText>
                     <List>
                       <ListItem>

@@ -40,14 +40,14 @@ export default function SideNavigation(props) {
                 <ListVerein isVerein={isVerein}>Verein</ListVerein>
               </a>
             </Link>
-            <Link
+            {/* <Link
               to="https://pretix.eu/bunteplatte/kleinundhaarig"
               target="_blank"
             >
               <a>
                 <ListTickets>Tickets</ListTickets>
               </a>
-            </Link>
+            </Link> */}
           </LinkGroup>
         </LinkWrapper>
       </Wrapper>
