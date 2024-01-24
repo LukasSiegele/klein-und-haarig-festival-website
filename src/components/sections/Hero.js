@@ -265,7 +265,7 @@ const TicketWrapper = styled(Link)`
 // `
 
 const C1Content = styled.div`
-  max-width: 400px;
+  /* max-width: 400p; */
 `
 
 const MLogoGroup = styled.div`
