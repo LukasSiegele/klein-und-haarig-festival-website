@@ -41,8 +41,8 @@ export default function Hero() {
             {/* <DateMask> */}
 
             <DateGroup>
-              <Datum>14 — 17</Datum>
-              <Datum>07/2023</Datum>
+              <Datum>06 — 09</Datum>
+              <Datum>06/2024</Datum>
             </DateGroup>
 
             {/* </DateMask> */}
@@ -62,10 +62,10 @@ export default function Hero() {
           </C1Content>
           {/* </DateMask> */}
         </Column1>
-        {/* <Column2>
+        <Column2>
           <InfoText>
             Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
-            zum Ticket Presale und zum Festival 2023.
+            zum Ticket Presale und zum Festival 2024.
           </InfoText>
 
           <Newsletter></Newsletter>
@@ -76,26 +76,30 @@ export default function Hero() {
                 to="https://www.instagram.com/kleinundhaarig/"
                 target="_blank"
               >
-                <FormButton label="@kleinundhaarig" />
+                <FormButton
+                  label="@kleinundhaarig"
+                  backgroundColor="white"
+                  color="black"
+                />
               </Link>
             </InstaButton>
           </InstagramSection>
-        </Column2> */}
-        <Column2>
+        </Column2>
+        {/* <Column2>
           <Link
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
             target="_blank"
           >
-            {/* <FormButton label="Tickets" /> */}
+            <FormButton label="Tickets" />
           </Link>
-        </Column2>
+        </Column2> */}
         {/* </ContentGrid> */}
 
-        <AnimationContainer>
+        {/* <AnimationContainer>
           <ArtworkAnimation autoPlay loop muted>
             <source src={HeroAnimation} type="video/mp4"></source>
           </ArtworkAnimation>
-        </AnimationContainer>
+        </AnimationContainer> */}
       </ContentContainer>
       {/* <TicketButton /> */}
 
@@ -122,20 +126,21 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   /* position: absolute; */
-  display: grid;
+  /* display: grid; */
 `
 
 const ContentGrid = styled.div`
   /* z-index: 10; */
-  /* display: grid; */
-  /* height: 100vh; */
+  display: grid;
+  height: 90vh;
   /* display: flex; */
-  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: repeat(2, 1fr);
   /* padding-top: 12px; */
 
   @media (max-width: 1100px) {
     position: absolute;
     z-index: 9;
+    grid-template-columns: 1fr;
     /* height: auto; */
     /* grid-template-rows: repeat(2, auto); */
     /* grid-template-rows: repeat(3, auto);
@@ -148,9 +153,9 @@ const Column1 = styled.div`
   /* align-content: center; */
   /* background-color: red; */
   /* opacity: 0.4; */
-  grid-area: 1 / 1 / 1 / 2;
+  /* grid-area: 1 / 1 / 1 / 2; */
   z-index: 2;
-  padding: 25px 20px 0 20px;
+  padding: 25px 20px 100px 20px;
   @media (max-width: 800px) {
     padding: 10px 10px 0 10px;
     /* grid-area: revert; */
@@ -162,8 +167,8 @@ const Column1 = styled.div`
 const Column2 = styled.div`
   /* background-color: red; */
   /* opacity: 0.2; */
-  grid-area: 1 / 2 / 1 / 3;
-  z-index: 2;
+  /* grid-area: 1 / 2 / 1 / 3; */
+  /* z-index: 2; */
 
   padding: 25px 20px 0 20px;
   /* border-left: 1px solid black; */
@@ -171,10 +176,10 @@ const Column2 = styled.div`
     /* grid-template-columns: none; */
     /* grid-area: 2 / 1 / 3 / 1; */
     /* grid-area: revert; */
-    grid-area: 2 / 1 / 3 / 2;
+    /* grid-area: 2 / 1 / 3 / 2; */
     /* position: absolute; */
     margin-top: 120px;
-    max-width: 360px;
+    /* max-width: 360px; */
     padding: 20px 20px 0 20px;
     border: 0;
   }
@@ -281,7 +286,9 @@ const KleinMask = styled.div`
   margin-right: 20px;
 `
 
-const TitleKlein = styled.h3``
+const TitleKlein = styled.h3`
+  color: white;
+`
 
 const DateGroup = styled.div`
   margin-top: 45px;
@@ -367,7 +374,7 @@ const TitleJahr = styled.h3`
   font-family: "GT-Alpina-Extended-Regular";
 
   text-transform: none;
-  color: #000000;
+  color: red;
 `
 
 // Datum und Ort
@@ -400,7 +407,7 @@ const Datum = styled.h3`
 // `
 
 const InfoText = styled.h3`
-  color: black;
+  color: white;
   padding: 6px 0;
   /* animation: HeroAnimation 1.3s 1.6s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0; */

@@ -36,15 +36,15 @@ export default function Info() {
                     </InfoHeadline>
                   </HeaderSection>
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabelImportant>Temperatur Warnung</InfoLabelImportant>
                     <InfoTextImportant>
                       Bitte sei vorbereitet! Die Nächte auf dem Gelände können
                       kalt werden.
                     </InfoTextImportant>
-                  </InfoSection>
+                  </InfoSection> */}
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabelImportant>Straßensperrung</InfoLabelImportant>
                     <InfoTextImportant>
                       Achtung an alle Autoanreisenden aus Ulm und München: Die
@@ -54,9 +54,9 @@ export default function Info() {
                       ausgeschilderten Umleitungen - verlasse dich nicht auf
                       (Google) Maps oder dein Navi! Trotzdem gute Fahrt!
                     </InfoTextImportant>
-                  </InfoSection>
+                  </InfoSection> */}
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabel>Ablauf</InfoLabel>
                     <InfoText>
                       Das Festival findet vom 14. bis zum 17. Juli statt. Du
@@ -65,9 +65,9 @@ export default function Info() {
                       Musikalisches Ende wird vorraussichtlich Montag 16 Uhr
                       sein. Nähere Infos folgen.
                     </InfoText>
-                  </InfoSection>
+                  </InfoSection> */}
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabel>Tickets & Ticketswap</InfoLabel>
                     <InfoText>
                       Tickets sind über unseren{" "}
@@ -91,7 +91,7 @@ export default function Info() {
                         AGBs.
                       </LinkInline>
                     </InfoText>
-                  </InfoSection>
+                  </InfoSection> */}
 
                   <InfoSection>
                     <InfoLabel>Location</InfoLabel>
@@ -132,13 +132,13 @@ export default function Info() {
                   <InfoSection>
                     <InfoLabel>An- & Abreise mit dem Auto</InfoLabel>
                     <InfoText>
-                      In diesem Jahr kannst du direkt vor dem Festivalgelände
-                      parken. Wir werden Parkzonen auf dem Seitenstreifen der
-                      Enztalstraße in Richtung Bad Wildbad einrichten. Bitte
-                      parke so, dass der Verkehr weiterhin gut fließen kann und
-                      beachte unbedingt die ausgewiesenen Halteverbotszonen. Für
-                      das Parken deines Autos benötigst du ein Auto Ticket, das
-                      du in unserem Ticketshop kaufen kannst. Übernachten in
+                      Du kannst direkt vor dem Festivalgelände parken. Wir
+                      werden Parkzonen auf dem Seitenstreifen der Enztalstraße
+                      in Richtung Bad Wildbad einrichten. Bitte parke so, dass
+                      der Verkehr weiterhin gut fließen kann und beachte
+                      unbedingt die ausgewiesenen Halteverbotszonen. Für das
+                      Parken deines Autos benötigst du ein Auto Ticket, das du
+                      in unserem Ticketshop kaufen kannst. Übernachten in
                       Fahrzeugen, die nicht auf dem Festivalgelände abgestellt
                       sind, ist strengstens verboten! <br />
                       Camper mit entsprechendem Ticket dürfen auf das Gelände
@@ -146,7 +146,7 @@ export default function Info() {
                     </InfoText>
                   </InfoSection>
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabel>
                       Mitfahrgelegenheiten (Whatsapp Gruppen)
                     </InfoLabel>
@@ -214,7 +214,7 @@ export default function Info() {
                         </LinkInline>{" "}
                       </ListItem>
                     </List>
-                  </InfoSection>
+                  </InfoSection> */}
 
                   <InfoSection>
                     <InfoLabel>Code of Conduct</InfoLabel>

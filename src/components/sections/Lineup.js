@@ -573,10 +573,10 @@ export default function Lineup() {
             <PlaylistSection>
               <PlaylistLeft>
                 <Link
-                  to="https://soundcloud.com/kleinundhaarig/sets/kuh-2023/s-F9pR0vOnXl5?si=c66c43c2bd304134ad8d69e1e8de54a0&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                  to="https://soundcloud.com/kleinundhaarig/sets/rec-2023?si=acafd5203abe4d498691752a57a3ac87&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
                   target="_blank"
                 >
-                  <FormButtonSmall label="KuH 2023 Preview — Soundcloud Playlist" />
+                  <FormButtonSmall label="Recordings 2023" />
                 </Link>
               </PlaylistLeft>
               <PlaylistRight />

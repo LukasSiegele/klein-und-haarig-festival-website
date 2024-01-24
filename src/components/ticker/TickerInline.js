@@ -17,7 +17,7 @@ const TickerInline = () => {
           <RTicker speed={12}>
             {({ index }) => (
               <Wrapper>
-                <TickerTextSmall>Full Lineup 2023</TickerTextSmall>
+                <TickerTextSmall>Lineup 2023</TickerTextSmall>
                 <Icon src="/icons/banner-star-black.svg"></Icon>
               </Wrapper>
             )}

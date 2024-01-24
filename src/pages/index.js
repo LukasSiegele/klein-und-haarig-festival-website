@@ -43,7 +43,7 @@ export default function IndexPage() {
                 </MainGrid>
               </Artwork>
 
-              <ArtistText> Artwork — Amelie Straubmüller </ArtistText>
+              {/* <ArtistText> Artwork — Amelie Straubmüller </ArtistText> */}
             </HeroSection>
             {/* <TickerGroup>
               <Ticker />

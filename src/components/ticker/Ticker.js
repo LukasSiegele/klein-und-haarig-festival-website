@@ -60,7 +60,7 @@ const Ticker = () => {
                  */}
                 <Icon src="/icons/banner-star.svg"></Icon>
                 <TickerText className="tickerText">
-                  Danke!  
+                  Save the date 06 - 09/06/2024
                 </TickerText>
 
                 {/* <TickerText className="tickerText">

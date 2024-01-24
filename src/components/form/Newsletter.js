@@ -66,7 +66,12 @@ export default function Newsletter() {
           </InputGroup>
 
           <ButtonWrapper>
-            <FormButton typ="submit" label="Anmelden" />
+            <FormButton
+              typ="submit"
+              label="Anmelden"
+              backgroundColor="white"
+              color="black"
+            />
           </ButtonWrapper>
         </ButtonInputGroup>
       </form>
@@ -90,7 +95,7 @@ const InputGroup = styled.div`
 
   @media (max-width: 800px) {
     /* margin-top: -8px; */
-    /* grid-template-columns: 1fr; */
+    grid-template-columns: 1fr;
   }
 `
 
@@ -100,7 +105,7 @@ const ButtonInputGroup = styled.div`
 `
 
 const Label = styled.h4`
-  color: white;
+  color: black;
   /* margin-top: 20px; */
   display: inline-block;
 `
