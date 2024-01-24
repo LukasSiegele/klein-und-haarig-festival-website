@@ -59,32 +59,35 @@ export default function Hero() {
                 </IconGroup>
               </LinkInline>
             </PlaceGroup>
+
+            <NewsletterGroup>
+              <InfoText>
+                Melde dich zu unserem Newsletter an und bekomme so frühzeitig
+                Infos zum Ticket Presale und zum Festival 2024.
+              </InfoText>
+
+              <Newsletter></Newsletter>
+              <InstagramSection>
+                <InfoText>Folge uns auf Instagram</InfoText>
+                <InstaButton>
+                  <Link
+                    to="https://www.instagram.com/kleinundhaarig/"
+                    target="_blank"
+                  >
+                    <FormButton
+                      label="@kleinundhaarig"
+                      backgroundColor="white"
+                      color="black"
+                    />
+                  </Link>
+                </InstaButton>
+              </InstagramSection>
+            </NewsletterGroup>
           </C1Content>
+
           {/* </DateMask> */}
         </Column1>
-        <Column2>
-          <InfoText>
-            Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
-            zum Ticket Presale und zum Festival 2024.
-          </InfoText>
-
-          <Newsletter></Newsletter>
-          <InstagramSection>
-            <InfoText>Folge uns auf Instagram</InfoText>
-            <InstaButton>
-              <Link
-                to="https://www.instagram.com/kleinundhaarig/"
-                target="_blank"
-              >
-                <FormButton
-                  label="@kleinundhaarig"
-                  backgroundColor="white"
-                  color="black"
-                />
-              </Link>
-            </InstaButton>
-          </InstagramSection>
-        </Column2>
+        <Column2></Column2>
         {/* <Column2>
           <Link
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
@@ -192,6 +195,10 @@ const AnimationContainer = styled.div`
     /* grid-area: revert; */
     /* position: relative; */
   }
+`
+
+const NewsletterGroup = styled.div`
+  margin-top: 120px;
 `
 
 const ArtworkAnimation = styled.video`
