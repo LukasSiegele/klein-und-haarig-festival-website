@@ -26,7 +26,8 @@ export default function IndexPage() {
   return (
     <>
       {/* <SEO title="Home" /> */}
-
+      
+      
       <ParallaxProvider>
         <Wrapper>
           {/* <MainGrid> */}

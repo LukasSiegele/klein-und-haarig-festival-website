@@ -18,7 +18,6 @@ export default function Info() {
       {/* <SEO title="Info" /> */}
       <Wrapper>
         <MobileNavigation isInfo="info" bgColor="black" />
-
         <SideNavigation isInfo="info" bgColor="black" />
         <Content>
           <MainGrid>
