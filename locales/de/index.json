@@ -3,5 +3,28 @@
         "infos": "Infos",
         "volunteers": "Volunteers",
         "association": "Verain"
+    },
+    "pages": {
+        "infos": {
+            "headline": "Wir möchten nicht zu viel verraten. Hier das Wichtigste — kurz und knapp.",
+            "sections": {
+                "first": {
+                    "label": "Location",
+                    "text": "Das Klein und Haarig findet auf dem <0>Zeltplatz Christophshof, 75323 Bad Wildbad statt.</0>",
+                    "link": {
+                        "href": "https://goo.gl/maps/muaWAGwPx7nebDjJ9",
+                        "text": "Zeltplatz Christophshof, 75323 Bad Wildbad statt."
+                    }
+                },
+                "second": {
+                    "label": "Anreise mit Öffis",
+                    "text": "Die nächstgelegene Bahnstation ist \"Bad Wildbad Bahnhof\". Von dort bringt dich die <1>Buslinie 7780</1> ca. alle 30 min direkt vor das Gelände — Haltestelle \"Bad Wildbad, Zeltplatz\".",
+                    "link": {
+                        "href": "https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type=",
+                        "text": "Buslinie 7780."
+                    }
+                }
+            }
+        }
     }
 }

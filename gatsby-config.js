@@ -25,7 +25,7 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
         languages: [`de`, `en`],
-        defaultLanguage: `en`,
+        defaultLanguage: `de`,
         siteUrl: `https://example.com`,
         // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         trailingSlash: 'always',

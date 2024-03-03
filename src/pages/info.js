@@ -6,7 +6,7 @@ import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useTranslation, Trans } from 'gatsby-plugin-react-i18next';
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
 import { graphql } from 'gatsby'
@@ -15,6 +15,9 @@ import MobileNavigation from "../components/navigation/MobileNavigation"
 
 export default function Info() {
   const {t} = useTranslation();
+
+
+  console.log()
 
   
   return (
@@ -34,8 +37,7 @@ export default function Info() {
                 <TextSection>
                   <HeaderSection>
                     <InfoHeadline>
-                      Wir möchten nicht zu viel verraten. Hier das Wichtigste —
-                      kurz und knapp.
+                      {t('pages.infos.headline')}
                     </InfoHeadline>
                   </HeaderSection>
 
@@ -97,38 +99,33 @@ export default function Info() {
                   </InfoSection> */}
 
                   <InfoSection>
-                    <InfoLabel>Location</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.first.label')}</InfoLabel>
                     <InfoText>
-                      Das Klein und Haarig findet auf dem{" "}
+                      <Trans t={t} i18nKey={'pages.infos.sections.first.text'}></Trans>
+                      Das Klein und Haarig findet auf dem {" "}
                       <LinkInline
-                        href="https://goo.gl/maps/muaWAGwPx7nebDjJ9"
+                        href={t('pages.infos.sections.first.link.href')}
                         target="_blank"
                       >
-                        Zeltplatz Christophshof, 75323 Bad Wildbad statt.
+                        {t('pages.infos.sections.first.link.text')}
                       </LinkInline>
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Anreise mit Öffis</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.second.label')}</InfoLabel>
                     <InfoText>
-                      Die nächstgelegene Bahnstation ist "Bad Wildbad Bahnhof".
-                      Von dort bringt dich die{" "}
+                      <Trans t={t} i18nKey={'pages.infos.sections.second.text'}>
+                      Die nächstgelegene Bahnstation ist Bad Wildbad Bahnhof.
+                      Von dort bringt dich die
                       <LinkInline
-                        href="https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type="
+                        href={t('pages.infos.sections.second.link.href')}
                         target="_blank"
                       >
-                        Buslinie 7780
-                      </LinkInline>{" "}
-                      ca. alle 30 min{" "}
-                      {/* <LinkInline
-                        href="https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-Württemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-Württemberg&origin_type=stop&originname=%20Stadtbahnhof%20%2F%20ZOB%2C%20Freudenstadt&passengers_train_card=&person=1&time=11%3A30&transport_type="
-                        target="_blank"
-                      >
-                        ZOB Freudenstadt
-                      </LinkInline>{" "} */}
-                      direkt vor das Gelände — Haltestelle "Bad Wildbad,
-                      Zeltplatz".
+                        Buslinie 7780.
+                      </LinkInline>
+                      ca. alle 30 min direkt vor das Gelände — Haltestelle "Bad Wildbad, Zeltplatz"
+                      </Trans>
                     </InfoText>
                   </InfoSection>
 
