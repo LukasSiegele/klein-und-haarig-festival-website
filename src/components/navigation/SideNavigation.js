@@ -1,11 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
   const { isInfo, isVolunteer, isVerein, isOpenCalls } = props
+  const {languages, originalPath, language} = useI18next();
+  const {t} = useTranslation()
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>
@@ -13,20 +15,31 @@ export default function SideNavigation(props) {
           <Link to="/">
             <Logo src="/icons/Logo-White.svg"></Logo>
           </Link>
+          <ul className="languages">
+        {languages.map((lng) => (
+          <li key={lng}>
+            <Link to={originalPath} language={lng}>
+              {lng}
+            </Link>
+          </li>
+        ))}
+      </ul>
         </LogoWrapper>
+
+
         <LinkWrapper>
           <LinkGroup>
-            <Link to={"/info"}>
-              <a>
-                <ListInfo isInfo={isInfo}>Infos</ListInfo>
-              </a>
+            <Link to={"/info"} >
+              
+                <ListInfo isInfo={isInfo}>{t('navigation.infos')}</ListInfo>
+              
             </Link>
-            <Link to={"/volunteer"}>
-              <a>
+            <Link to={"/volunteer"} language={language}>
+              
                 <ListVolunteer isVolunteer={isVolunteer}>
-                  Volunteer
+                  {t('navigation.volunteers')}
                 </ListVolunteer>
-              </a>
+              
             </Link>
             {/* <Link to={"/opencalls"}>
               <a>
@@ -35,10 +48,10 @@ export default function SideNavigation(props) {
                 </ListVolunteer>
               </a>
             </Link> */}
-            <Link to={"/verein"}>
-              <a>
-                <ListVerein isVerein={isVerein}>Verein</ListVerein>
-              </a>
+            <Link to={"/verein"} language={language}>
+              
+                <ListVerein isVerein={isVerein}>{t('navigation.association')}</ListVerein>
+              
             </Link>
             {/* <Link
               to="https://pretix.eu/bunteplatte/kleinundhaarig"

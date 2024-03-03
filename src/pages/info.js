@@ -6,13 +6,17 @@ import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
-
+import { graphql } from 'gatsby'
 import Info1 from "../../static/images/InfoBild1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 
 export default function Info() {
+  const {t} = useTranslation();
+
+  
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
@@ -406,6 +410,21 @@ export default function Info() {
   )
 }
 
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
+
 const Wrapper = styled.div`
   overflow: hidden;
   background-color: red;
@@ -567,3 +586,5 @@ const ListItem = styled.p`
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 `
+
+
