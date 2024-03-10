@@ -127,9 +127,9 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.section.third.label')}</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.third.label')}</InfoLabel>
                     <InfoText>
-                    {t('pages.infos.section.third.text')}
+                    {t('pages.infos.sections.third.text')}
                     </InfoText>
                   </InfoSection>
 
@@ -204,179 +204,76 @@ export default function Info() {
                   </InfoSection> */}
 
                   <InfoSection>
-                    <InfoLabel>Code of Conduct</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.forth.label')}</InfoLabel>
                     <InfoText>
-                      Wir möchten gemeinsam mit dir einen möglichst
-                      diskriminierungsfreien, nicht wertenden Raum schaffen, in
-                      dem sich alle Personen sicher fühlen und ausleben können –
-                      hierfür sind alle Teilnehmenden verantwortlich.
-                      <br />
-                      Psychische wie physische Gewalt in Form von rassistischem,
-                      sexistischem, queerfeindlichen und menschenverachtenden
-                      Verhalten jeglicher Art wird von uns nicht toleriert und
-                      führt zu einem Ausschluss aus der Veranstaltung. <br />
-                      Bitte achte auf Andere! Wenn du merkst, dass es jemandem
-                      schlecht geht, jemand in irgendeiner Form diskriminiert
-                      wird, deine oder andere Grenzen missachtet werden, zögere
-                      nicht zu handeln! Wenn du dich einer Situation nicht
-                      gewachsen fühlst oder Unterstützung benötigst, wende dich
-                      an das Awareness Team (über das Erkennungszeichen der
-                      Awarenesspersonen wirst du vor Ort informiert) oder einen
-                      Menschen mit Funkgerät. Du musst niemandem direkt
-                      erzählen, was vorgefallen ist. Sage nur, dass du in
-                      Kontakt mit dem Awareness Team treten möchtest (oder nutze
-                      unser Codewort an der Bar). Du findest auf dem Gelände
-                      einen Awarenessstand und einen Safe-Space, wo dir, wenn du
-                      das wünschst, geholfen werden kann, du dich informieren
-                      oder einfach zurückziehen kannst. Wichtig dabei: Die
-                      Definitionsmacht liegt immer bei den Betroffenen. Die
-                      betroffene Person definiert selbst, wann und welche Form
-                      von Gewalt oder Diskriminierung sie erlebt hat. Diese
-                      Definition wird ernst genommen, als wahr empfunden und
-                      nicht in Frage gestellt. <br />
-                      Nur ja heißt ja! Handle nach diesem Konsens-Prinzip und
-                      achte darauf immer das Einverständnis deiner Mitmenschen
-                      einzuholen. <br />
-                      Bitte schließe nicht vom äußeren Erscheinungsbild auf die
-                      Geschlechtsidentität einer anderen Person. Nur weil du
-                      jemanden als männlich oder weiblich liest, bedeutet das
-                      nicht, dass diese Person sich auch so identifiziert.{" "}
-                      <br />
-                      Um Diskriminierung auf Toiletten zu verhindern, sind
-                      während unserer Veranstaltung alle Toiletten Unisex.
-                      Generell bitten wir dich, dich daran zu erinnern, dass
-                      Menschen unabhängig davon, wie du sie liest, auf jede
-                      Toilette gehen können, die sie als für sich richtig
-                      erachten.
-                      <br /> Wenn du ein Foto/Video von Teilnehmenden machst und
-                      posten möchtest, bitte um Erlaubnis oder mache die
-                      Gesichter unkenntlich. Nicht jede*r möchte im Internet
-                      abgebildet werden.
-                      <br /> Bitte achte auch beim Thema Konsum auf Andere! Der
-                      offene Konsum von illegalen Drogen ist auf dem gesamten
-                      Festivalgelände verboten! <br />
-                      Wir machen alle Fehler. Wenn Personen diskriminierende
-                      Sprache oder Denkweisen verwenden, versuchen wir sie durch
-                      konstruktive Kritik darauf aufmerksam zu machen. Wir
-                      bitten dich, wenn Menschen konstruktiv Kritik an dich
-                      richten, dafür offen zu sein und zuzuhören. <br />
-                      Diese Richtlinien gelten für Besucher*innen,
-                      Künstler*innen und Mitarbeitende. Kommst du auf unsere
-                      Veranstaltung, so erwarten wir von dir, dass du dich an
-                      unsere Spielregeln hältst. Alle auftretenden
-                      Künstler*innen werden vorab über unsere Richtlinien zur
-                      Schaffung sicherer Räume und Nulltoleranz für Vorfälle
-                      informiert. Wir behalten uns das Recht vor, Verträge zu
-                      annullieren, wenn wir feststellen, dass ein*e Künstler*in
-                      gegen unsere Richtlinien verstoßen hat. <br />
-                      Wenn diese Art von Aufmerksamkeit für dich neu ist,
-                      informiere dich vor dem Festival eigenständig oder beim
-                      Awareness Team vor Ort. Das Team steht außerdem für Fragen
-                      und Informationen rund um das Thema Safer Use bereit und
-                      kann bei Interesse angesprochen werden.
+                    {t('pages.infos.sections.forth.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Bezahlen </InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.fifth.label')}</InfoLabel>
                     <InfoText>
-                      Auf dem Festival kannst du nur mit Bargeld bezahlen. Es
-                      gibt keine Möglichkeit Geld abzuheben.
+                    {t('pages.infos.sections.fifth.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Müll und Umweltschutz</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.sixth.label')}</InfoLabel>
                     <InfoText>
-                      Das gesamte Festivalgelände befindet sich in einem
-                      Wasserschutzgebiet. Wir haben uns verpflichtet den
-                      Zeltplatz so zu verlassen, wie wir ihn vorgefunden haben.
-                      Bitte hilf uns dabei - nutze die von uns bereitgestellten
-                      Mülleimer, Mülltüten und Taschenascher und lasse weder
-                      defekte noch intakte Zelte, Pavillons oder Campingstühle
-                      auf dem Gelände stehen.
+                    {t('pages.infos.sections.sixth.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Zelten</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.seventh.label')}</InfoLabel>
                     <InfoText>
-                      Zelten ist im Festivalticket inklusive. Du kannst dein
-                      Zelt auf der ausgewiesenen Campingfläche aufstellen.
-                      Achtung! Unter dem Zeltplatz verläuft eine
-                      Starkstromleitung. Heringe und Zeltanker über 30 cm Länge
-                      sind deshalb nicht zulässig.
+                    {t('pages.infos.sections.seventh.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Grillen & Feuer</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.eigth.label')}</InfoLabel>
                     <InfoText>
-                      An unserer Grillstelle kannst du Mitgebrachtes zubereiten.
-                      Private Grills sind auf dem Gelände nicht gestattet.
-                      Offenes Feuer ist außer in der zentralen Feuerstelle
-                      strengstens verboten. Campingkocher sind kein Problem.
+                    {t('pages.infos.sections.eigth.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Essen</InfoLabel>
-                    <InfoText>Alles Vegetarisch/Vegan. Infos folgen.</InfoText>
+                    <InfoLabel>{t('pages.infos.sections.ninth.label')}</InfoLabel>
+                    <InfoText>{t('pages.infos.sections.ninth.text')}</InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Getränke</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.tenth.label')}</InfoLabel>
                     <InfoText>
-                      Faire Preise für nicht alkoholische Getränke, sowie für
-                      Bier, Wein, Secco, Longdrinks & Kurze. Du kannst auch
-                      eigene Getränke in normalen Mengen mit auf das
-                      Festivalgelände nehmen. Bitte bedenke aber, dass wir zur
-                      Erhaltung unseres Festivals auch auf die Einnahmen der
-                      Bars angewiesen sind.
+                    {t('pages.infos.sections.tenth.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>WCs & Duschen</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.eleventh.label')}</InfoLabel>
                     <InfoText>
-                      Auf dem Festival gibt es feste sanitäre Anlagen. Tags und
-                      Graffitis sind hier nicht erwünscht. Wir müssen sie sonst
-                      aufwändig und teuer entfernen lassen.
+                    {t('pages.infos.sections.eleventh.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Sicherheit</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.twelth.label')}</InfoLabel>
                     <InfoText>
-                      Die folgenden Gegenstände sind auf dem Festival
-                      strengstens untersagt: sämtliche Pyrotechnik, Drogen,
-                      Drohnen, Waffen aller Art und andere gefährliche
-                      Gegenstände.
+                    {t('pages.infos.sections.twelth.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Kinder & Minderjährige</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.thirteenth.label')}</InfoLabel>
                     <InfoText>
-                      Kinder und Minderjährige haber nur in Begleitung einer
-                      oder eines Erziehungsberechtigten Zutritt zum Festival.
-                      Wir raten ausdrücklich davon ab in Begleitung von Kindern
-                      oder Jugendlichen anzureisen, da wir keine Ruhezonen zur
-                      Verfügung stellen können. Solltest du dich dennoch dazu
-                      entscheiden, erwarten wir von dir, dich deiner
-                      Verantwortung bewusst zu sein und für die Betreuung deiner
-                      Kinder selbst zu sorgen. Kinder unter 14 Jahren benötigen
-                      kein Ticket. Für Kinder unter 10 Jahren besteht
-                      Gehörschutzpflicht. Muttizettel werden nicht akzeptiert.
-                      Eltern haften für ihre Kinder.
+                    {t('pages.infos.sections.thirteenth.text')}
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
-                    <InfoLabel>Hunde & andere Tiere</InfoLabel>
+                    <InfoLabel>{t('pages.infos.sections.fourteenth.label')}</InfoLabel>
                     <InfoText>
-                      Da wir aufgrund der Geländegröße keine Ruhezonen
-                      einrichten können sind Tiere nicht gestattet - zum Wohl
-                      der Gesundheit eurer Vierbeiner.
+                    {t('pages.infos.sections.fourteenth.text')}
                     </InfoText>
                   </InfoSection>
                 </TextSection>
