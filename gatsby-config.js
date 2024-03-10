@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint: "https://kleinundhaarig.us17.list-manage.com/subscribe/post?u=276a71345665239887b8d61a3&amp;id=067b4ac485", // string; add your MC list endpoint here; see instructions below
+        endpoint: process.env.GATSBY_MAILCHIMP_API_TICKET, // string; add your MC list endpoint here; see instructions below
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
     },
