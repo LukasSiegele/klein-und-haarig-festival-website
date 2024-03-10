@@ -1,12 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
   const { isInfo, isVolunteer, isVerein, isOpenCalls } = props
-  const {languages, originalPath, language} = useI18next();
   const {t} = useTranslation()
   return (
     <Desktop>
@@ -15,15 +14,6 @@ export default function SideNavigation(props) {
           <Link to="/">
             <Logo src="/icons/Logo-White.svg"></Logo>
           </Link>
-          <ul className="languages">
-        {languages.map((lng) => (
-          <li key={lng}>
-            <Link to={originalPath} language={lng}>
-              {lng}
-            </Link>
-          </li>
-        ))}
-      </ul>
         </LogoWrapper>
 
 
@@ -34,7 +24,7 @@ export default function SideNavigation(props) {
                 <ListInfo isInfo={isInfo}>{t('navigation.infos')}</ListInfo>
               
             </Link>
-            <Link to={"/volunteer"} language={language}>
+            <Link to={"/volunteer"}>
               
                 <ListVolunteer isVolunteer={isVolunteer}>
                   {t('navigation.volunteers')}
@@ -48,7 +38,7 @@ export default function SideNavigation(props) {
                 </ListVolunteer>
               </a>
             </Link> */}
-            <Link to={"/verein"} language={language}>
+            <Link to={"/verein"}>
               
                 <ListVerein isVerein={isVerein}>{t('navigation.association')}</ListVerein>
               
