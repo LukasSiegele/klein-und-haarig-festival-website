@@ -16,9 +16,6 @@ import MobileNavigation from "../components/navigation/MobileNavigation"
 export default function Info() {
   const {t} = useTranslation();
 
-
-  console.log("testtestaaaa")
-
   
   return (
     <Layout>
@@ -130,19 +127,9 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>An- & Abreise mit dem Auto</InfoLabel>
+                    <InfoLabel>{t('pages.infos.section.third.label')}</InfoLabel>
                     <InfoText>
-                      Du kannst direkt vor dem Festivalgelände parken. Wir
-                      werden Parkzonen auf dem Seitenstreifen der Enztalstraße
-                      in Richtung Bad Wildbad einrichten. Bitte parke so, dass
-                      der Verkehr weiterhin gut fließen kann und beachte
-                      unbedingt die ausgewiesenen Halteverbotszonen. Für das
-                      Parken deines Autos benötigst du ein Auto Ticket, das du
-                      in unserem Ticketshop kaufen kannst. Übernachten in
-                      Fahrzeugen, die nicht auf dem Festivalgelände abgestellt
-                      sind, ist strengstens verboten! <br />
-                      Camper mit entsprechendem Ticket dürfen auf das Gelände
-                      fahren.
+                    {t('pages.infos.section.third.text')}
                     </InfoText>
                   </InfoSection>
 
