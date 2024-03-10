@@ -24,7 +24,6 @@
     "gatsby-plugin-styled-components": "^6.3.0",
     "gatsby-source-filesystem": "^5.13.1",
     "i18next": "^22.5.1",
-    "node": "^19.3.0",
     "react-bootstrap": "^2.7.0",
     "react-cookie-consent": "^8.0.1",
     "react-date-countdown-timer": "^1.1.0",
