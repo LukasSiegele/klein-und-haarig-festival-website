@@ -17,7 +17,7 @@ export default function Info() {
   const {t} = useTranslation();
 
 
-  console.log()
+  console.log("testtest")
 
   
   return (
