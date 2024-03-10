@@ -13,6 +13,7 @@ import Info1 from "../../static/images/InfoBild1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 
 export default function Info() {
+  console.log("yesy")
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
