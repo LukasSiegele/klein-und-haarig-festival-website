@@ -130,6 +130,42 @@
                     "text": "We will let you know well in advance of the festival so that you can plan ahead. If you have any questions, you can contact our volunteer center at any time after your registration."
                 }
             }
+        },
+        "organization": {
+            "headline": "Hi, we are the Bunte Platte e.V.\nA non-profit organization of friends and friends of friends who organize the KuH on a voluntary basis.",
+            "sections": {
+                "first": {
+                    "label": "About us",
+                    "text": "We are a non-profit organization based in Munich. We have been organizing the Klein und Haarig Festival for 5 years now. Initially with 40 guests, during Corona as a musical tent camp and since 2020 as a registered association with now 14 members and 350 guests. We have made it our mission to make electronic music culture tangible in all its colorful, wonderfully weird and progressive facets. We are not driven by a constant concept, but by the new and undiscovered.\n\nOrganizing the KuH in harmony with nature and celebrating it with you is the greatest thing for us.\n\nWe are always on the lookout for like-minded people who want to and can support our team or the festival. There are two ways to do this:"
+                },
+                "second": {
+                    "label": "1 — Join the association",
+                    "text": "If you would like to take on active tasks or responsibility in the Bunte Platte e.V. or in the organization of the Klein und Haarig Festival, please contact us directly by e-mail. We look forward to every request. If you don't want to or can't help out, but still want to support us, you can do so with an annual payment in the form of a supporting membership. To do this, tick one of the available amounts on the following membership application form and send it to us completed and signed."  
+                },
+                "third": {
+                    "label": "2 — Financial support",
+                    "text": "You don't want to become a member directly and want to support us financially? Here are our bank details, we are thrilled about any amount you can give"
+                },
+                "becomeMemberCTA": "Become a member",
+                "bankDetails": {
+                    "name": {
+                        "label": "Name",
+                        "value": "Bunte Platte e.V."
+                    },
+                    "iban": {
+                        "label": "IBAN",
+                        "value": "DE47 5003 1000 1082 4300 04"
+                    },
+                    "bic": {
+                        "label": "BIC",
+                        "value": "TRODDEF1"
+                    },
+                    "bank": {
+                        "label": "Bank",
+                        "value": "TRODDEF1"
+                    }
+                } 
+            }
         }
     }
 }

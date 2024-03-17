@@ -130,6 +130,42 @@
                     "text": "Wir geben dir mit genügend Vorlauf vor dem Festival Bescheid, damit auch du planen kannst. Bei Fragen kannst du dich nach deiner Anmeldung jederzeit bei unserer Volunteer-Zentrale melden."
                 }
             }
+        },
+        "organization": {
+            "headline": "Hi, wir sind der Bunte Platte e.V.\nEin gemeinnütziger Verein aus Freunden und Freundesfreunden, die das KuH ehrenamtlich organisieren.",
+            "sections": {
+                "first": {
+                    "label": "Zu uns",
+                    "text": "Wir sind ein gemeinnütziger Verein mit Sitz in München. Bereits seit 5 Jahren stellen wir das Klein und Haarig Festival auf die Beine. Anfangs zu Dritt mit 40 Gästen, während Corona als musikalisches Zeltlager und seit 2020 als eingetragener Verein mit mittlerweile 14 Mitgliedern und 350 Gästen. Wir haben uns auf die Fahne geschrieben, die elektronische Musikkultur in all ihren bunten, herrlich weirden und progressiven Facetten erfahrbar zu machen. Nicht ein stetiges Konzept, sondern das Neue und Unentdeckte treibt uns dabei an.\n\nDas KuH im Einklang mit der Natur zu organisieren und es mit Euch zu feiern ist das Größte für uns.\n\nDabei sind wir immer auf der Suche nach Gleichgesinnten, die unser Team oder das Festival unterstützen wollen und können. Dafür gibt es zwei Möglichkeiten:"
+                },
+                "second": {
+                    "label": "1 — Verein beitreten",
+                    "text": "Wenn du aktiv Aufgaben oder Verantwortung im Bunte Platte e.V. oder bei der Organisation des Klein und Haarig Festivals übernehmen möchtest, kontaktiere uns am Besten direkt per Mail. Wir freuen uns über jede Anfrage. Wenn du nicht mit anpacken möchtest oder kannst, uns aber dennoch unterstützen willst, kannst du dies mit einer jährlichen Zahlung in Form einer Fördermitgliedschaft tun. Kreuze dazu auf dem folgenden Aufnahmeantrag eine der zur Auswahl stehenden Beträge an und schicke uns ihn ausgefüllt und unterschrieben zu."  
+                },
+                "third": {
+                    "label": "2 — Finanzspritze",
+                    "text": "Du möchtest nicht direkt Mitglied werden und uns einmalig finanziell unterstützen? Hier unsere Bankdaten, wir freuen uns über jeden Betrag."
+                },
+                "becomeMemberCTA": "Mitglied werden",
+                "bankDetails": {
+                    "name": {
+                        "label": "Name",
+                        "value": "Bunte Platte e.V."
+                    },
+                    "iban": {
+                        "label": "IBAN",
+                        "value": "DE47 5003 1000 1082 4300 04"
+                    },
+                    "bic": {
+                        "label": "BIC",
+                        "value": "TRODDEF1"
+                    },
+                    "bank": {
+                        "label": "Bank",
+                        "value": "TRODDEF1"
+                    }
+                } 
+            }
         }
     }
 }
