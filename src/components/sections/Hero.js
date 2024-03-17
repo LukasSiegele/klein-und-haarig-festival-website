@@ -96,7 +96,7 @@ export default function Hero() {
             <FormButton
               label="Tickets"
               backgroundColor="#4E31CE"
-              color="black"
+              color="white"
             />
           </Link>
         </Column2>
