@@ -7,6 +7,7 @@ import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
 import {graphql} from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
 
@@ -15,6 +16,7 @@ import MobileNavigation from "../components/navigation/MobileNavigation"
 import FormButton from "../components/buttons/FormButton"
 
 export default function Verein() {
+  const {t} = useTranslation();
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
@@ -33,49 +35,20 @@ export default function Verein() {
                 <TextSection>
                   <HeaderSection>
                     <InfoHeadline>
-                      Hi, wir sind der Bunte Platte e.V. <br /> Ein
-                      gemeinnütziger Verein aus Freunden und Freundesfreunden,
-                      die das KuH ehrenamtlich organisieren.
+                      {t('pages.organization.headline')}
                     </InfoHeadline>
                   </HeaderSection>
 
                   <InfoSection>
-                    <InfoLabel>Zu uns</InfoLabel>
+                    <InfoLabel>{t('pages.organization.sections.first.label')}</InfoLabel>
                     <InfoText>
-                      Wir sind ein gemeinnütziger Verein mit Sitz in München.
-                      Bereits seit 5 Jahren stellen wir das Klein und Haarig
-                      Festival auf die Beine. Anfangs zu Dritt mit 40 Gästen,
-                      während Corona als musikalisches Zeltlager und seit 2020
-                      als eingetragener Verein mit mittlerweile 14 Mitgliedern
-                      und 350 Gästen. Wir haben uns auf die Fahne geschrieben,
-                      die elektronische Musikkultur in all ihren bunten,
-                      herrlich weirden und progressiven Facetten erfahrbar zu
-                      machen. Nicht ein stetiges Konzept, sondern das Neue und
-                      Unentdeckte treibt uns dabei an. <br />
-                      <br />
-                      Das KuH im Einklang mit der Natur zu organisieren und es
-                      mit Euch zu feiern ist das Größte für uns. <br />
-                      <br />
-                      Dabei sind wir immer auf der Suche nach Gleichgesinnten,
-                      die unser Team oder das Festival unterstützen wollen und
-                      können. Dafür gibt es zwei Möglichkeiten:
-                      <br />
-                      <br />
+                    {t('pages.organization.sections.first.text')}
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
-                    <InfoLabel>1 — Verein beitreten</InfoLabel>
+                    <InfoLabel>{t('pages.organization.sections.second.label')}</InfoLabel>
                     <InfoText>
-                      Wenn du aktiv Aufgaben oder Verantwortung im Bunte Platte
-                      e.V. oder bei der Organisation des Klein und Haarig
-                      Festivals übernehmen möchtest, kontaktiere uns am Besten
-                      direkt per Mail. Wir freuen uns über jede Anfrage. Wenn du
-                      nicht mit anpacken möchtest oder kannst, uns aber dennoch
-                      unterstützen willst, kannst du dies mit einer jährlichen
-                      Zahlung in Form einer Fördermitgliedschaft tun. Kreuze
-                      dazu auf dem folgenden Aufnahmeantrag eine der zur Auswahl
-                      stehenden Beträge an und schicke uns ihn ausgefüllt und
-                      unterschrieben zu.
+                    {t('pages.organization.sections.second.text')}
                     </InfoText>
                     {/* <Link href="mailto:info@bunteplatte.de?subject=Mitglied werden&body=Hallo Bunte Platte Crew, %0A %0A ich möchte Mitlgied im Bunte Platte e.V. werden. Könnt ihr mir das Mitgliedsformular zusenden auf dem alle weiteren Infos stehen? %0A %0A Liebe Grüße">
                       <FormButton label="Mitglied werden" />
@@ -83,35 +56,33 @@ export default function Verein() {
                     <Link href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf">
                       <FormButton
                         backgroundColor="#F89248"
-                        label="Mitglied werden"
+                        label={t('pages.organization.sections.becomeMemberCTA')}
                       />
                     </Link>
 
                     {/* <a href="mailto:info@kleinundhaarig.de">Kontakt</a> */}
                   </InfoSection>
                   <InfoSection>
-                    <InfoLabel>2 — Finanzspritze</InfoLabel>
+                    <InfoLabel>{t('pages.organization.sections.third.label')}</InfoLabel>
                     <InfoText>
-                      Du möchtest nicht direkt Mitglied werden und uns einmalig
-                      finanziell unterstützen? Hier unsere Bankdaten, wir freuen
-                      uns über jeden Betrag.
+                    {t('pages.organization.sections.third.text')}
                     </InfoText>
                     <List>
                       <ListItem>
-                        <List1>Name</List1>
-                        <List2>Bunte Platte e.V.</List2>
+                        <List1>{t('pages.organization.sections.bankDetails.name.label')}</List1>
+                        <List2>{t('pages.organization.sections.bankDetails.name.value')}</List2>
                       </ListItem>
                       <ListItem>
-                        <List1>IBAN</List1>
-                        <List2>DE47 5003 1000 1082 4300 04</List2>
+                        <List1>{t('pages.organization.sections.bankDetails.iban.label')}</List1>
+                        <List2>{t('pages.organization.sections.bankDetails.iban.value')}</List2>
                       </ListItem>
                       <ListItem>
-                        <List1>BIC</List1>
-                        <List2>TRODDEF1</List2>
+                        <List1>{t('pages.organization.sections.bankDetails.bic.label')}</List1>
+                        <List2>{t('pages.organization.sections.bankDetails.bic.value')}</List2>
                       </ListItem>
                       <ListItem>
-                        <List1>Bank</List1>
-                        <List2>Triodos Bank N.V. Deutschland</List2>
+                        <List1>{t('pages.organization.sections.bankDetails.bank.label')}</List1>
+                        <List2>{t('pages.organization.sections.bankDetails.bank.value')}</List2>
                       </ListItem>
                     </List>
                   </InfoSection>
