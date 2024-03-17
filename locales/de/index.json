@@ -73,6 +73,63 @@
                     "text": "Da wir aufgrund der Geländegröße keine Ruhezonen einrichten können sind Tiere nicht gestattet - zum Wohl der Gesundheit eurer Vierbeiner."
                 }
             }
+        },
+        "volunteer": {
+            "headline": "Ohne Volunteers kein KuH. Deshalb sind wir auf deine Hilfe angewiesen. Unterstütze uns beim Auf- und Abbau oder während dem FEstival und trage so deinen Teil zum Festival bei.",
+            "sections": {
+                "first": {
+                    "label": "Wie funktioniert das?",
+                    "text": "Klicke oben auf \"Volunteer werden\" (aktuell nicht verfügbar), fülle das Formular aus und kaufe dir ganz normal ein Festival Ticket. Wähle frei wie lange (S, M, L), wann (Aufbau, Während, Abbau) und wobei (Einlass, Food, Security, usw.) du uns helfen möchtest. Du kannst uns dabei auch deinen Wunsch-Buddy mitteilen. Wir geben unser Bestes deine Wünsche zu erfüllen."
+                },
+                "second": {
+                    "label": "Welche Aufgabenbereiche gibt es?",
+                    "list": {
+                        "item1": "Aufbau",
+                        "item2": "Abbau",
+                        "item3": "Einlass",
+                        "item4": "Security",
+                        "item5": "Sauberkeit",
+                        "item6": "Technik",
+                        "item7": "Bar",
+                        "item8": "Verpflegung",
+                        "item9": "Awareness",
+                        "item10": "Erste Hilfe"
+                    }
+                },
+                "third": {
+                    "label": "Wie werde ich vergütet?",
+                    "text": "Das Klein und Haarig Festival wird vom gemeinnützigen Bunte Platte e.V. organisiert. Das gesamte Team arbeitet ehrenamtlich, alle Einnahmen kommen ausschließlich dem Projekt zugute. Als Volunteer unterstützt du das Festival ebenfalls ehrenamtlich. Du bekommst einen Einblick, wie ein Festival entsteht und funktioniert. Du lernst das Team und die vielen anderen Leute kennen, die das Festival zu dem machen, was es ist. Trotzdem wollen wir dich für deine Unterstützung belohnen. Du erhälst nach getaner Arbeit eine Erstattung, deren Höhe sich nach der Anzahl deiner Schichten richtet ((max. aber in Höhe des von dir gezahlten Ticketpreises)). Während dem Auf- und Abbau wirst du zudem mit Essen und Getränken versorgt.",
+                    "sizes": {
+                        "s": {
+                            "label": "S",
+                            "time": "min. 1x 6 h",
+                            "amount": "40 €"
+                        },
+                        "m": {
+                            "label": "M",
+                            "time": "min. 2x 6 h",
+                            "amount": "80 €"
+                        },
+                        "l": {
+                            "label": "L",
+                            "time": "min. 3x 6 h",
+                            "amount": "120 €"
+                        }
+                    }
+                },
+                "fourth": {
+                    "label": "Brauche ich als Volunteer ein Festival Ticket?",
+                    "text": "Ja, auch als Volunteer benötigst du ein Ticket. Nach dem Ausfüllen des Volunteer Formulars erhältst du einen Link zu unserem Ticketshop. Wenn du schon ein Ticket hast, kannst du dich natürlich trotzdem noch als Volunteer registrieren."
+                },
+                "fifth": {
+                    "label": "Ich verspäte mich oder kann doch nicht helfen...",
+                    "text": "Bitte melde dich in diesen Fällen sofort bei uns, damit wir rechtzeitig reagieren können. Der Ablauf des Festivals ist strikt getaktet - nur so kann es reibungslos funktionieren. Wir verlassen uns auf dich."
+                },
+                "sixth": {
+                    "label": "Wann werde ich zugeteilt?",
+                    "text": "Wir geben dir mit genügend Vorlauf vor dem Festival Bescheid, damit auch du planen kannst. Bei Fragen kannst du dich nach deiner Anmeldung jederzeit bei unserer Volunteer-Zentrale melden."
+                }
+            }
         }
     }
 }

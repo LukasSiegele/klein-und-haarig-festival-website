@@ -73,6 +73,63 @@
                     "text": "As we are unable to set up quiet or rest areas due to the size of the site, animals are not permitted - for the benefit of your four-legged friends' health."
                 }
             }
+        },
+        "volunteer": {
+            "headline": "No KuH without volunteers. That's why we need your help. Support us during the set-up, during or after the festival with your contribution.",
+            "sections": {
+                "first": {
+                    "label": "How does it work?",
+                    "text": "Click on \"Become a volunteer\" above (currently not available), fill out the form and buy a festival ticket as normal. Choose how long you would like to help us (S, M, L), when (set-up, during, after) and where (admission, food, security, etc.) . You can also let us know if you have a preferred buddy and we will do our best to fulfill your wishes."
+                },
+                "second": {
+                    "label": "What tasks are there?",
+                    "list": {
+                        "item1": "Set-up",
+                        "item2": "Dismantling",
+                        "item3": "Admission",
+                        "item4": "Security",
+                        "item5": "Cleanliness",
+                        "item6": "Technology",
+                        "item7": "Bar",
+                        "item8": "Catering",
+                        "item9": "Awareness",
+                        "item10": "First Aid"
+                    }
+                },
+                "third": {
+                    "label": "How will I be remunerated?",
+                    "text": "The Klein und Haarig Festival is organized by the non-profit Bunte Platte e.V.. The entire team works on a voluntary basis, all proceeds go exclusively to the project. As a volunteer, you also support the festival on a voluntary basis. You will gain an insight into how a festival is created and how it works. You will get to know the team and the many other people who make the festival what it is. Nevertheless, we want to reward you for your support. You will receive a reimbursement after your work is done, the amount of which depends on the number of your shifts (but not more than the ticket price you paid). You will also be provided with food and drinks during the set-up and dismantling.",
+                    "sizes": {
+                        "s": {
+                            "label": "S",
+                            "time": "min. 1x 6 h",
+                            "amount": "€ 40 "
+                        },
+                        "m": {
+                            "label": "M",
+                            "time": "min. 2x 6 h",
+                            "amount": "€ 80"
+                        },
+                        "l": {
+                            "label": "L",
+                            "time": "min. 3x 6 h",
+                            "amount": "€ 120"
+                        }
+                    }
+                },
+                "fourth": {
+                    "label": "Do I need a festival ticket as a volunteer?",
+                    "text": "Yes, volunteers also need a festival ticket. After filling out the volunteer form, you will receive a link to our ticket store. If you already have a ticket, you can of course still register as a volunteer."
+                },
+                "fifth": {
+                    "label": "I'm late or can't help after all...",
+                    "text": "In these cases, please contact us immediately so that we can react in time. The festival is on a strict time schedule - this is the only way it can run smoothly. We rely on you."
+                },
+                "sixth": {
+                    "label": "When will I be allocated?",
+                    "text": "We will let you know well in advance of the festival so that you can plan ahead. If you have any questions, you can contact our volunteer center at any time after your registration."
+                }
+            }
         }
     }
 }
