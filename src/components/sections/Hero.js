@@ -89,10 +89,7 @@ export default function Hero() {
         </Column1>
         {/* <Column2></Column2> */}
         <Column2>
-          <Link
-            to="https://pretix.eu/bunteplatte/kleinundhaarig"
-            target="_blank"
-          >
+          <Link to="https://pretix.eu/bunteplatte/kuh2024/" target="_blank">
             <FormButton
               label="Tickets"
               backgroundColor="#4E31CE"
