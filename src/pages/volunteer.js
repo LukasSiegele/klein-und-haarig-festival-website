@@ -9,6 +9,7 @@ import { Link } from "gatsby"
 import {graphql} from 'gatsby';
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import Volunteer1 from "../../static/images/VolunteerRight.jpg"
 import Volunteer2 from "../../static/images/VolunteerMiddle.jpg"
@@ -16,6 +17,7 @@ import MobileNavigation from "../components/navigation/MobileNavigation"
 import FormButton from "../components/buttons/FormButton"
 
 export default function Volunteer() {
+  const {t} = useTranslation();
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
@@ -34,11 +36,7 @@ export default function Volunteer() {
                 <TextSection>
                   <HeaderSection>
                     <InfoHeadline>
-                      {" "}
-                      Ohne Volunteers kein KuH. Deshalb sind wir auf deine Hilfe
-                      angewiesen. Unterstütze uns beim Auf- und Abbau oder
-                      während dem Festival und trage so deinen Teil zum Festival
-                      bei.
+                      {t('pages.volunteer.headline')}
                     </InfoHeadline>
                     <AnmeldeGroup>
                       {/* <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
@@ -54,101 +52,73 @@ export default function Volunteer() {
                   </HeaderSection>
 
                   <InfoSection>
-                    <InfoLabel>Wie funktioniert das?</InfoLabel>
+                    <InfoLabel>{t('pages.volunteer.sections.first.label')}</InfoLabel>
                     <InfoText>
-                      Klicke oben auf "Volunteer werden" (aktuell nicht
-                      verfügbar), fülle das Formular aus und kaufe dir ganz
-                      normal ein Festival Ticket. Wähle frei wie lange (S, M,
-                      L), wann (Aufbau, Während, Abbau) und wobei (Einlass,
-                      Food, Security, usw.) du uns helfen möchtest. Du kannst
-                      uns dabei auch deinen Wunsch-Buddy mitteilen. Wir geben
-                      unser Bestes deine Wünsche zu erfüllen.
+                    {t('pages.volunteer.sections.first.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Welche Aufgabenbereiche gibt es?</InfoLabel>
+                    <InfoLabel>{t('pages.volunteer.sections.second.label')}</InfoLabel>
                     <List>
-                      <ListItem>Aufbau</ListItem>
-                      <ListItem>Abbau</ListItem>
-                      <ListItem>Einlass</ListItem>
-                      <ListItem>Security</ListItem>
-                      <ListItem>Sauberkeit</ListItem>
-                      <ListItem>Technik</ListItem>
-                      <ListItem>Bar</ListItem>
-                      <ListItem>Verpflegung</ListItem>
-                      <ListItem>Awareness</ListItem>
-                      <ListItem>Erste Hilfe</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item1')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item2')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item3')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item4')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item5')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item6')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item7')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item8')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item9')}</ListItem>
+                      <ListItem>{t('pages.volunteer.sections.second.list.item10')}</ListItem>
                     </List>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Wie werde ich vergütet?</InfoLabel>
+                    <InfoLabel>{t('pages.volunteer.sections.third.label')}</InfoLabel>
                     <InfoText>
-                      Das Klein und Haarig Festival wird vom gemeinnützigen
-                      Bunte Platte e.V. organisiert. Das gesamte Team arbeitet
-                      ehrenamtlich, alle Einnahmen kommen ausschließlich dem
-                      Projekt zugute. Als Volunteer unterstützt du das Festival
-                      ebenfalls ehrenamtlich. Du bekommst einen Einblick, wie
-                      ein Festival entsteht und funktioniert. Du lernst das Team
-                      und die vielen anderen Leute kennen, die das Festival zu
-                      dem machen, was es ist. Trotzdem wollen wir dich für deine
-                      Unterstützung belohnen. Du erhälst nach getaner Arbeit
-                      eine Erstattung, deren Höhe sich nach der Anzahl deiner
-                      Schichten richtet ((max. aber in Höhe des von dir
-                      gezahlten Ticketpreises)). Während dem Auf- und Abbau
-                      wirst du zudem mit Essen und Getränken versorgt.
+                    {t('pages.volunteer.sections.third.text')}
                     </InfoText>
                     <List>
                       <ListItem>
-                        <List1>S</List1>
-                        <List2>min. 1x 6 h</List2>
-                        <List3>40 €</List3>
+                        <List1>{t('pages.volunteer.sections.third.sizes.s.label')}</List1>
+                        <List2>{t('pages.volunteer.sections.third.sizes.s.time')}</List2>
+                        <List3>{t('pages.volunteer.sections.third.sizes.s.amount')}</List3>
                       </ListItem>
                       <ListItem>
-                        <List1>M</List1>
-                        <List2>min. 2 x 6 h</List2>
-                        <List3>80 €</List3>
+                        <List1>{t('pages.volunteer.sections.third.sizes.m.label')}</List1>
+                        <List2>{t('pages.volunteer.sections.third.sizes.m.time')}</List2>
+                        <List3>{t('pages.volunteer.sections.third.sizes.m.amount')}</List3>
                       </ListItem>
                       <ListItem>
-                        <List1>L</List1>
-                        <List2>min. 3 x 6 h</List2>
-                        <List3>120 €</List3>
+                        <List1>{t('pages.volunteer.sections.third.sizes.l.label')}</List1>
+                        <List2>{t('pages.volunteer.sections.third.sizes.l.time')}</List2>
+                        <List3>{t('pages.volunteer.sections.third.sizes.l.amount')}</List3>
                       </ListItem>
                     </List>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
-                      Brauche ich als Volunteer ein Festival Ticket?
+                    {t('pages.volunteer.sections.fourth.label')}
                     </InfoLabel>
                     <InfoText>
-                      Ja, auch als Volunteer benötigst du ein Ticket. Nach dem
-                      Ausfüllen des Volunteer Formulars erhältst du einen Link
-                      zu unserem Ticketshop. Wenn du schon ein Ticket hast,
-                      kannst du dich natürlich trotzdem noch als Volunteer
-                      registrieren.
+                    {t('pages.volunteer.sections.fourth.text')}
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
                     <InfoLabel>
-                      Ich verspäte mich oder kann doch nicht helfen...
+                    {t('pages.volunteer.sections.fifth.label')}
                     </InfoLabel>
                     <InfoText>
-                      Bitte melde dich in diesen Fällen sofort bei uns, damit
-                      wir rechtzeitig reagieren können. Der Ablauf des Festivals
-                      ist strikt getaktet - nur so kann es reibungslos
-                      funktionieren. Wir verlassen uns auf dich.
+                    {t('pages.volunteer.sections.fifth.text')}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>Wann werde ich zugeteilt?</InfoLabel>
+                    <InfoLabel>{t('pages.volunteer.sections.sixth.label')}</InfoLabel>
                     <InfoText>
-                      Wir geben dir mit genügend Vorlauf vor dem Festival
-                      Bescheid, damit auch du planen kannst. Bei Fragen kannst
-                      du dich nach deiner Anmeldung jederzeit bei unserer
-                      Volunteer-Zentrale melden.
+                    {t('pages.volunteer.sections.sixth.text')}
                     </InfoText>
                   </InfoSection>
                 </TextSection>
