@@ -193,6 +193,7 @@ const Column2 = styled.div`
     /* max-width: 360px; */
     /* padding: 20px 20px 0 20px;
     border: 0; */
+    padding: 120px 10px 0 10px;
   }
 `
 
