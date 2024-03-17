@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
   const { isInfo, isVolunteer, isVerein, isOpenCalls } = props
+  const {t} = useTranslation()
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>
@@ -14,19 +15,21 @@ export default function SideNavigation(props) {
             <Logo src="/icons/Logo-White.svg"></Logo>
           </Link>
         </LogoWrapper>
+
+
         <LinkWrapper>
           <LinkGroup>
-            <Link to={"/info"}>
-              <a>
-                <ListInfo isInfo={isInfo}>Infos</ListInfo>
-              </a>
+            <Link to={"/info"} >
+              
+                <ListInfo isInfo={isInfo}>{t('navigation.infos')}</ListInfo>
+              
             </Link>
             <Link to={"/volunteer"}>
-              <a>
+              
                 <ListVolunteer isVolunteer={isVolunteer}>
-                  Volunteer
+                  {t('navigation.volunteers')}
                 </ListVolunteer>
-              </a>
+              
             </Link>
             {/* <Link to={"/opencalls"}>
               <a>
@@ -36,9 +39,9 @@ export default function SideNavigation(props) {
               </a>
             </Link> */}
             <Link to={"/verein"}>
-              <a>
-                <ListVerein isVerein={isVerein}>Verein</ListVerein>
-              </a>
+              
+                <ListVerein isVerein={isVerein}>{t('navigation.association')}</ListVerein>
+              
             </Link>
             {/* <Link
               to="https://pretix.eu/bunteplatte/kleinundhaarig"

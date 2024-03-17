@@ -6,6 +6,7 @@ import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
+import {graphql} from 'gatsby';
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
 
@@ -128,6 +129,21 @@ export default function Verein() {
     </Layout>
   )
 }
+
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   overflow: hidden;
