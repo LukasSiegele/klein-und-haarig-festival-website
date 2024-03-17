@@ -60,7 +60,7 @@ export default function Hero() {
               </LinkInline>
             </PlaceGroup>
 
-            <NewsletterGroup>
+            {/* <NewsletterGroup>
               <InfoText>
                 Melde dich zu unserem Newsletter an und bekomme so frühzeitig
                 Infos zum Ticket Presale und zum Festival 2024.
@@ -82,20 +82,24 @@ export default function Hero() {
                   </Link>
                 </InstaButton>
               </InstagramSection>
-            </NewsletterGroup>
+            </NewsletterGroup> */}
           </C1Content>
 
           {/* </DateMask> */}
         </Column1>
-        <Column2></Column2>
-        {/* <Column2>
+        {/* <Column2></Column2> */}
+        <Column2>
           <Link
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
             target="_blank"
           >
-            <FormButton label="Tickets" />
+            <FormButton
+              label="Tickets"
+              backgroundColor="#4E31CE"
+              color="black"
+            />
           </Link>
-        </Column2> */}
+        </Column2>
         {/* </ContentGrid> */}
 
         {/* <AnimationContainer>
@@ -137,7 +141,7 @@ const ContentGrid = styled.div`
   display: grid;
   height: 90vh;
   /* display: flex; */
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   /* padding-top: 12px; */
 
   @media (max-width: 1100px) {
@@ -168,10 +172,14 @@ const Column1 = styled.div`
   }
 `
 const Column2 = styled.div`
+  /* position: fixed; */
+  /* right: 0; */
+  /* top: 0; */
+  /* padding: 25px 40px 100px 40px; */
   /* background-color: red; */
   /* opacity: 0.2; */
   /* grid-area: 1 / 2 / 1 / 3; */
-  /* z-index: 2; */
+  z-index: 999;
 
   padding: 25px 20px 0 20px;
   /* border-left: 1px solid black; */
@@ -181,10 +189,10 @@ const Column2 = styled.div`
     /* grid-area: revert; */
     /* grid-area: 2 / 1 / 3 / 2; */
     /* position: absolute; */
-    margin-top: 120px;
+    /* margin-top: 120px; */
     /* max-width: 360px; */
-    padding: 20px 20px 0 20px;
-    border: 0;
+    /* padding: 20px 20px 0 20px;
+    border: 0; */
   }
 `
 

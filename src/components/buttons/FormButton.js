@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 export default function FormButton(props) {
   return (
@@ -8,6 +9,8 @@ export default function FormButton(props) {
         backgroundColor: props.backgroundColor,
         backgroundSize: "cover",
         color: props.color,
+        paddingLeft: "20px",
+        paddingRight: "20px",
       }}
     >
       {props.label}
