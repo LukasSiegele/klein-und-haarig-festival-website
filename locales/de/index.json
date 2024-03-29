@@ -176,11 +176,11 @@
                 },
                 "second":{
                     "label": "Eingetragener Verein",
-                    "text": "Vereinsregisternummer: VR 208738<br/>Registergericht: Amtsgericht München"
+                    "text": "Vereinsregisternummer: VR 208738\nRegistergericht: Amtsgericht München"
                 },
                 "third": {
                     "label": "EU Streitschlichtung",
-                    "text": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:\n<1>https://ec.europa.eu/consumers/odr</1>\nUnsere E-Mail-Adresse finden Sie oben im Impressum."
+                    "text": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:<br/><1>https://ec.europa.eu/consumers/odr</1><br/>Unsere E-Mail-Adresse finden Sie oben im Impressum."
                 },
                 "fourth": {
                     "label": "Verbraucherstreit Beilegung",
