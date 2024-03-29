@@ -183,6 +183,7 @@ const InfoHeadline = styled.h3`
   display: inline-block;
   max-width: 800px;
   text-indent: 60px;
+  white-space: pre-wrap;
 `
 
 const InfoLabel = styled.h3`
@@ -198,6 +199,7 @@ const InfoText = styled.p`
   margin-bottom: 20px;
   opacity: 0.75;
   max-width: 800px;
+  white-space: pre-wrap;
 `
 
 const DetailLabel = styled(SubheaderSmall)`
