@@ -5,7 +5,7 @@ import CookieConsent from "react-cookie-consent"
 import ReactGA from "react-ga4"
 // import Footer from "../footer/footer"
 import styled from "styled-components"
-import { Link, graphql} from "gatsby"
+import { Link } from "gatsby"
 import "../layout/layout.css"
 import { useTranslation } from "react-i18next"
 
