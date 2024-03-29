@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
-
+import { Link, useTranslation, useI18next } from 'gatsby-plugin-react-i18next';
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
