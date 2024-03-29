@@ -46,19 +46,19 @@ export default function Imprint() {
           </Section>
           <Section>
             <Header>{t('pages.imprint.sections.fifth.label')}</Header>
-            <p>
+            <p style={{whiteSpace: "pre-wrap"}}>
             {t('pages.imprint.sections.fifth.text')}
             </p>
           </Section>
           <Section>
             <Header>{t('pages.imprint.sections.sixth.label')}</Header>
-            <p>
+            <p style={{whiteSpace: "pre-wrap"}}>
             {t('pages.imprint.sections.sixth.text')}
             </p>
           </Section>
           <Section>
             <Header>{t('pages.imprint.sections.seventh.label')}</Header>
-            <p>
+            <p style={{whiteSpace: "pre-wrap"}}>
             {t('pages.imprint.sections.seventh.text')}
             </p>
           </Section>

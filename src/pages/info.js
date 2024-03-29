@@ -388,6 +388,7 @@ const InfoText = styled.p`
   margin-bottom: 20px;
   opacity: 0.75;
   max-width: 800px;
+  white-space: pre-wrap
 `
 const InfoLabelImportant = styled.h3`
   color: red;
