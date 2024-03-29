@@ -52,7 +52,7 @@ export default function SideNavigation(props) {
               </a>
             </Link> */}
           </LinkGroup>
-          <ul style={{listStyle: "none", margin: "0px"}}>
+          <LanguagesContainer>
             {languages.map((lng) => (
               <li key={lng}>
             <Link to={originalPath} language={lng}>
@@ -60,7 +60,7 @@ export default function SideNavigation(props) {
             </Link>
           </li>
         ))}
-      </ul>
+      </LanguagesContainer>
         </LinkWrapper>
       </Wrapper>
     </Desktop>
