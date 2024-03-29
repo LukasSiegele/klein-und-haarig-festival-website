@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
 import { useTranslation, Trans } from 'gatsby-plugin-react-i18next';
-import { Link } from "gatsby"
+import { Link, graphql} from "gatsby"
 
 export default function AGBS() {
   const {t} = useTranslation();
