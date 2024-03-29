@@ -135,6 +135,7 @@ const LinkWrapper = styled.div`
   text-align: center;
   align-items: center;
   margin-top: -94px;
+  gap: 32px;
 `
 
 const LinkGroup = styled.div`
