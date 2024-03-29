@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { useTranslation } from 'gatsby-plugin-react-i18next';
-import { graphql} from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
 import {
   // PageHeader,
@@ -14,6 +14,20 @@ import { useTranslation } from "react-i18next"
 
 export default function Message() {
   const {t} = useTranslation()
+
+  useStaticQuery(graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+   `)
   return (
     <Wrapper>
       <Container>
@@ -44,19 +58,6 @@ export default function Message() {
 }
 
 
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
 
 const Wrapper = styled.div`
   /* background-image: url(${BackgroundTexture}); */
