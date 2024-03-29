@@ -172,11 +172,11 @@
             "sections": {
                 "first": {
                     "label": "Kontakt",
-                    "text": "Bunte Platte e.V.\nTürkenstraße 21\n80799 München\nVertreten durch: Luca Prohl und Mareike Klaus (Vorstand)\n\nE-Mail: <1>info@bunte-platte.de</1>"
+                    "text": "Bunte Platte e.V.<br/>Türkenstraße 21<br/>80799 München<br/>Vertreten durch: Luca Prohl und Mareike Klaus (Vorstand)<br/><br/>E-Mail: <1>info@bunte-platte.de</1>"
                 },
                 "second":{
                     "label": "Eingetragener Verein",
-                    "text": "Vereinsregisternummer: VR 208738\nRegistergericht: Amtsgericht München"
+                    "text": "Vereinsregisternummer: VR 208738<br/>Registergericht: Amtsgericht München"
                 },
                 "third": {
                     "label": "EU Streitschlichtung",

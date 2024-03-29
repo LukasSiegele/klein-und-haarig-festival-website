@@ -39,27 +39,27 @@ export default function Imprint() {
             </Trans>
           </Section>
           <Section>
-            <Header>{'pages.imprint.sections.fourth.label'}</Header>
+            <Header>{t('pages.imprint.sections.fourth.label')}</Header>
             <p>
-            {'pages.imprint.sections.fourth.text'}
+            {t('pages.imprint.sections.fourth.text')}
             </p>
           </Section>
           <Section>
-            <Header>{'pages.imprint.sections.fifth.label'}</Header>
+            <Header>{t('pages.imprint.sections.fifth.label')}</Header>
             <p>
-            {'pages.imprint.sections.fifth.text'}
+            {t('pages.imprint.sections.fifth.text')}
             </p>
           </Section>
           <Section>
-            <Header>{'pages.imprint.sections.sixth.label'}</Header>
+            <Header>{t('pages.imprint.sections.sixth.label')}</Header>
             <p>
-            {'pages.imprint.sections.sixth.text'}
+            {t('pages.imprint.sections.sixth.text')}
             </p>
           </Section>
           <Section>
-            <Header>{'pages.imprint.sections.seventh.label'}</Header>
+            <Header>{t('pages.imprint.sections.seventh.label')}</Header>
             <p>
-            {'pages.imprint.sections.seventh.text'}
+            {t('pages.imprint.sections.seventh.text')}
             </p>
           </Section>
         </Content>
