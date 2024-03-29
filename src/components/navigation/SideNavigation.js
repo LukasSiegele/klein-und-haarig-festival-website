@@ -76,6 +76,12 @@ const Desktop = styled.div`
   /* display: none; */
 `
 
+const LanguagesContainer = styled.ul`
+  list-style: none
+  margin: 0px
+  align-self: start;
+`
+
 const Wrapper = styled.div`
   position: fixed;
   display: grid;
@@ -135,7 +141,7 @@ const LinkWrapper = styled.div`
   text-align: center;
   align-items: center;
   margin-top: -94px;
-  gap: 16px;
+  align-self: end;
 `
 
 const LinkGroup = styled.div`
