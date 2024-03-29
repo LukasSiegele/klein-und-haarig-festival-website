@@ -52,7 +52,6 @@ export default function SideNavigation(props) {
               </a>
             </Link> */}
           </LinkGroup>
-          <br/>
           <ul style={{listStyle: "none", margin: "0px"}}>
             {languages.map((lng) => (
               <li key={lng}>
@@ -136,6 +135,7 @@ const LinkWrapper = styled.div`
   text-align: center;
   align-items: center;
   margin-top: -94px;
+  gap: 16px;
 `
 
 const LinkGroup = styled.div`
