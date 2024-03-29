@@ -23,7 +23,7 @@ export default function Imprint() {
           <Section></Section>
           <Section>
             <Header>{t('pages.imprint.sections.second.label')}</Header>
-            <p>{t('pages.imprint.sections.second.text')}</p>
+            <p style={{whiteSpace: "pre-wrap"}}>{t('pages.imprint.sections.second.text')}</p>
           </Section>
           <Section>
             <Header>{t('pages.imprint.sections.third.label')}</Header>
