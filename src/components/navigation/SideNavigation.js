@@ -7,6 +7,7 @@ import { TextSmall } from "../styles/TextStyles"
 export default function SideNavigation(props) {
   const { isInfo, isVolunteer, isVerein, isOpenCalls } = props
   const {t} = useTranslation()
+  const { languages, originalPath } = useI18next();
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>
@@ -52,6 +53,16 @@ export default function SideNavigation(props) {
               </a>
             </Link> */}
           </LinkGroup>
+          <br/>
+          <ul style={{listStyle: "none", margin: "0px"}}>
+            {languages.map((lng) => (
+              <li key={lng}>
+            <Link to={originalPath} language={lng}>
+              {lng}
+            </Link>
+          </li>
+        ))}
+      </ul>
         </LinkWrapper>
       </Wrapper>
     </Desktop>
@@ -176,3 +187,4 @@ const ListTickets = styled(TextSmall)`
     cursor: pointer;
   }
 `
+
