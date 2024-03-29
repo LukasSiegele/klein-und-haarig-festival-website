@@ -52,15 +52,15 @@ export default function SideNavigation(props) {
               </a>
             </Link> */}
           </LinkGroup>
-          <LanguagesContainer>
+          <ul style={{listStyle: "none", margin: "0px", alignSelf: "start"}}>
             {languages.map((lng) => (
-              <li key={lng}>
-            <Link to={originalPath} language={lng}>
-              {lng}
-            </Link>
-          </li>
-        ))}
-      </LanguagesContainer>
+              <li key={lng} style={{margin: "8px"}}>
+                <Link to={originalPath} language={lng}>
+                  {lng}
+                </Link>
+              </li>
+            ))}
+           </ul>
         </LinkWrapper>
       </Wrapper>
     </Desktop>
@@ -74,12 +74,6 @@ const MobileView = styled.div`
 
 const Desktop = styled.div`
   /* display: none; */
-`
-
-const LanguagesContainer = styled.ul`
-  list-style: none
-  margin: 0px
-  align-self: start;
 `
 
 const Wrapper = styled.div`
@@ -141,13 +135,12 @@ const LinkWrapper = styled.div`
   text-align: center;
   align-items: center;
   margin-top: -94px;
-  align-self: end;
 `
 
 const LinkGroup = styled.div`
   text-align: center;
   display: grid;
-
+  align-self: end;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
 `
