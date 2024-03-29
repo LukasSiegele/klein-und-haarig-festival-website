@@ -4,7 +4,41 @@
         "volunteers": "Volunteers",
         "association": "Open Calls"
     },
+    "banner": {
+        "text": "This website uses cookies to provide you with the best possible experience. By staying on our page, you agree to our use of cookies and privacy policy.<br/><1>Learn more</1>",
+        "cta": "Ok"
+    },
     "pages": {
+        "home": {
+            "message": {
+                "mainText": "Klein und Haarig \n —4 days of electronic music, art and workshops in an idyllic valley in the Black Forest.",
+                "secondaryText": "Organized fully voluntary by friends, the Bunte Platte e.V.\n\nWe want to create a non-commercial space where people can come together and celebrate diversity, openness, tolerance and freedom."
+            },
+            "images": {
+                "sections": {
+                    "first": {
+                        "label": "4-day festival",
+                        "friday": "Fridaz",
+                        "saturday": "Saturday",
+                        "sunday": "Sunday",
+                        "monday": "Monday"
+                    },
+                    "second": {
+                        "label": "2 Stages",
+                        "item1": "Clearing",
+                        "functionOne": "Funktion One",
+                        "item2": "By the river"
+                    },
+                    "third": {
+                        "label": "Supporting program",
+                        "item1": "Art installations",
+                        "item2": "Workshops",
+                        "item3": "Lectures"
+                    }
+                }
+            },
+            "supportedBy": "Supported by"
+        },
         "infos": {
             "headline": "We don't want to give too much away. Here are the most important facts in a nutshell.",
             "sections": {

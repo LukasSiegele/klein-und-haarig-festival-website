@@ -5,7 +5,8 @@ import Stairway from "../../../static/images/image-01.jpg"
 import Smoke from "../../../static/images/Main2.jpg"
 import Night from "../../../static/images/Main4.jpg"
 import Discowald from "../../../static/images/image-025.jpg"
-
+import { graphql } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import {
   PageHeader,
   TextSmall,
@@ -14,17 +15,18 @@ import {
 } from "../styles/TextStyles"
 
 export default function Images() {
+  const {t} = useTranslation();
   return (
     <Container>
       <Content>
         <Row1>
           <ImageWrapper1>
             <ListWrapper1>
-              <ListHeader>4 Tage Festival</ListHeader>
-              <ListItem>Freitag</ListItem>
-              <ListItem>Samstag</ListItem>
-              <ListItem>Sonntag</ListItem>
-              <ListItem>Montag</ListItem>
+              <ListHeader>{t('pages.home.images.sections.first.label')}</ListHeader>
+              <ListItem>{t('pages.home.images.sections.first.friday')}</ListItem>
+              <ListItem>{t('pages.home.images.sections.first.saturday')}</ListItem>
+              <ListItem>{t('pages.home.images.sections.first.sunday')}</ListItem>
+              <ListItem>{t('pages.home.images.sections.first.monday')}</ListItem>
             </ListWrapper1>
             <Parallax speed={10}>
               <Image01></Image01>
@@ -38,20 +40,20 @@ export default function Images() {
             </Parallax>
           </ImageWrapper2>
           <ListWrapper2>
-            <ListHeader>Zwei Stages</ListHeader>
+            <ListHeader>{t('pages.home.images.sections.second.label')}</ListHeader>
             <NeuGroup>
-              <ListItem>Lichtung</ListItem>
+              <ListItem>{t('pages.home.images.sections.second.item1')}</ListItem>
               <Up>
                 <Icon src="/icons/banner-star.svg"></Icon>
-                <Neu>Funktion One</Neu>
+                <Neu>{t('pages.home.images.sections.second.functionOne')}</Neu>
               </Up>
             </NeuGroup>
 
             <NeuGroup>
-              <ListItem>Am Bach</ListItem>
+              <ListItem>{t('pages.home.images.sections.second.item2')}</ListItem>
               <Up>
                 <Icon src="/icons/banner-star.svg"></Icon>
-                <Neu>Funktion One</Neu>
+                <Neu>{t('pages.home.images.sections.second.functionOne')}</Neu>
               </Up>
             </NeuGroup>
           </ListWrapper2>
@@ -63,13 +65,13 @@ export default function Images() {
               <Image025></Image025>
             </Parallax>
             <ListWrapper25>
-              <ListHeader>Rahmenprogramm</ListHeader>
+              <ListHeader>{t('pages.home.images.sections.third.label')}</ListHeader>
 
-              <ListItem>Kunstinstallationen</ListItem>
+              <ListItem>{t('pages.home.images.sections.third.item1')}</ListItem>
 
-              <ListItem>Workshops</ListItem>
+              <ListItem>{t('pages.home.images.sections.third.item2')}</ListItem>
 
-              <ListItem>Vorträge</ListItem>
+              <ListItem>{t('pages.home.images.sections.third.item3')}</ListItem>
             </ListWrapper25>
           </ImageWrapper25>
         </Row25>
@@ -85,6 +87,22 @@ export default function Images() {
     </Container>
   )
 }
+
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
+
 
 const Container = styled.div`
   /* max-width: 1700px; */

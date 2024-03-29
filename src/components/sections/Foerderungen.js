@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import FaceGrafik from "../../../static/images/Face.png"
-
+import { graphql } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import {
   // PageHeader,
   TextSmall,
@@ -11,10 +12,11 @@ import {
 } from "../styles/TextStyles"
 
 export default function Foerderungen() {
+  const {t} = useTranslation()
   return (
     <Wrapper>
       <Content>
-        <Headline>Gefördert durch</Headline>
+        <Headline>{t('pages.home.supportedBy')}</Headline>
         <LogoLineGroup>
           <LogoGroup>
             <Logo src="/icons/neustartKultur.png"></Logo>
@@ -32,6 +34,20 @@ export default function Foerderungen() {
     </Wrapper>
   )
 }
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 const LogoLineGroup = styled.div`
   /* position: relative; */

@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { graphql} from "gatsby"
 import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
 
 import {
@@ -10,16 +11,17 @@ import {
   HeadlineRegular,
   HeadlineRegular2,
 } from "../styles/TextStyles"
+import { useTranslation } from "react-i18next"
 
 export default function Message() {
+  const {t} = useTranslation()
   return (
     <Wrapper>
       <Container>
         <FirstGrid>
           <Column1>
             <MainText>
-              Klein und Haarig <br />— 4 Tage elektronische Musik, Kunst und
-              Workshops in einem idyllischen Tal im Schwarzwald.
+              {t('pages.home.message.mainText')}
             </MainText>
           </Column1>
           <Column2 />
@@ -31,11 +33,7 @@ export default function Message() {
             <SecondaryGroup>
               <Icon src="/icons/StarBlack.svg"></Icon>
               <SecondaryText>
-                Ehrenamtlich organisiert von Freunden, dem Bunte Platte e.V.{" "}
-                <br /> <br />
-                Wir wollen einen nicht kommerziellen Raum schaffen, in dem
-                Menschen zusammenkommen und mit ihnen Vielfalt, Offenheit,
-                Toleranz und Freiheit feiern.
+              {t('pages.home.message.secondaryText')}
               </SecondaryText>
             </SecondaryGroup>
           </Column2>
@@ -45,6 +43,21 @@ export default function Message() {
     </Wrapper>
   )
 }
+
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   /* background-image: url(${BackgroundTexture}); */
@@ -77,6 +90,7 @@ const Container = styled.div`
 
 const MainText = styled(HeadlineRegular)`
   color: white;
+  white-space: pre-wrap;
   /* max-width: 970px; */
 `
 
@@ -123,6 +137,7 @@ const SecondaryText = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
   /* font-size: 17px; */
   color: white;
+  white-space: pre-wrap;
   max-width: 450px;
   @media (max-width: 500px) {
     max-width: 100%;

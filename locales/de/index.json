@@ -4,7 +4,41 @@
         "volunteers": "Volunteers",
         "association": "Verein"
     },
+    "banner": {
+        "text": "Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten. Wenn du weiterhin auf unserer Seite bleibst, stimmst du unserer Cookie-Nutzung sowie unserer Datenschutzerklärung zu.<br/><1>Mehr erfahren</1>",
+        "cta": "Ja, passt"
+    },
     "pages": {
+        "home": {
+            "message": {
+                "mainText": "Klein und Haarig \n— 4 Tage elektronische Musik, Kunst und Workshops in einem idyllischen Tal im Schwarzwald.",
+                "secondaryText": "Ehrenamtlich organisiert von Freunden, dem Bunte Platte e.V.\n\nWir wollen einen nicht kommerziellen Raum schaffen, in dem Menschen zusammenkommen und mit ihnen Vielfalt, Offenheit, Toleranz und Freiheit feiern."
+            },
+            "images": {
+                "sections": {
+                    "first": {
+                        "label": "4 Tage Festival",
+                        "friday": "Freitag",
+                        "saturday": "Samstag",
+                        "sunday": "Sonntag",
+                        "monday": "Montag"
+                    },
+                    "second": {
+                        "label": "Zwei Stages",
+                        "item1": "Lichtung",
+                        "functionOne": "Funktion One",
+                        "item2": "Am Bach"
+                    },
+                    "third": {
+                        "label": "Rahmenprogramm",
+                        "item1": "Kunstinstallationen",
+                        "item2": "Workshops",
+                        "item3": "Vorträge"
+                    }
+                }
+            },
+            "supportedBy": "Gefördert durch"
+        },
         "infos": {
             "headline": "Wir möchten nicht zu viel verraten. Hier das Wichtigste — kurz und knapp.",
             "sections": {
