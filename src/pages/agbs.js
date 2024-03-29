@@ -1,160 +1,89 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
-
+import { useTranslation, Trans } from 'gatsby-plugin-react-i18next';
 import { Link } from "gatsby"
 
 export default function AGBS() {
+  const {t} = useTranslation();
   return (
     <Layout>
       <Wrapper>
         <Content>
           <Section>
-            <SectionHeader>AGBs</SectionHeader>
+            <SectionHeader>{t('pages.agb.headline')}</SectionHeader>
             <Section>
-              <Header>1. Geltungsbereich</Header>
+              <Header>{t('pages.agb.sections.first.label')}</Header>
               <p>
-                Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die
-                Teilnahme an dem Festival "Klein und Haarig", das vom Verein
-                "Bunte Platte e.V." veranstaltet wird. Mit der Anmeldung zum
-                Festival erkennen die Teilnehmer:innen diese AGB an.
+              {t('pages.agb.sections.first.text')}
               </p>
             </Section>
             <Section>
-              <Header>2. Tickets</Header>
+              <Header>{t('pages.agb.sections.second.label')}</Header>
               <p>
-                Die Tickets können über den Onlineshop des Anbieters
-                "www.pretix.eu" erworben werden. Die Käufer:innen erhalten nach
-                erfolgreicher Bezahlung eine Bestätigungs-E-Mail mit dem Ticket
-                QR-Code als PDF-Anhang. Dieser Ticket QR-Code ist die
-                Eintrittsberechtigung für das Festival und muss beim Einlass in
-                digitaler oder ausgedruckter Form vorgelegt werden. Die
-                Veranstalter:innen übernehmen keine Haftung für verloren
-                gegangene oder gestohlene Tickets.
+              {t('pages.agb.sections.second.text')}
               </p>
             </Section>
 
             <Section>
-              <Header>3. Weitergabe, Rücktritt und Stornierung</Header>
-              <p>
-                Die Käufer:innen können über unseren Partner{" "}
+              <Header>{t('pages.agb.sections.third.label')}</Header>
+              <Trans t={t} i18nKey={"pages.agb.sections.third.text"} as="p">
+                Die Käufer:innen können über unseren Partner
                 <LinkInline
                   href="https://www.ticketswap.com/kleinundhaarig"
                   target="_blank"
                 >
                   Ticketswap
-                </LinkInline>{" "}
-                die Tickets weiterkaufen. Alternativ können Käufer:innen bis zu
-                vier Wochen vor Festivalbeginn schriftlich vom Kaufvertrag
-                zurücktreten. In diesem Fall wird eine Stornogebühr in Höhe von
-                12% des Ticketpreises erhoben. Bei späterem Rücktritt oder
-                Nichterscheinen wird keine Rückerstattung des Ticketpreises
-                gewährt. Die Veranstalter:innen behalten sich das Recht vor, das
-                Festival aus wichtigem Grund oder höherer Gewalt
-                (Wetterbedingungen, Naturereignisse oder anderen Umständen)
-                abzusagen oder zu verschieben. In diesem Fall werden die
-                Ticketpreise in voller Höhe erstattet. Weitergehende Ansprüche
-                der Käufer:innen sind ausgeschlossen.
+                </LinkInline>
+                die Tickets weiterkaufen. Alternativ können Käufer:innen bis zu vier Wochen vor Festivalbeginn schriftlich vom Kaufvertrag zurücktreten. In diesem Fall wird eine Stornogebühr in Höhe von 12% des Ticketpreises erhoben. Bei späterem Rücktritt oder Nichterscheinen wird keine Rückerstattung des Ticketpreises gewährt. Die Veranstalter:innen behalten sich das Recht vor, das Festival aus wichtigem Grund oder höherer Gewalt (Wetterbedingungen, Naturereignisse oder anderen Umständen) abzusagen oder zu verschieben. In diesem Fall werden die Ticketpreise in voller Höhe erstattet. Weitergehende Ansprüche der Käufer:innen sind ausgeschlossen.
+                </Trans>
+            </Section>
+            <Section>
+              <Header>{t('pages.agb.sections.fourth.label')}</Header>
+              <p>
+              {t('pages.agb.sections.fourth.text')}
               </p>
             </Section>
             <Section>
-              <Header>4. Einlassband</Header>
+              <Header>{t('pages.agb.sections.fifth.label')}</Header>
               <p>
-                Der Zutritt zum Festivalgelände ist nur mit einem gültigen
-                Einlassband gestattet. Das Einlassband wird bei Vorlage des
-                gültigen Festivaltickets und eines gültigen Ausweises am Eingang
-                ausgehändigt. Das Einlassband ist während der gesamten
-                Veranstaltung sichtbar am Handgelenk zu tragen und berechtigt
-                zum Eintritt auf das Festivalgelände. Ein Wiedereinlass ist zu
-                jeder Zeit möglich. Beim erneuten Einlass muss das Einlassband
-                dem Personal am Eingang ohne Aufforderung vorgezeigt werden. Die
-                Veranstalter:innen haften nicht für Schäden, die aufgrund
-                fehlender oder beschädigter Einlassbänder entstehen.
+              {t('pages.agb.sections.fifth.text')}
               </p>
             </Section>
             <Section>
-              <Header>5. Hausrecht</Header>
+              <Header>{t('pages.agb.sections.sixth.label')}</Header>
               <p>
-                Während des Festivals besteht für die Veranstalter:innen
-                Hausrecht. Die Veranstalter:innen sind berechtigt, Personen, die
-                sich nicht an die Hausordnung oder die geltenden Gesetze halten,
-                vom Festivalgelände zu verweisen. Die Veranstalter:innen sind
-                nicht verpflichtet, eine Rückerstattung der Festivalgebühren
-                vorzunehmen, wenn eine Person aufgrund ihres Verhaltens vom
-                Festivalgelände verwiesen wird.
+              {t('pages.agb.sections.sixth.text')}
               </p>
             </Section>
             <Section>
-              <Header>6. Haftung</Header>
+              <Header>{t('pages.agb.sections.seventh.label')}</Header>
               <p>
-                Die Veranstalter:innen haften nicht für Schäden, die den
-                Käufer:innen während des Festivals entstehen, es sei denn, diese
-                Schäden sind auf vorsätzliches oder grob fahrlässiges Handeln
-                der Veranstalter:innen zurückzuführen. Die Käufer:innen haften
-                für von ihnen verursachte Schäden.
+              {t('pages.agb.sections.seventh.text')}
               </p>
             </Section>
             <Section>
-              <Header>7. Altersbeschränkung</Header>
+              <Header>{t('pages.agb.sections.eigth.label')}</Header>
               <p>
-                Das Festival "Klein und Haarig" ist ausschließlich für Personen
-                ab 18 Jahren zugelassen. Teilnehmer:innen, die das 18.
-                Lebensjahr noch nicht vollendet haben, dürfen nur in Begleitung
-                einer volljährigen Person teilnehmen. Die Veranstalter:innen
-                behalten sich vor, bei Vorlage eines gültigen Ausweises das
-                Alter der Teilnehmer:innen zu überprüfen. Teilnehmer:innen, die
-                das 18. Lebensjahr noch nicht vollendet haben und ohne
-                Begleitung einer volljährigen Person anreisen, werden vom
-                Festival ausgeschlossen. In diesem Fall wird der Kaufpreis des
-                Festivaltickets nicht erstattet.
+              {t('pages.agb.sections.eigth.text')}
               </p>
             </Section>
             <Section>
-              <Header>8. Verbotene Gegenstände</Header>
+              <Header>{t('pages.agb.sections.ninth.label')}</Header>
               <p>
-                Der Besitz und/oder der Verkauf von illegalen Substanzen, Waffen
-                oder anderen gefährlichen Gegenständen ist verboten. Die
-                Veranstalter:innen behalten sich das Recht vor, Gegenstände zu
-                beschlagnahmen, den Zutritt zum Festival zu verweigern und/oder
-                die betreffenden Teilnehmer:innen vom Festivalgelände zu
-                verweisen.
+              {t('pages.agb.sections.ninth.text')}
               </p>
             </Section>
             <Section>
-              <Header>9. Film- und Fotoaufnahmen</Header>
+              <Header>{t('pages.agb.sections.tenth.label')}</Header>
               <p>
-                Der Veranstalter behält sich das Recht vor, Film- und
-                Fotoaufnahmen von Festivalbesuchern zu machen und diese für
-                Marketing- und Promotionszwecke zu nutzen.
+              {t('pages.agb.sections.tenth.text')}
               </p>
             </Section>
             <Section>
-              <Header>10. Salvatorische Klausel</Header>
+              <Header>{t('pages.agb.sections.eleventh.label')}</Header>
               <p>
-                Sollte eine Bestimmung dieser AGB unwirksam sein oder werden, so
-                bleibt die Wirksamkeit der übrigen Bestimmungen hiervon
-                unberührt. Die unwirksame Bestimmung wird durch eine wirksame
-                Bestimmung ersetzt, die dem wirtschaftlichen Zweck der
-                unwirksamen Bestimmung möglichst nahekommt. Das Gleiche gilt für
-                eventuelle Regelungslücken in diesen AGB.
-              </p>
-            </Section>
-            <Section>
-              <Header>11. Schlussbestimmungen</Header>
-              <p>
-                Es gilt ausschließlich das Recht der Bundesrepublik Deutschland.
-                Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder
-                werden, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon
-                unberührt. Anstelle der unwirksamen Bestimmungen gilt eine
-                angemessene Regelung als vereinbart, die dem Zweck der
-                unwirksamen Bestimmung am nächsten kommt. Die Veranstalter:innen
-                behalten sich das Recht vor, diese AGB jederzeit zu ändern. Die
-                Teilnehmer:innen werden über Änderungen der AGB rechtzeitig
-                informiert. Die Änderungen gelten als akzeptiert, wenn die
-                Teilnehmer:innen nicht innerhalb von 14 Tagen nach Bekanntgabe
-                der Änderungen widersprechen. Der Gerichtsstand für alle
-                Streitigkeiten aus diesen AGB ist der Sitz der
-                Veranstalter:innen.
+              {t('pages.agb.sections.eleventh.text')}
               </p>
             </Section>
           </Section>
@@ -163,6 +92,21 @@ export default function AGBS() {
     </Layout>
   )
 }
+
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   padding: 120px 40px;

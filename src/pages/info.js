@@ -98,7 +98,7 @@ export default function Info() {
                   <InfoSection>
                     <InfoLabel>{t('pages.infos.sections.first.label')}</InfoLabel>
                     <InfoText>
-                      <Trans t={t} i18nKey={'pages.infos.sections.first.text'}></Trans>
+                      <Trans t={t} i18nKey={'pages.infos.sections.first.text'}>
                       Das Klein und Haarig findet auf dem {" "}
                       <LinkInline
                         href={t('pages.infos.sections.first.link.href')}
@@ -106,6 +106,7 @@ export default function Info() {
                       >
                         {t('pages.infos.sections.first.link.text')}
                       </LinkInline>
+                      </Trans>
                     </InfoText>
                   </InfoSection>
 

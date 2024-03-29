@@ -166,6 +166,88 @@
                     }
                 } 
             }
+        },
+        "imprint":{
+            "headline": "Impressum",
+            "sections": {
+                "first": {
+                    "label": "Contact",
+                    "text": "Bunte Platte e.V.\nTürkenstraße 21\n80799 Münich\nRepresented by: Luca Prohl and Mareike Klauß (Board of Directors)\n\nE-Mail: <1>info@bunte-platte.de</1>"
+                },
+                "second":{
+                    "label": "Registered association",
+                    "text": "Association register number: VR 208738\nRegister court: Munich Local Court"
+                },
+                "third": {
+                    "label": "EU dispute resolution",
+                    "text": "The European Commission provides a platform for online dispute resolution: <1>https://ec.europa.eu/consumers/odr</1>. You can find our e-mail address in the legal notice above."
+                },
+                "fourth": {
+                    "label": "Consumer dispute resolution",
+                    "text": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+                },
+                "fifth": {
+                    "label": "Liability for content",
+                    "text": "As a service provider, we are responsible for our own content on these pages in accordance with Section 7 (1) TMG (German Telemedia Act) and general legislation. According to §§ 8 to 10 TMG, however, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.\nObligations to remove or block the use of information in accordance with general legislation remain unaffected by this. However, liability in this respect is only possible from the time of knowledge of a specific infringement. As soon as we become aware of such infringements, we will remove this content immediately."
+                },
+                "sixth": {
+                    "label": "Liability for links",
+                    "text": "Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot accept any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking.\nHowever, permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of an infringement. If we become aware of any legal infringements, we will remove such links immediately."
+                },
+                "seventh":{
+                    "label": "Copyright",
+                    "text": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution and any form of commercialization of such material beyond the scope of the copyright law shall require the prior written consent of its respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.\nInsofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we become aware of any infringements, we will remove such content immediately."
+                }
+            }
+        },
+        "agb":{
+            "headline": "General Terms and Conditions",
+            "sections": {
+                "first": {
+                    "label": "1. Scope of application",
+                    "text": "These General Terms and Conditions (GTC) apply to participation in the festival \"Klein und Haarig\", which is organized by the association \"Bunte Platte e.V.\". By registering for the festival, participants accept these GTC."
+                },
+                "second": {
+                    "label": "2. Tickets",
+                    "text": "Tickets can be purchased via the online store of the provider \"www.pretix.eu\". After successful payment, buyers will receive a confirmation email with the ticket QR code as a PDF attachment. This ticket QR code is the admission authorization for the festival and must be presented at the entrance in digital or printed form. The organizers assume no liability for lost or stolen tickets."
+                },
+                "third": {
+                    "label": "3. Transfer, rescission and cancellation",
+                    "text": "Buyers can resell tickets via our partner <1>Ticketswap</1>. Alternatively, buyers can withdraw from the purchase contract in writing up to four weeks before the start of the festival. In this case, a cancellation fee of 12% of the ticket price will be charged. In the event of later withdrawal or no-show, no refund of the ticket price will be granted. The organizers reserve the right to cancel or postpone the festival for good cause or force majeure (weather conditions, natural events or other circumstances). In this case, the ticket prices will be refunded in full. Further claims by the purchaser are excluded."
+                },
+                "fourth": {
+                    "label": "4. Admission wristband",
+                    "text": "Access to the festival site is only permitted with a valid admission wristband. The admission wristband will be handed out at the entrance upon presentation of a valid festival ticket and a valid ID. The admission wristband must be worn visibly on the wrist during the entire event and entitles the holder to enter the festival grounds. Re-entry is possible at any time. Upon re-entry, the admission wristband must be shown to the staff at the entrance without being asked. The organizers are not liable for damage caused by missing or damaged admission wristbands."
+                },
+                "fifth": {
+                    "label": "5. Domiciliary rights",
+                    "text": "During the festival, the organizers have domiciliary rights. The organizers are entitled to expel persons who do not comply with the house rules or the applicable laws from the festival grounds. The organizers are not obliged to refund the festival fees if a person is expelled from the festival site due to their behavior."
+                },
+                "sixth": {
+                    "label": "6. Liability",
+                    "text": "The organizers are not liable for damages incurred by the buyers during the festival, unless these damages are due to intentional or grossly negligent actions on the part of the organizers. The buyers are liable for damages caused by them."
+                },
+                "seventh": {
+                    "label": "7. Age restriction",
+                    "text": "The \"Klein und Haarig\" festival is only open to people aged 18 and over. Participants who have not yet reached the age of 18 may only participate if accompanied by a person of legal age. The organizers reserve the right to check the age of participants upon presentation of a valid ID. Participants who have not yet reached the age of 18 and arrive unaccompanied by a person of legal age will be excluded from the festival. In this case, the purchase price of the festival ticket will not be refunded."
+                },
+                "eigth": {
+                    "label": "8. Prohibited items",
+                    "text": "The possession and/or sale of illegal substances, weapons or other dangerous objects is prohibited. The organizers reserve the right to confiscate items, refuse access to the festival and/or expel the participants concerned from the festival grounds."
+                },
+                "ninth": {
+                    "label": "9. Filming and photography",
+                    "text": "The organizer reserves the right to make film and photo recordings of festival visitors and to use these for marketing and promotional purposes."
+                },
+                "tenth": {
+                    "label": "10. Severability clause",
+                    "text": "Should any provision of these GTC be or become invalid, this shall not affect the validity of the remaining provisions. The invalid provision shall be replaced by a valid provision that comes as close as possible to the economic purpose of the invalid provision. The same applies to any loopholes in these GTC."
+                },
+                "eleventh": {
+                    "label": "11. Final provisions",
+                    "text": "The law of the Federal Republic of Germany shall apply exclusively. Should individual provisions of these GTC be or become invalid, this shall not affect the validity of the remaining provisions. In place of the invalid provision, an appropriate provision that comes closest to the purpose of the invalid provision shall be deemed to have been agreed. The organizers reserve the right to amend these GTC at any time. Participants will be informed of changes to the GTC in good time. The changes shall be deemed accepted if the participants do not object within 14 days of notification of the changes. The place of jurisdiction for all disputes arising from these GTC is the registered office of the organizer."
+                }
+            }
         }
     }
 }
