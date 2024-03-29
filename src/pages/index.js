@@ -108,19 +108,7 @@ export default function IndexPage() {
 }
 
 
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
+
 
 const ArtistText = styled(TextSmall)`
   position: absolute;
