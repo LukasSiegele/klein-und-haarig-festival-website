@@ -4,6 +4,9 @@
         "volunteers": "Volunteers",
         "association": "Verein"
     },
+    "footer": {
+        "footertext": "—gemeinnütziger Verein zur Förderung elektronischer Musikkultur."
+    },
     "banner": {
         "text": "Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten. Wenn du weiterhin auf unserer Seite bleibst, stimmst du unserer Cookie-Nutzung sowie unserer Datenschutzerklärung zu.<br/><1>Mehr erfahren</1>",
         "cta": "Ja, passt"
@@ -18,10 +21,10 @@
                 "sections": {
                     "first": {
                         "label": "4 Tage Festival",
-                        "friday": "Freitag",
-                        "saturday": "Samstag",
-                        "sunday": "Sonntag",
-                        "monday": "Montag"
+                        "day1": "Donnerstag",
+                        "day2": "Freitag",
+                        "day3": "Samstag",
+                        "day4": "Sonntag"
                     },
                     "second": {
                         "label": "Zwei Stages",

@@ -1,16 +1,16 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 export default function Footer(props) {
+  const { t } = useTranslation()
   return (
     <Wrapper bgColor={props.bgColor}>
       <Content>
         <WrapperLeft>
           <BuntePlatte>© Bunte Platte e.V.</BuntePlatte>
-          <BuntePlatte>
-            — gemeinnütziger Verein zur Förderung elektronischer Musikkultur.
-          </BuntePlatte>
+          <BuntePlatte>{t("footer.footertext")}</BuntePlatte>
         </WrapperLeft>
         <WrapperRight>
           {/* <Kontakt>
@@ -33,7 +33,7 @@ export default function Footer(props) {
               <Link to="/agbs">AGBs</Link>
             </Text>
           </AGB>
-          <Text>© 2023</Text>
+          <Text>© 2024</Text>
         </WrapperRight>
       </Content>
     </Wrapper>
