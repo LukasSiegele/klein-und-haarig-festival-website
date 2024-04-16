@@ -142,7 +142,7 @@ const ContentContainer = styled.div`
 const ContentGrid = styled.div`
   /* z-index: 10; */
   display: grid;
-  height: 90vh;
+  height: 94vh;
   /* display: flex; */
   grid-template-columns: auto 1fr;
   padding-top: 20px;
