@@ -59,7 +59,9 @@ const Ticker = () => {
                 </TickerText>
                  */}
                 <Icon src="/icons/banner-star.svg"></Icon>
-                <TickerText className="tickerText">Presale is on!</TickerText>
+                <TickerText className="tickerText">
+                  Full Lineup very soon!
+                </TickerText>
 
                 {/* <TickerText className="tickerText">
                   Aktuell sind keine Zahlungen möglich. Wir haben ein Problem
