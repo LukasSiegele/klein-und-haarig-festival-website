@@ -6,8 +6,8 @@ import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
-import {graphql} from 'gatsby';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
 
@@ -16,7 +16,7 @@ import MobileNavigation from "../components/navigation/MobileNavigation"
 import FormButton from "../components/buttons/FormButton"
 
 export default function Verein() {
-  const {t} = useTranslation();
+  const { t } = useTranslation()
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
@@ -35,54 +35,92 @@ export default function Verein() {
                 <TextSection>
                   <HeaderSection>
                     <InfoHeadline>
-                      {t('pages.organization.headline')}
+                      {t("pages.organization.headline")}
                     </InfoHeadline>
                   </HeaderSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.organization.sections.first.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.organization.sections.first.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.organization.sections.first.text')}
+                      {t("pages.organization.sections.first.text")}
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
-                    <InfoLabel>{t('pages.organization.sections.second.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.organization.sections.second.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.organization.sections.second.text')}
+                      {t("pages.organization.sections.second.text")}
                     </InfoText>
                     {/* <Link href="mailto:info@bunteplatte.de?subject=Mitglied werden&body=Hallo Bunte Platte Crew, %0A %0A ich möchte Mitlgied im Bunte Platte e.V. werden. Könnt ihr mir das Mitgliedsformular zusenden auf dem alle weiteren Infos stehen? %0A %0A Liebe Grüße">
                       <FormButton label="Mitglied werden" />
                     </Link> */}
                     <Link href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf">
                       <FormButton
-                        backgroundColor="#F89248"
-                        label={t('pages.organization.sections.becomeMemberCTA')}
+                        backgroundColor="#4028d9"
+                        label={t("pages.organization.sections.becomeMemberCTA")}
                       />
                     </Link>
 
                     {/* <a href="mailto:info@kleinundhaarig.de">Kontakt</a> */}
                   </InfoSection>
                   <InfoSection>
-                    <InfoLabel>{t('pages.organization.sections.third.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.organization.sections.third.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.organization.sections.third.text')}
+                      {t("pages.organization.sections.third.text")}
                     </InfoText>
                     <List>
                       <ListItem>
-                        <List1>{t('pages.organization.sections.bankDetails.name.label')}</List1>
-                        <List2>{t('pages.organization.sections.bankDetails.name.value')}</List2>
+                        <List1>
+                          {t(
+                            "pages.organization.sections.bankDetails.name.label"
+                          )}
+                        </List1>
+                        <List2>
+                          {t(
+                            "pages.organization.sections.bankDetails.name.value"
+                          )}
+                        </List2>
                       </ListItem>
                       <ListItem>
-                        <List1>{t('pages.organization.sections.bankDetails.iban.label')}</List1>
-                        <List2>{t('pages.organization.sections.bankDetails.iban.value')}</List2>
+                        <List1>
+                          {t(
+                            "pages.organization.sections.bankDetails.iban.label"
+                          )}
+                        </List1>
+                        <List2>
+                          {t(
+                            "pages.organization.sections.bankDetails.iban.value"
+                          )}
+                        </List2>
                       </ListItem>
                       <ListItem>
-                        <List1>{t('pages.organization.sections.bankDetails.bic.label')}</List1>
-                        <List2>{t('pages.organization.sections.bankDetails.bic.value')}</List2>
+                        <List1>
+                          {t(
+                            "pages.organization.sections.bankDetails.bic.label"
+                          )}
+                        </List1>
+                        <List2>
+                          {t(
+                            "pages.organization.sections.bankDetails.bic.value"
+                          )}
+                        </List2>
                       </ListItem>
                       <ListItem>
-                        <List1>{t('pages.organization.sections.bankDetails.bank.label')}</List1>
-                        <List2>{t('pages.organization.sections.bankDetails.bank.value')}</List2>
+                        <List1>
+                          {t(
+                            "pages.organization.sections.bankDetails.bank.label"
+                          )}
+                        </List1>
+                        <List2>
+                          {t(
+                            "pages.organization.sections.bankDetails.bank.value"
+                          )}
+                        </List2>
                       </ListItem>
                     </List>
                   </InfoSection>
@@ -101,10 +139,9 @@ export default function Verein() {
   )
 }
 
-
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -114,7 +151,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const Wrapper = styled.div`
   overflow: hidden;

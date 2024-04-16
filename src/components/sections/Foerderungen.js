@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import FaceGrafik from "../../../static/images/Face.png"
-import { graphql } from 'gatsby';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import {
   // PageHeader,
   TextSmall,
@@ -12,11 +12,11 @@ import {
 } from "../styles/TextStyles"
 
 export default function Foerderungen() {
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   return (
     <Wrapper>
       <Content>
-        <Headline>{t('pages.home.supportedBy')}</Headline>
+        <Headline>{t("pages.home.supportedBy")}</Headline>
         <LogoLineGroup>
           <LogoGroup>
             <Logo src="/icons/neustartKultur.png"></Logo>
@@ -37,7 +37,7 @@ export default function Foerderungen() {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -47,7 +47,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const LogoLineGroup = styled.div`
   /* position: relative; */
@@ -96,6 +96,7 @@ const LogoGroup = styled.div`
   padding: 40px;
   @media (max-width: 768px) {
     padding: 30px;
+    border-radius: 60px;
     gap: 32px;
     grid-template-columns: 1fr;
   }
