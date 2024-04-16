@@ -20,7 +20,7 @@ const Ring = styled.div`
 
   width: 70vw;
   /* height: 120px; */
-  border: 1px solid #f89248;
+  border: 1px solid #f993a0;
   border-radius: 50%;
   margin-bottom: -200px;
   mix-blend-mode: exclusion;

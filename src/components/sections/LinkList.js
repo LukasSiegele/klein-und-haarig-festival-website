@@ -19,7 +19,7 @@ export default function LinkList() {
         <LinkButton>
           <Link to="https://www.instagram.com/kleinundhaarig/" target="_blank">
             <FormButton
-              backgroundColor="#6A79FF"
+              backgroundColor="#556670"
               color="black"
               label="Instagram"
             />
@@ -31,7 +31,7 @@ export default function LinkList() {
             target="_blank"
           >
             <FormButton
-              backgroundColor="#FF965B"
+              backgroundColor="#3c6d7d"
               color="black"
               label="Soundcloud"
             />
@@ -40,7 +40,7 @@ export default function LinkList() {
         <LinkButton>
           <Link to="mailto:info@kleinundhaarig.de">
             <FormButton
-              backgroundColor="#A19089"
+              backgroundColor="#158116"
               color="black"
               label="E-Mail"
             />
@@ -52,7 +52,11 @@ export default function LinkList() {
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
             target="_blank"
           >
-            <FormButton backgroundColor="white" color="black" label="Tickets" />
+            <FormButton
+              backgroundColor="#d2e403"
+              color="black"
+              label="Tickets"
+            />
           </Link>
         </LinkButton>
       </Content>

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import HeroAnimation from "../../../static/videos/KuH2023Animation.mp4"
+import Artwork from "../../../static/images/HeroArtwork2024.png"
 
 import {
   FrontpageHeadline,
@@ -17,50 +18,50 @@ export default function Hero() {
   return (
     <Container>
       <ContentContainer>
-        {/* <ContentGrid> */}
-        <Column1>
-          {/* <TitleLine> */}
-          {/* <KleinMask> */}
+        <ContentGrid>
+          <Column1>
+            {/* <TitleLine> */}
+            {/* <KleinMask> */}
 
-          <C1Content>
-            {/* <MLogoGroup>
+            <C1Content>
+              {/* <MLogoGroup>
               <Link to="/">
                 <MLogo />
               </Link>
             </MLogoGroup> */}
-            <TitleKlein>Klein und Haarig Festival</TitleKlein>
-            {/* </KleinMask> */}
+              <TitleKlein>Klein und Haarig Festival</TitleKlein>
+              {/* </KleinMask> */}
 
-            {/* <UndMask>
+              {/* <UndMask>
               <TitleUndStroke>und </TitleUndStroke>
             </UndMask>
             <HaarigMask>
               <TitleHaarig>Haarig</TitleHaarig>
             </HaarigMask> */}
-            {/* </TitleLine> */}
-            {/* <DateMask> */}
+              {/* </TitleLine> */}
+              {/* <DateMask> */}
 
-            <DateGroup>
-              <Datum>06 — 09</Datum>
-              <Datum>06/2024</Datum>
-            </DateGroup>
+              <DateGroup>
+                <Datum>06 — 09</Datum>
+                <Datum>06/2024</Datum>
+              </DateGroup>
 
-            {/* </DateMask> */}
-            {/* <DateMask> */}
+              {/* </DateMask> */}
+              {/* <DateMask> */}
 
-            <PlaceGroup>
-              <LinkInline
-                href="https://goo.gl/maps/bag7SAmH1RZ6YNLZ6"
-                target="_blank"
-              >
-                <IconGroup>
-                  <Datum>Bad Wildbad</Datum>
-                  <Icon src="/icons/linkout.svg"></Icon>
-                </IconGroup>
-              </LinkInline>
-            </PlaceGroup>
+              <PlaceGroup>
+                <LinkInline
+                  href="https://goo.gl/maps/bag7SAmH1RZ6YNLZ6"
+                  target="_blank"
+                >
+                  <IconGroup>
+                    <Datum>Bad Wildbad</Datum>
+                    <Icon src="/icons/linkout.svg"></Icon>
+                  </IconGroup>
+                </LinkInline>
+              </PlaceGroup>
 
-            {/* <NewsletterGroup>
+              {/* <NewsletterGroup>
               <InfoText>
                 Melde dich zu unserem Newsletter an und bekomme so frühzeitig
                 Infos zum Ticket Presale und zum Festival 2024.
@@ -83,21 +84,21 @@ export default function Hero() {
                 </InstaButton>
               </InstagramSection>
             </NewsletterGroup> */}
-          </C1Content>
+            </C1Content>
 
-          {/* </DateMask> */}
-        </Column1>
-        {/* <Column2></Column2> */}
-        <Column2>
-          <Link to="https://pretix.eu/bunteplatte/kuh2024/" target="_blank">
-            <FormButton
-              label="Tickets"
-              backgroundColor="#4E31CE"
-              color="white"
-            />
-          </Link>
-        </Column2>
-        {/* </ContentGrid> */}
+            {/* </DateMask> */}
+          </Column1>
+          {/* <Column2></Column2> */}
+          <Column2>
+            <Link to="https://pretix.eu/bunteplatte/kuh2024/" target="_blank">
+              <FormButton
+                label="Tickets"
+                backgroundColor="#d2e403"
+                color="black"
+              />
+            </Link>
+          </Column2>
+        </ContentGrid>
 
         {/* <AnimationContainer>
           <ArtworkAnimation autoPlay loop muted>
@@ -120,6 +121,11 @@ export default function Hero() {
 const Container = styled.div`
   /* position: relative; */
   /* overflow: hidden; */
+  margin-bottom: 0px;
+  position: relative;
+  background-image: url(${Artwork});
+  background-size: cover;
+  /* height: 100vh; */
 
   border-bottom: 1px solid black;
   @media (max-width: 1100px) {
@@ -130,7 +136,7 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   /* position: absolute; */
-  /* display: grid; */
+  display: grid;
 `
 
 const ContentGrid = styled.div`
@@ -138,15 +144,16 @@ const ContentGrid = styled.div`
   display: grid;
   height: 90vh;
   /* display: flex; */
-  /* grid-template-columns: repeat(2, 1fr); */
-  /* padding-top: 12px; */
+  grid-template-columns: auto 1fr;
+  padding-top: 20px;
 
   @media (max-width: 1100px) {
-    position: absolute;
-    z-index: 9;
-    grid-template-columns: 1fr;
+    /* position: absolute; */
+    /* z-index: 9; */
+
+    grid-template-columns: auto;
     /* height: auto; */
-    /* grid-template-rows: repeat(2, auto); */
+    grid-template-rows: auto 1fr;
     /* grid-template-rows: repeat(3, auto);
     gap: 30px; */
   }
@@ -158,22 +165,24 @@ const Column1 = styled.div`
   /* background-color: red; */
   /* opacity: 0.4; */
   /* grid-area: 1 / 1 / 1 / 2; */
-  z-index: 2;
+  /* z-index: 2; */
   padding: 25px 20px 100px 20px;
   @media (max-width: 800px) {
     padding: 10px 10px 0 10px;
     /* grid-area: revert; */
     /* position: absolute; */
-    /* grid-template-columns: none; */
+    grid-template-columns: none;
     /* grid-area: 1 / 1 / 2 / 1; */
   }
 `
 const Column2 = styled.div`
+  justify-self: end;
+  width: 400px;
   /* position: fixed; */
   /* right: 0; */
   /* top: 0; */
   /* padding: 25px 40px 100px 40px; */
-  /* background-color: red; */
+  /* background-color: blue; */
   /* opacity: 0.2; */
   /* grid-area: 1 / 2 / 1 / 3; */
   z-index: 999;
@@ -181,7 +190,9 @@ const Column2 = styled.div`
   padding: 25px 20px 0 20px;
   /* border-left: 1px solid black; */
   @media (max-width: 1100px) {
-    /* grid-template-columns: none; */
+    grid-template-columns: none;
+    width: 100%;
+    justify-self: start;
     /* grid-area: 2 / 1 / 3 / 1; */
     /* grid-area: revert; */
     /* grid-area: 2 / 1 / 3 / 2; */
