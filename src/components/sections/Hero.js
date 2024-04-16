@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import HeroAnimation from "../../../static/videos/KuH2023Animation.mp4"
-import Artwork from "../../../static/images/HeroArtwork2024.png"
+import Artwork from "../../../static/images/HeroArtwork2024.jpg"
 
 import {
   FrontpageHeadline,
