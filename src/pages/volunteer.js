@@ -39,7 +39,7 @@ export default function Volunteer() {
                     <AnmeldeGroup>
                       <Link href={t("pages.volunteer.button.link")}>
                         <FormButton
-                          backgroundColor="#6A79FF"
+                          backgroundColor="#4129da"
                           label={t("pages.volunteer.button.label")}
                         ></FormButton>
                       </Link>

@@ -1,27 +1,44 @@
-import { Link } from "gatsby"
+import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import React, { useState } from "react"
 import styled from "styled-components"
 
 export default function MenuTooltip(props) {
   const { isOpen, isInfo, isVolunteer, isVerein, bgColor } = props
+  const { t } = useTranslation()
+  const { languages, originalPath } = useI18next()
+
   return (
     <Wrapper isOpen={isOpen} bgColor={bgColor}>
       <MenuGrid>
         <MenuButton>
           <Link to="/info">
-            <MenuInfo isInfo={isInfo}>Infos</MenuInfo>
+            <MenuInfo isInfo={isInfo}>{t("navigation.infos")}</MenuInfo>
           </Link>
         </MenuButton>
         <MenuButton>
           <Link to="/volunteer">
-            <MenuVolunteer isVolunteer={isVolunteer}>Volunteer</MenuVolunteer>
+            <MenuVolunteer isVolunteer={isVolunteer}>
+              {" "}
+              {t("navigation.volunteers")}
+            </MenuVolunteer>
           </Link>
         </MenuButton>
         <MenuButton>
           <Link to="/verein">
-            <MenuVerein isVerein={isVerein}>Verein</MenuVerein>
+            <MenuVerein isVerein={isVerein}>
+              {t("navigation.association")}
+            </MenuVerein>
           </Link>
         </MenuButton>
+        <ul>
+          {languages.map(lng => (
+            <li key={lng} style={{ margin: "8px" }}>
+              <Link to={originalPath} language={lng}>
+                {lng}
+              </Link>
+            </li>
+          ))}
+        </ul>
         {/* <MenuButton>
           <Link
             to="https://pretix.eu/bunteplatte/kleinundhaarig"

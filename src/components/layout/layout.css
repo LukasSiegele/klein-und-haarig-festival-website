@@ -277,8 +277,9 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  
 
-  border: 0;
+  border: 3px solid black;
   transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
