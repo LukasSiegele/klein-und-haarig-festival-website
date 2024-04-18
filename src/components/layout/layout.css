@@ -147,6 +147,13 @@ section {
       format("woff2");
 }
 
+@font-face {
+  font-family: "Ginto";
+  src: local("ABCGintoRoundedNord-Black"),
+    url(../../../static/fonts/Ginto/ABCGintoRoundedNord-Black.otf)
+      format("otf");
+}
+
 body {
   font-family: "GT-Alpina-Extended-Regular";
   font-weight: 500;
@@ -215,13 +222,18 @@ h1 {
   color: white;
 } */
 
-h2,
+h2 {
+font-family: "GT-Alpina-Extended-Regular";
+  font-size: 2.2em;
+  line-height: 1em;
+} 
+
 h3,
 button,
 /* label, */
 input {
   font-family: "GT-Alpina-Extended-Regular";
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1em;
 }
 

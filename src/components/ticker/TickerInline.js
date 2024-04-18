@@ -17,8 +17,8 @@ const TickerInline = () => {
           <RTicker speed={12}>
             {({ index }) => (
               <Wrapper>
-                <TickerTextSmall>Lineup 2023</TickerTextSmall>
-                <Icon src="/icons/banner-star-black.svg"></Icon>
+                <TickerTextSmall>Lineup 2024</TickerTextSmall>
+                <Icon src="/icons/banner-star-white.svg"></Icon>
               </Wrapper>
             )}
           </RTicker>
@@ -29,7 +29,7 @@ const TickerInline = () => {
 }
 
 const TickerTextSmall = styled(TextSmall)`
-  color: black;
+  color: white;
   margin: 0px 8px 0px 8px;
 `
 

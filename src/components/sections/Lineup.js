@@ -5,7 +5,7 @@ import RingLineup from "../buttons/RingLineup"
 import { animated } from "react-spring"
 import { use3dEffect } from "use-3d-effect"
 
-import Artwork from "../../../static/images/HeroArtwork3.jpg"
+import Artwork from "../../../static/images/HeroArtwork2024Lineup.jpg"
 
 import {
   TextSmall,
@@ -80,57 +80,43 @@ export default function Lineup() {
           <LineupSection>
             <Item>
               <LinkInline
-                href=" https://soundcloud.com/700wet-751845521"
+                href=" https://soundcloud.com/0203983a"
                 target="_blank"
               >
-                <Artist>700WET</Artist>
+                <Artist>0203983A </Artist>
 
                 <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
-              <LinkInline href="https://soundcloud.com/ainodj" target="_blank">
+              <LinkInline
+                href="https://soundcloud.com/adalovvve"
+                target="_blank"
+              >
                 {" "}
-                <Artist>Aino DJ</Artist>
+                <Artist>Ada Luvv b2b low Ki</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/airatoulouse"
+                target="_blank"
+              >
+                {" "}
+                <Artist>Aïra</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline href="https://soundcloud.com/ae-ida" target="_blank">
-                {" "}
                 <Artist>Andrea Ida</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline href="" target="_blank">
-                <Artist>Anu &&nbsp;</Artist>
-              </LinkInline>
-              <LinkInline
-                href=" https://soundcloud.com/namuh_one"
-                target="_blank"
-              >
-                <Artist>nåmuh</Artist>
-
-                <Neu>live</Neu>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://www.instagram.com/av.archv/?hl=de"
-                target="_blank"
-              >
-                {" "}
-                <Artist>av.archv</Artist>
-                <Neu>live</Neu>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
@@ -140,30 +126,9 @@ export default function Lineup() {
               >
                 {" "}
                 <Artist>Benedikt Frey</Artist>
+                <Neu>R.i.O.</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/bleepgeeks"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Bleepgeeks</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/folkloremusic"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Byzantine Anchor</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
@@ -171,143 +136,66 @@ export default function Lineup() {
                 href="https://soundcloud.com/candypollard"
                 target="_blank"
               >
-                {" "}
-                <Artist>Candy Pollard</Artist>
+                <Artist>Candy Pollard </Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
+              <Backtoback> &nbsp;B2B&nbsp;</Backtoback>
               <LinkInline
-                href="https://soundcloud.com/chao54ngel"
+                href=" https://soundcloud.com/ciao_ciao"
                 target="_blank"
               >
-                {" "}
-                <Artist>Chaos Angel</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/ciao_ciao"
-                target="_blank"
-              >
-                {" "}
                 <Artist>Ciao Ciao</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline href="https://soundcloud.com/djblech" target="_blank">
-                {" "}
-                <Artist>DJ Blech</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/doepkesport"
+                href="https://soundcloud.com/c-comberti"
                 target="_blank"
               >
                 {" "}
-                <Artist>DOEPKE</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/farr_vie"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Farr</Artist>
+                <Artist>C. Comberti</Artist>
                 <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/deejayfeelx"
+                href="https://soundcloud.com/der_letzte_dutt"
                 target="_blank"
               >
                 {" "}
-                <Artist>FEEL X</Artist>
+                <Artist>Der letzte Dutt</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
-              <LinkInline href="https://soundcloud.com/irlyl" target="_blank">
+              <LinkInline href="https://soundcloud.com/ebhardy" target="_blank">
                 {" "}
-                <Artist>Irl:yl</Artist>
+                <Artist>DJ ebhardy</Artist>
                 <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline href="https://soundcloud.com/jame2ra" target="_blank">
-                {" "}
-                <Artist>JAMera</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline href="https://soundcloud.com/janloup" target="_blank">
-                {" "}
-                <Artist>Jan Loup</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/justus_kaya"
+                href="https://soundcloud.com/frinda_di_lanco"
                 target="_blank"
               >
                 {" "}
-                <Artist>Justus Kaya</Artist>
-                <Neu>live</Neu>
+                <Artist>Frinda di Lanco</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
+              <Backtoback> &nbsp;&&nbsp;</Backtoback>
               <LinkInline
-                href="https://soundcloud.com/kalas-liebfried"
+                href=" https://soundcloud.com/hendrik_stein"
                 target="_blank"
               >
-                {" "}
-                <Artist>Kalas Liebfried</Artist>
-                <Neu>live</Neu>
+                <Artist>Hendrik Stein</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://www.instagram.com/lynneazzam/"
-                target="_blank"
-              >
-                {" "}
-                <Artist>KETTALYNNE</Artist>
-                <Neu>live</Neu>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline href="https://soundcloud.com/kiawash" target="_blank">
-                {" "}
-                <Artist>Kiawash</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
@@ -316,10 +204,64 @@ export default function Lineup() {
                 target="_blank"
               >
                 {" "}
-                <Artist>LAF e.V.</Artist>
-                <Neu>crew</Neu>
+                <Artist>Lux Lauterwasser</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <LinkInline
+                href=" https://soundcloud.com/herrdobler"
+                target="_blank"
+              >
+                <Artist>Herr Dobler</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline href="https://soundcloud.com/janloup" target="_blank">
+                {" "}
+                <Artist>Jan Loup</Artist>
+                <Neu>Aïra</Neu>
+              </LinkInline>
+              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <LinkInline
+                href=" https://soundcloud.com/wckdwsb"
+                target="_blank"
+              >
+                <Artist>Melocoton</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/kessel-vale"
+                target="_blank"
+              >
+                {" "}
+                <Artist>Kessel Vale</Artist>
+                <Neu>Cancelled Crew</Neu>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline href="https://soundcloud.com/kiawash" target="_blank">
+                {" "}
+                <Artist>Kiawash</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline href="https://soundcloud.com/amlia" target="_blank">
+                {" "}
+                <Artist>Laima Adelaide</Artist>
+              </LinkInline>
+              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <LinkInline href=" https://soundcloud.com/edte-1" target="_blank">
+                <Artist>Nils Edte</Artist>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
@@ -329,107 +271,45 @@ export default function Lineup() {
               >
                 {" "}
                 <Artist>Lara Fein</Artist>
+                <Neu>Cancelled Crew</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline href="" target="_blank">
-                {" "}
-                <Artist>leyla</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/lucaprohl"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Lu Copper</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/luwicked"
-                target="_blank"
-              >
-                {" "}
-                <Artist>lu.wicked</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/dj_luxus"
-                target="_blank"
-              >
-                {" "}
-                <Artist>luxus</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/luxxuryproblems"
-                target="_blank"
-              >
-                {" "}
-                <Artist>luxxuryproblems</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/lyschenfinkorum"
+                href="https://soundcloud.com/lysfinke"
                 target="_blank"
               >
                 {" "}
-                <Artist>Lyschen Finkorum</Artist>
+                <Artist>Lys Finke</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <LinkInline
+                href=" https://soundcloud.com/kheymysterio"
+                target="_blank"
+              >
+                <Artist>Khey Mysterio</Artist>
+                <Neu>Aïra</Neu>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline href="https://sondumaquis.net/" target="_blank">
                 {" "}
                 <Artist>Maquis Son Sistèm</Artist>
-                <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
-              <LinkInline
-                href="https://soundcloud.com/matiduane"
-                target="_blank"
-              >
+              <LinkInline href="https://soundcloud.com/menqui" target="_blank">
                 {" "}
-                <Artist>Mati</Artist>
+                <Artist>Menqui</Artist>
+                <Neu>R.i.O.</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/ayrangod"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Max Langer</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/fakemoebs"
-                target="_blank"
-              >
-                {" "}
-                <Artist>mœbs</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
@@ -438,29 +318,69 @@ export default function Lineup() {
                 target="_blank"
               >
                 {" "}
-                <Artist>MTRL</Artist>
+                <Artist>Mitra</Artist>
+                <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/ninsounds"
+                href="https://soundcloud.com/olgica-peri"
                 target="_blank"
               >
                 {" "}
-                <Artist>N:in</Artist>
-                <Neu>live</Neu>
+                <Artist>Olgica</Artist>
+                <Neu>Cancelled Crew</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
-              <LinkInline href="https://soundcloud.com/rosi96" target="_blank">
+              <LinkInline
+                href="https://soundcloud.com/paulsenlinke"
+                target="_blank"
+              >
                 {" "}
-                <Artist>rosi96</Artist>
+                <Artist>Paul Linke</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/philipp-otterbach"
+                target="_blank"
+              >
+                {" "}
+                <Artist>Philipp Otterbach</Artist>
+                <Neu>Philipp Otterbach</Neu>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/philipp-otterbach"
+                target="_blank"
+              >
+                {" "}
+                <Artist>Philipp Otterbach</Artist>
+                <Neu>R.i.O.</Neu>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline
+                href="https://soundcloud.com/general-intellect/pomander-wasabipatch"
+                target="_blank"
+              >
+                {" "}
+                <Artist>Pomander</Artist>
+                <Neu>live</Neu>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
@@ -470,104 +390,53 @@ export default function Lineup() {
               >
                 {" "}
                 <Artist>Sarmabot</Artist>
+                <Neu>Cancelled Crew</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/lukas-siegele"
+                href="https://soundcloud.com/smittness"
                 target="_blank"
               >
                 {" "}
-                <Artist>SAT 70</Artist>
+                <Artist>Smittness</Artist>
+                <Neu>live</Neu>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <LinkInline href="https://soundcloud.com/u-r-s" target="_blank">
+                {" "}
+                <Artist>U-R-S</Artist>
+                <Neu>R.i.O.</Neu>
+              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/lena-d-welz"
+                href="https://soundcloud.com/airatoulouse"
                 target="_blank"
               >
                 {" "}
-                <Artist>SCHERFE &&nbsp;</Artist>
+                <Artist>UNDER/STANDING</Artist>
+                <Neu>Aïra</Neu>
               </LinkInline>
-              <LinkInline
-                href="https://soundcloud.com/user847293573"
-                target="_blank"
-              >
-                {" "}
-                <Artist>tanjuesch</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/sensecollective"
+                href="https://soundcloud.com/yeaahlena"
                 target="_blank"
               >
                 {" "}
-                <Artist>sense</Artist>
-                <Neu>crew</Neu>
+                <Artist>yeahlena</Artist>
               </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/servicekit"
-                target="_blank"
-              >
-                {" "}
-                <Artist>servicekit</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/shannon_felicitas"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Shannon</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/ilian-tape/skee-mask-victor-naughty-ones-vol-1"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Skee Mask b2b Victor</Artist>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/supersoundglobal"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Super Sound Global</Artist>
-                <Neu>crew</Neu>
-              </LinkInline>
-              <Icon src="/icons/StarBlack.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
-                href="https://soundcloud.com/thirdworldlabour"
-                target="_blank"
-              >
-                {" "}
-                <Artist>thirdworldlabour</Artist>
-              </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
             <PlaylistSection>
@@ -639,7 +508,7 @@ const HoverGroup = styled.div``
 
 const Header = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
-  color: black;
+  color: white;
   opacity: 0.75;
   margin-bottom: 40px;
 `
@@ -700,17 +569,22 @@ const Item = styled.div`
 `
 
 const Artist = styled(HeadlineRegular)`
-  color: black;
+  font-family: "Ginto";
+  color: white;
   float: left;
-  /* @media (max-width: 800px) {
-    float: none;
-  } */
-  /* @media (max-width: 800px) {
-    float: left;
+`
+const Backtoback = styled(ImageDescription)`
+  display: inline;
+  float: left;
+  /* font-family: "Inter"; */
+  margin-top: 10px;
+  /* position: absolute; */
+  color: white;
+  /* text-transform: uppercase; */
+
+  @media (max-width: 800px) {
+    margin-top: 6px;
   }
-  @media (max-width: 450px) {
-    float: left;
-  } */
 `
 
 const Icon = styled.img`
@@ -756,9 +630,10 @@ const Up = styled.div``
 const Neu = styled(ImageDescription)`
   display: inline;
   float: left;
-  font-family: "Inter";
-  margin-left: 8px;
+  /* font-family: "Inter"; */
+  margin-left: 4px;
+  margin-top: 2px;
   /* position: absolute; */
-  color: black;
-  text-transform: uppercase;
+  color: white;
+  /* text-transform: uppercase; */
 `
