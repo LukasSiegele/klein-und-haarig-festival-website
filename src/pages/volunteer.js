@@ -6,10 +6,10 @@ import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
-import {graphql} from 'gatsby';
+import { graphql } from "gatsby"
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import Volunteer1 from "../../static/images/VolunteerRight.jpg"
 import Volunteer2 from "../../static/images/VolunteerMiddle.jpg"
@@ -17,7 +17,7 @@ import MobileNavigation from "../components/navigation/MobileNavigation"
 import FormButton from "../components/buttons/FormButton"
 
 export default function Volunteer() {
-  const {t} = useTranslation();
+  const { t } = useTranslation()
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
@@ -35,16 +35,14 @@ export default function Volunteer() {
                 </ImageSectionMobile>
                 <TextSection>
                   <HeaderSection>
-                    <InfoHeadline>
-                      {t('pages.volunteer.headline')}
-                    </InfoHeadline>
+                    <InfoHeadline>{t("pages.volunteer.headline")}</InfoHeadline>
                     <AnmeldeGroup>
-                      {/* <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link">
+                      <Link href={t("pages.volunteer.button.link")}>
                         <FormButton
                           backgroundColor="#6A79FF"
-                          label="Volunteer werden"
+                          label={t("pages.volunteer.button.label")}
                         ></FormButton>
-                      </Link> */}
+                      </Link>
                       {/* <InfoText>
                         Bald findest du hier den Link zur Volunteer Anmeldung.
                       </InfoText> */}
@@ -52,73 +50,119 @@ export default function Volunteer() {
                   </HeaderSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.volunteer.sections.first.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.volunteer.sections.first.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.volunteer.sections.first.text')}
+                      {t("pages.volunteer.sections.first.text")}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.volunteer.sections.second.label')}</InfoLabel>
-                    <List>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item1')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item2')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item3')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item4')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item5')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item6')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item7')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item8')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item9')}</ListItem>
-                      <ListItem>{t('pages.volunteer.sections.second.list.item10')}</ListItem>
-                    </List>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>{t('pages.volunteer.sections.third.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.volunteer.sections.third.text')}
-                    </InfoText>
+                    <InfoLabel>
+                      {t("pages.volunteer.sections.second.label")}
+                    </InfoLabel>
                     <List>
                       <ListItem>
-                        <List1>{t('pages.volunteer.sections.third.sizes.s.label')}</List1>
-                        <List2>{t('pages.volunteer.sections.third.sizes.s.time')}</List2>
-                        <List3>{t('pages.volunteer.sections.third.sizes.s.amount')}</List3>
+                        {t("pages.volunteer.sections.second.list.item1")}
                       </ListItem>
                       <ListItem>
-                        <List1>{t('pages.volunteer.sections.third.sizes.m.label')}</List1>
-                        <List2>{t('pages.volunteer.sections.third.sizes.m.time')}</List2>
-                        <List3>{t('pages.volunteer.sections.third.sizes.m.amount')}</List3>
+                        {t("pages.volunteer.sections.second.list.item2")}
                       </ListItem>
                       <ListItem>
-                        <List1>{t('pages.volunteer.sections.third.sizes.l.label')}</List1>
-                        <List2>{t('pages.volunteer.sections.third.sizes.l.time')}</List2>
-                        <List3>{t('pages.volunteer.sections.third.sizes.l.amount')}</List3>
+                        {t("pages.volunteer.sections.second.list.item3")}
+                      </ListItem>
+                      <ListItem>
+                        {t("pages.volunteer.sections.second.list.item4")}
+                      </ListItem>
+                      <ListItem>
+                        {t("pages.volunteer.sections.second.list.item5")}
+                      </ListItem>
+                      <ListItem>
+                        {t("pages.volunteer.sections.second.list.item6")}
+                      </ListItem>
+                      <ListItem>
+                        {t("pages.volunteer.sections.second.list.item7")}
+                      </ListItem>
+                      <ListItem>
+                        {t("pages.volunteer.sections.second.list.item8")}
+                      </ListItem>
+                      <ListItem>
+                        {t("pages.volunteer.sections.second.list.item9")}
+                      </ListItem>
+                      <ListItem>
+                        {t("pages.volunteer.sections.second.list.item10")}
                       </ListItem>
                     </List>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
-                    {t('pages.volunteer.sections.fourth.label')}
+                      {t("pages.volunteer.sections.third.label")}
                     </InfoLabel>
                     <InfoText>
-                    {t('pages.volunteer.sections.fourth.text')}
+                      {t("pages.volunteer.sections.third.text")}
+                    </InfoText>
+                    <List>
+                      <ListItem>
+                        <List1>
+                          {t("pages.volunteer.sections.third.sizes.s.label")}
+                        </List1>
+                        <List2>
+                          {t("pages.volunteer.sections.third.sizes.s.time")}
+                        </List2>
+                        <List3>
+                          {t("pages.volunteer.sections.third.sizes.s.amount")}
+                        </List3>
+                      </ListItem>
+                      <ListItem>
+                        <List1>
+                          {t("pages.volunteer.sections.third.sizes.m.label")}
+                        </List1>
+                        <List2>
+                          {t("pages.volunteer.sections.third.sizes.m.time")}
+                        </List2>
+                        <List3>
+                          {t("pages.volunteer.sections.third.sizes.m.amount")}
+                        </List3>
+                      </ListItem>
+                      <ListItem>
+                        <List1>
+                          {t("pages.volunteer.sections.third.sizes.l.label")}
+                        </List1>
+                        <List2>
+                          {t("pages.volunteer.sections.third.sizes.l.time")}
+                        </List2>
+                        <List3>
+                          {t("pages.volunteer.sections.third.sizes.l.amount")}
+                        </List3>
+                      </ListItem>
+                    </List>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.volunteer.sections.fourth.label")}
+                    </InfoLabel>
+                    <InfoText>
+                      {t("pages.volunteer.sections.fourth.text")}
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
                     <InfoLabel>
-                    {t('pages.volunteer.sections.fifth.label')}
+                      {t("pages.volunteer.sections.fifth.label")}
                     </InfoLabel>
                     <InfoText>
-                    {t('pages.volunteer.sections.fifth.text')}
+                      {t("pages.volunteer.sections.fifth.text")}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.volunteer.sections.sixth.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.volunteer.sections.sixth.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.volunteer.sections.sixth.text')}
+                      {t("pages.volunteer.sections.sixth.text")}
                     </InfoText>
                   </InfoSection>
                 </TextSection>
@@ -142,10 +186,9 @@ export default function Volunteer() {
   )
 }
 
-
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -155,7 +198,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const Wrapper = styled.div`
   background-color: black;
