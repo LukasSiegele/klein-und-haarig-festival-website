@@ -30,15 +30,7 @@ export default function MenuTooltip(props) {
             </MenuVerein>
           </Link>
         </MenuButton>
-        <ul>
-          {languages.map(lng => (
-            <li key={lng} style={{ margin: "8px" }}>
-              <Link to={originalPath} language={lng}>
-                {lng}
-              </Link>
-            </li>
-          ))}
-        </ul>
+
         {/* <MenuButton>
           <Link
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
@@ -48,6 +40,15 @@ export default function MenuTooltip(props) {
           </Link>
         </MenuButton> */}
       </MenuGrid>
+      <ul>
+        {languages.map(lng => (
+          <li key={lng} style={{ margin: "8px" }}>
+            <Link to={originalPath} language={lng}>
+              {lng}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </Wrapper>
   )
 }
