@@ -151,7 +151,7 @@ section {
   font-family: "Ginto";
   src: local("ABCGintoRoundedNord-Black"),
     url(../../../static/fonts/Ginto/ABCGintoRoundedNord-Black.otf)
-      format("otf");
+      format("opentype");
 }
 
 body {
