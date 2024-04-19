@@ -355,18 +355,6 @@ export default function Lineup() {
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/philipp-otterbach"
-                target="_blank"
-              >
-                {" "}
-                <Artist>R.i.O.</Artist>
-                <Neu>Philipp Otterbach</Neu>
-              </LinkInline>
-              <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
                 href="https://soundcloud.com/general-intellect/pomander-wasabipatch"
                 target="_blank"
               >
