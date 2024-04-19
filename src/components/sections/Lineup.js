@@ -212,7 +212,7 @@ export default function Lineup() {
                 {" "}
                 <Artist>Lux Lauterwasser</Artist>
               </LinkInline>
-              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <Backtoback> b2b</Backtoback>
               <LinkInline
                 href=" https://soundcloud.com/herrdobler"
                 target="_blank"
@@ -359,7 +359,7 @@ export default function Lineup() {
                 target="_blank"
               >
                 {" "}
-                <Artist>Philipp Otterbach</Artist>
+                <Artist>R.i.O.</Artist>
                 <Neu>Philipp Otterbach</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
