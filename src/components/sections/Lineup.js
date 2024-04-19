@@ -95,13 +95,19 @@ export default function Lineup() {
                 href="https://soundcloud.com/adalovvve"
                 target="_blank"
               >
-                {" "}
-                <Artist>Ada Luvv b2b low Ki</Artist>
+                <Artist>Ada Luvv</Artist>
+              </LinkInline>
+              <Backtoback> b2b</Backtoback>
+              <LinkInline
+                href=" https://soundcloud.com/soundsoflowki"
+                target="_blank"
+              >
+                <Artist>low Ki</Artist>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/airatoulouse"
                 target="_blank"
@@ -110,7 +116,7 @@ export default function Lineup() {
                 <Artist>Aïra</Artist>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline href="https://soundcloud.com/ae-ida" target="_blank">
@@ -138,7 +144,7 @@ export default function Lineup() {
               >
                 <Artist>Candy Pollard </Artist>
               </LinkInline>
-              <Backtoback> &nbsp;B2B&nbsp;</Backtoback>
+              <Backtoback> b2b</Backtoback>
               <LinkInline
                 href=" https://soundcloud.com/ciao_ciao"
                 target="_blank"
@@ -188,7 +194,7 @@ export default function Lineup() {
                 {" "}
                 <Artist>Frinda di Lanco</Artist>
               </LinkInline>
-              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <Backtoback> b2b</Backtoback>
               <LinkInline
                 href=" https://soundcloud.com/hendrik_stein"
                 target="_blank"
@@ -222,7 +228,7 @@ export default function Lineup() {
                 <Artist>Jan Loup</Artist>
                 <Neu>Aïra</Neu>
               </LinkInline>
-              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <Backtoback> b2b</Backtoback>
               <LinkInline
                 href=" https://soundcloud.com/wckdwsb"
                 target="_blank"
@@ -284,7 +290,7 @@ export default function Lineup() {
                 {" "}
                 <Artist>Lys Finke</Artist>
               </LinkInline>
-              <Backtoback> &nbsp;&&nbsp;</Backtoback>
+              <Backtoback>b2b</Backtoback>
               <LinkInline
                 href=" https://soundcloud.com/kheymysterio"
                 target="_blank"
@@ -361,18 +367,6 @@ export default function Lineup() {
 
             <Item>
               <LinkInline
-                href="https://soundcloud.com/philipp-otterbach"
-                target="_blank"
-              >
-                {" "}
-                <Artist>Philipp Otterbach</Artist>
-                <Neu>R.i.O.</Neu>
-              </LinkInline>
-              <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
-
-            <Item>
-              <LinkInline
                 href="https://soundcloud.com/general-intellect/pomander-wasabipatch"
                 target="_blank"
               >
@@ -436,7 +430,7 @@ export default function Lineup() {
                 {" "}
                 <Artist>yeahlena</Artist>
               </LinkInline>
-              <Icon src="/icons/StarWhite.svg"></Icon>
+              {/* <Icon src="/icons/StarWhite.svg"></Icon> */}
             </Item>
 
             <PlaylistSection>
@@ -557,7 +551,7 @@ const Item = styled.div`
   margin-bottom: 8px;
   position: relative;
   overflow: hidden;
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
     display: block;
   }
   /* @media (max-width: 800px) {
@@ -577,13 +571,13 @@ const Backtoback = styled(ImageDescription)`
   display: inline;
   float: left;
   /* font-family: "Inter"; */
-  margin-top: 10px;
+  margin-top: 1.3em;
   /* position: absolute; */
   color: white;
   /* text-transform: uppercase; */
 
   @media (max-width: 800px) {
-    margin-top: 6px;
+    margin-top: 0.7em;
   }
 `
 
@@ -632,7 +626,7 @@ const Neu = styled(ImageDescription)`
   float: left;
   /* font-family: "Inter"; */
   margin-left: 4px;
-  margin-top: 2px;
+  margin-top: 3px;
   /* position: absolute; */
   color: white;
   /* text-transform: uppercase; */
