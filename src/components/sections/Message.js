@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from 'gatsby';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import BackgroundTexture from "../../../static/images/BackgroundTexture.png"
 import {
   // PageHeader,
@@ -12,16 +12,14 @@ import {
 } from "../styles/TextStyles"
 
 export default function Message() {
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <Wrapper>
       <Container>
         <FirstGrid>
           <Column1>
-            <MainText>
-              {t('pages.home.message.mainText')}
-            </MainText>
+            <MainText>{t("pages.home.message.mainText")}</MainText>
           </Column1>
           <Column2 />
         </FirstGrid>
@@ -32,7 +30,7 @@ export default function Message() {
             <SecondaryGroup>
               <Icon src="/icons/StarBlack.svg"></Icon>
               <SecondaryText>
-              {t('pages.home.message.secondaryText')}
+                {t("pages.home.message.secondaryText")}
               </SecondaryText>
             </SecondaryGroup>
           </Column2>
@@ -45,7 +43,7 @@ export default function Message() {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -55,8 +53,7 @@ export const query = graphql`
       }
     }
   }
-`;
-
+`
 
 const Wrapper = styled.div`
   /* background-image: url(${BackgroundTexture}); */
@@ -90,6 +87,7 @@ const Container = styled.div`
 const MainText = styled(HeadlineRegular)`
   color: white;
   white-space: pre-wrap;
+  font-family: "Ginto";
   /* max-width: 970px; */
 `
 

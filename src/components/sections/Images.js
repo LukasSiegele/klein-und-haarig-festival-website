@@ -51,7 +51,7 @@ export default function Images() {
               </ListItem>
               <Up>
                 <Icon src="/icons/banner-star.svg"></Icon>
-                <Neu>{t("pages.home.images.sections.second.functionOne")}</Neu>
+                <Neu>{t("pages.home.images.sections.second.sound1")}</Neu>
               </Up>
             </NeuGroup>
 
@@ -61,7 +61,7 @@ export default function Images() {
               </ListItem>
               <Up>
                 <Icon src="/icons/banner-star.svg"></Icon>
-                <Neu>{t("pages.home.images.sections.second.functionOne")}</Neu>
+                <Neu>{t("pages.home.images.sections.second.sound2")}</Neu>
               </Up>
             </NeuGroup>
           </ListWrapper2>
@@ -258,6 +258,7 @@ const ListHeader = styled(TextSmall)`
 
 const ListItem = styled(HeadlineRegular)`
   /* mix-blend-mode: exclusion; */
+  font-family: "Ginto";
   color: white;
 `
 

@@ -28,9 +28,10 @@
                     },
                     "second": {
                         "label": "2 Stages",
-                        "item1": "Clearing",
-                        "functionOne": "Funktion One",
-                        "item2": "By the river"
+                        "item1": "Lichtung",
+                        "sound1": "Funktion One",
+                        "item2": "Am Bach",
+                        "sound2": "Dub Soundsystem"
                     },
                     "third": {
                         "label": "Supporting program",

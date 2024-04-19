@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { Link, useTranslation, useI18next } from 'gatsby-plugin-react-i18next';
+import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
   const { isInfo, isVolunteer, isVerein, isOpenCalls } = props
-  const {t} = useTranslation()
-  const { languages, originalPath } = useI18next();
+  const { t } = useTranslation()
+  const { languages, originalPath } = useI18next()
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>
@@ -16,20 +16,15 @@ export default function SideNavigation(props) {
           </Link>
         </LogoWrapper>
 
-
         <LinkWrapper>
           <LinkGroup>
-            <Link to={"/info"} >
-              
-                <ListInfo isInfo={isInfo}>{t('navigation.infos')}</ListInfo>
-              
+            <Link to={"/info"}>
+              <ListInfo isInfo={isInfo}>{t("navigation.infos")}</ListInfo>
             </Link>
             <Link to={"/volunteer"}>
-              
-                <ListVolunteer isVolunteer={isVolunteer}>
-                  {t('navigation.volunteers')}
-                </ListVolunteer>
-              
+              <ListVolunteer isVolunteer={isVolunteer}>
+                {t("navigation.volunteers")}
+              </ListVolunteer>
             </Link>
             {/* <Link to={"/opencalls"}>
               <a>
@@ -39,9 +34,9 @@ export default function SideNavigation(props) {
               </a>
             </Link> */}
             <Link to={"/verein"}>
-              
-                <ListVerein isVerein={isVerein}>{t('navigation.association')}</ListVerein>
-              
+              <ListVerein isVerein={isVerein}>
+                {t("navigation.association")}
+              </ListVerein>
             </Link>
             {/* <Link
               to="https://pretix.eu/bunteplatte/kleinundhaarig"
@@ -52,15 +47,15 @@ export default function SideNavigation(props) {
               </a>
             </Link> */}
           </LinkGroup>
-          <ul style={{listStyle: "none", margin: "0px", alignSelf: "start"}}>
-            {languages.map((lng) => (
-              <li key={lng} style={{margin: "8px"}}>
+          <ul style={{ listStyle: "none", margin: "0px", alignSelf: "start" }}>
+            {languages.map(lng => (
+              <li key={lng} style={{ margin: "8px" }}>
                 <Link to={originalPath} language={lng}>
                   {lng}
                 </Link>
               </li>
             ))}
-           </ul>
+          </ul>
         </LinkWrapper>
       </Wrapper>
     </Desktop>
@@ -150,7 +145,7 @@ const ListInfo = styled(TextSmall)`
   color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
-    props.isInfo ? "#A19089 wavy line-through" : "none"};
+    props.isInfo ? "#959772 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -161,7 +156,7 @@ const ListVolunteer = styled(TextSmall)`
   color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
-    props.isVolunteer ? "#6A79FF wavy line-through" : "none"};
+    props.isVolunteer ? "#492cd3 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -172,7 +167,7 @@ const ListVerein = styled(TextSmall)`
   color: white;
   font-family: "GT-Alpina-Extended-Regular";
   text-decoration: ${props =>
-    props.isVerein ? "#FF965B wavy line-through" : "none"};
+    props.isVerein ? "#ff5400 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -186,4 +181,3 @@ const ListTickets = styled(TextSmall)`
     cursor: pointer;
   }
 `
-

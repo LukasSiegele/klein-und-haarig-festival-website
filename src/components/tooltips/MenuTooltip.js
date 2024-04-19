@@ -93,7 +93,7 @@ const MenuInfo = styled.h1`
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isInfo ? "#A19089 wavy line-through" : "none"};
+    props.isInfo ? "#959772 wavy line-through" : "none"};
 `
 
 const MenuVolunteer = styled.h1`
@@ -101,7 +101,7 @@ const MenuVolunteer = styled.h1`
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isVolunteer ? "#6A79FF wavy line-through" : "none"};
+    props.isVolunteer ? "#492cd3 wavy line-through" : "none"};
 `
 
 const MenuVerein = styled.h1`
@@ -109,7 +109,7 @@ const MenuVerein = styled.h1`
   text-align: center;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isVerein ? "#FF965B wavy line-through" : "none"};
+    props.isVerein ? "#ff5400 wavy line-through" : "none"};
 `
 
 const MenuTickets = styled.h1`

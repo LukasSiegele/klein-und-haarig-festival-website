@@ -29,8 +29,9 @@
                     "second": {
                         "label": "Zwei Stages",
                         "item1": "Lichtung",
-                        "functionOne": "Funktion One",
-                        "item2": "Am Bach"
+                        "sound1": "Funktion One",
+                        "item2": "Am Bach",
+                        "sound2": "Dub Soundsystem"
                     },
                     "third": {
                         "label": "Rahmenprogramm",
