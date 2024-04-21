@@ -258,7 +258,7 @@ const ListHeader = styled(TextSmall)`
 
 const ListItem = styled(HeadlineRegular)`
   /* mix-blend-mode: exclusion; */
-  font-family: "Ginto";
+  /* font-family: "Ginto"; */
   color: white;
 `
 

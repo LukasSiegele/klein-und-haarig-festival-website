@@ -87,7 +87,7 @@ const Container = styled.div`
 const MainText = styled(HeadlineRegular)`
   color: white;
   white-space: pre-wrap;
-  font-family: "Ginto";
+  /* font-family: "Ginto"; */
   /* max-width: 970px; */
 `
 
