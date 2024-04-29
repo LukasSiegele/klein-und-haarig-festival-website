@@ -15,7 +15,7 @@
         "home": {
             "message": {
                 "mainText": "Klein und Haarig \n— 4 Tage elektronische Musik, Kunst und Workshops in einem idyllischen Tal im Schwarzwald.",
-                "secondaryText": "Ehrenamtlich organisiert von Freunden, dem Bunte Platte e.V.\n\nWir wollen einen nicht kommerziellen Raum schaffen, in dem Menschen zusammenkommen und mit ihnen Vielfalt, Offenheit, Toleranz und Freiheit feiern."
+                "secondaryText": "Ehrenamtlich organisiert von Freund:innen, dem Bunte Platte e.V.\n\nWir wollen einen nicht kommerziellen Raum schaffen, in dem Menschen zusammenkommen und mit ihnen Vielfalt, Offenheit, Toleranz und Freiheit feiern."
             },
             "images": {
                 "sections": {
@@ -174,7 +174,7 @@
             }
         },
         "organization": {
-            "headline": "Hi, wir sind der Bunte Platte e.V.\nEin gemeinnütziger Verein aus Freunden und Freundesfreunden, die das KuH ehrenamtlich organisieren.",
+            "headline": "Hi, wir sind der Bunte Platte e.V.\nEin gemeinnütziger Verein aus Freund:innen und Freundesfreund:innen, die das KuH ehrenamtlich organisieren.",
             "sections": {
                 "first": {
                     "label": "Zu uns",
