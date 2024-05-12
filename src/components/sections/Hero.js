@@ -29,7 +29,9 @@ export default function Hero() {
                 <MLogo />
               </Link>
             </MLogoGroup> */}
-              <TitleKlein>Klein und Haarig Festival</TitleKlein>
+              <TitleKlein>
+                Klein und Haarig <Strike>Festival</Strike> Gathering
+              </TitleKlein>
               {/* </KleinMask> */}
 
               {/* <UndMask>
@@ -42,7 +44,9 @@ export default function Hero() {
               {/* <DateMask> */}
 
               <DateGroup>
-                <Datum>06 — 09</Datum>
+                <Datum>
+                  <Strike>06 </Strike> &nbsp; 07 — 09
+                </Datum>
                 <Datum>06/2024</Datum>
               </DateGroup>
 
@@ -117,6 +121,10 @@ export default function Hero() {
     </Container>
   )
 }
+
+const Strike = styled.span`
+  text-decoration: line-through wavy #d2e403;
+`
 
 const Container = styled.div`
   /* position: relative; */

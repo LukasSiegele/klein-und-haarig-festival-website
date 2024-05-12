@@ -25,7 +25,11 @@ export default function Images() {
               <ListHeader>
                 {t("pages.home.images.sections.first.label")}
               </ListHeader>
-              <ListItem>{t("pages.home.images.sections.first.day1")}</ListItem>
+              <Strike>
+                <ListItem>
+                  {t("pages.home.images.sections.first.day1")}
+                </ListItem>
+              </Strike>
               <ListItem>{t("pages.home.images.sections.first.day2")}</ListItem>
               <ListItem>{t("pages.home.images.sections.first.day3")}</ListItem>
               <ListItem>{t("pages.home.images.sections.first.day4")}</ListItem>
@@ -41,19 +45,22 @@ export default function Images() {
               <Image02></Image02>
             </Parallax>
           </ImageWrapper2>
+
           <ListWrapper2>
             <ListHeader>
               {t("pages.home.images.sections.second.label")}
             </ListHeader>
-            <NeuGroup>
-              <ListItem>
-                {t("pages.home.images.sections.second.item1")}
-              </ListItem>
-              <Up>
-                <Icon src="/icons/banner-star.svg"></Icon>
-                <Neu>{t("pages.home.images.sections.second.sound1")}</Neu>
-              </Up>
-            </NeuGroup>
+            <Strike>
+              <NeuGroup>
+                <ListItem>
+                  {t("pages.home.images.sections.second.item1")}
+                </ListItem>
+                <Up>
+                  <Icon src="/icons/banner-star.svg"></Icon>
+                  <Neu>{t("pages.home.images.sections.second.sound1")}</Neu>
+                </Up>
+              </NeuGroup>
+            </Strike>
 
             <NeuGroup>
               <ListItem>
@@ -73,15 +80,26 @@ export default function Images() {
               <Image025></Image025>
             </Parallax>
             <ListWrapper25>
-              <ListHeader>
-                {t("pages.home.images.sections.third.label")}
-              </ListHeader>
-
-              <ListItem>{t("pages.home.images.sections.third.item1")}</ListItem>
-
-              <ListItem>{t("pages.home.images.sections.third.item2")}</ListItem>
-
-              <ListItem>{t("pages.home.images.sections.third.item3")}</ListItem>
+              <Strike>
+                <ListHeader>
+                  {t("pages.home.images.sections.third.label")}
+                </ListHeader>
+              </Strike>
+              <Strike>
+                <ListItem>
+                  {t("pages.home.images.sections.third.item1")}
+                </ListItem>
+              </Strike>
+              <Strike>
+                <ListItem>
+                  {t("pages.home.images.sections.third.item2")}
+                </ListItem>
+              </Strike>
+              <Strike>
+                <ListItem>
+                  {t("pages.home.images.sections.third.item3")}
+                </ListItem>
+              </Strike>
             </ListWrapper25>
           </ImageWrapper25>
         </Row25>
@@ -110,6 +128,10 @@ export const query = graphql`
       }
     }
   }
+`
+
+const Strike = styled.span`
+  text-decoration: line-through wavy #d2e403;
 `
 
 const Container = styled.div`

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Hero from "../components/sections/Hero"
-import {graphql} from 'gatsby';
+import { graphql } from "gatsby"
 import SideNavigation from "../components/navigation/SideNavigation"
 import Layout from "../components/layout/layout"
 // import SEO from "../components/layout/seo"
@@ -27,8 +27,7 @@ export default function IndexPage() {
   return (
     <>
       {/* <SEO title="Home" /> */}
-      
-      
+
       <ParallaxProvider>
         <Wrapper>
           {/* <MainGrid> */}
@@ -106,9 +105,6 @@ export default function IndexPage() {
     </>
   )
 }
-
-
-
 
 const ArtistText = styled(TextSmall)`
   position: absolute;
@@ -224,7 +220,7 @@ const Spacer = styled.div`
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -234,9 +230,7 @@ export const query = graphql`
       }
     }
   }
-`;
-
-
+`
 
 // const TicketGroup = styled(Link)`
 //   /* animation: TicketButtonAnimation 2s 3s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */

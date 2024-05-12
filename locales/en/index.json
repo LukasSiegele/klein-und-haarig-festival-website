@@ -14,20 +14,20 @@
     "pages": {
         "home": {
             "message": {
-                "mainText": "Klein und Haarig \n —4 days of electronic music, art and workshops in an idyllic valley in the Black Forest.",
+                "mainText": "Klein und Haarig \n —3 days of electronic music in an idyllic valley in the Black Forest.",
                 "secondaryText": "Organized fully voluntary by friends, the Bunte Platte e.V.\n\nWe want to create a non-commercial space where people can come together and celebrate diversity, openness, tolerance and freedom."
             },
             "images": {
                 "sections": {
                     "first": {
-                        "label": "4-day festival",
+                        "label": "3 days",
                         "day1": "Thursday",
                         "day2": "Friday",
                         "day3": "Saturday",
                         "day4": "Sunday"
                     },
                     "second": {
-                        "label": "2 Stages",
+                        "label": "1 Stage",
                         "item1": "Lichtung",
                         "sound1": "Funktion One",
                         "item2": "Am Bach",
@@ -145,17 +145,17 @@
                         "s": {
                             "label": "S",
                             "time": "min. 1x 6 h",
-                            "amount": "€ 40 "
+                            "amount": "1/3 "
                         },
                         "m": {
                             "label": "M",
                             "time": "min. 2x 6 h",
-                            "amount": "€ 80"
+                            "amount": "2/3"
                         },
                         "l": {
                             "label": "L",
                             "time": "min. 3x 6 h",
-                            "amount": "€ 120"
+                            "amount": "3/3"
                         }
                     }
                 },

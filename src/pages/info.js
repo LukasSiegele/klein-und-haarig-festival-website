@@ -6,17 +6,16 @@ import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
-import { useTranslation, Trans } from 'gatsby-plugin-react-i18next';
+import { useTranslation, Trans } from "gatsby-plugin-react-i18next"
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
 import Info1 from "../../static/images/InfoBild1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 
 export default function Info() {
-  const {t} = useTranslation();
+  const { t } = useTranslation()
 
-  
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
@@ -33,9 +32,7 @@ export default function Info() {
               <ScrollContainer>
                 <TextSection>
                   <HeaderSection>
-                    <InfoHeadline>
-                      {t('pages.infos.headline')}
-                    </InfoHeadline>
+                    <InfoHeadline>{t("pages.infos.headline")}</InfoHeadline>
                   </HeaderSection>
 
                   {/* <InfoSection>
@@ -96,43 +93,48 @@ export default function Info() {
                   </InfoSection> */}
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.first.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.infos.sections.first.label")}
+                    </InfoLabel>
                     <InfoText>
-                      <Trans t={t} i18nKey={'pages.infos.sections.first.text'}>
-                      Das Klein und Haarig findet auf dem {" "}
-                      <LinkInline
-                        href={t('pages.infos.sections.first.link.href')}
-                        target="_blank"
-                      >
-                        {t('pages.infos.sections.first.link.text')}
-                      </LinkInline>
+                      <Trans t={t} i18nKey={"pages.infos.sections.first.text"}>
+                        Das Klein und Haarig findet auf dem{" "}
+                        <LinkInline
+                          href={t("pages.infos.sections.first.link.href")}
+                          target="_blank"
+                        >
+                          {t("pages.infos.sections.first.link.text")}
+                        </LinkInline>
                       </Trans>
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.second.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.infos.sections.second.label")}
+                    </InfoLabel>
                     <InfoText>
-                      <Trans t={t} i18nKey={'pages.infos.sections.second.text'}>
-                      Die nächstgelegene Bahnstation ist Bad Wildbad Bahnhof.
-                      Von dort bringt dich die
-                      <LinkInline
-                        href={t('pages.infos.sections.second.link.href')}
-                        target="_blank"
-                      >
-                        Buslinie 7780.
-                      </LinkInline>
-                      ca. alle 30 min direkt vor das Gelände — Haltestelle "Bad Wildbad, Zeltplatz"
+                      <Trans t={t} i18nKey={"pages.infos.sections.second.text"}>
+                        Die nächstgelegene Bahnstation ist Bad Wildbad Bahnhof.
+                        Von dort bringt dich die
+                        <LinkInline
+                          href={t("pages.infos.sections.second.link.href")}
+                          target="_blank"
+                        >
+                          Buslinie 7780.
+                        </LinkInline>
+                        ca. alle 30 min direkt vor das Gelände — Haltestelle
+                        "Bad Wildbad, Zeltplatz"
                       </Trans>
                     </InfoText>
                   </InfoSection>
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabel>{t('pages.infos.sections.third.label')}</InfoLabel>
                     <InfoText>
                     {t('pages.infos.sections.third.text')}
                     </InfoText>
-                  </InfoSection>
+                  </InfoSection> */}
 
                   {/* <InfoSection>
                     <InfoLabel>
@@ -205,76 +207,86 @@ export default function Info() {
                   </InfoSection> */}
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.forth.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.infos.sections.forth.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.forth.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.fifth.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.fifth.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.sixth.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.sixth.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.seventh.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.infos.sections.forth.text')}
+                      {t("pages.infos.sections.seventh.text")}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.fifth.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.infos.sections.eigth.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.eigth.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.ninth.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.ninth.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.tenth.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.tenth.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.eleventh.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.infos.sections.fifth.text')}
+                      {t("pages.infos.sections.eleventh.text")}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.sixth.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.infos.sections.sixth.text')}
-                    </InfoText>
+                    <InfoLabel>
+                      {t("pages.infos.sections.twelth.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.twelth.text")}</InfoText>
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.seventh.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.infos.sections.thirteenth.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.infos.sections.seventh.text')}
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.eigth.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.infos.sections.eigth.text')}
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.ninth.label')}</InfoLabel>
-                    <InfoText>{t('pages.infos.sections.ninth.text')}</InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.tenth.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.infos.sections.tenth.text')}
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.eleventh.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.infos.sections.eleventh.text')}
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.twelth.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.infos.sections.twelth.text')}
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.thirteenth.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.infos.sections.thirteenth.text')}
+                      {t("pages.infos.sections.thirteenth.text")}
                     </InfoText>
                   </InfoSection>
                   <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.fourteenth.label')}</InfoLabel>
+                    <InfoLabel>
+                      {t("pages.infos.sections.fourteenth.label")}
+                    </InfoLabel>
                     <InfoText>
-                    {t('pages.infos.sections.fourteenth.text')}
+                      {t("pages.infos.sections.fourteenth.text")}
                     </InfoText>
                   </InfoSection>
                 </TextSection>
@@ -292,10 +304,9 @@ export default function Info() {
   )
 }
 
-
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -305,7 +316,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const Wrapper = styled.div`
   overflow: hidden;
@@ -388,7 +399,7 @@ const InfoText = styled.p`
   margin-bottom: 20px;
   opacity: 0.75;
   max-width: 800px;
-  white-space: pre-wrap
+  white-space: pre-wrap;
 `
 const InfoLabelImportant = styled.h3`
   color: red;
@@ -469,5 +480,3 @@ const ListItem = styled.p`
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 `
-
-

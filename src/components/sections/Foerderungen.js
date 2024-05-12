@@ -17,13 +17,14 @@ export default function Foerderungen() {
     <Wrapper>
       <Content>
         <Headline>{t("pages.home.supportedBy")}</Headline>
-        <LogoLineGroup>
+        <Headline>-</Headline>
+        {/* <LogoLineGroup>
           <LogoGroup>
             <Logo src="/icons/neustartKultur.png"></Logo>
             <Logo src="/icons/bkm.png"></Logo>
             <Logo src="/icons/initiativeMusik.png"></Logo>
           </LogoGroup>
-        </LogoLineGroup>
+        </LogoLineGroup> */}
         {/* <LineGroup>
           <Line></Line>
           <Line></Line>
