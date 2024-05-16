@@ -125,7 +125,7 @@ export default function Lineup() {
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/freybenedikt"
                 target="_blank"
@@ -135,7 +135,7 @@ export default function Lineup() {
                 <Neu>R.i.O.</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline
@@ -186,7 +186,7 @@ export default function Lineup() {
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/frinda_di_lanco"
                 target="_blank"
@@ -202,7 +202,7 @@ export default function Lineup() {
                 <Artist>Hendrik Stein</Artist>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline
@@ -258,7 +258,7 @@ export default function Lineup() {
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
-            <Item>
+            {/* <Item>
               <LinkInline href="https://soundcloud.com/amlia" target="_blank">
                 {" "}
                 <Artist>Laima Adelaide</Artist>
@@ -268,9 +268,9 @@ export default function Lineup() {
                 <Artist>Nils Edte</Artist>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/lara-kobayashi-maru"
                 target="_blank"
@@ -280,9 +280,9 @@ export default function Lineup() {
                 <Neu>Cancelled Crew</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/lysfinke"
                 target="_blank"
@@ -299,7 +299,7 @@ export default function Lineup() {
                 <Neu>Aïra</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline href="https://sondumaquis.net/" target="_blank">
@@ -309,14 +309,14 @@ export default function Lineup() {
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
-            <Item>
+            {/* <Item>
               <LinkInline href="https://soundcloud.com/menqui" target="_blank">
                 {" "}
                 <Artist>Menqui</Artist>
                 <Neu>R.i.O.</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline
@@ -353,7 +353,7 @@ export default function Lineup() {
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/general-intellect/pomander-wasabipatch"
                 target="_blank"
@@ -363,7 +363,7 @@ export default function Lineup() {
                 <Neu>live</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline
@@ -389,16 +389,16 @@ export default function Lineup() {
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item>
 
-            <Item>
+            {/* <Item>
               <LinkInline href="https://soundcloud.com/u-r-s" target="_blank">
                 {" "}
                 <Artist>U-R-S</Artist>
                 <Neu>R.i.O.</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
-            <Item>
+            {/* <Item>
               <LinkInline
                 href="https://soundcloud.com/airatoulouse"
                 target="_blank"
@@ -408,7 +408,7 @@ export default function Lineup() {
                 <Neu>Aïra</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline
