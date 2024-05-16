@@ -131,7 +131,7 @@ export const query = graphql`
 `
 
 const Strike = styled.span`
-  text-decoration: line-through wavy #d2e403;
+  text-decoration: line-through wavy #ff4200;
 `
 
 const Container = styled.div`
