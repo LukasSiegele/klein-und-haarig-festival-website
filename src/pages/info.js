@@ -283,36 +283,34 @@ export default function Info() {
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.eleventh.label")}
+                      {t("pages.infos.sections.secu.label")}
                     </InfoLabel>
-                    <InfoText>
-                      {t("pages.infos.sections.eleventh.text")}
-                    </InfoText>
+                    <InfoText>{t("pages.infos.sections.secu.text")}</InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.twelth.label")}
+                      {t("pages.infos.sections.kids.label")}
                     </InfoLabel>
-                    <InfoText>{t("pages.infos.sections.twelth.text")}</InfoText>
+                    <InfoText>{t("pages.infos.sections.kids.text")}</InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.thirteenth.label")}
+                      {t("pages.infos.sections.animals.label")}
                     </InfoLabel>
                     <InfoText>
-                      {t("pages.infos.sections.thirteenth.text")}
+                      {t("pages.infos.sections.animals.text")}
                     </InfoText>
                   </InfoSection>
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.fourteenth.label")}
                     </InfoLabel>
                     <InfoText>
                       {t("pages.infos.sections.fourteenth.text")}
                     </InfoText>
-                  </InfoSection>
+                  </InfoSection> */}
                 </TextSection>
                 <Footer bgColor="black " />
               </ScrollContainer>
