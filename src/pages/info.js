@@ -94,11 +94,22 @@ export default function Info() {
 
                   <InfoSection>
                     <InfoLabel>
+                      {t("pages.infos.sections.disclaimer.label")}
+                    </InfoLabel>
+                    <InfoText>
+                      <Trans
+                        t={t}
+                        i18nKey={"pages.infos.sections.disclaimer.text"}
+                      ></Trans>
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
                       {t("pages.infos.sections.first.label")}
                     </InfoLabel>
                     <InfoText>
                       <Trans t={t} i18nKey={"pages.infos.sections.first.text"}>
-                        Das Klein und Haarig findet auf dem{" "}
                         <LinkInline
                           href={t("pages.infos.sections.first.link.href")}
                           target="_blank"
@@ -111,14 +122,36 @@ export default function Info() {
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.second.label")}
+                      {t("pages.infos.sections.storno.label")}
                     </InfoLabel>
                     <InfoText>
-                      <Trans t={t} i18nKey={"pages.infos.sections.second.text"}>
+                      <Trans
+                        t={t}
+                        i18nKey={"pages.infos.sections.storno.text"}
+                      ></Trans>
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>{t("pages.infos.sections.car.label")}</InfoLabel>
+                    <InfoText>{t("pages.infos.sections.car.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.publictransport.label")}
+                    </InfoLabel>
+                    <InfoText>
+                      <Trans
+                        t={t}
+                        i18nKey={"pages.infos.sections.publictransport.text"}
+                      >
                         Die nächstgelegene Bahnstation ist Bad Wildbad Bahnhof.
                         Von dort bringt dich die
                         <LinkInline
-                          href={t("pages.infos.sections.second.link.href")}
+                          href={t(
+                            "pages.infos.sections.publictransport.link.href"
+                          )}
                           target="_blank"
                         >
                           Buslinie 7780.
@@ -128,13 +161,6 @@ export default function Info() {
                       </Trans>
                     </InfoText>
                   </InfoSection>
-
-                  {/* <InfoSection>
-                    <InfoLabel>{t('pages.infos.sections.third.label')}</InfoLabel>
-                    <InfoText>
-                    {t('pages.infos.sections.third.text')}
-                    </InfoText>
-                  </InfoSection> */}
 
                   {/* <InfoSection>
                     <InfoLabel>
@@ -208,53 +234,51 @@ export default function Info() {
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.forth.label")}
-                    </InfoLabel>
-                    <InfoText>{t("pages.infos.sections.forth.text")}</InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>
-                      {t("pages.infos.sections.fifth.label")}
-                    </InfoLabel>
-                    <InfoText>{t("pages.infos.sections.fifth.text")}</InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>
-                      {t("pages.infos.sections.sixth.label")}
-                    </InfoLabel>
-                    <InfoText>{t("pages.infos.sections.sixth.text")}</InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>
-                      {t("pages.infos.sections.seventh.label")}
+                      {t("pages.infos.sections.conduct.label")}
                     </InfoLabel>
                     <InfoText>
-                      {t("pages.infos.sections.seventh.text")}
+                      {t("pages.infos.sections.conduct.text")}
                     </InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.eigth.label")}
+                      {t("pages.infos.sections.waste.label")}
                     </InfoLabel>
-                    <InfoText>{t("pages.infos.sections.eigth.text")}</InfoText>
+                    <InfoText>{t("pages.infos.sections.waste.text")}</InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.ninth.label")}
+                      {t("pages.infos.sections.camp.label")}
                     </InfoLabel>
-                    <InfoText>{t("pages.infos.sections.ninth.text")}</InfoText>
+                    <InfoText>{t("pages.infos.sections.camp.text")}</InfoText>
                   </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
-                      {t("pages.infos.sections.tenth.label")}
+                      {t("pages.infos.sections.fire.label")}
                     </InfoLabel>
-                    <InfoText>{t("pages.infos.sections.tenth.text")}</InfoText>
+                    <InfoText>{t("pages.infos.sections.fire.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.food.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.food.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.drinks.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.drinks.text")}</InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>{t("pages.infos.sections.wc.label")}</InfoLabel>
+                    <InfoText>{t("pages.infos.sections.wc.text")}</InfoText>
                   </InfoSection>
 
                   <InfoSection>

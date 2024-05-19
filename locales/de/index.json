@@ -46,69 +46,82 @@
         "infos": {
             "headline": "Wir möchten nicht zu viel verraten. Hier das Wichtigste — kurz und knapp.",
             "sections": {
+                 "disclaimer": {
+                    "label": "Disclaimer",
+                    "text": "Das in diesem Jahr stattfindende Klein und Haarig Gathering ist eine reduzierte Variante des ursprünglich größer geplanten Klein und Haarig Festivals 2024. Bitte berücksichtige dies in deiner Erwartungshaltung. Aufgrund langsamer Ticketverkäufe und dem Ausbleiben von Förderungen, die zu einem steigenden finanziellen Druck und enormen ehrenamtlichen Arbeitaufwänden geführt haben, sind wir vom ursprünglich geplanten Format abgerückt. Wir freuen uns trotzdem darauf mit dir drei umso intimere und umso intensivere Tage an unserem Bach Floor oder im neu gestalteten Ambient und Chill Zelt auf der Wiese zu verbringen. Sämtliche Arbeit für und Beiträge auf dem Klein und Haarig Festival passieren auf ehrenamtlicher Basis! Wir freuen uns, wenn du dies wertschätzt und unterstützt."
+                },
                 "first": {
                     "label": "Location",
-                    "text": "Das Klein und Haarig findet auf dem <0>Zeltplatz Christophshof, 75323 Bad Wildbad statt.</0>",
+                    "text": "Das Klein und Haarig findet vom 7. bis 9. Juni 2024 auf dem <0>Zeltplatz Christophshof in Bad Wildbad</0> statt.",
                     "link": {
                         "href": "https://goo.gl/maps/muaWAGwPx7nebDjJ9",
                         "text": "Zeltplatz Christophshof, 75323 Bad Wildbad statt."
                     }
                 },
-                "second": {
+                "storno": {
+                    "label": "Ticket stornieren",
+                    "text": "Wenn du bereits ein Ticket für das Klein und Haarig Festival 2024 gekauft hast und dieses nun stornieren möchtest, kannst du dies über den Link in deiner Buchungsbestätigung bis zum 26. Mai tun. Danach ist die Stornierung von Tickets nicht mehr möglich."
+                },
+                "refund": {
+                    "label": "Refund",
+                    "text": "Wenn du bereits ein Ticket für das Klein und Haarig Festival 2024 gekauft hast und mehr als 115 EUR (exkl. Gebühren) bezahlt hast, hast du Anspruch auf eine Erstattung in Höhe des zu viel gezahlten Betrages. Diese werden wir dir am Einlass in Form von Wertmarken für Essen und Getränke persönlich übergeben. Solltest du bei der Abreise noch Wertmarken übrig haben, kannst du dir diese an der Bar auszahlen lassen. Freiwillig bezahlte Mehrbeträge sind nicht erstattungsfähig."
+                },
+                "car": {
+                    "label": "Aneise mit dem Auto",
+                    "text": "Du kannst direkt vor dem Festivalgelände parken. Wir werden Parkzonen auf dem Seitenstreifen der Enztalstraße in Richtung Bad Wildbad einrichten. Bitte parke so, dass der Verkehr weiterhin gut fließen kann und beachte unbedingt die ausgewiesenen Halteverbotszonen. Für das Parken deines Autos benötigst du ein Auto Ticket, das du in unserem Ticketshop kaufen kannst. Übernachten in Fahrzeugen, die nicht auf dem Festivalgelände abgestellt sind, ist strengstens verboten!\nCamper mit entsprechendem Ticket dürfen auf das Gelände fahren."
+                },
+                "publictransport": {
                     "label": "Anreise mit Öffis",
-                    "text": "Die nächstgelegene Bahnstation ist \"Bad Wildbad Bahnhof\". Von dort bringt dich die <1>Buslinie 7780</1> ca. alle 30 min direkt vor das Gelände — Haltestelle \"Bad Wildbad, Zeltplatz\".",
+                    "text": "Die nächstgelegene Bahnstation ist \"Bad Wildbad Bahnhof\". Von dort bringt dich die <1>Buslinie 7780</1> ca. alle 30 min direkt vor das Gelände — Haltestelle \"Bad Wildbad, Zeltplatz\".Informationen zu günstigen Verbindungen (Nah- und Fernverkehr) erhältst du rechtzeitig auf Instagram.",
                     "link": {
-                        "href": "https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type=",
+                        "href": "https://www.vgf-info.de/wp-content/uploads/7780_beide_kb_mit_rufbus.pdf ",
                         "text": "Buslinie 7780."
                     }
                 },
-                "third": {
-                    "label": "An- & Abreise mit dem Auto",
-                    "text": "Du kannst direkt vor dem Festivalgelände parken. Wir werden Parkzonen auf dem Seitenstreifen der Enztalstraße in Richtung Bad Wildbad einrichten. Bitte parke so, dass der Verkehr weiterhin gut fließen kann und beachte unbedingt die ausgewiesenen Halteverbotszonen. Für das Parken deines Autos benötigst du ein Auto Ticket, das du in unserem Ticketshop kaufen kannst. Übernachten in Fahrzeugen, die nicht auf dem Festivalgelände abgestellt sind, ist strengstens verboten!\nCamper mit entsprechendem Ticket dürfen auf das Gelände fahren."
-                },
-                "forth": {
+                
+                "conduct": {
                     "label": "Code of Conduct",
-                    "text": "Wir möchten gemeinsam mit dir einen möglichst diskriminierungsfreien, nicht wertenden Raum schaffen, in dem sich alle Personen sicher fühlen und ausleben können – hierfür sind alle Teilnehmenden verantwortlich.\nPsychische wie physische Gewalt in Form von rassistischem, sexistischem, queerfeindlichen und menschenverachtenden Verhalten jeglicher Art wird von uns nicht toleriert und führt zu einem Ausschluss aus der Veranstaltung.\nBitte achte auf Andere! Wenn du merkst, dass es jemandem schlecht geht, jemand in irgendeiner Form diskriminiert wird, deine oder andere Grenzen missachtet werden, zögere nicht zu handeln! Wenn du dich einer Situation nicht gewachsen fühlst oder Unterstützung benötigst, wende dich an das Awareness Team (über das Erkennungszeichen der Awarenesspersonen wirst du vor Ort informiert) oder einen Menschen mit Funkgerät. Du musst niemandem direkt erzählen, was vorgefallen ist. Sage nur, dass du in Kontakt mit dem Awareness Team treten möchtest (oder nutze unser Codewort an der Bar). Du findest auf dem Gelände einen Awarenessstand und einen Safe-Space, wo dir, wenn du das wünschst, geholfen werden kann, du dich informieren oder einfach zurückziehen kannst. Wichtig dabei: Die Definitionsmacht liegt immer bei den Betroffenen. Die betroffene Person definiert selbst, wann und welche Form von Gewalt oder Diskriminierung sie erlebt hat. Diese Definition wird ernst genommen, als wahr empfunden und nicht in Frage gestellt.\nNur ja heißt ja! Handle nach diesem Konsens-Prinzip und achte darauf immer das Einverständnis deiner Mitmenschen einzuholen.\nBitte schließe nicht vom äußeren Erscheinungsbild auf die Geschlechtsidentität einer anderen Person. Nur weil du jemanden als männlich oder weiblich liest, bedeutet das nicht, dass diese Person sich auch so identifiziert.\nUm Diskriminierung auf Toiletten zu verhindern, sind während unserer Veranstaltung alle Toiletten Unisex. Generell bitten wir dich, dich daran zu erinnern, dass Menschen unabhängig davon, wie du sie liest, auf jede Toilette gehen können, die sie als für sich richtig erachten.\nWenn du ein Foto/Video von Teilnehmenden machst und posten möchtest, bitte um Erlaubnis oder mache die Gesichter unkenntlich. Nicht jede*r möchte im Internet abgebildet werden.\nBitte achte auch beim Thema Konsum auf Andere! Der offene Konsum von illegalen Drogen ist auf dem gesamten Festivalgelände verboten!\nWir machen alle Fehler. Wenn Personen diskriminierende Sprache oder Denkweisen verwenden, versuchen wir sie durch konstruktive Kritik darauf aufmerksam zu machen. Wir bitten dich, wenn Menschen konstruktiv Kritik an dich richten, dafür offen zu sein und zuzuhören.\nDiese Richtlinien gelten für Besucher*innen, Künstler*innen und Mitarbeitende. Kommst du auf unsere Veranstaltung, so erwarten wir von dir, dass du dich an unsere Spielregeln hältst. Alle auftretenden Künstler*innen werden vorab über unsere Richtlinien zur Schaffung sicherer Räume und Nulltoleranz für Vorfälle informiert. Wir behalten uns das Recht vor, Verträge zu annullieren, wenn wir feststellen, dass ein*e Künstler*in gegen unsere Richtlinien verstoßen hat.\nWenn diese Art von Aufmerksamkeit für dich neu ist, informiere dich vor dem Festival eigenständig oder beim Awareness Team vor Ort. Das Team steht außerdem für Fragen und Informationen rund um das Thema Safer Use bereit und kann bei Interesse angesprochen werden."
+                    "text": "Wir möchten gemeinsam mit dir einen möglichst diskriminierungsfreien, nicht wertenden Raum schaffen, in dem sich alle Personen sicher fühlen und ausleben können – hierfür sind alle Teilnehmenden verantwortlich. \n\nPsychische wie physische Gewalt in Form von rassistischem, sexistischem, queerfeindlichen und menschenverachtenden Verhalten jeglicher Art wird von uns nicht toleriert und führt zu einem Ausschluss aus der Veranstaltung. \n\nBitte achte auf Andere! Wenn du merkst, dass es jemandem schlecht geht, jemand in irgendeiner Form diskriminiert wird, deine oder andere Grenzen missachtet werden, zögere nicht zu handeln! Wenn du dich einer Situation nicht gewachsen fühlst oder Unterstützung benötigst, wende dich an das Awareness Team (über das Erkennungszeichen der Awarenesspersonen wirst du vor Ort informiert) oder einen Menschen mit Funkgerät. Du musst niemandem direkt erzählen, was passiert ist. Sage nur, dass du in Kontakt mit dem Awareness Team treten möchtest (oder nutze unser Codewort an der Bar). Du findest auf dem Gelände einen Safe-Space, wo dir, wenn du das wünschst, geholfen werden kann, du dich informieren oder einfach zurückziehen kannst. Wichtig dabei: Die Definitionsmacht liegt immer bei den Betroffenen. Die betroffene Person definiert selbst, wann und welche Form von Gewalt oder Diskriminierung sie erlebt hat. Diese Definition wird ernst genommen, als wahr empfunden und nicht in Frage gestellt. \n\nNur ja heißt ja! Handle nach diesem Konsens-Prinzip und achte darauf immer das Einverständnis deiner Mitmenschen einzuholen. \n\nBitte schließe nicht vom äußeren Erscheinungsbild auf die Geschlechtsidentität einer anderen Person. Nur weil du jemanden als männlich oder weiblich liest, bedeutet das nicht, dass diese Person sich auch so identifiziert. \n\n Um Diskriminierung auf Toiletten zu verhindern, sind während unserer Veranstaltung alle Toiletten Unisex. Generell bitten wir dich, dich daran zu erinnern, dass Menschen unabhängig davon, wie du sie liest, auf jede Toilette gehen können, die sie als für sich richtig erachten. \n\nWenn du ein Foto/Video von Teilnehmenden machst und posten möchtest, bitte um Erlaubnis oder mache die Gesichter unkenntlich. Nicht jede*r möchte im Internet abgebildet werden. \n\nBitte achte auch beim Thema Konsum auf Andere! Der offene Konsum von illegalen Drogen ist auf dem gesamten Festivalgelände verboten! \n\nWir machen alle Fehler. Wenn Personen diskriminierende Sprache oder Denkweisen verwenden, versuchen wir sie durch konstruktive Kritik darauf aufmerksam zu machen. Wir bitten dich, wenn Menschen konstruktiv Kritik an dich richten, dafür offen zu sein und zuzuhören. \n\nDiese Richtlinien gelten für Besucher*innen, Künstler*innen und Mitarbeitende. Kommst du auf unsere Veranstaltung, so erwarten wir von dir, dass du dich an unsere Spielregeln hältst. Alle auftretenden Künstler*innen werden vorab über unsere Richtlinien zur Schaffung sicherer Räume und Nulltoleranz für Vorfälle informiert. Wir behalten uns das Recht vor, Verträge zu annullieren, wenn wir feststellen, dass ein*e Künstler*in gegen unsere Richtlinien verstoßen hat. \n\nWenn diese Art von Aufmerksamkeit für dich neu ist, informiere dich vor dem Festival eigenständig oder beim Awareness Team vor Ort. Das Team steht außerdem für Fragen und Informationen rund um das Thema Safer Use bereit und kann bei Interesse angesprochen werden."
                 },
-                "fifth": {
+                "pay": {
                     "label": "Bezahlen",
                     "text": "Auf dem Festival kannst du nur mit Bargeld bezahlen. Es gibt keine Möglichkeit Geld abzuheben."
                 },
-                "sixth": {
+                "waste": {
                     "label": "Müll und Umweltschutz",
                     "text": "Das gesamte Festivalgelände befindet sich in einem Wasserschutzgebiet. Wir haben uns verpflichtet den Zeltplatz so zu verlassen, wie wir ihn vorgefunden haben. Bitte hilf uns dabei - nutze die von uns bereitgestellten Mülleimer, Mülltüten und Taschenascher und lasse weder defekte noch intakte Zelte, Pavillons oder Campingstühle auf dem Gelände stehen."
                 },
-                "seventh": {
+                "camp": {
                     "label": "Zelten",
-                    "text": "Zelten ist im Festivalticket inklusive. Du kannst dein Zelt auf der ausgewiesenen Campingfläche aufstellen. Achtung! Unter dem Zeltplatz verläuft eine Starkstromleitung. Heringe und Zeltanker über 30 cm Länge sind deshalb nicht zulässig."
+                    "text": "Zelten ist im Gatheringticket inklusive. Du kannst dein Zelt auf der ausgewiesenen Campingfläche aufstellen. Achtung! Unter dem Zeltplatz verläuft eine Starkstromleitung. Heringe und Zeltanker über 30 cm Länge sind deshalb nicht zulässig."
                 },
-                "eigth": {
+                "fire": {
                     "label": "Grillen & Feuer",
                     "text": "An unserer Grillstelle kannst du Mitgebrachtes zubereiten. Private Grills sind auf dem Gelände nicht gestattet. Offenes Feuer ist außer in der zentralen Feuerstelle strengstens verboten. Campingkocher sind kein Problem."
                 },
-                "ninth": {
+                "food": {
                     "label": "Essen",
-                    "text": "Alles Vegetarisch/Vegan. Infos folgen."
+                    "text": "Wir werden ein täglich wechselndes vegetarisches / veganes Tagesgericht sowie unsere Signature Pommes anbieten.  Bitte beachte dass es hierfür begrenzte Öffnungszeiten geben wird. Der Verkauf von Essen endet am Sonntag um 16 Uhr. In diesem Jahr wird es leider kein Verkauf von Frühstück geben."
                 },
-                "tenth": {
+                "drinks": {
                     "label": "Getränke",
-                    "text": "Faire Preise für nicht alkoholische Getränke, sowie für Bier, Wein, Secco, Longdrinks & Kurze. Du kannst auch eigene Getränke in normalen Mengen mit auf das Festivalgelände nehmen. Bitte bedenke aber, dass wir zur Erhaltung unseres Festivals auch auf die Einnahmen der Bars angewiesen sind."
+                    "text": "Faire Preise für nicht alkoholische Getränke, sowie für Bier, Wein, Secco, Longdrinks, Kaffee und Kurze. Du kannst auch eigene Getränke in normalen Mengen mit auf das Gelände nehmen. Bitte bedenke aber, dass wir zur Erhaltung unseres Festivals auf die Einnahmen der Bars angewiesen sind."
                 },
-                "eleventh": {
+                "wc": {
                     "label": "WCs & Duschen",
-                    "text": "Auf dem Festival gibt es feste sanitäre Anlagen. Tags und Graffitis sind hier nicht erwünscht. Wir müssen sie sonst aufwändig und teuer entfernen lassen."
+                    "text": "Auf dem Gelände gibt es feste sanitäre Anlagen und warme Duschen, solange der Gasvorrat reicht. Tags und Graffitis sind hier nicht erwünscht. Wir müssen sie sonst aufwändig und teuer entfernen lassen."
                 },
-                "twelth": {
+                "secu": {
                     "label": "Sicherheit",
                     "text": "Die folgenden Gegenstände sind auf dem Festival strengstens untersagt: sämtliche Pyrotechnik, Drogen, Drohnen, Waffen aller Art und andere gefährliche Gegenstände."
                 }, 
-                "thirteenth": {
+                "kids": {
                     "label": "Kinder & Minderjährige",
-                    "text": "Kinder und Minderjährige haber nur in Begleitung einer oder eines Erziehungsberechtigten Zutritt zum Festival. Wir raten ausdrücklich davon ab in Begleitung von Kindern oder Jugendlichen anzureisen, da wir keine Ruhezonen zur Verfügung stellen können. Solltest du dich dennoch dazu entscheiden, erwarten wir von dir, dich deiner Verantwortung bewusst zu sein und für die Betreuung deiner Kinder selbst zu sorgen. Kinder unter 14 Jahren benötigen kein Ticket. Für Kinder unter 10 Jahren besteht Gehörschutzpflicht. Muttizettel werden nicht akzeptiert. Eltern haften für ihre Kinder."
+                    "text": "Kinder und Minderjährige haber nur in Begleitung einer oder eines Erziehungsberechtigten Zutritt zum Festival. Wir raten ausdrücklich davon ab in Begleitung von Kindern oder Jugendlichen anzureisen, da wir kaum Ruhezonen zur Verfügung stellen können. Solltest du dich dennoch dazu entscheiden, erwarten wir von dir, dich deiner Verantwortung bewusst zu sein und für die Betreuung deiner Kinder selbst zu sorgen. Kinder unter 14 Jahren benötigen kein Ticket. Für Kinder unter 10 Jahren besteht Gehörschutzpflicht. Muttizettel werden nicht akzeptiert. Eltern haften für ihre Kinder."
                 },
-                "fourteenth": {
+                "animals": {
                     "label": "Hunde & andere Tiere",
-                    "text": "Da wir aufgrund der Geländegröße keine Ruhezonen einrichten können sind Tiere nicht gestattet - zum Wohl der Gesundheit eurer Vierbeiner."
+                    "text": "Da wir aufgrund der Geländegröße keine Ruhezonen einrichten können, sind Tiere nicht gestattet - zum Wohl der Gesundheit eurer Vierbeiner."
                 }
             }
         },
