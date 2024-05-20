@@ -270,7 +270,7 @@ export default function Lineup() {
               <Icon src="/icons/StarWhite.svg"></Icon>
             </Item> */}
 
-            {/* <Item>
+            <Item>
               <LinkInline
                 href="https://soundcloud.com/lara-kobayashi-maru"
                 target="_blank"
@@ -280,7 +280,7 @@ export default function Lineup() {
                 <Neu>Cancelled Crew</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item> */}
+            </Item>
 
             {/* <Item>
               <LinkInline
