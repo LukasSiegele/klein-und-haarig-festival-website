@@ -78,7 +78,7 @@ export default function Lineup() {
             {/* </animated.div> */}
           </RingGroup>
           <LineupSection>
-            <Item>
+            {/* <Item>
               <LinkInline
                 href=" https://soundcloud.com/0203983a"
                 target="_blank"
@@ -88,7 +88,7 @@ export default function Lineup() {
                 <Neu>live</Neu>
               </LinkInline>
               <Icon src="/icons/StarWhite.svg"></Icon>
-            </Item>
+            </Item> */}
 
             <Item>
               <LinkInline
@@ -418,6 +418,11 @@ export default function Lineup() {
                 {" "}
                 <Artist>yeahlena</Artist>
               </LinkInline>
+              <Icon src="/icons/StarWhite.svg"></Icon>
+            </Item>
+
+            <Item>
+              <Artist>& many more</Artist>
               {/* <Icon src="/icons/StarWhite.svg"></Icon> */}
             </Item>
 
