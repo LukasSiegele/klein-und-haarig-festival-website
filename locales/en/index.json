@@ -131,12 +131,12 @@
             "headline": "No KuH without volunteers. That's why we need your help. Support us during the set-up, during or after the festival with your contribution.",
             "button": {
                 "link": "https://docs.google.com/forms/d/e/1FAIpQLSce_pRv_PUi5fKTO_LHi3F24fmjf6iu4dGsA1sPW1__xyqg_w/viewform?usp=sf_link",
-                "label": "Volunteer sign up"   
+                "label": "Become a volunteer"   
             },
             "sections": {
                 "first": {
                     "label": "How does it work?",
-                    "text": "Click on \"Become a volunteer\" above (currently not available), fill out the form and buy a festival ticket as normal. Choose how long you would like to help us (S, M, L), when (set-up, during, after) and where (admission, food, security, etc.) . You can also let us know if you have a preferred buddy and we will do our best to fulfill your wishes."
+                    "text": "Click on \"Become a volunteer\" above, fill out the form and buy a gathering ticket as normal. Choose how long you would like to help us (S, M, L), when (set-up, during, after) and where (admission, food, security, etc.). You can also let us know if you have a preferred buddy and we will do our best to fulfill your wishes. Please note that due to our reduced Gathering concept this year, we will only be allocating very few volunteer shifts. Please expect not to be assigned a shift."
                 },
                 "second": {
                     "label": "What tasks are there?",
@@ -155,36 +155,36 @@
                 },
                 "third": {
                     "label": "How will I be remunerated?",
-                    "text": "The Klein und Haarig Festival is organized by the non-profit Bunte Platte e.V.. The entire team works on a voluntary basis, all proceeds go exclusively to the project. As a volunteer, you also support the festival on a voluntary basis. You will gain an insight into how a festival is created and how it works. You will get to know the team and the many other people who make the festival what it is. Nevertheless, we want to reward you for your support. You will receive a reimbursement after your work is done, the amount of which depends on the number of your shifts (but not more than the ticket price you paid). You will also be provided with food and drinks during the set-up and dismantling.",
+                    "text": "The Klein und Haarig Gathering is organized by the non-profit Bunte Platte e.V.. The entire team works on a voluntary basis, all proceeds go exclusively to the project. As a volunteer, you also support the project on a voluntary basis. You will gain an insight into how a festival is created and how it works. You will get to know the team and the many other people who make this event what it is. Nevertheless, we want to reward you for your support. You will receive a reimbursement after your work is done, the amount of which depends on the number of your shifts (but not more than the ticket price you paid). You will also be provided with food and drinks during the set-up and dismantling.",
                     "sizes": {
                         "s": {
                             "label": "S",
-                            "time": "min. 1x 6 h",
-                            "amount": "1/3 "
+                            "time": "min. 1x 4 h",
+                            "amount": "25 € "
                         },
                         "m": {
                             "label": "M",
-                            "time": "min. 2x 6 h",
-                            "amount": "2/3"
+                            "time": "min. 2x 4 h",
+                            "amount": "50 €"
                         },
                         "l": {
                             "label": "L",
-                            "time": "min. 3x 6 h",
-                            "amount": "3/3"
+                            "time": "min. 3x 4 h",
+                            "amount": "75 €"
                         }
                     }
                 },
                 "fourth": {
-                    "label": "Do I need a festival ticket as a volunteer?",
-                    "text": "Yes, volunteers also need a festival ticket. After filling out the volunteer form, you will receive a link to our ticket store. If you already have a ticket, you can of course still register as a volunteer."
+                    "label": "Do I need a ticket as a volunteer?",
+                    "text": "Yes, volunteers also need a gathering ticket. After filling out the volunteer form, you will receive a link to our ticket store. If you already have a ticket, you can of course still register as a volunteer."
                 },
                 "fifth": {
                     "label": "I'm late or can't help after all...",
-                    "text": "In these cases, please contact us immediately so that we can react in time. The festival is on a strict time schedule - this is the only way it can run smoothly. We rely on you."
+                    "text": "In these cases, please contact us immediately so that we can react in time. Also the gathering is on a strict time schedule - this is the only way it can run smoothly. We rely on you."
                 },
                 "sixth": {
-                    "label": "When will I be allocated?",
-                    "text": "We will let you know well in advance of the festival so that you can plan ahead. If you have any questions, you can contact our volunteer center at any time after your registration."
+                    "label": "When will I be assigned?",
+                    "text": "We will let you know well in advance so that you can plan ahead. If you have any questions, you can contact our volunteer team at any time after your registration."
                 }
             }
         },

@@ -129,12 +129,12 @@
             "headline": "Ohne Volunteers kein KuH. Deshalb sind wir auf deine Hilfe angewiesen. Unterstütze uns beim Auf- und Abbau oder während dem FEstival und trage so deinen Teil zum Festival bei.",
             "button": {
                 "link": "https://docs.google.com/forms/d/e/1FAIpQLSeZzevc8gkaU-hsCyR4e4VGQ0Susik5qbPUT9DvR-77vqy3Ww/viewform?usp=sf_link",
-                "label": "Volunteer Anmeldung"
+                "label": "Volunteer werden"
             },
             "sections": {
                 "first": {
                     "label": "Wie funktioniert das?",
-                    "text": "Klicke oben auf \"Volunteer werden\" (aktuell nicht verfügbar), fülle das Formular aus und kaufe dir ganz normal ein Festival Ticket. Wähle frei wie lange (S, M, L), wann (Aufbau, Während, Abbau) und wobei (Einlass, Food, Security, usw.) du uns helfen möchtest. Du kannst uns dabei auch deinen Wunsch-Buddy mitteilen. Wir geben unser Bestes deine Wünsche zu erfüllen."
+                    "text": "Klicke oben auf \"Volunteer werden\", fülle das Formular aus und kaufe dir ganz normal ein Gathering Ticket. Wähle wie lange (S, M, L), wann (Aufbau, Während, Abbau) und wobei (Einlass, Food, Security, usw.) du uns helfen möchtest. Du kannst uns dabei auch deinen Wunsch-Buddy mitteilen. Wir geben unser Bestes deine Wünsche zu erfüllen. Bitte beachte, dass wir durch unser diesjähriges reduziertes Gatheringkonzept nur sehr wenige Volunteerschichten vergeben werden. Bitte rechne damit, keine Schicht zugeteilt zu bekommen."
                 },
                 "second": {
                     "label": "Welche Aufgabenbereiche gibt es?",
@@ -153,36 +153,36 @@
                 },
                 "third": {
                     "label": "Wie werde ich vergütet?",
-                    "text": "Das Klein und Haarig Festival wird vom gemeinnützigen Bunte Platte e.V. organisiert. Das gesamte Team arbeitet ehrenamtlich, alle Einnahmen kommen ausschließlich dem Projekt zugute. Als Volunteer unterstützt du das Festival ebenfalls ehrenamtlich. Du bekommst einen Einblick, wie ein Festival entsteht und funktioniert. Du lernst das Team und die vielen anderen Leute kennen, die das Festival zu dem machen, was es ist. Trotzdem wollen wir dich für deine Unterstützung belohnen. Du erhälst nach getaner Arbeit eine Erstattung, deren Höhe sich nach der Anzahl deiner Schichten richtet ((max. aber in Höhe des von dir gezahlten Ticketpreises)). Während dem Auf- und Abbau wirst du zudem mit Essen und Getränken versorgt.",
+                    "text": "Das Klein und Haarig Gathering wird vom gemeinnützigen Bunte Platte e.V. organisiert. Das gesamte Team arbeitet ehrenamtlich, alle Einnahmen kommen ausschließlich dem Projekt zugute. Als Volunteer unterstützt du das Projekt ebenfalls ehrenamtlich. Du bekommst einen Einblick, wie ein Festival entsteht und funktioniert. Du lernst das Team und die vielen anderen Leute kennen, die das Event zu dem machen, was es ist. Trotzdem wollen wir dich für deine Unterstützung belohnen. Du erhältst nach getaner Arbeit eine Erstattung, deren Höhe sich nach der Anzahl deiner Schichten richtet (max. aber in Höhe des von dir gezahlten Ticketpreises). Während dem Auf- und Abbau wirst du zudem mit Essen und Getränken versorgt.",
                     "sizes": {
                         "s": {
                             "label": "S",
-                            "time": "min. 1x 6 h",
-                            "amount": "1/3"
+                            "time": "min. 1x 4 h",
+                            "amount": "25 €"
                         },
                         "m": {
                             "label": "M",
-                            "time": "min. 2x 6 h",
-                            "amount": "2/3"
+                            "time": "min. 2x 4 h",
+                            "amount": "50 €"
                         },
                         "l": {
                             "label": "L",
-                            "time": "min. 3x 6 h",
-                            "amount": "3/3"
+                            "time": "min. 3x 4 h",
+                            "amount": "75 €"
                         }
                     }
                 },
                 "fourth": {
-                    "label": "Brauche ich als Volunteer ein Festival Ticket?",
-                    "text": "Ja, auch als Volunteer benötigst du ein Ticket. Nach dem Ausfüllen des Volunteer Formulars erhältst du einen Link zu unserem Ticketshop. Wenn du schon ein Ticket hast, kannst du dich natürlich trotzdem noch als Volunteer registrieren."
+                    "label": "Brauche ich als Volunteer ein Ticket?",
+                    "text": "Ja, auch als Volunteer benötigst du ein Gathering Ticket. Nach dem Ausfüllen des Volunteer Formulars erhältst du einen Link zu unserem Ticketshop. Wenn du schon ein Ticket hast, kannst du dich natürlich trotzdem noch als Volunteer registrieren."
                 },
                 "fifth": {
-                    "label": "Ich verspäte mich oder kann doch nicht helfen...",
-                    "text": "Bitte melde dich in diesen Fällen sofort bei uns, damit wir rechtzeitig reagieren können. Der Ablauf des Festivals ist strikt getaktet - nur so kann es reibungslos funktionieren. Wir verlassen uns auf dich."
+                    "label": "Ich verspäte mich oder kann doch nicht helfen…",
+                    "text": "Bitte melde dich in diesen Fällen sofort bei uns, damit wir rechtzeitig reagieren können. Auch der Ablauf des Gatherings ist strikt getaktet - nur so kann es reibungslos funktionieren. Wir verlassen uns auf dich."
                 },
                 "sixth": {
                     "label": "Wann werde ich zugeteilt?",
-                    "text": "Wir geben dir mit genügend Vorlauf vor dem Festival Bescheid, damit auch du planen kannst. Bei Fragen kannst du dich nach deiner Anmeldung jederzeit bei unserer Volunteer-Zentrale melden."
+                    "text": "Wir geben dir mit genügend Vorlauf Bescheid, damit auch du planen kannst. Bei Fragen kannst du dich nach deiner Anmeldung jederzeit bei unserem Volunteer-Team melden."
                 }
             }
         },
