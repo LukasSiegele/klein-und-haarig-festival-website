@@ -93,6 +93,18 @@ export default function Info() {
                   </InfoSection> */}
 
                   <InfoSection>
+                    <InfoLabelImportant>
+                      {t("pages.infos.sections.temperature.label")}
+                    </InfoLabelImportant>
+                    <InfoTextImportant>
+                      <Trans
+                        t={t}
+                        i18nKey={"pages.infos.sections.temperature.text"}
+                      ></Trans>
+                    </InfoTextImportant>
+                  </InfoSection>
+
+                  <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.disclaimer.label")}
                     </InfoLabel>
@@ -231,6 +243,13 @@ export default function Info() {
                       </ListItem>
                     </List>
                   </InfoSection> */}
+
+                  <InfoSection>
+                    <InfoLabel>
+                      {t("pages.infos.sections.camper.label")}
+                    </InfoLabel>
+                    <InfoText>{t("pages.infos.sections.camper.text")}</InfoText>
+                  </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
