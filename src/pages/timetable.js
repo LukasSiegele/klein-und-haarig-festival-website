@@ -12,7 +12,7 @@ export default function Timetable() {
       <iframe
         src="/pdf/kuh2024-timetable.pdf"
         width="100%"
-        height="1500px"
+        height="900px"
         frameborder="0"
       ></iframe>
       {/* </Wrapper> */}
