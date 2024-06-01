@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
+
 // import TimetablePdf from "../../../static/pdf/kuh2024-timetable.pdf"
 
 export default function Timetable() {
@@ -9,8 +10,9 @@ export default function Timetable() {
       {/* <SEO title="404: Not found" /> */}
       {/* <Wrapper> */}
       <iframe
-        src="../../../static/pdf/kuh2024-timetable.pdf"
-        style="width:600px; height:500px;"
+        src="/pdf/kuh2024-timetable.pdf"
+        width="100%"
+        height="1500px"
         frameborder="0"
       ></iframe>
       {/* </Wrapper> */}
