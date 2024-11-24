@@ -58,9 +58,9 @@ const Ticker = () => {
                   Wir suchen dringend Unterstützung für
                 </TickerText>
                  */}
-                <Icon src="/icons/banner-star.svg"></Icon>
+                <Icon src="/icons/banner-star-white.svg"></Icon>
                 <TickerText className="tickerText">
-                  2025 ticket sale starting soon
+                  2025 ticketsale starting soon
                 </TickerText>
 
                 {/* <TickerText className="tickerText">
