@@ -51,40 +51,40 @@ export default function IndexPage() {
             </TickerGroup> */}
             {/* </Wrapper> */}
 
-            <MessageSection>
+            {/* <MessageSection>
               <MainGrid>
                 <SideLine />
                 <Message />
               </MainGrid>
-            </MessageSection>
+            </MessageSection> */}
 
-            <LineupSection>
+            {/* <LineupSection>
               <MainGrid>
                 <SideLine />
                 <Lineup />
               </MainGrid>
-            </LineupSection>
+            </LineupSection> */}
 
-            <ImageSection>
+            {/* <ImageSection>
               <MainGrid>
                 <SideLine />
                 <Images />
               </MainGrid>
-            </ImageSection>
+            </ImageSection> */}
 
-            <FoerderungenSection>
+            {/* <FoerderungenSection>
               <MainGrid>
                 <SideLine />
                 <Foerderungen />
               </MainGrid>
-            </FoerderungenSection>
+            </FoerderungenSection> */}
 
-            <LinkListSection>
+            {/* <LinkListSection>
               <MainGrid>
                 <SideLine />
                 <LinkList />
               </MainGrid>
-            </LinkListSection>
+            </LinkListSection> */}
 
             <FooterSection>
               <MainGrid>

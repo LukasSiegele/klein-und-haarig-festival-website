@@ -21,11 +21,11 @@ export default function SideNavigation(props) {
             <Link to={"/info"}>
               <ListInfo isInfo={isInfo}>{t("navigation.infos")}</ListInfo>
             </Link>
-            <Link to={"/volunteer"}>
+            {/* <Link to={"/volunteer"}>
               <ListVolunteer isVolunteer={isVolunteer}>
                 {t("navigation.volunteers")}
               </ListVolunteer>
-            </Link>
+            </Link> */}
             {/* <Link to={"/opencalls"}>
               <a>
                 <ListVolunteer isOpenCalls={isOpenCalls}>

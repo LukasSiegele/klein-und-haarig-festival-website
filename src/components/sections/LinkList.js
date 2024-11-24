@@ -50,7 +50,7 @@ export default function LinkList() {
           </Link>
         </LinkButton>
 
-        <LinkButton>
+        {/* <LinkButton>
           <Link
             to="https://pretix.eu/bunteplatte/kleinundhaarig"
             target="_blank"
@@ -62,7 +62,7 @@ export default function LinkList() {
               label="Tickets"
             />
           </Link>
-        </LinkButton>
+        </LinkButton> */}
       </Content>
       {/* <Face /> */}
     </Wrapper>

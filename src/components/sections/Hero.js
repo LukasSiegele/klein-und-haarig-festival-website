@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 
 import HeroAnimation from "../../../static/videos/KuH2023Animation.mp4"
 import Artwork from "../../../static/images/HeroArtwork2024.jpg"
+import Image1 from "../../../static/images/CN2_32A.png"
 
 import {
   FrontpageHeadline,
@@ -29,9 +30,7 @@ export default function Hero() {
                 <MLogo />
               </Link>
             </MLogoGroup> */}
-              <TitleKlein>
-                Klein und Haarig <Strike>Festival</Strike> Gathering
-              </TitleKlein>
+              <TitleKlein>Klein und Haarig Festival</TitleKlein>
               {/* </KleinMask> */}
 
               {/* <UndMask>
@@ -44,10 +43,8 @@ export default function Hero() {
               {/* <DateMask> */}
 
               <DateGroup>
-                <Datum>
-                  <Strike>06 </Strike> &nbsp; 07 — 09
-                </Datum>
-                <Datum>06/2024</Datum>
+                <Datum> 29.05. — 01.06.2025 </Datum>
+                {/* <Datum>06/2024</Datum> */}
               </DateGroup>
 
               {/* </DateMask> */}
@@ -94,13 +91,23 @@ export default function Hero() {
           </Column1>
           {/* <Column2></Column2> */}
           <Column2>
-            <Link to="https://pretix.eu/bunteplatte/kuh2024/" target="_blank">
+            {/* <Link to="https://pretix.eu/bunteplatte/kuh2024/" target="_blank">
               <FormButton
                 label="Tickets"
                 backgroundColor="#d2e403"
                 color="black"
               />
-            </Link>
+            </Link> */}
+            <LinkButton>
+              <Link to="https://soundcloud.com/kleinundhaarig/sets/kuh2024">
+                <FormButton
+                  fontFamily="Ginto"
+                  backgroundColor="#959772"
+                  color="black"
+                  label="Recordings 24"
+                />
+              </Link>
+            </LinkButton>
           </Column2>
         </ContentGrid>
 
@@ -122,6 +129,10 @@ export default function Hero() {
   )
 }
 
+const LinkButton = styled.div`
+  margin-bottom: 20px;
+`
+
 const Strike = styled.span`
   text-decoration: line-through wavy #ff4200;
 `
@@ -129,9 +140,10 @@ const Strike = styled.span`
 const Container = styled.div`
   /* position: relative; */
   /* overflow: hidden; */
+
   margin-bottom: 0px;
   position: relative;
-  background-image: url(${Artwork});
+  background-image: url(${Image1});
   background-size: cover;
   /* height: 100vh; */
 
@@ -320,6 +332,7 @@ const KleinMask = styled.div`
 
 const TitleKlein = styled.h3`
   color: white;
+  text-shadow: 0px 0px 40px black;
 `
 
 const DateGroup = styled.div`
@@ -327,7 +340,7 @@ const DateGroup = styled.div`
 `
 
 const PlaceGroup = styled.div`
-  margin-top: 45px;
+  margin-top: 10px;
 `
 
 // const TitleKlein = styled.h3`
@@ -431,6 +444,7 @@ const Datum = styled.h3`
   /* animation: HeroAnimation 1.3s 1.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
   /* opacity: 0; */
   color: white;
+  text-shadow: 0px 0px 40px black;
 `
 
 // const PlaceMask = styled.div`
@@ -440,6 +454,7 @@ const Datum = styled.h3`
 
 const InfoText = styled.h3`
   color: white;
+  text-shadow: 0px 0px 40px black;
   padding: 6px 0;
   /* animation: HeroAnimation 1.3s 1.6s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
   opacity: 0; */

@@ -92,7 +92,7 @@ export default function Info() {
                     </InfoText>
                   </InfoSection> */}
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabelImportant>
                       {t("pages.infos.sections.temperature.label")}
                     </InfoLabelImportant>
@@ -102,9 +102,9 @@ export default function Info() {
                         i18nKey={"pages.infos.sections.temperature.text"}
                       ></Trans>
                     </InfoTextImportant>
-                  </InfoSection>
+                  </InfoSection> */}
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.disclaimer.label")}
                     </InfoLabel>
@@ -114,7 +114,7 @@ export default function Info() {
                         i18nKey={"pages.infos.sections.disclaimer.text"}
                       ></Trans>
                     </InfoText>
-                  </InfoSection>
+                  </InfoSection> */}
 
                   <InfoSection>
                     <InfoLabel>
