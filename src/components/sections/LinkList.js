@@ -34,7 +34,7 @@ export default function LinkList() {
             <FormButton
               fontFamily="Ginto"
               backgroundColor="#ff5400"
-              color="black"
+              color="white"
               label="Soundcloud"
             />
           </Link>
