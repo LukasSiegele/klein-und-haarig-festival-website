@@ -17,28 +17,29 @@ export default function LinkList() {
       {/* <Headline>Mehr auf</Headline> */}
       <Content>
         <LinkButton>
-          <Link to="https://www.instagram.com/kleinundhaarig/" target="_blank">
-            <FormButton
-              fontFamily="Ginto"
-              backgroundColor="#492cd3"
-              color="black"
-              label="Instagram"
-            />
-          </Link>
-        </LinkButton>
-        <LinkButton>
           <Link
             to="https://soundcloud.com/kleinundhaarig?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
             target="_blank"
           >
             <FormButton
               fontFamily="Ginto"
-              backgroundColor="#ff5400"
-              color="white"
-              label="Soundcloud"
+              backgroundColor="#CCBBFF"
+              color="black"
+              label="Recordings 2024"
             />
           </Link>
         </LinkButton>
+        <LinkButton>
+          <Link to="https://www.instagram.com/kleinundhaarig/" target="_blank">
+            <FormButton
+              fontFamily="Ginto"
+              backgroundColor="#6369C2"
+              color="black"
+              label="Instagram"
+            />
+          </Link>
+        </LinkButton>
+
         <LinkButton>
           <Link to="mailto:info@kleinundhaarig.de">
             <FormButton
@@ -70,13 +71,13 @@ export default function LinkList() {
 }
 
 const Wrapper = styled.div`
-  padding: 80px 40px 120px;
+  padding: 40px 40px 120px;
   /* display: grid; */
   justify-content: center;
   /* background: white; */
   /* border-top: 0.5px solid rgba(255, 255, 255, 1); */
   @media (max-width: 768px) {
-    padding: 60px 20px;
+    padding: 20px 20px;
   }
 `
 
@@ -89,10 +90,10 @@ const Content = styled.div`
 const Headline = styled(TextSmall)`
   font-family: "GT-Alpina-Extended-Regular";
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   text-align: center;
 `
 
 const LinkButton = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 3px;
 `

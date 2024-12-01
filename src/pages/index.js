@@ -79,12 +79,12 @@ export default function IndexPage() {
               </MainGrid>
             </FoerderungenSection> */}
 
-            {/* <LinkListSection>
+            <LinkListSection>
               <MainGrid>
                 <SideLine />
                 <LinkList />
               </MainGrid>
-            </LinkListSection> */}
+            </LinkListSection>
 
             <FooterSection>
               <MainGrid>
