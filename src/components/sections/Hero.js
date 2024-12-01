@@ -62,29 +62,29 @@ export default function Hero() {
                 </LinkInline>
               </PlaceGroup>
 
-              {/* <NewsletterGroup>
-              <InfoText>
-                Melde dich zu unserem Newsletter an und bekomme so frühzeitig
-                Infos zum Ticket Presale und zum Festival 2024.
-              </InfoText>
+              <NewsletterGroup>
+                <InfoText>
+                  Melde dich zu unserem Newsletter an und bekomme so frühzeitig
+                  Infos zum Ticket Presale und zum Festival 2024.
+                </InfoText>
 
-              <Newsletter></Newsletter>
-              <InstagramSection>
-                <InfoText>Folge uns auf Instagram</InfoText>
-                <InstaButton>
-                  <Link
-                    to="https://www.instagram.com/kleinundhaarig/"
-                    target="_blank"
-                  >
-                    <FormButton
-                      label="@kleinundhaarig"
-                      backgroundColor="white"
-                      color="black"
-                    />
-                  </Link>
-                </InstaButton>
-              </InstagramSection>
-            </NewsletterGroup> */}
+                <Newsletter></Newsletter>
+                <InstagramSection>
+                  <InfoText>Folge uns auf Instagram</InfoText>
+                  <InstaButton>
+                    <Link
+                      to="https://www.instagram.com/kleinundhaarig/"
+                      target="_blank"
+                    >
+                      <FormButton
+                        label="@kleinundhaarig"
+                        backgroundColor="white"
+                        color="black"
+                      />
+                    </Link>
+                  </InstaButton>
+                </InstagramSection>
+              </NewsletterGroup>
             </C1Content>
 
             {/* </DateMask> */}

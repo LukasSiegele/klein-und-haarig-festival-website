@@ -64,7 +64,7 @@
                 },
                 "storno": {
                     "label": "Ticket stornieren",
-                    "text": "Wenn du bereits ein Ticket für das Klein und Haarig Festival 2024 gekauft hast und dieses nun stornieren möchtest, kannst du dies über den Link in deiner Buchungsbestätigung bis zum 26. Mai tun. Danach ist die Stornierung von Tickets nicht mehr möglich."
+                    "text": "Die Stornierung von gekauften Tickets ist nur innerhalb 24h nach dem Kauf möglich."
                 },
                 "refund": {
                     "label": "Refund",
