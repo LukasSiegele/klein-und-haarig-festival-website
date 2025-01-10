@@ -60,7 +60,7 @@ const Ticker = () => {
                  */}
                 <Icon src="/icons/banner-star-white.svg"></Icon>
                 <TickerText className="tickerText">
-                  Limited early bird tickets available
+                  Regular tickets & T-shirts available
                 </TickerText>
 
                 {/* <TickerText className="tickerText">
