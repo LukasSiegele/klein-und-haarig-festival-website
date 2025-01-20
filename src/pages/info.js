@@ -312,12 +312,12 @@ export default function Info() {
                     <InfoText>{t("pages.infos.sections.secu.text")}</InfoText>
                   </InfoSection>
 
-                  {/* <InfoSection>
+                  <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.kids.label")}
                     </InfoLabel>
                     <InfoText>{t("pages.infos.sections.kids.text")}</InfoText>
-                  </InfoSection> */}
+                  </InfoSection>
 
                   <InfoSection>
                     <InfoLabel>
