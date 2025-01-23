@@ -105,7 +105,7 @@ export default function Hero() {
                   fontFamily="Ginto"
                   backgroundColor="#000000"
                   color="#CCBBFF"
-                  label="Tickets 2025"
+                  label="Sold out"
                 />
               </Link>
             </LinkButton>
