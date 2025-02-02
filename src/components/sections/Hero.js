@@ -74,6 +74,7 @@ const ContentContainer = styled.div`
   /* display: grid; */
   width: 500px;
   justify-items: center;
+
   @media (max-width: 1100px) {
     width: auto;
   }
