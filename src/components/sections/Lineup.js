@@ -441,7 +441,7 @@ const Item = styled.div`
   text-shadow: 4px 4px 40px rgba(0, 0, 0, 0.7);
 
   @media (max-width: 800px) {
-    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   }
 
   /* overflow: hidden; */
