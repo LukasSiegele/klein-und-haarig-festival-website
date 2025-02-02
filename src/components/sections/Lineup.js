@@ -317,7 +317,7 @@ export default function Lineup() {
 
           <Item>
             <LinkInline href="https://soundcloud.com/tx_4" target="_blank">
-              <Artist>T4X</Artist>
+              <Artist>TX4</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
           </Item>
