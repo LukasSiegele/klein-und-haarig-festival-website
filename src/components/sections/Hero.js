@@ -22,7 +22,6 @@ export default function Hero() {
         {/* <TitleKlein> */}
         <KuH src="/icons/Kleinundhaarig.svg"></KuH>
         {/* </TitleKlein> */}
-
         <DatumPlace>
           <Datum> 29.05. — 01.06.2025 </Datum>
           <PlaceGroup>
@@ -37,11 +36,13 @@ export default function Hero() {
             </LinkInline>
           </PlaceGroup>
         </DatumPlace>
-        <LinkButton>
-          <Link to="https://pretix.eu/bunteplatte/kuh2025/">
-            <FormButton backgroundColor="#fc2546" color="#000" label="Shop" />
-          </Link>
-        </LinkButton>
+        <ButtonGroup>
+          <LinkButton>
+            <Link to="https://pretix.eu/bunteplatte/kuh2025/">
+              <FormButton backgroundColor="#fc2546" color="#000" label="Shop" />
+            </Link>
+          </LinkButton>
+        </ButtonGroup>
       </ContentContainer>
     </Container>
   )
@@ -78,6 +79,8 @@ const ContentContainer = styled.div`
     width: auto;
   }
 `
+
+const ButtonGroup = styled.div``
 
 const LinkButton = styled.div`
   width: 150px;
@@ -142,6 +145,7 @@ const KuH = styled.img`
   margin-top: 40px;
   /* height: 400px; */
   /* align-self: center; */
+  /* justify-self: center; */
   /* color: white; */
   @media (max-width: 1100px) {
     width: 375px;
