@@ -286,11 +286,13 @@ p {
 }
 
 @media (max-width: 800px) {
-  h2,
   h3,
   button,
   input {
     font-size: 1.5em;
+  }
+  h2 {
+    font-size: 2.2em;
   }
 }
 

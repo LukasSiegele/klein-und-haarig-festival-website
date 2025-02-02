@@ -441,9 +441,10 @@ const InfoLabel = styled.h3`
 
 const InfoText = styled.p`
   color: white;
-  font-family: "GT-Alpina-Extended-Regular";
+  /* font-family: "GT-Alpina-Extended-Regular"; */
+  font-weight: 500;
   margin-bottom: 20px;
-  opacity: 0.75;
+  opacity: 0.8;
   max-width: 800px;
   white-space: pre-wrap;
 `

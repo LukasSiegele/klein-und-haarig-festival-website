@@ -342,7 +342,7 @@ export default function Lineup() {
               href="https://www.instagram.com/kantarion.sound/"
               target="_blank"
             >
-              <Neu>Powered by </Neu>
+              <Powered>Powered by </Powered>
               <Artist>Kantarion Sound</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
@@ -438,6 +438,12 @@ const Item = styled.div`
   margin-bottom: 0px;
   position: relative;
   margin-right: 16px;
+  text-shadow: 4px 4px 40px rgba(0, 0, 0, 0.7);
+
+  @media (max-width: 800px) {
+    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+  }
+
   /* overflow: hidden; */
   /* @media (max-width: 1100px) {
     display: block;
@@ -454,9 +460,10 @@ const Item = styled.div`
 const Artist = styled(HeadlineRegular)`
   /* font-family: "Ke"; */
   color: #f0f263;
+
   /* -webkit-text-stroke: 2px black; */
-  text-shadow: 4px 4px 40px rgba(0, 0, 0, 0.6);
   float: left;
+
   /* margin-right: 16px; */
 `
 const Backtoback = styled(ImageDescription)`
@@ -517,6 +524,14 @@ const Neu = styled(ImageDescription)`
   display: inline;
   float: left;
   /* font-family: "Inter"; */
+  margin-left: 0px;
+  /* margin-top: 3px; */
+  /* position: absolute; */
+  color: #f0f263;
+  /* text-transform: uppercase; */
+`
+
+const Powered = styled(ImageDescription)`
   margin-left: 0px;
   /* margin-top: 3px; */
   /* position: absolute; */

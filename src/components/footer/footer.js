@@ -41,17 +41,17 @@ export default function Footer(props) {
 }
 
 const Wrapper = styled.div`
-  bottom: -400px;
+  /* bottom: -400px; */
   /* width: 100vw; */
   /* background-color: black; */
   color: white;
   background-color: ${props => props.bgColor};
   border-top: 0.5px solid rgba(255, 255, 255, 0.2);
-  padding: 40px 40px 150px 40px;
+  padding: 20px 20px 150px 20px;
   /* display: grid; */
 
   @media (max-width: 800px) {
-    padding: 40px 40px 100px 40px;
+    padding: 20px 20px 100px 20px;
   }
 
   a {
