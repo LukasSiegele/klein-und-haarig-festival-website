@@ -16,7 +16,7 @@ export default function MobileNavigation(props) {
       <Wrapper bgColor={props.bgColor}>
         <SideNavLogoWrapper>
           <Link to="/">
-            <Logo src="/icons/Logo-White.svg"></Logo>
+            <Logo src="/icons/Logo-White-25.svg"></Logo>
           </Link>
         </SideNavLogoWrapper>
         <MenuWrapper onClick={() => setIsOpen(!isOpen)}>
@@ -78,8 +78,8 @@ const MenuIcon = styled.div`
 
 // KuH Logo in SideNav
 const Logo = styled.img`
-  width: 51px;
-  height: 50px;
+  width: 80px;
+  height: 58px;
 
   :hover {
     cursor: pointer;

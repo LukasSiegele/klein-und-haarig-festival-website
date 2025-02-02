@@ -98,12 +98,12 @@ const WrapperLeft = styled.div`
 
 const WrapperRight = styled.div`
   display: grid;
-  grid-template-rows: repeat(3, 0.1fr);
+  grid-template-rows: repeat(3, 0.01fr);
   grid-template-columns: auto;
   justify-self: right;
   justify-content: left;
   text-align: right;
-  gap: 5px;
+  gap: 0px;
 
   @media (max-width: 700px) {
     grid-template-columns: repeat(4, auto);

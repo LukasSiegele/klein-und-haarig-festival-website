@@ -6,7 +6,7 @@ export default function FormButton(props) {
     <button
       type={props.typ}
       style={{
-        fontFamily: "Ginto",
+        fontFamily: "Kleber",
         backgroundColor: props.backgroundColor,
         backgroundSize: "cover",
         color: props.color,

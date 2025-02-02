@@ -15,14 +15,14 @@ export default function MenuTooltip(props) {
             <MenuInfo isInfo={isInfo}>{t("navigation.infos")}</MenuInfo>
           </Link>
         </MenuButton>
-        <MenuButton>
+        {/* <MenuButton>
           <Link to="/volunteer">
             <MenuVolunteer isVolunteer={isVolunteer}>
               {" "}
               {t("navigation.volunteers")}
             </MenuVolunteer>
           </Link>
-        </MenuButton>
+        </MenuButton> */}
         <MenuButton>
           <Link to="/verein">
             <MenuVerein isVerein={isVerein}>
@@ -39,19 +39,27 @@ export default function MenuTooltip(props) {
             <MenuTickets>Tickets</MenuTickets>
           </Link>
         </MenuButton> */}
+        <Language>
+          <ul>
+            {languages.map(lng => (
+              <li key={lng} style={{ margin: "8px" }}>
+                <Link to={originalPath} language={lng}>
+                  {lng}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Language>
       </MenuGrid>
-      <ul>
-        {languages.map(lng => (
-          <li key={lng} style={{ margin: "8px" }}>
-            <Link to={originalPath} language={lng}>
-              {lng}
-            </Link>
-          </li>
-        ))}
-      </ul>
     </Wrapper>
   )
 }
+
+const Language = styled.div`
+  margin-top: 80px;
+  justify-self: center;
+  text-align: center;
+`
 
 const Wrapper = styled.div`
   background-color: ${props => props.bgColor};

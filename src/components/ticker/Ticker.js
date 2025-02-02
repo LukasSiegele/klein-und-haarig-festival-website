@@ -58,7 +58,7 @@ const Ticker = () => {
                   Wir suchen dringend Unterstützung für
                 </TickerText>
                  */}
-                <Icon src="/icons/banner-star-white.svg"></Icon>
+                <Icon src="/icons/banner-star-black.svg"></Icon>
                 <TickerText className="tickerText">
                   We're sold out of tickets! Thank you so much for your support!
                   T-shirts are still available
@@ -89,7 +89,7 @@ const Ticker = () => {
 }
 
 const LinkInline = styled.a`
-  border-bottom: 1px solid rgba(255, 255, 255);
+  /* border-bottom: 1px solid rgba(255, 255, 255); */
 `
 
 const Icon = styled.img`
@@ -126,7 +126,7 @@ const TickerWrapper = styled.div`
   width: 100vw;
 
   display: grid;
-  background-color: #000;
+  background-color: #fc2546;
   padding: 5px 0;
   /* background-color: #ff003a; */
 

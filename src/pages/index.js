@@ -7,6 +7,7 @@ import Layout from "../components/layout/layout"
 // import SEO from "../components/layout/seo"
 import Ticker from "../components/ticker/Ticker"
 import Footer from "../components/footer/footer"
+import { Link } from "gatsby"
 
 import { ParallaxProvider } from "react-scroll-parallax"
 import { TextSmall } from "../components/styles/TextStyles"
@@ -20,8 +21,9 @@ import Foerderungen from "../components/sections/Foerderungen"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 import LinkList from "../components/sections/LinkList"
 
-import HeroArtwork from "../../static/images/HeroArtwork3.jpg"
-import HeroAnimation from "../../static/videos/KuH2023Animation.mp4"
+import HeroArtwork from "../../static/images/header-2025.jpg"
+import FormButton from "../components/buttons/FormButton"
+// import HeroAnimation from "../../static/videos/KuH2023Animation.mp4"
 
 export default function IndexPage() {
   return (
@@ -36,11 +38,23 @@ export default function IndexPage() {
           <Content>
             {/* <Wrapper> */}
             <MobileNavigation bgColor="#000" />
+            <LinkButton>
+              <Link to="https://pretix.eu/bunteplatte/kuh2025/">
+                <FormButton
+                  backgroundColor="#fc2546"
+                  color="#000"
+                  label="Shop"
+                />
+              </Link>
+            </LinkButton>
             <HeroSection>
               <Artwork>
                 <MainGrid>
                   <SideLine />
-                  <Hero />
+                  <div>
+                    <Hero />
+                    <Lineup />
+                  </div>
                 </MainGrid>
               </Artwork>
 
@@ -151,12 +165,21 @@ const HeroSection = styled.div`
   }
 `
 const ImageSectionDesktop = styled.div``
+
 const Artwork = styled.div`
   /* height: 100vh; */
   /* width: 300px; */
+  position: relative;
+  /* top: -800px; */
   /* border: 20px solid white; */
-  /* background-image: url(${HeroArtwork}); */
-  /* background-size: cover; */
+  background-image: url(${HeroArtwork});
+  background-size: cover;
+  /* background-size: 140%;
+  background-position: 5% 79%; */
+
+  @media (max-width: 800px) {
+    background-position: 30%;
+  }
 `
 
 const ArtworkAnimation = styled.video`
@@ -215,6 +238,19 @@ const Spacer = styled.div`
   background: black;
   @media (max-width: 800px) {
     height: 60px;
+  }
+`
+
+const LinkButton = styled.div`
+  margin-bottom: 20px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 100;
+  width: 200px;
+
+  @media (max-width: 1100px) {
+    display: none;
   }
 `
 

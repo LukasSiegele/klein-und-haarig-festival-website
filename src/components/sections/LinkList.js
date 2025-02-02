@@ -23,7 +23,7 @@ export default function LinkList() {
           >
             <FormButton
               fontFamily="Ginto"
-              backgroundColor="#CCBBFF"
+              backgroundColor="#CECCD6"
               color="black"
               label="Recordings 2024"
             />
@@ -33,7 +33,7 @@ export default function LinkList() {
           <Link to="https://www.instagram.com/kleinundhaarig/" target="_blank">
             <FormButton
               fontFamily="Ginto"
-              backgroundColor="#6369C2"
+              backgroundColor="#515A88"
               color="black"
               label="Instagram"
             />
@@ -44,7 +44,7 @@ export default function LinkList() {
           <Link to="mailto:info@kleinundhaarig.de">
             <FormButton
               fontFamily="Ginto"
-              backgroundColor="#959772"
+              backgroundColor="#176F6B"
               color="black"
               label="E-Mail"
             />
@@ -71,7 +71,7 @@ export default function LinkList() {
 }
 
 const Wrapper = styled.div`
-  padding: 40px 40px 120px;
+  padding: 20px 20px 120px;
   /* display: grid; */
   justify-content: center;
   /* background: white; */
@@ -87,13 +87,6 @@ const Content = styled.div`
   justify-content: center; */
 `
 
-const Headline = styled(TextSmall)`
-  font-family: "GT-Alpina-Extended-Regular";
-  color: white;
-  margin-bottom: 10px;
-  text-align: center;
-`
-
 const LinkButton = styled.div`
-  margin-bottom: 3px;
+  margin-bottom: 8px;
 `

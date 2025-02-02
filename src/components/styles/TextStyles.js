@@ -56,7 +56,7 @@ export const H3 = styled.h3`
 
 // Große Headlines
 export const Headline = styled.h2`
-  font-family: "GT-Alpina-Extended-Bold";
+  /* font-family: "GT-Alpina-Extended-Bold"; */
   color: white;
 
   /* @media (max-width: 450px) {
@@ -64,7 +64,7 @@ export const Headline = styled.h2`
   } */
 `
 export const HeadlineRegular = styled.h2`
-  font-family: "GT-Alpina-Extended-Regular";
+  /* font-family: "GT-Alpina-Extended-Regular"; */
   color: white;
 
   /* @media (max-width: 800px) {
@@ -72,7 +72,7 @@ export const HeadlineRegular = styled.h2`
   } */
 `
 export const HeadlineRegular2 = styled.h2`
-  font-family: "GT-Alpina-Extended-Regular";
+  /* font-family: "GT-Alpina-Extended-Regular"; */
   color: white;
 
   @media (max-width: 800px) {
@@ -91,17 +91,17 @@ export const Note = styled.h5`
 // Headlines in Info Texts
 export const SubheaderBig = styled.h3`
   font-size: 40px;
-  font-family: "GT-Alpina-Extended-Bold";
+  /* font-family: "GT-Alpina-Extended-Bold"; */
   color: white;
 `
 
 export const SubheaderSmall = styled.h4`
-  font-family: "GT-Alpina-Extended-Bold";
+  /* font-family: "GT-Alpina-Extended-Bold"; */
   color: white;
 `
 
 export const SubheaderSuperSmall = styled.h5`
-  font-family: "GT-Alpina-Extended-Bold";
+  /* font-family: "GT-Alpina-Extended-Bold"; */
   color: white;
 `
 
@@ -110,28 +110,32 @@ export const SubheaderSuperSmall = styled.h5`
 // Infotexte
 export const TextSmall = styled.p`
   color: white;
-  font-size: 0.85em;
+  font-size: 1.2em;
 `
 
 // Bildbeschreibungen
 export const ImageDescription = styled.p`
-  font-family: "GT-Alpina-Extended-Regular";
-  font-size: 0.6em;
+  font-family: "Kleber";
+  text-transform: uppercase;
+  /* font-size: 1.2em; */
+
+  /* font-family: "GT-Alpina-Extended-Regular"; */
+  /* font-size: 0.6em; */
   /* opacity: 0.6; */
-  margin-top: 8px;
+  /* margin-top: 8px; */
 `
 
 export const TickerText = styled.h3`
   /* font-family: "GT-Alpina-Extended-Regular"; */
   /* font-size: 17px; */
-  /* color: black; */
+  color: black;
   line-height: 1.3em;
   overflow: visible;
 `
 
 // Shop Title
 export const PageHeader = styled.h3`
-  font-family: "GT-Alpina-Extended-Regular";
+  /* font-family: "GT-Alpina-Extended-Regular"; */
   font-size: 35px;
   font-weight: 100;
   color: black;

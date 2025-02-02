@@ -59,7 +59,8 @@ export default function Verein() {
                     </Link> */}
                     <Link href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf">
                       <FormButton
-                        backgroundColor="#ff5400"
+                        color="black"
+                        backgroundColor="#FC2546"
                         label={t("pages.organization.sections.becomeMemberCTA")}
                       />
                     </Link>

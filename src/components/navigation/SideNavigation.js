@@ -12,7 +12,7 @@ export default function SideNavigation(props) {
       <Wrapper bgColor={props.bgColor}>
         <LogoWrapper>
           <Link to="/">
-            <Logo src="/icons/Logo-White.svg"></Logo>
+            <Logo src="/icons/Logo-White-25.svg"></Logo>
           </Link>
         </LogoWrapper>
 
@@ -49,7 +49,7 @@ export default function SideNavigation(props) {
           </LinkGroup>
           <ul style={{ listStyle: "none", margin: "0px", alignSelf: "start" }}>
             {languages.map(lng => (
-              <li key={lng} style={{ margin: "8px" }}>
+              <li key={lng} style={{ margin: "0px" }}>
                 <Link to={originalPath} language={lng}>
                   {lng}
                 </Link>
@@ -106,7 +106,7 @@ const Wrapper = styled.div`
 `
 
 const LogoWrapper = styled.div`
-  padding: 30px 15px 15px 15px;
+  padding: 30px 5px 5px 5px;
   display: grid;
   justify-items: center;
   z-index: 99;
@@ -116,8 +116,8 @@ const LogoWrapper = styled.div`
 
 // KuH Logo in SideNav
 const Logo = styled.img`
-  width: 64px;
-  height: 62px;
+  width: 80px;
+  height: 58px;
   mix-blend-mode: difference;
 
   :hover {
@@ -143,7 +143,7 @@ const LinkGroup = styled.div`
 
 const ListInfo = styled(TextSmall)`
   color: white;
-  font-family: "GT-Alpina-Extended-Regular";
+  font-family: "Kleber";
   text-decoration: ${props =>
     props.isInfo ? "#959772 wavy line-through" : "none"};
 
@@ -154,7 +154,7 @@ const ListInfo = styled(TextSmall)`
 
 const ListVolunteer = styled(TextSmall)`
   color: white;
-  font-family: "GT-Alpina-Extended-Regular";
+  font-family: "Kleber";
   text-decoration: ${props =>
     props.isVolunteer ? "#492cd3 wavy line-through" : "none"};
 
@@ -165,7 +165,7 @@ const ListVolunteer = styled(TextSmall)`
 
 const ListVerein = styled(TextSmall)`
   color: white;
-  font-family: "GT-Alpina-Extended-Regular";
+  font-family: "Kleber";
   text-decoration: ${props =>
     props.isVerein ? "#ff5400 wavy line-through" : "none"};
 
@@ -176,7 +176,7 @@ const ListVerein = styled(TextSmall)`
 
 const ListTickets = styled(TextSmall)`
   color: white;
-  font-family: "GT-Alpina-Extended-Regular";
+  font-family: "Kleber";
   &:hover {
     cursor: pointer;
   }
