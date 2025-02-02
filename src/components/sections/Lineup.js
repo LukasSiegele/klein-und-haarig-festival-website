@@ -437,7 +437,8 @@ const Item = styled.div`
   display: inline-block;
   margin-bottom: 0px;
   position: relative;
-  margin-right: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
   text-shadow: 4px 4px 40px rgba(0, 0, 0, 0.7);
 
   @media (max-width: 800px) {
