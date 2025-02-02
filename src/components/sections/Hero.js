@@ -80,9 +80,12 @@ const ContentContainer = styled.div`
   }
 `
 
-const ButtonGroup = styled.div``
+const ButtonGroup = styled.div`
+  display: grid;
+`
 
 const LinkButton = styled.div`
+  justify-self: center;
   width: 150px;
   margin-top: 32px;
 
