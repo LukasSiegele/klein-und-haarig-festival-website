@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 export default function MenuTooltip(props) {
-  const { isOpen, isInfo, isVolunteer, isVerein, bgColor } = props
+  const { isOpen, isInfo, isVerein, bgColor } = props
   const { t } = useTranslation()
   const { languages, originalPath } = useI18next()
 
@@ -102,14 +102,6 @@ const MenuInfo = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isInfo ? "#959772 wavy line-through" : "none"};
-`
-
-const MenuVolunteer = styled.h1`
-  color: white;
-  text-align: center;
-  vertical-align: center;
-  text-decoration: ${props =>
-    props.isVolunteer ? "#492cd3 wavy line-through" : "none"};
 `
 
 const MenuVerein = styled.h1`
