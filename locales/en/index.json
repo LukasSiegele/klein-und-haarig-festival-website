@@ -2,7 +2,8 @@
     "navigation": {
         "infos": "Info",
         "volunteers": "Volunteers",
-        "about": "About"
+        "about": "About",
+        "code": "Code of Conduct"
     },
     "footer": {
         "footertext": "—non-profit organisation for the promotion of electronic music culture."
@@ -104,6 +105,10 @@
                 "camp": {
                     "label": "Camping",
                     "text": "Camping is included in the gathering ticket. You can pitch your tent in the designated camping area. Please take note: A power line runs under the camping area. Pegs and tent anchors longer than 30 cm are therefore not permitted."
+                },
+                "accessibility": {
+                    "label": "Accessibility",
+                    "text": "The site of the Klein und Haarig Festival is unfortunately not barrier-free. The ground on the site consists mainly of meadow and sandy rock. The stage by the stream is only accessible via stairs. There are no barrier-free sanitary facilities (toilets and showers). There are several seating areas in various places on the festival site. The distances from the two stages to the camping area and the sanitary facilities are short. As we are unable to set up quiet zones due to the size of the site, animals are generally not permitted. You can contact us individually if you wish to bring assistance dogs. The responsibility for the welfare of the animal lies with the owner, as there are no rest areas."
                 },
                 "fire": {
                     "label": "Barbecue & fire",

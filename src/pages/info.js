@@ -314,19 +314,28 @@ export default function Info() {
 
                   <InfoSection>
                     <InfoLabel>
+                      {t("pages.infos.sections.accessibility.label")}
+                    </InfoLabel>
+                    <InfoText>
+                      {t("pages.infos.sections.accessibility.text")}
+                    </InfoText>
+                  </InfoSection>
+
+                  <InfoSection>
+                    <InfoLabel>
                       {t("pages.infos.sections.kids.label")}
                     </InfoLabel>
                     <InfoText>{t("pages.infos.sections.kids.text")}</InfoText>
                   </InfoSection>
 
-                  <InfoSection>
+                  {/* <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.animals.label")}
                     </InfoLabel>
                     <InfoText>
                       {t("pages.infos.sections.animals.text")}
                     </InfoText>
-                  </InfoSection>
+                  </InfoSection> */}
                   {/* <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.fourteenth.label")}

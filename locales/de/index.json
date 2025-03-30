@@ -2,7 +2,8 @@
     "navigation": {
         "infos": "Infos",
         "volunteers": "Volunteers",
-        "about": "Über uns"
+        "about": "Über uns",
+        "code": "Code of Conduct"
     },
     "footer": {
         "footertext": "—gemeinnütziger Verein zur Förderung elektronischer Musikkultur."
@@ -102,6 +103,10 @@
                 "camp": {
                     "label": "Zelten",
                     "text": "Zelten ist im Gatheringticket inklusive. Du kannst dein Zelt auf der ausgewiesenen Campingfläche aufstellen. Achtung! Unter dem Zeltplatz verläuft eine Starkstromleitung. Heringe und Zeltanker über 30 cm Länge sind deshalb nicht zulässig."
+                },
+                "accessibility": {
+                    "label": "Barrierefreiheit",
+                    "text": "Das Gelände des Klein und Haarig Festivals ist leider nicht barrierefrei. Der Boden des Geländes besteht vorrangig aus Wiese und sandigen Gestein. Die Bühne am Bach ist nur über eine Treppe erreichbar. Auf dem Gelände gibt es keine barrierefreien Sanitäranlagen (Toiletten und Duschen). Auf dem Festivalgelände gibt es mehrere Sitzgelegenheiten an verschiedenen Stellen. Die Wege von den beiden Bühnen zum Campingbereich und den Sanitäranlagen sind kurz. Da wir aufgrund der Geländegröße keine Ruhezonen einrichten können, sind Tiere in der Regel nicht gestattet. Für das Mitführen von Assistenzhunden könnt ihr uns individuell kontaktieren. Die Verantwortung für das Wohl des Tieres liegt dabei bei der Halter*in, da es keine Ruhezonen gibt."
                 },
                 "fire": {
                     "label": "Grillen & Feuer",
