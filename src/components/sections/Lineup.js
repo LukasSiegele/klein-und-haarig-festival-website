@@ -61,13 +61,6 @@ export default function Lineup() {
           </Item>
 
           <Item>
-            <LinkInline href="https://soundcloud.com/akvilina" target="_blank">
-              <Artist>Akvilina</Artist>
-            </LinkInline>
-            {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
-
-          <Item>
             <LinkInline
               href="https://soundcloud.com/ameliaholt"
               target="_blank"
@@ -244,7 +237,7 @@ export default function Lineup() {
 
           <Item>
             <LinkInline
-              href="https://www.instagram.com/_mitra__mitra_/"
+              href="https://www.instagram.com/_mi.tra__/"
               target="_blank"
             >
               <Artist>Mitra</Artist>
@@ -266,6 +259,16 @@ export default function Lineup() {
           <Item>
             <LinkInline href="https://soundcloud.com/pasci-hi" target="_blank">
               <Artist>pasci</Artist>
+            </LinkInline>
+            {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
+          </Item>
+
+          <Item>
+            <LinkInline
+              href="https://soundcloud.com/philipp-otterbach"
+              target="_blank"
+            >
+              <Artist>Philipp Otterbach</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
           </Item>
