@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 export default function MenuTooltip(props) {
-  const { isOpen, isInfo, isVerein, bgColor } = props
+  const { isOpen, isInfo, isAbout, bgColor } = props
   const { t } = useTranslation()
   const { languages, originalPath } = useI18next()
 
@@ -24,10 +24,8 @@ export default function MenuTooltip(props) {
           </Link>
         </MenuButton> */}
         <MenuButton>
-          <Link to="/verein">
-            <MenuVerein isVerein={isVerein}>
-              {t("navigation.association")}
-            </MenuVerein>
+          <Link to="/about">
+            <MenuAbout isAbout={isAbout}>{t("navigation.about")}</MenuAbout>
           </Link>
         </MenuButton>
 
@@ -104,7 +102,7 @@ const MenuInfo = styled.h1`
     props.isInfo ? "#959772 wavy line-through" : "none"};
 `
 
-const MenuVerein = styled.h1`
+const MenuAbout = styled.h1`
   color: white;
   text-align: center;
   vertical-align: center;

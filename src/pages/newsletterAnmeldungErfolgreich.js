@@ -24,7 +24,12 @@ export default function NewsletterAnmeldungErfolgreich() {
           </Section>
           <ButtonSection>
             <Link to="/">
-              <FormButton label="Zurück zur Homepage" border="0px"></FormButton>
+              <FormButton
+                label="Zurück zur Homepage"
+                backgroundColor="#fc2546"
+                color="#000"
+                border="0px"
+              ></FormButton>
             </Link>
           </ButtonSection>
         </Wrapper>
@@ -57,7 +62,8 @@ const Section = styled.div`
 const Info = styled.h2`
   margin-top: 10px;
   color: #b9adff;
-  color: #9a9eff;
+  color: #fc2546;
+  color: rgb(240, 242, 99);
   /* text-shadow: 0px 0px 15px black; */
 `
 

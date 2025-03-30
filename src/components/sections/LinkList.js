@@ -15,15 +15,19 @@ import Newsletter from "../form/Newsletter"
 export default function LinkList() {
   return (
     <Wrapper>
-      <NewsletterGroup>
-        {/* <InfoText>
-          Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
-          zum Ticket Presale und zum Festival 2024.
-        </InfoText> */}
-        <Newsletter></Newsletter>
-      </NewsletterGroup>
       {/* <Headline>Mehr auf</Headline> */}
       <Content>
+        <LinkButton>
+          <Link to="/newsletter" target="_blank">
+            <FormButton
+              fontFamily="Ginto"
+              backgroundColor="white"
+              color="black"
+              label="Newsletter"
+            />
+          </Link>
+        </LinkButton>
+
         <LinkButton>
           <Link
             to="https://soundcloud.com/kleinundhaarig?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"

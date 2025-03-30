@@ -15,7 +15,7 @@ import Verein1 from "../../static/images/Verein1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 import FormButton from "../components/buttons/FormButton"
 
-export default function Verein() {
+export default function About() {
   const { t } = useTranslation()
   return (
     <Layout>

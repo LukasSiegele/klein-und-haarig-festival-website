@@ -4,7 +4,7 @@ import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
-  const { isInfo, isVolunteer, isVerein, isOpenCalls } = props
+  const { isInfo, isVolunteer, isAbout, isOpenCalls } = props
   const { t } = useTranslation()
   const { languages, originalPath } = useI18next()
   return (
@@ -33,10 +33,8 @@ export default function SideNavigation(props) {
                 </ListVolunteer>
               </a>
             </Link> */}
-            <Link to={"/verein"}>
-              <ListVerein isVerein={isVerein}>
-                {t("navigation.association")}
-              </ListVerein>
+            <Link to={"/about"}>
+              <ListAbout isAbout={isAbout}>{t("navigation.about")}</ListAbout>
             </Link>
             {/* <Link
               to="https://pretix.eu/bunteplatte/kleinundhaarig"
@@ -163,7 +161,7 @@ const ListVolunteer = styled(TextSmall)`
   }
 `
 
-const ListVerein = styled(TextSmall)`
+const ListAbout = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
   text-decoration: ${props =>
