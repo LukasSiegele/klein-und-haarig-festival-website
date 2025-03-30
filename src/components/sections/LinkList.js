@@ -10,10 +10,18 @@ import {
   HeadlineRegular,
   HeadlineRegular2,
 } from "../styles/TextStyles"
+import Newsletter from "../form/Newsletter"
 
 export default function LinkList() {
   return (
     <Wrapper>
+      <NewsletterGroup>
+        {/* <InfoText>
+          Melde dich zu unserem Newsletter an und bekomme so frühzeitig Infos
+          zum Ticket Presale und zum Festival 2024.
+        </InfoText> */}
+        <Newsletter></Newsletter>
+      </NewsletterGroup>
       {/* <Headline>Mehr auf</Headline> */}
       <Content>
         <LinkButton>
@@ -69,6 +77,10 @@ export default function LinkList() {
     </Wrapper>
   )
 }
+
+const NewsletterGroup = styled.div`
+  margin-top: 120px;
+`
 
 const Wrapper = styled.div`
   padding: 20px 20px 120px;
