@@ -10,7 +10,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import { SubheaderSmall, Text } from "../components/styles/TextStyles"
 
-import Verein1 from "../../static/images/Verein1.jpg"
+import ConductImage from "../../static/images/Day.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 import FormButton from "../components/buttons/FormButton"
 
@@ -28,7 +28,7 @@ export default function Code() {
             <SideLine />
             <ContentSection>
               <ImageSectionMobile>
-                <VereinBild />
+                <ConductBild />
               </ImageSectionMobile>
               <ScrollContainer>
                 <TextSection>
@@ -51,7 +51,7 @@ export default function Code() {
               </ScrollContainer>
 
               <ImageSectionDesktop>
-                <VereinBild />
+                <ConductBild />
               </ImageSectionDesktop>
             </ContentSection>
           </MainGrid>
@@ -192,11 +192,11 @@ const ImageSectionMobile = styled.div`
   }
 `
 
-const VereinBild = styled.div`
+const ConductBild = styled.div`
   height: 100vh;
   /* width: 300px; */
   /* border: 20px solid white; */
-  background-image: url(${Verein1});
+  background-image: url(${ConductImage});
   background-size: cover;
   @media (max-width: 1100px) {
     max-width: 100%;
