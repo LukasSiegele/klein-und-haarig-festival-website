@@ -127,7 +127,7 @@
                     "text": "There are permanent sanitary facilities and hot showers on the site (as long as the gas supply lasts).Tags and graffiti are not welcome here. Otherwise we will need to have them removed at for a high cost."
                 },
                 "secu": {
-                    "label": "Security",
+                    "label": "Security",    
                     "text": "The following items are strictly prohibited at the festival: all pyrotechnics, drugs, drones, weapons of any kind and other dangerous items."
                 }, 
                 "kids": {
@@ -140,6 +140,15 @@
                 }
             }
         },
+        "code": {
+            "headline": "Our values.",
+            "sections": {
+                "conduct": {
+                    "label": "Code of Conduct",
+                    "text": "Together with you, we want to create a non-discriminatory, non-judgmental space in which everyone feels safe and can express themselves - all participants are responsible for this.\n\nPsychological and physical violence in the form of racist, sexist, queer-hostile and inhumane behavior of any kind will not be tolerated by us and will lead to exclusion from the event.\n\nPlease look out for others! If you notice that a person is feeling bad or someone is being discriminated against in any way, if your or others' boundaries are being disregarded, do not hesitate to act! If you feel unable to cope with a situation or need support, contact the Awareness Team (you will be informed of the Awareness Persons' identification symbol on site) or a member of the team. You do not have to tell anyone directly what has happened. Just say that you want to get in touch with the awareness team (or use our SOS buttons at the bar or in the awareness tent). You will find a Safer Space on the site where you can get help if you wish, get information or simply withdraw if everything is too much for you (the Safer Space is expressly not a chill area, you will find these in other places on the site). Important: The power of definition always lies with the person concerned. The person concerned defines for themselves when and what form of violence or discrimination they have experienced. This definition is taken seriously, perceived as true and not questioned.  \n\nOnly a yes means yes! Act according to this principle of consensus and make sure to always get the consent of those around you.Please do not draw conclusions about another person's gender identity based on their external appearance. Just because you read someone as male or female does not mean that person identifies as such.\n\nTo prevent discrimination in restrooms, all restrooms are unisex during our event. In general, we ask you to remember that regardless of how you read it, people can go to any restroom they feel is right for them.\n\nIf you take a photo/video of participants and want to post it, please ask for permission or make the faces unrecognizable. Not everyone wants to be seen on the internet.\n\nPlease also pay attention to others when it comes to consumption! The open consumption of illegal drugs is prohibited on the entire festival site! We all make mistakes.\n\nIf people use discriminatory language or ways of thinking, we try to make them aware of this through constructive criticism. We ask you to be open and listen when people offer you constructive criticism.\n\nThese guidelines apply to visitors, artists and employees. If you come to our event, we expect you to abide by our rules. All performing artists will be informed in advance about our guidelines for creating safe spaces and zero tolerance for incidents. We reserve the right to cancel contracts if we determine that an artist has violated our policies.\n\nIf you are new to this kind of awareness, please inform yourself before the festival or contact the awareness team on site. The team is also available for questions and information on the topic of Safe Use and can be contacted if you are interested.\n\nMore detailed information on this in the next few weeks."
+                }
+            }
+        },
         "volunteer": {
             "headline": "No KuH without volunteers. That's why we need your help. Support us during the set-up, during or after the festival with your contribution.",
             "button": {
@@ -149,55 +158,55 @@
             "sections": {
                 "first": {
                     "label": "How does it work?",
-                    "text": "Click on \"Become a volunteer\" above, fill out the form and buy a gathering ticket as normal. Choose how long you would like to help us (S, M, L), when (set-up, during, after) and where (admission, food, security, etc.). You can also let us know if you have a preferred buddy and we will do our best to fulfill your wishes. Please note that due to our reduced Gathering concept this year, we will only be allocating very few volunteer shifts. Please expect not to be assigned a shift."
+                    "text": "Click on “Become a volunteer” above and fill out the form. As a volunteer you need a festival ticket, which can then be refunded. If you don't have a ticket yet, you can indicate this in the questionnaire. There are still a few volunteer tickets left. These are primarily linked to support during dismantling. Choose how long (1 - 3 shifts), when (set-up, festival, dismantling) and where (admission, food, awareness, etc.) you would like to help us. You can also tell us a volunteer buddy. We will do our best to fulfill your wishes. Please note, however, that completing the form does not guarantee you a volunteer ticket or a permanent place as a volunteer."
                 },
                 "second": {
                     "label": "What tasks are there?",
                     "list": {
-                        "item1": "Set-up",
-                        "item2": "Dismantling",
-                        "item3": "Admission",
-                        "item4": "Security",
-                        "item5": "Cleanliness",
-                        "item6": "Technology",
-                        "item7": "Bar",
-                        "item8": "Catering",
-                        "item9": "Awareness",
-                        "item10": "First Aid"
+                        "item1": "Admission",
+                        "item2": "Awareness",
+                        "item3": "Catering",
+                        "item4": "Cleaning",
+                        "item5": "Dismantling",
+                        "item6": "First aid",
+                        "item7": "Lighting",
+                        "item8": "Security",
+                        "item9": "Set-up",
+                        "item10": "Sound"
                     }
                 },
                 "third": {
-                    "label": "How will I be remunerated?",
-                    "text": "The Klein und Haarig Gathering is organized by the non-profit Bunte Platte e.V.. The entire team works on a voluntary basis, all proceeds go exclusively to the project. As a volunteer, you also support the project on a voluntary basis. You will gain an insight into how a festival is created and how it works. You will get to know the team and the many other people who make this event what it is. Nevertheless, we want to reward you for your support. You will receive a reimbursement after your work is done, the amount of which depends on the number of your shifts (but not more than the ticket price you paid). You will also be provided with food and drinks during the set-up and dismantling.",
+                    "label": "How will I be paid?",
+                    "text": "The KuH is organized by the non-profit organization Bunte Platte e.V. The entire team works on a voluntary basis. All proceeds go exclusively to the project. As a volunteer, you also support the project on a voluntary basis. You will gain an insight into how a festival is created and how it works. You will get to know the team and the many other people who make the event what it is. Nevertheless, we want to reward you for your support. You will receive a refund after your work is done. The amount depends on the number of shifts you work (up to a maximum of the ticket price you paid). You will also be provided with food and drinks during your volunteer shifts.",
                     "sizes": {
                         "s": {
                             "label": "S",
-                            "time": "min. 1x 4 h",
-                            "amount": "25 € "
+                            "time": "min. 1x 6 h",
+                            "amount": "1/3 ticket price"
                         },
                         "m": {
                             "label": "M",
-                            "time": "min. 2x 4 h",
-                            "amount": "50 €"
+                            "time": "min. 2x 6 h",
+                            "amount": "2/3 ticket price"
                         },
                         "l": {
                             "label": "L",
-                            "time": "min. 3x 4 h",
-                            "amount": "75 €"
+                            "time": "min. 3x 6 h",
+                            "amount": "full ticket price"
                         }
                     }
                 },
                 "fourth": {
                     "label": "Do I need a ticket as a volunteer?",
-                    "text": "Yes, volunteers also need a gathering ticket. After filling out the volunteer form, you will receive a link to our ticket store. If you already have a ticket, you can of course still register as a volunteer."
+                    "text": "Yes, as a volunteer you also need a ticket. There are currently still a few volunteer tickets available. These are primarily linked to support during dismantling. If you do not yet have a ticket, please indicate this in the questionnaire. We will then contact you by e-mail. Please note that your request for a volunteer ticket does not guarantee it."
                 },
                 "fifth": {
-                    "label": "I'm late or can't help after all...",
-                    "text": "In these cases, please contact us immediately so that we can react in time. Also the gathering is on a strict time schedule - this is the only way it can run smoothly. We rely on you."
+                    "label": "What do I do if I am late or can't help after all?",
+                    "text": "In these cases, please contact us immediately at volunteer@kleinundhaarig.de. This will allow us to react in good time. The festival schedule is strictly timed to ensure that everything runs smoothly."
                 },
                 "sixth": {
-                    "label": "When will I be assigned?",
-                    "text": "We will let you know well in advance so that you can plan ahead. If you have any questions, you can contact our volunteer team at any time after your registration."
+                    "label": "When will I be allocated?",
+                    "text": "We will let you know well in advance so that you can plan ahead. If you have any questions, you can contact our volunteer team at volunteer@kleinundhaarig.de"
                 }
             }
         },

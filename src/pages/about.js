@@ -24,6 +24,7 @@ export default function About() {
         <MobileNavigation isVerein="verein" bgColor="black" />
 
         <SideNavigation isVerein="verein" bgColor="black" />
+        
         <Content>
           <MainGrid>
             <SideLine />

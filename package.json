@@ -24,6 +24,7 @@
     "gatsby-plugin-styled-components": "^6.3.0",
     "gatsby-source-filesystem": "^5.13.1",
     "i18next": "^22.5.1",
+    "react": "18.3.1",
     "react-bootstrap": "^2.7.0",
     "react-cookie-consent": "^8.0.1",
     "react-date-countdown-timer": "^1.1.0",
@@ -47,7 +48,7 @@
   "devDependencies": {
     "dotenv": "^16.0.3",
     "prettier": "2.8.1",
-    "react-dom": "^18.2.0"
+    "react-dom": "18.3.1"
   },
   "repository": {
     "type": "git",
@@ -55,5 +56,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

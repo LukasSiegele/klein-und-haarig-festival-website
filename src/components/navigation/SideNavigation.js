@@ -4,7 +4,7 @@ import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
-  const { isInfo, isVolunteer, isAbout, isOpenCalls } = props
+  const { isInfo, isVolunteer, isAbout, isCode, isOpenCalls } = props
   const { t } = useTranslation()
   const { languages, originalPath } = useI18next()
   return (
@@ -35,6 +35,9 @@ export default function SideNavigation(props) {
             </Link> */}
             <Link to={"/about"}>
               <ListAbout isAbout={isAbout}>{t("navigation.about")}</ListAbout>
+            </Link>
+            <Link to={"/code"}>
+              <ListCode isCode={isCode}>{t("navigation.code")}</ListCode>
             </Link>
             {/* <Link
               to="https://pretix.eu/bunteplatte/kleinundhaarig"
@@ -154,7 +157,7 @@ const ListVolunteer = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
   text-decoration: ${props =>
-    props.isVolunteer ? "#492cd3 wavy line-through" : "none"};
+    props.isVolunteer ? "#959772 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -165,7 +168,17 @@ const ListAbout = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
   text-decoration: ${props =>
-    props.isVerein ? "#ff5400 wavy line-through" : "none"};
+    props.isVerein ? "#959772 wavy line-through" : "none"};
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+const ListCode = styled(TextSmall)`
+  color: white;
+  font-family: "Kleber";
+  text-decoration: ${props =>
+    props.isCode ? "#959772 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;

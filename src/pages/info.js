@@ -252,15 +252,6 @@ export default function Info() {
                   </InfoSection>
 
                   <InfoSection>
-                    <InfoLabel>
-                      {t("pages.infos.sections.conduct.label")}
-                    </InfoLabel>
-                    <InfoText>
-                      {t("pages.infos.sections.conduct.text")}
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
                     <InfoLabel>{t("pages.infos.sections.pay.label")}</InfoLabel>
                     <InfoText>{t("pages.infos.sections.pay.text")}</InfoText>
                   </InfoSection>
