@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tshirt-001",
+    "cardImage": "images/placeholder.png",
+    "images": [
+      "images/placeholder.png",
+      "images/placeholder.png"
+    ],
+    "name": "KuH 25 T-Shirt",
+    "shortDescription": "Official KuH 25 Festival T-Shirt",
+    "longDescription": "Show your support for the KuH 25 Festival with this official T-Shirt. Made from high-quality cotton, this comfortable shirt features the festival logo and design. Perfect for any music lover or festival enthusiast.",
+    "sizes": [
+        { "label": "S", "stock": 15 },
+        { "label": "M", "stock": 25 },
+        { "label": "L", "stock": 20 },
+        { "label": "XL", "stock": 10 }    
+  ],
+    "price": 25.00
+  },
+  {
+    "id": "poster-001",
+    "cardImage": "images/placeholder.png",
+    "images": [
+      "images/placeholder.png",
+      "images/placeholder.png",
+      "images/placeholder.png"
+    ],
+    "name": "KuH 25 Festival Poster",
+    "shortDescription": "Limited edition festival poster",
+    "longDescription": "Decorate your walls with this stunning limited edition KuH 25 Festival poster. Featuring the official festival artwork, this high-quality print is perfect for any music lover's collection. Each poster is printed on premium paper to ensure vibrant colors and long-lasting quality.",
+    "sizes": [
+      { "label": "One Size", "stock": 100 }
+    ],
+    "price": 15.00
+  },
+  {
+    "id": "lighter-001",
+    "cardImage": "images/placeholder.png",
+    "images": [
+      "images/placeholder.png"
+    ],
+    "name": "KuH 25 Lighter",
+    "shortDescription": "Festival branded lighter",
+    "longDescription": "Keep the festival spirit alive with this KuH 25 branded lighter. Compact, reliable, and featuring the festival logo, this lighter is a practical and stylish accessory for any festival-goer. Perfect for lighting candles, campfires, or just as a collectible item.",
+    "sizes": [
+      { "label": "One Size", "stock": 50 }
+    ],
+    "price": 5.00
+  }
+] 

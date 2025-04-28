@@ -19,21 +19,21 @@ export default function Footer(props) {
             </Text>
           </Kontakt> */}
           <Imprint>
-            <Text>
+            <FooterText>
               <Link to="/imprint">Impressum</Link>
-            </Text>
+            </FooterText>
           </Imprint>
           <Datenschutz>
-            <Text>
+            <FooterText>
               <Link to="/privacy">Datenschutz</Link>
-            </Text>
+            </FooterText>
           </Datenschutz>
           <AGB>
-            <Text>
+            <FooterText>
               <Link to="/agbs">AGBs</Link>
-            </Text>
+            </FooterText>
           </AGB>
-          <Text>© 2025</Text>
+          <FooterText>© 2025</FooterText>
         </WrapperRight>
       </Content>
     </Wrapper>
@@ -78,15 +78,34 @@ const Content = styled.div`
   }
 `
 
-const BuntePlatte = styled.h5``
+const BuntePlatte = styled.p`
+  color: white;
+  opacity: 0.7;
+  font-size: 0.8em;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+`
 
-const Description = styled.h5`
+const Description = styled.p`
+  color: white;
+  opacity: 0.7;
+  font-size: 0.8em;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
   margin-top: 20px;
   @media (max-width: 800px) {
     margin-top: 10px;
   }
 `
-const Text = styled.h5``
+const FooterText = styled.p`
+  color: white;
+  font-size: 0.8em;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+`
 
 const WrapperLeft = styled.div`
   justify-self: start;

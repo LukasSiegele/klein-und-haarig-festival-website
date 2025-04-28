@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { themes } from "./ColorStyles"
 
 // Big Headlines
 export const BigHeadline = styled.h1`
@@ -81,7 +80,12 @@ export const HeadlineRegular2 = styled.h2`
 `
 
 // Texte
-export const Text = styled.p``
+export const StyledText = styled.p`
+  color: white;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+`
 
 // Kleine Hinweistexte
 export const Note = styled.h5`

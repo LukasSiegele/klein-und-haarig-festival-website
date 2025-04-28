@@ -8,7 +8,7 @@ import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-import { SubheaderSmall, Text } from "../components/styles/TextStyles"
+import { SubheaderSmall, StyledText } from "../components/styles/TextStyles"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import Volunteer1 from "../../static/images/VolunteerRight.jpg"

@@ -8,7 +8,7 @@ import SideLine from "../components/navigation/SideLine"
 import { Link } from "gatsby"
 import { useTranslation, Trans } from "gatsby-plugin-react-i18next"
 
-import { SubheaderSmall, Text } from "../components/styles/TextStyles"
+import { SubheaderSmall, StyledText } from "../components/styles/TextStyles"
 import { graphql } from "gatsby"
 import Info1 from "../../static/images/InfoBild1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
@@ -441,7 +441,6 @@ const InfoLabel = styled.h3`
 
 const InfoText = styled.p`
   color: white;
-  /* font-family: "GT-Alpina-Extended-Regular"; */
   font-weight: 500;
   margin-bottom: 20px;
   opacity: 0.8;

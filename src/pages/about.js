@@ -9,7 +9,7 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
-import { SubheaderSmall, Text } from "../components/styles/TextStyles"
+import { SubheaderSmall, StyledText } from "../components/styles/TextStyles"
 
 import Verein1 from "../../static/images/Verein1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"

@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby-plugin-react-i18next"
 
-import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
+// import LogoSideNav from "../../../static/images/LogoSideNav-Black.png"
 import Menu from "../../../static/icons/Menu-White.svg"
 
-import { TextSmall } from "../styles/TextStyles"
+// import { TextSmall } from "../styles/TextStyles"
 import MenuTooltip from "../tooltips/MenuTooltip"
 
 export default function MobileNavigation(props) {
@@ -27,6 +27,7 @@ export default function MobileNavigation(props) {
             isVolunteer={props.isVolunteer}
             isAbout={props.isAbout}
             isCode={props.isCode}
+            isShop={props.isShop}
             bgColor={props.bgColor}
           />
         </MenuWrapper>

@@ -4,17 +4,22 @@ import styled from "styled-components"
 import Layout from "../components/layout/layout"
 import FormButton from "../components/buttons/FormButton"
 import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useLocation } from "@reach/router";
 
-export default function NotFoundPage() {
+export default function ThanksPage() {
   const { t } = useTranslation()
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const productName = queryParams.get("product");
   
-  return (
+  return (  
     <Layout>
+      {/* <SEO title="404: Not found" /> */}
       <Wrapper>
-        <Title>{t("404 — Not Found")}</Title>
-        <Description>{t("Sorry, this page doesn't exist. Try going back to our homepage.")}</Description>
+        <Title>{t("Thank you!")}</Title>
+        <Description>{t("Thank you for your purchase and support of Bunte Platte e.V.")}</Description>
         <ButtonWrapper>
-          <Link to="/">
+          <Link to="/shop">
             <FormButton label={t("Back")} color="black" />
           </Link>
         </ButtonWrapper>
