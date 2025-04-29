@@ -26,23 +26,23 @@ function generateI18nPages() {
     });
 }
 
-const localesPath = path.join(__dirname, "locales");
+// const localesPath = path.join(__dirname, "locales");
 
-if (!fs.existsSync(localesPath)) {
-  console.error(
-    "❌ ERROR: Missing 'locales/' directory! Gatsby i18n won't work correctly."
-  );
-  process.exit(1);
-}
+// if (!fs.existsSync(localesPath)) {
+//   console.error(
+//     "❌ ERROR: Missing 'locales/' directory! Gatsby i18n won't work correctly."
+//   );
+//   process.exit(1);
+// }
 
-const localeFiles = fs.readdirSync(localesPath);
+// const localeFiles = fs.readdirSync(localesPath);
 
-if (localeFiles.length === 0) {
-  console.error("❌ ERROR: No translation files found in 'locales/' directory!");
-  process.exit(1);
-}
+// if (localeFiles.length === 0) {
+//   console.error("❌ ERROR: No translation files found in 'locales/' directory!");
+//   process.exit(1);
+// }
 
-console.log("✅ Locales found:", localeFiles);
+// console.log("✅ Locales found:", localeFiles);
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -82,18 +82,6 @@ module.exports = {
           keySeparator: ".", // Enable dot notation for nested translation keys
           nsSeparator: false, 
         },
-
-        // --- Manuelle Konfiguration für den Test ---
-        // pages: [
-        //   { matchPath: "/:lang?/", languages: ["en", "de"] }, // Index
-        //   { matchPath: "/:lang?/info", languages: ["en", "de"] }, // Info manuell
-        //   { matchPath: "/:lang?/shop", languages: ["en", "de"] }, // Shop manuell
-        //   { matchPath: "/:lang?/about", languages: ["en", "de"] }, // About manuell
-        //   { matchPath: "/:lang?/code", languages: ["en", "de"] }, // Code manuell
-        //   { matchPath: "/:lang?/volunteer", languages: ["en", "de"] }, // Volunteer manuell
-        //   // Produktseite (Dynamisch)
-        //   { matchPath: "/:lang?/product/:id", languages: ["en", "de"] },
-        // ],
         pages: generateI18nPages(),
       },
     },

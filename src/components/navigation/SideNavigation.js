@@ -8,17 +8,6 @@ export default function SideNavigation(props) {
   const { t, i18n } = useTranslation()
   const { languages, originalPath } = useI18next()
 
-
-  // Logge den Status beim Rendern
-    console.log(
-      "--- SideNavigation Render ---",
-      "\nAktuelle Sprache (i18n.language):", i18n.language,
-      "\nGeladene Sprachen (Keys):", Object.keys(i18n.services.resourceStore.data),
-      "\ni18n Initialisiert:", i18n.isInitialized,
-      "\nÜbersetzung für 'navigation.shop':", t("navigation.shop") // Logge spezifisch den problematischen Key
-    );
-  
-
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>

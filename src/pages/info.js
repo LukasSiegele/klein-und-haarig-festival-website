@@ -13,29 +13,13 @@ import { graphql } from "gatsby"; // Import ist vorhanden
 import Info1 from "../../static/images/InfoBild1.jpg";
 import MobileNavigation from "../components/navigation/MobileNavigation";
 
-// Funktion angepasst, um props zu empfangen
+
 export default function Info(props) {
   const { t } = useTranslation();
-  const { pageContext } = props; // pageContext aus props extrahieren
-
-  // --- Logging (bleibt drin) ---
-  console.log("--- InfoPage pageContext ---");
-  console.log("pageContext.language:", pageContext?.language);
-  console.log(
-    "pageContext.i18nResources vorhanden?:",
-    !!pageContext?.i18nResources
-  );
-  if (pageContext?.i18nResources) {
-    console.log(
-      "pageContext.i18nResources Sprachen (Keys):",
-      Object.keys(pageContext.i18nResources)
-    );
-  }
-  // --- Ende Logging ---
+  // const { pageContext } = props; // pageContext aus props extrahieren
 
   return (
     <Layout>
-      {/* <SEO title="Info" /> */}
       <Wrapper>
         <MobileNavigation isInfo="info" bgColor="black" />
         <SideNavigation isInfo="info" bgColor="black" />
@@ -50,9 +34,6 @@ export default function Info(props) {
                 <TextSection>
                   <HeaderSection>
                     <InfoHeadline>{t("pages.infos.headline")}</InfoHeadline>
-                    <p style={{ color: "grey", marginLeft: "60px" }}>
-                      (Context-Sprache: {pageContext?.language})
-                    </p>
                   </HeaderSection>
 
                   {/* Abschnitt 'first' - KORRIGIERT */}
@@ -61,28 +42,12 @@ export default function Info(props) {
                       {t("pages.infos.sections.first.label")}
                     </InfoLabel>
                     <InfoText>
-                      {/* Annahme: 'first.text' enthält nur den Link oder Text mit Platzhalter  */}
-                      {/* Variante A: Wenn 'first.text' NUR der Link sein soll (wahrscheinlich) */}
                       <LinkInline
                         href={t("pages.infos.sections.first.link.href")}
                         target="_blank"
                       >
                         {t("pages.infos.sections.first.link.text")}
                       </LinkInline>
-
-                      {/* Variante B: Wenn 'first.text' Text + Platzhalter  enthält (anpassen!) */}
-                      {/* <Trans
-                        t={t}
-                        i18nKey={"pages.infos.sections.first.text"}
-                        components={[
-                          <LinkInline
-                            href={t("pages.infos.sections.first.link.href")}
-                            target="_blank"
-                          >
-                            {t("pages.infos.sections.first.link.text")}
-                          </LinkInline>
-                        ]}
-                      /> */}
                     </InfoText>
                   </InfoSection>
 
@@ -92,7 +57,6 @@ export default function Info(props) {
                       {t("pages.infos.sections.storno.label")}
                     </InfoLabel>
                     <InfoText>
-                      {/* Hier wird <Trans> nur für Text verwendet, das ist OK */}
                       <Trans
                         t={t}
                         i18nKey={"pages.infos.sections.storno.text"}
@@ -103,34 +67,29 @@ export default function Info(props) {
                   {/* Abschnitt 'car' */}
                   <InfoSection>
                     <InfoLabel>{t("pages.infos.sections.car.label")}</InfoLabel>
-                    {/* Hier wird nur t() verwendet, das ist OK */}
                     <InfoText>{t("pages.infos.sections.car.text")}</InfoText>
                   </InfoSection>
 
-                  {/* Abschnitt 'publictransport' - KORRIGIERT */}
+                  {/* Abschnitt 'publictransport' */}
                   <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.publictransport.label")}
                     </InfoLabel>
                     <InfoText>
-                      {/* Verwendung der components-Prop */}
                       <Trans
                         t={t}
                         i18nKey={"pages.infos.sections.publictransport.text"}
-                        components={[ // Array für die Komponenten
-                          <LinkInline // Die Komponente für den -Platzhalter
+                        components={[
+                          <LinkInline
                             href={t(
-                              "pages.infos.sections.publictransport.link.href" // URL aus JSON holen
+                              "pages.infos.sections.publictransport.link.href"
                             )}
                             target="_blank"
                           />,
-                          // Falls es weitere Platzhalter wie ,  gäbe, kämen die Komponenten hierhin
                         ]}
                       />
                     </InfoText>
                   </InfoSection>
-
-                  {/* ... (Restliche InfoSections bleiben unverändert, da sie <Trans> entweder nur für Text oder gar nicht verwenden) ... */}
                   <InfoSection>
                     <InfoLabel>
                       {t("pages.infos.sections.camper.label")}
@@ -221,7 +180,6 @@ export default function Info(props) {
   );
 }
 
-// Die GraphQL-Abfrage ist korrekt vorhanden
 export const query = graphql`
   query ($language: String!) {
     locales: allLocale(filter: { language: { eq: $language } }) {
@@ -236,7 +194,6 @@ export const query = graphql`
   }
 `;
 
-// --- Styled Components (unverändert) ---
 const Wrapper = styled.div`
   overflow: hidden;
   background-color: black; /* Zurück auf black geändert */
@@ -284,7 +241,7 @@ const TextSection = styled.div`
 `;
 
 const HeaderSection = styled.div`
-  height: 85vh;
+  height: 65vh;
   @media (max-width: 1100px) {
     height: auto;
     margin-bottom: 200px;

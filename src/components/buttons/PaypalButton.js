@@ -1,5 +1,7 @@
+// PayPalButton.js - Überarbeitet
+
 import React, { useEffect, useRef, useState } from "react";
-import { navigate } from "gatsby";
+// navigate wird nicht mehr benötigt: import { navigate } from "gatsby";
 
 const PayPalButton = ({ amount, selectedSize, productName, onSuccess }) => {
   const paypalRef = useRef();
@@ -11,15 +13,23 @@ const PayPalButton = ({ amount, selectedSize, productName, onSuccess }) => {
     script.async = true;
     script.onload = () => setSdkReady(true);
     document.body.appendChild(script);
-  }, []);
+
+    // Cleanup-Funktion, um doppelte Skripte zu vermeiden
+    return () => {
+        const scriptNode = document.querySelector(`script[src*="${script.src}"]`);
+        if (scriptNode) {
+            document.body.removeChild(scriptNode);
+        }
+    };
+  }, []); // Leeres Array: Effekt läuft nur einmal beim Mounten
 
   useEffect(() => {
     if (sdkReady && window.paypal && paypalRef.current) {
-      // 🧹 Clear previous PayPal button if a new size is selected
-      paypalRef.current.innerHTML = "";
+      paypalRef.current.innerHTML = ""; // Vorherigen Button löschen
 
       window.paypal.Buttons({
         createOrder: (data, actions) => {
+          // --- createOrder Logik (unverändert) ---
           return actions.order.create({
             purchase_units: [
               {
@@ -47,21 +57,40 @@ const PayPalButton = ({ amount, selectedSize, productName, onSuccess }) => {
               },
             ],
             application_context: {
-              shipping_preference: "GET_FROM_FILE",
+              shipping_preference: "GET_FROM_FILE", // Oder NO_SHIPPING, falls zutreffend
             },
           });
+          // --- Ende createOrder ---
         },
         onApprove: async (data, actions) => {
-          const details = await actions.order.capture();
-          const shipping = details.purchase_units[0].shipping;
-          onSuccess(details);
-          // Redirect to thanks.js page after payment was successful
-          navigate(`/thanks/`);
+          try {
+            const details = await actions.order.capture();
+            // const shipping = details.purchase_units[0].shipping; // Nicht mehr benötigt
+            console.log("PayPal Capture Details:", details); // Loggen ist gut
+            // Rufe den Handler der Elternkomponente auf
+            onSuccess(details);
+            // navigate(`/thanks/`); // <-- ENTFERNT! Wird jetzt im onSuccess Handler gemacht
+          } catch (error) {
+            console.error("Error capturing PayPal order:", error);
+            // Optional: Informiere den User über den Capture-Fehler
+            alert("Fehler beim Abschließen der PayPal-Zahlung.");
+          }
         },
+        onError: (err) => {
+            // Einfache Fehlerbehandlung für PayPal-Fehler
+            console.error("PayPal Button onError:", err);
+            alert(`Ein Fehler ist mit PayPal aufgetreten: ${err}`);
+        }
       }).render(paypalRef.current);
     }
-  }, [sdkReady, amount, selectedSize, productName, onSuccess]);
+  }, [sdkReady, amount, selectedSize, productName, onSuccess]); // Abhängigkeiten
 
+  // Fallback-Anzeige, während SDK lädt
+  if (!sdkReady) {
+      return <div>Lade PayPal Button...</div>;
+  }
+
+  // Container für den PayPal Button
   return <div ref={paypalRef} />;
 };
 

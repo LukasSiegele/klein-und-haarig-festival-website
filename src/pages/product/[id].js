@@ -24,7 +24,7 @@ const ProductDetail = ({ pageContext }) => {
       // Fetch product from Supabase based on the product id    
       const { data, error } = await supabase
         .from("products")
-        .select("*")
+        .select("*, images")
         .eq("id", pageContext.id) // Use pageContext.id to fetch specific product
         .single(); // Get only one record
 
@@ -42,6 +42,7 @@ const ProductDetail = ({ pageContext }) => {
         cardImage: data.card_image, // Map Supabase's 'card_image' to 'cardImage'
         shortDescription: data.short_description, // Map 'short_description' to 'shortDescription'
         longDescription: data.long_description, // Map 'long_description' to 'longDescription'
+        images: data.images || [], // Maps images from Supabase to 'images'
       };
 
       setProduct(mappedProduct);
@@ -110,12 +111,26 @@ const ProductDetail = ({ pageContext }) => {
               <ScrollContainer>
                 <ProductDetailSection>
                   <ProductDetailContainer>
-                    <ProductImage
-                      style={{
-                        backgroundImage: `url(/${product.cardImage || "images/missing-image-placeholder.png"})`,
-                      }}
-                      alt={product.name}
-                    />
+                    <ProductImageScrollContainer>
+                      {product.images && product.images.length > 0 ? (
+                        product.images.map((imageUrl, index) => (
+                          <ScrollableProductImage
+                            key={index}
+                            // Pfad anpassen, falls nötig (z.B. wenn nicht im static-Ordner)
+                            // Hier wird angenommen, Pfade sind relativ zum /static Ordner
+                            src={`/${imageUrl}`}
+                            alt={`${product.name} - Bild ${index + 1}`}
+                            loading="lazy" // Verbessert Ladezeit bei vielen Bildern
+                          />
+                        ))
+                      ) : (
+                        // Fallback, if no images in Supabase images table array: cardImage or placeholder
+                        <ScrollableProductImage
+                          src={`/${product.cardImage || "images/missing-image-placeholder.png"}`}
+                          alt={product.name}
+                        />
+                      )}
+                  </ProductImageScrollContainer>
                     <ProductInfo>
                       <ProductContent product={product} />
                     </ProductInfo>
@@ -187,10 +202,10 @@ const ScrollContainer = styled.div`
 `;
 
 const ProductDetailSection = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   width: 100%;
   align-items: center;
-  padding: 24px 24px;
+  padding: 24px 24px 0px 24px;
 `;
 
 const ProductDetailContainer = styled.div`
@@ -205,16 +220,46 @@ const ProductDetailContainer = styled.div`
   }
 `;
 
-const ProductImage = styled.div`
+const ProductImageScrollContainer = styled.div`
   width: 50%;
-  height: auto;
-  padding-top: 50%; /* 1:1 aspect ratio */
-  background-size: cover;
-  background-position: center;
+  max-height: 75vh;
+  overflow-y: auto; 
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  /* Makes scrollbare prettier (für Webkit-Browser wie Chrome/Safari) */
+  &::-webkit-scrollbar {
+    width: 8px; 
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
   @media (max-width: 900px) {
     width: 100%;
-    padding-top: 100%; /* 1:1 aspect ratio */
+    max-height: 60vh;
   }
+`;
+
+// Styling for images in scrollable Container
+const ScrollableProductImage = styled.img`
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 `;
 
 const ProductInfo = styled.div`
