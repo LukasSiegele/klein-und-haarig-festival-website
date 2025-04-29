@@ -11,11 +11,11 @@ export default function NotFoundPage() {
   return (
     <Layout>
       <Wrapper>
-        <Title>{t("404 — Not Found")}</Title>
-        <Description>{t("Sorry, this page doesn't exist. Try going back to our homepage.")}</Description>
+        <Title>{t("pages.404.title")}</Title>
+        <Description>{t("pages.404.description")}</Description>
         <ButtonWrapper>
           <Link to="/">
-            <FormButton label={t("Back")} color="black" />
+            <FormButton label={t("pages.404.button")} color="black" />
           </Link>
         </ButtonWrapper>
       </Wrapper>
@@ -24,7 +24,7 @@ export default function NotFoundPage() {
 }
 
 export const query = graphql`
-  query($language: String!) {
+  query ($language: String!) {
     locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {

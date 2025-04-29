@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import FormButton from "../components/buttons/FormButton"
 import Layout from "../components/layout/layout"
+import { graphql } from "gatsby"
 // import SEO from "../components/layout/seo"
 import SubmittedImage from "../../static/images/Bach1.jpg"
 
@@ -37,6 +38,21 @@ export default function NewsletterAnmeldungErfolgreich() {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
+
 
 const Container = styled.div`
   display: grid;

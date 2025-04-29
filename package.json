@@ -48,7 +48,7 @@
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.5.0",
     "prettier": "2.8.1",
     "react-dom": "18.3.1"
   },

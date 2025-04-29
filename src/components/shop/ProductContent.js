@@ -107,9 +107,14 @@ const Price = styled.p`
 const PayPalButtonWrapper = styled.div`
   width: 100%;
   margin-top: 24px;
-  flex: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  
+  & > * {
+    width: 100%;
+    max-width: 100%;
+  }
 `
 
 const SizeSelector = styled.div`

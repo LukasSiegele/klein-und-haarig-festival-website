@@ -63,8 +63,7 @@
                     "link": {
                         "href": "https://goo.gl/maps/muaWAGwPx7nebDjJ9",
                         "text": "Christophshof campsite, 75323 Bad Wildbad."
-                    },
-                    "text2": " Admission on Friday is from 12 noon."
+                    }
                 },
                 "storno": {
                     "label": "Cancel ticket",
@@ -89,11 +88,6 @@
                  "camper": {
                     "label": "Campervans",
                     "text": "Camper pitches are located on the festival grounds. Please bring a waterproof tarp to place your camper on. Oil and fuel must not end up in the ground."
-                },
-                
-                "conduct": {
-                    "label": "Code of Conduct",
-                    "text": "Together with you, we want to create a non-discriminatory, non-judgmental space in which everyone feels safe and can express themselves - all participants are responsible for this.\n\nPsychological and physical violence in the form of racist, sexist, queer-hostile and inhumane behavior of any kind will not be tolerated by us and will lead to exclusion from the event.\n\nPlease look out for others! If you notice that a person is feeling bad or someone is being discriminated against in any way, if your or others' boundaries are being disregarded, do not hesitate to act! If you feel unable to cope with a situation or need support, contact the Awareness Team (you will be informed of the Awareness Persons' identification symbol on site) or a member of the team. You do not have to tell anyone directly what has happened. Just say that you want to get in touch with the awareness team (or use our SOS buttons at the bar or in the awareness tent). You will find a Safer Space on the site where you can get help if you wish, get information or simply withdraw if everything is too much for you (the Safer Space is expressly not a chill area, you will find these in other places on the site). Important: The power of definition always lies with the person concerned. The person concerned defines for themselves when and what form of violence or discrimination they have experienced. This definition is taken seriously, perceived as true and not questioned.  \n\nOnly a yes means yes! Act according to this principle of consensus and make sure to always get the consent of those around you.Please do not draw conclusions about another person's gender identity based on their external appearance. Just because you read someone as male or female does not mean that person identifies as such.\n\nTo prevent discrimination in restrooms, all restrooms are unisex during our event. In general, we ask you to remember that regardless of how you read it, people can go to any restroom they feel is right for them.\n\nIf you take a photo/video of participants and want to post it, please ask for permission or make the faces unrecognizable. Not everyone wants to be seen on the internet.\n\nPlease also pay attention to others when it comes to consumption! The open consumption of illegal drugs is prohibited on the entire festival site! We all make mistakes.\n\nIf people use discriminatory language or ways of thinking, we try to make them aware of this through constructive criticism. We ask you to be open and listen when people offer you constructive criticism.\n\nThese guidelines apply to visitors, artists and employees. If you come to our event, we expect you to abide by our rules. All performing artists will be informed in advance about our guidelines for creating safe spaces and zero tolerance for incidents. We reserve the right to cancel contracts if we determine that an artist has violated our policies.\n\nIf you are new to this kind of awareness, please inform yourself before the festival or contact the awareness team on site. The team is also available for questions and information on the topic of Safe Use and can be contacted if you are interested."
                 },
                 "pay": {
                     "label": "Payment",
@@ -247,6 +241,7 @@
                 } 
             }
         },
+
         "imprint":{
             "headline": "Impressum",
             "sections": {
@@ -328,6 +323,11 @@
                     "text": "The law of the Federal Republic of Germany shall apply exclusively. Should individual provisions of these GTC be or become invalid, this shall not affect the validity of the remaining provisions. In place of the invalid provision, an appropriate provision that comes closest to the purpose of the invalid provision shall be deemed to have been agreed. The organizers reserve the right to amend these GTC at any time. Participants will be informed of changes to the GTC in good time. The changes shall be deemed accepted if the participants do not object within 14 days of notification of the changes. The place of jurisdiction for all disputes arising from these GTC is the registered office of the organizer."
                 }
             }
+        },
+        "404":{
+            "title": "404 - Page not found",
+            "description": "Sorry, this page doesn't exist. Try going back to our homepage.",
+            "button": "Back"
         }
     }
 }

@@ -1,6 +1,52 @@
+const fs = require("fs");
+const path = require("path");
+
+// This automatically generates the pages for the i18n translation plugin
+// Funktion wird für den Test nicht verwendet:
+function generateI18nPages() {
+  const pagesDirectory = path.join(__dirname, "src/pages");
+  const files = fs.readdirSync(pagesDirectory);
+
+  return files
+    .filter(file => file.endsWith(".js")) // Only .js pages
+    .map(file => {
+      let route = file.replace(".js", "");
+
+      // Special case for index.js
+      if (route === "index") {
+        route = "";
+      }
+
+      // Special case for dynamic routes like [id].js
+      if (route.startsWith("product")) {
+        return { matchPath: "/:lang?/product/:id", languages: ["en", "de"] };
+      }
+
+      return { matchPath: `/:lang?/${route}`, languages: ["en", "de"] };
+    });
+}
+
+const localesPath = path.join(__dirname, "locales");
+
+if (!fs.existsSync(localesPath)) {
+  console.error(
+    "❌ ERROR: Missing 'locales/' directory! Gatsby i18n won't work correctly."
+  );
+  process.exit(1);
+}
+
+const localeFiles = fs.readdirSync(localesPath);
+
+if (localeFiles.length === 0) {
+  console.error("❌ ERROR: No translation files found in 'locales/' directory!");
+  process.exit(1);
+}
+
+console.log("✅ Locales found:", localeFiles);
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -12,42 +58,44 @@ module.exports = {
     image: `/images/Stairway.jpg`,
     twitterUsername: "@kleinundhaarig",
   },
+
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/locales`,
-        name: `locale`
-      }
+        name: `locales`,
+      },
     },
     {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
-        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        localeJsonSourceName: `locales`,
         languages: [`de`, `en`],
-        defaultLanguage: `de`,
-        siteUrl: `https://example.com`,
-        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
-        trailingSlash: 'always',
-        // you can pass any i18next options
+        defaultLanguage: `de`, // OG: de
+        siteUrl: `https://www.kleinundhaarig.de`,
+        trailingSlash: "always", // normalerweise an
         i18nextOptions: {
           interpolation: {
-            escapeValue: false // not needed for react as it escapes by default
+            escapeValue: false, // not needed for react as it escapes by default
           },
-          nsSeparator: false
+          keySeparator: ".", // Enable dot notation for nested translation keys
+          nsSeparator: false, 
         },
-        pages: [
-          {
-            matchPath: '/:lang?/blog/:uid',
-            getLanguageFromPath: true,
-            excludeLanguages: ['es']
-          },
-          {
-            matchPath: '/preview',
-            languages: ['en']
-          }
-        ]
-      }
+
+        // --- Manuelle Konfiguration für den Test ---
+        // pages: [
+        //   { matchPath: "/:lang?/", languages: ["en", "de"] }, // Index
+        //   { matchPath: "/:lang?/info", languages: ["en", "de"] }, // Info manuell
+        //   { matchPath: "/:lang?/shop", languages: ["en", "de"] }, // Shop manuell
+        //   { matchPath: "/:lang?/about", languages: ["en", "de"] }, // About manuell
+        //   { matchPath: "/:lang?/code", languages: ["en", "de"] }, // Code manuell
+        //   { matchPath: "/:lang?/volunteer", languages: ["en", "de"] }, // Volunteer manuell
+        //   // Produktseite (Dynamisch)
+        //   { matchPath: "/:lang?/product/:id", languages: ["en", "de"] },
+        // ],
+        pages: generateI18nPages(),
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
@@ -63,4 +111,4 @@ module.exports = {
       },
     },
   ],
-}
+};

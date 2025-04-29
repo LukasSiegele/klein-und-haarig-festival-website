@@ -37,8 +37,8 @@ const GridContainer = styled.div`
   gap: 32px;
   width: 100%;
   padding: 24px;
-  max-width: 1600px;
   margin: 0 auto;
+  justify-items: start;
   
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);

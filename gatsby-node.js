@@ -1,57 +1,42 @@
-const path = require('path')
-const fs = require('fs')
+const path = require('path');
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  // Create product detail pages
-  const productTemplate = path.resolve(`src/pages/product/[id].js`)
-  
+  const productTemplate = path.resolve(`src/pages/product/[id].js`);
+
+  const { createClient } = require('@supabase/supabase-js');
+  const supabase = createClient(
+    process.env.GATSBY_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+
   try {
-    // Read the products data file
-    const productsData = fs.readFileSync(path.join(__dirname, 'src/data/products.json'), 'utf8')
-    const products = JSON.parse(productsData)
-    
-    console.log("Loaded products:", products)
-    
-    // Create a page for each product
+    const { data: products, error } = await supabase.from('products').select('*');
+    if (error) throw error;
+
+    const languages = ['en', 'de'];
+
     products.forEach(product => {
-      console.log("Creating page for product:", product.id)
-      createPage({
-        path: `/product/${product.id}`,
-        component: productTemplate,
-        context: {
-          id: product.id,
-          product: product,
-          language: "en" // Add language to context
-        }
-      })
-    })
+      languages.forEach(language => {
+        const localizedPath = language === "en" 
+          ? `/product/${product.id}`
+          : `/${language}/product/${product.id}`;
+
+        createPage({
+          path: localizedPath,
+          component: productTemplate,
+          context: {
+            id: product.id,
+            language,
+          },
+        });
+      });
+    });
   } catch (error) {
-    console.error("Error creating product pages:", error)
+    console.error('Error creating product pages:', error);
   }
-}
-
-// Add support for i18n
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage, deletePage } = actions
-
-  // Delete the original page
-  await deletePage(page)
-
-  // Create new pages for each language
-  const languages = ["en", "de"]
-  
-  languages.forEach(language => {
-    const localizedPath = language === "en" ? page.path : `/${language}${page.path}`
-    
-    createPage({
-      ...page,
-      path: localizedPath,
-      context: {
-        ...page.context,
-        language
-      }
-    })
-  })
-} 
+};

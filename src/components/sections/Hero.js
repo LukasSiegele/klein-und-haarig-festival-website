@@ -17,7 +17,7 @@ import KUHLogo from "../../../static/images/LogoSideNav.png"
 
 export default function Hero() {
   return (
-    <Container>
+    <Container> 
       <ContentContainer>
         {/* <TitleKlein> */}
         <KuH src="/icons/Kleinundhaarig.svg"></KuH>
@@ -38,9 +38,10 @@ export default function Hero() {
         </DatumPlace>
         <ButtonGroup>
           <LinkButton>
-            <Link to="https://pretix.eu/bunteplatte/kuh2025/">
-              <FormButton backgroundColor="#fc2546" color="#000" label="Shop" />
-            </Link>
+          <a href="https://pretix.eu/bunteplatte/kuh2025/" target="_blank" rel="noopener noreferrer">
+          <FormButton backgroundColor="#fc2546" color="#000" label="Shop" />
+          </a>
+
           </LinkButton>
         </ButtonGroup>
       </ContentContainer>

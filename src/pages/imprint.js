@@ -70,7 +70,7 @@ export default function Imprint() {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -80,7 +80,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const HiddenLink = styled(Link)`
   border-bottom: 0;
