@@ -222,7 +222,7 @@ const ProductDetailContainer = styled.div`
 
 const ProductImageScrollContainer = styled.div`
   width: 50%;
-  max-height: 75vh;
+  max-height: 90vh;
   overflow-y: auto; 
 
   display: flex;

@@ -320,7 +320,7 @@ const ProductContent = ({ product }) => {
                    <>
                      <DiscountMessage type="success">Code "{appliedDiscountCode}" angewendet!</DiscountMessage>
                      <RemoveButton onClick={handleRemoveCode}>
-                        Remove
+                        Remove code
                      </RemoveButton>
                    </>
                  )}
@@ -335,17 +335,15 @@ const ProductContent = ({ product }) => {
         <>
           {/* Step 2: effective price is 0 by a valid code */}
           {effectivePrice <= 0 && discountStatus === 'valid' ? (
-             // *** HIER WURDE DER 0€ CHECKOUT BLOCK ANGEPASST ***
              <CheckoutButtonWrapper style={{ flexDirection: 'column', alignItems: 'stretch' }}>
-               {/* NEU: Eingabefeld für Namen */}
-               <NameLabel htmlFor="userNameInput">Enter your full name:</NameLabel>
+               {/* NEW: Input Field for name */}
                <NameInput
                  id="userNameInput"
                  type="text"
                  value={userIdentifier} // Verwendet neuen State
                  onChange={(e) => setUserIdentifier(e.target.value)} // Aktualisiert neuen State
-                 placeholder="Vorname Nachname"
-                 aria-label="Name für Bestellung"
+                 placeholder="Enter your full name..."
+                 aria-label="Name for order"
                />
                {/* ENDE NEU */}
 
@@ -354,11 +352,11 @@ const ProductContent = ({ product }) => {
                  onClick={() => handlePurchaseSuccess({ userId: userIdentifier })} // Übergibt den Namen
                  // Deaktivieren, wenn Größe fehlt ODER Name fehlt
                  disabled={(hasAnySizes && !selectedSize) || !userIdentifier.trim()}
-                 title={!userIdentifier.trim() ? "Bitte Namen eingeben" : (hasAnySizes && !selectedSize ? "Bitte zuerst Größe wählen" : "Artikel kostenlos erhalten")}
-                 style={{ marginTop: '10px' }} // Abstand zum Inputfeld
+                 title={!userIdentifier.trim() ? "Enter name to continue" : (hasAnySizes && !selectedSize ? "Select size first" : "Order item")}
+                 style={{ marginTop: '10px' }}
                >
                  {/* Text anpassen, falls Größe oder Name fehlt */}
-                 {!userIdentifier.trim() ? 'Bitte Namen eingeben' : (hasAnySizes && !selectedSize ? 'Größe wählen!' : 'Kostenlos bestellen')}
+                 {!userIdentifier.trim() ? 'Enter name to continue' : (hasAnySizes && !selectedSize ? 'Select size!' : 'Order item')}
                </GetFreeItemButton>
              </CheckoutButtonWrapper>
              // *** ENDE DES ANGEPASSTEN 0€ BLOCKS ***
@@ -460,8 +458,8 @@ const PayPalButtonWrapper = styled.div`
 
   /* Begrenzt die Breite des PayPal Buttons selbst, falls nötig */
   & > div { /* Zielt auf den div-Container von PayPal */
-    width: 100%; /* Oder eine feste Breite wie max-width: 300px; */
-    max-width: 400px;
+    width: 100%;
+    max-width: 720px;
   }
 `;
 
@@ -516,12 +514,11 @@ const DiscountSection = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  max-width: 400px;
+  max-width: 720px;
   padding: 16px;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  /* Fade-in Animation (optional) */
   animation: fadeIn 0.3s ease-in-out;
 
   @keyframes fadeIn {
@@ -544,11 +541,13 @@ const DiscountInput = styled.input`
   background-color: #333;
   color: #fff;
   border-radius: 4px;
-  font-size: 0.95em;
+  font-size: 0.85em;
+  font-family: 'Inter', sans-serif;
+  text-transform: none;
   outline: none;
 
   &::placeholder {
-    color: #aaa;
+    color:rgb(184, 184, 184);
   }
 
   &:focus {
@@ -568,9 +567,14 @@ const ApplyButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.95em;
-  font-weight: 500;
+  font-size: 0.85em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: none;
   transition: background-color 0.2s ease-in-out;
+  width: auto;
+  max-width: 720px;
+  min-width: fit-content;
 
   &:hover:not(:disabled) {
     background-color: #F2BA36;
@@ -584,25 +588,23 @@ const ApplyButton = styled.button`
 `;
 
 const RemoveButton = styled.button`
-  padding: 8px 12px;
-  background-color: #6c757d;
-  color: white;
+  background: none;
   border: none;
-  border-radius: 4px;
+  padding: 5px 0; 
+  color: #cccccc;
+  text-decoration: underline; 
   cursor: pointer;
-  font-size: 0.85em;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  margin-top: 5px;
-  align-self: flex-start;
-  transition: background-color 0.2s ease-in-out;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+  width: fit-content;
 
-
-  &:hover:not(:disabled) {
-    background-color: #5a6268;
+  &:hover {
+    color: #ffffff;
   }
 `;
-
 const DiscountMessage = styled.p`
   font-size: 0.85em;
   margin-top: 6px;
@@ -620,11 +622,11 @@ const DiscountMessage = styled.p`
 // Styled Components for 0€ checkout via code
 const CheckoutButtonWrapper = styled.div`
   width: 100%;
-  margin-top: 24px;
+  margin-top: 8px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  max-width: 400px; /* Konsistente Breite */
+  max-width: 720px;
 `;
 
 const GetFreeItemButton = styled.button`
@@ -634,7 +636,8 @@ const GetFreeItemButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 0.85em;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
   transition: background-color 0.2s ease-in-out;
   width: 100%; /* Nimmt die Breite des Wrappers ein */
@@ -652,9 +655,9 @@ const GetFreeItemButton = styled.button`
 
 // styles for name input and label when discount code is applied
 const NameInput = styled(DiscountInput)` // Basiert auf dem Stil des Code-Inputs
-  margin-top: 5px; // Kleiner Abstand nach oben
+  margin-top: 5px;
 `;
 const NameLabel = styled(DiscountLabel)` // Basiert auf dem Stil des Code-Labels
-  margin-top: 15px; // Etwas mehr Abstand zum Button darüber
-  align-self: flex-start; // Sicherstellen, dass Label linksbündig ist
+  margin-top: 15px; 
+  align-self: flex-start;
 `;
