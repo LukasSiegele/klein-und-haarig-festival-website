@@ -1,7 +1,7 @@
-import "jsr:@supabase/functions-js/edge-runtime.d.ts"; // Behält die Typ-Unterstützung bei
-import { serve } from 'https://deno.land/std@0.177.0/http/server.ts'; // Oder eine neuere stabile Version
+import "jsr:@supabase/functions-js/edge-runtime.d.ts"; 
+import { serve } from 'https://deno.land/std@0.177.0/http/server.ts';
 import { createClient, SupabaseClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { corsHeaders } from '../_shared/cors.ts'; // Stellt sicher, dass cors.ts im richtigen Ordner liegt
+import { corsHeaders } from '../_shared/cors.ts';
 
 console.log(`Function "validate-code" started.`);
 
@@ -51,8 +51,8 @@ serve(async (req: Request) => {
       .from('discount_codes')
       // Wählt Spalten für Validierung aus
       .select('id, code, is_active, valid_until, product_id, usage_limit, times_used')
-      .eq('code', code)        // Code muss übereinstimmen
-      .eq('is_active', true); // Code muss aktiv sein
+      .ilike('code', code)      
+      .eq('is_active', true);
 
     // Wenn eine productId übergeben wurde, filtere weiter:
     // Erlaube Codes, die KEINE product_id haben (global gültig) ODER die passende product_id haben.

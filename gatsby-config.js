@@ -1,8 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-// This automatically generates the pages for the i18n translation plugin
-// Funktion wird für den Test nicht verwendet:
 function generateI18nPages() {
   const pagesDirectory = path.join(__dirname, "src/pages");
   const files = fs.readdirSync(pagesDirectory);
@@ -25,24 +23,6 @@ function generateI18nPages() {
       return { matchPath: `/:lang?/${route}`, languages: ["en", "de"] };
     });
 }
-
-// const localesPath = path.join(__dirname, "locales");
-
-// if (!fs.existsSync(localesPath)) {
-//   console.error(
-//     "❌ ERROR: Missing 'locales/' directory! Gatsby i18n won't work correctly."
-//   );
-//   process.exit(1);
-// }
-
-// const localeFiles = fs.readdirSync(localesPath);
-
-// if (localeFiles.length === 0) {
-//   console.error("❌ ERROR: No translation files found in 'locales/' directory!");
-//   process.exit(1);
-// }
-
-// console.log("✅ Locales found:", localeFiles);
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,

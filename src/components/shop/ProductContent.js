@@ -1,6 +1,4 @@
-// ProductContent.js - Überarbeitet
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ToggleButton from "../buttons/ToggleButton";
 import PayPalButton from "../buttons/PaypalButton";
@@ -13,44 +11,160 @@ const ProductContent = ({ product }) => {
     product.sizes && product.sizes.length > 0 ? product.sizes[0].label : ""
   );
 
-  // Preis formatieren
-  const formattedPrice = typeof product.price === 'number'
+  // discount code constants
+  const [discountCode, setDiscountCode] = useState('');
+  const [appliedDiscountCode, setAppliedDiscountCode] = useState(null);
+  const [discountStatus, setDiscountStatus] = useState('idle');
+  const [discountErrorMessage, setDiscountErrorMessage] = useState('');
+  const [effectivePrice, setEffectivePrice] = useState(product ? product.price : 0);
+  const [isDiscountInputVisible, setIsDiscountInputVisible] = useState(false);
+  const [userIdentifier, setUserIdentifier] = useState(''); // <-- NEU: State für Namen
+
+  // useEffect to reset the discount code input field when the product changes
+  useEffect(() => {
+    if (product) {
+        setEffectivePrice(product.price);
+        setSelectedSize(product.sizes && product.sizes.length > 0 ? product.sizes[0].label : "");
+        setDiscountCode('');
+        setAppliedDiscountCode(null);
+        setDiscountStatus('idle');
+        setDiscountErrorMessage('');
+        setIsDiscountInputVisible(false);
+        setUserIdentifier(''); // <-- NEU: Namen zurücksetzen
+    }
+  }, [product]);
+
+  // *** HIER: Angepasste Preisformatierung ***
+  // Formatiert den *originalen* Preis
+  const formattedOriginalPrice = typeof product?.price === 'number'
     ? product.price.toFixed(2)
-    : product.price || "0.00";
+    : "0.00";
+
+  // Formatiert den *effektiven* Preis (der rabattiert sein könnte)
+  const formattedEffectivePrice = typeof effectivePrice === 'number'
+    ? effectivePrice.toFixed(2)
+    : "0.00";
+  // *** ENDE: Angepasste Preisformatierung ***
+
 
   // Größenänderung behandeln
   const handleSizeChange = (sizeLabel) => { // Hier kommt das Label (z.B. "M") an
     setSelectedSize(sizeLabel);
   };
 
-  // === NEUER Handler für erfolgreichen Kauf ===
-  const handlePurchaseSuccess = async (paypalDetails) => {
-    console.log("PayPal Success, processing purchase...", paypalDetails);
+  // handle apply code (calls DEPLOYED function) - Unverändert zur letzten Version
+  const handleApplyCode = async () => {
+    setDiscountStatus('loading');
+    setDiscountErrorMessage('');
+    setAppliedDiscountCode(null);
+    setEffectivePrice(product.price); // Preis zurücksetzen vor Validierung
 
-    // Sicherstellen, dass eine Größe ausgewählt ist (wichtig!)
-    if (!selectedSize) {
-       console.error("Keine Größe für den Kauf ausgewählt!");
-       alert("Bitte wähle zuerst eine Größe aus.");
-       return; // Funktion abbrechen
+    // Stelle sicher, dass wir eine Produkt-ID haben (wichtig für den Funktionsaufruf)
+    if (!product || !product.id) {
+        console.error("Product ID missing for code validation!");
+        setDiscountStatus('error');
+        setDiscountErrorMessage('Internal Error: Missing Product ID.');
+        return;
     }
-    // Sicherstellen, dass die product ID vorhanden ist
+
+    try {
+      console.log(`Invoking DEPLOYED function 'validate-code' with code: "${discountCode}" and productId: "${product.id}"`);
+
+      // Rufe die DEPLOYTE Edge Function 'validate-code' auf
+      // Geht davon aus, dass dein 'supabase' Client (import { supabase } from "../../utils/supabaseClient";)
+      // korrekt mit deiner LIVE Supabase URL und dem LIVE Anon Key konfiguriert ist.
+      const { data, error: functionError } = await supabase.functions.invoke('validate-code', {
+        body: {
+          code: discountCode,
+          productId: product.id // Übergibt die Produkt-ID an die Funktion
+        },
+      });
+
+      // Fehler beim Aufrufen der Funktion selbst (Netzwerk, Funktion nicht gefunden etc.)
+      if (functionError) {
+        console.error("Error invoking Supabase function 'validate-code':", functionError);
+        // Gib eine generische Fehlermeldung aus
+        throw new Error("Netzwerkfehler oder Funktion nicht erreichbar.");
+      }
+
+      console.log("Response from deployed 'validate-code':", data);
+
+      // Verarbeite die Antwort der Funktion (data.valid, data.reason etc.)
+      if (data && data.valid === true) {
+        // Code ist gültig
+        setDiscountStatus('valid');
+        setAppliedDiscountCode(discountCode); // Den erfolgreich validierten Code speichern
+        setEffectivePrice(0); // Preis auf 0 setzen
+        setDiscountErrorMessage('');
+      } else {
+        // Code ist ungültig oder die Funktion gab einen internen Fehler zurück ({ valid: false, ... })
+        setDiscountStatus('invalid');
+        // Nutze die detaillierte Nachricht von der Funktion (reason/error), falls vorhanden
+        const message = data?.reason || data?.error || 'Code ungültig oder nicht anwendbar.';
+        setDiscountErrorMessage(message);
+        setEffectivePrice(product.price); // Preis auf Original zurücksetzen
+        setAppliedDiscountCode(null);
+      }
+
+    } catch (error) {
+      // Fängt Fehler vom .invoke() oder manuell geworfene Fehler (z.B. Netzwerk)
+      console.error("Error during discount code validation process:", error);
+      setDiscountStatus('error');
+      // Nutze die Error-Message aus dem Catch-Block
+      setDiscountErrorMessage(error.message || 'Fehler bei der Code-Prüfung. Bitte erneut versuchen.');
+      setEffectivePrice(product.price); // Sicherstellen, dass Preis zurückgesetzt ist
+      setAppliedDiscountCode(null);
+    }
+  };
+
+
+    // handler to remove code again
+    const handleRemoveCode = () => {
+      setDiscountCode('');
+      setAppliedDiscountCode(null);
+      setDiscountStatus('idle');
+      setDiscountErrorMessage('');
+      setEffectivePrice(product.price);
+      setIsDiscountInputVisible(false);
+      setUserIdentifier(''); // <-- NEU: Namen zurücksetzen
+    };
+
+
+  // handler purchase success --- **** HIER WURDE DIE FUNKTION ERWEITERT **** ---
+  const handlePurchaseSuccess = async (options = {}) => { // <-- NEU: Akzeptiert options Objekt
+      // Destrukturiere die Optionen am Anfang:
+      const { paypalDetails, userId } = options;
+      // Log angepasst:
+      console.log("Processing purchase success. Options:", options);
+
+
+    // Check, that product ID is available
     if (!product || !product.id) {
         console.error("Produkt oder Produkt-ID fehlt!");
         alert("Ein interner Fehler ist aufgetreten (Produkt-ID fehlt).");
         return;
     }
+    // Sicherstellen, dass eine Größe ausgewählt ist, *nur wenn* Größen existieren
+    const hasAnySizesCheck = product.sizes && product.sizes.length > 0; // Lokale Prüfung hier
+    if (hasAnySizesCheck && !selectedSize) {
+       console.error("Keine Größe für den Kauf ausgewählt!");
+       alert("Bitte wähle zuerst eine Größe aus.");
+       return; // Funktion abbrechen
+    }
 
+
+    // Schritt 1: Stock Update (wie bisher)
     try {
-        console.log(`Versuche Stock-Update für Produkt ${product.id}, Größe ${selectedSize}`);
+        console.log(`Versuche Stock-Update für Produkt ${product.id}, Größe ${selectedSize || 'N/A'}`); // N/A wenn keine Größe
         // Rufe die deployte Edge Function 'decrement-stock' auf
         const { data: updateResult, error: functionError } = await supabase.functions.invoke(
             'decrement-stock', // Name der Edge Function
             {
-                body: { productId: product.id, sizeLabel: selectedSize }, // Daten senden
+                body: { productId: product.id, sizeLabel: selectedSize }, // Daten senden (selectedSize ist "" wenn keine Größen)
             }
         );
 
-        // Fehlerbehandlung für den Aufruf und die Funktion
+        // Error handling for call and function
         if (functionError) throw functionError;
         if (updateResult && !updateResult.success) {
            throw new Error(updateResult.error || 'Stock update failed.');
@@ -58,76 +172,221 @@ const ProductContent = ({ product }) => {
 
         console.log('Stock update erfolgreich:', updateResult);
 
-        // Zur Danke-Seite weiterleiten
+        // Schritt 2: Bestellung in 'orders'-Tabelle speichern (NEU)
+        const orderData = {
+          product_id: product.id,
+          product_name: product.name,
+          size_label: selectedSize || null, // Speichere Größe (oder null)
+          price_paid: effectivePrice, // Speichere den effektiven Preis (0 bei Rabatt)
+          discount_code_used: appliedDiscountCode || null, // Speichere den Code, falls verwendet
+          paypal_order_id: paypalDetails?.id || null, // <-- NEU: Verwende paypalDetails von den Optionen
+          user_identifier: userId || null // <-- NEU: Verwende userId von den Optionen
+        };
+
+        // Separater Try-Catch für das Speichern der Order, damit ein Fehler hier nicht den Rest abbricht
+        try {
+          console.log("Versuche Bestellung in Supabase zu speichern:", orderData);
+          const { error: orderError } = await supabase
+            .from('orders') // Name deiner Bestellungs-Tabelle
+            .insert([orderData]);
+
+          if (orderError) {
+            // Fehler beim Speichern loggen, aber nicht den Benutzer blockieren
+            console.error("Fehler beim Speichern der Bestellung in Supabase:", orderError);
+            // Hier könnte man z.B. eine interne Benachrichtigung senden
+          } else {
+            console.log("Bestellung erfolgreich in Supabase gespeichert.");
+          }
+        } catch(e) {
+           console.error("Unerwarteter Fehler beim Speichern der Bestellung:", e);
+           // Auch hier nur loggen
+        }
+
+        // Schritt 3: Zur Danke-Seite navigieren (wie bisher)
         navigate(`/thanks/`);
 
     } catch (error) {
-        console.error('Fehler bei der Kaufverarbeitung nach Zahlung:', error);
-        alert(`Zahlung erfolgreich, aber Problem beim Buchen des Artikels: ${error.message}. Fehler wurde geloggt. Du musst nichts weiter tun.`);
-        // Trotzdem weiterleiten, da die Zahlung durch ist. Der Fehler muss manuell geprüft werden.
+        // Dieser Catch fängt primär Fehler vom Stock-Update ab
+        console.error('Fehler bei der Kaufverarbeitung (Stock-Update):', error);
+        // Alert-Nachricht angepasst, um klarzustellen, was schief lief
+        alert(`Payment successfull or item free! But there was a problem updating stock: ${error.message}. Error has been logged, you do not have to do anything.`);
+        // Trotzdem zur Danke-Seite navigieren, da Zahlung/Anspruch erfolgte. Stock muss ggf. manuell korrigiert werden.
         navigate(`/thanks/`);
     }
   };
-  // === ENDE NEUER Handler ===
 
 
   // Check if product exists
   if (!product) {
-    return <ErrorMessage>Sorry, dieses Produkt ist nicht verfügbar.</ErrorMessage>;
+    return <ErrorMessage>Sorry, this product is not available.</ErrorMessage>;
   }
 
-  // Check if product has any sizes mit Stock > 0 (uses product.sizes)
+  // Check if product has any sizes with "stock" > 0 (uses product.sizes)
   const hasSizesWithStock = product.sizes?.some(sizeInfo => sizeInfo.stock > 0);
-  const hasAnySizes = product.sizes && product.sizes.length > 0;
+  // Check if there are any sizes defined for the product
+  const hasAnySizes = product.sizes && product.sizes.length > 0; // Definition hier für Nutzung im JSX
 
 
   return (
     <ProductContentContainer>
+      {/* Produktinfos */}
       <DescriptionGroup>
         <ProductName>{product.name || "Produktname"}</ProductName>
         <ProductDescription>{product.longDescription || "Keine Beschreibung verfügbar."}</ProductDescription>
         <ProductWarning>{product.warning || ""}</ProductWarning>
       </DescriptionGroup>
 
-      <Price>{formattedPrice} €</Price>
+      {/* Adjusted price display */}
+      <Price>
+        {discountStatus === 'valid' && appliedDiscountCode ? (
+          <>
+            <span style={{ textDecoration: 'line-through', opacity: 0.6, marginRight: '8px' }}>
+              {formattedOriginalPrice} €
+            </span>
+            <span style={{ fontWeight: 'bold', color: '#4CAF50' }}>
+                {formattedEffectivePrice} €
+            </span>
+          </>
+        ) : (
+          // Uses formattedOriginalPrice
+          formattedOriginalPrice + " €"
+        )}
+      </Price>
 
-      {/* Zeige Größenauswahl nur an, wenn Größen vorhanden sind */}
+      {/* Size selection */}
       {hasAnySizes && (
         <SizeSelector>
           <ToggleButton
-            label="Größe" // Oder "Ausführung" für One-Size-Artikel
+            label="Size"
             selectedLabel={selectedSize}
-            // Übergebe das korrigierte product.sizes Array
             options={product.sizes}
-            onChange={handleSizeChange} // Diese Funktion setzt selectedSize
+            onChange={handleSizeChange} // this functions sets selectedSize
           />
         </SizeSelector>
       )}
 
-      {/* Zeige PayPal Button nur an, wenn eine Größe ausgewählt wurde UND Stock verfügbar ist (oder keine Größenwahl nötig ist) */}
-      {/* Logik: Wenn es Größen gibt, muss eine gewählt sein. Wenn nicht, ist es ok. Und Preis > 0 */}
-      {product.price > 0 && (!hasAnySizes || selectedSize) ? (
-        <PayPalButtonWrapper>
-          <PayPalButton
-            amount={formattedPrice} // Preis übergeben
-            selectedSize={selectedSize} // Ausgewählte Größe übergeben
-            productName={product.name} // Produktname übergeben
-            onSuccess={handlePurchaseSuccess} // <<< NEUEN Handler übergeben!
-          />
-        </PayPalButtonWrapper>
-      ) : (
-         // Optional: Nachricht anzeigen, wenn keine Größe gewählt oder alles ausverkauft
-         hasAnySizes && !selectedSize && <InfoMessage>Bitte wähle eine Größe.</InfoMessage>
-      )}
-       {!hasSizesWithStock && hasAnySizes && <InfoMessage>Dieses Produkt ist leider ausverkauft.</InfoMessage>}
+      {/* Discount Code show/hide */}
+      {product.price > 0 && (
+         <>
+           {/* Button zum Anzeigen des Feldes */}
+           {!isDiscountInputVisible && discountStatus !== 'valid' && (
+             <RevealDiscountButton onClick={() => setIsDiscountInputVisible(true)}>
+               Team-Code eingeben? {/* Text angepasst */}
+             </RevealDiscountButton>
+           )}
+
+           {/* Eingabefeld + Buttons (nur sichtbar wenn isDiscountInputVisible true ist) */}
+           {isDiscountInputVisible && (
+              <DiscountSection>
+                <DiscountLabel htmlFor="discountCodeInput">Rabattcode</DiscountLabel>
+                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                  <DiscountInput
+                    id="discountCodeInput"
+                    type="text"
+                    value={discountCode}
+                    onChange={(e) => setDiscountCode(e.target.value)}
+                    placeholder="Code eingeben"
+                    disabled={discountStatus === 'valid' || discountStatus === 'loading'}
+                    aria-label="Rabattcode Eingabe"
+                  />
+                  {discountStatus !== 'valid' && (
+                    <ApplyButton
+                      onClick={handleApplyCode} // Ruft jetzt die neue Funktion auf!
+                      disabled={!discountCode || discountStatus === 'loading'}
+                    >
+                      {discountStatus === 'loading' ? 'Prüfe...' : 'Anwenden'}
+                    </ApplyButton>
+                  )}
+                </div>
+                 {/* Statusnachrichten & Entfernen-Button */}
+                 {discountStatus === 'loading' && <DiscountMessage type="info">Code wird geprüft...</DiscountMessage>}
+                 {discountStatus === 'invalid' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
+                 {discountStatus === 'error' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
+                 {discountStatus === 'valid' && appliedDiscountCode && (
+                   <>
+                     <DiscountMessage type="success">Code "{appliedDiscountCode}" angewendet!</DiscountMessage>
+                     <RemoveButton onClick={handleRemoveCode}>
+                        Code entfernen
+                     </RemoveButton>
+                   </>
+                 )}
+              </DiscountSection>
+           )}
+         </>
+       )}
+
+       {/* Checkout Button logic (PayPal or 0€ Button via code) */}
+       {/* Step 1: Item has to be available */}
+      {(hasSizesWithStock || !hasAnySizes) ? (
+        <>
+          {/* Step 2: effective price is 0 by a valid code */}
+          {effectivePrice <= 0 && discountStatus === 'valid' ? (
+             // *** HIER WURDE DER 0€ CHECKOUT BLOCK ANGEPASST ***
+             <CheckoutButtonWrapper style={{ flexDirection: 'column', alignItems: 'stretch' }}>
+               {/* NEU: Eingabefeld für Namen */}
+               <NameLabel htmlFor="userNameInput">Dein Name (für Zuordnung):</NameLabel>
+               <NameInput
+                 id="userNameInput"
+                 type="text"
+                 value={userIdentifier} // Verwendet neuen State
+                 onChange={(e) => setUserIdentifier(e.target.value)} // Aktualisiert neuen State
+                 placeholder="Vorname Nachname"
+                 aria-label="Name für Bestellung"
+               />
+               {/* ENDE NEU */}
+
+               <GetFreeItemButton
+                 // Ruft handlePurchaseSuccess jetzt mit Optionen auf
+                 onClick={() => handlePurchaseSuccess({ userId: userIdentifier })} // Übergibt den Namen
+                 // Deaktivieren, wenn Größe fehlt ODER Name fehlt
+                 disabled={(hasAnySizes && !selectedSize) || !userIdentifier.trim()}
+                 title={!userIdentifier.trim() ? "Bitte Namen eingeben" : (hasAnySizes && !selectedSize ? "Bitte zuerst Größe wählen" : "Artikel kostenlos erhalten")}
+                 style={{ marginTop: '10px' }} // Abstand zum Inputfeld
+               >
+                 {/* Text anpassen, falls Größe oder Name fehlt */}
+                 {!userIdentifier.trim() ? 'Bitte Namen eingeben' : (hasAnySizes && !selectedSize ? 'Größe wählen!' : 'Kostenlos bestellen')}
+               </GetFreeItemButton>
+             </CheckoutButtonWrapper>
+             // *** ENDE DES ANGEPASSTEN 0€ BLOCKS ***
+           ) : (
+             /* Step 3: effective price is bigger than 0 */
+             effectivePrice > 0 ? (
+                /* Step 4: sizes are not needed or a size is selected */
+                (!hasAnySizes || selectedSize) ? (
+                  <PayPalButtonWrapper>
+                    <PayPalButton
+                      amount={formattedEffectivePrice} // send the current positive price
+                      selectedSize={selectedSize}
+                      productName={product.name}
+                      // *** HIER WURDE onSuccess ANGEPASST ***
+                      onSuccess={(details) => handlePurchaseSuccess({ paypalDetails: details })} // Übergibt PayPal Details als Objekt
+                    />
+                  </PayPalButtonWrapper>
+                ) : (
+                   /* Case: Price > 0, but size is missing */
+                   hasAnySizes && <InfoMessage>Bitte wähle eine Größe.</InfoMessage>
+                )
+             ) : (
+               /* Case: Price is 0, but not through discount code (shouldnt happen) */
+               null
+             )
+           )}
+        </>
+       ) : (
+         /* Case: Article is sould out (only if sizes exist) */
+         hasAnySizes && <InfoMessage>Dieses Produkt ist leider ausverkauft.</InfoMessage>
+       )}
 
     </ProductContentContainer>
   );
+  // *** ENDE: return-Block ***
 };
 
-export default ProductContent;
 
-// --- Styled Components (unverändert) ---
+export default ProductContent; // Export am Ende nicht vergessen
+
+
+// Styled Components (unverändert am Ende)
 const ProductContentContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -216,4 +475,169 @@ const InfoMessage = styled.div`
   padding: 16px 0;
   text-align: left;
   width: 100%;
+`;
+
+// new code input field for discount codes
+const RevealDiscountButton = styled.button`
+  background: none;
+  border: none;
+  padding: 5px 0; /* Minimales Padding */
+  margin-top: 16px;
+  color: #cccccc; /* Unauffällige Farbe */
+  text-decoration: underline; /* Macht es link-ähnlich */
+  cursor: pointer;
+  font-size: 0.85em; /* Kleinere Schrift */
+  text-align: left; /* Linksbündig */
+  width: fit-content; /* Nur so breit wie nötig */
+
+  &:hover {
+    color: #ffffff; /* Etwas heller bei Hover */
+  }
+`;
+
+const DiscountSection = styled.div`
+  margin-top: 10px; /* Weniger Abstand, da nach Klick */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Fade-in Animation (optional) */
+  animation: fadeIn 0.3s ease-in-out;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+`;
+
+const DiscountLabel = styled.label`
+  color: #ffffff;
+  font-size: 0.9em;
+  opacity: 0.9;
+  font-weight: 500; /* Etwas fetter */
+`;
+
+const DiscountInput = styled.input`
+  padding: 10px 14px; /* Mehr Padding */
+  border: 1px solid #555; /* Dunklerer Rand */
+  background-color: #333; /* Dunklerer Hintergrund */
+  color: #fff; /* Weiße Schrift */
+  border-radius: 4px;
+  font-size: 0.95em; /* Etwas größer */
+  outline: none; /* Kein Browser-Standard-Outline */
+
+  &::placeholder {
+    color: #aaa; /* Hellere Placeholder-Farbe */
+  }
+
+  &:focus {
+    border-color: #777; /* Hellerer Rand bei Fokus */
+  }
+
+  &:disabled {
+     background-color: #444; /* Hintergrund wenn deaktiviert */
+     cursor: not-allowed;
+  }
+`;
+
+const ApplyButton = styled.button`
+  padding: 10px 16px;
+  background-color: #007bff; /* Blauer Button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover:not(:disabled) {
+    background-color: #0056b3; /* Dunkleres Blau bei Hover */
+  }
+
+  &:disabled {
+    background-color: #555; /* Grauer Hintergrund wenn deaktiviert */
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+`;
+
+const RemoveButton = styled.button`
+  padding: 8px 12px; /* Etwas kleiner */
+  background-color: #6c757d; /* Grauer Button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em; /* Kleiner */
+  font-weight: 500;
+  margin-top: 5px; /* Kleiner Abstand nach oben */
+  align-self: flex-start; /* Nur so breit wie nötig */
+  transition: background-color 0.2s ease-in-out;
+
+
+  &:hover:not(:disabled) {
+    background-color: #5a6268;
+  }
+`;
+
+const DiscountMessage = styled.p`
+  font-size: 0.85em;
+  margin-top: 6px;
+  /* Dynamische Farbe basierend auf Typ */
+  color: ${props => {
+    switch (props.type) {
+      case 'error': return '#ff6b6b'; // Rot für Fehler
+      case 'success': return '#4CAF50'; // Grün für Erfolg
+      default: return '#cccccc'; // Standardfarbe (z.B. für Ladehinweis)
+    }
+  }};
+  font-weight: 500;
+`;
+
+// Styled Components for 0€ checkout via code
+const CheckoutButtonWrapper = styled.div`
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 400px; /* Konsistente Breite */
+`;
+
+const GetFreeItemButton = styled.button`
+  padding: 12px 24px;
+  background-color: #28a745; /* Kräftigeres Grün */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%; /* Nimmt die Breite des Wrappers ein */
+
+  &:hover:not(:disabled) {
+    background-color: #218838; /* Dunkleres Grün bei Hover */
+  }
+
+  &:disabled {
+    background-color: #555; /* Grau wenn deaktiviert (z.B. Größe fehlt) */
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+`;
+
+// styles for name input and label when discount code is applied
+const NameInput = styled(DiscountInput)` // Basiert auf dem Stil des Code-Inputs
+  margin-top: 5px; // Kleiner Abstand nach oben
+`;
+const NameLabel = styled(DiscountLabel)` // Basiert auf dem Stil des Code-Labels
+  margin-top: 15px; // Etwas mehr Abstand zum Button darüber
+  align-self: flex-start; // Sicherstellen, dass Label linksbündig ist
 `;
