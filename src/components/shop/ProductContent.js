@@ -126,15 +126,13 @@ const ProductContent = ({ product }) => {
       setDiscountErrorMessage('');
       setEffectivePrice(product.price);
       setIsDiscountInputVisible(false);
-      setUserIdentifier(''); // <-- NEU: Namen zurücksetzen
+      setUserIdentifier('');
     };
 
 
-  // handler purchase success --- **** HIER WURDE DIE FUNKTION ERWEITERT **** ---
-  const handlePurchaseSuccess = async (options = {}) => { // <-- NEU: Akzeptiert options Objekt
-      // Destrukturiere die Optionen am Anfang:
+  // handler purchase success
+  const handlePurchaseSuccess = async (options = {}) => {
       const { paypalDetails, userId } = options;
-      // Log angepasst:
       console.log("Processing purchase success. Options:", options);
 
 
@@ -144,23 +142,23 @@ const ProductContent = ({ product }) => {
         alert("Ein interner Fehler ist aufgetreten (Produkt-ID fehlt).");
         return;
     }
-    // Sicherstellen, dass eine Größe ausgewählt ist, *nur wenn* Größen existieren
-    const hasAnySizesCheck = product.sizes && product.sizes.length > 0; // Lokale Prüfung hier
+    // Makes sure a size is selected, only if size exists
+    const hasAnySizesCheck = product.sizes && product.sizes.length > 0; // Local check here
     if (hasAnySizesCheck && !selectedSize) {
        console.error("Keine Größe für den Kauf ausgewählt!");
        alert("Bitte wähle zuerst eine Größe aus.");
-       return; // Funktion abbrechen
+       return; // Cancel function
     }
 
 
     // Schritt 1: Stock Update (wie bisher)
     try {
-        console.log(`Versuche Stock-Update für Produkt ${product.id}, Größe ${selectedSize || 'N/A'}`); // N/A wenn keine Größe
-        // Rufe die deployte Edge Function 'decrement-stock' auf
+        console.log(`Versuche Stock-Update für Produkt ${product.id}, Größe ${selectedSize || 'N/A'}`); // N/A if no size
+        // Call the deployed Edge Function 'decrement-stock'
         const { data: updateResult, error: functionError } = await supabase.functions.invoke(
-            'decrement-stock', // Name der Edge Function
+            'decrement-stock', // Name of the Edge Function
             {
-                body: { productId: product.id, sizeLabel: selectedSize }, // Daten senden (selectedSize ist "" wenn keine Größen)
+                body: { productId: product.id, sizeLabel: selectedSize }, // Send data (selectedSize is "" if no size)
             }
         );
 
@@ -172,37 +170,54 @@ const ProductContent = ({ product }) => {
 
         console.log('Stock update erfolgreich:', updateResult);
 
-        // Schritt 2: Bestellung in 'orders'-Tabelle speichern (NEU)
+        // Step 2: Saves orders in Supabase table
         const orderData = {
           product_id: product.id,
           product_name: product.name,
-          size_label: selectedSize || null, // Speichere Größe (oder null)
-          price_paid: effectivePrice, // Speichere den effektiven Preis (0 bei Rabatt)
-          discount_code_used: appliedDiscountCode || null, // Speichere den Code, falls verwendet
-          paypal_order_id: paypalDetails?.id || null, // <-- NEU: Verwende paypalDetails von den Optionen
-          user_identifier: userId || null // <-- NEU: Verwende userId von den Optionen
+          size_label: selectedSize || null,
+          price_paid: effectivePrice,
+          discount_code_used: appliedDiscountCode || null,
+          paypal_order_id: paypalDetails?.id || null,
+          user_identifier: userId || null
         };
 
-        // Separater Try-Catch für das Speichern der Order, damit ein Fehler hier nicht den Rest abbricht
         try {
           console.log("Versuche Bestellung in Supabase zu speichern:", orderData);
           const { error: orderError } = await supabase
-            .from('orders') // Name deiner Bestellungs-Tabelle
+            .from('orders') // Name of our orders table in Supabase
             .insert([orderData]);
 
           if (orderError) {
-            // Fehler beim Speichern loggen, aber nicht den Benutzer blockieren
             console.error("Fehler beim Speichern der Bestellung in Supabase:", orderError);
-            // Hier könnte man z.B. eine interne Benachrichtigung senden
           } else {
             console.log("Bestellung erfolgreich in Supabase gespeichert.");
           }
         } catch(e) {
            console.error("Unerwarteter Fehler beim Speichern der Bestellung:", e);
-           // Auch hier nur loggen
         }
 
-        // Schritt 3: Zur Danke-Seite navigieren (wie bisher)
+        // If a code was used, add +1 to the usage counter
+        if (appliedDiscountCode) {
+            console.log(`Versuche Nutzungszähler für Code ${appliedDiscountCode} zu erhöhen...`);
+            try {
+                // Calls Edge Function 'increment-discount-usage'
+                const { error: incrementError } = await supabase.functions.invoke(
+                    'increment-discount-usage', // Name of edge function
+                    { body: { code: appliedDiscountCode } }
+                );
+                if (incrementError) {
+                    console.error("Fehler beim Erhöhen des Code-Nutzungszählers:", incrementError);
+                } else {
+                    console.log(`Aufruf zum Erhöhen des Zählers für ${appliedDiscountCode} gesendet.`);
+                }
+            } catch (e) {
+                // Fängt Fehler beim Aufruf der 'invoke'-Methode selbst ab
+                console.error("Unerwarteter Fehler beim Aufruf von increment-discount-usage:", e);
+            }
+        }
+
+
+        // Step 3: Navigate to thank you page
         navigate(`/thanks/`);
 
     } catch (error) {
@@ -268,17 +283,16 @@ const ProductContent = ({ product }) => {
       {/* Discount Code show/hide */}
       {product.price > 0 && (
          <>
-           {/* Button zum Anzeigen des Feldes */}
            {!isDiscountInputVisible && discountStatus !== 'valid' && (
              <RevealDiscountButton onClick={() => setIsDiscountInputVisible(true)}>
-               Team-Code eingeben? {/* Text angepasst */}
+               Received a code from us? Enter here!
              </RevealDiscountButton>
            )}
 
-           {/* Eingabefeld + Buttons (nur sichtbar wenn isDiscountInputVisible true ist) */}
+           {/* Input Field + Buttons (only visible if isDiscountInputVisible is true) */}
            {isDiscountInputVisible && (
               <DiscountSection>
-                <DiscountLabel htmlFor="discountCodeInput">Rabattcode</DiscountLabel>
+                <DiscountLabel htmlFor="discountCodeInput">Your code</DiscountLabel>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                   <DiscountInput
                     id="discountCodeInput"
@@ -291,10 +305,10 @@ const ProductContent = ({ product }) => {
                   />
                   {discountStatus !== 'valid' && (
                     <ApplyButton
-                      onClick={handleApplyCode} // Ruft jetzt die neue Funktion auf!
+                      onClick={handleApplyCode}
                       disabled={!discountCode || discountStatus === 'loading'}
                     >
-                      {discountStatus === 'loading' ? 'Prüfe...' : 'Anwenden'}
+                      {discountStatus === 'loading' ? 'Checking...' : 'Check'}
                     </ApplyButton>
                   )}
                 </div>
@@ -306,7 +320,7 @@ const ProductContent = ({ product }) => {
                    <>
                      <DiscountMessage type="success">Code "{appliedDiscountCode}" angewendet!</DiscountMessage>
                      <RemoveButton onClick={handleRemoveCode}>
-                        Code entfernen
+                        Remove
                      </RemoveButton>
                    </>
                  )}
@@ -324,7 +338,7 @@ const ProductContent = ({ product }) => {
              // *** HIER WURDE DER 0€ CHECKOUT BLOCK ANGEPASST ***
              <CheckoutButtonWrapper style={{ flexDirection: 'column', alignItems: 'stretch' }}>
                {/* NEU: Eingabefeld für Namen */}
-               <NameLabel htmlFor="userNameInput">Dein Name (für Zuordnung):</NameLabel>
+               <NameLabel htmlFor="userNameInput">Enter your full name:</NameLabel>
                <NameInput
                  id="userNameInput"
                  type="text"
@@ -379,23 +393,22 @@ const ProductContent = ({ product }) => {
 
     </ProductContentContainer>
   );
-  // *** ENDE: return-Block ***
 };
 
 
-export default ProductContent; // Export am Ende nicht vergessen
+export default ProductContent;
 
 
-// Styled Components (unverändert am Ende)
 const ProductContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 10%; /* Ggf. anpassen */
+  padding-top: 10%; 
+  margin-bottom: 5%; 
   gap: 24px;
   position: relative;
   width: 100%;
-  max-width: 1408px; /* Ggf. anpassen */
+  max-width: 1408px;
   height: auto;
 `;
 
@@ -481,22 +494,24 @@ const InfoMessage = styled.div`
 const RevealDiscountButton = styled.button`
   background: none;
   border: none;
-  padding: 5px 0; /* Minimales Padding */
-  margin-top: 16px;
-  color: #cccccc; /* Unauffällige Farbe */
-  text-decoration: underline; /* Macht es link-ähnlich */
+  padding: 5px 0; 
+  margin-top: 8px;
+  color: #cccccc;
+  text-decoration: underline; 
   cursor: pointer;
-  font-size: 0.85em; /* Kleinere Schrift */
-  text-align: left; /* Linksbündig */
-  width: fit-content; /* Nur so breit wie nötig */
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-transform: none;
+  text-align: left;
+  width: fit-content;
 
   &:hover {
-    color: #ffffff; /* Etwas heller bei Hover */
+    color: #ffffff;
   }
 `;
 
 const DiscountSection = styled.div`
-  margin-top: 10px; /* Weniger Abstand, da nach Klick */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -519,24 +534,25 @@ const DiscountLabel = styled.label`
   color: #ffffff;
   font-size: 0.9em;
   opacity: 0.9;
-  font-weight: 500; /* Etwas fetter */
+  font-weight: 500;
+  margin-top: 0px;
 `;
 
 const DiscountInput = styled.input`
-  padding: 10px 14px; /* Mehr Padding */
-  border: 1px solid #555; /* Dunklerer Rand */
-  background-color: #333; /* Dunklerer Hintergrund */
-  color: #fff; /* Weiße Schrift */
+  padding: 16px 14px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
   border-radius: 4px;
-  font-size: 0.95em; /* Etwas größer */
-  outline: none; /* Kein Browser-Standard-Outline */
+  font-size: 0.95em;
+  outline: none;
 
   &::placeholder {
-    color: #aaa; /* Hellere Placeholder-Farbe */
+    color: #aaa;
   }
 
   &:focus {
-    border-color: #777; /* Hellerer Rand bei Fokus */
+    border-color: #777;
   }
 
   &:disabled {
@@ -547,7 +563,7 @@ const DiscountInput = styled.input`
 
 const ApplyButton = styled.button`
   padding: 10px 16px;
-  background-color: #007bff; /* Blauer Button */
+  background-color: #FFC43A;
   color: white;
   border: none;
   border-radius: 4px;
@@ -557,27 +573,28 @@ const ApplyButton = styled.button`
   transition: background-color 0.2s ease-in-out;
 
   &:hover:not(:disabled) {
-    background-color: #0056b3; /* Dunkleres Blau bei Hover */
+    background-color: #F2BA36;
   }
 
   &:disabled {
-    background-color: #555; /* Grauer Hintergrund wenn deaktiviert */
+    background-color: #555;
     cursor: not-allowed;
     opacity: 0.7;
   }
 `;
 
 const RemoveButton = styled.button`
-  padding: 8px 12px; /* Etwas kleiner */
-  background-color: #6c757d; /* Grauer Button */
+  padding: 8px 12px;
+  background-color: #6c757d;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.85em; /* Kleiner */
-  font-weight: 500;
-  margin-top: 5px; /* Kleiner Abstand nach oben */
-  align-self: flex-start; /* Nur so breit wie nötig */
+  font-size: 0.85em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-top: 5px;
+  align-self: flex-start;
   transition: background-color 0.2s ease-in-out;
 
 
@@ -592,9 +609,9 @@ const DiscountMessage = styled.p`
   /* Dynamische Farbe basierend auf Typ */
   color: ${props => {
     switch (props.type) {
-      case 'error': return '#ff6b6b'; // Rot für Fehler
-      case 'success': return '#4CAF50'; // Grün für Erfolg
-      default: return '#cccccc'; // Standardfarbe (z.B. für Ladehinweis)
+      case 'error': return '#ff6b6b'; // Red for errors
+      case 'success': return '#4CAF50'; // Green for success
+      default: return '#cccccc';
     }
   }};
   font-weight: 500;
