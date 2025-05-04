@@ -86,6 +86,7 @@ const ProductContent = ({ product }) => {
       <DescriptionGroup>
         <ProductName>{product.name || "Produktname"}</ProductName>
         <ProductDescription>{product.longDescription || "Keine Beschreibung verfügbar."}</ProductDescription>
+        <ProductWarning>{product.warning || ""}</ProductWarning>
       </DescriptionGroup>
 
       <Price>{formattedPrice} €</Price>
@@ -160,6 +161,14 @@ const ProductDescription = styled.p`
   font-family: 'Inter', sans-serif; /* Oder deine Schriftart */
   font-size: 0.9em;
   color: #ffffff;
+  opacity: 0.8;
+  white-space: pre-wrap; /* Umbrüche aus Supabase anzeigen */
+`;
+
+const ProductWarning = styled.p`
+  font-family: 'Inter', sans-serif; /* Oder deine Schriftart */
+  font-size: 0.9em;
+  color:rgb(248, 182, 51);
   opacity: 0.8;
   white-space: pre-wrap; /* Umbrüche aus Supabase anzeigen */
 `;

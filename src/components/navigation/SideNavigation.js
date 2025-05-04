@@ -4,7 +4,7 @@ import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
-  const { isInfo, isVolunteer, isAbout, isCode, isShop} = props
+  const { isInfo, isVolunteer, isAbout, isCode, isAwareness, isShop} = props
   const { t, i18n } = useTranslation()
   const { languages, originalPath } = useI18next()
 
@@ -39,6 +39,9 @@ export default function SideNavigation(props) {
             </Link>
             <Link to={"/code"}>
               <ListCode isCode={isCode}>{t("navigation.code")}</ListCode>
+            </Link>
+            <Link to={"/awareness"}>
+              <ListAwareness isAwareness={isAwareness}>{t("navigation.awareness")}</ListAwareness>
             </Link>
             <Link to={"/shop"}>
               <ListShop isShop={isShop}>{t("navigation.shop")}</ListShop>
@@ -172,7 +175,7 @@ const ListAbout = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
   text-decoration: ${props =>
-    props.isVerein ? "#959772 wavy line-through" : "none"};
+    props.isAbout ? "#959772 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -197,6 +200,16 @@ const ListShop = styled(TextSmall)`
   &:hover {
     cursor: pointer;
   } 
+`
+const ListAwareness = styled(TextSmall)`
+  color: white;
+  font-family: "Kleber";
+  text-decoration: ${props =>
+    props.isAwareness ? "#959772 wavy line-through" : "none"};
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const ListTickets = styled(TextSmall)`

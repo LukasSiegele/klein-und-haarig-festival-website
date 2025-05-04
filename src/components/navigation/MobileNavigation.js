@@ -27,6 +27,7 @@ export default function MobileNavigation(props) {
             isVolunteer={props.isVolunteer}
             isAbout={props.isAbout}
             isCode={props.isCode}
+            isAwareness={props.isAwareness}
             isShop={props.isShop}
             bgColor={props.bgColor}
           />
