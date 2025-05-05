@@ -43,7 +43,7 @@ export default function IndexPage() {
                 <FormButton
                   backgroundColor="#fc2546"
                   color="#000"
-                  label="Shop"
+                  label="Tickets"
                 />
               </Link>
             </LinkButton>

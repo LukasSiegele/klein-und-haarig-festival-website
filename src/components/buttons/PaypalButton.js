@@ -14,14 +14,14 @@ const PayPalButton = ({ amount, selectedSize, productName, onSuccess }) => {
     script.onload = () => setSdkReady(true);
     document.body.appendChild(script);
 
-    // Cleanup-Funktion, um doppelte Skripte zu vermeiden
+    // Cleanup-function to avoid duplicate scripts
     return () => {
         const scriptNode = document.querySelector(`script[src*="${script.src}"]`);
         if (scriptNode) {
             document.body.removeChild(scriptNode);
         }
     };
-  }, []); // Leeres Array: Effekt läuft nur einmal beim Mounten
+  }, []); // empty array since effect only runs once while mounting 
 
   useEffect(() => {
     if (sdkReady && window.paypal && paypalRef.current) {
@@ -29,7 +29,7 @@ const PayPalButton = ({ amount, selectedSize, productName, onSuccess }) => {
 
       window.paypal.Buttons({
         createOrder: (data, actions) => {
-          // --- createOrder Logik (unverändert) ---
+          // createOrder logic
           return actions.order.create({
             purchase_units: [
               {
@@ -57,29 +57,27 @@ const PayPalButton = ({ amount, selectedSize, productName, onSuccess }) => {
               },
             ],
             application_context: {
-              shipping_preference: "GET_FROM_FILE", // Oder NO_SHIPPING, falls zutreffend
+              shipping_preference: "GET_FROM_FILE", // Or NO_SHIPPING, if applicable
             },
           });
-          // --- Ende createOrder ---
+
         },
         onApprove: async (data, actions) => {
           try {
             const details = await actions.order.capture();
-            // const shipping = details.purchase_units[0].shipping; // Nicht mehr benötigt
-            console.log("PayPal Capture Details:", details); // Loggen ist gut
-            // Rufe den Handler der Elternkomponente auf
+            // Calls handler of parent component
             onSuccess(details);
             // navigate(`/thanks/`); // <-- ENTFERNT! Wird jetzt im onSuccess Handler gemacht
           } catch (error) {
             console.error("Error capturing PayPal order:", error);
             // Optional: Informiere den User über den Capture-Fehler
-            alert("Fehler beim Abschließen der PayPal-Zahlung.");
+            alert("Error completing PaypPal payment.");
           }
         },
         onError: (err) => {
             // Einfache Fehlerbehandlung für PayPal-Fehler
             console.error("PayPal Button onError:", err);
-            alert(`Ein Fehler ist mit PayPal aufgetreten: ${err}`);
+            alert(`There was an error with PayPal: ${err}`);
         }
       }).render(paypalRef.current);
     }
