@@ -133,6 +133,11 @@ const ProductContent = ({ product }) => {
   // handler purchase success
   const handlePurchaseSuccess = async (options = {}) => {
       const { paypalDetails, userId } = options;
+      // *** NEU: Debugging Logs ***
+      console.log("handlePurchaseSuccess aufgerufen mit Optionen:", options);
+      console.log("paypalDetails Objekt:", paypalDetails);
+      console.log("Versuche PayPal Order ID zu extrahieren:", paypalDetails?.id);
+      // *** ENDE: Debugging Logs ***
       console.log("Processing purchase success. Options:", options);
 
 
@@ -182,15 +187,15 @@ const ProductContent = ({ product }) => {
         };
 
         try {
-          console.log("Versuche Bestellung in Supabase zu speichern:", orderData);
+          console.log("Trying to save order to Supabase:", orderData);
           const { error: orderError } = await supabase
             .from('orders') // Name of our orders table in Supabase
             .insert([orderData]);
 
           if (orderError) {
-            console.error("Fehler beim Speichern der Bestellung in Supabase:", orderError);
+            console.error("Error when saving the order in Supabase:", orderError);
           } else {
-            console.log("Bestellung erfolgreich in Supabase gespeichert.");
+            console.log("Order successfully saved in Supabase.");
           }
         } catch(e) {
            console.error("Unerwarteter Fehler beim Speichern der Bestellung:", e);
@@ -198,7 +203,7 @@ const ProductContent = ({ product }) => {
 
         // If a code was used, add +1 to the usage counter
         if (appliedDiscountCode) {
-            console.log(`Versuche Nutzungszähler für Code ${appliedDiscountCode} zu erhöhen...`);
+            console.log(`Trying to update usage counter for discount code ... ${appliedDiscountCode}`);
             try {
                 // Calls Edge Function 'increment-discount-usage'
                 const { error: incrementError } = await supabase.functions.invoke(
@@ -206,13 +211,13 @@ const ProductContent = ({ product }) => {
                     { body: { code: appliedDiscountCode } }
                 );
                 if (incrementError) {
-                    console.error("Fehler beim Erhöhen des Code-Nutzungszählers:", incrementError);
+                    console.error("Error while updating usage counter:", incrementError);
                 } else {
-                    console.log(`Aufruf zum Erhöhen des Zählers für ${appliedDiscountCode} gesendet.`);
+                    console.log(`Sent call to raise usage counter for ${appliedDiscountCode}`);
                 }
             } catch (e) {
                 // Fängt Fehler beim Aufruf der 'invoke'-Methode selbst ab
-                console.error("Unerwarteter Fehler beim Aufruf von increment-discount-usage:", e);
+                console.error("!!! Unexpected error for increment-discount-usage:", e);
             }
         }
 
@@ -345,7 +350,6 @@ const ProductContent = ({ product }) => {
                  placeholder="Enter your full name..."
                  aria-label="Name for order"
                />
-               {/* ENDE NEU */}
 
                <GetFreeItemButton
                  // Ruft handlePurchaseSuccess jetzt mit Optionen auf
@@ -359,7 +363,7 @@ const ProductContent = ({ product }) => {
                  {!userIdentifier.trim() ? 'Enter name to continue' : (hasAnySizes && !selectedSize ? 'Select size!' : 'Order item')}
                </GetFreeItemButton>
              </CheckoutButtonWrapper>
-             // *** ENDE DES ANGEPASSTEN 0€ BLOCKS ***
+
            ) : (
              /* Step 3: effective price is bigger than 0 */
              effectivePrice > 0 ? (
@@ -370,8 +374,7 @@ const ProductContent = ({ product }) => {
                       amount={formattedEffectivePrice} // send the current positive price
                       selectedSize={selectedSize}
                       productName={product.name}
-                      // *** HIER WURDE onSuccess ANGEPASST ***
-                      onSuccess={(details) => handlePurchaseSuccess({ paypalDetails: details })} // Übergibt PayPal Details als Objekt
+                      onSuccess={handlePurchaseSuccess} // sends PayPal ID Details as an Object (also saved in Supabase)
                     />
                   </PayPalButtonWrapper>
                 ) : (
