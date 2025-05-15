@@ -206,6 +206,10 @@ const ProductDetailSection = styled.div`
   width: 100%;
   align-items: center;
   padding: 24px 24px 0px 24px;
+
+  @media (max-width: 680px) {
+    padding-top: 78px;
+  }
 `;
 
 const ProductDetailContainer = styled.div`

@@ -62,10 +62,6 @@ export default function Shop() {
             <ContentSection>
               <ScrollContainer>
                 <ShopSection>
-                  <FilterSection>
-                    {/* Add category filter logic here (optional) */}
-                  </FilterSection>
-
                   {loading ? (
                     <LoadingText>{t("Loading products...")}</LoadingText>
                   ) : products.length > 0 ? (
@@ -139,8 +135,13 @@ const ScrollContainer = styled.div`
 
 const ShopSection = styled.div`
   margin-bottom: 60px;
+  padding-top: 24px;
   width: 100%;
   align-items: center;
+    
+  @media (max-width: 680px) {
+    padding-top: 78px;
+  }
 `
 
 const LoadingText = styled.p`
@@ -163,7 +164,7 @@ const FilterSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px 16px 24px;
+  padding: 0px 16px 56px;
   gap: 16px;
   width: 100%;
   margin-bottom: 16px;

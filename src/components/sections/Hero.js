@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
-
-import HeroAnimation from "../../../static/videos/KuH2023Animation.mp4"
-import Artwork from "../../../static/images/HeroArtwork2024.jpg"
-import Image1 from "../../../static/images/CN2_32A.png"
 
 import {
   FrontpageHeadline,
@@ -13,7 +8,6 @@ import {
 } from "../styles/TextStyles"
 import Newsletter from "../form/Newsletter"
 import FormButton from "../buttons/FormButton"
-import KUHLogo from "../../../static/images/LogoSideNav.png"
 
 export default function Hero() {
   return (
@@ -39,7 +33,7 @@ export default function Hero() {
         <ButtonGroup>
           <LinkButton>
           <a href="https://pretix.eu/bunteplatte/kuh2025/" target="_blank" rel="noopener noreferrer">
-          <FormButton backgroundColor="#fc2546" color="#000" label="Shop" />
+          <FormButton backgroundColor="#fc2546" color="#000" label="Tickets" />
           </a>
 
           </LinkButton>

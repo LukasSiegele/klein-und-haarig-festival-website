@@ -4,7 +4,6 @@ import Hero from "../components/sections/Hero"
 import { graphql } from "gatsby"
 import SideNavigation from "../components/navigation/SideNavigation"
 import Layout from "../components/layout/layout"
-// import SEO from "../components/layout/seo"
 import Ticker from "../components/ticker/Ticker"
 import Footer from "../components/footer/footer"
 import { Link } from "gatsby"
@@ -13,17 +12,13 @@ import { ParallaxProvider } from "react-scroll-parallax"
 import { TextSmall } from "../components/styles/TextStyles"
 
 import BackgroundTexture from "../../static/images/BackgroundTexture.png"
-import Images from "../components/sections/Images"
-import Message from "../components/sections/Message"
 import SideLine from "../components/navigation/SideLine"
 import Lineup from "../components/sections/Lineup"
-import Foerderungen from "../components/sections/Foerderungen"
 import MobileNavigation from "../components/navigation/MobileNavigation"
 import LinkList from "../components/sections/LinkList"
 
 import HeroArtwork from "../../static/images/header-2025.jpg"
 import FormButton from "../components/buttons/FormButton"
-// import HeroAnimation from "../../static/videos/KuH2023Animation.mp4"
 
 export default function IndexPage() {
   return (
@@ -267,21 +262,3 @@ const LinkButton = styled.div`
     display: none;
   }
 `
-// const TicketGroup = styled(Link)`
-//   /* animation: TicketButtonAnimation 2s 3s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
-//   opacity: 1;
-//   background-image: none;
-//   /* width: 320px; */
-//   height: 56px;
-//   color: white;
-//   /* display: grid;
-//   justify-items: center; */
-//   align-content: center;
-//   text-transform: uppercase;
-//   font-size: 16px;
-//   border: 0px;
-
-//   & > :hover {
-//     cursor: pointer;
-//   }
-// `
