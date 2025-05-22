@@ -9,7 +9,7 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
-import { SubheaderSmall, Text } from "../components/styles/TextStyles"
+import { SubheaderSmall, StyledText } from "../components/styles/TextStyles"
 
 import Verein1 from "../../static/images/Verein1.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
@@ -17,6 +17,9 @@ import FormButton from "../components/buttons/FormButton"
 
 export default function About() {
   const { t } = useTranslation()
+  const { i18n } = useTranslation();
+  console.log("Current language:", i18n.language);
+
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
@@ -58,13 +61,17 @@ export default function About() {
                     {/* <Link href="mailto:info@bunteplatte.de?subject=Mitglied werden&body=Hallo Bunte Platte Crew, %0A %0A ich möchte Mitlgied im Bunte Platte e.V. werden. Könnt ihr mir das Mitgliedsformular zusenden auf dem alle weiteren Infos stehen? %0A %0A Liebe Grüße">
                       <FormButton label="Mitglied werden" />
                     </Link> */}
-                    <Link href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf">
+                    <a 
+                      href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       <FormButton
                         color="black"
                         backgroundColor="#FC2546"
                         label={t("pages.organization.sections.becomeMemberCTA")}
                       />
-                    </Link>
+                    </a>
 
                     {/* <a href="mailto:info@kleinundhaarig.de">Kontakt</a> */}
                   </InfoSection>
@@ -206,7 +213,7 @@ const TextSection = styled.div`
 `
 
 const HeaderSection = styled.div`
-  height: 85vh;
+  height: 65vh;
   @media (max-width: 1100px) {
     height: auto;
     margin-bottom: 200px;
@@ -293,7 +300,7 @@ const List = styled.div`
   margin-top: 16px;
 `
 
-const ListItem = styled.p`
+const ListItem = styled.div`
   color: rgba(255, 255, 255, 0.75);
   padding: 8px 0 8px 16px;
   max-width: 800px;

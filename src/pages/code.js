@@ -8,7 +8,7 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
-import { SubheaderSmall, Text } from "../components/styles/TextStyles"
+import { SubheaderSmall, StyledText } from "../components/styles/TextStyles"
 
 import ConductImage from "../../static/images/Day.jpg"
 import MobileNavigation from "../components/navigation/MobileNavigation"
@@ -126,7 +126,7 @@ const TextSection = styled.div`
 `
 
 const HeaderSection = styled.div`
-  height: 85vh;
+  height: 65vh;
   @media (max-width: 1100px) {
     height: auto;
     margin-bottom: 200px;

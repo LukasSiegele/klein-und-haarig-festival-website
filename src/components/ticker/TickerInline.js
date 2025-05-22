@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { TextSmall } from "../styles/TextStyles"
 import RTicker from "react-ticker"
 import styled from "styled-components"
-import { themes } from "../styles/ColorStyles"
 
 import Delayed from "./useTickerDelay"
 

@@ -1,26 +1,41 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout/layout"
-// import SEO from "../components/layout/seo"
 import FormButton from "../components/buttons/FormButton"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 export default function NotFoundPage() {
+  const { t } = useTranslation()
+  
   return (
     <Layout>
-      {/* <SEO title="404: Not found" /> */}
       <Wrapper>
-        <Title>404 — Not Found</Title>
-        <Description>I like Turtles.</Description>
+        <Title>{t("pages.404.title")}</Title>
+        <Description>{t("pages.404.description")}</Description>
         <ButtonWrapper>
           <Link to="/">
-            <FormButton label="Bring me Home" color="black" />
+            <FormButton label={t("pages.404.button")} color="black" />
           </Link>
         </ButtonWrapper>
       </Wrapper>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
 
 const Wrapper = styled.div`
   padding: 120px 40px;

@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 export default function SideLine(props) {
   return (
@@ -46,10 +45,3 @@ const Ghost = styled.div`
   width: 54px;
   margin: 40px;
 `
-
-// const SideNavLogoWrapper = styled.div`
-//   margin: 14px;
-//   margin-right: 3px;
-//   width: 84px;
-//   height: 79px;
-// `

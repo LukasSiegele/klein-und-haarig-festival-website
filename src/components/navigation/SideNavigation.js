@@ -4,9 +4,10 @@ import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { TextSmall } from "../styles/TextStyles"
 
 export default function SideNavigation(props) {
-  const { isInfo, isVolunteer, isAbout, isCode, isOpenCalls } = props
+  const { isInfo, isVolunteer, isAbout, isCode, isAwareness, isShop} = props
   const { t } = useTranslation()
   const { languages, originalPath } = useI18next()
+
   return (
     <Desktop>
       <Wrapper bgColor={props.bgColor}>
@@ -21,32 +22,23 @@ export default function SideNavigation(props) {
             <Link to={"/info"}>
               <ListInfo isInfo={isInfo}>{t("navigation.infos")}</ListInfo>
             </Link>
-            {/* <Link to={"/volunteer"}>
+            <Link to={"/volunteer"}>
               <ListVolunteer isVolunteer={isVolunteer}>
                 {t("navigation.volunteers")}
               </ListVolunteer>
-            </Link> */}
-            {/* <Link to={"/opencalls"}>
-              <a>
-                <ListVolunteer isOpenCalls={isOpenCalls}>
-                  Open Calls
-                </ListVolunteer>
-              </a>
-            </Link> */}
+            </Link>
             <Link to={"/about"}>
               <ListAbout isAbout={isAbout}>{t("navigation.about")}</ListAbout>
             </Link>
             <Link to={"/code"}>
               <ListCode isCode={isCode}>{t("navigation.code")}</ListCode>
             </Link>
-            {/* <Link
-              to="https://pretix.eu/bunteplatte/kleinundhaarig"
-              target="_blank"
-            >
-              <a>
-                <ListTickets>Tickets</ListTickets>
-              </a>
-            </Link> */}
+            <Link to={"/awareness"}>
+              <ListAwareness isAwareness={isAwareness}>{t("navigation.awareness")}</ListAwareness>
+            </Link>
+            <Link to={"/shop"}>
+              <ListShop isShop={isShop}>{t("navigation.shop")}</ListShop>
+            </Link>
           </LinkGroup>
           <ul style={{ listStyle: "none", margin: "0px", alignSelf: "start" }}>
             {languages.map(lng => (
@@ -145,8 +137,9 @@ const LinkGroup = styled.div`
 const ListInfo = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
+  line-height: 0.8;
   text-decoration: ${props =>
-    props.isInfo ? "#959772 wavy line-through" : "none"};
+    props.isInfo ? "#ff5400 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -156,8 +149,9 @@ const ListInfo = styled(TextSmall)`
 const ListVolunteer = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
+  line-height: 0.8;
   text-decoration: ${props =>
-    props.isVolunteer ? "#959772 wavy line-through" : "none"};
+    props.isVolunteer ? "#ff5400 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -167,8 +161,9 @@ const ListVolunteer = styled(TextSmall)`
 const ListAbout = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
+  line-height: 0.8;
   text-decoration: ${props =>
-    props.isVerein ? "#959772 wavy line-through" : "none"};
+    props.isAbout ? "#ff5400 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
@@ -177,18 +172,35 @@ const ListAbout = styled(TextSmall)`
 const ListCode = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
+  line-height: 0.8;
   text-decoration: ${props =>
-    props.isCode ? "#959772 wavy line-through" : "none"};
+    props.isCode ? "#ff5400 wavy line-through" : "none"};
 
   &:hover {
     cursor: pointer;
   }
 `
 
-const ListTickets = styled(TextSmall)`
+const ListAwareness = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
+  line-height: 0.8;
+  text-decoration: ${props =>
+    props.isAwareness ? "#ff5400 wavy line-through" : "none"};
+
   &:hover {
     cursor: pointer;
   }
+`
+
+const ListShop = styled(TextSmall)`
+  color: white;
+  font-family: "Kleber";
+  line-height: 0.8;
+  text-decoration: ${props =>
+    props.isShop ? "#ff5400 wavy line-through" : "none"};
+
+  &:hover {
+    cursor: pointer;
+  } 
 `

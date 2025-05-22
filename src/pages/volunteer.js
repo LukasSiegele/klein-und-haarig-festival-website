@@ -5,10 +5,9 @@ import Layout from "../components/layout/layout"
 import Footer from "../components/footer/footer"
 import SideNavigation from "../components/navigation/SideNavigation"
 import SideLine from "../components/navigation/SideLine"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-import { SubheaderSmall, Text } from "../components/styles/TextStyles"
+import { SubheaderSmall, StyledText } from "../components/styles/TextStyles"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import Volunteer1 from "../../static/images/VolunteerRight.jpg"
@@ -35,14 +34,20 @@ export default function Volunteer() {
                 </ImageSectionMobile>
                 <TextSection>
                   <HeaderSection>
-                    <InfoHeadline>{t("pages.volunteer.headline")}</InfoHeadline>
+                    <InfoHeadline>
+                      {t("pages.volunteer.headline")}
+                    </InfoHeadline>
                     <AnmeldeGroup>
-                      <Link href={t("pages.volunteer.button.link")}>
+                      <a
+                        href={t("pages.volunteer.button.link")}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <FormButton
                           backgroundColor="#492cd3"
                           label={t("pages.volunteer.button.label")}
-                        ></FormButton>
-                      </Link>
+                        />
+                      </a>
                       {/* <InfoText>
                         Bald findest du hier den Link zur Volunteer Anmeldung.
                       </InfoText> */}
@@ -63,36 +68,12 @@ export default function Volunteer() {
                       {t("pages.volunteer.sections.second.label")}
                     </InfoLabel>
                     <List>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item1")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item2")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item3")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item4")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item5")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item6")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item7")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item8")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item9")}
-                      </ListItem>
-                      <ListItem>
-                        {t("pages.volunteer.sections.second.list.item10")}
-                      </ListItem>
+                      {Array.from(
+                        { length: 10 },
+                        (_, i) => `pages.volunteer.sections.second.list.item${i + 1}`
+                      ).map(key => (
+                        <ListItem key={key}>{t(key)}</ListItem>
+                      ))}
                     </List>
                   </InfoSection>
 
@@ -104,68 +85,34 @@ export default function Volunteer() {
                       {t("pages.volunteer.sections.third.text")}
                     </InfoText>
                     <List>
-                      <ListItem>
-                        <List1>
-                          {t("pages.volunteer.sections.third.sizes.s.label")}
-                        </List1>
-                        <List2>
-                          {t("pages.volunteer.sections.third.sizes.s.time")}
-                        </List2>
-                        <List3>
-                          {t("pages.volunteer.sections.third.sizes.s.amount")}
-                        </List3>
-                      </ListItem>
-                      <ListItem>
-                        <List1>
-                          {t("pages.volunteer.sections.third.sizes.m.label")}
-                        </List1>
-                        <List2>
-                          {t("pages.volunteer.sections.third.sizes.m.time")}
-                        </List2>
-                        <List3>
-                          {t("pages.volunteer.sections.third.sizes.m.amount")}
-                        </List3>
-                      </ListItem>
-                      <ListItem>
-                        <List1>
-                          {t("pages.volunteer.sections.third.sizes.l.label")}
-                        </List1>
-                        <List2>
-                          {t("pages.volunteer.sections.third.sizes.l.time")}
-                        </List2>
-                        <List3>
-                          {t("pages.volunteer.sections.third.sizes.l.amount")}
-                        </List3>
-                      </ListItem>
+                      {["s", "m", "l"].map(size => (
+                        <ListItem key={size}>
+                          <List1>
+                            {t(`pages.volunteer.sections.third.sizes.${size}.label`)}
+                          </List1>
+                          <List2>
+                            {t(`pages.volunteer.sections.third.sizes.${size}.time`)}
+                          </List2>
+                          <List3>
+                            {t(`pages.volunteer.sections.third.sizes.${size}.amount`)}
+                          </List3>
+                        </ListItem>
+                      ))}
                     </List>
                   </InfoSection>
 
-                  <InfoSection>
-                    <InfoLabel>
-                      {t("pages.volunteer.sections.fourth.label")}
-                    </InfoLabel>
-                    <InfoText>
-                      {t("pages.volunteer.sections.fourth.text")}
-                    </InfoText>
-                  </InfoSection>
-                  <InfoSection>
-                    <InfoLabel>
-                      {t("pages.volunteer.sections.fifth.label")}
-                    </InfoLabel>
-                    <InfoText>
-                      {t("pages.volunteer.sections.fifth.text")}
-                    </InfoText>
-                  </InfoSection>
-
-                  <InfoSection>
-                    <InfoLabel>
-                      {t("pages.volunteer.sections.sixth.label")}
-                    </InfoLabel>
-                    <InfoText>
-                      {t("pages.volunteer.sections.sixth.text")}
-                    </InfoText>
-                  </InfoSection>
+                  {["fourth", "fifth", "sixth"].map(section => (
+                    <InfoSection key={section}>
+                      <InfoLabel>
+                        {t(`pages.volunteer.sections.${section}.label`)}
+                      </InfoLabel>
+                      <InfoText>
+                        {t(`pages.volunteer.sections.${section}.text`)}
+                      </InfoText>
+                    </InfoSection>
+                  ))}
                 </TextSection>
+
                 <ImageSectionDesktop>
                   <FirstImageGroup>
                     <VolunteerBild1 />
@@ -175,6 +122,7 @@ export default function Volunteer() {
                   </SecondImageGroup>
                 </ImageSectionDesktop>
               </ContentSection>
+
               <FooterSection>
                 <Footer bgColor="black" />
               </FooterSection>
@@ -200,6 +148,8 @@ export const query = graphql`
   }
 `
 
+// Styled components
+
 const Wrapper = styled.div`
   background-color: black;
 `
@@ -209,10 +159,10 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: auto;
 `
+
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  /* overflow: hidden; */
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
@@ -229,25 +179,14 @@ const ContentSection = styled.div`
 `
 
 const TextSection = styled.div`
-  /* overflow-x: hidden; */
-
-  /* height: 100vh; */
   padding: 25px 10px 0 10px;
-  /* border-right: 1px solid black; */
-  /* overflow-y: hidden; */
-  /* :hover {
-    overflow-y: scroll;
-  } */
   @media (max-width: 1100px) {
-    height: auto;
-  }
-  @media (max-width: 1100px) {
-    padding: 10px 10px 0 10px;
+    padding: 10px;
   }
 `
 
 const HeaderSection = styled.div`
-  height: 85vh;
+  height: 65vh;
   @media (max-width: 1100px) {
     height: auto;
     margin-bottom: 200px;
@@ -255,8 +194,6 @@ const HeaderSection = styled.div`
 `
 
 const AnmeldeGroup = styled.div`
-  /* max-width: 450px; */
-  /* opacity: 0.3; */
   @media (max-width: 1100px) {
     margin-bottom: 100px;
   }
@@ -271,7 +208,7 @@ const InfoHeadline = styled.h3`
   display: inline-block;
   max-width: 800px;
   text-indent: 60px;
-  margin-bottom: 200px; ;
+  margin-bottom: 200px;
 `
 
 const InfoLabel = styled.h3`
@@ -288,22 +225,33 @@ const InfoText = styled.p`
   max-width: 800px;
 `
 
-const DetailLabel = styled(SubheaderSmall)`
-  color: white;
-  font-family: "GT-Alpina-Extended-Regular";
-  margin-top: 32px;
-  margin-bottom: 6px;
-  opacity: 0.7;
+const List = styled.div`
+  margin-top: 16px;
 `
 
-const LinkInline = styled.a`
-  color: white;
-  padding-bottom: 1px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+const ListItem = styled.div`
+  color: rgba(255, 255, 255, 0.8);
+  padding: 8px 0 8px 16px;
+  max-width: 800px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  &:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+`
+
+const List1 = styled.div``
+const List2 = styled.div``
+const List3 = styled.div``
+
+const FooterSection = styled.div`
+  background-color: #9a9eff;
 `
 
 const ImageSectionDesktop = styled.div`
-  /* height: 100vh; */
   display: grid;
   grid-template-rows: auto auto;
   @media (max-width: 1100px) {
@@ -329,24 +277,15 @@ const VolunteerBild1 = styled.div`
   width: 110%;
   justify-self: end;
   align-self: center;
-  /* width: 300px; */
-  /* border: 20px solid white; */
   background-image: url(${Volunteer1});
   background-size: cover;
   @media (max-width: 1100px) {
     width: 100%;
-    max-width: 100%;
-    max-height: 100%;
     height: inherit !important;
   }
-  /* @media (max-width: 1300px) {
-    width: 352px;
-    height: 548px;
-  } */
 `
 
 const SecondImageGroup = styled.div`
-  /* margin-left: 20px; */
   overflow: hidden;
   position: relative;
 `
@@ -359,30 +298,4 @@ const VolunteerBild2 = styled.div`
   left: -10px;
   background-image: url(${Volunteer2});
   background-size: cover;
-`
-
-const List = styled.div`
-  margin-top: 16px;
-`
-
-const ListItem = styled.p`
-  color: rgba(255, 255, 255, 0.8);
-  padding: 8px 0 8px 16px;
-  max-width: 800px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  &:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-`
-
-const List1 = styled.div``
-const List2 = styled.div``
-const List3 = styled.div``
-
-const FooterSection = styled.div`
-  background-color: #9a9eff;
 `

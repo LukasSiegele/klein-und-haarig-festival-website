@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 export default function MenuTooltip(props) {
-  const { isOpen, isInfo, isAbout, isCode, bgColor } = props
+  const { isOpen, isInfo, isAbout, isVolunteer, isCode, isAwareness, isShop, bgColor } = props
   const { t } = useTranslation()
   const { languages, originalPath } = useI18next()
 
@@ -15,14 +15,11 @@ export default function MenuTooltip(props) {
             <MenuInfo isInfo={isInfo}>{t("navigation.infos")}</MenuInfo>
           </Link>
         </MenuButton>
-        {/* <MenuButton>
+        <MenuButton>
           <Link to="/volunteer">
-            <MenuVolunteer isVolunteer={isVolunteer}>
-              {" "}
-              {t("navigation.volunteers")}
-            </MenuVolunteer>
+            <MenuVolunteer isVolunteer={isVolunteer}>{t("navigation.volunteers")}</MenuVolunteer>
           </Link>
-        </MenuButton> */}
+        </MenuButton>
         <MenuButton>
           <Link to="/about">
             <MenuAbout isAbout={isAbout}>{t("navigation.about")}</MenuAbout>
@@ -31,6 +28,16 @@ export default function MenuTooltip(props) {
         <MenuButton>
           <Link to="/code">
             <MenuCode isCode={isCode}>{t("navigation.code")}</MenuCode>
+          </Link>
+        </MenuButton>
+        <MenuButton>
+          <Link to="/awareness">
+            <MenuAwareness isAwareness={isAwareness}>{t("navigation.awareness")}</MenuAwareness>
+          </Link>
+        </MenuButton>
+        <MenuButton>
+          <Link to="/shop">
+            <MenuShop isShop={isShop}>{t("navigation.shop")}</MenuShop>
           </Link>
         </MenuButton>
 
@@ -90,7 +97,7 @@ const MenuGrid = styled.div`
 
 const MenuButton = styled.div`
   padding: 20px;
-  height: 75px;
+  height: auto;
   /* background-color: white; */
   border-radius: 100px;
   margin-bottom: 10px;
@@ -102,29 +109,53 @@ const MenuButton = styled.div`
 const MenuInfo = styled.h1`
   color: white;
   text-align: center;
+  line-height: 0.8;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isInfo ? "#959772 wavy line-through" : "none"};
+    props.isInfo ? "#ff5400 wavy line-through" : "none"};
+`
+
+const MenuVolunteer = styled.h1`
+  color: white;
+  text-align: center;
+  line-height: 0.8;
+  vertical-align: center;
+  text-decoration: ${props =>
+    props.isVolunteer ? "#ff5400 wavy line-through" : "none"};
 `
 
 const MenuAbout = styled.h1`
   color: white;
   text-align: center;
+  line-height: 0.8;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isVerein ? "#ff5400 wavy line-through" : "none"};
+    props.isAbout ? "#ff5400 wavy line-through" : "none"};
 `
 
 const MenuCode = styled.h1`
   color: white;
   text-align: center;
+  line-height: 0.8;
   vertical-align: center;
   text-decoration: ${props =>
     props.isCode ? "#ff5400 wavy line-through" : "none"};
 `
 
-const MenuTickets = styled.h1`
+const MenuAwareness = styled.h1`
   color: white;
   text-align: center;
+  line-height: 0.8;
   vertical-align: center;
+  text-decoration: ${props =>
+    props.isAwareness ? "#ff5400 wavy line-through" : "none"};
+`
+
+const MenuShop = styled.h1`
+  color: white;
+  text-align: center;
+  line-height: 0.8;
+  vertical-align: center;
+  text-decoration: ${props =>
+    props.isShop ? "#ff5400 wavy line-through" : "none"};
 `
