@@ -351,6 +351,10 @@ export default function Lineup() {
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
           </Item>
 
+          {/* <Item> */}
+
+          {/* </Item> */}
+
           {/* <PlaylistSection>
             <PlaylistLeft>
               <Link
@@ -371,9 +375,36 @@ export default function Lineup() {
         {/* <Header>Lineup 2022</Header> */}
         {/* </HoverGroup> */}
       </Container>
+      <FontByGroup>
+        <LinkInline
+          href="https://www.instagram.com/raoulgottschling?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"
+        >
+          <PoweredFont>Font by Raoul Gottschling </PoweredFont>
+          {/* <Powered></Powered> */}
+        </LinkInline>
+      </FontByGroup>
     </Wrapper>
   )
 }
+
+const FontByGroup = styled.div`
+  display: inline-block;
+  /* bottom: -10px; */
+  right: 0px;
+  /* justify-items: end; */
+  /* background: rgba(0, 0, 0, 0.4); */
+`
+
+const PoweredFont = styled(ImageDescription)`
+  margin-left: 0px;
+  /* margin-top: 3px; */
+  /* position: absolute; */
+  color: #f0f263;
+  padding: 10px;
+  background: black;
+  /* text-transform: uppercase; */
+`
 
 const Wrapper = styled.div`
   margin-bottom: 0px;
@@ -398,6 +429,7 @@ const Container = styled.div`
 `
 
 const LineupSection = styled.div`
+  position: relative;
   display: inline-block;
   overflow: hidden;
   justify-items: center;
