@@ -63,7 +63,7 @@
                     "text": "Das Klein und Haarig findet vom 29. Mai bis 01. Juni 2025 auf dem Zeltplatz Christophshof in Bad Wildbad statt.",
                     "link": {
                         "href": "https://goo.gl/maps/muaWAGwPx7nebDjJ9",
-                        "text": "Zeltplatz Christophshof, 75323 Bad Wildbad statt."
+                        "text": "Zeltplatz Christophshof, 75323 Bad Wildbad"
                     }
                 },
                 "storno": {
@@ -76,7 +76,7 @@
                 },
                 "car": {
                     "label": "Anreise mit dem Auto",
-                    "text": "Bitte beachte, dass es in diesem Jahr aufgrund unserer limitierten finanziellen Möglichkeiten und personellen Kapazitäten keine Parkplätze am Gelände und keinen Shuttleservice zu abgelegenen Parkplätzen geben wird. Daher empfehlen wir dir mit öffentlichen Verkehrsmitteln anzureisen. Es gibt eine sehr begrenzte Anzahl an Parkplätzen auf dem Gelände, für deren Nutzung ein Camperticket notwendig ist. Du kannst dieses im Ticketshop kaufen. Bereits gekaufte Autotickets können zu einem Aufpreis in Campertickets umgewandelt werden. Wir werden dich dazu persönlich kontaktieren."
+                    "text": "Bitte beachte, dass es in diesem Jahr aufgrund unserer limitierten finanziellen Möglichkeiten und personellen Kapazitäten keine Parkplätze am Gelände und keinen Shuttleservice zu abgelegenen Parkplätzen geben wird. Daher empfehlen wir dir mit öffentlichen Verkehrsmitteln anzureisen. Es gibt eine sehr begrenzte Anzahl an Parkplätzen auf dem Gelände, für deren Nutzung ein Camperticket notwendig ist. Du kannst dieses im Ticketshop kaufen."
                 },
                 "publictransport": {
                     "label": "Anreise mit Öffis",
@@ -100,7 +100,7 @@
                 },
                 "camp": {
                     "label": "Zelten",
-                    "text": "Zelten ist im Gatheringticket inklusive. Du kannst dein Zelt auf der ausgewiesenen Campingfläche aufstellen. Achtung! Unter dem Zeltplatz verläuft eine Starkstromleitung. Heringe und Zeltanker über 30 cm Länge sind deshalb nicht zulässig."
+                    "text": "Zelten ist im Ticket inklusive. Du kannst dein Zelt auf der ausgewiesenen Campingfläche aufstellen. Achtung! Unter dem Zeltplatz verläuft eine Starkstromleitung. Heringe und Zeltanker über 30 cm Länge sind deshalb nicht zulässig."
                 },
                 "accessibility": {
                     "label": "Barrierefreiheit",
@@ -112,7 +112,7 @@
                 },
                 "food": {
                     "label": "Essen",
-                    "text": "Wir werden ein täglich wechselndes vegetarisches / veganes Tagesgericht sowie unsere Signature Pommes anbieten.  Bitte beachte dass es hierfür begrenzte Öffnungszeiten geben wird. Der Verkauf von Essen endet am Sonntag um 16 Uhr. In diesem Jahr wird es leider kein Verkauf von Frühstück geben."
+                    "text": "Wir werden ein täglich wechselndes vegetarisches / veganes Tagesgericht sowie Signature Pommes und ein Frühstück anbieten.  Bitte beachte dass es hierfür begrenzte Öffnungszeiten geben wird. Der Verkauf von Essen endet am Sonntag Nachmittag."
                 },
                 "drinks": {
                     "label": "Getränke",
@@ -120,7 +120,7 @@
                 },
                 "wc": {
                     "label": "WCs & Duschen",
-                    "text": "Auf dem Gelände gibt es feste sanitäre Anlagen und warme Duschen, solange der Gasvorrat reicht. Tags und Graffitis sind hier nicht erwünscht. Wir müssen sie sonst aufwändig und teuer entfernen lassen."
+                    "text": "Auf dem Gelände gibt es feste sanitäre Anlagen und Duschen. Tags und Graffitis sind hier nicht erwünscht. Wir müssen sie sonst aufwändig und teuer entfernen lassen."
                 },
                 "secu": {
                     "label": "Sicherheit",

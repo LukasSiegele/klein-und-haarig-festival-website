@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 const RingLineup = props => {
-  console.log(props.top)
-
   return <Ring top={props.top} h={props.h} />
 }
 export default RingLineup

@@ -23,7 +23,6 @@ export default function Form(props) {
   const [validation, setValidation] = useState(false)
   const [error, setError] = useState(false)
 
-  console.log("Form props: ", props)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -31,11 +30,9 @@ export default function Form(props) {
   }
 
   useEffect(() => {
-    console.log("validation effect triggered")
 
     const validateEmail = async () => {
       const result = await emailUnused(email)
-      console.log("result =", result)
       setError(!result)
       setValidation(result)
     }

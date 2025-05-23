@@ -19,9 +19,9 @@ export default function Awareness() {
   return (
     <Layout>
       <Wrapper>
-        <MobileNavigation isCode="code" bgColor="black" />
+        <MobileNavigation isAwareness="awareness" bgColor="black" />
 
-        <SideNavigation isCode="code" bgColor="black" />
+        <SideNavigation isAwareness="awareness" bgColor="black" />
         <Content>
           <MainGrid>
             <SideLine />
@@ -133,7 +133,7 @@ const TextSection = styled.div`
 `
 
 const HeaderSection = styled.div`
-  height: 65vh;
+  height: 20vh;
   @media (max-width: 1100px) {
     height: auto;
     margin-bottom: 200px;

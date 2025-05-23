@@ -33,7 +33,7 @@ export default ProductGrid
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px,  1fr));
   gap: 32px;
   width: 100%;
   padding: 24px;

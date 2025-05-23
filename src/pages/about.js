@@ -18,15 +18,14 @@ import FormButton from "../components/buttons/FormButton"
 export default function About() {
   const { t } = useTranslation()
   const { i18n } = useTranslation();
-  console.log("Current language:", i18n.language);
 
   return (
     <Layout>
       {/* <SEO title="Info" /> */}
       <Wrapper>
-        <MobileNavigation isVerein="verein" bgColor="black" />
+        <MobileNavigation isAbout="about" bgColor="black" />
 
-        <SideNavigation isVerein="verein" bgColor="black" />
+        <SideNavigation isAbout="about" bgColor="black" />
         
         <Content>
           <MainGrid>
@@ -213,7 +212,7 @@ const TextSection = styled.div`
 `
 
 const HeaderSection = styled.div`
-  height: 65vh;
+  height: 20vh;
   @media (max-width: 1100px) {
     height: auto;
     margin-bottom: 200px;

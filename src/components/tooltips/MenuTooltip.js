@@ -113,6 +113,9 @@ const MenuInfo = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isInfo ? "#ff5400 wavy line-through" : "none"};
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const MenuVolunteer = styled.h1`
@@ -122,6 +125,9 @@ const MenuVolunteer = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isVolunteer ? "#ff5400 wavy line-through" : "none"};
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const MenuAbout = styled.h1`
@@ -131,6 +137,9 @@ const MenuAbout = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isAbout ? "#ff5400 wavy line-through" : "none"};
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const MenuCode = styled.h1`
@@ -139,7 +148,10 @@ const MenuCode = styled.h1`
   line-height: 0.8;
   vertical-align: center;
   text-decoration: ${props =>
-    props.isCode ? "#ff5400 wavy line-through" : "none"};
+    props.isCode ? "#ff5400 wavy line-through" : "none"}; 
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const MenuAwareness = styled.h1`
@@ -149,6 +161,9 @@ const MenuAwareness = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isAwareness ? "#ff5400 wavy line-through" : "none"};
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const MenuShop = styled.h1`
@@ -158,4 +173,7 @@ const MenuShop = styled.h1`
   vertical-align: center;
   text-decoration: ${props =>
     props.isShop ? "#ff5400 wavy line-through" : "none"};
+  &:hover {
+    cursor: pointer;
+  }
 `

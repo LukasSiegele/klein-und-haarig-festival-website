@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components"
 
 const Ring = (props) =>{
-    console.log(props.left);
     const imgSrc = props.open ? "/images/ring-open.svg" : "/images/ring-closed.svg"
     return(
         <Image src={imgSrc} left={props.left}/>

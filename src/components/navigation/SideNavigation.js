@@ -43,9 +43,9 @@ export default function SideNavigation(props) {
           <ul style={{ listStyle: "none", margin: "0px", alignSelf: "start" }}>
             {languages.map(lng => (
               <li key={lng} style={{ margin: "0px" }}>
-                <Link to={originalPath} language={lng}>
+                <LanguageLink to={originalPath} language={lng}>
                   {lng}
-                </Link>
+                </LanguageLink>
               </li>
             ))}
           </ul>
@@ -137,7 +137,7 @@ const LinkGroup = styled.div`
 const ListInfo = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
-  line-height: 0.8;
+  line-height: 1.2;
   text-decoration: ${props =>
     props.isInfo ? "#ff5400 wavy line-through" : "none"};
 
@@ -149,7 +149,7 @@ const ListInfo = styled(TextSmall)`
 const ListVolunteer = styled(TextSmall)`
   color: white;
   font-family: "Kleber";
-  line-height: 0.8;
+  line-height: 1.2;
   text-decoration: ${props =>
     props.isVolunteer ? "#ff5400 wavy line-through" : "none"};
 
@@ -202,5 +202,12 @@ const ListShop = styled(TextSmall)`
 
   &:hover {
     cursor: pointer;
-  } 
+  }
 `
+
+const LanguageLink = styled(Link)`
+  color: white;
+  opacity: 0.7;
+  font-family: "Kleber";
+`
+

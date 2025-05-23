@@ -126,7 +126,7 @@ const TextSection = styled.div`
 `
 
 const HeaderSection = styled.div`
-  height: 65vh;
+  height: 20vh;
   @media (max-width: 1100px) {
     height: auto;
     margin-bottom: 200px;

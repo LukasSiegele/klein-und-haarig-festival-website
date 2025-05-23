@@ -11,6 +11,11 @@ export default function Footer(props) {
         <WrapperLeft>
           <BuntePlatte>© Bunte Platte e.V.</BuntePlatte>
           <BuntePlatte>{t("footer.footertext")}</BuntePlatte>
+          <AdminLogin>
+            <FooterText>
+              <Link to="/admin/orders">Admin Login</Link>
+            </FooterText>
+          </AdminLogin>
         </WrapperLeft>
         <WrapperRight>
           {/* <Kontakt>
@@ -136,5 +141,14 @@ const Imprint = styled.div``
 const Datenschutz = styled.div``
 
 const AGB = styled.div``
+
+const AdminLogin = styled.div`
+  color: white;
+  opacity: 0.2;
+  font-size: 1em;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+`
 
 const Kontakt = styled.div``

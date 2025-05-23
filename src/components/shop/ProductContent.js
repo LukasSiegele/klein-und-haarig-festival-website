@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ToggleButton from "../buttons/ToggleButton";
 import PayPalButton from "../buttons/PaypalButton";
-import { supabase } from "../../utils/supabaseClient"; // <-- Supabase Client importieren
-import { navigate } from "gatsby"; // <-- Gatsby Navigation importieren
+import { supabase } from "../../utils/supabaseClient";
+import { navigate } from "gatsby";
+import PretixWidget from '../pretix/PretixWidget';
 
 const ProductContent = ({ product }) => {
 
@@ -11,14 +12,14 @@ const ProductContent = ({ product }) => {
     product.sizes && product.sizes.length > 0 ? product.sizes[0].label : ""
   );
 
-  // discount code constants
+  // Discount code constants
   const [discountCode, setDiscountCode] = useState('');
   const [appliedDiscountCode, setAppliedDiscountCode] = useState(null);
   const [discountStatus, setDiscountStatus] = useState('idle');
   const [discountErrorMessage, setDiscountErrorMessage] = useState('');
   const [effectivePrice, setEffectivePrice] = useState(product ? product.price : 0);
   const [isDiscountInputVisible, setIsDiscountInputVisible] = useState(false);
-  const [userIdentifier, setUserIdentifier] = useState(''); // <-- NEU: State für Namen
+  const [userIdentifier, setUserIdentifier] = useState('');
 
   // useEffect to reset the discount code input field when the product changes
   useEffect(() => {
@@ -30,11 +31,11 @@ const ProductContent = ({ product }) => {
         setDiscountStatus('idle');
         setDiscountErrorMessage('');
         setIsDiscountInputVisible(false);
-        setUserIdentifier(''); // <-- NEU: Namen zurücksetzen
+        setUserIdentifier('');
     }
   }, [product]);
 
-  // *** HIER: Angepasste Preisformatierung ***
+
   // Formatiert den *originalen* Preis
   const formattedOriginalPrice = typeof product?.price === 'number'
     ? product.price.toFixed(2)
@@ -44,7 +45,6 @@ const ProductContent = ({ product }) => {
   const formattedEffectivePrice = typeof effectivePrice === 'number'
     ? effectivePrice.toFixed(2)
     : "0.00";
-  // *** ENDE: Angepasste Preisformatierung ***
 
 
   // Größenänderung behandeln
@@ -52,14 +52,13 @@ const ProductContent = ({ product }) => {
     setSelectedSize(sizeLabel);
   };
 
-  // handle apply code (calls DEPLOYED function) - Unverändert zur letzten Version
+  // handle apply code (calls DEPLOYED function)
   const handleApplyCode = async () => {
     setDiscountStatus('loading');
     setDiscountErrorMessage('');
     setAppliedDiscountCode(null);
-    setEffectivePrice(product.price); // Preis zurücksetzen vor Validierung
+    setEffectivePrice(product.price);
 
-    // Stelle sicher, dass wir eine Produkt-ID haben (wichtig für den Funktionsaufruf)
     if (!product || !product.id) {
         console.error("Product ID missing for code validation!");
         setDiscountStatus('error');
@@ -68,57 +67,38 @@ const ProductContent = ({ product }) => {
     }
 
     try {
-      console.log(`Invoking DEPLOYED function 'validate-code' with code: "${discountCode}" and productId: "${product.id}"`);
-
-      // Rufe die DEPLOYTE Edge Function 'validate-code' auf
-      // Geht davon aus, dass dein 'supabase' Client (import { supabase } from "../../utils/supabaseClient";)
-      // korrekt mit deiner LIVE Supabase URL und dem LIVE Anon Key konfiguriert ist.
       const { data, error: functionError } = await supabase.functions.invoke('validate-code', {
-        body: {
-          code: discountCode,
-          productId: product.id // Übergibt die Produkt-ID an die Funktion
-        },
+        body: { code: discountCode, productId: product.id },
       });
 
-      // Fehler beim Aufrufen der Funktion selbst (Netzwerk, Funktion nicht gefunden etc.)
       if (functionError) {
         console.error("Error invoking Supabase function 'validate-code':", functionError);
-        // Gib eine generische Fehlermeldung aus
         throw new Error("Netzwerkfehler oder Funktion nicht erreichbar.");
       }
-
       console.log("Response from deployed 'validate-code':", data);
-
-      // Verarbeite die Antwort der Funktion (data.valid, data.reason etc.)
       if (data && data.valid === true) {
-        // Code ist gültig
         setDiscountStatus('valid');
-        setAppliedDiscountCode(discountCode); // Den erfolgreich validierten Code speichern
-        setEffectivePrice(0); // Preis auf 0 setzen
+        setAppliedDiscountCode(discountCode);
+        setEffectivePrice(0);
         setDiscountErrorMessage('');
       } else {
-        // Code ist ungültig oder die Funktion gab einen internen Fehler zurück ({ valid: false, ... })
         setDiscountStatus('invalid');
-        // Nutze die detaillierte Nachricht von der Funktion (reason/error), falls vorhanden
         const message = data?.reason || data?.error || 'Code ungültig oder nicht anwendbar.';
         setDiscountErrorMessage(message);
-        setEffectivePrice(product.price); // Preis auf Original zurücksetzen
+        setEffectivePrice(product.price);
         setAppliedDiscountCode(null);
       }
-
     } catch (error) {
-      // Fängt Fehler vom .invoke() oder manuell geworfene Fehler (z.B. Netzwerk)
       console.error("Error during discount code validation process:", error);
       setDiscountStatus('error');
-      // Nutze die Error-Message aus dem Catch-Block
       setDiscountErrorMessage(error.message || 'Fehler bei der Code-Prüfung. Bitte erneut versuchen.');
-      setEffectivePrice(product.price); // Sicherstellen, dass Preis zurückgesetzt ist
+      setEffectivePrice(product.price);
       setAppliedDiscountCode(null);
     }
   };
 
 
-    // handler to remove code again
+    // Handler to remove code again
     const handleRemoveCode = () => {
       setDiscountCode('');
       setAppliedDiscountCode(null);
@@ -130,52 +110,33 @@ const ProductContent = ({ product }) => {
     };
 
 
-  // handler purchase success
+  // Handler purchase success
   const handlePurchaseSuccess = async (options = {}) => {
       const { paypalDetails, userId } = options;
-      // *** NEU: Debugging Logs ***
-      console.log("handlePurchaseSuccess aufgerufen mit Optionen:", options);
-      console.log("paypalDetails Objekt:", paypalDetails);
-      console.log("Versuche PayPal Order ID zu extrahieren:", paypalDetails?.id);
-      // *** ENDE: Debugging Logs ***
-      console.log("Processing purchase success. Options:", options);
 
-
-    // Check, that product ID is available
     if (!product || !product.id) {
         console.error("Produkt oder Produkt-ID fehlt!");
         alert("Ein interner Fehler ist aufgetreten (Produkt-ID fehlt).");
         return;
     }
-    // Makes sure a size is selected, only if size exists
-    const hasAnySizesCheck = product.sizes && product.sizes.length > 0; // Local check here
+    const hasAnySizesCheck = product.sizes && product.sizes.length > 0;
     if (hasAnySizesCheck && !selectedSize) {
        console.error("Keine Größe für den Kauf ausgewählt!");
        alert("Bitte wähle zuerst eine Größe aus.");
-       return; // Cancel function
+       return;
     }
 
-
-    // Schritt 1: Stock Update (wie bisher)
     try {
-        console.log(`Versuche Stock-Update für Produkt ${product.id}, Größe ${selectedSize || 'N/A'}`); // N/A if no size
-        // Call the deployed Edge Function 'decrement-stock'
         const { data: updateResult, error: functionError } = await supabase.functions.invoke(
-            'decrement-stock', // Name of the Edge Function
-            {
-                body: { productId: product.id, sizeLabel: selectedSize }, // Send data (selectedSize is "" if no size)
-            }
+            'decrement-stock',
+            { body: { productId: product.id, sizeLabel: selectedSize } }
         );
 
-        // Error handling for call and function
         if (functionError) throw functionError;
         if (updateResult && !updateResult.success) {
            throw new Error(updateResult.error || 'Stock update failed.');
         }
 
-        console.log('Stock update erfolgreich:', updateResult);
-
-        // Step 2: Saves orders in Supabase table
         const orderData = {
           product_id: product.id,
           product_name: product.name,
@@ -187,27 +148,19 @@ const ProductContent = ({ product }) => {
         };
 
         try {
-          console.log("Trying to save order to Supabase:", orderData);
-          const { error: orderError } = await supabase
-            .from('orders') // Name of our orders table in Supabase
-            .insert([orderData]);
-
+          const { error: orderError } = await supabase.from('orders').insert([orderData]);
           if (orderError) {
             console.error("Error when saving the order in Supabase:", orderError);
           } else {
-            console.log("Order successfully saved in Supabase.");
           }
         } catch(e) {
            console.error("Unerwarteter Fehler beim Speichern der Bestellung:", e);
         }
 
-        // If a code was used, add +1 to the usage counter
         if (appliedDiscountCode) {
-            console.log(`Trying to update usage counter for discount code ... ${appliedDiscountCode}`);
             try {
-                // Calls Edge Function 'increment-discount-usage'
                 const { error: incrementError } = await supabase.functions.invoke(
-                    'increment-discount-usage', // Name of edge function
+                    'increment-discount-usage',
                     { body: { code: appliedDiscountCode } }
                 );
                 if (incrementError) {
@@ -216,21 +169,13 @@ const ProductContent = ({ product }) => {
                     console.log(`Sent call to raise usage counter for ${appliedDiscountCode}`);
                 }
             } catch (e) {
-                // Fängt Fehler beim Aufruf der 'invoke'-Methode selbst ab
                 console.error("!!! Unexpected error for increment-discount-usage:", e);
             }
         }
-
-
-        // Step 3: Navigate to thank you page
         navigate(`/thanks/`);
-
     } catch (error) {
-        // Dieser Catch fängt primär Fehler vom Stock-Update ab
         console.error('Fehler bei der Kaufverarbeitung (Stock-Update):', error);
-        // Alert-Nachricht angepasst, um klarzustellen, was schief lief
         alert(`Payment successfull or item free! But there was a problem updating stock: ${error.message}. Error has been logged, you do not have to do anything.`);
-        // Trotzdem zur Danke-Seite navigieren, da Zahlung/Anspruch erfolgte. Stock muss ggf. manuell korrigiert werden.
         navigate(`/thanks/`);
     }
   };
@@ -244,7 +189,7 @@ const ProductContent = ({ product }) => {
   // Check if product has any sizes with "stock" > 0 (uses product.sizes)
   const hasSizesWithStock = product.sizes?.some(sizeInfo => sizeInfo.stock > 0);
   // Check if there are any sizes defined for the product
-  const hasAnySizes = product.sizes && product.sizes.length > 0; // Definition hier für Nutzung im JSX
+  const hasAnySizes = product.sizes && product.sizes.length > 0;
 
 
   return (
@@ -252,146 +197,152 @@ const ProductContent = ({ product }) => {
       {/* Produktinfos */}
       <DescriptionGroup>
         <ProductName>{product.name || "Produktname"}</ProductName>
-        <ProductDescription>{product.longDescription || "Keine Beschreibung verfügbar."}</ProductDescription>
+        {/* Hier war vorher short_description, jetzt long_description für Konsistenz,
+            da Tickets wahrscheinlich eher long_description verwenden */}
+        <ProductDescription>{product.longDescription || product.short_description || "Keine Beschreibung verfügbar."}</ProductDescription>
         <ProductWarning>{product.warning || ""}</ProductWarning>
       </DescriptionGroup>
 
       {/* Adjusted price display */}
       <Price>
-        {discountStatus === 'valid' && appliedDiscountCode ? (
-          <>
-            <span style={{ textDecoration: 'line-through', opacity: 0.6, marginRight: '8px' }}>
-              {formattedOriginalPrice} €
-            </span>
-            <span style={{ fontWeight: 'bold', color: '#4CAF50' }}>
-                {formattedEffectivePrice} €
-            </span>
-          </>
+        {/* Für Tickets könnte der Preis auch von Pretix kommen, aber hier nehmen wir den Supabase-Preis */}
+        {product.product_type === 'ticket' && product.price > 0 ? (
+             formattedOriginalPrice + " € (via Pretix)"
         ) : (
-          // Uses formattedOriginalPrice
-          formattedOriginalPrice + " €"
+            discountStatus === 'valid' && appliedDiscountCode ? (
+              <>
+                <span style={{ textDecoration: 'line-through', opacity: 0.6, marginRight: '8px' }}>
+                  {formattedOriginalPrice} €
+                </span>
+                <span style={{ fontWeight: 'bold', color: '#4CAF50' }}>
+                    {formattedEffectivePrice} €
+                </span>
+              </>
+            ) : (
+              formattedOriginalPrice + " €"
+            )
         )}
       </Price>
 
-      {/* Size selection */}
-      {hasAnySizes && (
+      {/* Size selection - Nur für Nicht-Tickets anzeigen, wenn Größen vorhanden sind */}
+      {product.product_type !== 'ticket' && hasAnySizes && (
         <SizeSelector>
           <ToggleButton
             label="Size"
             selectedLabel={selectedSize}
             options={product.sizes}
-            onChange={handleSizeChange} // this functions sets selectedSize
+            onChange={handleSizeChange}
           />
         </SizeSelector>
       )}
 
-      {/* Discount Code show/hide */}
-      {product.price > 0 && (
-         <>
-           {!isDiscountInputVisible && discountStatus !== 'valid' && (
-             <RevealDiscountButton onClick={() => setIsDiscountInputVisible(true)}>
-               Received a code from us? Enter here!
-             </RevealDiscountButton>
-           )}
-
-           {/* Input Field + Buttons (only visible if isDiscountInputVisible is true) */}
-           {isDiscountInputVisible && (
-              <DiscountSection>
-                <DiscountLabel htmlFor="discountCodeInput">Your code</DiscountLabel>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <DiscountInput
-                    id="discountCodeInput"
-                    type="text"
-                    value={discountCode}
-                    onChange={(e) => setDiscountCode(e.target.value)}
-                    placeholder="Code eingeben"
-                    disabled={discountStatus === 'valid' || discountStatus === 'loading'}
-                    aria-label="Rabattcode Eingabe"
-                  />
-                  {discountStatus !== 'valid' && (
-                    <ApplyButton
-                      onClick={handleApplyCode}
-                      disabled={!discountCode || discountStatus === 'loading'}
-                    >
-                      {discountStatus === 'loading' ? 'Checking...' : 'Check'}
-                    </ApplyButton>
-                  )}
-                </div>
-                 {/* Statusnachrichten & Entfernen-Button */}
-                 {discountStatus === 'loading' && <DiscountMessage type="info">Code wird geprüft...</DiscountMessage>}
-                 {discountStatus === 'invalid' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
-                 {discountStatus === 'error' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
-                 {discountStatus === 'valid' && appliedDiscountCode && (
-                   <>
-                     <DiscountMessage type="success">Code "{appliedDiscountCode}" angewendet!</DiscountMessage>
-                     <RemoveButton onClick={handleRemoveCode}>
-                        Remove code
-                     </RemoveButton>
-                   </>
-                 )}
-              </DiscountSection>
-           )}
-         </>
-       )}
-
-       {/* Checkout Button logic (PayPal or 0€ Button via code) */}
-       {/* Step 1: Item has to be available */}
-      {(hasSizesWithStock || !hasAnySizes) ? (
+      {product.product_type === 'ticket' ? (
+        // If it is a product of type: "ticket"
+        product.pretix_event_url ? (
+          <PretixWidget eventUrl={product.pretix_event_url} />
+        ) : (
+          <InfoMessage>Ticketverkaufsinformationen bald verfügbar.</InfoMessage>
+        )
+      ) : (
+        // If the prdocut is not a ticket, but a different type (e.g. merchandise):
         <>
-          {/* Step 2: effective price is 0 by a valid code */}
-          {effectivePrice <= 0 && discountStatus === 'valid' ? (
-             <CheckoutButtonWrapper style={{ flexDirection: 'column', alignItems: 'stretch' }}>
-               {/* NEW: Input Field for name */}
-               <NameInput
-                 id="userNameInput"
-                 type="text"
-                 value={userIdentifier} // Verwendet neuen State
-                 onChange={(e) => setUserIdentifier(e.target.value)} // Aktualisiert neuen State
-                 placeholder="Enter your full name..."
-                 aria-label="Name for order"
-               />
+          {/* Discount Code show/hide */}
+          {product.price > 0 && (
+             <>
+               {!isDiscountInputVisible && discountStatus !== 'valid' && (
+                 <RevealDiscountButton onClick={() => setIsDiscountInputVisible(true)}>
+                   Received a code from us? Enter here!
+                 </RevealDiscountButton>
+               )}
+               {isDiscountInputVisible && (
+                  <DiscountSection>
+                    <DiscountLabel htmlFor="discountCodeInput">Your code</DiscountLabel>
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                      <DiscountInput
+                        id="discountCodeInput"
+                        type="text"
+                        value={discountCode}
+                        onChange={(e) => setDiscountCode(e.target.value)}
+                        placeholder="Code eingeben"
+                        disabled={discountStatus === 'valid' || discountStatus === 'loading'}
+                        aria-label="Rabattcode Eingabe"
+                      />
+                      {discountStatus !== 'valid' && (
+                        <ApplyButton
+                          onClick={handleApplyCode}
+                          disabled={!discountCode || discountStatus === 'loading'}
+                        >
+                          {discountStatus === 'loading' ? 'Checking...' : 'Check'}
+                        </ApplyButton>
+                      )}
+                    </div>
+                     {discountStatus === 'loading' && <DiscountMessage type="info">Code wird geprüft...</DiscountMessage>}
+                     {discountStatus === 'invalid' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
+                     {discountStatus === 'error' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
+                     {discountStatus === 'valid' && appliedDiscountCode && (
+                       <>
+                         <DiscountMessage type="success">Code "{appliedDiscountCode}" angewendet!</DiscountMessage>
+                         <RemoveButton onClick={handleRemoveCode}>
+                            Remove code
+                         </RemoveButton>
+                       </>
+                     )}
+                  </DiscountSection>
+               )}
+             </>
+           )}
 
-               <GetFreeItemButton
-                 // Ruft handlePurchaseSuccess jetzt mit Optionen auf
-                 onClick={() => handlePurchaseSuccess({ userId: userIdentifier })} // Übergibt den Namen
-                 // Deaktivieren, wenn Größe fehlt ODER Name fehlt
-                 disabled={(hasAnySizes && !selectedSize) || !userIdentifier.trim()}
-                 title={!userIdentifier.trim() ? "Enter name to continue" : (hasAnySizes && !selectedSize ? "Select size first" : "Order item")}
-                 style={{ marginTop: '10px' }}
-               >
-                 {/* Text anpassen, falls Größe oder Name fehlt */}
-                 {!userIdentifier.trim() ? 'Enter name to continue' : (hasAnySizes && !selectedSize ? 'Select size!' : 'Order item')}
-               </GetFreeItemButton>
-             </CheckoutButtonWrapper>
-
+           {/* Checkout Button logic (PayPal or 0€ Button via code) */}
+           {/* Step 1: Item has to be available */}
+          {(hasSizesWithStock || !hasAnySizes) ? (
+            <>
+              {/* Step 2: effective price is 0 by a valid code */}
+              {effectivePrice <= 0 && discountStatus === 'valid' ? (
+                 <CheckoutButtonWrapper style={{ flexDirection: 'column', alignItems: 'stretch' }}>
+                   <NameLabel htmlFor="userNameInput">Dein Name (für Zuordnung):</NameLabel>
+                   <NameInput
+                     id="userNameInput"
+                     type="text"
+                     value={userIdentifier}
+                     onChange={(e) => setUserIdentifier(e.target.value)}
+                     placeholder="Enter your full name..."
+                     aria-label="Name for order"
+                   />
+                   <GetFreeItemButton
+                     onClick={() => handlePurchaseSuccess({ userId: userIdentifier })}
+                     disabled={(hasAnySizes && !selectedSize) || !userIdentifier.trim()}
+                     title={!userIdentifier.trim() ? "Enter name to continue" : (hasAnySizes && !selectedSize ? "Select size first" : "Order item")}
+                     style={{ marginTop: '10px' }}
+                   >
+                     {!userIdentifier.trim() ? 'Enter name to continue' : (hasAnySizes && !selectedSize ? 'Select size!' : 'Order item')}
+                   </GetFreeItemButton>
+                 </CheckoutButtonWrapper>
+               ) : (
+                 /* Step 3: effective price is bigger than 0 */
+                 effectivePrice > 0 ? (
+                    /* Step 4: sizes are not needed or a size is selected */
+                    (!hasAnySizes || selectedSize) ? (
+                      <PayPalButtonWrapper>
+                        <PayPalButton
+                          amount={formattedEffectivePrice}
+                          selectedSize={selectedSize}
+                          productName={product.name}
+                          onSuccess={handlePurchaseSuccess}
+                        />
+                      </PayPalButtonWrapper>
+                    ) : (
+                       hasAnySizes && <InfoMessage>Bitte wähle eine Größe.</InfoMessage>
+                    )
+                 ) : (
+                   null
+                 )
+               )}
+            </>
            ) : (
-             /* Step 3: effective price is bigger than 0 */
-             effectivePrice > 0 ? (
-                /* Step 4: sizes are not needed or a size is selected */
-                (!hasAnySizes || selectedSize) ? (
-                  <PayPalButtonWrapper>
-                    <PayPalButton
-                      amount={formattedEffectivePrice} // send the current positive price
-                      selectedSize={selectedSize}
-                      productName={product.name}
-                      onSuccess={handlePurchaseSuccess} // sends PayPal ID Details as an Object (also saved in Supabase)
-                    />
-                  </PayPalButtonWrapper>
-                ) : (
-                   /* Case: Price > 0, but size is missing */
-                   hasAnySizes && <InfoMessage>Bitte wähle eine Größe.</InfoMessage>
-                )
-             ) : (
-               /* Case: Price is 0, but not through discount code (shouldnt happen) */
-               null
-             )
+             hasAnySizes && <InfoMessage>Dieses Produkt ist leider ausverkauft.</InfoMessage>
            )}
         </>
-       ) : (
-         /* Case: Article is sould out (only if sizes exist) */
-         hasAnySizes && <InfoMessage>Dieses Produkt ist leider ausverkauft.</InfoMessage>
-       )}
-
+      )}
     </ProductContentContainer>
   );
 };

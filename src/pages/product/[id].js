@@ -24,7 +24,7 @@ const ProductDetail = ({ pageContext }) => {
       // Fetch product from Supabase based on the product id    
       const { data, error } = await supabase
         .from("products")
-        .select("*, images")
+        .select("*")
         .eq("id", pageContext.id) // Use pageContext.id to fetch specific product
         .single(); // Get only one record
 

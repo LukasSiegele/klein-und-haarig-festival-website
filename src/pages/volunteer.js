@@ -37,7 +37,9 @@ export default function Volunteer() {
                     <InfoHeadline>
                       {t("pages.volunteer.headline")}
                     </InfoHeadline>
-                    <AnmeldeGroup>
+                  </HeaderSection>
+
+                  <AnmeldeGroup>
                       <a
                         href={t("pages.volunteer.button.link")}
                         target="_blank"
@@ -51,8 +53,7 @@ export default function Volunteer() {
                       {/* <InfoText>
                         Bald findest du hier den Link zur Volunteer Anmeldung.
                       </InfoText> */}
-                    </AnmeldeGroup>
-                  </HeaderSection>
+                  </AnmeldeGroup>
 
                   <InfoSection>
                     <InfoLabel>
@@ -186,17 +187,15 @@ const TextSection = styled.div`
 `
 
 const HeaderSection = styled.div`
-  height: 65vh;
+  height: 20vh;
   @media (max-width: 1100px) {
     height: auto;
-    margin-bottom: 200px;
+    margin-bottom: 170px;
   }
 `
 
 const AnmeldeGroup = styled.div`
-  @media (max-width: 1100px) {
-    margin-bottom: 100px;
-  }
+  margin-bottom: 100px;
 `
 
 const InfoSection = styled.div`
@@ -208,7 +207,6 @@ const InfoHeadline = styled.h3`
   display: inline-block;
   max-width: 800px;
   text-indent: 60px;
-  margin-bottom: 200px;
 `
 
 const InfoLabel = styled.h3`
