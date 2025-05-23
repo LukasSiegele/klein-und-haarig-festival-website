@@ -76,11 +76,11 @@
                 },
                 "car": {
                     "label": "Arrival by car",
-                    "text": "Please note that this year, due to our limited financial and personnel capacities, there will be no parking spaces on site and no shuttle service to remote car parks. We therefore recommend traveling by public transport. There is a very limited number of parking spaces on site. A campervan ticket, which you can buy in our ticket shop, is required to use them. Car tickets that have already been purchased can be converted into campervan tickets at an additional cost. We will contact you personally."
+                    "text": "Please note that this year, due to our limited financial and personnel capacities, there will be no parking spaces on site and no shuttle service to remote car parks. We therefore recommend traveling by public transport. There is a very limited number of parking spaces on site. A campervan ticket, which you can buy in our ticket shop, is required to use them."
                 },
                 "publictransport": {
                     "label": "Arrival by public transport",
-                    "text": "The nearest train station is \"Bad Wildbad Bahnhof\". From there, the <1>bus line 7780</1> takes you directly to the site approx. every 30 minutes - bus stop \"Bad Wildbad, Zeltplatz\" We’ll provide information on favorable connections (local and long-distance transport) on Instagram.",
+                    "text": "The nearest train station is \"Bad Wildbad Bahnhof\". From there, the <1>bus line 7780</1> takes you directly to the site approx. every 30 minutes - bus stop \"Bad Wildbad, Zeltplatz\". We’ll provide information on favorable connections (local and long-distance transport) on Instagram.",
                     "link": {
                         "href": "https://www.fahrplan.guru/reise/a?date=15.07.2022&destination_country=Deutschland&destination_state=Baden-W%C3%BCrttemberg&destination_type=stop&destinname=Zeltplatz%2C%20Bad%20Wildbad&direction=dep&origin_country=Deutschland&origin_state=Baden-W%C3%BCrttemberg&origin_type=stop&originname=Bad%20Wildbad%20Bahnhof&passengers_train_card=&person=1&time=11%3A30&transport_type=",
                         "text": "bus line 7780"
@@ -100,7 +100,7 @@
                 },
                 "camp": {
                     "label": "Camping",
-                    "text": "Camping is included in the gathering ticket. You can pitch your tent in the designated camping area. Please take note: A power line runs under the camping area. Pegs and tent anchors longer than 30 cm are therefore not permitted."
+                    "text": "Camping is included in the ticket. You can pitch your tent in the designated camping area. Please take note: A power line runs under the camping area. Pegs and tent anchors longer than 30 cm are therefore not permitted."
                 },
                 "accessibility": {
                     "label": "Accessibility",
@@ -112,7 +112,7 @@
                 },
                 "food": {
                     "label": "Food",
-                    "text": "We will offer a daily changing vegetarian / vegan dish of the day as well as our signature fries.  Please note that there will be limited opening hours. The sale of food ends on Sunday at 4pm. Unfortunately we will not be selling breakfast this year."
+                    "text": "We will offer a daily changing vegetarian / vegan dish of the day, a breakfast as well as our signature fries.  Please note that there will be limited opening hours. The sale of food ends on Sunday afternoon."
                 },
                 "drinks": {
                     "label": "Drinks",
@@ -120,7 +120,7 @@
                 },
                 "wc": {
                     "label": "Toilets & showers",
-                    "text": "There are permanent sanitary facilities and hot showers on the site (as long as the gas supply lasts).Tags and graffiti are not welcome here. Otherwise we will need to have them removed at for a high cost."
+                    "text": "There are permanent sanitary facilities and showers on site.Tags and graffiti are not welcome here. Otherwise we will need to have them removed at a high cost."
                 },
                 "secu": {
                     "label": "Security",    
