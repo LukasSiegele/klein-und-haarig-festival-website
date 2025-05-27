@@ -380,6 +380,7 @@ export default function Lineup() {
           href="https://www.instagram.com/raoulgottschling?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
         >
+          <ArtworkByLabel>Artwork by Anja Lekavski</ArtworkByLabel>
           <PoweredFont>Font by Raoul Gottschling </PoweredFont>
           {/* <Powered></Powered> */}
         </LinkInline>
@@ -396,14 +397,22 @@ const FontByGroup = styled.div`
   /* background: rgba(0, 0, 0, 0.4); */
 `
 
+const ArtworkByLabel = styled(ImageDescription)`
+  margin-left: 0px;
+  font-size: 1em;
+  color: #f0f263;
+  padding: 10px 10px 0px 10px;
+  background: black;
+  text-transform: uppercase;
+`
+
 const PoweredFont = styled(ImageDescription)`
   margin-left: 0px;
-  /* margin-top: 3px; */
-  /* position: absolute; */
+  font-size: 1em;
   color: #f0f263;
   padding: 10px;
   background: black;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
 `
 
 const Wrapper = styled.div`

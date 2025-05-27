@@ -137,6 +137,14 @@ const ProductContent = ({ product }) => {
            throw new Error(updateResult.error || 'Stock update failed.');
         }
 
+        let payerFullName = null;
+        if (paypalDetails && paypalDetails.payer && paypalDetails.payer.name) {
+          const givenName = paypalDetails.payer.name.given_name || '';
+          const surname = paypalDetails.payer.name.surname || '';
+          payerFullName = `${givenName} ${surname}`.trim();
+          if (!payerFullName) payerFullName = null; // Falls beide leer, auf null setzen
+        }
+
         const orderData = {
           product_id: product.id,
           product_name: product.name,
@@ -144,7 +152,7 @@ const ProductContent = ({ product }) => {
           price_paid: effectivePrice,
           discount_code_used: appliedDiscountCode || null,
           paypal_order_id: paypalDetails?.id || null,
-          user_identifier: userId || null
+          user_identifier: userId || payerFullName || null
         };
 
         try {
