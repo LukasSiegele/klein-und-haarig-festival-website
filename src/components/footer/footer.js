@@ -90,6 +90,10 @@ const BuntePlatte = styled.p`
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
+
+  @media (max-width: 800px) {
+    font-size: 0.65em;
+  }
 `
 
 const Description = styled.p`
@@ -100,8 +104,10 @@ const Description = styled.p`
   font-style: normal;
   font-weight: 500;
   margin-top: 20px;
+
   @media (max-width: 800px) {
     margin-top: 10px;
+    font-size: 0.65em;
   }
 `
 const FooterText = styled.p`
@@ -110,6 +116,10 @@ const FooterText = styled.p`
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
+
+  @media (max-width: 800px) {
+    font-size: 0.65em;
+  }
 `
 
 const WrapperLeft = styled.div`
@@ -144,11 +154,12 @@ const AGB = styled.div``
 
 const AdminLogin = styled.div`
   color: white;
-  opacity: 0.2;
+  opacity: 0.3;
   font-size: 1em;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
+  padding-top: 4px;
 `
 
 const Kontakt = styled.div``

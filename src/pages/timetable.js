@@ -35,6 +35,6 @@ export const query = graphql`
 `
 
 const Wrapper = styled.div`
-  padding: 120px 40px;
+  padding: 0px 40px;
   background: black;
 `

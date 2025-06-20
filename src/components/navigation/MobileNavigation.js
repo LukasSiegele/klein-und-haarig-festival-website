@@ -45,7 +45,6 @@ const Mobile = styled.div`
 `
 
 const Wrapper = styled.div`
-  /* height: 75px; */
   background-color: ${props => props.bgColor};
   position: fixed;
   z-index: 1000;
@@ -55,7 +54,6 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 6px 10px;
-  /* height: 80px; */
 `
 
 const SideNavLogoWrapper = styled.div`

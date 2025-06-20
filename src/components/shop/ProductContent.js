@@ -20,6 +20,14 @@ const ProductContent = ({ product }) => {
   const [effectivePrice, setEffectivePrice] = useState(product ? product.price : 0);
   const [isDiscountInputVisible, setIsDiscountInputVisible] = useState(false);
   const [userIdentifier, setUserIdentifier] = useState('');
+  const [manualShippingAddress, setManualShippingAddress] = useState({
+    line1: '',
+    line2: '',
+    city: '',
+    postal_code: '',
+    state: '',
+    country_code: '',
+  });
 
   // useEffect to reset the discount code input field when the product changes
   useEffect(() => {
@@ -32,6 +40,7 @@ const ProductContent = ({ product }) => {
         setDiscountErrorMessage('');
         setIsDiscountInputVisible(false);
         setUserIdentifier('');
+        setManualShippingAddress({ line1: '', line2: '', city: '', postal_code: '', state: '', country_code: '' });
     }
   }, [product]);
 
@@ -41,18 +50,27 @@ const ProductContent = ({ product }) => {
     ? product.price.toFixed(2)
     : "0.00";
 
-  // Formatiert den *effektiven* Preis (der rabattiert sein könnte)
+  // Formatiert den *effektiven* Preis (der rabattiert oder sogar 0€ sein könnte) via einem "Discount Code"
   const formattedEffectivePrice = typeof effectivePrice === 'number'
     ? effectivePrice.toFixed(2)
     : "0.00";
 
 
-  // Größenänderung behandeln
-  const handleSizeChange = (sizeLabel) => { // Hier kommt das Label (z.B. "M") an
+  // Handles size changes
+  const handleSizeChange = (sizeLabel) => { // This is where the Label (e.g. "XL") arrives
     setSelectedSize(sizeLabel);
   };
 
-  // handle apply code (calls DEPLOYED function)
+  // Handler for address changes
+  const handleAddressChange = (e) => {
+    const { name, value } = e.target;
+    setManualShippingAddress(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  // Handle apply code (calls DEPLOYED function)
   const handleApplyCode = async () => {
     setDiscountStatus('loading');
     setDiscountErrorMessage('');
@@ -107,12 +125,13 @@ const ProductContent = ({ product }) => {
       setEffectivePrice(product.price);
       setIsDiscountInputVisible(false);
       setUserIdentifier('');
+      setManualShippingAddress({ line1: '', line2: '', city: '', postal_code: '', state: '', country_code: '' });
     };
 
 
   // Handler purchase success
   const handlePurchaseSuccess = async (options = {}) => {
-      const { paypalDetails, userId } = options;
+      const { paypalDetails, userId, manualAddress } = options; 
 
     if (!product || !product.id) {
         console.error("Produkt oder Produkt-ID fehlt!");
@@ -136,15 +155,42 @@ const ProductContent = ({ product }) => {
         if (updateResult && !updateResult.success) {
            throw new Error(updateResult.error || 'Stock update failed.');
         }
-
+        
         let payerFullName = null;
-        if (paypalDetails && paypalDetails.payer && paypalDetails.payer.name) {
-          const givenName = paypalDetails.payer.name.given_name || '';
-          const surname = paypalDetails.payer.name.surname || '';
-          payerFullName = `${givenName} ${surname}`.trim();
-          if (!payerFullName) payerFullName = null; // Falls beide leer, auf null setzen
+        let shippingAddressForDb = {};
+
+        // PAYMENT OPTION 1: via Paypal, grabs address from Paypal.
+        if (paypalDetails) {
+            if (paypalDetails.payer?.name) {
+              const givenName = paypalDetails.payer.name.given_name || '';
+              const surname = paypalDetails.payer.name.surname || '';
+              payerFullName = `${givenName} ${surname}`.trim();
+            }
+            if (paypalDetails.purchase_units?.[0]?.shipping?.address) {
+              const shipping = paypalDetails.purchase_units[0].shipping.address;
+              shippingAddressForDb = {
+                  shipping_address_line_1: shipping.address_line_1,
+                  shipping_address_line_2: shipping.address_line_2,
+                  shipping_city: shipping.admin_area_2,
+                  shipping_state: shipping.admin_area_1,
+                  shipping_postal_code: shipping.postal_code,
+                  shipping_country_code: shipping.country_code
+              };
+            }
+        // PAYMENT OPTION 2: via Code, manual entry of address
+        } else if (manualAddress) {
+            shippingAddressForDb = {
+              shipping_address_line_1: manualAddress.line1,
+              shipping_address_line_2: manualAddress.line2,
+              shipping_city: manualAddress.city,
+              shipping_state: manualAddress.state,
+              shipping_postal_code: manualAddress.postal_code,
+              shipping_country_code: manualAddress.country_code
+            };
         }
 
+
+        // Logs all the data from a sale into our database
         const orderData = {
           product_id: product.id,
           product_name: product.name,
@@ -152,7 +198,8 @@ const ProductContent = ({ product }) => {
           price_paid: effectivePrice,
           discount_code_used: appliedDiscountCode || null,
           paypal_order_id: paypalDetails?.id || null,
-          user_identifier: userId || payerFullName || null
+          user_identifier: userId || payerFullName || null,
+          ...shippingAddressForDb // <-- Fügt alle Adressfelder (ob von PayPal oder manuell) hinzu
         };
 
         try {
@@ -160,6 +207,7 @@ const ProductContent = ({ product }) => {
           if (orderError) {
             console.error("Error when saving the order in Supabase:", orderError);
           } else {
+             console.log("Order successfully saved in Supabase."); 
           }
         } catch(e) {
            console.error("Unerwarteter Fehler beim Speichern der Bestellung:", e);
@@ -205,15 +253,12 @@ const ProductContent = ({ product }) => {
       {/* Produktinfos */}
       <DescriptionGroup>
         <ProductName>{product.name || "Produktname"}</ProductName>
-        {/* Hier war vorher short_description, jetzt long_description für Konsistenz,
-            da Tickets wahrscheinlich eher long_description verwenden */}
         <ProductDescription>{product.longDescription || product.short_description || "Keine Beschreibung verfügbar."}</ProductDescription>
         <ProductWarning>{product.warning || ""}</ProductWarning>
       </DescriptionGroup>
 
       {/* Adjusted price display */}
       <Price>
-        {/* Für Tickets könnte der Preis auch von Pretix kommen, aber hier nehmen wir den Supabase-Preis */}
         {product.product_type === 'ticket' && product.price > 0 ? (
              formattedOriginalPrice + " € (via Pretix)"
         ) : (
@@ -232,7 +277,7 @@ const ProductContent = ({ product }) => {
         )}
       </Price>
 
-      {/* Size selection - Nur für Nicht-Tickets anzeigen, wenn Größen vorhanden sind */}
+      {/* Size selection */}
       {product.product_type !== 'ticket' && hasAnySizes && (
         <SizeSelector>
           <ToggleButton
@@ -284,12 +329,12 @@ const ProductContent = ({ product }) => {
                         </ApplyButton>
                       )}
                     </div>
-                     {discountStatus === 'loading' && <DiscountMessage type="info">Code wird geprüft...</DiscountMessage>}
+                     {discountStatus === 'loading' && <DiscountMessage type="info">Checking code...</DiscountMessage>}
                      {discountStatus === 'invalid' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
                      {discountStatus === 'error' && discountErrorMessage && <DiscountMessage type="error">{discountErrorMessage}</DiscountMessage>}
                      {discountStatus === 'valid' && appliedDiscountCode && (
                        <>
-                         <DiscountMessage type="success">Code "{appliedDiscountCode}" angewendet!</DiscountMessage>
+                         <DiscountMessage type="success">Code "{appliedDiscountCode}" applied!</DiscountMessage>
                          <RemoveButton onClick={handleRemoveCode}>
                             Remove code
                          </RemoveButton>
@@ -301,13 +346,12 @@ const ProductContent = ({ product }) => {
            )}
 
            {/* Checkout Button logic (PayPal or 0€ Button via code) */}
-           {/* Step 1: Item has to be available */}
           {(hasSizesWithStock || !hasAnySizes) ? (
             <>
               {/* Step 2: effective price is 0 by a valid code */}
               {effectivePrice <= 0 && discountStatus === 'valid' ? (
                  <CheckoutButtonWrapper style={{ flexDirection: 'column', alignItems: 'stretch' }}>
-                   <NameLabel htmlFor="userNameInput">Dein Name (für Zuordnung):</NameLabel>
+                   <NameLabel htmlFor="userNameInput">Your name</NameLabel>
                    <NameInput
                      id="userNameInput"
                      type="text"
@@ -315,14 +359,34 @@ const ProductContent = ({ product }) => {
                      onChange={(e) => setUserIdentifier(e.target.value)}
                      placeholder="Enter your full name..."
                      aria-label="Name for order"
+                     required
                    />
+                   
+                    {/* HIER DIE NEUEN ADRESSFELDER */}
+                    <NameLabel htmlFor="addressLine1" style={{ marginTop: '15px' }}>Your shipping address:</NameLabel>
+                    <NameInput id="addressLine1" type="text" name="line1" placeholder="Address & Street No." value={manualShippingAddress.line1} onChange={handleAddressChange} required />
+                    <NameInput id="addressLine2" type="text" name="line2" placeholder="Address Line 2 (optional)" value={manualShippingAddress.line2} onChange={handleAddressChange} style={{ marginTop: '10px' }} />
+                    <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+                        <NameInput id="postalCode" type="text" name="postal_code" placeholder="Postal Code" value={manualShippingAddress.postal_code} onChange={handleAddressChange} required style={{ flex: 1 }} />
+                        <NameInput id="city" type="text" name="city" placeholder="City" value={manualShippingAddress.city} onChange={handleAddressChange} required style={{ flex: 2 }}/>
+                    </div>
+                    <NameInput id="state" type="text" name="state" placeholder="State / Region (optional)" value={manualShippingAddress.state} onChange={handleAddressChange} style={{ marginTop: '10px' }} />
+                    <NameInput id="countryCode" type="text" name="country_code" placeholder="Country Code (e.g. DE)" value={manualShippingAddress.country_code} onChange={handleAddressChange} required style={{ marginTop: '10px' }}/>
+
                    <GetFreeItemButton
-                     onClick={() => handlePurchaseSuccess({ userId: userIdentifier })}
-                     disabled={(hasAnySizes && !selectedSize) || !userIdentifier.trim()}
-                     title={!userIdentifier.trim() ? "Enter name to continue" : (hasAnySizes && !selectedSize ? "Select size first" : "Order item")}
-                     style={{ marginTop: '10px' }}
+                     onClick={() => handlePurchaseSuccess({ userId: userIdentifier, manualAddress: manualShippingAddress })} // <-- manualAddress wird übergeben
+                     disabled={ // <-- Logik erweitert
+                        (hasAnySizes && !selectedSize) || 
+                        !userIdentifier.trim() || 
+                        !manualShippingAddress.line1.trim() || 
+                        !manualShippingAddress.city.trim() || 
+                        !manualShippingAddress.postal_code.trim() ||
+                        !manualShippingAddress.country_code.trim()
+                     }
+                     title={"Please fill in all required fields"}
+                     style={{ marginTop: '20px' }}
                    >
-                     {!userIdentifier.trim() ? 'Enter name to continue' : (hasAnySizes && !selectedSize ? 'Select size!' : 'Order item')}
+                     Order item
                    </GetFreeItemButton>
                  </CheckoutButtonWrapper>
                ) : (
@@ -339,7 +403,7 @@ const ProductContent = ({ product }) => {
                         />
                       </PayPalButtonWrapper>
                     ) : (
-                       hasAnySizes && <InfoMessage>Bitte wähle eine Größe.</InfoMessage>
+                       hasAnySizes && <InfoMessage>Select a size.</InfoMessage>
                     )
                  ) : (
                    null
@@ -347,7 +411,7 @@ const ProductContent = ({ product }) => {
                )}
             </>
            ) : (
-             hasAnySizes && <InfoMessage>Dieses Produkt ist leider ausverkauft.</InfoMessage>
+             hasAnySizes && <InfoMessage>Sorry, this product is sold out!</InfoMessage>
            )}
         </>
       )}
@@ -390,19 +454,19 @@ const ProductName = styled.h3`
 `;
 
 const ProductDescription = styled.p`
-  font-family: 'Inter', sans-serif; /* Oder deine Schriftart */
+  font-family: 'Inter', sans-serif;
   font-size: 0.9em;
   color: #ffffff;
   opacity: 0.8;
-  white-space: pre-wrap; /* Umbrüche aus Supabase anzeigen */
+  white-space: pre-wrap;
 `;
 
 const ProductWarning = styled.p`
-  font-family: 'Inter', sans-serif; /* Oder deine Schriftart */
+  font-family: 'Inter', sans-serif;
   font-size: 0.9em;
   color:rgb(248, 182, 51);
   opacity: 0.8;
-  white-space: pre-wrap; /* Umbrüche aus Supabase anzeigen */
+  white-space: pre-wrap;
 `;
 
 const Price = styled.p`
@@ -415,11 +479,10 @@ const PayPalButtonWrapper = styled.div`
   width: 100%;
   margin-top: 24px;
   display: flex;
-  justify-content: flex-start; /* Button linksbündig */
+  justify-content: flex-start;
   align-items: center;
 
-  /* Begrenzt die Breite des PayPal Buttons selbst, falls nötig */
-  & > div { /* Zielt auf den div-Container von PayPal */
+  & > div {
     width: 100%;
     max-width: 720px;
   }
@@ -435,7 +498,7 @@ const SizeSelector = styled.div`
 `;
 
 const ErrorMessage = styled.div`
-  color: #ff6b6b; /* Rote Farbe für Fehler */
+  color: #ff6b6b;
   font-size: 1em;
   padding: 16px 0;
   text-align: left;
@@ -450,7 +513,6 @@ const InfoMessage = styled.div`
   width: 100%;
 `;
 
-// new code input field for discount codes
 const RevealDiscountButton = styled.button`
   background: none;
   border: none;
@@ -517,7 +579,7 @@ const DiscountInput = styled.input`
   }
 
   &:disabled {
-     background-color: #444; /* Hintergrund wenn deaktiviert */
+     background-color: #444;
      cursor: not-allowed;
   }
 `;
@@ -570,18 +632,16 @@ const RemoveButton = styled.button`
 const DiscountMessage = styled.p`
   font-size: 0.85em;
   margin-top: 6px;
-  /* Dynamische Farbe basierend auf Typ */
   color: ${props => {
     switch (props.type) {
-      case 'error': return '#ff6b6b'; // Red for errors
-      case 'success': return '#4CAF50'; // Green for success
+      case 'error': return '#ff6b6b';
+      case 'success': return '#4CAF50';
       default: return '#cccccc';
     }
   }};
   font-weight: 500;
 `;
 
-// Styled Components for 0€ checkout via code
 const CheckoutButtonWrapper = styled.div`
   width: 100%;
   margin-top: 8px;
@@ -593,7 +653,7 @@ const CheckoutButtonWrapper = styled.div`
 
 const GetFreeItemButton = styled.button`
   padding: 12px 24px;
-  background-color: #28a745; /* Kräftigeres Grün */
+  background-color: #28a745;
   color: white;
   border: none;
   border-radius: 4px;
@@ -602,24 +662,44 @@ const GetFreeItemButton = styled.button`
   font-family: 'Inter', sans-serif;
   font-weight: bold;
   transition: background-color 0.2s ease-in-out;
-  width: 100%; /* Nimmt die Breite des Wrappers ein */
+  width: 100%;
 
   &:hover:not(:disabled) {
-    background-color: #218838; /* Dunkleres Grün bei Hover */
+    background-color: #218838;
   }
 
   &:disabled {
-    background-color: #555; /* Grau wenn deaktiviert (z.B. Größe fehlt) */
+    background-color: #555;
     cursor: not-allowed;
     opacity: 0.7;
   }
 `;
 
-// styles for name input and label when discount code is applied
-const NameInput = styled(DiscountInput)` // Basiert auf dem Stil des Code-Inputs
-  margin-top: 5px;
-`;
-const NameLabel = styled(DiscountLabel)` // Basiert auf dem Stil des Code-Labels
-  margin-top: 15px; 
+const NameInput = styled(DiscountInput)``;
+
+const NameLabel = styled(DiscountLabel)`
   align-self: flex-start;
+`;
+
+const AddressTextarea = styled.textarea`
+  padding: 16px 14px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: 'Inter', sans-serif;
+  text-transform: none;
+  outline: none;
+  width: 100%; /* Nimmt volle Breite des Containers ein */
+  min-height: 80px; /* Gibt ihr eine Anfangshöhe */
+  resize: vertical; /* Erlaubt dem Nutzer, die Höhe anzupassen */
+
+  &::placeholder {
+    color:rgb(184, 184, 184);
+  }
+
+  &:focus {
+    border-color: #777;
+  }
 `;

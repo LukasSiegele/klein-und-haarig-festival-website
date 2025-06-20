@@ -3,7 +3,6 @@ import styled from "styled-components"
 import FaceGrafik from "../../../static/images/Face.png"
 import RingLineup from "../buttons/RingLineup"
 import { animated } from "react-spring"
-import { use3dEffect } from "use-3d-effect"
 
 import Artwork from "../../../static/images/HeroArtwork2024Lineup.jpg"
 
@@ -12,7 +11,6 @@ import {
   ImageDescription,
   HeadlineRegular,
 } from "../styles/TextStyles"
-import TickerInline from "../ticker/TickerInline"
 import FormButton from "../buttons/FormButton"
 import { Link } from "gatsby"
 import FormButtonSmall from "../buttons/FormButtonSmall"
@@ -46,21 +44,54 @@ export default function Lineup() {
   }
 
   const ref = React.useRef(null)
-  const { style, ...mouseHandlers } = use3dEffect(ref)
 
   return (
     <Wrapper>
       <Container>
-        <LineupSection>
-          <Item>
+      <ExternalLinkSection>
+            <Item>
+              <ThankYou>THANK YOU!</ThankYou>
+            </Item>
+            
+              <ExternalLinkGroup>
+              <Item> 
+                {/* Für interne Links: Gatsby <Link> verwenden */}
+                <Link to="/newsletter">
+                  {/* Das innere Element ist jetzt ein <span>, kein <a> mehr */}
+                  <LinkText>Newsletter ↗</LinkText>
+                </Link>
+              </Item>
+              <Item> 
+                {/* Für externe Links: Einen normalen <a>-Tag verwenden */}
+                <a href="https://soundcloud.com/kleinundhaarig?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer">
+                  <LinkText>Recordings 2024 ↗</LinkText>
+                </a>
+              </Item>
+              <Item> 
+                {/* Für externe Links: Einen normalen <a>-Tag verwenden */}
+                <a href="https://www.instagram.com/kleinundhaarig/" target="_blank" rel="noopener noreferrer">
+                  <LinkText>Instagram ↗</LinkText>
+                </a>
+              </Item>
+              <Item> 
+                {/* Für E-Mail-Links: Einen normalen <a>-Tag verwenden */}
+                <a href="mailto:info@kleinundhaarig.de">
+                  <LinkText>E-Mail ↗</LinkText>
+                </a>
+              </Item>
+            </ExternalLinkGroup>
+          </ExternalLinkSection>
+
+          <LineupSection>
+           {/* <Item> 
             <LinkInline href="https://soundcloud.com/0203983a" target="_blank">
               <Artist>0203983A</Artist>
               <Neu>live</Neu>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+           {/* </Item> */}
 
-          <Item>
+          {/* <Item>
             <LinkInline
               href="https://soundcloud.com/ameliaholt"
               target="_blank"
@@ -68,9 +99,9 @@ export default function Lineup() {
               <Artist>Amelia Holt</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/andrea_ida"
               target="_blank"
@@ -78,9 +109,9 @@ export default function Lineup() {
               <Artist>Andrea Ida</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/research_wax"
               target="_blank"
@@ -88,9 +119,9 @@ export default function Lineup() {
               <Artist>BalTribe</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/freybenedikt"
               target="_blank"
@@ -98,9 +129,9 @@ export default function Lineup() {
               <Artist>Benedikt Frey</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://www.discogs.com/artist/8706025-C3D-E"
               target="_blank"
@@ -109,14 +140,14 @@ export default function Lineup() {
               <Neu>live</Neu>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <Artist>Der Haken</Artist>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/diamantegrafito"
               target="_blank"
@@ -124,23 +155,23 @@ export default function Lineup() {
               <Artist>Diamin</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/ebhardy" target="_blank">
               <Artist>DJ Ebhardy</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/hybris-dj" target="_blank">
               <Artist>DJ Hybris</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/elise-guillaut-991125437"
               target="_blank"
@@ -148,16 +179,16 @@ export default function Lineup() {
               <Artist>Elisethere</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/gioelia" target="_blank">
               <Artist>Gio Elia</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/el-em-ka-be"
               target="_blank"
@@ -165,9 +196,9 @@ export default function Lineup() {
               <Artist>grossvater</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/isolatedmaterial"
               target="_blank"
@@ -175,9 +206,9 @@ export default function Lineup() {
               <Artist>Isolated Material</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/user-94998257"
               target="_blank"
@@ -185,9 +216,9 @@ export default function Lineup() {
               <Artist>jess_whereyouat</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/kosmas-dinh"
               target="_blank"
@@ -195,9 +226,9 @@ export default function Lineup() {
               <Artist>Kosmas Ðinh</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/soundsoflowki"
               target="_blank"
@@ -205,37 +236,37 @@ export default function Lineup() {
               <Artist>low Ki</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/lysfinke" target="_blank">
               <Artist>Lys Finke</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/aemaenda" target="_blank">
               <Artist>MAENDI</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/marklando" target="_blank">
               <Artist>Mark Lando</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+         {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/menqui" target="_blank">
               <Artist>Menqui</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://www.instagram.com/_mi.tra__/"
               target="_blank"
@@ -244,9 +275,9 @@ export default function Lineup() {
               <Neu>live</Neu>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/montage-impuls"
               target="_blank"
@@ -254,16 +285,16 @@ export default function Lineup() {
               <Artist>Montage</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/pasci-hi" target="_blank">
               <Artist>pasci</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/philipp-otterbach"
               target="_blank"
@@ -271,9 +302,9 @@ export default function Lineup() {
               <Artist>Philipp Otterbach</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/bisamapfel"
               target="_blank"
@@ -282,23 +313,23 @@ export default function Lineup() {
               <Neu>live</Neu>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/vulxr" target="_blank">
               <Artist>Riin</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/sarmabot" target="_blank">
               <Artist>Sarmabot</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://soundcloud.com/schnucki47"
               target="_blank"
@@ -306,9 +337,9 @@ export default function Lineup() {
               <Artist>schnucki47</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://www.instagram.com/404_spacebar/"
               target="_blank"
@@ -316,31 +347,31 @@ export default function Lineup() {
               <Artist>Spacebar 404</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/tx_4" target="_blank">
               <Artist>TX4</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/mpdt14" target="_blank">
               <Artist>Unter Welten</Artist>
               <Neu>live</Neu>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline href="https://soundcloud.com/yugo_zen" target="_blank">
               <Artist>Yugo</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
 
-          <Item>
+          {/*<Item>
             <LinkInline
               href="https://www.instagram.com/kantarion.sound/"
               target="_blank"
@@ -349,7 +380,8 @@ export default function Lineup() {
               <Artist>Kantarion Sound</Artist>
             </LinkInline>
             {/* <Icon src="/icons/StarYellow.svg"></Icon> */}
-          </Item>
+          {/* </Item> */}
+
 
           {/* <Item> */}
 
@@ -367,24 +399,10 @@ export default function Lineup() {
             <PlaylistRight />
           </PlaylistSection> */}
         </LineupSection>
-
-        {/* <TickerBottom>
-            <TickerInline />
-          </TickerBottom> */}
-
         {/* <Header>Lineup 2022</Header> */}
         {/* </HoverGroup> */}
       </Container>
-      <FontByGroup>
-        <LinkInline
-          href="https://www.instagram.com/raoulgottschling?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-          target="_blank"
-        >
-          <ArtworkByLabel>Artwork by Anja Lekavski</ArtworkByLabel>
-          <PoweredFont>Font by Raoul Gottschling </PoweredFont>
-          {/* <Powered></Powered> */}
-        </LinkInline>
-      </FontByGroup>
+
     </Wrapper>
   )
 }
@@ -398,26 +416,39 @@ const FontByGroup = styled.div`
 `
 
 const ArtworkByLabel = styled(ImageDescription)`
-  margin-left: 0px;
-  font-size: 1em;
+  display: inline-block;
   color: #f0f263;
-  padding: 10px 10px 0px 10px;
-  background: black;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+  position: relative;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 800px) {
+    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  }
 `
 
 const PoweredFont = styled(ImageDescription)`
-  margin-left: 0px;
-  font-size: 1em;
+  display: inline-block;
   color: #f0f263;
-  padding: 10px;
-  background: black;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+  position: relative;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 800px) {
+    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  }
 `
 
 const Wrapper = styled.div`
   margin-bottom: 0px;
   text-align: center;
+  padding-top: 40px;
 
   /* position: relative; */
   /* background-image: url(${Artwork}); */
@@ -442,14 +473,27 @@ const LineupSection = styled.div`
   display: inline-block;
   overflow: hidden;
   justify-items: center;
+  padding-top: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
 
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* position: relative; */
-  /* justify-items: center; */
-  padding: 40px 40px 200px 40px;
   @media (max-width: 800px) {
-    padding: 125px 10px 125px 10px;
+    padding: 24px;
+  }
+`
+
+const ExternalLinkSection = styled.div`
+  position: relative;
+  display: flex
+  overflow: hidden;
+  justify-items: center;
+  padding-top: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+
+  @media (max-width: 800px) {
+    padding: 24px;
   }
 `
 
@@ -477,13 +521,19 @@ const LinkInline = styled.a`
   }
 `
 
+const ExternalLinkGroup = styled.div`
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+`
+
 const Item = styled.div`
   display: inline-block;
   margin-bottom: 0px;
   position: relative;
   margin-left: 8px;
   margin-right: 8px;
-  text-shadow: 4px 4px 40px rgba(0, 0, 0, 0.7);
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 800px) {
     text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
@@ -511,6 +561,37 @@ const Artist = styled(HeadlineRegular)`
 
   /* margin-right: 16px; */
 `
+
+const ThankYou = styled(HeadlineRegular)`
+  color: #f0f263;
+  font-size: 3em;
+  float: left;
+  padding-bottom: 40px;
+
+  @media (max-width: 800px) {
+    font-size: 2.5em;
+  }
+`
+
+const LinkText = styled.span`
+  display: inline-block;
+  font-family: "Kleber";
+  color: #f0f263;
+  font-size: 2em;
+  margin-bottom: 0px;
+  position: relative;
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-out;
+
+  a:hover & {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1.5em;
+  }
+`
+
 const Backtoback = styled(ImageDescription)`
   display: inline;
   float: left;
@@ -568,18 +649,11 @@ const Up = styled.div``
 const Neu = styled(ImageDescription)`
   display: inline;
   float: left;
-  /* font-family: "Inter"; */
   margin-left: 0px;
-  /* margin-top: 3px; */
-  /* position: absolute; */
   color: #f0f263;
-  /* text-transform: uppercase; */
 `
 
 const Powered = styled(ImageDescription)`
   margin-left: 0px;
-  /* margin-top: 3px; */
-  /* position: absolute; */
   color: #f0f263;
-  /* text-transform: uppercase; */
 `

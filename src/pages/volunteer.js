@@ -40,7 +40,7 @@ export default function Volunteer() {
                   </HeaderSection>
 
                   <AnmeldeGroup>
-                      <a
+                      {/* <a
                         href={t("pages.volunteer.button.link")}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -49,13 +49,13 @@ export default function Volunteer() {
                           backgroundColor="#492cd3"
                           label={t("pages.volunteer.button.label")}
                         />
-                      </a>
-                      {/* <InfoText>
-                        Bald findest du hier den Link zur Volunteer Anmeldung.
-                      </InfoText> */}
+                      </a> */}
                   </AnmeldeGroup>
 
                   <InfoSection>
+                    <InfoText>
+                        Volunteer: closed – for now!
+                    </InfoText>
                     <InfoLabel>
                       {t("pages.volunteer.sections.first.label")}
                     </InfoLabel>

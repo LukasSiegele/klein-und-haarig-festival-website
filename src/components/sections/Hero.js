@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import styled from "styled-components"
+import styled from "styled-components" 
+import Lineup from "./Lineup"
 
 import {
   FrontpageHeadline,
@@ -14,10 +15,12 @@ export default function Hero() {
     <Container> 
       <ContentContainer>
         {/* <TitleKlein> */}
-        <KuH src="/icons/Kleinundhaarig.svg"></KuH>
+
         {/* </TitleKlein> */}
         <DatumPlace>
-          <Datum> 29.05. — 01.06.2025 </Datum>
+          <KuH src="/icons/Kleinundhaarig.svg"></KuH>
+          <Lineup />
+          {/* <Datum> Thank you for joining us for the 2025 edition in </Datum>
           <PlaceGroup>
             <LinkInline
               href="https://goo.gl/maps/bag7SAmH1RZ6YNLZ6"
@@ -28,15 +31,15 @@ export default function Hero() {
                 <Icon src="/icons/linkout.svg"></Icon>
               </IconGroup>
             </LinkInline>
-          </PlaceGroup>
+          </PlaceGroup> */}
         </DatumPlace>
         <ButtonGroup>
-          <LinkButton>
+          {/* <LinkButton>
           <a href="https://pretix.eu/bunteplatte/kuh2025/" target="_blank" rel="noopener noreferrer">
           <FormButton backgroundColor="#fc2546" color="#000" label="Tickets" />
           </a>
 
-          </LinkButton>
+          </LinkButton> */}
         </ButtonGroup>
       </ContentContainer>
     </Container>
@@ -62,7 +65,29 @@ const Container = styled.div`
 const DatumPlace = styled.div`
   margin-top: 12px;
   display: grid;
+  padding: 16px;
   justify-items: center;
+`
+
+const KuH = styled.img`
+  width: 350px;
+  margin-top: 40px;
+
+  @media (max-width: 1100px) {
+    width: 275px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 800px) {
+    width: 225px;
+  }
+  
+  @media (max-width: 500px) {
+    width: 200px;
+  }
+  @media (max-width: 300px) {
+    width: 150px;
+  }
 `
 
 const ContentContainer = styled.div`
@@ -103,6 +128,7 @@ const Datum = styled.h3`
   /* animation: HeroAnimation 1.3s 1.4s forwards cubic-bezier(0.2, 0.8, 0.2, 1); */
   /* opacity: 0; */
   color: black;
+  text-align: center;
   /* text-shadow: 0px 0px 40px black; */
 `
 
@@ -135,21 +161,5 @@ const Icon = styled.img`
     margin-top: 2px;
     width: 16px;
     height: 16px;
-  }
-`
-
-const KuH = styled.img`
-  width: 500px;
-  margin-top: 40px;
-  /* height: 400px; */
-  /* align-self: center; */
-  /* justify-self: center; */
-  /* color: white; */
-  @media (max-width: 1100px) {
-    width: 375px;
-    margin-top: 40px;
-  }
-  @media (max-width: 400px) {
-    width: 325px;
   }
 `

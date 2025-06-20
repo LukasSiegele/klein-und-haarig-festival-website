@@ -132,7 +132,7 @@ export const ImageDescription = styled.p`
 export const TickerText = styled.h3`
   /* font-family: "GT-Alpina-Extended-Regular"; */
   /* font-size: 17px; */
-  color: black;
+  color: white;
   line-height: 1.3em;
   overflow: visible;
 `

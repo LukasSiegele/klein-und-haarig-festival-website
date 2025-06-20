@@ -96,11 +96,11 @@ const MenuGrid = styled.div`
 `
 
 const MenuButton = styled.div`
-  padding: 20px;
+  padding: 16px;
   height: auto;
   /* background-color: white; */
   border-radius: 100px;
-  margin-bottom: 10px;
+  /*  margin-bottom: 10px; */
   /* display: grid; */
   align-content: center;
   justify-items: center;
@@ -110,6 +110,7 @@ const MenuInfo = styled.h1`
   color: white;
   text-align: center;
   line-height: 0.8;
+  font-size: 2.5rem;
   vertical-align: center;
   text-decoration: ${props =>
     props.isInfo ? "#ff5400 wavy line-through" : "none"};
@@ -122,6 +123,7 @@ const MenuVolunteer = styled.h1`
   color: white;
   text-align: center;
   line-height: 0.8;
+  font-size: 2.5rem;
   vertical-align: center;
   text-decoration: ${props =>
     props.isVolunteer ? "#ff5400 wavy line-through" : "none"};
@@ -134,6 +136,7 @@ const MenuAbout = styled.h1`
   color: white;
   text-align: center;
   line-height: 0.8;
+  font-size: 2.5rem;
   vertical-align: center;
   text-decoration: ${props =>
     props.isAbout ? "#ff5400 wavy line-through" : "none"};
@@ -146,6 +149,7 @@ const MenuCode = styled.h1`
   color: white;
   text-align: center;
   line-height: 0.8;
+  font-size: 2.5rem;
   vertical-align: center;
   text-decoration: ${props =>
     props.isCode ? "#ff5400 wavy line-through" : "none"}; 
@@ -158,6 +162,7 @@ const MenuAwareness = styled.h1`
   color: white;
   text-align: center;
   line-height: 0.8;
+  font-size: 2.5rem;
   vertical-align: center;
   text-decoration: ${props =>
     props.isAwareness ? "#ff5400 wavy line-through" : "none"};
@@ -170,6 +175,7 @@ const MenuShop = styled.h1`
   color: white;
   text-align: center;
   line-height: 0.8;
+  font-size: 2.5rem;
   vertical-align: center;
   text-decoration: ${props =>
     props.isShop ? "#ff5400 wavy line-through" : "none"};

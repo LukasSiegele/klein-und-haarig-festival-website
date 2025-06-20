@@ -131,7 +131,7 @@ const AdminOrdersPage = () => {
               required 
             />
           </label>
-          {/* Button-Text/Disabled-Status könnte auch von einem loginLoading-State abhängen */}
+          {/* Button-Text/Disabled-Status could be tied to a loginLoading state */}
           <Button type="submit">Login</Button>
           {loginError && <ErrorMessage>{loginError}</ErrorMessage>}
         </LoginForm>
@@ -147,7 +147,7 @@ const AdminOrdersPage = () => {
       <LogoutButton onClick={handleLogout} style={{marginBottom: '20px'}}>Logout</LogoutButton>
       {loginError && <ErrorMessage>{loginError}</ErrorMessage>} 
       
-      {/* Spezifische Ladeanzeige für Bestellungen */}
+      {/* Specific loading view for orders */}
       {ordersLoading && <p>Lade Bestellungen...</p>}
       {fetchError && <ErrorMessage>{fetchError}</ErrorMessage>}
       
@@ -165,8 +165,9 @@ const AdminOrdersPage = () => {
               <th>Product</th>
               <th>Size</th>
               <th>Payment</th>
-              <th>Name / PayPal Order ID</th>
               <th>Discount Code</th>
+              <th>Name / PayPal Order ID</th>
+              <th>Shipping Address</th>
             </tr>
           </thead>
           <tbody>
@@ -177,8 +178,19 @@ const AdminOrdersPage = () => {
                 <td>{order.product_name}</td>
                 <td>{order.size_label || 'N/A'}</td>
                 <td>{order.price_paid?.toFixed(2)} €</td>
-                <td>{order.user_identifier || order.paypal_order_id || 'N/A'}</td>
                 <td>{order.discount_code_used || '-'}</td>
+                <td>{order.user_identifier || order.paypal_order_id || 'N/A'}</td>
+                <td>
+                    {order.shipping_address_line_1 ? (
+                    <>
+                      {order.shipping_address_line_1}{order.shipping_address_line_2 ? `, ${order.shipping_address_line_2}` : ''}<br />
+                      {order.shipping_postal_code} {order.shipping_city}<br />
+                      {order.shipping_country_code}
+                    </>
+                    ) : (
+                      'N/A'
+                    )}
+                 </td>
               </tr>
             ))}
           </tbody>

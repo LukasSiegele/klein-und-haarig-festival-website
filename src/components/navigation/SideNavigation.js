@@ -131,7 +131,7 @@ const LinkGroup = styled.div`
   display: grid;
   align-self: end;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  gap: 16px;
 `
 
 const ListInfo = styled(TextSmall)`

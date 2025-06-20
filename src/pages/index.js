@@ -1,17 +1,13 @@
-import React from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import styled from "styled-components"
-import Hero from "../components/sections/Hero"
 import { graphql } from "gatsby"
+import Hero from "../components/sections/Hero"
 import SideNavigation from "../components/navigation/SideNavigation"
 import Layout from "../components/layout/layout"
 import Ticker from "../components/ticker/Ticker"
 import Footer from "../components/footer/footer"
 import { Link } from "gatsby"
 
-import { ParallaxProvider } from "react-scroll-parallax"
-import { TextSmall } from "../components/styles/TextStyles"
-
-import BackgroundTexture from "../../static/images/BackgroundTexture.png"
 import SideLine from "../components/navigation/SideLine"
 import Lineup from "../components/sections/Lineup"
 import MobileNavigation from "../components/navigation/MobileNavigation"
@@ -20,79 +16,74 @@ import LinkList from "../components/sections/LinkList"
 import HeroArtwork from "../../static/images/header-2025.jpg"
 import FormButton from "../components/buttons/FormButton"
 
-export default function IndexPage() {
+import ScratchGallery from '../components/scratch-card/ScratchGallery';
+
+import ScratchCard from "../components/scratch-card/ScratchCard"
+
+const shuffleAndPick = (array, n) => {
+  if (!array || array.length === 0) return [];
+  const shuffled = [...array].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, n);
+};
+
+export default function IndexPage({ data }) {
+
+  const allImageUrls = useMemo(() => 
+    data.allFestivalImages.nodes.map(node => node.publicURL), 
+    [data.allFestivalImages.nodes]
+  );
+  
+
+  const [currentImages, setCurrentImages] = useState([]);
+
+  // Select 5 random imges on loading
+  useEffect(() => {
+    if (allImageUrls.length > 0) {
+      setCurrentImages(shuffleAndPick(allImageUrls, 5));
+    }
+  }, [allImageUrls]);
+
+  const handleShuffle = () => {
+    setCurrentImages(shuffleAndPick(allImageUrls, 5));
+  };
+
   return (
     <>
-      {/* <SEO title="Home" /> */}
-
-      <ParallaxProvider>
-        <Wrapper>
-          {/* <MainGrid> */}
-          <SideNavigation bgColor="#000" />
-
-          <Content>
-            {/* <Wrapper> */}
-            <MobileNavigation bgColor="#000" />
-            <LinkButton>
-              <Link to="https://pretix.eu/bunteplatte/kuh2025/">
-                <FormButton
-                  backgroundColor="#fc2546"
-                  color="#000"
-                  label="Tickets"
-                />
-              </Link>
-            </LinkButton>
+    <Layout>
+      <Wrapper>
+        <SideNavigation bgColor="#000" />
+        <Content>
+          <MobileNavigation bgColor="#000" />
             <HeroSection>
-              <Artwork>
-                <MainGrid>
-                  <SideLine />
-                  <div>
-                    <Hero />
-                    <Lineup />
-                  </div>
-                </MainGrid>
-              </Artwork>
-
-              {/* <ArtistText> Artwork </ArtistText> */}
+              <MainGrid>    
+                <ScratchGallerySection>
+                  <ScratchGallery images={currentImages} onShuffle={handleShuffle}/>
+                </ScratchGallerySection>
+                <PhotosTextGroup>
+                    <CreditTextLink href="https://www.instagram.com/lucyrosenixon/" target="_blank">
+                      <PhotosCreditText>Photos by Lucy Nixon ↗</PhotosCreditText>
+                    </CreditTextLink>
+                </PhotosTextGroup>
+              </MainGrid>
             </HeroSection>
-            {/* <TickerGroup>
-              <Ticker />
-            </TickerGroup> */}
-            {/* </Wrapper> */}
-
-            {/* <MessageSection>
-              <MainGrid>
-                <SideLine />
-                <Message />
-              </MainGrid>
-            </MessageSection> */}
-
-            {/* <LineupSection>
-              <MainGrid>
-                <SideLine />
-                <Lineup />
-              </MainGrid>
-            </LineupSection> */}
-
-            {/* <ImageSection>
-              <MainGrid>
-                <SideLine />
-                <Images />
-              </MainGrid>
-            </ImageSection> */}
-
-            {/* <FoerderungenSection>
-              <MainGrid>
-                <SideLine />
-                <Foerderungen />
-              </MainGrid>
-            </FoerderungenSection> */}
 
             <LinkListSection>
-              <MainGrid>
-                <SideLine />
-                <LinkList />
-              </MainGrid>
+              <Artwork>
+                <LinkListContainer>
+                  <Lineup />
+                  <CreditTextGroup>
+                    <CreditTextLink href="https://www.instagram.com/anja.lekavski/" target="_blank">
+                      <CreditText>Artwork by Anja Lekavski ↗</CreditText>
+                    </CreditTextLink>
+                    <CreditTextLink href="" target="_blank">
+                      <CreditText>·</CreditText>
+                    </CreditTextLink>
+                    <CreditTextLink href="https://www.instagram.com/raoulgottschling/" target="_blank">
+                      <CreditText>Font by Raoul Gottschling ↗</CreditText>
+                    </CreditTextLink>
+                </CreditTextGroup>
+                </LinkListContainer>
+              </Artwork>
             </LinkListSection>
 
             <FooterSection>
@@ -101,16 +92,9 @@ export default function IndexPage() {
                 <Footer bgColor="black" />
               </MainGrid>
             </FooterSection>
-            {/* </FoerderungSection> */}
           </Content>
-          {/* </MainGrid> */}
-
-          <TickerGroup>
-            <Ticker />
-          </TickerGroup>
-          <Layout />
         </Wrapper>
-      </ParallaxProvider>
+      </Layout>
     </>
   )
 }
@@ -126,33 +110,22 @@ export const query = graphql`
         }
       }
     }
-  }
-`
-
-const ArtistText = styled(TextSmall)`
-  position: absolute;
-  mix-blend-mode: difference;
-  color: white;
-  opacity: 0.55;
-  right: 4px;
-  /* margin-bottom: 150px; */
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  /* border-radius: 20px; */
-  padding: 3px;
-  @media (max-width: 1100px) {
-    /* bottom: 80px; */
-    right: 4px;
+    allFestivalImages: allFile(
+      filter: {
+        sourceInstanceName: {eq: "festivalImages"}, 
+        extension: {regex: "/(jpg)|(jpeg)|(png)/"}
+      }
+    ) {
+      nodes {
+        publicURL
+      }
+    }
   }
 `
 
 const Wrapper = styled.div`
   overflow: hidden;
 `
-
-// const SideNav = styled.div`
-//   obsolute
-//   overflow: hidden;
-// `
 
 const Content = styled.div`
   /* overflow-y: scroll; */
@@ -161,9 +134,19 @@ const Content = styled.div`
 const MainGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  /* overflow: hidden; */
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
+  }
+`
+
+const LinkListContainer = styled.div`
+  display: grid;
+  grid-template-columns: flex;
+  padding-left: 133px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: flex;
+    padding-left: 0px;
   }
 `
 
@@ -198,20 +181,8 @@ const ArtworkAnimation = styled.video`
   top: 0;
 `
 
-const MessageSection = styled.div`
-  /* background-image: url(${BackgroundTexture}); */
-  background-color: #000;
-  margin-top: 150px;
-  @media (max-width: 800px) {
-    margin-top: 75px;
-  }
-  /* background-color: black; */
-`
-
 const LineupSection = styled.div`
-  /* background-color: #cbc3ff; */
   background-color: #b3dbf1;
-  /* background-color: #cbc3ff; */
   z-index: 9;
 `
 
@@ -262,3 +233,121 @@ const LinkButton = styled.div`
     display: none;
   }
 `
+
+const LinkInline = styled.a`
+  /* display: inline; */
+
+  & > :hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  :hover {
+    /* transform: scale(1.02); */
+    /* cursor: pointer; */
+    /* transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); */
+  }
+`
+
+const PhotosTextGroup = styled.div`
+  width: 100%;
+  position: absolute;
+  bottom: 32px;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  padding-left: 133px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  @media (max-width: 800px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+`
+
+const CreditTextGroup = styled.div`
+  width: 100%;
+  height: 32px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  bottom: 0px;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  @media (max-width: 1000px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 64px;
+  }
+`
+
+
+const CreditTextLink = styled.a`
+  margin-bottom: -12px;
+
+  & > :hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  :hover {
+    /* transform: scale(1.02); */
+    /* cursor: pointer; */
+    /* transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); */
+  }
+`
+
+const CreditText = styled.div`
+  display: inline-block;
+  color: #f0f263;
+  font-family: Inter;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-bottom: 12px;
+  position: relative;
+  // text-shadow: 0px 0px 16px rgba(0, 0, 0, 1);
+
+  // @media (max-width: 800px) {
+  //   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+  //   font-size: 0.8em;
+  // }
+
+  // @media (max-width: 550px) {
+  //   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+  //   font-size: 0.8em;
+  }
+`
+
+const PhotosCreditText = styled.div`
+  display: inline-block;
+  color: #f0f263;
+  font-family: Inter;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-bottom: 0px;
+  position: relative;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+
+  @media (max-width: 800px) {
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    font-size: 0.8em;
+  }
+
+  @media (max-width: 550px) {
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    font-size: 0.8em;
+  }
+`
+
+const ScratchGallerySection = styled.div`
+  padding: 0px;
+  color: transparent;
+  background-color: transparent;
+`;

@@ -17,7 +17,7 @@ export default function ThanksPage() {
       {/* <SEO title="404: Not found" /> */}
       <Wrapper>
         <Title>{t("Order succesfull")}</Title>
-        <Description>{t("Thank you for your support of Bunte Platte e.V. - You can pick up your order during the festival at our Kiosk!")}</Description>
+        <Description>{t("Thank you for your support of Bunte Platte e.V. - we will send your order as fast as possible!")}</Description>
         <ButtonWrapper>
           <Link to="/shop">
             <FormButton label={t("Back")} color="black" />
