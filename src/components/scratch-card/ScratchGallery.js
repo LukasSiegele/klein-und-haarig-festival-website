@@ -53,7 +53,7 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
     setIsReloadTextVisible(false);
     // setIsThankYouVisible(false);
     const showTimeout = setTimeout(() => setIsHintVisible(true), 400); 
-    const hideTimeout = setTimeout(() => setIsHintVisible(false), 4000); 
+    const hideTimeout = setTimeout(() => setIsHintVisible(false), 3000); 
     return () => {
       clearTimeout(showTimeout);
       clearTimeout(hideTimeout);
@@ -62,14 +62,6 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
 
   // Shows and then hides texts on Gallery
   // Thank You
-  // useEffect(() => {
-  //   if (activeIndex === 1) {
-  //     setIsThankYouVisible(true);
-  //     const timer = setTimeout(() => setIsThankYouVisible(false), 4000);
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [activeIndex]);
-
   useEffect(() => {
     // Shows thank you text if second card turns active
     if (activeIndex === 1) {
@@ -86,6 +78,25 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
     } else {
       // Also: if the image active is not image 2, e.g. image nr. 3 - the text also gets removed
       setIsThankYouVisible(false);
+    }
+  }, [activeIndex]);
+
+  useEffect(() => {
+    // Shows draw here text if first card is active
+    if (activeIndex === 0) {
+      setIsHintVisible(true);
+
+      // removes text after 4s
+      const timer = setTimeout(() => {
+        setIsHintVisible(false);
+      }, 4000); // 4s visibility
+
+      // cleanup function to stop timer
+      return () => clearTimeout(timer);
+
+    } else {
+      // Also: if the image active is not image 1, e.g. image nr. 2 turns active - the text now gets removed
+      setIsHintVisible(false);
     }
   }, [activeIndex]);
 
