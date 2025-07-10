@@ -18,6 +18,7 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
 
+
   // Initial loading checks
   useEffect(() => {
     if (!images || images.length === 0) return;
@@ -52,7 +53,7 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
     setIsReloadTextVisible(false);
     // setIsThankYouVisible(false);
     const showTimeout = setTimeout(() => setIsHintVisible(true), 400); 
-    const hideTimeout = setTimeout(() => setIsHintVisible(false), 4500); 
+    const hideTimeout = setTimeout(() => setIsHintVisible(false), 4000); 
     return () => {
       clearTimeout(showTimeout);
       clearTimeout(hideTimeout);
@@ -61,11 +62,30 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
 
   // Shows and then hides texts on Gallery
   // Thank You
+  // useEffect(() => {
+  //   if (activeIndex === 1) {
+  //     setIsThankYouVisible(true);
+  //     const timer = setTimeout(() => setIsThankYouVisible(false), 4000);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [activeIndex]);
+
   useEffect(() => {
+    // Shows thank you text if second card turns active
     if (activeIndex === 1) {
       setIsThankYouVisible(true);
-      const timer = setTimeout(() => setIsThankYouVisible(false), 5000);
+
+      // removes text aber 4s
+      const timer = setTimeout(() => {
+        setIsThankYouVisible(false);
+      }, 4000); // 4s visibility
+
+      // cleanup function to stop timer
       return () => clearTimeout(timer);
+
+    } else {
+      // Also: if the image active is not image 2, e.g. image nr. 3 - the text also gets removed
+      setIsThankYouVisible(false);
     }
   }, [activeIndex]);
 
@@ -157,8 +177,8 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
       ) : (
 
         <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <p style={{color: '#f0f263;', fontFamily: 'Inter, sans-serif'}}>Loading Gallery...</p>
-        </div>
+            <p style={{color: '#f0f263;', fontFamily: 'Inter, sans-serif', fontSize: 0.8, fontWeight: 500}}>Loading Gallery...</p>
+        </div>  
       )}
 
       
@@ -166,18 +186,15 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
         Draw here for more 
       </DrawHintText>
 
+
       <GalleryThankYouTextContainer isVisible={isThankYouVisible}>
         <GalleryThankYouText>Thank you!</GalleryThankYouText>
         <GalleryDateText isVisible={isDateVisible}> KuH26 <br /> 09.—12.07.26 </GalleryDateText>
       </GalleryThankYouTextContainer>
 
-      <ReloadImagesText isVisible={isReloadTextVisible}>
-        Click <ReloadImagesTextShuffleIcon src="/icons/reload.svg" alt="Reload images" /> to reload images.
-      </ReloadImagesText>
 
-      {/* <ReloadImagesText isVisible={isReloadTextVisible} onClick={onShuffle}> Click to reload images.</ReloadImagesText> */}
+      <ReloadImagesText isVisible={isReloadTextVisible} onClick={onShuffle}> Reload images </ReloadImagesText>
 
-      {/* <GalleryHintText>Continue for more pics.</GalleryHintText> */}
 
       <ShuffleButton onClick={onShuffle} title="Load new images">
         <ShuffleIcon src="/icons/reload.svg" alt="Reload images" />
@@ -232,10 +249,10 @@ const GalleryThankYouText = styled.h2`
   user-select: none; 
 
   color: #f0f263;
-  font-size: 2.8em;
+  font-size: 2.4em;
   font-weight: bold;
   text-align: center;
-  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
   
   @media (max-width: 800px) {
     font-size: 2.4em;
@@ -438,7 +455,7 @@ const DrawHintText = styled.div`
   display: inline-block;
   color: #f0f263;
   font-family: Inter, sans-serif;
-  font-size: 1.1em;
+  font-size: 0.9em;
   font-weight: 500;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
   white-space: nowrap;
@@ -447,7 +464,7 @@ const DrawHintText = styled.div`
   transition: opacity 0.5s ease-in-out;
 
   @media (max-width: 800px) {
-    font-size: 1em;
+    font-size: 0.7em;
     padding-left: 0px;
   }
 `;
@@ -469,7 +486,7 @@ const GalleryDateText = styled.div`
   
   color: #f0f263;
   font-family: Inter, sans-serif;
-  font-size: 1.1em;
+  font-size: 0.9em;
   font-weight: 500;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
   white-space: nowrap;
@@ -479,7 +496,7 @@ const GalleryDateText = styled.div`
   // transition: opacity 3s ease-in-out 2.5s; 
 
   @media (max-width: 800px) {
-    font-size: 1em;
+    font-size: 0.7em;
     padding-left: 0px;
   }
 `;
@@ -492,6 +509,10 @@ const ReloadImagesText = styled.div`
   padding-left: 133px;
   transform: translate(-50%, -50%);
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   pointer-events: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -501,7 +522,7 @@ const ReloadImagesText = styled.div`
   display: inline-block;
   color: #f0f263;
   font-family: Inter, sans-serif;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 500;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
   white-space: nowrap;
@@ -509,16 +530,20 @@ const ReloadImagesText = styled.div`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)}; 
   transition: opacity 0.5s ease-in-out;
 
+  ${({ isVisible }) => isVisible && `
+    pointer-events: auto;
+    cursor: pointer;
+  `}
+
   @media (max-width: 800px) {
-    font-size: 1em;
+    font-size: 0.7em;
     padding-left: 0px;
   }
 `;
 
 const ReloadImagesTextShuffleIcon = styled.img`
-  width: 21px;
-  height: 21px;
-  padding-top: 4px;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
   -webkit-user-select: none;
   -ms-user-select: none;

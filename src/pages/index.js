@@ -91,9 +91,6 @@ export default function IndexPage({ data }) {
                     <CreditTextLink href="https://www.instagram.com/anja.lekavski/" target="_blank">
                       <CreditText>Artwork by Anja Lekavski ↗</CreditText>
                     </CreditTextLink>
-                    <CreditTextLink href="" target="_blank">
-                      <CreditText>·</CreditText>
-                    </CreditTextLink>
                     <CreditTextLink href="https://www.instagram.com/raoulgottschling/" target="_blank">
                       <CreditText>Font by Raoul Gottschling ↗</CreditText>
                     </CreditTextLink>
@@ -295,11 +292,9 @@ const PhotosTextGroup = styled.div`
 
 const CreditTextGroup = styled.div`
   width: 100%;
-  height: 40px;
+  height: 32px;
   position: relative;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  bottom: 0px;
+  bottom: 6px;
   z-index: 99;
   align-items: center;
   justify-content: center;
@@ -341,21 +336,22 @@ const CreditTextLink = styled.a`
 const CreditText = styled.div`
   display: inline-block;
   color: #f0f263;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
   font-family: Inter;
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: 500;
   margin-bottom: 12px;
   position: relative;
   // text-shadow: 0px 0px 16px rgba(0, 0, 0, 1);
 
-  // @media (max-width: 800px) {
-  //   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-  //   font-size: 0.8em;
-  // }
-
-  // @media (max-width: 550px) {
-  //   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-  //   font-size: 0.8em;
+  @media (max-width: 800px) {
+    font-size: 0.6em;
   }
 `
 
@@ -363,7 +359,7 @@ const PhotosCreditText = styled.div`
   display: inline-block;
   color: #f0f263;
   font-family: Inter;
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: 500;
   margin-bottom: 0px;
   position: relative;
@@ -371,12 +367,7 @@ const PhotosCreditText = styled.div`
 
   @media (max-width: 800px) {
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-    font-size: 0.8em;
-  }
-
-  @media (max-width: 550px) {
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-    font-size: 0.8em;
+    font-size: 0.6em;
   }
 `
 
