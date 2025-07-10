@@ -39,7 +39,7 @@ const ToggleButton = ({
               onClick={() => handleToggle(index)}
             >
               <ToggleButtonText isActive={index === activeIndex} isDisabled={isOutOfStock}>
-                {option.label} {isOutOfStock ? "(Empty)" : ""}
+                {option.label} {isOutOfStock ? "" : ""}
               </ToggleButtonText>
             </SingleToggleButton>
           )
