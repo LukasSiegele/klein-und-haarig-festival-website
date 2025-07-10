@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import FaceGrafik from "../../../static/images/Face.png"
-import RingLineup from "../buttons/RingLineup"
 import { animated } from "react-spring"
 
 import Artwork from "../../../static/images/HeroArtwork2024Lineup.jpg"
@@ -49,9 +47,9 @@ export default function Lineup() {
     <Wrapper>
       <Container>
       <ExternalLinkSection>
-            <Item>
+            {/* <Item>
               <ThankYou>THANK YOU!</ThankYou>
-            </Item>
+            </Item> */}
             
               <ExternalLinkGroup>
               <Item> 
@@ -533,11 +531,7 @@ const Item = styled.div`
   position: relative;
   margin-left: 8px;
   margin-right: 8px;
-  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
-
-  @media (max-width: 800px) {
-    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
-  }
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.75));
 
   /* overflow: hidden; */
   /* @media (max-width: 1100px) {
@@ -577,10 +571,9 @@ const LinkText = styled.span`
   display: inline-block;
   font-family: "Kleber";
   color: #f0f263;
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 0px;
   position: relative;
-  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease-out;
 
   a:hover & {
@@ -588,7 +581,7 @@ const LinkText = styled.span`
   }
 
   @media (max-width: 800px) {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 `
 

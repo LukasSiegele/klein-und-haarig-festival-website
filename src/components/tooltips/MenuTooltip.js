@@ -10,7 +10,7 @@ export default function MenuTooltip(props) {
   return (
     <Wrapper isOpen={isOpen} bgColor={bgColor}>
       <MenuGrid>
-        <MenuButton>
+        {/* <MenuButton>
           <Link to="/info">
             <MenuInfo isInfo={isInfo}>{t("navigation.infos")}</MenuInfo>
           </Link>
@@ -19,7 +19,7 @@ export default function MenuTooltip(props) {
           <Link to="/volunteer">
             <MenuVolunteer isVolunteer={isVolunteer}>{t("navigation.volunteers")}</MenuVolunteer>
           </Link>
-        </MenuButton>
+        </MenuButton> */}
         <MenuButton>
           <Link to="/about">
             <MenuAbout isAbout={isAbout}>{t("navigation.about")}</MenuAbout>

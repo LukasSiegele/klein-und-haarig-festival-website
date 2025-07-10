@@ -78,7 +78,6 @@ export default function LinkList() {
           </Link>
         </LinkButton> */}
       </Content>
-      {/* <Face /> */}
     </Wrapper>
   )
 }

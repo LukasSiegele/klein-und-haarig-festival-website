@@ -20,32 +20,48 @@ import ScratchGallery from '../components/scratch-card/ScratchGallery';
 
 import ScratchCard from "../components/scratch-card/ScratchCard"
 
-const shuffleAndPick = (array, n) => {
-  if (!array || array.length === 0) return [];
-  const shuffled = [...array].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, n);
+const interleaveAndPick = (dayArr, nightArr, count) => {
+  if (!dayArr || !nightArr) return [];
+
+  const shuffledDay = [...dayArr].sort(() => 0.5 - Math.random());
+  const shuffledNight = [...nightArr].sort(() => 0.5 - Math.random());
+  
+  const result = [];
+  let dayIndex = 0;
+  let nightIndex = 0;
+
+  while (result.length < count && (dayIndex < shuffledDay.length || nightIndex < shuffledNight.length)) {
+    if (dayIndex < shuffledDay.length) {
+      result.push(shuffledDay[dayIndex++]);
+    }
+    if (result.length < count && nightIndex < shuffledNight.length) {
+      result.push(shuffledNight[nightIndex++]);
+    }
+  }
+  return result;
 };
+
 
 export default function IndexPage({ data }) {
 
-  const allImageUrls = useMemo(() => 
-    data.allFestivalImages.nodes.map(node => node.publicURL), 
-    [data.allFestivalImages.nodes]
+  const allDayImageUrls = useMemo(() => 
+    data.dayImages.nodes.map(node => node.publicURL), 
+    [data.dayImages.nodes]
+  );
+  const allNightImageUrls = useMemo(() => 
+    data.nightImages.nodes.map(node => node.publicURL), 
+    [data.nightImages.nodes]
   );
   
-
   const [currentImages, setCurrentImages] = useState([]);
 
-  // Select 5 random imges on loading
-  useEffect(() => {
-    if (allImageUrls.length > 0) {
-      setCurrentImages(shuffleAndPick(allImageUrls, 5));
-    }
-  }, [allImageUrls]);
-
   const handleShuffle = () => {
-    setCurrentImages(shuffleAndPick(allImageUrls, 5));
+    setCurrentImages(interleaveAndPick(allNightImageUrls, allDayImageUrls, 5));
   };
+
+  useEffect(() => {
+    handleShuffle();
+  }, [allNightImageUrls, allDayImageUrls]);
 
   return (
     <>
@@ -110,9 +126,19 @@ export const query = graphql`
         }
       }
     }
-    allFestivalImages: allFile(
+    dayImages: allFile(
       filter: {
-        sourceInstanceName: {eq: "festivalImages"}, 
+        sourceInstanceName: {eq: "festivalImagesDay"}, 
+        extension: {regex: "/(jpg)|(jpeg)|(png)/"}
+      }
+    ) {
+      nodes {
+        publicURL
+      }
+    }
+    nightImages: allFile(
+      filter: {
+        sourceInstanceName: {eq: "festivalImagesNight"}, 
         extension: {regex: "/(jpg)|(jpeg)|(png)/"}
       }
     ) {
@@ -269,7 +295,7 @@ const PhotosTextGroup = styled.div`
 
 const CreditTextGroup = styled.div`
   width: 100%;
-  height: 32px;
+  height: 40px;
   position: relative;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
@@ -281,10 +307,18 @@ const CreditTextGroup = styled.div`
   flex-wrap: wrap;
   gap: 8px;
 
-  @media (max-width: 1000px) {
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 64px;
+  @media (max-width: 800px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 40px;
+    gap: 4px 8px;
+  }
+
+  @media (max-width: 484px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 80px;
+    gap: 8px; 
   }
 `
 

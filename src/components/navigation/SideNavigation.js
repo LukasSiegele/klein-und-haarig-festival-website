@@ -19,14 +19,14 @@ export default function SideNavigation(props) {
 
         <LinkWrapper>
           <LinkGroup>
-            <Link to={"/info"}>
+            {/* <Link to={"/info"}>
               <ListInfo isInfo={isInfo}>{t("navigation.infos")}</ListInfo>
             </Link>
             <Link to={"/volunteer"}>
               <ListVolunteer isVolunteer={isVolunteer}>
                 {t("navigation.volunteers")}
               </ListVolunteer>
-            </Link>
+            </Link> */}
             <Link to={"/about"}>
               <ListAbout isAbout={isAbout}>{t("navigation.about")}</ListAbout>
             </Link>

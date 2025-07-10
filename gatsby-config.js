@@ -50,8 +50,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `festivalImages`,
-        path: `${__dirname}/static/images/festival2025`,
+        name: `festivalImagesDay`,
+        path: `${__dirname}/static/images/festival2025day`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `festivalImagesNight`,
+        path: `${__dirname}/static/images/festival2025night`,
       },
     },
     {

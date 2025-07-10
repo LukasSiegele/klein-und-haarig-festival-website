@@ -23,8 +23,8 @@ export default function MobileNavigation(props) {
           <MenuIcon />
           <MenuTooltip
             isOpen={isOpen}
-            isInfo={props.isInfo}
-            isVolunteer={props.isVolunteer}
+            // isInfo={props.isInfo}
+            // isVolunteer={props.isVolunteer}
             isAbout={props.isAbout}
             isCode={props.isCode}
             isAwareness={props.isAwareness}

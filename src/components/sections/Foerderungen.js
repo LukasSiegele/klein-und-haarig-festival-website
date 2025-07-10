@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import FaceGrafik from "../../../static/images/Face.png"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import {
@@ -31,7 +30,6 @@ export default function Foerderungen() {
           <Line></Line>
         </LineGroup> */}
       </Content>
-      {/* <Face /> */}
     </Wrapper>
   )
 }

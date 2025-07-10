@@ -1,38 +1,90 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import styled from 'styled-components';
 import ScratchCard from './ScratchCard';
-
+import CustomBrushIcon from '../../../static/icons/raupe_kuh_2025.svg';
 
 const ScratchGallery = ({ images = [], onShuffle }) => {  
   const [activeIndex, setActiveIndex] = useState(0);
   const [scratchedLayers, setScratchedLayers] = useState([]);
-
-  // State for brush size
-  const [brushSize, setBrushSize] = useState(40);
+  const [brushSize, setBrushSize] = useState(80);
   const minBrush = 10;
-  const maxBrush = 80;
+  const maxBrush = 160;
   const brushPercent = ((brushSize - minBrush) / (maxBrush - minBrush)) * 100;
-  
+
   const [isHintVisible, setIsHintVisible] = useState(false);
+  const [isThankYouVisible, setIsThankYouVisible] = useState(false);
+  const [isDateVisible, setIsDateVisible] = useState(false);
+  const [isReloadTextVisible, setIsReloadTextVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+
+  // Initial loading checks
   useEffect(() => {
+    if (!images || images.length === 0) return;
+    setIsLoaded(false);
     setActiveIndex(0);
     setScratchedLayers([]);
 
-    // This is for the in-out animation of the "Try drawing here" hint text
-    const showTimeout = setTimeout(() => {
-      setIsHintVisible(true);
-    }, 400); 
+    const preloadPromises = images.map(src => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+    Promise.all(preloadPromises)
+      .then(() => {
+        console.log("Alle Bilder für die Galerie vorgeladen. Zeige an.");
+        setIsLoaded(true);
+      })
+      .catch(err => {
+        console.error("Ein oder mehrere Bilder konnten nicht geladen werden.", err);
+        setIsLoaded(true);
+      });
+  }, [images]);
 
-    const hideTimeout = setTimeout(() => {
-      setIsHintVisible(false);
-    }, 4500); 
-
-    
+  // Initial reset of timers for texts on Gallery
+  useEffect(() => {
+    setActiveIndex(0);
+    setScratchedLayers([]);
+    setIsDateVisible(false);
+    setIsReloadTextVisible(false);
+    // setIsThankYouVisible(false);
+    const showTimeout = setTimeout(() => setIsHintVisible(true), 400); 
+    const hideTimeout = setTimeout(() => setIsHintVisible(false), 4500); 
     return () => {
       clearTimeout(showTimeout);
       clearTimeout(hideTimeout);
     };
   }, [images]);
+
+  // Shows and then hides texts on Gallery
+  // Thank You
+  useEffect(() => {
+    if (activeIndex === 1) {
+      setIsThankYouVisible(true);
+      const timer = setTimeout(() => setIsThankYouVisible(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [activeIndex]);
+
+  
+  // KuH26 date text
+  useEffect(() => {
+    if (images.length > 0 && activeIndex === images.length - 1) {
+      setIsDateVisible(true);
+    }
+  }, [activeIndex, images.length]);
+
+  // Reload images text
+  useEffect(() => {
+    if (images.length > 0 && activeIndex === images.length - 1) {
+      setIsReloadTextVisible(true);
+    }
+  }, [activeIndex, images.length]);
+  
+
 
   const cardStyles = useMemo(() => 
     images.map(() => ({
@@ -53,55 +105,84 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
     }
   };
 
+
+
+
   return (
     <GalleryWrapper>
-      {scratchedLayers.map((layer) => (
-        <SnapshotImage 
-          key={layer.src}
-          src={layer.src}
-          styleProps={layer.styleProps}
-          style={{ zIndex: layer.zIndex }}
-        />
-      ))}
-      
-      {images.length > 0 && 
-        <CardContainer 
-          isActive={false}
-          styleProps={cardStyles[images.length - 1] || {x:0, y:0, rot:0}}
-          style={{ zIndex: 0 }}
-        >
-          <img src={images[images.length - 1]} alt="Last picture of the festival" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        </CardContainer>
-      }
-      
-      {images.slice(activeIndex).map((src, i) => {
-        const index = activeIndex + i;
-        if (index >= images.length - 1) return null;
-
-        return (
-          <CardContainer 
-            key={src}
-            isActive={index === activeIndex}
-            styleProps={cardStyles[index]}
-            style={{ zIndex: images.length - index }}
-          >
-            <ScratchCard
-              topImageSrc={src}
-              bottomImageSrc={images[index + 1]}
-              onComplete={(canvas) => handleScratchComplete(index, canvas)}
-              brushSize={brushSize} // Passes the brush size
+      {isLoaded ? (
+        <>
+          {/* Trying to improve loading images in gallersy: this part is only loaded if isLoaded is true*/}
+          {scratchedLayers.map((layer) => (
+            <SnapshotImage 
+              key={layer.src}
+              src={layer.src}
+              styleProps={layer.styleProps}
+              style={{ zIndex: layer.zIndex }}
             />
-          </CardContainer>
-        );
-      })}
+          ))}
+          
+          {images.length > 0 && 
+            <CardContainer 
+              isActive={false}
+              styleProps={cardStyles[images.length - 1] || {x:0, y:0, rot:0}}
+              style={{ zIndex: 0 }}
+            >
+              <img src={images[images.length - 1]} alt="Last picture of the festival" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </CardContainer>
+          }
+          
+          {images.slice(activeIndex).map((src, i) => {
+            const index = activeIndex + i;
+            if (index >= images.length - 1) return null;
 
-      <ShuffleButton onClick={onShuffle} title="Neue Bilder laden">
-        <ShuffleIcon src="/icons/reload.svg" alt="Neu laden" />
-      </ShuffleButton>
+            return (
+              <CardContainer 
+                key={src}
+                isActive={index === activeIndex}
+                styleProps={cardStyles[index]}
+                style={{ zIndex: images.length - index }}
+              >
+                <ScratchCard
+                  topImageSrc={src}
+                  bottomImageSrc={images[index + 1]}
+                  onComplete={(canvas) => handleScratchComplete(index, canvas)}
+                  brushSize={brushSize}
+                  brushImageSrc={CustomBrushIcon}
+                />
+              </CardContainer>
+            );
+          })}
+        </>
+      ) : (
+
+        <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <p style={{color: '#f0f263;', fontFamily: 'Inter, sans-serif'}}>Loading Gallery...</p>
+        </div>
+      )}
+
       
       <DrawHintText isVisible={isHintVisible}>
-        Try drawing here!
+        Draw here for more 
       </DrawHintText>
+
+      <GalleryThankYouTextContainer isVisible={isThankYouVisible}>
+        <GalleryThankYouText>Thank you!</GalleryThankYouText>
+        <GalleryDateText isVisible={isDateVisible}> KuH26 <br /> 09.—12.07.26 </GalleryDateText>
+      </GalleryThankYouTextContainer>
+
+      <ReloadImagesText isVisible={isReloadTextVisible}>
+        Click <ReloadImagesTextShuffleIcon src="/icons/reload.svg" alt="Reload images" /> to reload images.
+      </ReloadImagesText>
+
+      {/* <ReloadImagesText isVisible={isReloadTextVisible} onClick={onShuffle}> Click to reload images.</ReloadImagesText> */}
+
+      {/* <GalleryHintText>Continue for more pics.</GalleryHintText> */}
+
+      <ShuffleButton onClick={onShuffle} title="Load new images">
+        <ShuffleIcon src="/icons/reload.svg" alt="Reload images" />
+      </ShuffleButton>
+      
 
       <SliderContainer>
         <VerticalSlider 
@@ -118,6 +199,70 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
 
 export default ScratchGallery;
 
+const GalleryThankYouTextContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 133px;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+  z-index: 50;
+  pointer-events: none;
+
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transition: opacity 0.5s ease-in-out;
+  
+  @media (max-width: 800px) {
+    padding-left: 0px;
+  }
+`;
+
+const GalleryThankYouText = styled.h2`
+  z-index: 50;
+  
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+
+  color: #f0f263;
+  font-size: 2.8em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  
+  @media (max-width: 800px) {
+    font-size: 2.4em;
+    padding-left: 0px;
+  }
+`;
+
+const GalleryHintText = styled.div`
+  z-index: 50;
+  
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+
+  color: #f0f263;
+  font-family: Inter, sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+  
+  @media (max-width: 800px) {
+    font-size: 0.7 em;
+    padding-left: 0px;
+  }
+`;
 
 const ShuffleButton = styled.button`
   position: absolute;
@@ -187,10 +332,10 @@ const VerticalSlider = styled.input.attrs({ type: 'range' })`
   width: 150px;
   height: 8px;
   padding-bottom: 24px
-  background: transparent; /* Die Basis ist transparent */
+  background: transparent; /* transparent base */
   margin: 0;
   transform-origin: center center;
-  transform: translate(-50%, -50%) rotate(-90deg); /* Dreht und zentriert den Slider perfekt */
+  transform: translate(-50%, -50%) rotate(-90deg); /* rotates and centers the slider */
 
 
   /* Webkit (Chrome, Safari) Track-Styling */
@@ -200,7 +345,7 @@ const VerticalSlider = styled.input.attrs({ type: 'range' })`
     cursor: pointer;
     border-radius: 4px;
     background: linear-gradient(
-      to right, /* 'to right' ist korrekt für einen um 90 Grad gedrehten Slider */
+      to right, /* 'to right' because the slider is turned 90 degrees */
       #F0F263 ${({ percent }) => percent}%, 
       rgba(255, 255, 255, 0.3) ${({ percent }) => percent}%
     );
@@ -284,7 +429,12 @@ const DrawHintText = styled.div`
   left: 50%;
   padding-left: 133px;
   transform: translate(-50%, -50%);
+
   pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+
   display: inline-block;
   color: #f0f263;
   font-family: Inter, sans-serif;
@@ -300,4 +450,77 @@ const DrawHintText = styled.div`
     font-size: 1em;
     padding-left: 0px;
   }
+`;
+
+const GalleryDateText = styled.div`
+  z-index: 50;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 133px;
+  padding-top: 40px;
+  transform: translateX(-50%);
+  text-align: center;
+
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+  
+  color: #f0f263;
+  font-family: Inter, sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+  
+
+  // opacity: ${({ isDateVisible }) => (isDateVisible ? 1 : 0)};
+  // transition: opacity 3s ease-in-out 2.5s; 
+
+  @media (max-width: 800px) {
+    font-size: 1em;
+    padding-left: 0px;
+  }
+`;
+
+const ReloadImagesText = styled.div`
+  z-index: 101;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 133px;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+
+
+  display: inline-block;
+  color: #f0f263;
+  font-family: Inter, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)}; 
+  transition: opacity 0.5s ease-in-out;
+
+  @media (max-width: 800px) {
+    font-size: 1em;
+    padding-left: 0px;
+  }
+`;
+
+const ReloadImagesTextShuffleIcon = styled.img`
+  width: 21px;
+  height: 21px;
+  padding-top: 4px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
 `;

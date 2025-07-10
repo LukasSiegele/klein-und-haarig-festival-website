@@ -1,50 +1,22 @@
-// src/components/scratch-card/ScratchCard.js
-
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import styled from 'styled-components';
 
-const ScratchWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  user-select: none;
-  -webkit-user-select: none;
-`;
 
-const BottomImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  object-fit: cover;
-`;
-
-const TopCanvas = styled.canvas`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  cursor: crosshair;
-
-  @media (max-width: 600px) {
-    touch-action: none;
-  }
-`;
-
-const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize }) => {
+const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize, brushImageSrc }) => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [isReady, setIsReady] = useState(false); // State zur Vermeidung der Race Condition
+  const [isReady, setIsReady] = useState(false); // state to avoid race condition
   const isCompleted = useRef(false);
 
-  // Zentrale Funktion, die ein Bild im "cover"-Stil zeichnet
+  // loading custom brush
+  const brushImage = useRef(new Image()).current;
+  useEffect(() => {
+    if (brushImageSrc) {
+      brushImage.src = brushImageSrc;
+    }
+  }, [brushImageSrc, brushImage]);
+
+  // Central function, draws image in "cover" style
   const drawImageCover = useCallback((context, image) => {
     const canvas = context.canvas;
     const canvasRatio = canvas.width / canvas.height;
@@ -61,10 +33,11 @@ const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize }) => 
     context.drawImage(image, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
   }, []);
 
-  // Effekt zum initialen Zeichnen eines neuen Bildes
+  // Effect to draw a new image
   useEffect(() => {
     setIsReady(false);
     isCompleted.current = false;
+
     const canvas = canvasRef.current;
     if (!canvas || !canvas.parentElement || !topImageSrc) return;
 
@@ -78,11 +51,11 @@ const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize }) => 
     topImage.src = topImageSrc;
     topImage.onload = () => {
       drawImageCover(context, topImage);
-      setIsReady(true); // Jetzt ist die Leinwand bereit für Interaktion
+      setIsReady(true); // Now the canvas is ready for interaction
     };
   }, [topImageSrc, drawImageCover]);
 
-  // Effekt für die Größenänderung, der den Fortschritt erhält
+  // Effect for the size change, which retains the progress
   useEffect(() => {
     let timeoutId = null;
     const handleResize = () => {
@@ -90,19 +63,20 @@ const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize }) => 
       timeoutId = setTimeout(() => {
         const canvas = canvasRef.current;
         if (!canvas || !canvas.parentElement) return;
+        if (canvas.width === 0) return; // avoids empty snapshots
 
-        // Mache einen Schnappschuss, bevor die Größe geändert wird
+        // Make a snapshot before the size is changed
         const snapshot = new Image();
         snapshot.src = canvas.toDataURL();
 
         snapshot.onload = () => {
-          // Ändere die Größe der Leinwand
+          // Change the size of the canvas
           const { width, height } = canvas.parentElement.getBoundingClientRect();
           canvas.width = width;
           canvas.height = height;
           const context = canvas.getContext('2d');
           
-          // Zeichne den Schnappschuss mit der gleichen "cover"-Logik, um Verzerrung zu vermeiden
+          // Draw the snapshot with the same "cover" logic to avoid distortion
           drawImageCover(context, snapshot);
         };
       }, 150);
@@ -125,7 +99,8 @@ const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize }) => 
     return { x: (clientX - rect.left) * scaleX, y: (clientY - rect.top) * scaleY };
   };
 
-  // Alle Event-Handler prüfen jetzt am Anfang, ob die Leinwand "bereit" ist
+
+  // All event handlers check if the canvas is ready at the beginning
   const startDrawing = (event) => {
     if (!isReady) return;
     event.preventDefault();
@@ -184,6 +159,7 @@ const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize }) => 
     return (transparentPixels / pixelCount) * 100;
   };
 
+
   return (
     <ScratchWrapper>
       {bottomImageSrc && <BottomImage src={bottomImageSrc} alt="Hintergrundbild" />}
@@ -201,3 +177,39 @@ const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize }) => 
 };
 
 export default ScratchCard;
+
+
+
+
+const ScratchWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+`;
+
+const BottomImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  object-fit: cover;
+`;
+
+const TopCanvas = styled.canvas`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: crosshair;
+  touch-action: none;
+  
+`;
