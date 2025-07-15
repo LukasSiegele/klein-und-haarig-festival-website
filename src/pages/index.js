@@ -41,6 +41,13 @@ const interleaveAndPick = (dayArr, nightArr, count) => {
   return result;
 };
 
+// This Head is for SEO, it gives us the main Google headline that pops up on searches
+export const Head = () => (
+  <>
+    <title>Klein und Haarig Festival</title>
+    <meta name="description" content="🌲 09.07. — 12.07.26 🌲 Independent and off-centre music experience in nature" />
+  </>
+)
 
 export default function IndexPage({ data }) {
 

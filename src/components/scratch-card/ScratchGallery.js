@@ -14,6 +14,7 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
   const [isHintVisible, setIsHintVisible] = useState(false);
   const [isThankYouVisible, setIsThankYouVisible] = useState(false);
   const [isDateVisible, setIsDateVisible] = useState(false);
+  const [isContinueVisible, setIsContinueVisible] = useState(false);
   const [isReloadTextVisible, setIsReloadTextVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -61,26 +62,8 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
   }, [images]);
 
   // Shows and then hides texts on Gallery
-  // Thank You
-  useEffect(() => {
-    // Shows thank you text if second card turns active
-    if (activeIndex === 1) {
-      setIsThankYouVisible(true);
 
-      // removes text aber 4s
-      const timer = setTimeout(() => {
-        setIsThankYouVisible(false);
-      }, 4000); // 4s visibility
-
-      // cleanup function to stop timer
-      return () => clearTimeout(timer);
-
-    } else {
-      // Also: if the image active is not image 2, e.g. image nr. 3 - the text also gets removed
-      setIsThankYouVisible(false);
-    }
-  }, [activeIndex]);
-
+  // Draw here for more Text
   useEffect(() => {
     // Shows draw here text if first card is active
     if (activeIndex === 0) {
@@ -100,15 +83,47 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
     }
   }, [activeIndex]);
 
-  
-  // KuH26 date text
+  // "Thank You + Date" Text
   useEffect(() => {
-    if (images.length > 0 && activeIndex === images.length - 1) {
-      setIsDateVisible(true);
-    }
-  }, [activeIndex, images.length]);
+    // Shows thank you text if second card turns active
+    if (activeIndex === 1) {
+      setIsThankYouVisible(true);
 
-  // Reload images text
+      // removes text aber 4s
+      const timer = setTimeout(() => {
+        setIsThankYouVisible(false);
+      }, 4000); // 4s visibility
+
+      // cleanup function to stop timer
+      return () => clearTimeout(timer);
+
+    } else {
+      // Also: if the image active is not image 2, e.g. image nr. 3 - the text also gets removed
+      setIsThankYouVisible(false);
+    }
+  }, [activeIndex]);
+
+
+  // "Continue for more" Text
+  useEffect(() => {
+    // Timer starts to show text after 4s
+    let timer;
+
+    // Only if 2nd img is active
+    if (activeIndex === 1) {
+      timer = setTimeout(() => {
+        setIsContinueVisible(true);
+      }, 4000); // 4s delay
+    } else {
+      setIsContinueVisible(false);
+    }
+    return () => clearTimeout(timer);
+    
+  }, [activeIndex]);
+
+
+
+  // "Reload images" text
   useEffect(() => {
     if (images.length > 0 && activeIndex === images.length - 1) {
       setIsReloadTextVisible(true);
@@ -202,6 +217,10 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
         <GalleryThankYouText>Thank you!</GalleryThankYouText>
         <GalleryDateText isVisible={isDateVisible}> KuH26 <br /> 09.—12.07.26 </GalleryDateText>
       </GalleryThankYouTextContainer>
+
+      <ContinueHintText isVisible={isContinueVisible}>
+        There's more :-) 
+      </ContinueHintText>
 
 
       <ReloadImagesText isVisible={isReloadTextVisible} onClick={onShuffle}> Reload images </ReloadImagesText>
@@ -552,11 +571,32 @@ const ReloadImagesText = styled.div`
   }
 `;
 
-const ReloadImagesTextShuffleIcon = styled.img`
-  width: 20px;
-  height: 20px;
+const ContinueHintText = styled.div`
+  z-index: 101;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 133px;
+  transform: translate(-50%, -50%);
+
   pointer-events: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none; 
+
+  display: inline-block;
+  color: #f0f263;
+  font-family: Inter, sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)}; 
+  transition: opacity 0.5s ease-in-out;
+
+  @media (max-width: 800px) {
+    font-size: 0.7em;
+    padding-left: 0px;
+  }
 `;
