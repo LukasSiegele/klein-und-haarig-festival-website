@@ -123,7 +123,8 @@ const ScratchCard = ({ topImageSrc, bottomImageSrc, onComplete, brushSize, brush
     context.closePath();
     const scratchedPercentage = calculateScratchedPercentage(context);
 
-    if (scratchedPercentage > 60) {
+    // This number determined how much of an image needs to be scratched to trigger the next images "scratcheability"
+    if (scratchedPercentage > 55) {
       isCompleted.current = true;
       if (onComplete) onComplete(canvasRef.current);
     }
