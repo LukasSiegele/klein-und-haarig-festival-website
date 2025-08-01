@@ -226,9 +226,9 @@ const ScratchGallery = ({ images = [], onShuffle }) => {
       <ReloadImagesText isVisible={isReloadTextVisible} onClick={onShuffle}> Reload images </ReloadImagesText>
 
 
-      <ShuffleButton onClick={onShuffle} title="Load new images">
+      {/* <ShuffleButton onClick={onShuffle} title="Load new images">
         <ShuffleIcon src="/icons/reload.svg" alt="Reload images" />
-      </ShuffleButton>
+      </ShuffleButton> */}
       
 
       <SliderContainer>
@@ -555,6 +555,7 @@ const ReloadImagesText = styled.div`
   font-size: 0.8em;
   font-weight: 500;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  text-decoration: underline;
   white-space: nowrap;
 
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)}; 
