@@ -61,7 +61,7 @@ export default function About() {
                       <FormButton label="Mitglied werden" />
                     </Link> */}
                     <a 
-                      href="/pdf/230109_Aufnahmeantrag_Foerdermitgliedschaft_BuntePlatte.pdf" 
+                      href="/pdf/Aufnahmeantrag_BuntePlatte_Web_250909.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >

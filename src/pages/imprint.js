@@ -16,7 +16,7 @@ export default function Imprint() {
             <SectionHeader>{t('pages.imprint.headline')}</SectionHeader>
             <Header>{t('pages.imprint.sections.first.label')}</Header>
             <Trans t={t} as="p" i18nKey={'pages.imprint.sections.first.text'}>
-            Bunte Platte e.V.Türkenstraße 2180799 München Vertreten durch: Luca Prohl und Mareike Klaus (Vorstand)E-Mail:
+            Bunte Platte e.V.Türkenstraße 2180799 München Vertreten durch: Luca Prohl und Simon Christians (Vorstand)E-Mail:
               <a href="mailto:info@kleinundhaarig.de">info@bunte-platte.de</a>
             </Trans>
           </Section>
